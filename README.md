@@ -1,2 +1,2 @@
-# Home
+# Peerplays Documentation
 

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Home](README.md)
+* [Peerplays Documentation](README.md)
 
 ## Technology
 
@@ -12,11 +12,7 @@
 
 ## Data Proxies
 
-* [Untitled](data-proxies/untitled.md)
-
 ## User Guides
-
-* [Untitled](user-guides/untitled.md)
 
 ## Bitshares Core
 
