@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Peerplays Documentation](README.md)
+* [Home](README.md)
 
 ## Technology
 
@@ -19,9 +19,55 @@
 ## User Guides
 
 * [Untitled](user-guides/untitled.md)
-
-## Bitshares Core
-
-* [Home](bitshares-core/home.md)
-* [Design Issues](bitshares-core/design-issues.md)
+* [Bitshares Core](user-guides/__macosx.md)
+* [Home](._home.md)
+* [API](api.md)
+* [architecture](architecture.md)
+* [blacklizard-app-finarch](blacklizard-app-finarch.md)
+* [blacklizard-app-ideas](blacklizard-app-ideas.md)
+* [Blockchain-Objects](blockchain-objects.md)
+* [BUILD\_UBUNTU](build_ubuntu.md)
+* [BUILD\_WIN32](build_win32.md)
+* [BUILD\_WinDevEnv](build_windevenv.md)
+* [Building-on-OS-X](building-on-os-x.md)
+* [chain-locked-tx](chain-locked-tx.md)
+* [CLI-Wallet-Cookbook](cli-wallet-cookbook.md)
+* [Contribution-Guide](contribution-guide.md)
+* [Creating-a-new-FBA](creating-a-new-fba.md)
+* [Delayed-Node](delayed-node.md)
+* [design-issues](design-issues.md)
+* [DEV\_README](dev_readme.md)
+* [dpos-slot-tickets](dpos-slot-tickets.md)
+* [egenesis](egenesis.md)
+* [ElasticSearch-Plugin](elasticsearch-plugin.md)
+* [Git-Flow](git-flow.md)
+* [HaProxy-and-BitShares](haproxy-and-bitshares.md)
+* [How-To-become-an-active-witness-in-BitShares-2.0](how-to-become-an-active-witness-in-bitshares-2.0.md)
+* [How-to-setup-your-witness-for-test-net-\(Ubuntu-14.04-LTS-64-bit\)](how-to-setup-your-witness-for-test-net-ubuntu-14.04-lts-64-bit.md)
+* [Howto-import-an-existing-delegate-as-witness-in-BitShares-2.0](howto-import-an-existing-delegate-as-witness-in-bitshares-2.0.md)
+* [Howto-propose-committee-actions](howto-propose-committee-actions.md)
+* [HTLC-\(CN\)](htlc-cn.md)
+* [HTLC](htlc.md)
+* [Import-account-to-cli-wallet](import-account-to-cli-wallet.md)
+* [Import-BitShares-0.9.3c-wallets-into-BitShares-2.0-CLI-wallet](import-bitshares-0.9.3c-wallets-into-bitshares-2.0-cli-wallet.md)
+* [Manage-your-nodes-by-using-gnu-screen](manage-your-nodes-by-using-gnu-screen.md)
+* [Monitoring-accounts](monitoring-accounts.md)
+* [Plasma---Wallet-API](plasma-wallet-api.md)
+* [private-testnet](private-testnet.md)
+* [quick-tips-for-devs](quick-tips-for-devs.md)
+* [README-debug\_node](readme-debug_node.md)
+* [resolvable-bitassets](resolvable-bitassets.md)
+* [SPV](spv.md)
+* [Style-Guide](style-guide.md)
+* [Testing-HF-1268:-Market-Fee-Sharing](testing-hf-1268-market-fee-sharing.md)
+* [Testing-HF-1270:-Effects-of-MCR-Change-on-Call-Price](testing-hf-1270-effects-of-mcr-change-on-call-price.md)
+* [Testing](testing.md)
+* [theoretical-theories](theoretical-theories.md)
+* [Threading](threading.md)
+* [Wallet\_Full-Nodes\_Witness\_Nodes](wallet_full-nodes_witness_nodes.md)
+* [Wallet-2-Factor-Authentication-Protocol](wallet-2-factor-authentication-protocol.md)
+* [Wallet-Backup](wallet-backup.md)
+* [Wallet-Login-Protocol](wallet-login-protocol.md)
+* [Wallet-Server-Architecture](wallet-server-architecture.md)
+* [witness-rng](witness-rng.md)
 

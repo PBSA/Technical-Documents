@@ -1,4 +1,4 @@
-# Design Issues
+# design-issues
 
 ## Purpose
 
