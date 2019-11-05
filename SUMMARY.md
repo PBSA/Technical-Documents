@@ -4,6 +4,8 @@
 
 ## Technology
 
+* [Technology Page 1](technology/page-1.md)
+
 ## Witnesses
 
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
@@ -12,7 +14,11 @@
 
 ## Data Proxies
 
+* [Data Proxies Page 1](data-proxies/data-proxies-page-1.md)
+
 ## User Guides
+
+* [User Guides Page 1](user-guides/user-guides-page-1.md)
 
 ## Bitshares Core
 
