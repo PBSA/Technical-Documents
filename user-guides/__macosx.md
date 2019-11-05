@@ -1,2 +1,0 @@
-# Bitshares Core
-
