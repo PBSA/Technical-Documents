@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Home](README.md)
 
 ## Technology
 
@@ -20,7 +20,6 @@
 
 ## Bitshares Core
 
-* [Home](bitshares-core/._home.md)
 * [API](bitshares-core/api.md)
 * [architecture](bitshares-core/architecture.md)
 * [blacklizard-app-finarch](bitshares-core/blacklizard-app-finarch.md)
