@@ -1,7 +1,5 @@
 # Table of contents
 
-* [Home](README.md)
-
 ## Technology
 
 * [Untitled](technology/untitled.md)
