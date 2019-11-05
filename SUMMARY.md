@@ -72,3 +72,5 @@
 * [Wallet-Server-Architecture](bitshares-core/wallet-server-architecture.md)
 * [witness-rng](bitshares-core/witness-rng.md)
 
+## Bitshares How It Works <a id="bitshares-documentation"></a>
+
