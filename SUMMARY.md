@@ -74,3 +74,6 @@
 
 ## Bitshares How It Works <a id="bitshares-documentation"></a>
 
+* [BTS Holders](bitshares-documentation/bts-holders/README.md)
+  * [BTS Governance](bitshares-documentation/bts-holders/bts-governance.md)
+
