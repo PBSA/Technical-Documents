@@ -20,3 +20,8 @@
 
 * [Untitled](user-guides/untitled.md)
 
+## Bitshares Core
+
+* [Home](bitshares-core/home.md)
+* [Design Issues](bitshares-core/design-issues.md)
+
