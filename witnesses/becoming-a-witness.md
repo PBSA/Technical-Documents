@@ -1,2 +1,2 @@
-# Becoming a Witness
+# Becoming a Peerplays Witness
 
