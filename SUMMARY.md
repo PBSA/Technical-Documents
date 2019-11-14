@@ -77,3 +77,7 @@
 * [BTS Holders](bitshares-documentation/bts-holders/README.md)
   * [BTS Governance](bitshares-documentation/bts-holders/bts-governance.md)
 
+## Knowledgebase
+
+* [Untitled](knowledgebase/untitled.md)
+
