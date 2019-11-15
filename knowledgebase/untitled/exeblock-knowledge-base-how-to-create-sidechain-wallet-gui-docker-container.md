@@ -1,6 +1,6 @@
 # EXEBlock Knowledge Base : How to create sidechain-wallet-gui docker container
 
-\*\*NOTE: See attached files  
+NOTE: See attached files  
 \*\*NOTE: This setup is for the sidechain wallet which works with:  
 1\) older peerplays libraries \(peerplaysjs\) and current sidechain blockchain.  
 2\) latest peerplays libraries \(peerplays-graphene\) and the baxter blockchain.
