@@ -2,31 +2,25 @@
 
 ### **So what is a Peerplays Witness?**
 
-The short answer is, Witnesses run the Peerplays blockchain. The long answer is … well read on.  
-
+The short answer is, Witnesses run the Peerplays blockchain. The long answer is … well read on.
 
 Chances are, even if you know very little about blockchain technology, you’ll have heard of Bitcoin and Bitcoin mining. And that’s important because as we talk about Witnesses we’ll draw a big distinction between the technology behind Bitcoin and that of the Peerplays blockchain.
 
 ### **The Bitcoin Way**
 
-Bitcoin based blockchains use a consensus mechanism called Proof of Work \(POW\).   
+Bitcoin based blockchains use a consensus mechanism called Proof of Work \(POW\). 
 
+At its simplest this means that if you want to create new blocks in the Bitcoin blockchain, colloquially become a ‘miner’, then you need to ‘work’. The harder you work the greater your chance of being paid.
 
-At its simplest this means that if you want to create new blocks in the Bitcoin blockchain, colloquially become a ‘miner’, then you need to ‘work’. The harder you work the greater your chance of being paid.  
-
-
-The work involves solving a computational challenging puzzle. We don’t need to know what this puzzle is, but suffice to say the processing power required to profitable solve it is huge. You don’t need anybody’s permission to become a miner, and it’s quite possible to start mining on a home computer.  
-
+The work involves solving a computational challenging puzzle. We don’t need to know what this puzzle is, but suffice to say the processing power required to profitable solve it is huge. You don’t need anybody’s permission to become a miner, and it’s quite possible to start mining on a home computer.
 
 But realistically, the greater the computing power at your disposal the greater your chance of successfully solving the puzzle, and get paid for creating a new block. This system is anything but fair, one computer could be up against mining pools running literally thousands of computers. It’s easy to imagine the cost of such hardware, not to mention consuming enough power to run a small town!
 
 ### **The Peerplays Way**
 
-So enter a consensus mechanism called Delegated Proof of Stake \(DPOS\).  
+So enter a consensus mechanism called Delegated Proof of Stake \(DPOS\).
 
-
-Think of Delegated Proof of Stake as technological democracy; the opportunity for any PPY token holder to vote on who creates new blocks in the Peerplays blockchain; we call these block producers Witnesses, and they keep the blockchain alive.  
-
+Think of Delegated Proof of Stake as technological democracy; the opportunity for any PPY token holder to vote on who creates new blocks in the Peerplays blockchain; we call these block producers Witnesses, and they keep the blockchain alive.
 
 Witnesses also have the authority to approve, or reject, any changes to the blockchain software. Their actions have an overarching impact on all PPY token holders.  
 
