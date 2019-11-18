@@ -14,13 +14,11 @@ Yes, anybody can become a Peerplays Witness, but first ask yourself how you woul
 6. Do you have any experience as a server administrator?
 7. Do you understand the costs associated with buying and running the necessary hardware to be a witness node operator?
 
-If you can answer these questions you’re well on your way to becoming a witness.
-
-So yes, anybody could become a Peerplays Witness, but only those special few will become Witnesses.
+If you can answer these questions you’re well on your way to becoming a Peerplays Witness.
 
 ### **The duties of a Peerplays Witness**
 
-The primary duty of Peerplays Witnesses is to bundle transactions into blocks and sign them with their signing key. Witnesses keep the blockchain alive by producing one block every three seconds. For example, if there were 20 Witnesses, each would produce 1 block every minute.
+The primary duty of Peerplays Witnesses is to bundle transactions into blocks and sign them with their signing key. Witnesses keep the blockchain alive by producing one block every three seconds. For example, if there were 20 Witnesses, each would produce one block every minute.
 
 Other duties include:
 
@@ -46,9 +44,11 @@ Smart contracts then use this data to grade and settle bets placed by users on B
 
 Blocks are produced every three seconds by Witnesses who take turns signing and validating the blockchain in variable rounds.
 
-As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated.
+As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated. The payment for each signed block at present is 0.0075PPY.
 
+With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. But, keep in mind that since each block signed is equivalent to .0075 PPY there is total amount of 216 PPYs a day, split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses, of a theoretical maximum of 1,001. 
 
+Also, keep in mind that you have to either purchase a server dedicated to PeerPlays or rent a server and that can cost quite a bit, and if you are not an active witness \(voted in\) then you'll earn nothing.
 
 ### Getting Votes to Become a Peerplays Witness
 
