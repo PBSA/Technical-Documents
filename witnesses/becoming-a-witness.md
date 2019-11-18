@@ -4,9 +4,7 @@ Congratulations! You’ve taken the first step towards becoming a Peerplays Witn
 
 ### **Can anyone be a Peerplays Witness?**
 
-The short answer is, Yes.
-
-But before taking the plunge, think about how you would answer the following questions:
+Yes, anybody can become a Peerplays Witness, but first ask how you would answer the following questions:
 
 1. Explain the role of a Peerpays witness. 
 2. Why do you want to be a Witness?
@@ -26,7 +24,7 @@ The primary duty of Peerplays Witnesses is to bundle transactions into blocks an
 
 Other duties include:
 
-* * Operate a full node with enough bandwidth to support current network activities. 
+* Operate a full node with enough bandwidth to support current network activities. 
 * Operate a test version of the blockchain that functions as a public testing environment.
 * Sometimes operate an API seed node to support end user applications.
 * Integrate, or reject, any changes to the blockchain software that are published. 
