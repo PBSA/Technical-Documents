@@ -70,27 +70,27 @@ Facebook - [https://www.facebook.com/PeerPlays/](https://www.facebook.com/PeerPl
 
 ### **Getting started**
 
-We've already talked about the personal qualities a Witness needs to have and the duties they're expected to perform, now we need to talk about nodes and hardware requirements.
+We've already talked about the personal qualities a Witness needs to have, and the duties they're expected to perform, now we need to talk about nodes and hardware requirements.
 
-The following nodes need to be created for both the public mainnet and public testnet:
+#### **Nodes**
 
-#### Witness node 
+All nodes keep updating an internal database by applying the transactions as they arrive in incoming blocks. The difference between the node types lies in the amount of history they keep track of, and in the functionality they provide.
 
-Each witness node validates all blocks and transactions it receives. The nodes of elected witnesses take turns in bundling new transactions into 
+A **Witness node,** as the name implies, is a node run by a Witness. Each Witness node validates all blocks and transactions it receives. The nodes of elected Witnesses take turns in bundling new transactions into blocks and broadcasting them to the network.
 
-#### API node 
+**API nodes** \(nodes with an open RPC port\) provide network services to client applications. They usually have account transaction histories accessible though API calls, but can vary in the amount of available history. 
 
-provide network services to client applications. They usually have account transaction histories accessible through API calls, but can vary in the amount of available history. Full nodes are API nodes with a complete transaction history of all accounts.
+**Full nodes** are API nodes with a complete transaction history of all accounts.
 
-#### **Seed node \(optional\)**
+**Seed nodes** are nodes that accept incoming P2P connections. They are the first nodes contacted by a freshly started node; the entry point into the network. Once a node has entered the network it will receive additional node addresses from its peers, so all nodes can connect to each other. A seed node can also be an API node. Seed nodes are not mandatory, but highly recommended.
 
- **are nodes that accept incoming P2P connections. They are the first nodes contacted by a freshly started node. In that sense they serve as an entry point into the network. Once a node has entered the network it will receive additional node addresses from its peers, so all nodes can connect to each other. A seed node can also be an API node. The BitShares core software, also called witness\_node, comes with a preconfigured list of seed nodes for easy bootstrapping.**
+**BOS nodes** are required to operate the Bookie Oracle System and ensure the accuracy and decentralization of the data fed into the BookiePro application.
 
-#### **BOS** 
+Every Witness is required to run nodes on both Public Mainnet and Public Testnet environments.
 
-**So depending on whether a witness is running seed nodes or not, between six and eight servers need to be set up.**
+**So depending on whether as a witness you run a seed node or not, you'll need to set up and operate between six and eight servers.**
 
-### **System Requirements**
+#### **System Requirements**
 
 **have the qualities to make a great witness: Commitment, accountability, knowledge and reliability.**  
 
@@ -99,16 +99,8 @@ provide network services to client applications. They usually have account trans
 
 **The Peerplays core wallet makes it easy for PPY holders to vote for witnesses. Anyone who holds PPY can do this by adding the name of the witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain. Every few hours, the Peerplays blockchain tallies all the votes from all PPY token holders, and if you are elected as a witness then the blockchain will pay you in PPY tokens for every block that you validate.**
 
-**WHEN DOES THE JOB BEGIN?**
-
-**PPY token holders can begin voting for witnesses immediately after the Peerplays blockchain launches on May 30, 2017.**
-
-**ARE THERE JOB GROWTH OPPORTUNITIES?**
-
-**In Q4 of 2017, the Peerplays blockchain will begin hosting the world’s first decentralized sports betting platform, which is called Bookie. If you are a Peerplays witness at that time you will also be required to manage and settle the hundreds of Sports-betting markets available to users.**
-
-**The job of Peerplays witness is expected to become a full-time position by 2018, with increases in pay to support the greater workload.**  
-
+  
+****
 
 [**Bookie**](http://bookie.exchange/)**, the decentralized sports betting exchange app for the Peerplays blockchain, requires that Peerplays Witnesses also act as decentralized oracles, which means that the Witnesses are required to populate the Peerplays blockchain with real-world sporting data. For example, league and competition data, event data, betting market data for different sports \(soccer, basketball, football, tennis, etc.\), along with the final scores of each game. Smart contracts then use this data to grade and settle bets placed by users on Bookie.**  
 
