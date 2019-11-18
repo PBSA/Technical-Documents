@@ -13,7 +13,7 @@ But before taking the plunge, think about how you would answer the following que
 3. What qualities would you bring to the Peerplays community?
 4. How much time are you willing to set aside to fulfil your obligations?
 5. What do you know about the Bookie Oracle System \(BOS\)?
-6. Do you have any experience as a node operator?
+6. Do you have any experience as a server administrator?
 7. Do you understand the costs associated with buying and running the necessary hardware to be a witness node operator?
 
 If you can answer these questions you’re well on your way to becoming a witness.
@@ -22,15 +22,17 @@ So yes, anybody could become a Peerplays Witness, but only those special few wil
 
 ### **The duties of a Peerplays Witness**
 
-The basic duties of a blockchain Witness are:
+The primary duty of Peerplays Witnesses is to bundle transactions into blocks and sign them with their signing key. Witnesses keep the blockchain alive by producing one block every three seconds. For example, if there were 20 Witnesses, each would produce 1 block every minute.
 
-* Bundling transactions into blocks and signing them.
-* Operate a full node with enough bandwidth to support current network activities. 
+Other duties include:
+
+* * Operate a full node with enough bandwidth to support current network activities. 
 * Operate a test version of the blockchain that functions as a public testing environment.
-* Sometimes operate an API node to support end user applications.
+* Sometimes operate an API seed node to support end user applications.
 * Integrate, or reject, any changes to the blockchain software that are published. 
+* Keep a block producing node running 24/7 every day of the year!
 
-But there is also one unique duty expected of a Peerplays Witness :
+And one unique duty of a Peerplays Witness :
 
 #### BookiePro & Bookie Oracle System \(BOS\)
 
@@ -44,7 +46,13 @@ Smart contracts then use this data to grade and settle bets placed by users on B
 
 ### Being a Peerplays Witness is a Paid Job
 
-Blocks are produced every three seconds by Witnesses who take turns signing and validating the blocks.
+Blocks are produced every three seconds by Witnesses who take turns signing and validating the blockchain in variable rounds.
+
+Peerplays Witnesses are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool and issues them to the signing Witness after each block is validated.
+
+
+
+### Getting Votes to Become a Peerplays Witness
 
 
 
