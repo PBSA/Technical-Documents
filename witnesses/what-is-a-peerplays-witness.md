@@ -36,32 +36,25 @@ As the community grows, it gets harder and harder to remain a paid Witness due t
 
 ### **Voting for Witnesses**
 
-With the introduction of GPOS it’s now more important than ever that PPY token holder’s vote. Without voting regularly any token holder’s rewards could be effected. Votes don’t have to be cast for Witnesses, they could be for advisors or proxies, but Witness voting is the most common; Witnesses generally have a higher profile and are more active in the community.  
+With the introduction of GPOS it’s now more important than ever that PPY token holder’s vote. Without voting regularly any token holder’s rewards could be effected. Votes don’t have to be cast for Witnesses, they could be for advisors or proxies, but Witness voting is the most common; Witnesses generally have a higher profile and are more active in the community.
 
-
-If we had to give only one reason for voting for Witnesses, then that’s simple … without them there would not be a working Peerplays blockchain. As mentioned earlier, the Witnesses are constantly signing blocks and ensuring transactions happen.  
-
+If we had to give only one reason for voting for Witnesses, then that’s simple … without them there would not be a working Peerplays blockchain. As mentioned earlier, the Witnesses are constantly signing blocks and ensuring transactions happen.
 
 Choosing the right Witness to vote for doesn’t need to be difficult. Witnesses maintain their own blogs, contribute to public messaging channels and through the Peerplays Wallet it’s easy to see who are the most reliable block producers.
 
 ### **Witnesses and BookiePro**
 
-BookiePro is a decentralized sports betting exchange, the first of its kind in the world and has been built for the Peerplays blockchain.  
+BookiePro is a decentralized sports betting exchange, the first of its kind in the world and has been built for the Peerplays blockchain.
 
+For the Peerplays witnesses this represents a unique opportunity to play a very important role in ensuring that BookiePro is provably fair. Operations in the blockchain have to be approved and this approval requires consensus from 50% + 1 of the Witnesses. 
 
-For the Peerplays witnesses this represents a unique opportunity to play a very important role in ensuring that BookiePro is provably fair. Operations in the blockchain have to be approved and this approval requires consensus from 50% + 1 of the Witnesses.   
-
-
-What this means for BookiePro is that everything from the creation of a game to the final result, and settling the bet, has to be approved by more than one Witness.  
-
+What this means for BookiePro is that everything from the creation of a game to the final result, and settling the bet, has to be approved by more than one Witness.
 
 For the BookiePro users this means a truly fair and decentralized application; no house and no single authority.
 
 ### **Bitcoin Miners v Peerplays Witnesses**
 
-Let’s put the Peerplays Witnesses head-to-head against the Bitcoin miners.  
-  
-****
+Let’s put the Peerplays Witnesses head-to-head against the Bitcoin miners.
 
 | **Bitcoin Miners** | **Peerplays Witnesses** |
 | :--- | :--- |
@@ -74,12 +67,9 @@ Let’s put the Peerplays Witnesses head-to-head against the Bitcoin miners.
 
 ### **Would you like to be a Witness?**
 
-Your curiosity got you this far, but have you thought about taking the next step and becoming a Witness yourself?  
+Your curiosity got you this far, but have you thought about taking the next step and becoming a Witness yourself?
 
+Well if you have, there’s lots more resources available to you; we recommend starting here:
 
-Well if you have, there’s lots more resources available to you; we recommend starting here:  
-
-
-\[Link to “So You Want to be a Peerplays Witness?” document\]  
-
+\[Link to “So You Want to be a Peerplays Witness?” document\]
 
