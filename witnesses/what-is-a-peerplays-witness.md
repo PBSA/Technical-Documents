@@ -44,22 +44,17 @@ Choosing the right Witness to vote for doesn’t need to be difficult. Witnesses
 
 ### **Witnesses and BookiePro**
 
-BookiePro is a decentralized sports betting exchange, the first of its kind in the world and has been built for the Peerplays blockchain.  
+BookiePro is a decentralized sports betting exchange, the first of its kind in the world and has been built for the Peerplays blockchain.
 
+For the Peerplays witnesses this represents a unique opportunity to play a very important role in ensuring that BookiePro is provably fair. Operations in the blockchain have to be approved and this approval requires consensus from 50% + 1 of the Witnesses. 
 
-For the Peerplays witnesses this represents a unique opportunity to play a very important role in ensuring that BookiePro is provably fair. Operations in the blockchain have to be approved and this approval requires consensus from 50% + 1 of the Witnesses.   
-
-
-What this means for BookiePro is that everything from the creation of a game to the final result, and settling the bet, has to be approved by more than one Witness.  
-
+What this means for BookiePro is that everything from the creation of a game to the final result, and settling the bet, has to be approved by more than one Witness.
 
 For the BookiePro users this means a truly fair and decentralized application; no house and no single authority.
 
 ### **Bitcoin Miners v Peerplays Witnesses**
 
-Let’s put the Peerplays Witnesses head-to-head against the Bitcoin miners.  
-  
-****
+Let’s put the Peerplays Witnesses head-to-head against the Bitcoin miners.
 
 | **Bitcoin Miners** | **Peerplays Witnesses** |
 | :--- | :--- |
