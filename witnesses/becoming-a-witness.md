@@ -14,7 +14,7 @@ Yes, anybody can become a Peerplays Witness, but first ask yourself how you woul
 6. Do you have any experience as a server administrator?
 7. Do you understand the costs associated with buying and running the necessary hardware to be a witness node operator?
 
-If you can answer these questions you’re well on your way to becoming a Peerplays Witness.
+If you can answer these questions well then you’re on your way to becoming a Peerplays Witness.
 
 ### **The duties of a Peerplays Witness**
 
@@ -48,7 +48,9 @@ As a Peerplays Witnesses you are paid for this duty by the blockchain itself whi
 
 With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. But, keep in mind that since each block signed is equivalent to .0075 PPY there is total amount of 216 PPYs a day, split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses, of a theoretical maximum of 1,001. 
 
-Also, keep in mind that you have to either purchase a server dedicated to PeerPlays or rent a server and that can cost quite a bit, and if you are not an active witness \(voted in\) then you'll earn nothing.
+Also, keep in mind that you have to either purchase, or rent, a server dedicated to Peerplays, and if you are not an active witness \(voted in\) then you'll earn nothing.
+
+So we see Peerplays Witness pay is dependant on the value of the PPY and as such can vary a lot. Not only can being a Peerplays Witness be profitable but as the commitment and reliability of Witnesses has a direct impact on the value of the PPY, in this respect a Peerplays Witness plays a role in what their 'salary' will be.
 
 ### Getting Votes to Become a Peerplays Witness
 
