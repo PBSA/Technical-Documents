@@ -4,9 +4,9 @@ Congratulations! You’ve taken the first step towards becoming a Peerplays Witn
 
 ### **Can anyone be a Peerplays Witness?**
 
-Yes, anybody can become a Peerplays Witness, but first ask how you would answer the following questions:
+Yes, anybody can become a Peerplays Witness, but first ask yourself how you would answer the following questions:
 
-1. Explain the role of a Peerpays witness. 
+1. Explain the role of a Peerplays Witness. 
 2. Why do you want to be a Witness?
 3. What qualities would you bring to the Peerplays community?
 4. How much time are you willing to set aside to fulfil your obligations?
@@ -46,7 +46,7 @@ Smart contracts then use this data to grade and settle bets placed by users on B
 
 Blocks are produced every three seconds by Witnesses who take turns signing and validating the blockchain in variable rounds.
 
-Peerplays Witnesses are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool and issues them to the signing Witness after each block is validated.
+As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated.
 
 
 
