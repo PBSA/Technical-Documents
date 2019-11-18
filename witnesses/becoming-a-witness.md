@@ -54,6 +54,18 @@ So we see Peerplays Witness pay is dependant on the value of the PPY and as such
 
 ### Getting Votes to Become a Peerplays Witness
 
+As only active Witnesses get paid it's very important to be voted in, and to do this you must sell yourself to the PPY token holders. Every PPY token holder can vote for a witness, multiple times if they want to, and only as a result of the number of votes cast will a witness be promoted to an active, block producing, witness. The votes are weighted according to the token holdings of each PPY token holder at the time of voting.
+
+The best way to sell yourself to the Witness voting community is by creating you're own web page and publishing the URL in as many laces as possible. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. These links will help:
+
+Qualities that voters are going to be looking for include, experience, knowledge, commitment, responsibility and community participation.
+
+Peerplays official Telegram channel  - [https://t.me/Peerplays](https://t.me/Peerplays)
+
+Peerplays Witness Telegram channel - [https://t.me/PeerplaysWitness](https://t.me/PeerplaysWitness)
+
+Facebook - [https://www.facebook.com/PeerPlays/](https://www.facebook.com/PeerPlays/)
+
 
 
 ### **Getting started**
