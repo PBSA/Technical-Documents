@@ -90,20 +90,15 @@ A **Witness node,** as the name implies, is a node run by a Witness. Each Witnes
 
 Every Witness is required to run nodes on both Public Mainnet and Public Testnet environments.
 
-**So depending on whether as a witness you run a seed node or not, you'll need to set up and operate between six and eight servers.**
+So the minimum node requirements are a Witness node and BOS node for both Testnet and Mainnet. If you want to run a Seed Node and API Node as well then the number of required servers could be as many as eight.
 
 #### **System Requirements**
 
-**have the qualities to make a great witness: Commitment, accountability, knowledge and reliability.**  
-
-
-**The job of Peerplays Witness is a paid position, but there aren’t any job interviews or resumés. Instead, to become a Witness you need to convince the Peerplays community \(PPY token holders\) to vote for you. This is often achieved by Witnesses posting information about how they intend to perform their duties as a Witness, and other ways in which they’ll bring value to Peerplays.**
-
-**The Peerplays core wallet makes it easy for PPY holders to vote for witnesses. Anyone who holds PPY can do this by adding the name of the witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain. Every few hours, the Peerplays blockchain tallies all the votes from all PPY token holders, and if you are elected as a witness then the blockchain will pay you in PPY tokens for every block that you validate.**
+\*\*\*\*
 
   
 ****
 
-[**Bookie**](http://bookie.exchange/)**, the decentralized sports betting exchange app for the Peerplays blockchain, requires that Peerplays Witnesses also act as decentralized oracles, which means that the Witnesses are required to populate the Peerplays blockchain with real-world sporting data. For example, league and competition data, event data, betting market data for different sports \(soccer, basketball, football, tennis, etc.\), along with the final scores of each game. Smart contracts then use this data to grade and settle bets placed by users on Bookie.**  
+  
 
 
