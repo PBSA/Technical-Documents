@@ -54,9 +54,9 @@ As Peerplays Witness pay is dependant on the value of the PPY it can vary a lot.
 
 ### How to Get Votes
 
-As only active Witnesses get paid it's very important to be voted in, and to do this you must sell yourself to the PPY token holders. Every PPY token holder can vote for a witness, multiple times if they want to, and only as a result of the number of votes cast will a witness be promoted to an active, block producing, witness. The votes are weighted according to the token holdings of each PPY token holder at the time of voting.
+As only active Witnesses get paid it's very important to be voted in, and to do this you must sell yourself to the PPY token holders. Every PPY token holder can vote for a Witness, multiple times if they want to, and only as a result of the number of votes cast will a Witness be promoted to an active, block producing, Witness. The votes are weighted according to the token holdings of each PPY token holder at the time of voting.
 
-The Peerplays core wallet makes it easy for PPY token holders to vote for Witnesses. Anyone who holds PPY can do this by adding the name of the witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain.
+The Peerplays core wallet makes it easy for PPY token holders to vote for Witnesses. Anyone who holds PPY can do this by adding the name of the Witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain.
 
 To sell yourself to the Witness voting community you'll need a blog with  information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays.The best way to do this is by creating your own web page and publishing the URL in as many places as possible. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. 
 
@@ -86,7 +86,7 @@ A **Witness node,** as the name implies, is a node run by a Witness. Each Witnes
 
 **Seed nodes** are nodes that accept incoming P2P connections. They are the first nodes contacted by a freshly started node; the entry point into the network. Once a node has entered the network it will receive additional node addresses from its peers, so all nodes can connect to each other. A seed node can also be an API node. Seed nodes are not mandatory, but highly recommended.
 
-**BOS nodes** are required to operate the Bookie Oracle System and ensure the accuracy and decentralization of the data fed into the BookiePro application.
+**BOS nodes** are required to operate the Bookie Oracle System and ensure the accuracy and decentralization of the data fed into the BookiePro application. The BOS node must be run on a separate server to the Witness node.
 
 Every Witness is required to run nodes on both Public Mainnet and Public Testnet environments.
 
