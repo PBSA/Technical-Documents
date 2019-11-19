@@ -36,7 +36,7 @@ BookiePro is the world’s first decentralized sports betting exchange applicati
 
 For the application to function Peerplays Witnesses must also act as decentralized oracles, which means that the Witnesses are required to populate the Peerplays blockchain with real-world sporting data. For example, league and competition data, event data, betting market data for different sports, along with the final scores of each game. It requires approval from a majority of Witnesses for any of this event data to be actioned. 
 
-This process is automated, but sometimes event data from different sources doesn’t agree and if no consensus can be made then it’s the duty of the Witnesses to manually intervene and make proposals to fix the data. Witnesses do this using the Manual Intervention Tool \(MINT\).
+This process is automated, but sometimes incident data from different sources doesn’t match and if no consensus can be made then it’s the duty of the Witnesses to manually intervene and make proposals to fix the data. Witnesses do this using the Manual Intervention Tool \(MINT\).
 
 Smart contracts then use this data to grade and settle bets placed by users on BookiePro.
 
