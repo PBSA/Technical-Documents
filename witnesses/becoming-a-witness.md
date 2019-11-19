@@ -58,7 +58,7 @@ As only active Witnesses get paid it's very important to be voted in, and to do 
 
 The Peerplays core wallet makes it easy for PPY token holders to vote for Witnesses. Anyone who holds PPY can do this by adding the name of the Witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain.
 
-To sell yourself to the Witness voting community you'll need a blog with  information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays.The best way to do this is by creating your own web page and publishing the URL in as many places as possible. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. 
+To sell yourself to the Witness voting community you'll need a blog with information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays.The best way to do this is by creating your own web page and publishing the URL in as many places as possible. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. 
 
 Qualities that voters are going to be looking for include, experience, knowledge, commitment, responsibility and community participation.
 
@@ -90,15 +90,19 @@ A **Witness node,** as the name implies, is a node run by a Witness. Each Witnes
 
 Every Witness is required to run nodes on both Public Mainnet and Public Testnet environments.
 
-So the minimum node requirements are a Witness node and BOS node for both Testnet and Mainnet. If you want to run a Seed Node and API Node as well then the number of required servers could be as many as eight.
+So the minimum node requirements are a Witness node and BOS node for both Testnet and Mainnet. If you also want to run a Seed Node and API Node then the number of required servers could be as many as eight.
 
 #### **System Requirements**
 
-\*\*\*\*
+Unlike mining Bitcoin, or other POW based tokens, the processing power at your disposal has no influence on how many blocks you'll produce, and consequently how much you'll be paid as a Witness.
 
-  
-****
+However, there are recommended requirements in terms of what hardware and software you should be running.
 
-  
+The following table shows what should be considered the minimum requirements for each server. This is based on requirements as of the time of writing, and is likely to change in the future.
+
+| CPU | Memory | Storage | Bandwidth | OS |
+| :--- | :--- | :--- | :--- | :--- |
+| 8 Cores | 64GB | 300GB SSD | 1Gbps | Ubuntu 18.04 |
+
 
 
