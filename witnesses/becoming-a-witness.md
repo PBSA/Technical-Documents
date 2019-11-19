@@ -11,7 +11,7 @@ Yes, anybody can become a Peerplays Witness, but first ask yourself how you woul
 3. What qualities would you bring to the Peerplays community?
 4. How much time are you willing to set aside to fulfil your obligations?
 5. What do you know about the Bookie Oracle System \(BOS\)?
-6. Do you have any experience as a server administrator?
+6. Do you have any experience as a server administrator and using a Command Line Interface \(CLI\)?
 7. Do you understand the costs associated with buying and running the necessary hardware to be a witness node operator?
 
 If you can answer these questions then you’re on your way to becoming a Peerplays Witness.
@@ -98,11 +98,15 @@ Unlike mining Bitcoin, or other POW based tokens, the processing power at your d
 
 However, there are recommended requirements in terms of what hardware and software you should be running.
 
-The following table shows what should be considered the minimum requirements for each server. This is based on requirements as of the time of writing, and is likely to change in the future.
+The following table shows what should be considered the minimum requirements for each server. 
 
 | CPU | Memory | Storage | Bandwidth | OS |
 | :--- | :--- | :--- | :--- | :--- |
 | 8 Cores | 64GB | 300GB SSD | 1Gbps | Ubuntu 18.04 |
 
+These requirements are as of the time of writing, so consider deploying a server with specs slightly higher than the ones listed above in order to "future proof" your server in case the minimum requirements grow in the future.
 
+Once you've procured your servers then it's time to get set them up.
+
+For instructions on setting up Witness, Seed and BOS nodes go to 
 
