@@ -46,11 +46,11 @@ Blocks are produced every three seconds by Witnesses who take turns signing and 
 
 As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated. The payment for each signed block is 0.0075PPY.
 
-With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. But, keep in mind that since each block signed is equivalent to .0075 PPY there is total amount of 216 PPYs a day, split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses, of a theoretical maximum of 1,001. 
+With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. But, keep in mind that since each block signed is equivalent to .0075 PPY there is total amount of 216 PPYs a day to be split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses, of a theoretical maximum of 1,001. 
 
 Also, keep in mind that you have to either purchase, or rent, a server dedicated to Peerplays, and if you are not an active witness \(voted in\) then you'll earn nothing.
 
-So we see Peerplays Witness pay is dependant on the value of the PPY and as such can vary a lot. Not only can being a Peerplays Witness be profitable but as the commitment and reliability of Witnesses has a direct impact on the value of the PPY, in this respect a Peerplays Witness plays a role in what their 'salary' will be.
+As Peerplays Witness pay is dependant on the value of the PPY it can vary a lot. Not only can being a Peerplays Witness be profitable but as the commitment and reliability of Witnesses has a direct impact on the value of the PPY, in this respect a Peerplays Witness plays a role in what their 'salary' will be.
 
 ### How to Get Votes
 
@@ -58,7 +58,7 @@ As only active Witnesses get paid it's very important to be voted in, and to do 
 
 The Peerplays core wallet makes it easy for PPY token holders to vote for Witnesses. Anyone who holds PPY can do this by adding the name of the witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain.
 
-To sell yourself to the Witness voting community you'll need a blog with  information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays.The best way to do this by creating you're own web page and publishing the URL in as many places as possible. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. 
+To sell yourself to the Witness voting community you'll need a blog with  information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays.The best way to do this is by creating your own web page and publishing the URL in as many places as possible. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. 
 
 Qualities that voters are going to be looking for include, experience, knowledge, commitment, responsibility and community participation.
 
