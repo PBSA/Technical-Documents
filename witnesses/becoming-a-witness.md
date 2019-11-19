@@ -108,5 +108,5 @@ These requirements are as of the time of writing, so consider deploying a server
 
 Once you've procured your servers then it's time to get set them up.
 
-For instructions on setting up Witness, Seed and BOS nodes go to 
+For instructions on setting up Witness, Seed and BOS nodes go to Joining the Peerplays Blockchain \[Hyperlink goes here\]
 
