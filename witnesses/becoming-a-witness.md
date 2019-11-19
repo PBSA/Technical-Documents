@@ -46,7 +46,7 @@ Blocks are produced every three seconds by Witnesses who take turns signing and 
 
 As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated. The payment for each signed block is 0.0075PPY.
 
-With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. But, keep in mind that since each block signed is equivalent to .0075 PPY there is total amount of 216 PPY a day to be split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses, of a theoretical maximum of 1,001. 
+With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. Since each block signed is equivalent to .0075 PPY there is total amount of 216 PPY a day to be split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses, of a theoretical maximum of 1,001. 
 
 Also, keep in mind that you have to either purchase, or rent, a server dedicated to Peerplays, and if you are not an active witness \(voted in\) then you'll earn nothing.
 
