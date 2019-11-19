@@ -90,7 +90,7 @@ A **Witness node,** as the name implies, is a node run by a Witness. Each Witnes
 
 Every Witness is required to run nodes on both Public Mainnet and Public Testnet environments.
 
-So the minimum node requirements are a Witness node and BOS node for both Testnet and Mainnet. If you also want to run a Seed Node and API Node then the number of required servers could be as many as eight.
+So the minimum node requirements are a Witness node and BOS node for both Testnet and Mainnet. If you also run a Seed Node and API Node then the number of required servers could be as many as eight.
 
 #### **System Requirements**
 
