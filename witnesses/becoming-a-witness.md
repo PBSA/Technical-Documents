@@ -14,7 +14,7 @@ Yes, anybody can become a Peerplays Witness, but first ask yourself how you woul
 6. Do you have any experience as a server administrator?
 7. Do you understand the costs associated with buying and running the necessary hardware to be a witness node operator?
 
-If you can answer these questions well then you’re on your way to becoming a Peerplays Witness.
+If you can answer these questions then you’re on your way to becoming a Peerplays Witness.
 
 ### **The duties of a Peerplays Witness**
 
