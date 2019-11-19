@@ -18,13 +18,13 @@ If you can answer these questions then you’re on your way to becoming a Peerpl
 
 ### **The duties of a Peerplays Witness**
 
-The primary duty of Peerplays Witnesses is to bundle transactions into blocks and sign them with their signing key. Witnesses keep the blockchain alive by producing one block every three seconds. For example, if there were 20 Witnesses, each would produce one block every minute.
+The primary duty of Peerplays Witnesses is to bundle transactions into blocks and sign them with their signing key. Witnesses keep the blockchain alive by producing one block every three seconds. For example, if there are 20 Witnesses, each would produce one block every minute.
 
 Other duties include:
 
 * Operate a full node with enough bandwidth to support current network activities. 
 * Operate a test version of the blockchain that functions as a public testing environment.
-* Sometimes operate an API seed node to support end user applications.
+* Optionally operate an API seed node to support end user applications.
 * Integrate, or reject, any changes to the blockchain software that are published. 
 * Keep a block producing node running 24/7 every day of the year!
 
@@ -34,7 +34,7 @@ And one unique duty of a Peerplays Witness :
 
 BookiePro is the world’s first decentralized sports betting exchange application. 
 
-For the app to operate Peerplays Witnesses must also act as decentralized oracles, which means that the Witnesses are required to populate the Peerplays blockchain with real-world sporting data. For example, league and competition data, event data, betting market data for different sports, along with the final scores of each game. It requires approval from a majority of Witnesses for any of this event data to be actioned. 
+For the application to function Peerplays Witnesses must also act as decentralized oracles, which means that the Witnesses are required to populate the Peerplays blockchain with real-world sporting data. For example, league and competition data, event data, betting market data for different sports, along with the final scores of each game. It requires approval from a majority of Witnesses for any of this event data to be actioned. 
 
 This process is automated, but sometimes event data from different sources doesn’t agree and if no consensus can be made then it’s the duty of the Witnesses to manually intervene and make proposals to fix the data. Witnesses do this using the Manual Intervention Tool \(MINT\).
 
@@ -44,7 +44,7 @@ Smart contracts then use this data to grade and settle bets placed by users on B
 
 Blocks are produced every three seconds by Witnesses who take turns signing and validating the blockchain in variable rounds.
 
-As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated. The payment for each signed block at present is 0.0075PPY.
+As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated. The payment for each signed block is 0.0075PPY.
 
 With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. But, keep in mind that since each block signed is equivalent to .0075 PPY there is total amount of 216 PPYs a day, split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses, of a theoretical maximum of 1,001. 
 
