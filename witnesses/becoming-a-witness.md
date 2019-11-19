@@ -80,7 +80,7 @@ All nodes keep updating an internal database by applying the transactions as the
 
 A **Witness node,** as the name implies, is a node run by a Witness. Each Witness node validates all blocks and transactions it receives. The nodes of elected Witnesses take turns in bundling new transactions into blocks and broadcasting them to the network.
 
-**API nodes** \(nodes with an open RPC port\) provide network services to client applications. They usually have account transaction histories accessible though API calls, but can vary in the amount of available history. 
+**API nodes** \(nodes with an open RPC port\) provide network services to client applications. They usually have account transaction histories accessible through API calls, but can vary in the amount of available history. 
 
 **Full nodes** are API nodes with a complete transaction history of all accounts.
 
