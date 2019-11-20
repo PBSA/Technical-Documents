@@ -96,9 +96,9 @@ So the minimum node requirements are a Witness node and BOS node for both Testne
 
 Unlike mining Bitcoin, or other POW based blockchains, the processing power at your disposal has no influence on how many blocks you'll produce, and consequently how much you'll be paid as a Witness.
 
-However, there are recommended requirements in terms of what hardware and software you should be running.
+However, there are requirements in terms of what hardware and software you should be running.
 
-The following table shows what should be considered the minimum requirements for each server. 
+The following table shows the minimum requirements for each server. 
 
 | CPU | Memory | Storage | Bandwidth | OS |
 | :--- | :--- | :--- | :--- | :--- |
