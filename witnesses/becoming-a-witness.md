@@ -6,7 +6,7 @@ Congratulations! You’ve taken the first step towards becoming a Peerplays Witn
 
 Yes, anybody can become a Peerplays Witness and it can be rewarding professionally, personally and financially.
 
-In this document we'll go through the first steps to becoming a Witness; your duties, node and server requirements, getting voted in and becoming a Bookie oracle.
+In this document we'll go through the first steps to becoming a Witness: your duties, node and server requirements, getting voted in and becoming a Bookie oracle.
 
 ### **The duties of a Peerplays Witness**
 
@@ -48,7 +48,7 @@ As Peerplays Witness pay is dependant on the value of the PPY it can vary a lot.
 
 ### How to Get Votes
 
-As only active Witnesses get paid it's very important to be voted in, and to do this you must sell yourself to the PPY token holders. Every PPY token holder can vote for a Witness, multiple times if they want to, and only as a result of the number of votes cast will a Witness be promoted to an active, block producing, Witness. The votes are weighted according to the token holdings of each PPY token holder at the time of voting.
+As only active \(block producing\) Witnesses get paid it's very important to be voted in; to do this you must sell yourself to the PPY token holders. Every PPY token holder can vote for a Witness, multiple times if they want to, and only as a result of the number of votes cast will a Witness be promoted to an active, block producing, Witness. The votes are weighted according to the token holdings of each PPY token holder at the time of voting.
 
 The Peerplays core wallet makes it easy for PPY token holders to vote for Witnesses. Anyone who holds PPY can do this by adding the name of the Witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain.
 
