@@ -52,7 +52,7 @@ As only active \(block producing\) Witnesses get paid it's very important to be 
 
 The Peerplays core wallet makes it easy for PPY token holders to vote for Witnesses. Anyone who holds PPY can do this by adding the name of the Witness to the voting tab. The wallet then sends the information about their votes directly to the Peerplays blockchain.
 
-To sell yourself to the Witness voting community you'll need a blog with information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays.The best way to do this is by creating your own web page and publishing the URL in as many places as possible, and make it simple to find. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. 
+To sell yourself to the Witness voting community you'll need a blog with information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays. The best way to do this is by creating your own web page and publishing the URL in as many places as possible, and make it simple to find. Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. 
 
 Qualities that voters are going to be looking for include, experience, knowledge, commitment, responsibility and community participation.
 
