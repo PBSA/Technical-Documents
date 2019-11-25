@@ -26,7 +26,7 @@ And one unique duty of a Peerplays Witness :
 
 BookiePro is the world’s first decentralized sports betting exchange application. 
 
-For the application to function Peerplays Witnesses must also act as decentralized oracles, which means that the Witnesses are required to populate the Peerplays blockchain with real-world sporting data. For example, league and competition data, event data, betting market data for different sports, along with the final scores of each game. It requires approval from a majority of Witnesses for any of this event data to be actioned. 
+For the application to function Peerplays Witnesses must also act as decentralized oracles, which means that the Witnesses are required to populate the Peerplays blockchain with real-world sporting data. For example, league and competition data, event data, betting market data for different sports, along with the final scores of each game. It requires consensus from a majority of Witnesses for any of this event data to be approved. 
 
 This process is automated, but sometimes incident data from different sources doesn’t match and if no consensus can be made then it’s the duty of the Witnesses to manually intervene and make proposals to fix the data. Witnesses do this using the Manual Intervention Tool \(MINT\).
 
