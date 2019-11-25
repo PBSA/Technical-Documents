@@ -102,7 +102,7 @@ The following table shows the minimum requirements for each server.
 
 These requirements are as of the time of writing, so consider deploying a server with specs slightly higher than the ones listed above in order to "future proof" your server in case the minimum requirements grow in the future.
 
-Once you've procured your servers then it's time to get set them up.
+Once you've procured your servers then it's time to set them up.
 
 Information on downloading and installing the code needed to set up your severs, and operating a witness node, can be found here:
 
