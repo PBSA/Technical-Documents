@@ -4,17 +4,9 @@ Congratulations! You’ve taken the first step towards becoming a Peerplays Witn
 
 ### **Can anyone be a Peerplays Witness?**
 
-Yes, anybody can become a Peerplays Witness, but first ask yourself how you would answer the following questions:
+Yes, anybody can become a Peerplays Witness and it can be rewarding professionally, personally and financially.
 
-1. Explain the role of a Peerplays Witness. 
-2. Why do you want to be a Witness?
-3. What qualities would you bring to the Peerplays community?
-4. How much time are you willing to set aside to fulfil your obligations?
-5. What do you know about the Bookie Oracle System \(BOS\)?
-6. Do you have any experience as a server administrator and using a Command Line Interface \(CLI\)?
-7. Do you understand the costs associated with buying and running the necessary hardware to be a witness node operator?
-
-If you can answer these questions then you’re on your way to becoming a Peerplays Witness.
+In this document we'll go through the first steps to becoming a Witness; your duties, node and server requirements, getting voted in and becoming a Bookie oracle.
 
 ### **The duties of a Peerplays Witness**
 
@@ -40,15 +32,17 @@ This process is automated, but sometimes incident data from different sources do
 
 Smart contracts then use this data to grade and settle bets placed by users on BookiePro.
 
+For more information on the Bookie Oracle System, and how to install it, go to:
+
+[https://bos-auto.readthedocs.io/en/latest/](https://bos-auto.readthedocs.io/en/latest/)
+
 ### Being a Peerplays Witness is a Paid Job
 
 Blocks are produced every three seconds by Witnesses who take turns signing and validating the blockchain in variable rounds.
 
-As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated. The payment for each signed block is 0.0075PPY.
+As a Peerplays Witnesses you are paid for this duty by the blockchain itself which releases new PPY tokens from the reserve pool, then issues them to the signing Witness after each block is validated. 
 
-With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. Since each block signed is equivalent to .0075 PPY there is total amount of 216 PPY a day to be split equally among every active witness; at the time of writing Peerplays had 13 active Witnesses.
-
-Also, keep in mind that you have to either purchase, or rent, a server dedicated to Peerplays, and if you are not an active witness \(voted in\) then you'll earn nothing.
+With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. 
 
 As Peerplays Witness pay is dependant on the value of the PPY it can vary a lot. Not only can being a Peerplays Witness be profitable but as the commitment and reliability of Witnesses has a direct impact on the value of the PPY, in this respect a Peerplays Witness plays a role in what their 'salary' will be.
 
@@ -98,7 +92,7 @@ Unlike mining Bitcoin, or other POW based blockchains, the processing power at y
 
 However, there are requirements in terms of what hardware and software you should be running.
 
-The following table shows what should be considered the minimum requirements for each server. 
+The following table shows the minimum requirements for each server. 
 
 | CPU | Memory | Storage | Bandwidth | OS |
 | :--- | :--- | :--- | :--- | :--- |
