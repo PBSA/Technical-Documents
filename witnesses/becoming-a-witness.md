@@ -2,13 +2,13 @@
 
 Congratulations! You’ve taken the first step towards becoming a Peerplays Witness.
 
-### **Can anyone be a Peerplays Witness?**
+### **Can Anyone be a Peerplays Witness?**
 
 Yes, anybody can become a Peerplays Witness and it can be rewarding professionally, personally and financially.
 
 In this document we'll go through the first steps to becoming a Witness: your duties, node and server requirements, getting voted in and becoming a Bookie oracle.
 
-### **The duties of a Peerplays Witness**
+### **The Duties of a Peerplays Witness**
 
 The primary duty of Peerplays Witnesses is to bundle transactions into blocks and sign them with their signing key. Witnesses keep the blockchain alive by producing one block every three seconds. For example, if there are 20 Witnesses, each would produce one block every minute.
 
