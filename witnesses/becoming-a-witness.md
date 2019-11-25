@@ -44,7 +44,7 @@ As a Peerplays Witnesses you are paid for this duty by the blockchain itself whi
 
 With 20 blocks being signed every minute this means 28,800 blocks a day, split evenly between the number of active Witnesses. 
 
-As Peerplays Witness pay is dependant on the value of the PPY it can vary a lot. Not only is being a Peerplays Witness profitable but as the commitment and reliability of Witnesses has a direct impact on the value of the PPY, as a Peerplays Witness you'll play a role in in setting your own 'salary'.
+As Peerplays Witness pay is dependant on the value of the PPY it can vary a lot. Not only is being a Peerplays Witness profitable, but as the commitment and reliability of Witnesses has a direct impact on the value of the PPY, as a Peerplays Witness you'll play a role in setting your own 'salary'.
 
 ### How to Get Votes
 
