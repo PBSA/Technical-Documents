@@ -108,6 +108,10 @@ Information on downloading and installing the code needed to set up your severs,
 
 {% embed url="https://github.com/peerplays-network/peerplays/blob/master/README.md" %}
 
+You're now ready to take the next step. setting up your own Witness node.
+
+{% page-ref page="setting-up-a-witness-node./" %}
+
 
 
 
