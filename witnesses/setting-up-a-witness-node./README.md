@@ -2,6 +2,10 @@
 
 This is an introduction to get new Witnesses up to speed on the Peerplays blockchain. It is intended for Witnesses planning to join a live, already deployed, blockchain.
 
+The following repository should be used in support of this introduction:
+
+[https://github.com/peerplays-network/peerplays](https://github.com/peerplays-network/peerplays)
+
 ## Building on Ubuntu 18.04 LTS and Installation Instructions
 
 The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS:

@@ -34,7 +34,7 @@ Smart contracts then use this data to grade and settle bets placed by users on B
 
 For more information on the Bookie Oracle System, and how to install it, go to:
 
-[https://bos-auto.readthedocs.io/en/latest/](https://bos-auto.readthedocs.io/en/latest/)
+https://bos-auto.readthedocs.io/en/latest/
 
 ### Being a Peerplays Witness is a Paid Job
 
@@ -104,11 +104,7 @@ These requirements are as of the time of writing, so consider deploying a server
 
 Once you've procured your servers then it's time to set them up.
 
-Information on downloading and installing the code needed to set up your severs, and operating a witness node, can be found here:
-
-{% embed url="https://github.com/peerplays-network/peerplays/blob/master/README.md" %}
-
-You're now ready to take the next step. setting up your own Witness node.
+You're now ready to take the next step, setting up your own Witness node.
 
 {% page-ref page="setting-up-a-witness-node./" %}
 
