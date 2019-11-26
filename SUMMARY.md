@@ -18,7 +18,7 @@
 
 * [Data Proxies Page 1](data-proxies/data-proxies-page-1.md)
 
-## Peerplays Wallet
+## CLI Wallet <a id="peerplays-wallet"></a>
 
 * [CLI Wallet Setup](peerplays-wallet/cli-wallet-setup.md)
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)

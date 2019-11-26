@@ -157,45 +157,55 @@ To import your keys, generated in the previous step, into your CLI wallet do the
 
 1. Use the second value in the array for the private key.
 2. Make sure your username is in quotes. 
-3. Import the key using the following command \(substitute`"your-witness-username"`
+3. Import the key using the following command 
 
-   with your username\):
+{% hint style="warning" %}
+Substitute `your-witness-username` with your own username.
+{% endhint %}
 
 ```text
 import_key "your_witness_username" xxxx
 ```
 
-### Upgrade Your Account to lifetime membership
+### Upgrade Your Account to Lifetime Membership
 
 ```text
 upgrade_account your_witness_username true
 ```
 
-### Create your witness \(substitute the url for your witness information\)
+### Create Yourself as a Witness
 
-* place quotes around url
+Make sure your URL is in quotes. 
+
+{% hint style="warning" %}
+Substitute `"url"` for your witness URL.
+{% endhint %}
 
 ```text
 create_witness your_witness_username "url" true
 ```
 
-**Be sure to take note of the block\_signing\_key**
+This will return your `block_signing_key`
 
-IMPORTANT \(issue below command using block\_signing\_key just obtained\)
+{% hint style="danger" %}
+Be sure to take note of  your `block_signing_key`
+{% endhint %}
+
+Run the following command using your `block_signing_key` from the previous step:
 
 ```text
 get_private_key block_signing_key
 ```
 
-Compare this result to
+Compare this result to the three pairs of keys generated when you run the following command:
 
 ```text
 dump_private_keys
 ```
 
-You should see 3 pairs of keys. One of the pairs should match your block\_signing\_key and this is the one you will use in the next step!
+One of the pairs should match your `block_signing_key` , this is the one you'll use for other operations.
 
-### Get your witness id
+### Get Your Witness ID
 
 ```text
 get_witness username (note the "id" for your config)
