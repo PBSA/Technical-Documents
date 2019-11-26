@@ -203,7 +203,7 @@ Compare this result to the three pairs of keys generated when you run the follow
 dump_private_keys
 ```
 
-One of the pairs should match your `block_signing_key` , this is the one you'll use for other operations.
+One of the pairs should match your `block_signing_key` , this is the one you'll use for future operations.
 
 ### Get Your Witness ID
 
