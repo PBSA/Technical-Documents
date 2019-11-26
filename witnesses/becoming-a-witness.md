@@ -34,7 +34,9 @@ Smart contracts then use this data to grade and settle bets placed by users on B
 
 For more information on the Bookie Oracle System, and how to install it, go to:
 
-https://bos-auto.readthedocs.io/en/latest/
+{% embed url="https://bos-auto.readthedocs.io/en/latest/" %}
+
+
 
 ### Being a Peerplays Witness is a Paid Job
 
@@ -54,17 +56,23 @@ The Peerplays core wallet makes it easy for PPY token holders to vote for Witnes
 
 To sell yourself to the Witness voting community you'll need a web site and blog with information about how you intend to perform your duties as a Witness, and other ways in which you'll bring value to Peerplays. The best way to do this is by creating your own web page, publish the URL in as many places as possible, and make it simple to find.
 
-A good place to start would be by checking out the web pages for existing witnesses, you can find that information here: [https://peerplaysblockchain.info/explorer/witnesses/](https://peerplaysblockchain.info/explorer/witnesses/)
+A good place to start would be by checking out the web pages for existing witnesses, you can find that information here:
+
+{% embed url="https://peerplaysblockchain.info/explorer/witnesses/" %}
 
 Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. Qualities that voters are going to be looking for include, experience, knowledge, commitment, responsibility and community participation.
 
+{% hint style="info" %}
 Some useful links:
+{% endhint %}
 
-Peerplays official Telegram channel  - [https://t.me/Peerplays](https://t.me/Peerplays)
+Peerplays official Telegram channel:
 
-Peerplays Witness Telegram channel - [https://t.me/PeerplaysWitness](https://t.me/PeerplaysWitness)
+{% embed url="https://t.me/Peerplays" %}
 
-Facebook - [https://www.facebook.com/PeerPlays/](https://www.facebook.com/PeerPlays/)
+{% embed url="https://t.me/PeerplaysWitness" %}
+
+{% embed url="https://www.facebook.com/PeerPlays/" %}
 
 ### **Getting started**
 

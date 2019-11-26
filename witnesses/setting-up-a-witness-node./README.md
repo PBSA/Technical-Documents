@@ -4,7 +4,7 @@ This is an introduction to get new Witnesses up to speed on the Peerplays blockc
 
 The following repository should be used in support of this document:
 
-[https://github.com/peerplays-network/peerplays](https://github.com/peerplays-network/peerplays)
+{% embed url="https://github.com/peerplays-network/peerplays" %}
 
 ## Building on Ubuntu 18.04 LTS and Installation Instructions
 
@@ -86,8 +86,6 @@ make
 
 ## Starting A Peerplays Node
 
-For Ubuntu 14.04 LTS and up users, see [this](https://github.com/cryptonomex/graphene/wiki/build-ubuntu) and then proceed with:
-
 ```text
 git clone https://github.com/peerplays-network/peerplays.git
 cd peerplays
@@ -97,9 +95,11 @@ make
 ./programs/witness_node/witness_node
 ```
 
-Launching the Witness creates required directories. 
+Launching the Witness creates the required directories. 
 
-Next, **stop the Witness** **node** and continue.
+{% hint style="danger" %}
+Next stop the Witness node before continuing.
+{% endhint %}
 
 ```text
 $ vi witness_node_data_dir/config.ini
@@ -108,7 +108,9 @@ rpc-endpoint = 127.0.0.1:8090
 seed-node = 213.184.225.234:59500
 ```
 
-Start the Witness Node back up
+{% hint style="success" %}
+Start the Witness node back up.
+{% endhint %}
 
 ```text
 ./programs/witness_node/witness_node
@@ -116,7 +118,9 @@ Start the Witness Node back up
 
 ### Upgrading A Peerplays Node
 
-To minimize downtime of your peerplays node when upgrading, one upgrade idea was written in [this steemit article](https://steemit.com/peerplays/@joseph/peerplays-update-setting-a-backup-witness-server-switching-servers).
+To minimize downtime of your Peerplays node when upgrading, it's recommended to create a backup Witness server.
+
+{% page-ref page="creating-a-backup-server.md" %}
 
 ### BOS and MINT Setup
 
@@ -125,6 +129,8 @@ The Bookie Oracle System \(BOS\) and Manual Intervention Tool \(MINT\) need to b
 BOS / MINT repositories: [https://github.com/search?q=topic%3Abookie-oracle-software+org%3Apeerplays-network&type=Repositories](https://github.com/search?q=topic%3Abookie-oracle-software+org%3Apeerplays-network&type=Repositories)
 
 BOS set-up and installation guide: [https://bos-auto.readthedocs.io/en/develop/installation.html](https://bos-auto.readthedocs.io/en/develop/installation.html)
+
+{% page-ref page="bos-and-mint-setup.md" %}
 
 ### Wallet Setup
 
@@ -310,8 +316,6 @@ Check your logfile for entries
 ```text
 tail -f /var/log/peerplays.log
 ```
-
-### BOS and MINT Setup
 
 ### 
 
