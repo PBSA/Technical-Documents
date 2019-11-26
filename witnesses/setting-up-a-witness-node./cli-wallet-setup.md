@@ -146,7 +146,7 @@ vote_for_witness your_witness_account your_witness_account true true
 
 ### Ask to be Voted In
 
-The following document gives information on the Peerplays Witness voting process and advise on how to get voted in:
+The following document gives information on the Peerplays Witness voting process and advice on how to get voted in:
 
 {% page-ref page="../becoming-a-witness.md" %}
 
