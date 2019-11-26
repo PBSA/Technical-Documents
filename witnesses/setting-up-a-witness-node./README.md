@@ -207,11 +207,21 @@ One of the pairs should match your `block_signing_key` , this is the one you'll 
 
 ### Get Your Witness ID
 
+{% hint style="warning" %}
+Substitute `username` for you Witness username.
+{% endhint %}
+
 ```text
-get_witness username (note the "id" for your config)
+get_witness username 
 ```
 
-### Modify your witness\_node config.ini to include **your** witness id and private key pair.
+Take note of the `id` for the next step.
+
+### Modify Your Witness Node Configuration
+
+### witness\_node config.ini 
+
+### to include **your** witness id and private key pair.
 
 Comment out the existing private-key before adding yours
 
