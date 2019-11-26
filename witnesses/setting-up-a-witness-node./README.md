@@ -2,7 +2,7 @@
 
 This is an introduction to get new Witnesses up to speed on the Peerplays blockchain. It is intended for Witnesses planning to join a live, already deployed, blockchain.
 
-The following repository should be used in support of this introduction:
+The following repository should be used in support of this document:
 
 [https://github.com/peerplays-network/peerplays](https://github.com/peerplays-network/peerplays)
 
