@@ -148,11 +148,9 @@ vote_for_witness your_witness_account your_witness_account true true
 
 The following document gives information on the Peerplays Witness voting process and advise on how to get voted in:
 
-{% page-ref page="../witnesses/becoming-a-witness.md" %}
+{% page-ref page="../becoming-a-witness.md" %}
 
-
-
-Assuming you've received votes, you will start producing as a witness at the next maintenance interval \(once per hour\). You can check your votes with.
+Once you've received enough votes to become an active Witness you'll start producing blocks at the next maintenance interval \(once per hour\). You can check your votes with:
 
 ```text
 get_witness your_witness_account

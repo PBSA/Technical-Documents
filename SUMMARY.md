@@ -12,6 +12,7 @@
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
 * [Setting up a Witness node.](witnesses/setting-up-a-witness-node./README.md)
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node./creating-a-backup-server.md)
+  * [CLI Wallet Setup](witnesses/setting-up-a-witness-node./cli-wallet-setup.md)
   * [BOS and MINT Setup](witnesses/setting-up-a-witness-node./bos-and-mint-setup.md)
 
 ## Data Proxies
@@ -20,7 +21,6 @@
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
-* [CLI Wallet Setup](peerplays-wallet/cli-wallet-setup.md)
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
 
 ## User Guides

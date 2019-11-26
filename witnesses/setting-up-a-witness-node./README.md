@@ -1,6 +1,6 @@
 # Setting up a Witness node.
 
-This is an introduction to get new Witnesses up to speed on the Peerplays blockchain. It is intended for Witnesses planning to join a live, already deployed, blockchain.
+This is an introduction for new Witnesses to get up to speed on the Peerplays blockchain. It is intended for Witnesses planning to join a live, already deployed, blockchain.
 
 The following repository should be used in support of this document:
 
@@ -126,9 +126,7 @@ To minimize downtime of your Peerplays node when upgrading, it's recommended to 
 
 The next step is to set up the CLI Wallet.
 
-{% page-ref page="../../peerplays-wallet/cli-wallet-setup.md" %}
-
-### 
+{% page-ref page="cli-wallet-setup.md" %}
 
 ## BOS and MINT Setup
 
