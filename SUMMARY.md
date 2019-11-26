@@ -20,6 +20,7 @@
 
 ## Peerplays Wallet
 
+* [CLI Wallet Setup](peerplays-wallet/cli-wallet-setup.md)
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
 
 ## User Guides
