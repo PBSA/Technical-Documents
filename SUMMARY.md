@@ -10,7 +10,8 @@
 
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
-* [Setting up a Witness node.](witnesses/setting-up-a-witness-node..md)
+* [Setting up a Witness node.](witnesses/setting-up-a-witness-node./README.md)
+  * [BOS and MINT Setup](witnesses/setting-up-a-witness-node./bos-and-mint-setup.md)
 
 ## Data Proxies
 
