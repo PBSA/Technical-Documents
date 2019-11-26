@@ -1,14 +1,10 @@
 # Setting up a Witness node.
 
-
-
-### Intro for new developers and witnesses
-
-This is a quick introduction to get new developers and witnesses up to speed on Peerplays blockchain. It is intended for witnesses plannig to join a live, already deployed blockchain.
+This is an introduction to get new Witnesses up to speed on the Peerplays blockchain. It is intended for Witnesses planning to join a live, already deployed, blockchain.
 
 ## Building on Ubuntu 18.04 LTS and Installation Instructions
 
-The following dependencies were necessary for a clean install of Ubuntu 18.04 LTS:
+The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS:
 
 ```text
 sudo apt-get install gcc-5 g++-5 cmake make libbz2-dev\
@@ -32,7 +28,7 @@ cd boost_1_67_0/
 ./b2 install
 ```
 
-### Building Peerplays
+## Building Peerplays
 
 ```text
 cd $HOME/src
@@ -46,9 +42,7 @@ make -j$(nproc)
 make install # this can install the executable files under /usr/local
 ```
 
-docker build -t peerplays .
-
-### Docker image
+## Install Docker Image
 
 ```text
 # Install docker
@@ -75,9 +69,18 @@ docker start peerplays
 # EXPOSE 1776
 ```
 
-Rest of the instructions on starting the chain remains same.
+## Build Graphene
 
-### Starting A Peerplays Node
+```text
+cd ..
+git clone https://github.com/cryptonomex/graphene.git
+cd graphene
+git submodule update --init --recursive
+cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Debug .
+make 
+```
+
+## Starting A Peerplays Node
 
 For Ubuntu 14.04 LTS and up users, see [this](https://github.com/cryptonomex/graphene/wiki/build-ubuntu) and then proceed with:
 
@@ -90,7 +93,9 @@ make
 ./programs/witness_node/witness_node
 ```
 
-Launching the witness creates required directories. Next, **stop the witness** and continue.
+Launching the Witness creates required directories. 
+
+Next, **stop the Witness** **node** and continue.
 
 ```text
 $ vi witness_node_data_dir/config.ini
@@ -99,7 +104,7 @@ rpc-endpoint = 127.0.0.1:8090
 seed-node = 213.184.225.234:59500
 ```
 
-Start the witness back up
+Start the Witness Node back up
 
 ```text
 ./programs/witness_node/witness_node
