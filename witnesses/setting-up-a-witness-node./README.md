@@ -178,7 +178,7 @@ upgrade_account your_witness_username true
 Make sure your URL is in quotes. 
 
 {% hint style="warning" %}
-Substitute `"url"` for your witness URL.
+Substitute `"url"` with your witness URL.
 {% endhint %}
 
 ```text
@@ -208,7 +208,7 @@ One of the pairs should match your `block_signing_key` , this is the one you'll 
 ### Get Your Witness ID
 
 {% hint style="warning" %}
-Substitute `username` for you Witness username.
+Substitute `username` with you Witness username.
 {% endhint %}
 
 ```text
@@ -219,32 +219,48 @@ Take note of the `id` for the next step.
 
 ### Modify Your Witness Node Configuration
 
-### witness\_node config.ini 
+Next the Witness node configuration file, `witness_node_data_dir/config.ini`, needs to be modified to include your Witness ID \(from the previous step\), and your private key pair.
 
-### to include **your** witness id and private key pair.
+{% hint style="warning" %}
+Substitute `"your_witness_id"` with your Witness ID. 
 
-Comment out the existing private-key before adding yours
+Don't forget to enclose in quotes!
+{% endhint %}
+
+{% hint style="warning" %}
+Substitute `"block_signing_key"` with your block signing.
+
+Substitute `"private_key_for_your_block_signing_key"` with your private key.
+
+Don't forget to enclose in quotes!
+{% endhint %}
 
 ```text
 vim witness_node_data_dir/config.ini
 
-witness-id = "1.6.x"
+witness-id = "your_witness_id"
 private-key = ["block_signing_key","private_key_for_your_block_signing_key"]
 ```
 
-### start your witness back up
+### Start Your Witness Node
 
 ```text
 ./programs/witness_node/witness_node
 ```
 
-If it fails to start, try with these flags \(not for permanent use\)
+If your Witness node fails to start, try again with these flags:
+
+{% hint style="danger" %}
+Not for permanent use.
+{% endhint %}
 
 ```text
 ./programs/witness_node/witness_node --resync --replay
 ```
 
-### Vote for yourself
+### Vote For Yourself
+
+All Witnesses have to be voted, so start by voting for yourself!
 
 ```text
 vote_for_witness your_witness_account your_witness_account true true
