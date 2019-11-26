@@ -138,21 +138,19 @@ Not for permanent use.
 
 ### Vote For Yourself
 
-All Witnesses have to be voted, so start by voting for yourself!
+All Witnesses have to be voted in, so start by voting for yourself!
 
 ```text
 vote_for_witness your_witness_account your_witness_account true true
 ```
 
-### Ask to be voted in!
+### Ask to be Voted In
 
-Join @Peerplays Telegram group to find information about the witness group. [http://t.me/@peerplayswitness](http://t.me/@peerplayswitness)
+The following document gives information on the Peerplays Witness voting process and advise on how to get voted in:
 
-You will get logs that look like this:
+{% page-ref page="../witnesses/becoming-a-witness.md" %}
 
-```text
-2070264ms th_a       application.cpp:506           handle_block         ] Got block: #87913 time: 2017-05-27T16:34:30 latency: 264 ms from: bhuz-witness  irreversible: 87903 (-10)
-```
+
 
 Assuming you've received votes, you will start producing as a witness at the next maintenance interval \(once per hour\). You can check your votes with.
 
