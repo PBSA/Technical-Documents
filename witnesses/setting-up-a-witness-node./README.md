@@ -122,7 +122,7 @@ To minimize downtime of your Peerplays node when upgrading, it's recommended to 
 
 {% page-ref page="creating-a-backup-server.md" %}
 
-### Wallet Setup
+## CLI Wallet Setup
 
 In a separate terminal window, start the command-line wallet `cli_wallet`:
 
@@ -138,46 +138,34 @@ To set your initial password to `password` use:
 ```
 
 {% hint style="info" %}
-A list of CLI wallet commands is available here:
+A list of CLI wallet commands is available here:[ ](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)[CLI Wallet commands](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)
 {% endhint %}
 
-[ ](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)
+### Get Owner and Active Keys
 
-[CLI Wallet commands](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)
-
-
-
-
-
-
-
-
-
-### Testnet - "Beatrice"
-
-* chain-id - T.B.D.
-
-### Use the `get_private_key_from_password` command
-
-You will to generate owner and active keys
+To generate your owner and active keys use the `get_private_key_from_password` command:
 
 ```text
 get_private_key_from_password your_witness_username active the_key_you_received_from_the_faucet
 ```
 
-This will reveal an array for your active key `["PPYxxx", "xxxx"]`
+This will return an array, with your active key, in the form `["PPYxxx", "xxxx"].`
 
-### import\_keys into your cli\_wallet
+### Import Keys into your CLI Wallet
 
-* use the second value in the array returned from the previous step for the private key
-* be sure to wrap your username in quotes
-* import the key with this command
+To import your keys, generated in the previous step, into your CLI wallet do the following:
+
+1. Use the second value in the array for the private key.
+2. Make sure your username is in quotes. 
+3. Import the key using the following command \(substitute`"your-witness-username"`
+
+   with your username\):
 
 ```text
 import_key "your_witness_username" xxxx
 ```
 
-### Upgrade your account to lifetime membership
+### Upgrade Your Account to lifetime membership
 
 ```text
 upgrade_account your_witness_username true
