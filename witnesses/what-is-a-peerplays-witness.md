@@ -1,6 +1,6 @@
 # What is a Peerplays Witness?
 
-### **So what is a Peerplays Witness?**
+### **So What is a Peerplays Witness?**
 
 The short answer is, Witnesses run the Peerplays blockchain. The long answer is … well read on.
 

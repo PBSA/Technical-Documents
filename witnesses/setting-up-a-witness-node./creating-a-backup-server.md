@@ -8,7 +8,9 @@ Replace public/private keys with yours.**
 
 First: you created your witness node and now running it according to these directions:
 
-[https://github.com/PBSA/peerplays/blob/master/README.md](https://github.com/PBSA/peerplays/blob/master/README.md)
+{% page-ref page="./" %}
+
+
 
 If you followed the instructions you will end up with something like this in config.txt
 
