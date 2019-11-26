@@ -36,8 +36,6 @@ For more information on the Bookie Oracle System, and how to install it, go to:
 
 {% embed url="https://bos-auto.readthedocs.io/en/latest/" %}
 
-
-
 ### Being a Peerplays Witness is a Paid Job
 
 Blocks are produced every three seconds by Witnesses who take turns signing and validating the blockchain in variable rounds.
@@ -72,8 +70,6 @@ Peerplays official Telegram channel:
 
 {% embed url="https://t.me/PeerplaysWitness" %}
 
-{% embed url="https://www.facebook.com/PeerPlays/" %}
-
 ### **Getting started**
 
 We've already talked about the personal qualities a Witness needs to have, and the duties they're expected to perform, now we need to talk about nodes and hardware requirements.
@@ -102,7 +98,9 @@ Unlike mining Bitcoin, or other POW based blockchains, the processing power at y
 
 However, there are requirements in terms of what hardware and software you should be running.
 
+{% hint style="info" %}
 The following table shows the minimum requirements for each server. 
+{% endhint %}
 
 | CPU | Memory | Storage | Bandwidth | OS |
 | :--- | :--- | :--- | :--- | :--- |

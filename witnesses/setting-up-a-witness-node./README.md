@@ -122,32 +122,36 @@ To minimize downtime of your Peerplays node when upgrading, it's recommended to 
 
 {% page-ref page="creating-a-backup-server.md" %}
 
-### BOS and MINT Setup
-
-The Bookie Oracle System \(BOS\) and Manual Intervention Tool \(MINT\) need to be installed as part of a witness setup. They are both prerequisites for the operation of the BookiePro app.
-
-BOS / MINT repositories: [https://github.com/search?q=topic%3Abookie-oracle-software+org%3Apeerplays-network&type=Repositories](https://github.com/search?q=topic%3Abookie-oracle-software+org%3Apeerplays-network&type=Repositories)
-
-BOS set-up and installation guide: [https://bos-auto.readthedocs.io/en/develop/installation.html](https://bos-auto.readthedocs.io/en/develop/installation.html)
-
-{% page-ref page="bos-and-mint-setup.md" %}
-
 ### Wallet Setup
 
-Then, in a separate terminal window, start the command-line wallet `cli_wallet`:
+In a separate terminal window, start the command-line wallet `cli_wallet`:
 
 ```text
 ./programs/cli_wallet/cli_wallet
 ```
 
-To set your initial password to 'password' use:
+To set your initial password to `password` use:
 
 ```text
 >>> set_password password
 >>> unlock password
 ```
 
-A list of CLI wallet commands is available [here](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp).
+{% hint style="info" %}
+A list of CLI wallet commands is available here:
+{% endhint %}
+
+[ ](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)
+
+[CLI Wallet commands](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)
+
+
+
+
+
+
+
+
 
 ### Testnet - "Beatrice"
 
@@ -319,7 +323,11 @@ tail -f /var/log/peerplays.log
 
 ### 
 
-### Running specific tests
+### BOS and MINT Setup
 
-* `tests/chain_tests -t block_tests/name_of_test`
+{% page-ref page="bos-and-mint-setup.md" %}
+
+
+
+### 
 

@@ -18,6 +18,10 @@
 
 * [Data Proxies Page 1](data-proxies/data-proxies-page-1.md)
 
+## Peerplays Wallet
+
+* [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
+
 ## User Guides
 
 * [User Guides Page 1](user-guides/user-guides-page-1.md)
