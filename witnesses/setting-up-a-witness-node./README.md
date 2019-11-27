@@ -155,13 +155,9 @@ chmod 744 /home/ubuntu/peerplays/start.sh
 
 Step 4. Create this file: `sudo vi /etc/systemd/system/peerplays.service` 
 
-{% hint style="info" %}
-Note the path for start.sh. 
-
-If necccesary, change it to match where your start.sh file is if necessary
+{% hint style="warning" %}
+Note the path for `start.sh`, if necessary, change it to match where your `start.sh` file actually is.
 {% endhint %}
-
-Note the path for start.sh. Change it to match where your start.sh file is if necessary.
 
 ```text
 [Unit]
