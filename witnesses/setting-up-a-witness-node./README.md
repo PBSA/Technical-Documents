@@ -128,6 +128,71 @@ The next step is to set up the CLI Wallet.
 
 {% page-ref page="cli-wallet-setup.md" %}
 
+## systemd
+
+It's important for your witness to start when your system boots up. The filepaths here assume that you installed your witness into `/home/ubuntu/peerplays`
+
+Create a logfile to hold your stdout/err logging
+
+```text
+sudo touch /var/log/peerplays.log
+```
+
+Save this file in your peerplays directory. `vi /home/ubuntu/peerplays/start.sh`
+
+```text
+#!/bin/bash
+
+cd /home/ubuntu/peerplays
+./programs/witness_node/witness_node &> /var/log/peerplays.log
+```
+
+Make it executable
+
+```text
+chmod 744 /home/ubuntu/peerplays/start.sh
+```
+
+Create this file: `sudo vi /etc/systemd/system/peerplays.service` Note the path for start.sh. Change it to match where your start.sh file is if necessary.
+
+```text
+[Unit]
+Description=Peerplays Witness
+After=network.target
+
+[Service]
+ExecStart=/home/ubuntu/peerplays/start.sh
+
+[Install]
+WantedBy = multi-user.target
+```
+
+Enable the service
+
+```text
+sudo systemctl enable peerplays.service
+```
+
+Make sure you don't get any errors
+
+```text
+sudo systemctl status peerplays.service
+```
+
+Stop your witness if it is currently running from previous steps, then start it with the service.
+
+```text
+sudo systemctl start peerplays.service
+```
+
+Check your logfile for entries
+
+```text
+tail -f /var/log/peerplays.log
+```
+
+### 
+
 ## BOS and MINT Setup
 
 {% page-ref page="bos-and-mint-setup.md" %}
