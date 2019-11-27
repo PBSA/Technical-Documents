@@ -84,7 +84,7 @@ cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Debug .
 make 
 ```
 
-## Starting A Peerplays Node
+## Starting A Peerplays Witness Node
 
 ```text
 git clone https://github.com/peerplays-network/peerplays.git
@@ -116,9 +116,9 @@ Start the Witness node back up.
 ./programs/witness_node/witness_node
 ```
 
-### Upgrading A Peerplays Node
+### Upgrading A Peerplays Witness Node
 
-To minimize downtime of your Peerplays node when upgrading, it's recommended to create a backup Witness server.
+To minimize downtime of your Peerplays Witness node when upgrading, it's recommended to create a backup Witness server.
 
 {% page-ref page="creating-a-backup-server.md" %}
 
@@ -128,17 +128,17 @@ The next step is to set up the CLI Wallet.
 
 {% page-ref page="cli-wallet-setup.md" %}
 
-## systemd
+## Auto-Starting the Witness Node
 
-It's important for your witness to start when your system boots up. The filepaths here assume that you installed your witness into `/home/ubuntu/peerplays`
+It's important for your Witness node to start when your system boots up. The `filepaths` here assume that you installed your witness into `/home/ubuntu/peerplays`
 
-Create a logfile to hold your stdout/err logging
+Step 1. Create a log file to hold your `stdout/err` logging
 
 ```text
 sudo touch /var/log/peerplays.log
 ```
 
-Save this file in your peerplays directory. `vi /home/ubuntu/peerplays/start.sh`
+Step 2. Save this file in your Peerplays directory. `vi /home/ubuntu/peerplays/start.sh`
 
 ```text
 #!/bin/bash
@@ -147,13 +147,21 @@ cd /home/ubuntu/peerplays
 ./programs/witness_node/witness_node &> /var/log/peerplays.log
 ```
 
-Make it executable
+Step 3. Make it executable
 
 ```text
 chmod 744 /home/ubuntu/peerplays/start.sh
 ```
 
-Create this file: `sudo vi /etc/systemd/system/peerplays.service` Note the path for start.sh. Change it to match where your start.sh file is if necessary.
+Step 4. Create this file: `sudo vi /etc/systemd/system/peerplays.service` 
+
+{% hint style="info" %}
+Note the path for start.sh. 
+
+If necccesary, change it to match where your start.sh file is if necessary
+{% endhint %}
+
+Note the path for start.sh. Change it to match where your start.sh file is if necessary.
 
 ```text
 [Unit]
