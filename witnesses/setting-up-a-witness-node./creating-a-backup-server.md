@@ -4,8 +4,6 @@ Step 1: You created your witness node and now running it according to these dire
 
 {% page-ref page="./" %}
 
-
-
 If you followed the instructions you will end up with something like this in config.txt
 
 ```text
@@ -15,30 +13,25 @@ private-key = ["PPY7ZBgUduxjAsk5zXLeZX8skTHAjqQAyu6NnoSDKHs2Utm5XsDLR","private-
 
 and you will be signing blocks with that key.
 
-Second: you will compile another node on server2 following the same instructions like before, only this time, you generate a new witness key using the command  
-" suggest\_brain\_key "  
-lets say the new public key was  
+Step 2: Compile another node on server2 following the same instructions as before, only this time, you generate a new witness key using the command `suggest_brain_key`.  
+For example, lets say the new public key was  
 " PPY5tPcG5AX6YFYsBR739JNxFzmDWUgrw6BZFBxfKRsTKAx4QiA76 "
 
-your config.txt on server2 should have this:
+Then your `config.txt` on server2 should have this:
 
 ```text
 witness-id = "1.6.41"
 private-key = ["PPY5tPcG5AX6YFYsBR739JNxFzmDWUgrw6BZFBxfKRsTKAx4QiA76","private-key"]
 ```
 
-When you run the node on server2 you will see this message:  
-  
-
+When you run the node on server2 you will see this message:
 
 ```text
 [block_production_loo ] Not producing block because I don't have the private key for 
 PPY7ZBgUduxjAsk5zXLeZX8skTHAjqQAyu6NnoSDKHs2Utm5XsDLR
-```
 
-  
-  
-This is normal because we did not run the update\_witness command yet.
+This is normal because we did not run the update_witness command yet.
+```
 
 Now let's say you need to update server1 when the code on github is updated
 
