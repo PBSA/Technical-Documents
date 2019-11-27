@@ -171,25 +171,27 @@ ExecStart=/home/ubuntu/peerplays/start.sh
 WantedBy = multi-user.target
 ```
 
-Enable the service
+Step 5. Enable the service
 
 ```text
 sudo systemctl enable peerplays.service
 ```
 
-Make sure you don't get any errors
+{% hint style="danger" %}
+Make sure you don't get any errors.
+{% endhint %}
 
 ```text
 sudo systemctl status peerplays.service
 ```
 
-Stop your witness if it is currently running from previous steps, then start it with the service.
+Step 6. Stop your Witness node, if it's currently running, then start it with the service.
 
 ```text
 sudo systemctl start peerplays.service
 ```
 
-Check your logfile for entries
+Step 7. Check your `logfile` for entries
 
 ```text
 tail -f /var/log/peerplays.log
