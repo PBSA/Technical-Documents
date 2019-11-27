@@ -1,12 +1,6 @@
 # Creating a Backup Server
 
-**Simple guide for witnesses creating a backup server and switching without missing blocks:  
-The same process can be applied to a steem witness node  
-Replace joseph-witness to your witness name.  
-Replace public/private keys with yours.**  
-
-
-First: you created your witness node and now running it according to these directions:
+Step 1: You created your witness node and now running it according to these directions:
 
 {% page-ref page="./" %}
 
