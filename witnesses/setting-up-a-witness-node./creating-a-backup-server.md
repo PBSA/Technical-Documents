@@ -57,14 +57,12 @@ and info on your account for signing key will look like this
 ```
 
   
-You just pulled a quick switch from server1 to server2 without missing any blocks. Now you can safely shut down server1 and update the code. once the code is updated and the node is restarted, you can switch back signing blocks to server1 using the update\_witness command again with public-key for server1.  
+You just pulled a quick switch from server1 to server2 without missing any blocks. Now you can safely shut down server1 and update the code. once the code is updated and the node is restarted, you can switch back signing blocks to server1 using the `update_witness` command again with public-key for server1.  
 
 
 ```text
 update_witness joseph-witness "https://steemit.com/peerplays-witness/@joseph/peerplays-blockchain-witness-proposal" "PPY7ZBgUduxjAsk5zXLeZX8skTHAjqQAyu6NnoSDKHs2Utm5XsDLR" true
 ```
-
-#### 
 
 It's always a good idea to maintain a backup witness server for block production, in case of downtime on one server or the need to update code without shutting down your production node. A back up server will also be handy in case of an attack on the network.
 
