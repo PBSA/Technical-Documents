@@ -197,13 +197,9 @@ Step 7. Check your `logfile` for entries
 tail -f /var/log/peerplays.log
 ```
 
-### 
-
 ## BOS and MINT Setup
 
 {% page-ref page="bos-and-mint-setup.md" %}
 
 
-
-### 
 

@@ -49,10 +49,7 @@ PPY5tPcG5AX6YFYsBR739JNxFzmDWUgrw6BZFBxfKRsTKAx4QiA76
 ```
 
   
-  
-and info on your account for signing key will look like this  
-  
-
+and info on your account for signing key will look like this
 
 ```text
     "signing_key": "PPY5tPcG5AX6YFYsBR739JNxFzmDWUgrw6BZFBxfKRsTKAx4QiA76",
@@ -60,9 +57,7 @@ and info on your account for signing key will look like this
 ```
 
   
-  
 You just pulled a quick switch from server1 to server2 without missing any blocks. Now you can safely shut down server1 and update the code. once the code is updated and the node is restarted, you can switch back signing blocks to server1 using the update\_witness command again with public-key for server1.  
-  
 
 
 ```text
