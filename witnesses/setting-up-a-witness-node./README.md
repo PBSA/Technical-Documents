@@ -199,7 +199,9 @@ tail -f /var/log/peerplays.log
 
 ## BOS and MINT Setup
 
-{% page-ref page="bos-and-mint-setup.md" %}
+All Witnesses are also required to install and run the Bookie Oracle Suite \(BOS\) and the supporting manual intervention tool \(MINT\).
+
+{% page-ref page="../../bookie-oracle-suite-bos/bos-and-mint-setup.md" %}
 
 
 
