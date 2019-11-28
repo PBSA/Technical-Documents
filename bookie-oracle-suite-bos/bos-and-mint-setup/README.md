@@ -35,37 +35,31 @@ Note that `virtualenv` is a best practice for python, but installation can also 
 
 ### Install MongoDB
 
-MongoDB is used as the persistent storage within BOS.
+MongoDB is used for persistent storage within BOS.
 
 {% page-ref page="installing-mongodb.md" %}
 
-
-
-{% hint style="warning" %}
-MongoDB must be installed as `root/sudo`
-{% endhint %}
-
-### 
-
-**MongoDB**
-
-For information on how to install MongoDB refer to tutorials on your distribution 
+For  additional information on how to use MongoDB refer to tutorials on your distribution.
 
 {% hint style="danger" %}
-Make sure that the MongoDB is running reliable with automatic restart on failure.
+Make sure that the MongoDB is running reliably with automatic restart on failure.
 {% endhint %}
 
-**Redis - worker queue**. For information on how to instal to install Redisdb refer to  your Linux distribution.
+### **Install Redis**
+
+Redis is used as an asynchronous queue for the python processes in BOS.
+
+{% page-ref page="installing-redis.md" %}
+
+For additional information on how to install Redisdb refer to  your Linux distribution.
+
+{% hint style="danger" %}
+Make sure that RedisDB is running reliably with automatic restart on failure, and that it's run without any disk persistence.
+{% endhint %}
 
 
 
- Make sure that RedisDB is running reliable with automatic restart on failure. Furthermore, Redis should run without any disk persistance.
 
-For Ubuntu 16.04. installation for mongodb is
-
-```text
-apt-get install mongodb
-```
 
 and for redis
 
