@@ -37,6 +37,10 @@ Note that `virtualenv` is a best practice for python, but installation can also 
 
 MongoDB is used as the persistent storage within BOS.
 
+{% page-ref page="installing-mongodb.md" %}
+
+
+
 {% hint style="warning" %}
 MongoDB must be installed as `root/sudo`
 {% endhint %}
@@ -57,9 +61,74 @@ Next add MongoDB APT repository url in `/etc/apt/sources.list.d/mongodb.list.`
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
 ```
 
-\*\*\*\*
+* [How to Create and Drop database in MongoDB](https://tecadmin.net/create-and-drop-database-in-mongodb/)
 
-**MongDB**
+```text
+mongo 
+
+> use mydb;
+
+> db.test.save( { tecadmin: 100 } )
+
+> db.test.find()
+
+  { "_id" : ObjectId("52b0dc8285f8a8071cbb5daf"), "tecadmin" : 100 }
+```
+
+Also, connect MongoDB using the command line and execute some test commands for checking proper working.
+
+```text
+mongod --version 
+
+db version v4.2.1
+git version: edf6d45851c0b9ee15548f0f847df141764a317e
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+allocator: tcmalloc
+modules: none
+build environment:
+    distmod: ubuntu1804
+    distarch: x86_64
+    target_arch: x86_64
+```
+
+Finally, use the below command to check installed MongoDB version on your system.
+
+### Step 4 – Verify MongoDB Installation
+
+* How to Work with MongoDB – [Read this tutorial](https://tecadmin.net/tutorial/mongodb/mongodb-tutorials/)
+
+```text
+sudo systemctl stop mongod
+sudo systemctl restart mongod 
+```
+
+Use the following commands to stop or restart MongoDB service.
+
+```text
+sudo systemctl enable mongod
+sudo systemctl start mongod 
+```
+
+After installation, MongoDB will start automatically. To start or stop MongoDB uses init script. Below are the example commands to do.
+
+### Step 3 – Manage MongoDB Service
+
+```text
+sudo apt install mongodb-org=4.2.1 mongodb-org-server=4.2.1 mongodb-org-shell=4.2.1 mongodb-org-mongos=4.2.1 mongodb-org-tools=4.2.1
+```
+
+If you want to install any specific version of MongoDB, define the version number as below
+
+```text
+sudo apt update
+sudo apt install mongodb-org
+```
+
+After adding required APT repositories, use the following commands to install MongoDB on your systems. It will also install all dependent packages required for MongoDB.
+
+### Step 2 – Install MongoDB on Ubuntu
+
+**ongDB**
 
 For information on how to install MongoDB refer to tutorials on your distribution 
 
