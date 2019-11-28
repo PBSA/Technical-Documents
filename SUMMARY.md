@@ -17,7 +17,8 @@
 ## Bookie Oracle Suite \(BOS\)
 
 * [Introduction to BOS](bookie-oracle-suite-bos/untitled.md)
-* [BOS and MINT Setup](bookie-oracle-suite-bos/bos-and-mint-setup.md)
+* [BOS and MINT Setup](bookie-oracle-suite-bos/bos-and-mint-setup/README.md)
+  * [Installing MongoDB](bookie-oracle-suite-bos/bos-and-mint-setup/installing-mongodb.md)
 
 ## Data Proxies
 
