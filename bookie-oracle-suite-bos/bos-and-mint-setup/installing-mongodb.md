@@ -12,7 +12,7 @@ First of all, import GPK key for the MongoDB apt repository on your system using
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 4B7C549A058F8B6B
 ```
 
-Lets add MongoDB APT repository url in /etc/apt/sources.list.d/mongodb.list.
+Then add MongoDB APT repository `url in /etc/apt/sources.list.d/mongodb.list.`
 
 **Ubuntu 18.04 LTS:**
 
