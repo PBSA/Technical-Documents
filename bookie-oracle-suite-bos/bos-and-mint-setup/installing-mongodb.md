@@ -20,12 +20,6 @@ Then add MongoDB APT repository `url in /etc/apt/sources.list.d/mongodb.list.`
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
 ```
 
-**Ubuntu 16.04 LTS:**
-
-```text
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
-```
-
 ### Step 2 – Install MongoDB on Ubuntu
 
 After adding required APT repositories, use the following commands to install MongoDB on your systems. It will also install all dependent packages required for MongoDB.
