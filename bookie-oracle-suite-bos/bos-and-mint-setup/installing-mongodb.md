@@ -1,8 +1,8 @@
 # Installing MongoDB
 
-MongoDB is a fully flexible index support and rich queries database. Mongodb is a NoSQL database. MongoDB provides large media storage with GridFS. Click [here](https://docs.mongodb.com/v4.2/release-notes/4.2/) for more details about this version of MongoDB.
+MongoDB is a NoSQL database that has fully flexible index support and a rich queries database. 
 
-This tutorial will help you to install MongoDB 4.2 community release on Ubuntu 18.04 LTS \(Bionic\) and 16.04 LTS \(Xenial\).
+This document explains how to install MongoDB \(as `root/sudo`\).
 
 ### Step 1 – Setup Apt Repository
 
@@ -29,7 +29,7 @@ sudo apt update
 sudo apt install mongodb-org
 ```
 
-If you want to install any specific version of MongoDB, define the version number as below
+If you want to install a specific version of MongoDB, define the version number as follows:
 
 ```text
 sudo apt install mongodb-org=4.2.1 mongodb-org-server=4.2.1 mongodb-org-shell=4.2.1 mongodb-org-mongos=4.2.1 mongodb-org-tools=4.2.1
@@ -37,25 +37,23 @@ sudo apt install mongodb-org=4.2.1 mongodb-org-server=4.2.1 mongodb-org-shell=4.
 
 ### Step 3 – Manage MongoDB Service
 
-After installation, MongoDB will start automatically. To start or stop MongoDB uses init script. Below are the example commands to do.
+After installation, MongoDB will start automatically. To start or stop MongoDB use an init script. For example:
 
 ```text
 sudo systemctl enable mongod
 sudo systemctl start mongod 
 ```
 
-Use the following commands to stop or restart MongoDB service.
+And use the following commands to stop or restart the MongoDB service.
 
 ```text
 sudo systemctl stop mongod
 sudo systemctl restart mongod 
 ```
 
-* How to Work with MongoDB – [Read this tutorial](https://tecadmin.net/tutorial/mongodb/mongodb-tutorials/)
-
 ### Step 4 – Verify MongoDB Installation
 
-Finally, use the below command to check installed MongoDB version on your system.
+Finally, use the below command to check the installed MongoDB version on your system.
 
 ```text
 mongod --version 
@@ -71,6 +69,8 @@ build environment:
     target_arch: x86_64
 ```
 
+### Step 5 - Test MongoDB
+
 Also, connect MongoDB using the command line and execute some test commands for checking proper working.
 
 ```text
@@ -84,8 +84,4 @@ mongo
 
   { "_id" : ObjectId("52b0dc8285f8a8071cbb5daf"), "tecadmin" : 100 }
 ```
-
-* [How to Create and Drop database in MongoDB](https://tecadmin.net/create-and-drop-database-in-mongodb/)
-
-SHARE IT![Share on](https://www.facebook.com/share.php?u=https://tecadmin.net/install-mongodb-on-ubuntu/&title=How+to+Install+MongoDB+4.2+on+Ubuntu+18.04+%26%23038%3B+16.04+via+PPA)
 
