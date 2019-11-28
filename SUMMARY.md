@@ -16,8 +16,8 @@
 
 ## Bookie Oracle Suite \(BOS\)
 
+* [Introduction to BOS](bookie-oracle-suite-bos/untitled.md)
 * [BOS and MINT Setup](bookie-oracle-suite-bos/bos-and-mint-setup.md)
-* [Untitled](bookie-oracle-suite-bos/untitled.md)
 
 ## Data Proxies
 
