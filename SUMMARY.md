@@ -10,7 +10,7 @@
 
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
-* [Setting up a Witness node.](witnesses/setting-up-a-witness-node./README.md)
+* [Setting up a Witness Node](witnesses/setting-up-a-witness-node./README.md)
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node./creating-a-backup-server.md)
   * [CLI Wallet Setup](witnesses/setting-up-a-witness-node./cli-wallet-setup.md)
 

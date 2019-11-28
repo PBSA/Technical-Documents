@@ -1,4 +1,4 @@
-# Setting up a Witness node.
+# Setting up a Witness Node
 
 This is an introduction for new Witnesses to get up to speed on the Peerplays blockchain. It is intended for Witnesses planning to join a live, already deployed, blockchain.
 
