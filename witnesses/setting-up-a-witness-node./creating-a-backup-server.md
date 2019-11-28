@@ -33,7 +33,7 @@ PPY7ZBgUduxjAsk5zXLeZX8skTHAjqQAyu6NnoSDKHs2Utm5XsDLR
 This is normal because we did not run the update_witness command yet.
 ```
 
-Now let's say you need to update server1 when the code on github is updated
+Now let's say you need to update server1 when the code on Github is updated
 
 First you run the update\_witness command in your CLI like this:
 
@@ -64,10 +64,7 @@ You just pulled a quick switch from server1 to server2 without missing any block
 update_witness joseph-witness "https://steemit.com/peerplays-witness/@joseph/peerplays-blockchain-witness-proposal" "PPY7ZBgUduxjAsk5zXLeZX8skTHAjqQAyu6NnoSDKHs2Utm5XsDLR" true
 ```
 
-#### Important:
-
-As of now the TX fee for the update\_witness command is 0.5 PPY that's a high cost and should be much lower.  
-I spoke with Jonathan today and he said the fee for update\_witness should be much lower. Until that is fixed, make sure you have at least 1 PPY in your account to execute two update\_witness commands.
+#### 
 
 It's always a good idea to maintain a backup witness server for block production, in case of downtime on one server or the need to update code without shutting down your production node. A back up server will also be handy in case of an attack on the network.
 
