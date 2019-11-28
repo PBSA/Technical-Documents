@@ -14,24 +14,36 @@ Topics covered include:
 
 ![](../.gitbook/assets/bos-flow.jpg)
 
->
-
 ### Installation of bos-auto
 
-In this step, we install everything we will need going forward.
+In this first step, we'll install everything we'll need going forward.
 
-#### Install dependencies \(as root/sudo\)
+#### Install Dependencies
+
+{% hint style="warning" %}
+Dependencies are installed as `root/sudo`
+{% endhint %}
 
 ```text
 apt-get install libffi-dev libssl-dev python-dev python3-dev python3-pip
 pip3 install virtualenv
 ```
 
-Note that virtualenv is a best practice for python, but installation can also be on a user/global level.
+{% hint style="info" %}
+Note that `virtualenv` is a best practice for python, but installation can also be on a user/global level.
+{% endhint %}
 
-#### Install databases \(as root/sudo\)
+#### Install Databases
 
-Within BOS, redis is used as an async queue for the python processes, whereas MondoDB is used as the persistent storage.
+{% hint style="warning" %}
+Databases are installed as `root/sudo`
+{% endhint %}
+
+Within BOS, Redis is used as an asynchronous queue for the Python processes, whereas MongoDB is used as the persistent storage.
+
+For information on how to install MongoDB refer to tutorials on your distribution or go to:
+
+
 
 * mongodb - interaction between BOS-auto and MINT. Please find tutorials on how to install mongodb on your distribution. Make sure that the MongoDB is running reliable with automatic restart on failure.
 * redis - worker queue. Please find instructions to install redisdb on your Linux distribution. Make sure that RedisDB is running reliable with automatic restart on failure. Furthermore, Redis should run without any disk persistance.
