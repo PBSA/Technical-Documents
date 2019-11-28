@@ -41,11 +41,14 @@ Databases are installed as `root/sudo`
 
 Within BOS, Redis is used as an asynchronous queue for the Python processes, whereas MongoDB is used as the persistent storage.
 
-For information on how to install MongoDB refer to tutorials on your distribution or go to:
+**MongDB**
 
+For information on how to install MongoDB refer to tutorials on your distribution 
 
+{% hint style="danger" %}
+Make sure that the MongoDB is running reliable with automatic restart on failure.
+{% endhint %}
 
-* mongodb - interaction between BOS-auto and MINT. Please find tutorials on how to install mongodb on your distribution. Make sure that the MongoDB is running reliable with automatic restart on failure.
 * redis - worker queue. Please find instructions to install redisdb on your Linux distribution. Make sure that RedisDB is running reliable with automatic restart on failure. Furthermore, Redis should run without any disk persistance.
 
 For Ubuntu 16.04. installation for mongodb is
