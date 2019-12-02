@@ -193,7 +193,7 @@ Each incident results in **two** work items, namely a `bookied.work.process()` a
 The former does the heavy lifting and may produce a proposal, while the latter approves proposals that we have created on our own.
 {% endhint %}
 
-**Command Line Intervention**
+### **Command Line Intervention**
 
 With the command line tool, we can connect to the MongoDB and inspect the incidents that we inserted above:
 
@@ -230,7 +230,7 @@ And replay any of the two incidents by using:
 bos-auto incidents resend 2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true 5e2cdc117c9404f2609936aa3a8d49e4
 ```
 
-This should again should start your worker.
-
-\*\*\*\*
+{% hint style="warning" %}
+This should start your worker.
+{% endhint %}
 

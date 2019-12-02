@@ -73,8 +73,7 @@ systemctl start redis
 ```
 
 {% hint style="danger" %}
-**Common Issues**
-{% endhint %}
+**Common Issues:** 
 
 **Exception**: _Can’t save in background: fork or MISCONF Redis is configured to save RDB snapshots._
 
@@ -84,12 +83,12 @@ Create your own Redis configuration file \([https://redis.io/topics/config](http
 
 [https://redis.io/topics/faq\#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram](https://redis.io/topics/faq#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram) or [https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193\#49839193](https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193#49839193)
 
-[https://gist.github.com/kapkaev/4619127](https://gist.github.com/kapkaev/4619127)  
-
+[https://gist.github.com/kapkaev/4619127](https://gist.github.com/kapkaev/4619127)
 
 **Exception**: _IncidentStorageLostException: localhost:27017: \[Errno 111\] Connection refused or similar._ 
 
 This indicates that your MondoDB is not running properly. Check your MongoDB installation.
+{% endhint %}
 
 ### Installing bos-auto as a User
 
