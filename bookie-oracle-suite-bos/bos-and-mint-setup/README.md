@@ -90,7 +90,8 @@ Create your own Redis configuration file \([https://redis.io/topics/config](http
 
 **Exception**: _IncidentStorageLostException: localhost:27017: \[Errno 111\] Connection refused or similar._ 
 
-This indicates that your MondoDB is not running properly. Check your MongoDB installation.
+This indicates that your MondoDB is not running properly. Check your MongoDB installation.  
+
 
 ### Installing bos-auto as a User
 
