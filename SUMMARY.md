@@ -22,6 +22,7 @@
 * [BOS and MINT Setup](bookie-oracle-suite-bos/bos-and-mint-setup/README.md)
   * [Installing MongoDB](bookie-oracle-suite-bos/bos-and-mint-setup/installing-mongodb.md)
   * [Installing Redis](bookie-oracle-suite-bos/bos-and-mint-setup/installing-redis.md)
+* [Bookiesports](bookie-oracle-suite-bos/bookiesports.md)
 
 ## Data Proxies
 

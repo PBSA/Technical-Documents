@@ -57,18 +57,9 @@ For additional information on how to install Redisdb refer to  your Linux distri
 Make sure that RedisDB is running reliably with automatic restart on failure, and that it's run without any disk persistence.
 {% endhint %}
 
+### Starting MongoDB and Redis Daemons
 
-
-
-
-and for redis
-
-```text
-apt-get install build-essential
-apt-get install redis-server
-```
-
-It is highly recommended to ensure that both daemons are started on powerup, e.g.
+It is highly recommended that both daemons are started on start-up.
 
 ```text
 systemctl enable mongod
@@ -82,16 +73,31 @@ systemctl start mongod
 systemctl start redis
 ```
 
-**Common issues**
+{% hint style="danger" %}
+**Common Issues**
+{% endhint %}
 
-> * Exception that contains Can’t save in background: fork or MISCONF Redis is configured to save RDB snapshots. This indicates that either your queue is very full and the RAM is insufficient, or that your disk is full and the snapshot can’t be persisted. Create your own Redis configuration file \([https://redis.io/topics/config](https://redis.io/topics/config)\) and use it to deactivate caching and activate overcommit memory, e.g. as shown here
->   * [https://redis.io/topics/faq\#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram](https://redis.io/topics/faq#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram) or [https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193\#49839193](https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193#49839193)
->   * [https://gist.github.com/kapkaev/4619127](https://gist.github.com/kapkaev/4619127)
-> * Exception that contains IncidentStorageLostException: localhost:27017: \[Errno 111\] Connection refused or similar. This indicates that your MondoDB is not running properly.
+**Exception**: _Can’t save in background: fork or MISCONF Redis is configured to save RDB snapshots._
 
-#### Install bos-auto \(as user\)
+This indicates that either your queue is very full and the RAM is insufficient, or that your disk is full and the snapshot can’t be persisted. 
 
-You can either install bos-auto via pypi / pip3 \(production installation\) or via git clone \(debug installation\). For production use install bos-auto via pip3 is recommended, but the git master branch is always the latest release as well, making both installations equivalent. Suggested is a seperate user
+Create your own Redis configuration file \([https://redis.io/topics/config](https://redis.io/topics/config)\) and use it to deactivate caching and activate overcommit memory:
+
+[https://redis.io/topics/faq\#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram](https://redis.io/topics/faq#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram) or [https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193\#49839193](https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193#49839193)
+
+[https://gist.github.com/kapkaev/4619127](https://gist.github.com/kapkaev/4619127)  
+
+
+**Exception**: _IncidentStorageLostException: localhost:27017: \[Errno 111\] Connection refused or similar._ 
+
+This indicates that your MondoDB is not running properly. Check your MongoDB installation.  
+
+
+### Installing bos-auto as a User
+
+You can either install bos-auto via `pypi / pip3` \(production installation\) or via git clone \(debug installation\). 
+
+For production using install bos-auto via pip3 is recommended, but the git master branch is always the latest release as well, making both installations equivalent. Recommended is a separate user.
 
 ```text
 cd ~
@@ -105,7 +111,9 @@ source env/bin/activate
 pip3 install bos-auto
 ```
 
-For debug use, checkout from github \(master branch\) and install dependencies manually
+For debug use, checkout from Github \(master branch\) and install dependencies manually.
+
+{% embed url="https://github.com/peerplays-network/bos-auto" %}
 
 ```text
 cd ~
@@ -120,9 +128,9 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-BOS auto is supposed to run in the virtual environment. Either activate it beforehand like shown above or run it directly in the env/bin folder.
+BOS auto is supposed to run in the virtual environment. Either activate it beforehand, as above, or run it directly in the `env/bin` folder.
 
-#### Upgrading bos-auto \(as user\)
+### Upgrading bos-auto as a User
 
 For production installation, upgrade to the latest version - including all dependencies - via
 
