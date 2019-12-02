@@ -54,7 +54,7 @@ For more information on Data Proxies see:
 
 {% page-ref page="../../data-proxies/data-proxies-page-1.md" %}
 
-**Monitoring**
+### **Monitoring**
 
 The endpoint has an isalive call that should be used for monitoring:
 
