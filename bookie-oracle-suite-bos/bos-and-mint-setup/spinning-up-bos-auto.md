@@ -89,26 +89,28 @@ which produces an output like:
 }
 ```
 
-Interesting are here the listed versions and queue.status.default.count. The count should be 0 most of the times, it reflects how many unhandled incidents are currently in the cache.
+Of interest here are the  listed versions and `queue.status.default.count`. 
 
-**Production deployment**
+The count should be zero most of the time, it reflects how many unhandled incidents are currently in the cache.
 
-Going into production mode, a witness may want to deploy the endpoint via UWSGI, create a local socket and hide it behind an SSL supported nginx that deals with a simple domain instead of `ip:port` pair, like `https://dataproxy.mywitness.com/trigger`.
+### **Production deployment**
 
-#### Start worker
+Going into production mode, a Witness may want to deploy the endpoint via UWSGI, create a local socket and hide it behind an SSL supported nginx that deals with a simple domain instead of `ip:port` pair, like `https://dataproxy.mywitness.com/trigger`.
 
-Warning
+### Start worker
 
-At this point is is cruciual to set the default witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is skip, the setup will not work or work with very high latency at best.
+{% hint style="danger" %}
+Warning -  At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
+{% endhint %}
 
-We start the worker with:
+Start the worker with the following commands:
 
 ```text
 cd bos-auto
 bos-auto worker      [--help for more information]
 ```
 
-It will already try to use the provided password to unlock the wallet and, if successfull, present the following text to you:
+It will already try to use the provided password to unlock the wallet and, if successful, return the following test:
 
 ```text
 INFO     | Opening Redis connection (redis://localhost/6379)
@@ -119,41 +121,41 @@ unlocking wallet ...
 14:21:53 *** Listening on default...
 ```
 
-Nothing else needs to be done at this point
+Nothing else needs to be done at this point.
 
-**Testing**
+### **Testing**
 
-Warning
+{% hint style="danger" %}
+Warning - For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`
+{% endhint %}
 
-For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`!
-
-For testing, we need do actually throw a properly formated incident at the endpoint. To simplify this for witnesses, you can take the following ones:
+For testing, we need to throw a properly formatted incident at the endpoint. To simplify this for Witnesses, you can use the following ones:
 
 ```text
 {'provider_info': {'pushed': '2018-03-10T00:06:23Z', 'name': '5e2cdc120c9404f2609936aa3a8d49e4'}, 'call': 'create', 'timestamp': '2018-04-25T10:54:10.495868Z', 'arguments': {'unsure': True, 'season': '2018'}, 'unique_string': '2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true', 'id': {'away': 'New York Islanders', 'event_group_name': 'NHL Regular Season', 'start_time': '2018-03-16T23:00:00Z', 'home': 'Washington Capitals', 'sport': 'Ice Hockey'}}
 {'provider_info': {'pushed': '2018-03-10T00:06:23Z', 'name': '5e2cdc1safasf4f2609936aa3a8d49e4'}, 'call': 'create', 'timestamp': '2018-04-25T10:54:10.495868Z', 'arguments': {'unsure': True, 'season': '2018'}, 'unique_string': '2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true', 'id': {'away': 'New York Islanders', 'event_group_name': 'NHL Regular Season', 'start_time': '2018-03-16T23:00:00Z', 'home': 'Washington Capitals', 'sport': 'Ice Hockey'}}
 ```
 
-store this in a file called `replay.txt` and run the following call:
+Store them in a file called `replay.txt` and run the following call:
 
 ```text
 bos-auto replay --url http://localhost:8010/trigger replay.txt
 ```
 
-Note
-
-Please note the `trigger` at the end of the endpoint URL.
+{% hint style="info" %}
+Note the `trigger` at the end of the endpoint URL.
+{% endhint %}
 
 This will show you the incident and a load indicator at 100% once the incident has been successfully sent to the endpoint.
 
-This should cause your endpoint to print the following:
+Your endpoint should return the following:
 
 ```text
 INFO     | Forwarded incident create to worker via redis
 127.0.0.1 - - [26/Apr/2018 14:25:43] "POST /trigger HTTP/1.1" 200 -
 ```
 
-and your worker to print something along the lines of \(once for each incident above\):
+And your worker to return something along the lines of \(once for each incident above\):
 
 ```text
 14:23:38 default: bookied.work.process({'provider_info': {'pushed': '2018-03-10T00:06:23Z', 'name': '5e2cdc120c9404f2609936aa3a8d49e4'}, 'call': 'create', 'timestamp': '2018-04-25T10:54:10.495868Z', 'arguments': {'unsure': True, 'season': '2018'}, 'unique_string': '2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true', 'id': {'away': 'New York Islanders', 'event_group_name': 'NHL Regular Season', 'start_time': '2018-03-16T23:00:00Z', 'home': 'Washington Capitals', 'sport': 'Ice Hockey'}, 'approver': 'init0', 'proposer': 'init0'}, approver=None, proposer=None) (a2f4eaaf-e750-4934-8c73-5481fe32df94)
@@ -185,13 +187,15 @@ and your worker to print something along the lines of \(once for each incident a
 14:23:45
 ```
 
-Note
+{% hint style="info" %}
+Each incident results in **two** work items, namely a `bookied.work.process()` as well as a `bookied.work.approve()` call. 
 
-Each incident results in **two** work items, namely a `bookied.work.process()` as well as a `bookied.work.approve()` call. The former does the heavy lifting and may produce a proposal, while the latter approves proposals that we have created on our own.
+The former does the heavy lifting and may produce a proposal, while the latter approves proposals that we have created on our own.
+{% endhint %}
 
 **Command Line Intervention**
 
-With the command line tool, we can connect to the mongodb and inspect the incidents that we have inserted above:
+With the command line tool, we can connect to the MongoDB and inspect the incidents that we inserted above:
 
 ```text
 bos-auto incidents list
@@ -220,13 +224,13 @@ We can now read the actual incidents with:
 bos-auto incidents show 2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true 5e2cdc117c9404f2609936aa3a8d49e4
 ```
 
-and replay any of the two incidents by using:
+And replay any of the two incidents by using:
 
 ```text
 bos-auto incidents resend 2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true 5e2cdc117c9404f2609936aa3a8d49e4
 ```
 
-This should again cause your worker to start working.
+This should again should start your worker.
 
 **Manual Intervention**
 
