@@ -1,4 +1,4 @@
-# BOS and MINT Setup
+# BOS Installation
 
 ## Introduction
 
@@ -7,7 +7,6 @@ This document explains how the Bookie Oracle Suite \(BOS\) is installed, tested 
 Topics covered include:
 
 * BOS Installation and testing.
-* MINT installation.
 * Using the command line tool.
 
 ### High Level Structure
@@ -152,7 +151,36 @@ After bos-auto configuration we need to spin-up bos-auto to see if it works prop
 
 {% page-ref page="spinning-up-bos-auto.md" %}
 
+### **Manual Intervention \(MINT\)**
 
+Bos-mint is a web-based manual intervention module that allows you to work with all sorts of manual interactions with the blockchain. 
+
+For more information see:
+
+{% page-ref page="../introduction-to-mint.md" %}
+
+Monitoring bos-auto
+
+The isalive call should be used for monitoring. The scheduler must be running, and the default queue a low count \(&lt; 10\).
+
+Here is an example of a positive isalive check:
+
+```text
+ {
+   "background": {
+      "scheduler": True
+   },
+   "queue": {
+      "status": {
+         "default": {
+            "count": 0
+         },
+         ...
+      }
+   },
+   ...
+}
+```
 
 ## [Bookied](https://bos-auto.readthedocs.io/en/latest/index.html)
 

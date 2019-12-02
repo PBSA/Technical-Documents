@@ -19,12 +19,13 @@
 ## Bookie Oracle Suite \(BOS\)
 
 * [Introduction to BOS](bookie-oracle-suite-bos/untitled.md)
-* [BOS and MINT Setup](bookie-oracle-suite-bos/bos-and-mint-setup/README.md)
+* [BOS Installation](bookie-oracle-suite-bos/bos-and-mint-setup/README.md)
   * [Installing MongoDB](bookie-oracle-suite-bos/bos-and-mint-setup/installing-mongodb.md)
   * [Installing Redis](bookie-oracle-suite-bos/bos-and-mint-setup/installing-redis.md)
   * [Configuration of bos-auto](bookie-oracle-suite-bos/bos-and-mint-setup/configuration-of-bos-auto.md)
   * [Spinning Up bos-auto](bookie-oracle-suite-bos/bos-and-mint-setup/spinning-up-bos-auto.md)
 * [Bookiesports](bookie-oracle-suite-bos/bookiesports.md)
+* [Introduction to MINT](bookie-oracle-suite-bos/introduction-to-mint.md)
 
 ## Data Proxies
 

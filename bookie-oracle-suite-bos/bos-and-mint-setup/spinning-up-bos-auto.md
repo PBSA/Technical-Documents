@@ -232,30 +232,5 @@ bos-auto incidents resend 2018-03-16t230000z-ice-hockey-nhl-regular-season-washi
 
 This should again should start your worker.
 
-**Manual Intervention**
-
-Bos-mint is a web-based manual intervention module that allows you to do with all sorts of manual interactions with the blockchain. It comes with it’s own documentation at: [http://bos-mint.readthedocs.io/](http://bos-mint.readthedocs.io/)
-
-### Monitoring bos-auto
-
-The isalive call should be used for monitoring. The scheduler must be running, and the default queue a low count \(&lt; 10\).
-
-Here is an example of a positive isalive check:
-
-```text
- {
-   "background": {
-      "scheduler": True
-   },
-   "queue": {
-      "status": {
-         "default": {
-            "count": 0
-         },
-         ...
-      }
-   },
-   ...
-}
-```
+\*\*\*\*
 
