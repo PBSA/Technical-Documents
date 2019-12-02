@@ -90,8 +90,7 @@ Create your own Redis configuration file \([https://redis.io/topics/config](http
 
 **Exception**: _IncidentStorageLostException: localhost:27017: \[Errno 111\] Connection refused or similar._ 
 
-This indicates that your MondoDB is not running properly. Check your MongoDB installation.  
-
+This indicates that your MondoDB is not running properly. Check your MongoDB installation.
 
 ### Installing bos-auto as a User
 
@@ -132,7 +131,7 @@ BOS auto is supposed to run in the virtual environment. Either activate it befor
 
 ### Upgrading bos-auto as a User
 
-For production installation, upgrade to the latest version - including all dependencies - via
+For production installation, upgrade to the latest version - including all dependencies using:
 
 ```text
 pip3 install --upgrade --upgrade-strategy eager bos-auto
@@ -145,71 +144,24 @@ git pull
 pip3 install -r requirements.txt --upgrade --upgrade-strategy eager
 ```
 
-### Configuration of bos-auto
+Next we need to go through the  steps required to setup bos-auto properly.
 
-We now proceed with the steps required to setup bos-auto properly.
+{% page-ref page="configuration-of-bos-auto.md" %}
 
-Warning
 
-At this point is is crucial to set the default witness node to your own server \(ideally running in `localhost`, see below config.yaml\) using `peerplays set node ws://ip:port`. If this step is skip, the setup will not work or work with very high latency at best.
-
-#### Setup your python-peerplays wallet
-
-```text
-# you will be asked to provide a new wallet passphrase. Later in the
-# tutorial you will be asked to store that password in a file
-# (config.yaml)
-peerplays createwallet
-
-# to add the key we need to make the node known (preferably on localhost)
-peerplays set node ws://localhost:8090
-
-peerplays addkey
-# You will be prompted to enter your active private key for the witness
-```
-
-#### Funding the account
-
-Since your witness account is going to create and approve proposals automatically, you need to ensure that the witness account is funded with PPY.
-
-#### Modify configuration
-
-We now need to configure bos-auto.
-
-```text
-wget https://raw.githubusercontent.com/PBSA/bos-auto/master/config-example.yaml
-mv config-example.yaml config.yaml
-# modify config.yaml
-```
-
-The variables are described below:
-
-```text
-# Please see bos_auto/config-defaults.yaml for description
-
-node: ws://localhost:8090
-
-network: beatrice
-
-redis_password: <your redis password>
-
-passphrase: <your python peerplays wallet password>
-
-BOOKIE_PROPOSER: <your witness account name>
-
-BOOKIE_APPROVER: <your witness account name>
-```
 
 ### Spinning up bos-auto
 
-In the following, we are spinning up bos-auto and see if it works properly. To do so, we need to start two processes:
+In the following, we are spinning up bos-auto to see if it works properly. To do this, we need to start two processes:
 
-> * An endpoint that takes incident reports from the data proxy and stores them in mongodb as well as issues work for the worker via redis.
-> * The worker then takes those incidents and processes those.
+1. An endpoint that takes incident reports from the data proxy and stores them in MongoDB as well as issues work for the worker via Redis.
+2. The worker then takes those incidents and processes them.
 
+{% hint style="warning" %}
 It is recommended to run both via system services.
+{% endhint %}
 
-The commands shown are for production installation, for debug installation replace “bos-auto” with “python3 cli.py”.
+The commands shown are for production installation, for debug installation replace `“bos-auto”` with `“python3 cli.py”`.
 
 Note:
 
