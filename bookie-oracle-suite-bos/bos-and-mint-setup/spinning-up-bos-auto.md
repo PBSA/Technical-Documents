@@ -56,7 +56,7 @@ For more information on Data Proxies see:
 
 ### **Monitoring**
 
-The endpoint has an isalive call that should be used for monitoring:
+The endpoint has an `isalive` call that should be used for monitoring:
 
 ```text
 curl http://localhost:8010/isalive
