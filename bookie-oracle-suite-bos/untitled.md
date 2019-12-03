@@ -4,9 +4,7 @@ The Bookie Oracle System, or BOS, is a unique decentralized sports feed oracle s
 
 
 
-
-
-### High Level Structure
+## High Level Structure
 
 ![](../.gitbook/assets/bos-flow.jpg)
 
