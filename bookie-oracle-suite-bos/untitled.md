@@ -1,8 +1,8 @@
 # Introduction to BOS
 
-## Introduction
+The Bookie Oracle System, or BOS, is a unique decentralized sports feed oracle system originally designed for the BookiePro dApp.
 
-This document explains how the Bookie Oracle Suite \(BOS\) is installed, tested and maintained. 
+
 
 
 
