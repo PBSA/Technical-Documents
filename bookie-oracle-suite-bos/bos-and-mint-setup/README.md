@@ -1,18 +1,5 @@
 # BOS Installation
 
-## Introduction
-
-This document explains how the Bookie Oracle Suite \(BOS\) is installed, tested and maintained. 
-
-Topics covered include:
-
-* BOS Installation and testing.
-* Using the command line tool.
-
-### High Level Structure
-
-![](../../.gitbook/assets/bos-flow.jpg)
-
 ## Installation of bos-auto
 
 In this first step, we'll install everything we'll need going forward.
@@ -142,15 +129,19 @@ git pull
 pip3 install -r requirements.txt --upgrade --upgrade-strategy eager
 ```
 
+## Configuration of bos-auto
+
 Next we need to go through the  steps required to setup bos-auto properly.
 
 {% page-ref page="configuration-of-bos-auto.md" %}
+
+## Spinning Up bos-auto
 
 After bos-auto configuration we need to spin-up bos-auto to see if it works properly. 
 
 {% page-ref page="spinning-up-bos-auto.md" %}
 
-### **Manual Intervention \(MINT\)**
+## **Manual Intervention \(MINT\)**
 
 Bos-mint is a web-based manual intervention module that allows you to work with all sorts of manual interactions with the blockchain. 
 
@@ -158,11 +149,11 @@ For more information see:
 
 {% page-ref page="../introduction-to-mint.md" %}
 
-Monitoring bos-auto
+## Monitoring bos-auto
 
 The isalive call should be used for monitoring. The scheduler must be running, and the default queue a low count \(&lt; 10\).
 
-Here is an example of a positive isalive check:
+Here is an example of a positive `isalive` check:
 
 ```text
  {
@@ -181,33 +172,110 @@ Here is an example of a positive isalive check:
 }
 ```
 
-## [Bookied](https://bos-auto.readthedocs.io/en/latest/index.html)
+## Configuration
 
-#### Navigation
+The default configuration looks like the following and is \(by default\) stored in `config.yaml`:
 
-* [Setup of Bookie Oracle Suite](https://bos-auto.readthedocs.io/en/latest/installation.html#)
-  * [Overall Structure](https://bos-auto.readthedocs.io/en/latest/installation.html#overall-structure)
-  * [Installation of bos-auto](https://bos-auto.readthedocs.io/en/latest/installation.html#installation-of-bos-auto)
-    * [Install dependencies \(as root/sudo\)](https://bos-auto.readthedocs.io/en/latest/installation.html#install-dependencies-as-root-sudo)
-    * [Install databases \(as root/sudo\)](https://bos-auto.readthedocs.io/en/latest/installation.html#install-databases-as-root-sudo)
-    * [Install bos-auto \(as user\)](https://bos-auto.readthedocs.io/en/latest/installation.html#install-bos-auto-as-user)
-    * [Upgrading bos-auto \(as user\)](https://bos-auto.readthedocs.io/en/latest/installation.html#upgrading-bos-auto-as-user)
-  * [Configuration of bos-auto](https://bos-auto.readthedocs.io/en/latest/installation.html#configuration-of-bos-auto)
-    * [Setup your python-peerplays wallet](https://bos-auto.readthedocs.io/en/latest/installation.html#setup-your-python-peerplays-wallet)
-    * [Funding the account](https://bos-auto.readthedocs.io/en/latest/installation.html#funding-the-account)
-    * [Modify configuration](https://bos-auto.readthedocs.io/en/latest/installation.html#modify-configuration)
-  * [Spinning up bos-auto](https://bos-auto.readthedocs.io/en/latest/installation.html#spinning-up-bos-auto)
-    * [Start the Endpoint](https://bos-auto.readthedocs.io/en/latest/installation.html#start-the-endpoint)
-    * [Start worker](https://bos-auto.readthedocs.io/en/latest/installation.html#start-worker)
-  * [Monitoring bos-auto](https://bos-auto.readthedocs.io/en/latest/installation.html#monitoring-bos-auto)
-* [Configuration](https://bos-auto.readthedocs.io/en/latest/config.html)
-* [Command Line Tool](https://bos-auto.readthedocs.io/en/latest/cli.html)
-* [Schema](https://bos-auto.readthedocs.io/en/latest/schema.html)
-* [Web Endpoint](https://bos-auto.readthedocs.io/en/latest/web.html)
-* [Worker](https://bos-auto.readthedocs.io/en/latest/worker.html)
-* [bookied package](https://bos-auto.readthedocs.io/en/latest/bookied.html)
+```text
+# Please see bos_auto/config-defaults.yaml for description
 
-#### Quick search
+node: ws://localhost:8090
 
-[![](https://assets.readthedocs.org/sustainability/triplebyte-dec.png)](https://readthedocs.org/sustainability/click/638/GrisbekTMOmL/)[Beat Triplebyte's online coding quiz. Get offers from top companies. Skip resumes & recruiters.](https://readthedocs.org/sustainability/click/638/GrisbekTMOmL/)[_Sponsored_](https://readthedocs.org/sustainability/advertising/) _·_ [_Ads served ethically_](https://docs.readthedocs.io/en/latest/ethical-advertising.html)©2017, Fabian Schu
+network: beatrice
+
+redis_password: <your redis password>
+
+passphrase: <your python peerplays wallet password>
+
+BOOKIE_PROPOSER: <your witness account name>
+
+BOOKIE_APPROVER: <your witness account name>
+```
+
+Both, the API and the worker make use of the same configuration file. 
+
+We need to provide the wallet pass phrase in order for the worker to be able to propose changes to the blockchain objects according to the messages received from the data feed.
+
+## Command Line Tool
+
+{% page-ref page="command-line-tool.md" %}
+
+## Schema
+
+The messages sent to the API need to follow a particular message schema which is defined in `endpointschema.py`
+
+```text
+#: Default incident schema as sent from the data proxy
+schema = {
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Bookie dataproxy Json",
+    "description": "Bookie dataproxy exchange event trigger format",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "object",
+            "properties": {
+                "sport": {
+                    "description": "The unique name of the sport, in english",
+                    "type": "string",
+                },
+                "event_group_name": {
+                    "description": "The unique name of the event group, in english (e.g. the league)",
+                    "type": "string",
+                },
+                "start_time": {
+                    "description": "The start time of the event in UTC, ISO format",
+                    "type": "string",
+                    "format": "date-time",
+                },
+                "home": {
+                    "description": "The unique name of the home team, in english",
+                    "type": "string",
+                },
+                "away": {
+                    "description": "The unique name of the away team, in english",
+                    "type": "string",
+                },
+            },
+            "required": ["sport", "event_group_name", "start_time", "home", "away"],
+        },
+        "call": {
+            "description": "The trigger that was called",
+            "type": "string",
+            "enum": ["create", "in_progress", "finish", "result", "unknown", "settle"],
+        },
+        "arguments": {
+            "type": "object",
+            "properties": {
+                "season": {
+                    "description": "The unique season of the sport",
+                    "type": "string",
+                },
+                "whistle_start_time": {
+                    "description": "The time the start was whistled on in UTC, ISO format",
+                    "type": ["null", "string"],
+                    "format": "date-time",
+                },
+                "whistle_end_time": {
+                    "description": "The time the end was whistled off in UTC, ISO format",
+                    "type": ["null", "string"],
+                    "format": "date-time",
+                },
+                "home_score": {
+                    "description": "The score of the home team",
+                    "type": "string",
+                },
+                "away_score": {
+                    "description": "The score of the away team",
+                    "type": "string",
+                },
+            },
+        },
+    },
+    "required": ["id", "call", "arguments"],
+}
+
+```
+
+
 
