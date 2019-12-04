@@ -39,12 +39,17 @@ cd $HOME/src
 export BOOST_ROOT=$HOME/src/boost_1_67_0
 git clone https://github.com/peerplays-network/peerplays.git
 cd peerplays
+git checkout #master# --> replace with most recent tag
 git submodule update --init --recursive
 cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 
 make install # this can install the executable files under /usr/local
 ```
+
+{% hint style="warning" %}
+\#master\# can be replaced with the most recent release tag.
+{% endhint %}
 
 ## Install Docker Image
 
