@@ -12,6 +12,12 @@ This is where BOS becomes truly decentralized. There is no single source of trut
 
 For example:
 
+A soccer game takes place between two teams and there are three data proxies interfaced to BOS.
+
+Each data proxy send the result of the game to BOS, two send the result as 2 - 1, but one sends the result as 2 - 2
+
+
+
 
 
 
