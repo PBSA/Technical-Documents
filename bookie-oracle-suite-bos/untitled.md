@@ -18,8 +18,6 @@ Each data proxy sends the result of the game to BOS, two send the result as 2 - 
 
 However, if only two data proxies were reporting to BOS, and they gave different scores, that game would not get automatic approval and instead would require a manual proposal by the Witnesses using the manual intervention tool \(MINT\).
 
-This i an example of the truly decentralized, trust-less, nature of BOS; no single data proxy or data feed provider is ever the single source of truth.
-
 ## High Level Structure
 
 ![](../.gitbook/assets/bos-flow.jpg)
