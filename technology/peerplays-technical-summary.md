@@ -16,7 +16,7 @@ Note: Peerplays is not a _Turing complete_ smart contracting platform, meaning t
 
 This document is intended to give new Peerplays developers an introduction to the Peerplays architecture and software. Readers are expected to be familiar with C++ software development in general, but not with Peerplays specifically. 
 
-This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; provide a guide on starting a local testnet blockchain for development; and finally, examine how the contracts work and discuss how to create or modify Peerplays smart contracts.
+This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; and examine how the contracts work and discuss how to create or modify Peerplays smart contracts.
 
 ## Peerplays Repository
 
@@ -56,118 +56,51 @@ Of these libraries, the bulk of development activity occurs within the `chain` l
 
 ### The Peerplays Programs
 
-#### [The BitShares Programs](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id8)
+Peerplays contains several programs, but only two of these are relevant to modern Peerplays development: `witness_node` and `cli_wallet.` In addition, the code within these folders exists just to expose library functionality in an executable, and is rarely updated. 
 
-Peerplays contains several programs, but only two of these are relevant to modern BitShares development, namely `witness_node` and `cli_wallet`; moreover, the code within these folders exists merely to expose library functionality in an executable, and is rarely updated. Consult the `README.md` in the `programs` directory for information on the other programs.
+The `witness_node` program is the only maintained Peerplays node executable. The name `witness_node` is something of a misnomer, as this executable is really just a full node, but it can provide witness \(i.e., block producer\) functionality by loading the `witness` plugin. 
 
-The `witness_node` program is the only maintained BitShares node executable. The name `witness_node` is something of a misnomer, as this executable is really just a full node, but it can provide witness \(i.e., block producer\) functionality by loading the `witness` plugin. If one wishes to sync with the BitShares blockchain network and maintain a database of the current chain state, this is the program to do it with.
+{% hint style="info" %}
+**Tip**: If you wish to sync with the Peerplays blockchain network and maintain a database of the current chain state, this is the program to do it with.
+{% endhint %}
 
-The `cli_wallet` program implements a command-line wallet for BitShares. It requires a network connection to a running `witness_node` to provide chain state information to it. This program provides a basic UI for all BitShares functionality.
+The `cli_wallet` program implements a command-line wallet for Peerplays. It requires a network connection to a running `witness_node` to provide chain state information to it. This program provides a basic UI for all Peerplays functionality.
 
-#### [The BitShares Tests](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id9)
+### The Peerplays Tests
 
-BitShares uses the Boost testing framework for its tests. Most of the BitShares tests use the `database_fixture`, defined in `tests/common/database_fixture.hpp`, as the basis of the tests. This file also defines many macros and functions to reduce the boilerplate of test writing.
+Peerplays uses the Boost testing framework for its tests. Most of the Peerplays tests use the `database_fixture`, defined in `tests/common/database_fixture.hpp`, as the basis of the tests. This file also defines many macros and functions to reduce the boilerplate of test writing.
 
-The bulk of the tests are written in the `tests/tests` folder, and are run by the `chain_test` binary. All tests of core functionality should be included in this directory and binary.  
+The bulk of the tests are written in the `tests/tests` folder, and are run by the `chain_test` binary. All tests of core functionality should be included in this directory and binary.
 
+## Peerplays Smart Contracts
 
-### [Building and Running BitShares](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id10)
+This section provides a high-level overview of the architecture of smart contracts in Peerplays, how they work, and how they are created.
 
-BitShares uses CMake as its build system. It is recommended to use a separate build directory, i.e. from within the BitShares repository, run:
+At its essence, a Peerplays smart contract is comprised of three main types of object: 
 
-```text
-$ mkdir build # Make build directory
-$ cd build/   # Change to build directory
-$ cmake ..    # Run CMake to prepare build
-```
+* `operation`
+* `evaluator` 
+* `object` 
 
-If an error about `GetGitRevisionDescription` appears at this stage, most likely the submodules were not fetched \(i.e. `git clone` was called without `--recursive`\). In this event, run `git submodule update --init --recursive` or simply delete the repository and clone again with the `--recursive` flag.
+The Peerplays protocol defines a set of actions a user can take within the blockchain ecosystem, called `operation` s. All interactions with the blockchain take place through `operation` s, and in a sense, they are the blockchain’s API. 
 
-Another common problem at this stage is missing dependencies. Be sure that Boost and OpenSSL are available along with their development headers. If dependencies are installed to non-standard locations, it may be necessary to specify their install locations to CMake on the command line.
+Each `operation` has an `evaluator`, which implements that operation’s functionality within the Peerplays software implementation. Thus an `operation` is like a function prototype, whereas an `evaluator` is the function definition. 
 
-After any errors from CMake have been addressed, re-run CMake. Once CMake exits successfully, the build can be started simply by running `make`.
+Finally, all data persistently stored by the blockchain is contained within database `object` s. Each `object` defines a group of fields, analogous to columns of a relational database table.
 
-When the build has completed, the most interesting binaries will be `build/tests/chain_test` which runs the tests, `build/programs/witness_node/witness_node` which is the full node binary, and `build/programs/cli_wallet/cli_wallet` which is the command line wallet.
+### Operations
 
-When `witness_node` is run, it will create a folder for its persistent storage and configuration files. By default, this folder is located at `$PWD/witness_node_data_dir`. This location can be overridden by using the `-d /path/to/dir` or `--data-dir /path/to/dir` command line options. If the directory does not exist, `witness_node` will create it with a default configuration file \(called `config.ini`\) inside. This file contains comments describing its options, and should be straightforward to edit.
+All `operation` s charge a fee to execute, and each must specify an account to pay the fee. This account’s ID must be returned by the `fee_payer()` method on the `operation`. Each `operation` must also provide a stateless consistency check which examines the `operation`’s fields and throws an exception if anything is invalid. 
 
-Running `witness_node` with the default configuration will cause it to connect to the main BitShares network and begin syncing the chain. For a list of command line options supported by the node, run `witness_node --help`. Note that many of these options can also be specified persistently in the `config.ini` file.
+Finally, `operation` s must provide a `calculate_fee()` method which examines the `operation` and calculates the fee to execute it. This method may not reference blockchain state, however, each `operation` defines a `fee_parameters_type` struct containing settings for the fee calculation defined at runtime, and an instance of this struct is passed to the `calculate_fee()` method.
 
-#### [Launching a Private Test Blockchain](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id11)
+All `operation` s automatically require the authorization of their fee paying account, but an `operation` may additionally specify other accounts which must authorize their execution by defining the `get_required_active_authorities()` and/or `get_required_owner_authorities()` methods. 
 
-Oftentimes it is useful to create a [Private Test Network](https://dev.bitshares.works/en/master/development/testnets/private_testnet-v2.html#private-testnet-guide) when developing and testing new features. This can be done by configuring `witness_node` to use a custom Genesis block, and enabling block production using the witness accounts defined by that Genesis.
+{% hint style="warning" %}
+**Note**: If a transaction contains an `operation` which requires a given account’s authorization, signatures sufficient to satisfy that account’s authority must be provided on the transaction.
+{% endhint %}
 
-* Example: [Private Genesis file](https://dev.bitshares.works/en/master/development/testnets/private_testnet_genesis_example.html#private-testnet-genesis-example)
-* Example: [Configuration file - config.ini](https://dev.bitshares.works/en/master/development/apps/node_config_example_private_testnet.html#bts-config-ini-eg-private-testnet)
-
-To start a node using a custom Genesis block, run `witness_node --genesis-json /path/to/genesis-dev.json`. A suitable Genesis file is available within the repository at `libraries/egenesis/genesis-dev.json` \(as of this writing, available in the `develop` branch, but not `master`\). It will also be necessary to set the following options in the `config.ini` file:
-
-```text
-# Open RPC socket for localhost (allows cli_wallet to connect)
-rpc-endpoint = 127.0.0.1:8090
-
-# This sets the private key used by all witnesses in genesis-dev.json
-private-key = ["BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]
-
-# This tells the node to produce blocks even if no recent blocks are available
-# This is disabled in production to prevent forking due to network failures, but it's necessary to start a new testnet
-enable-stale-production = true
-
-# Enable production with the genesis-dev.json witness accounts
-witness-id = "1.6.1"
-witness-id = "1.6.2"
-witness-id = "1.6.3"
-witness-id = "1.6.4"
-witness-id = "1.6.5"
-witness-id = "1.6.6"
-witness-id = "1.6.7"
-witness-id = "1.6.8"
-witness-id = "1.6.9"
-witness-id = "1.6.10"
-witness-id = "1.6.11"
-```
-
-Running witness\_node as described should cause it to start a new chain and begin producing blocks. It should report its chain ID in the command line output:
-
-```text
-3166980ms th_a       main.cpp:160                  main                 ] Chain ID is ced68e68d7e41258f6a2e71643e41c690edae19dbed8c5f525a0f5c74d322fa9
-```
-
-Take note of this, as it will be necessary when running the command line wallet. If not provided, the wallet will refuse to connect to a `witness_node` that provides an unrecognized chain ID.:
-
-```text
-$ cli_wallet --chain-id ced68e68d7e41258f6a2e71643e41c690edae19dbed8c5f525a0f5c74d322fa9
-```
-
-Once the command line wallet is started, the following commands can be used to create a wallet file, take control of an account, and claim the core asset funds:
-
-```text
->>> set_password hello
->>> unlock hello
->>> import_key init0 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
->>> import_balance init0 ["*"] true
-```
-
-After this, all funds on the blockchain will be held by the `init0` account.
-
-To get a complete list of commands supported by the command line wallet and their argument types, run help. For some commands, there is additional help available by running `gethelp <command name>`, but in general, the best way to get information on the commands is to read [the source](https://github.com/bitshares/bitshares-core/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp#L321) .  
-
-
-### [BitShares Smart Contracts](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id12)
-
-This section provides a high-level overview of the architecture of smart contracts in BitShares, how they work, and how they are created.
-
-At its essence, BitShares smart contract is comprised of three main types of object: `operation` s, `evaluator` s, and `object` s. The BitShares protocol defines a set of actions a user can take within the blockchain ecosystem, called `operation` s. All interactions with the blockchain take place through `operation` s, and in a sense, they are the blockchain’s API. Each `operation` has an `evaluator`, which implements that operation’s functionality within the BitShares software implementation. Thus an `operation` is like a function prototype, whereas an `evaluator` is the function definition. Finally, all data persistently stored by the blockchain is contained within database `object` s. Each `object` defines a group of fields, analogous to columns of a relational database table.
-
-#### [Operations](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id13)
-
-A complete list of `operation` s defined by the BitShares protocol is stored [here](https://github.com/bitshares/bitshares-core/blob/57c40ecf472dd8c46ac082ed0e2f0292f147cf80/libraries/chain/include/graphene/chain/protocol/operations.hpp#L49) . The individual `operation` s are defined within other headers in that same directory, i.e. [transfer\_operation](https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/include/graphene/chain/protocol/transfer.hpp#L44) .
-
-All `operation` s charge a fee to execute, and each must specify an account to pay the fee. This account’s ID must be returned by the `fee_payer()` method on the `operation`. Each `operation` must also provide a stateless consistency check which examines the `operation`’s fields and throws an exception if anything is invalid. Finally, `operation` s must provide a `calculate_fee()` method which examines the `operation` and calculates the fee to execute it. This method may not reference blockchain state; however, each `operation` defines a `fee_parameters_type` struct containing settings for the fee calculation defined at runtime, and an instance of this struct is passed to the `calculate_fee()` method.
-
-All `operation` s automatically require the authorization of their fee paying account, but an `operation` may additionally specify other accounts which must authorize their execution by defining the `get_required_active_authorities()` and/or `get_required_owner_authorities()` methods \(i.e. for [account\_update\_operation](https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/include/graphene/chain/protocol/account.hpp#L161) \). If a transaction contains an `operation` which requires a given account’s authorization, signatures sufficient to satisfy that account’s authority must be provided on the transaction.
-
-#### [Evaluators](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id14)
+### Evaluators
 
 Each `operation` has an `evaluator` which implements that `operation`’s modifications to the blockchain database. Each `evaluator` most provide two methods: `do_evaluate()` and `do_apply()`. The evaluate step examines the `operation` with read-only access to the database, and verifies that the `operation` can be applied successfully. The apply step then modifies the database. Each `evaluator` must also define a type alias, `evaluator::operation_type`, which aliases the specific `operation` implemented by that evaluator.
 
