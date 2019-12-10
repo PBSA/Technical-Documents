@@ -114,13 +114,15 @@ The Peerplays software implementation utilizes a custom, in-memory relational-st
 
 This database is implemented in the `libraries/db` folder, and it provides persistence to disk as well as undo functionality allowing the rewinding of changes, such as when a partially-applied transaction fails to execute, or blocks are popped due to a chain reorganization \(i.e. when switching forks\).
 
-The Peerplays database tracks various `object` types, each of which defines the columns of a table. The rows of this table represent the individual object instances in the database. Along with each `object` type is an index type, which, in relational database terms, defines the primary and secondary keys, which can be used to look up object instances. The primary key is always an `object_id` type, a unique numerical ID for each object instance known to the blockchain. All `objects` inherit an `id` field from their base class which contains this ID. This field is set by the database automatically and does not need to be modified manually.
+The Peerplays database tracks various `object` types, each of which defines the columns of a table. The rows of this table represent the individual object instances in the database. Along with each `object` type is an index type, which, in relational database terms, defines the primary and secondary keys, which can be used to look up object instances. 
 
-An example of a simple object is `transaction_object`, defined [here](https://github.com/bitshares/bitshares-core/blob/master/libraries/chain/include/graphene/chain/transaction_object.hpp) . The index is defined after the object. In this instance, the index defines the primary key \(the object ID\), and two secondary keys: the transaction ID \(its hash\), and the transaction’s expiration. This means that one can look up a `transaction_object` given its object ID or with its transaction hash. Additionally, one can iterate through the `transaction_object` s sorted by expiration, or fetch transactions that expire within a given range.
+The primary key is always an `object_id` type, a unique numerical ID for each object instance known to the blockchain. All `objects` inherit an `id` field from their base class which contains this ID. This field is set by the database automatically and does not need to be modified manually.
 
-Summary
+### Summary
 
-BitShares smart contracts are defined as a set of `operation` s which are analogous to API calls provided by the contract. These `operation` s are implemented by `evaluator` s, which provide code to verify that the operation can execute successfully, and then to perform the requisite modifications to database `object` s. All `object` s specify an index, which defines keys which can be used to look up an object instance within the database.
+Peerplays smart contracts are defined as a set of `operation` s which are analogous to API calls provided by the contract. 
 
-A diff showing all necessary modifications to define a simple new `operation` and `evaluator`, along with the `evaluator`’s code to modify existing database `object` s, as well as test code to exercise this new `operation`, is available for reference [here](https://github.com/nathanhourt/bitshares-2/pull/1) .
+These `operation` s are implemented by `evaluator` s, which provide code to verify that the operation can execute successfully, and then to perform the requisite modifications to database `object` s. 
+
+All `object` s specify an index, which defines keys which can be used to look up an object instance within the database.
 
