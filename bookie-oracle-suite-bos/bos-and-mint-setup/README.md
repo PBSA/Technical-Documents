@@ -102,7 +102,7 @@ For debug use, checkout from Github \(master branch\) and install dependencies m
 ```text
 cd ~
 # checkout from github
-git clone https://github.com/peerplays-network/bos-auto
+git clone https://github.com/pbsa/bos-auto
 cd bos-auto
 # create virtual environment
 virtualenv -p python3 env

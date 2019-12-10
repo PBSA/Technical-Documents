@@ -89,7 +89,7 @@ Next step is to configure bos-auto.
 
 ```bash
 # basic mint configuration file
-wget https://raw.githubusercontent.com/peerplays-network/bos-mint/master/config-example.yaml
+wget https://raw.githubusercontent.com/PBSA/bos-mint/master/config-example.yaml
 mv config-example.yaml config-bos-mint.yaml
 # modify config-bos-mint.yaml (add your own peerplays node and secret key)
 ```
