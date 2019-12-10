@@ -245,7 +245,7 @@ After starting MINT use your favourite desktop browser to access it and you'll b
 **Note**: MINT is not optimized for mobile use yet.
 {% endhint %}
 
-## Development Use 
+## Development Use
 
 For MINT development use checkout the latest repository from:
 

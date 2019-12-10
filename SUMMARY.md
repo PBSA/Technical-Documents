@@ -36,7 +36,6 @@
   * [Naming Scheme](bookie-oracle-suite-bos/bookiesports/naming-schema.md)
 * [Manual Intervention Tool \(MINT\)](bookie-oracle-suite-bos/introduction-to-mint/README.md)
   * [Installing MINT](bookie-oracle-suite-bos/introduction-to-mint/installing-mint.md)
-  * [How To Guides](bookie-oracle-suite-bos/introduction-to-mint/how-to-guides.md)
 
 ## Data Proxies
 
