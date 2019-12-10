@@ -30,7 +30,7 @@ Since your Witness account is going to create and approve proposals automaticall
 We now need to configure bos-auto:
 
 ```text
-wget https://raw.githubusercontent.com/PBSA/bos-auto/master/config-example.yaml
+wget https://raw.githubusercontent.com/peerplays-network/bos-auto/master/config-example.yaml
 mv config-example.yaml config.yaml
 # modify config.yaml
 ```
