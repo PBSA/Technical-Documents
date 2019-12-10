@@ -26,7 +26,7 @@ After adding required APT repositories, use the following commands to install Mo
 
 ```text
 sudo apt update
-sudo apt install mongodb-org
+sudo apt install -y mongodb
 ```
 
 If you want to install a specific version of MongoDB, define the version number as follows:
@@ -68,6 +68,16 @@ build environment:
     distarch: x86_64
     target_arch: x86_64
 ```
+
+And check the status with:
+
+```text
+sudo service mongod status
+```
+
+{% hint style="danger" %}
+Important: 
+{% endhint %}
 
 ### Step 5 - Test MongoDB
 
