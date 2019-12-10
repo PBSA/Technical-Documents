@@ -7,7 +7,7 @@ In this first step, we'll install everything we'll need going forward.
 ### Install Dependencies
 
 {% hint style="warning" %}
-Dependencies are installed as `root/sudo`
+**Note**: Dependencies must be installed as `root/sudo`
 {% endhint %}
 
 ```text
@@ -16,7 +16,7 @@ pip3 install virtualenv
 ```
 
 {% hint style="info" %}
-Note that `virtualenv` is a best practice for python, but installation can also be on a user/global level.
+**Tip**: `virtualenv` is a best practice for python, but installation can also be on a user/global level.
 {% endhint %}
 
 ### Install MongoDB
@@ -28,7 +28,7 @@ MongoDB is used for persistent storage within BOS.
 For  additional information on how to use MongoDB refer to tutorials on your distribution.
 
 {% hint style="danger" %}
-Make sure that the MongoDB is running reliably with automatic restart on failure.
+**Important**: Make sure that the MongoDB is running reliably with automatic restart on failure.
 {% endhint %}
 
 ### **Install Redis**
@@ -40,7 +40,7 @@ Redis is used as an asynchronous queue for the python processes in BOS.
 For additional information on how to install Redisdb refer to  your Linux distribution.
 
 {% hint style="danger" %}
-Make sure that RedisDB is running reliably with automatic restart on failure, and that it's run without any disk persistence.
+**Important**: Make sure that RedisDB is running reliably with automatic restart on failure, and that it's run without any disk persistence.
 {% endhint %}
 
 ### Starting MongoDB and Redis Daemons
@@ -60,7 +60,7 @@ systemctl start redis
 ```
 
 {% hint style="danger" %}
-**Common Issues:** 
+**Important: Common Issues:** 
 
 **Exception**: _Can’t save in background: fork or MISCONF Redis is configured to save RDB snapshots._
 
@@ -147,7 +147,7 @@ Bos-mint is a web-based manual intervention module that allows you to work with 
 
 For more information see:
 
-{% page-ref page="../introduction-to-mint.md" %}
+{% page-ref page="../introduction-to-mint/" %}
 
 ## Monitoring bos-auto
 

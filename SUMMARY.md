@@ -4,6 +4,8 @@
 
 ## Technology
 
+* [Introduction to Peerplays](technology/introduction-to-peerplays.md)
+* [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
 * [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos.md)
@@ -25,8 +27,16 @@
   * [Configuration of bos-auto](bookie-oracle-suite-bos/bos-and-mint-setup/configuration-of-bos-auto.md)
   * [Spinning Up bos-auto](bookie-oracle-suite-bos/bos-and-mint-setup/spinning-up-bos-auto.md)
   * [Command Line Tool](bookie-oracle-suite-bos/bos-and-mint-setup/command-line-tool.md)
-* [Bookiesports](bookie-oracle-suite-bos/bookiesports.md)
-* [Introduction to MINT](bookie-oracle-suite-bos/introduction-to-mint.md)
+* [BookieSports](bookie-oracle-suite-bos/bookiesports/README.md)
+  * [Installing Bookiesports](bookie-oracle-suite-bos/bookiesports/installing-bookiesports.md)
+  * [Synchronizing BOS with BookieSports](bookie-oracle-suite-bos/bookiesports/synchronizing-bos-with-bookiesports.md)
+  * [BookieSports Module Contents](bookie-oracle-suite-bos/bookiesports/bookiesports-package/README.md)
+    * [Sub Modules](bookie-oracle-suite-bos/bookiesports/bookiesports-package/sub-modules.md)
+  * [Schema](bookie-oracle-suite-bos/bookiesports/schema.md)
+  * [Naming Scheme](bookie-oracle-suite-bos/bookiesports/naming-schema.md)
+* [Manual Intervention Tool \(MINT\)](bookie-oracle-suite-bos/introduction-to-mint/README.md)
+  * [Installing MINT](bookie-oracle-suite-bos/introduction-to-mint/installing-mint.md)
+  * [How To Guides](bookie-oracle-suite-bos/introduction-to-mint/how-to-guides.md)
 
 ## Data Proxies
 
