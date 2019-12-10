@@ -1,10 +1,9 @@
 # Table of contents
 
-* [Peerplays Documentation](README.md)
+* [Introduction to Peerplays](README.md)
 
 ## Technology
 
-* [Introduction to Peerplays](technology/introduction-to-peerplays.md)
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
@@ -47,11 +46,7 @@
 
 ## User Guides
 
-* [User Guides Page 1](user-guides/user-guides-page-1.md)
-
 ## Knowledgebase
 
 ## PPY Holders
-
-* [Untitled](ppy-holders/untitled.md)
 

@@ -136,5 +136,42 @@ The repository can be found here:
 
 {% embed url="https://github.com/peerplays-network/python-peerplays" %}
 
+The purpose of `pypeerplays` is to simplify development of products and services that use the Peerplays blockchain. It comes with:
+
+* It’s own \(bip32-encrypted\) wallet
+* RPC interface for the Blockchain backend
+* JSON-based blockchain objects \(accounts, blocks, events, etc\)
+* A simple to use yet powerful API
+* Transaction construction and signing
+* Push notification API
+* _and more_
+
+The APIs are separated into two categories:
+
+* the **Blockchain API** which is used to query blockchain data \(account, assets, trading history, etc.\)
+* the **CLI Wallet API** which has your private keys loaded and is required when interacting with the blockchain with new transactions.
+
+### Blockchain API
+
+The blockchain API \(as provided by the `witness_node` application\), allows you to read the blockchain.
+
+{% hint style="danger" %}
+**Important**: The blockchain API doesn't know about private keys, and cannot sign transactions for you. All it does is validate and broadcast transactions to the P2P network.
+{% endhint %}
+
+In addition to the standard blockchain operations, the `pypeerplays` library also supports the following Peerplays proprietary features:
+
+#### BookiePro
+
+#### Random Number Generator \(RNG\)
+
+#### Sidechain Operator Nodes \(SONs\)
+
+#### Gamified Proof of Stake
+
+### CLI Wallet API
+
+The cli-wallet api, as provided by the `cli_wallet` binary, allows you to **create and sign transactions** and broadcast them.
+
 
 

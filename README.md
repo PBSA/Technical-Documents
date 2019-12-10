@@ -1,2 +1,2 @@
-# Peerplays Documentation
+# Introduction to Peerplays
 
