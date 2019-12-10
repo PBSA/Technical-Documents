@@ -20,37 +20,45 @@ This document will walk readers through the code repository structure and how to
 
 ## Peerplays Repository
 
-The official BitShares repository can be found at [https://github.com/bitshares/bitshares-core/](https://github.com/bitshares/bitshares-core/)
+The official BitShares repository can be found at:
+
+{% embed url="https://github.com/peerplays-network/peerplays" %}
 
 This repository uses git submodules, so be sure to fetch the submodules when cloning. This can be done by passing the `--recursive` flag when cloning:
 
 ```text
-$ git clone https://github.com/bitshares/bitshares-core --recursive
+$ git clone https://github.com/peerplays-network/peerplays --recursive
 ```
 
-The most significant subdirectories in the repository are `libraries`, `programs`, and `tests`. The BitShares implementation is almost entirely defined within various libraries, which are located in the `libraries` subdirectory. The `programs` subdirectory contains small wrappers around these libraries, exposing their functionality as executable binaries. Finally, the `tests` subdirectory contains various tests to verify that essential blockchain features and functionality are working and to detect regressions should they occur during development.
+The most significant subdirectories in the repository are `libraries`, `programs`, and `tests`. The Peerplays implementation is almost entirely defined within various libraries, which are located in the `libraries` subdirectory. 
 
-We now examine each of these three subdirectories in greater detail.
+The `programs` subdirectory contains small wrappers around these libraries, exposing their functionality as executable binaries.
 
-#### [The BitShares Libraries](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id7)
+ The `tests` subdirectory contains various tests to verify that essential blockchain features and functionality are working, and to detect regressions should they occur during development.
 
-BitShares is implemented in several `libraries` within the libraries subdirectory of the repository. A high level description of each of the libraries follows:
+We'll now look at each of the three subdirectories in greater detail.
 
-* `app` contains the `application` class, which implements the heart of a BitShares node
-* `chain` contains the bulk of the blockchain implementation, including all BitShares-specific functionality
+### The Peerplays Libraries
+
+Peerplays is implemented in several `libraries` within the libraries subdirectory of the repository. A high level description of each of the libraries is as follows:
+
+* `app` contains the `application` class, which implements the heart of a Peerplays node
+* `chain` contains the bulk of the blockchain implementation, including all Peerplays specific functionality
 * `db` contains the database functionality, implementing the in-memory database as well as the persistence layer
 * `egenesis` is a small library which embeds the genesis block data into the binary
 * `fc` is a library implementing many utility functionalities, including serialization, RPC, concurrency, etc.
-* `net` contains the peer-to-peer networking layer of BitShares
-* `plugins` contains several plugin libraries which can be utilized within a BitShares node
-* `utilities` contains code and data necessary to BitShares’ implementation, but not critical to the core functionality
+* `net` contains the peer-to-peer networking layer of Peerplays
+* `plugins` contains several plugin libraries which can be utilized within a Peerplays node
+* `utilities` contains code and data necessary to Peerplays’ implementation, but not critical to the core functionality
 * `wallet` contains the reference command-line wallet implementation
 
 Of these libraries, the bulk of development activity occurs within the `chain` library, and sometimes `fc`. The other libraries remain reasonably stable, seeing comparatively small updates and modifications.
 
+### The Peerplays Programs
+
 #### [The BitShares Programs](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id8)
 
-BitShares contains several programs, but only two of these are relevant to modern BitShares development, namely `witness_node` and `cli_wallet`; moreover, the code within these folders exists merely to expose library functionality in an executable, and is rarely updated. Consult the `README.md` in the `programs` directory for information on the other programs.
+Peerplays contains several programs, but only two of these are relevant to modern BitShares development, namely `witness_node` and `cli_wallet`; moreover, the code within these folders exists merely to expose library functionality in an executable, and is rarely updated. Consult the `README.md` in the `programs` directory for information on the other programs.
 
 The `witness_node` program is the only maintained BitShares node executable. The name `witness_node` is something of a misnomer, as this executable is really just a full node, but it can provide witness \(i.e., block producer\) functionality by loading the `witness` plugin. If one wishes to sync with the BitShares blockchain network and maintain a database of the current chain state, this is the program to do it with.
 
