@@ -10,7 +10,11 @@ Peerplays’ decentralization is based on the Delegated Proof of Stake \(DPoS\) 
 
 In addition to the Witnesses are the Advisors, a group of blockchain accounts, likewise elected by token holder voting, which vote to specify configurable blockchain parameters, and vote to include or reject proposed new features and other modifications to the consensus protocol.
 
-Peerplays is a smart contracting platform specifically targeted at gaming contracts. It should be noted that BitShares is not a turing-complete smart contracting platform, meaning that BitShares does not support arbitrary, user-defined smart contracts; rather, BitShares provides a well-defined set of officially maintained, built-in contracts. This is in contrast to turing complete smart contracting platforms like EOS or Ethereum, which provide few to no official contracts, but allow users to define and share contracts without any formally defined quality or correctness verification.
+Peerplays is a smart contracting platform specifically targeted at gaming contracts. 
+
+{% hint style="warning" %}
+Note: Peerplays is not a _Turing complete_ smart contracting platform, meaning that Peerplays does not support arbitrary, user-defined smart contracts; rather, it provides a well-defined set of officially maintained, built-in contracts. This is in contrast to _Turing complete_ smart contracting platforms like EOS or Ethereum, which provide few to no official contracts, but allow users to define and share contracts without any formally defined quality or correctness verification.
+{% endhint %}
 
 This document is intended to give new BitShares developers an introduction to the BitShares software. Readers are expected to be familiar with C++ software development in general, but not with BitShares specifically. This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; provide a guide on starting a local testnet blockchain for development; and finally, examine how the contracts work and discuss how to create or modify BitShares smart contracts.[The BitShares Repository](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id6)
 

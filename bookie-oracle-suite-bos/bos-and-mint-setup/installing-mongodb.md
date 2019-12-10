@@ -76,7 +76,7 @@ sudo service mongod status
 ```
 
 {% hint style="danger" %}
-Important: 
+**Important**:  Some versions have the service name as `mongod` and some have `mongodb.` If you get an error with the above command, use `sudo service mongodb status` instead.
 {% endhint %}
 
 ### Step 5 - Test MongoDB
