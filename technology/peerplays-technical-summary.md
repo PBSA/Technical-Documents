@@ -2,8 +2,6 @@
 
 ## Introducing Peerplays
 
-
-
 Peerplays is a decentralized, provably fair global gaming platform, built on the most advanced blockchain technology available today. Peerplays brings a new paradigm of fairness, speed, transparency, and security to the global gaming industry.
 
 Peerplays’ decentralization is based on the Delegated Proof of Stake \(DPoS\) consensus model, meaning that blocks are produced by a group of ‘Witness’ nodes which are elected by stake-weighted token holder voting. 
@@ -16,7 +14,11 @@ Peerplays is a smart contracting platform specifically targeted at gaming contra
 Note: Peerplays is not a _Turing complete_ smart contracting platform, meaning that Peerplays does not support arbitrary, user-defined smart contracts; rather, it provides a well-defined set of officially maintained, built-in contracts. This is in contrast to _Turing complete_ smart contracting platforms like EOS or Ethereum, which provide few to no official contracts, but allow users to define and share contracts without any formally defined quality or correctness verification.
 {% endhint %}
 
-This document is intended to give new BitShares developers an introduction to the BitShares software. Readers are expected to be familiar with C++ software development in general, but not with BitShares specifically. This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; provide a guide on starting a local testnet blockchain for development; and finally, examine how the contracts work and discuss how to create or modify BitShares smart contracts.[The BitShares Repository](https://dev.bitshares.works/en/master/development/bitshares-zero-to-sixty.html#id6)
+This document is intended to give new Peerplays developers an introduction to the Peerplays architecture and software. Readers are expected to be familiar with C++ software development in general, but not with Peerplays specifically. 
+
+This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; provide a guide on starting a local testnet blockchain for development; and finally, examine how the contracts work and discuss how to create or modify Peerplays smart contracts.
+
+## Peerplays Repository
 
 The official BitShares repository can be found at [https://github.com/bitshares/bitshares-core/](https://github.com/bitshares/bitshares-core/)
 
