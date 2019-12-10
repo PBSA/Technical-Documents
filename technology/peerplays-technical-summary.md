@@ -128,5 +128,7 @@ All `object` s specify an index, which defines keys which can be used to look up
 
 ## Peerplays API\(s\)
 
+Peerplays uses a Python library to interface with the blockchain backend services.
 
+This library is know as 
 

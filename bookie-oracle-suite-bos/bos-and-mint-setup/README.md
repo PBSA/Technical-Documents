@@ -77,7 +77,11 @@ Create your own Redis configuration file \([https://redis.io/topics/config](http
 This indicates that your MondoDB is not running properly. Check your MongoDB installation.
 {% endhint %}
 
-### Installing bos-auto as a User
+### Installing bos-auto
+
+{% hint style="warning" %}
+**Note**: bos-auto must be installed as `user`
+{% endhint %}
 
 You can either install bos-auto via `pypi / pip3` \(production installation\) or via git clone \(debug installation\). 
 
@@ -114,7 +118,7 @@ pip3 install -r requirements.txt
 
 BOS auto is supposed to run in the virtual environment. Either activate it beforehand, as above, or run it directly in the `env/bin` folder.
 
-### Upgrading bos-auto as a User
+### Upgrading bos-auto
 
 For production installation, upgrade to the latest version - including all dependencies using:
 
