@@ -20,7 +20,7 @@ This document will walk readers through the code repository structure and how to
 
 ## Peerplays Repository
 
-The official BitShares repository can be found at:
+The official Peerplays repository can be found at:
 
 {% embed url="https://github.com/peerplays-network/peerplays" %}
 
@@ -128,7 +128,13 @@ All `object` s specify an index, which defines keys which can be used to look up
 
 ## Peerplays API\(s\)
 
-Peerplays uses a Python library to interface with the blockchain backend services.
+Peerplays uses a Python library to interface with much of the blockchain backend services.
 
-This library is know as 
+This library is know as `python-peerplays` or `pypeerplays`. 
+
+The repository can be found here:
+
+{% embed url="https://github.com/peerplays-network/python-peerplays" %}
+
+
 
