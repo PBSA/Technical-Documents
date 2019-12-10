@@ -1,2 +1,2 @@
-# About Data Proxies
+# Introduction to Data Proxies
 
