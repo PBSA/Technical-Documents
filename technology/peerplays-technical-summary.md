@@ -18,6 +18,10 @@ This document is intended to give new Peerplays developers an introduction to th
 
 This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; and examine how the contracts work and discuss how to create or modify Peerplays smart contracts.
 
+## Graphene
+
+Graphene is the underlying technology behind the Peerplays blockchain.
+
 ## Peerplays Repository
 
 The official Peerplays repository can be found at:
