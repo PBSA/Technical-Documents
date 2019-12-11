@@ -48,10 +48,12 @@ make install # this can install the executable files under /usr/local
 ```
 
 {% hint style="warning" %}
-\#master\# can be replaced with the most recent release tag.
+**Note**: \#master\# can be replaced with the most recent release tag.
 {% endhint %}
 
 ## Install Docker Image
+
+This Docker image can be installed as an alternative to the previous steps. It doesn't need to be run if those steps have already been completed.
 
 ```text
 # Install docker
@@ -80,6 +82,10 @@ docker start peerplays
 
 ## Build Graphene
 
+{% hint style="warning" %}
+Note: This step can be skipped if you're not running Ubuntu 14 - which really you shouldn't be!
+{% endhint %}
+
 ```text
 cd ..
 git clone https://github.com/cryptonomex/graphene.git
@@ -103,7 +109,7 @@ make
 Launching the Witness creates the required directories. 
 
 {% hint style="danger" %}
-Next stop the Witness node before continuing.
+**Important**: Next stop the Witness node before continuing.
 {% endhint %}
 
 ```text
@@ -161,7 +167,7 @@ chmod 744 /home/ubuntu/peerplays/start.sh
 Step 4. Create this file: `sudo vi /etc/systemd/system/peerplays.service` 
 
 {% hint style="warning" %}
-Note the path for `start.sh`, if necessary, change it to match where your `start.sh` file actually is.
+**Note**: Check the path for `start.sh`, if necessary, change it to match where your `start.sh` file actually is.
 {% endhint %}
 
 ```text
@@ -183,7 +189,7 @@ sudo systemctl enable peerplays.service
 ```
 
 {% hint style="danger" %}
-Make sure you don't get any errors.
+**Important**: Make sure you don't get any errors.
 {% endhint %}
 
 ```text
