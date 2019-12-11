@@ -22,6 +22,28 @@ This document will walk readers through the code repository structure and how to
 
 Graphene is the underlying technology behind the Peerplays blockchain.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The key Graphene resources can be found here and are a very good starting point for anyone wanting to understand the Peerplays blockchain.
+
+{% embed url="https://github.com/cryptonomex/graphene" %}
+
+{% embed url="https://github.com/cryptonomex/graphene/wiki" %}
+
+
+
 ## Peerplays Repository
 
 The official Peerplays repository can be found at:
