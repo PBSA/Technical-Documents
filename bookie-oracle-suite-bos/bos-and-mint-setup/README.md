@@ -118,6 +118,12 @@ pip3 install -r requirements.txt
 
 BOS auto is supposed to run in the virtual environment. Either activate it beforehand, as above, or run it directly in the `env/bin` folder.
 
+{% hint style="danger" %}
+**Important**: If bos-auto is installed as `root` and not `user` then you'll likely get errors similar to the following:
+{% endhint %}
+
+![](../../.gitbook/assets/photo_2019-12-10-13.31.47.jpeg)
+
 ### Upgrading bos-auto
 
 For production installation, upgrade to the latest version - including all dependencies using:

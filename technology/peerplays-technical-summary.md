@@ -128,9 +128,13 @@ All `object` s specify an index, which defines keys which can be used to look up
 
 ## Peerplays API\(s\)
 
-Peerplays uses a Python library to interface with much of the blockchain backend services.
+Since Peerplays is a Graphene based blockchain it supports the Graphene API at its core.
 
-This library is know as `python-peerplays` or `pypeerplays`. 
+To make access to the API easier for developers there are two Python libraries that can be used.
+
+### python-peerplays \(pypeerplays\)
+
+This is a communications library which allows interface with the Peerplays blockchain directly and without the need for a cli\_wallet. It provides a wallet interface and can construct any kind of transactions and properly sign them for broadcast.
 
 The repository can be found here:
 
@@ -151,7 +155,9 @@ The APIs are separated into two categories:
 * the **Blockchain API** which is used to query blockchain data \(account, assets, trading history, etc.\)
 * the **CLI Wallet API** which has your private keys loaded and is required when interacting with the blockchain with new transactions.
 
-### Blockchain API
+{% embed url="https://github.com/peerplays-network/peerplaysjs-lib" %}
+
+#### Blockchain API
 
 The blockchain API \(as provided by the `witness_node` application\), allows you to read the blockchain.
 
@@ -159,19 +165,17 @@ The blockchain API \(as provided by the `witness_node` application\), allows you
 **Important**: The blockchain API doesn't know about private keys, and cannot sign transactions for you. All it does is validate and broadcast transactions to the P2P network.
 {% endhint %}
 
-In addition to the standard blockchain operations, the `pypeerplays` library also supports the following Peerplays proprietary features:
-
-#### BookiePro
-
-#### Random Number Generator \(RNG\)
-
-#### Sidechain Operator Nodes \(SONs\)
-
-#### Gamified Proof of Stake
-
-### CLI Wallet API
+#### CLI Wallet API
 
 The cli-wallet api, as provided by the `cli_wallet` binary, allows you to **create and sign transactions** and broadcast them.
+
+### peerplaysjs-lib
+
+This is Javascript API for interacting with the Peerplays Blockchain.
+
+The repository can be found here:
+
+{% embed url="https://github.com/peerplays-network/peerplaysjs-lib" %}
 
 
 

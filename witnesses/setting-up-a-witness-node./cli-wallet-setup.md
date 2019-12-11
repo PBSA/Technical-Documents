@@ -16,7 +16,7 @@ To set your initial password to `password` use:
 ```
 
 {% hint style="info" %}
-A list of CLI wallet commands is available here:[ ](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)[CLI Wallet commands](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)
+**Tip**: A list of CLI wallet commands is available here:[ ](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)[CLI Wallet commands](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api_documentation.hpp)
 {% endhint %}
 
 ### Get Owner and Active Keys
@@ -38,7 +38,7 @@ To import your keys, generated in the previous step, into your CLI wallet do the
 3. Import the key using the following command 
 
 {% hint style="warning" %}
-Substitute `your-witness-username` with your own username.
+**Note**: Substitute `your-witness-username` with your own username.
 {% endhint %}
 
 ```text
@@ -56,7 +56,7 @@ upgrade_account your_witness_username true
 Make sure your URL is in quotes. 
 
 {% hint style="warning" %}
-Substitute `"url"` with your witness URL.
+**Note**: Substitute `"url"` with your witness URL.
 {% endhint %}
 
 ```text
@@ -66,7 +66,7 @@ create_witness your_witness_username "url" true
 This will return your `block_signing_key`
 
 {% hint style="danger" %}
-Be sure to take note of  your `block_signing_key`
+**Important**: Be sure to take note of  your `block_signing_key`
 {% endhint %}
 
 Run the following command using your `block_signing_key` from the previous step:
@@ -86,7 +86,7 @@ One of the pairs should match your `block_signing_key` , this is the one you'll 
 ### Get Your Witness ID
 
 {% hint style="warning" %}
-Substitute `username` with you Witness username.
+**Note**: Substitute `username` with you Witness username.
 {% endhint %}
 
 ```text
@@ -100,13 +100,13 @@ Take note of the `id` for the next step.
 Next the Witness node configuration file, `witness_node_data_dir/config.ini`, needs to be modified to include your Witness ID \(from the previous step\), and your private key pair.
 
 {% hint style="warning" %}
-Substitute `"your_witness_id"` with your Witness ID. 
+**Note**: Substitute `"your_witness_id"` with your Witness ID. 
 
 Don't forget to enclose in quotes!
 {% endhint %}
 
 {% hint style="warning" %}
-Substitute `"block_signing_key"` with your block signing.
+**Note**: Substitute `"block_signing_key"` with your block signing.
 
 Substitute `"private_key_for_your_block_signing_key"` with your private key.
 
@@ -129,7 +129,7 @@ private-key = ["block_signing_key","private_key_for_your_block_signing_key"]
 If your Witness node fails to start, try again with these flags:
 
 {% hint style="danger" %}
-Not for permanent use.
+**Important**: Not for permanent use.
 {% endhint %}
 
 ```text
