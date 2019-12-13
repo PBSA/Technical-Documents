@@ -37,6 +37,16 @@ mv config-example.yaml config.yaml
 
 The variables are described below:
 
+The following options need to be set:
+
+`node: ws://localhost:8090`. If not running a local installation then change this to any Testnet \(Beatrice\) API node.
+
+`network: beatrice.` Only change if you're not using this Testnet.
+
+{% hint style="danger" %}
+**Important**: Make sure you set a Redis password during the Redis installation.
+{% endhint %}
+
 ```text
 # Please see bos_auto/config-defaults.yaml for description
 
