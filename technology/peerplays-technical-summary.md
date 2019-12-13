@@ -40,10 +40,6 @@ The key Graphene resources can be found here and are a very good starting point 
 
 {% embed url="https://github.com/cryptonomex/graphene" %}
 
-{% embed url="https://github.com/cryptonomex/graphene/wiki" %}
-
-
-
 ## Peerplays Repository
 
 The official Peerplays repository can be found at:
@@ -180,8 +176,6 @@ The APIs are separated into two categories:
 
 * the **Blockchain API** which is used to query blockchain data \(account, assets, trading history, etc.\)
 * the **CLI Wallet API** which has your private keys loaded and is required when interacting with the blockchain with new transactions.
-
-{% embed url="https://github.com/peerplays-network/peerplaysjs-lib" %}
 
 #### Blockchain API
 

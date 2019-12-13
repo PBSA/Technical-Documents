@@ -19,6 +19,12 @@ Note: Former installations also required to run the scheduler as a separate proc
 
 This is a basic setup and uses the flask built-in development server, see Production Deployment below.
 
+{% hint style="danger" %}
+Important: Before executing the next command make sure that your node is set to the correct environment. For example, if the installation is for Testnet \(Beatrice\) run:
+
+`peerplays set node <Beatrice Node>` where &lt;Beatrice node&gt; is any Beatrice API node.
+{% endhint %}
+
 ```text
 cd bos-auto
 bos-auto api --host 0.0.0.0 --port 8010       [--help for more information]
