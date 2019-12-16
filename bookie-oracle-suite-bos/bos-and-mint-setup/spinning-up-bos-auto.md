@@ -6,13 +6,13 @@ Now that bos-auto has been configured we want to make sure it works correctly. T
 2. The worker then takes those incidents and processes them.
 
 {% hint style="warning" %}
-**Note**: It is recommended to run both via system services.
+It is recommended to run both via system services.
 {% endhint %}
 
 The commands shown are for production installation, for debug installation replace `“bos-auto”` with `“python3 cli.py”`.
 
-{% hint style="warning" %}
-**Note**: Former installations also required to run the scheduler as a separate process. This is no longer necessary, it is spawned as a subprocess.
+{% hint style="info" %}
+Note: Former installations also required to run the scheduler as a separate process. This is no longer necessary, it is spawned as a subprocess.
 {% endhint %}
 
 ### Start the Endpoint
@@ -106,7 +106,7 @@ Going into production mode, a Witness may want to deploy the endpoint via UWSGI,
 ### Start worker
 
 {% hint style="danger" %}
-**Important**: At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
+Warning -  At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
 {% endhint %}
 
 Start the worker with the following commands:
@@ -132,13 +132,13 @@ Nothing else needs to be done at this point.
 ### **Testing**
 
 {% hint style="danger" %}
-**Important**: For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`
+Warning - For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`
 {% endhint %}
 
 For testing, we need to throw a properly formatted incident at the endpoint. The following is an example of the file format,
 
 {% hint style="warning" %}
-**Note**: Because the incident data changes all the time and is quickly out of date, the actual contents of this file are unlikely to work. At the time of testing reach out to PBSA for some up to date incident data.
+Note: Because the incident data changes all the time and is quickly out of date, the actual contents of this file are unlikely to work. At the time of testing reach out to PBSA for some up to date incident data.
 {% endhint %}
 
 ```text
