@@ -152,6 +152,10 @@ All `object` s specify an index, which defines keys which can be used to look up
 
 Since Peerplays is a Graphene based blockchain it supports the Graphene API at its core.
 
+For more information on the Graphene API go to:
+
+{% embed url="https://docslocalcoinis.readthedocs.io/en/latest/api/index.html" %}
+
 To make access to the API easier for developers there are two Python libraries that can be used.
 
 ### python-peerplays \(pypeerplays\)
