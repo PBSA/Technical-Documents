@@ -55,7 +55,15 @@ Apart from Witnesses, the token holders also elect Advisors who have the privile
 
 Under DPOS the administrative authority rests in the hands of the users, just like a democracy. But unlike Witnesses, the Advisors are not compensated for retaining their positions.
 
+Peerplays introduces a unique enhancement to Delegated Proof of Stake called Gamified Proof of Stake \(GPOS\). 
 
+The original intent of Peerplays was to operate as a Decentralized Autonomous Cooperative \(DAC\) where DPOS enables the voting collective of core token holders to determine whom would act as Advisors, Witness, and Proposals within Peerplays. However, the challenges of voter turnout continue to plague Peerplays like other DPOS based blockchains. 
+
+GPOS make a protocol change such that PPY token holders now receive a 'participation reward' based on their voting performance and how many PPY they have vested or 'staked'.
+
+This is a significant change from the original protocol where token holders were rewarded with their share of a "rake', taken from a percentage of the blockchain fees, and then distributed to token holders relative to their token holdings, regardless of any voting participation.
+
+Being a DPOS consensus blockchain, the importance of voter participation of PPY holders is paramount to the security of the blockchain. The introduction of GPOS ensures that token holders will take an active interest in the operation and governance of Peerplays.
 
 ## Peerplays Repository
 
