@@ -40,7 +40,13 @@ The key Graphene resources can be found here and are a very good starting point 
 
 ## DPOS and GPOS
 
-Graphene blockchain is based on the DPOS consensus mechanism, where ‘N’ number of witnesses are selected via continuous voting by stakeholders to produce blocks. This ‘N’ is an odd number. Only these witnesses produce the blocks in their respective time slots until the next maintenance interval. After the maintenance interval, the algorithm chooses the next set of witnesses based on the voting results. It is important to understand here that:
+ Peerplays is based on the DPOS consensus mechanism, where the number of Witnesses are selected via continuous voting by token holders to produce blocks. 
+
+{% hint style="warning" %}
+**Note**: The number of block producing \(active\) Witnesses an odd number.
+{% endhint %}
+
+ Only these witnesses produce the blocks in their respective time slots until the next maintenance interval. After the maintenance interval, the algorithm chooses the next set of witnesses based on the voting results. It is important to understand here that:
 
 * Only stakeholders can participate in the voting process
 * One stakeholder can only vote one witness.
