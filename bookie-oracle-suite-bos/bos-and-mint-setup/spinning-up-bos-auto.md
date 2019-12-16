@@ -6,13 +6,13 @@ Now that bos-auto has been configured we want to make sure it works correctly. T
 2. The worker then takes those incidents and processes them.
 
 {% hint style="warning" %}
-It is recommended to run both via system services.
+**Note**: It is recommended to run both via system services.
 {% endhint %}
 
 The commands shown are for production installation, for debug installation replace `“bos-auto”` with `“python3 cli.py”`.
 
-{% hint style="info" %}
-Note: Former installations also required to run the scheduler as a separate process. This is no longer necessary, it is spawned as a subprocess.
+{% hint style="warning" %}
+**Note**: Former installations also required to run the scheduler as a separate process. This is no longer necessary, it is spawned as a subprocess.
 {% endhint %}
 
 ### Start the Endpoint
@@ -20,7 +20,7 @@ Note: Former installations also required to run the scheduler as a separate proc
 This is a basic setup and uses the flask built-in development server, see Production Deployment below.
 
 {% hint style="danger" %}
-Important: Before executing the next command make sure that your node is set to the correct environment. For example, if the installation is for Testnet \(Beatrice\) run:
+**Important**: Before executing the next command make sure that your node is set to the correct environment. For example, if the installation is for Testnet \(Beatrice\) run:
 
 `peerplays set node <Beatrice Node>` where &lt;Beatrice node&gt; is any Beatrice API node.
 {% endhint %}
@@ -106,7 +106,7 @@ Going into production mode, a Witness may want to deploy the endpoint via UWSGI,
 ### Start worker
 
 {% hint style="danger" %}
-Warning -  At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
+**Important**: At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
 {% endhint %}
 
 Start the worker with the following commands:
@@ -132,13 +132,13 @@ Nothing else needs to be done at this point.
 ### **Testing**
 
 {% hint style="danger" %}
-Warning - For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`
+**Important**: For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`
 {% endhint %}
 
 For testing, we need to throw a properly formatted incident at the endpoint. The following is an example of the file format,
 
 {% hint style="warning" %}
-Note: Because the incident data changes all the time and is quickly out of date, the actual contents of this file are unlikely to work. At the time of testing reach out to PBSA for some up to date incident data.
+**Note**: Because the incident data changes all the time and is quickly out of date, the actual contents of this file are unlikely to work. At the time of testing reach out to PBSA for some up to date incident data.
 {% endhint %}
 
 ```text
@@ -152,7 +152,7 @@ Store them in a file called `replay.txt` and run the following call:
 bos-auto replay --url http://localhost:8010/trigger replay.txt
 ```
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Note the `trigger` at the end of the endpoint URL.
 {% endhint %}
 
@@ -198,7 +198,7 @@ And your worker to return something along the lines of \(once for each incident 
 ```
 
 {% hint style="info" %}
-Each incident results in **two** work items, namely a `bookied.work.process()` as well as a `bookied.work.approve()` call. 
+**Tip**: Each incident results in **two** work items, namely a `bookied.work.process()` as well as a `bookied.work.approve()` call. 
 
 The former does the heavy lifting and may produce a proposal, while the latter approves proposals that we have created on our own.
 {% endhint %}
@@ -208,8 +208,10 @@ The former does the heavy lifting and may produce a proposal, while the latter a
 With the command line tool, we can connect to the MongoDB and inspect the incidents that we inserted above:
 
 ```text
-bos-auto incidents list
+bos-auto incidents list [Begin Date] [End Date]
 ```
+
+Where \[Begin Date\] and \[End Date\] specify the date range to pull incident data from.
 
 The output should look like:
 
@@ -240,7 +242,11 @@ And replay any of the two incidents by using:
 bos-auto incidents resend 2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true 5e2cdc117c9404f2609936aa3a8d49e4
 ```
 
-{% hint style="warning" %}
-This should start your worker.
+{% hint style="info" %}
+Tip: For more information on BOS supported commands run:
+
+`bos-auto --help` or `bos-incidents --help`
 {% endhint %}
+
+Your worker should now be started.
 
