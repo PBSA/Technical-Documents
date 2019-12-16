@@ -28,7 +28,9 @@ Unlike Bitcoin miners, Peerplays Witnesses have to be voted in, and once elected
 
 To earn the right to be a Witness every prospect must accumulate votes by demonstrating why they would be a good Witness. It’s not enough for a prospective Witness to say they have a high spec computer in their basement and are tech savvy. A Witness should demonstrate qualities such as being active in the Peerplays community, blockchain competency, and past experience.
 
-Peerplays has a unique enhancement to Delegated Proof of Stake called Gamified Proof of Stake \(GPOS\). In the context of Witness voting this is important as it incentivizes PPY token holders to vote. More information about GPOS can be found here \[ADD LINK\]
+Peerplays has a unique enhancement to Delegated Proof of Stake called Gamified Proof of Stake \(GPOS\). In the context of Witness voting this is important as it incentivizes PPY token holders to vote. More information about GPOS can be found here:
+
+{% page-ref page="../technology/gamified-proof-of-stake-gpos.md" %}
 
 Vote strength is determined by how many PPY tokens somebody holds. This means that people who have more tokens will influence the network more than people who have very few tokens. Vote power is determined by ‘stake’.
 
