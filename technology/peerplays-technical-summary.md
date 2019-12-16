@@ -181,21 +181,33 @@ The APIs are separated into two categories:
 * the **Blockchain API** which is used to query blockchain data \(account, assets, trading history, etc.\)
 * the **CLI Wallet API** which has your private keys loaded and is required when interacting with the blockchain with new transactions.
 
-#### Blockchain API
+The set of available calls depends on whether you connect to a full node \(`witness_node`\) or the wallet \(`cli_wallet`\). Both support RPC-JSON. The full node also supports the websocket protocol with notifications.
 
-The blockchain API \(as provided by the `witness_node` application\), allows you to read the blockchain.
+Which blockchain network you connect to depends on the configuration of the full node and the wallet. 
+
+{% hint style="info" %}
+**Tip**: If you run a full node, we recommend you connect your wallet to your local full node even though it could be connected to any other public full node as well.
+{% endhint %}
+
+
+
+### Blockchain API
+
+The blockchain API \(as provided by the `witness_node` application\) can be used to obtain any kind of data stored in the blockchain. Besides data stores in the blockchain itself \(blocks, transactions, etc. ..\), higher level objects \(such as accounts, balances, etc. …\) can be retrieved through the full node’s database.
+
+It is not required to run a local full node if you want to query a particular blockchain or database, but you can also query any existing public node for information.
 
 {% hint style="danger" %}
 **Important**: The blockchain API doesn't know about private keys, and cannot sign transactions for you. All it does is validate and broadcast transactions to the P2P network.
 {% endhint %}
 
-#### CLI Wallet API
+### CLI Wallet API
 
-The cli-wallet api, as provided by the `cli_wallet` binary, allows you to **create and sign transactions** and broadcast them.
+The cli-wallet api, as provided by the `cli_wallet` binary, allows you to create and sign transactions and broadcast them.
 
 ### peerplaysjs-lib
 
-This is Javascript API for interacting with the Peerplays Blockchain.
+This is Javascript API for interacting with the Peerplays Blockchain. This is more commonly used for connecting dApps to the blockchain. 
 
 The repository can be found here:
 
