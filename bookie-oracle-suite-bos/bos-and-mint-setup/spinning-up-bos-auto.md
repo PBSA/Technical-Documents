@@ -6,13 +6,13 @@ Now that bos-auto has been configured we want to make sure it works correctly. T
 2. The worker then takes those incidents and processes them.
 
 {% hint style="warning" %}
-It is recommended to run both via system services.
+**Note**: It is recommended to run both via system services.
 {% endhint %}
 
 The commands shown are for production installation, for debug installation replace `“bos-auto”` with `“python3 cli.py”`.
 
-{% hint style="info" %}
-Note: Former installations also required to run the scheduler as a separate process. This is no longer necessary, it is spawned as a subprocess.
+{% hint style="warning" %}
+**Note**: Former installations also required to run the scheduler as a separate process. This is no longer necessary, it is spawned as a subprocess.
 {% endhint %}
 
 ### Start the Endpoint
@@ -106,7 +106,7 @@ Going into production mode, a Witness may want to deploy the endpoint via UWSGI,
 ### Start worker
 
 {% hint style="danger" %}
-Warning -  At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
+**Important**: At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
 {% endhint %}
 
 Start the worker with the following commands:
@@ -132,10 +132,14 @@ Nothing else needs to be done at this point.
 ### **Testing**
 
 {% hint style="danger" %}
-Warning - For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`
+**Important**: For testing, we highly recommend that you set the `nobroadcast` flag in `config.yaml` to `True`
 {% endhint %}
 
-For testing, we need to throw a properly formatted incident at the endpoint. To simplify this for Witnesses, you can use the following ones:
+For testing, we need to throw a properly formatted incident at the endpoint. The following is an example of the file format,
+
+{% hint style="warning" %}
+**Note**: Because the incident data changes all the time and is quickly out of date, the actual contents of this file are unlikely to work. At the time of testing reach out to PBSA for some up to date incident data.
+{% endhint %}
 
 ```text
 {'provider_info': {'pushed': '2018-03-10T00:06:23Z', 'name': '5e2cdc120c9404f2609936aa3a8d49e4'}, 'call': 'create', 'timestamp': '2018-04-25T10:54:10.495868Z', 'arguments': {'unsure': True, 'season': '2018'}, 'unique_string': '2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true', 'id': {'away': 'New York Islanders', 'event_group_name': 'NHL Regular Season', 'start_time': '2018-03-16T23:00:00Z', 'home': 'Washington Capitals', 'sport': 'Ice Hockey'}}
