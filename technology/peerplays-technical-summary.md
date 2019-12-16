@@ -40,28 +40,28 @@ The key Graphene resources can be found here and are a very good starting point 
 
 ## DPOS and GPOS
 
- Peerplays is based on the DPOS consensus mechanism, where the number of Witnesses are selected via continuous voting by token holders to produce blocks. 
+ Peerplays is based on the Delegated Proof of Stake \(DPOS\) consensus mechanism, where the number of Witnesses are selected, via continuous voting by the PPY token holders, to produce blocks. 
 
 {% hint style="warning" %}
 **Note**: The number of block producing \(active\) Witnesses an odd number.
 {% endhint %}
 
- Only these witnesses produce the blocks in their respective time slots until the next maintenance interval. After the maintenance interval, the algorithm chooses the next set of witnesses based on the voting results. It is important to understand here that:
+Only these Witnesses produce the blocks in their respective time slots until the next maintenance interval. After the maintenance interval, the algorithm chooses the next set of Witnesses based on the voting results. Furthermore:
 
-* Only stakeholders can participate in the voting process
-* One stakeholder can only vote one witness.
+* Only token holders can participate in the voting process.
+* Token holders can vote multiple times, for multiple Witnesses.
 
-Apart from witnesses, the stakeholders also elect delegates who have the privilege of proposing changes to the network parameters. These changes range from something as simple as transaction fees – to the number of elected witnesses. A particular majority of delegates approve the proposed changes. Post this, a two week period is given to the stakeholders. During this, they may vote out the delegates and veto the proposed changes \(note that these network changes aren’t very likely to be proposed\).
+Apart from Witnesses, the token holders also elect Advisors who have the privilege of proposing changes to the network parameters. These changes range from something as simple as transaction fees – to the number of elected Witnesses. 
 
-Thus, under DPOS it is safe to assume that the administrative authority rests in the hands of the users, just like a democracy. But unlike witnesses, the delegates are not compensated for retaining their positions.
+Under DPOS the administrative authority rests in the hands of the users, just like a democracy. But unlike Witnesses, the Advisors are not compensated for retaining their positions.
+
+
 
 ## Peerplays Repository
 
 The official Peerplays repository can be found at:
 
 {% embed url="https://github.com/peerplays-network/peerplays" %}
-
-## 
 
 This repository uses git submodules, so be sure to fetch the submodules when cloning. This can be done by passing the `--recursive` flag when cloning:
 
