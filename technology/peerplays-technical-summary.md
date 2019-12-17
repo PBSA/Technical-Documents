@@ -43,7 +43,7 @@ The key Graphene resources can be found here and are a very good starting point 
  Peerplays is based on the Delegated Proof of Stake \(DPOS\) consensus mechanism, where the number of Witnesses are selected, via continuous voting by the PPY token holders, to produce blocks. 
 
 {% hint style="warning" %}
-**Note**: The number of block producing \(active\) Witnesses has to be an odd number.
+**Note**: The number of block producing \(active\) Witnesses an odd number.
 {% endhint %}
 
 Only these Witnesses produce the blocks in their respective time slots until the next maintenance interval. After the maintenance interval, the algorithm chooses the next set of Witnesses based on the voting results. Furthermore:
