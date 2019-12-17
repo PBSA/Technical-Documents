@@ -240,8 +240,6 @@ It is not required to run a local full node if you want to query a particular bl
 
 The cli-wallet api, as provided by the `cli_wallet` binary, allows you to create and sign transactions and broadcast them.
 
-
-
 {% embed url="https://github.com/peerplays-network/peerplaysjs-lib" %}
 
 

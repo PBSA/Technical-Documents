@@ -1,5 +1,7 @@
 # Introduction to Peerplays
 
+The code for this documentation portal is on GitHub and we would welcome all contributions from the community.
+
 ## What is Peerplays?
 
 Peerplays is the first decentralized global betting platform, disrupting the global gaming industry with a new paradigm of fairness, transparency, speed, and security. 
