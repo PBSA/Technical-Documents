@@ -102,8 +102,8 @@ secret_key: # enter some random string
 allowed_assets:
     - BTF
 connection:  
-    use: baxter
-    baxter:
+    use: beatrice
+    beatrice:
         node:
             - # enter your node
 ```
@@ -118,7 +118,7 @@ secret_key: # enter any random string
 sql_database: "sqlite:///{cwd}/bookied-local.db"
 connection:
     use: # enter your desired chain
-    baxter:
+    beatrice:
         node:
             - # enter your node
         nobroadcast: False
