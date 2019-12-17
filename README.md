@@ -1,6 +1,6 @@
 # Introduction to Peerplays
 
-The code for this documentation portal is on GitHub and we would welcome all contributions from the community.
+The code for this documentation portal is on [GitHub](https://github.com/PBSA/Technical-Documents/blob/master/README.md) and we would welcome all contributions from the community.
 
 ## What is Peerplays?
 
