@@ -11,7 +11,7 @@ The following repository should be used in support of this document:
 The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS:
 
 ```text
-sudo apt-get install gcc-5 g++-5 cmake make libbz2-dev\
+sudo apt-get -y  install gcc g++ cmake make libbz2-dev\
     libdb++-dev libdb-dev libssl-dev openssl libreadline-dev\
      autoconf libtool git
 ```
