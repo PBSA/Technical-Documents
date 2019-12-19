@@ -16,7 +16,7 @@ Note: Peerplays is not a _Turing complete_ smart contracting platform, meaning t
 
 This document is intended to give new Peerplays developers an introduction to the Peerplays architecture and software. Readers are expected to be familiar with C++ software development in general, but not with Peerplays specifically. 
 
-This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; and examine how the contracts work and discuss how to create or modify Peerplays smart contracts.
+This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; and examine how the smart contracts work and discuss how to create or modify Peerplays smart contracts.
 
 ## Graphene
 

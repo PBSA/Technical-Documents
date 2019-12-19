@@ -45,9 +45,3 @@
 
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
 
-## User Guides
-
-## Knowledgebase
-
-## PPY Holders
-

@@ -4,7 +4,7 @@ This is an introduction for new Witnesses to get up to speed on the Peerplays bl
 
 The following repository should be used in support of this document:
 
-{% embed url="https://github.com/peerplays-network/peerplays" %}
+{% embed url="https://github.com/peerplays-network/peerplays" caption="" %}
 
 ## Building on Ubuntu 18.04 LTS and Installation Instructions
 
@@ -92,7 +92,7 @@ git clone https://github.com/cryptonomex/graphene.git
 cd graphene
 git submodule update --init --recursive
 cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Debug .
-make 
+make
 ```
 
 ## Starting A Peerplays Witness Node
@@ -106,7 +106,7 @@ make
 ./programs/witness_node/witness_node
 ```
 
-Launching the Witness creates the required directories. 
+Launching the Witness creates the required directories.
 
 {% hint style="danger" %}
 **Important**: Next stop the Witness node before continuing.
@@ -164,7 +164,7 @@ Step 3. Make it executable
 chmod 744 /home/ubuntu/peerplays/start.sh
 ```
 
-Step 4. Create this file: `sudo vi /etc/systemd/system/peerplays.service` 
+Step 4. Create this file: `sudo vi /etc/systemd/system/peerplays.service`
 
 {% hint style="warning" %}
 **Note**: Check the path for `start.sh`, if necessary, change it to match where your `start.sh` file actually is.
@@ -213,6 +213,4 @@ tail -f /var/log/peerplays.log
 All Witnesses are also required to install and run the Bookie Oracle Suite \(BOS\) and the supporting manual intervention tool \(MINT\).
 
 {% page-ref page="../../bookie-oracle-suite-bos/bos-and-mint-setup/" %}
-
-
 
