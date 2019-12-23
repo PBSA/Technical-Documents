@@ -39,10 +39,10 @@
 
 ## Data Proxies
 
-* [Introduction to Data Proxies](data-proxies/data-proxies-page-1/README.md)
-  * [Data Proxy Set Up](data-proxies/data-proxies-page-1/data-proxy-set-up.md)
-  * [Remote Control](data-proxies/data-proxies-page-1/remote-control.md)
-  * [Global Replays](data-proxies/data-proxies-page-1/global-replays.md)
+* [Introduction to Data Proxies](data-proxies/data-proxies-page-1.md)
+* [Data Proxy Set Up](data-proxies/data-proxy-set-up.md)
+* [Remote Control](data-proxies/remote-control.md)
+* [Global Replays](data-proxies/global-replays.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 

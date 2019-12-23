@@ -58,7 +58,7 @@ Data proxies are interested in this particular endpoint as they will push incide
 
 For more information on Data Proxies see:
 
-{% page-ref page="../../data-proxies/data-proxies-page-1/" %}
+{% page-ref page="../../data-proxies/data-proxies-page-1.md" %}
 
 ### **Monitoring**
 
