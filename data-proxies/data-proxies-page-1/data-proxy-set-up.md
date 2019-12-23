@@ -2,7 +2,7 @@
 
 Data proxies are a concept introduced in Peerplays blockchain to anonymize input data feeds. For now we are using the same to anonymize sports data feeds in a decentralized manner. This document provides setup instructions.
 
-### Instructions <a id="Data-Proxy-setup-how-to-Instructions"></a>
+## Instructions
 
 We are assuming Ubuntu 18.04 LTS and Python3.X available by default as the versions to be supported.
 
@@ -20,7 +20,7 @@ Prepare the servers
 | :--- |
 
 
-The data proxy configuration file should be at the top level foder, ie bos-dataproxy-legacy. The sample file  **`config-example.yaml`** can be copied to **`config-dataproxy.yam`**l
+The data proxy configuration file should be at the top level folder, ie bos-dataproxy-legacy. The sample file  **`config-example.yaml`** can be copied to **`config-dataproxy.yam`**
 
 * Install the necessary package by running `run_dev_server.sh`. This calls `setup.s`h internally to assemble everything.
 
@@ -52,17 +52,17 @@ result:
 | :--- |
 
 
-### How is data fetched from a provider ? <a id="Data-Proxy-setup-how-to-Howisdatafetchedfromaprovider?"></a>
+## How is data fetched from a provider ?
 
 We have code available for a few other data feed providers which is available on request.
 
 For additional providers, we need to pull or receive push data and then write a wrapper to handle it.
 
-### How to start the services as a daemon <a id="Data-Proxy-setup-how-to-Howtostarttheservicesasadaemon"></a>
+## How to start the services as a daemon
 
 We can use the `screen` command to start the above commands in daemon mode.
 
-### Nginx Reverse Proxy <a id="Data-Proxy-setup-how-to-NginxReverseProxy"></a>
+## Nginx Reverse Proxy
 
 To be added. Not mandatory unless the status needs to be published.
 
