@@ -40,6 +40,7 @@
 ## Data Proxies
 
 * [Introduction to Data Proxies](data-proxies/data-proxies-page-1.md)
+* [How Data Proxies Work](data-proxies/how-data-proxies-work.md)
 * [Data Proxy Set Up](data-proxies/data-proxy-set-up.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
