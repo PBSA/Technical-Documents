@@ -6,7 +6,11 @@ The Data Proxy serves as a middle man between the Data Feed Providers \(DFPs\) a
 
 The simplest way to understand this relationship is knowing that as BOS requires all data it receives to be parsed/ normalized to the exactly the same format, a process needs to exist to make this happen. This 'process' is the data proxy.
 
-Each DFP provides data on sports events in some format and analyzed for the appearance of four triggers, also called incidents within the data proxy: Creation, Start, End and Result verification of an event.
+Each DFP provides data on sports events in some format, but no two DFPs might use the same format, or necessarily support the same sports and events. Both Data Proxies and BOS use the [Bookiesports](../bookie-oracle-suite-bos/bookiesports/) module to manage this common format and ensure the consistency of data, regardless of how many Data Proxies are operating.
+
+
+
+and analyzed for the appearance of four triggers, also called incidents within the data proxy: Creation, Start, End and Result verification of an event.
 
 Those incidents are normalized into a common format via [bookiesports](https://pypi.python.org/pypi/bookiesports) and then sent to the subscribed witnesses of the data proxy. All data incoming from data providers and sent out incidents are stored within the data provider in the "dump" sub folder.
 
