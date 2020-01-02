@@ -52,4 +52,7 @@
 * [Peerplays Core API](api/peerplays-core-api.md)
 * [Bookie API](api/bookie-api.md)
 * [Peerplays Wallet API](api/peerplays-wallet-api.md)
+* [GPOS API](api/gpos-api.md)
+* [SON API](api/son-api.md)
+* [Python Peerplays](api/python-peerplays.md)
 
