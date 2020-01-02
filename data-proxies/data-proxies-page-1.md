@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Data Proxy serves as a middle man between the Data Feed Providers \(DFPs\) and the BOS of the Witnesses. 
+The Data Proxy serves as a middle man between the Data Feed Providers \(DFPs\) and the Bookie Oracle System of the Witnesses. 
 
 Depending on the DFP, data on sports events is collected in some fashion and analyzed for the appearance of four triggers, also called incidents within the data proxy: Creation, Start, End and Result verification of an event.
 
