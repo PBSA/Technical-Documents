@@ -2,9 +2,11 @@
 
 ## Overview
 
-The Data Proxy serves as a middle man between the Data Feed Providers \(DFPs\) and the Bookie Oracle System of the Witnesses. 
+The Data Proxy serves as a middle man between the Data Feed Providers \(DFPs\) and the Bookie Oracle System \(BOS\) operated by the Witnesses. 
 
-Depending on the DFP, data on sports events is collected in some fashion and analyzed for the appearance of four triggers, also called incidents within the data proxy: Creation, Start, End and Result verification of an event.
+The simplest way to understand this relationship is knowing that as BOS requires all data it receives to be parsed/ normalized to the exactly the same format, a process needs to exist to make this happen. This 'process' is the data proxy.
+
+Each DFP provides data on sports events in some format and analyzed for the appearance of four triggers, also called incidents within the data proxy: Creation, Start, End and Result verification of an event.
 
 Those incidents are normalized into a common format via [bookiesports](https://pypi.python.org/pypi/bookiesports) and then sent to the subscribed witnesses of the data proxy. All data incoming from data providers and sent out incidents are stored within the data provider in the "dump" sub folder.
 
