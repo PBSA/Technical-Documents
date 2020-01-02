@@ -55,4 +55,5 @@
 * [GPOS API](api/gpos-api.md)
 * [SON API](api/son-api.md)
 * [Python Peerplays](api/python-peerplays.md)
+* [peerplayjs-lib](api/peerplayjs-lib.md)
 
