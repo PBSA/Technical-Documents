@@ -8,7 +8,7 @@ There are five triggers, also called incidents, that control the flow of data to
 * `in_progress`  &lt;game&gt; started
 * `finish`  &lt;game&gt; finished
 * `result` &lt;game&gt; score
-* canceled &lt;game&gt; canceled / postponed / abandoned
+* `canceled` &lt;game&gt; canceled / postponed / abandoned
 
 Where &lt;game&gt; represents any game in the context of BookiePro. It's worth calling this out because right now we only think of Data Proxies in the context of BookiePro, and therefore sports data, a Data Proxy could in theory send other types of data. For example, as long as BOS receives a 'winner' and a 'loser' that data could be anything from the outcome of a coin toss to the winner of a general election!
 
@@ -20,9 +20,11 @@ All data incoming from data providers and sent out incidents are stored within t
 
 ### Mapping Incidents
 
-Each Data Feed Provider will send data to a Data Proxy according to it's own rules, and not necessarily a direct mapping to the four triggers BOS expects. For example, a DFP might send a single message for a finished game and the result. 
+Each Data Feed Provider will send data to a Data Proxy according to it's own rules, and not necessarily a direct mapping to the four triggers BOS expects. For example, a DFP might send a single message for both a finished game and the result. 
 
-It would then be the job of the Data Proxy 
+It would then be the job of the Data Proxy to re-format this data in to the two messages that BOS is expecting.
+
+DFPs will also use their own status codes for the events that they send, and these status codes won't match the triggers
 
 ## Monitoring proper operation
 
