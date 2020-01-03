@@ -17,6 +17,12 @@ All data incoming from data providers and sent out incidents are stored within t
 **Note**: Sports, EventGroups, Betting Market Groups \(BMGs\) and Betting Markets are automatically created via bookie sync. Only events are affected by the Data Proxy.
 {% endhint %}
 
+### Mapping Incidents
+
+Each Data Feed Provider will send data to a Data Proxy according to it's own rules, and not necessarily a direct mapping to the four triggers BOS expects. For example, a DFP might send a single message for a finished game and the result. 
+
+It would then be the job of the Data Proxy 
+
 ## Monitoring proper operation
 
 The Data Proxy provides a HTTP endpoint for monitoring purposes. Assume that the Data Proxy is deployed on localhost:8010, then the URL is
