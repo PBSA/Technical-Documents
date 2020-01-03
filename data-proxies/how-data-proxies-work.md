@@ -54,6 +54,20 @@ Using the triggers supported by BOS it then requires the Data Proxy to map these
 **Note**: The `create` incident is only sent when a manual data replay is requested. It is not a trigger that is automatically sent from the Data Proxy software.
 {% endhint %}
 
+### Handling Canceled Events
+
+We can see from the above mappings that canceled events come in many forms, but are all pushed to BOS as the `canceled` incident. However, depending on the circumstances a second incident needs to be sent as follows:
+
+* Game was abandoned - Typically this means the game will be re-scheduled. If it is then a new `create` incident will be sent with the re-scheduled date.
+* Game was postponed - By definition this means the game will be re-scheduled so a new `create` incident will also be sent with the re-scheduled date.
+* Game was interrupted - Usually means there is a delay and the game will re-start at some point. From a BOS perspective no additional incident is required; BOS will simply interpret the game as taking longer to finish so the next incident it expects is a `finish`.
+
+## Sending Incidents to Subscribers
+
+What we really mean by 'sending to subscribers' is 'sending to the BOS of Witnesses subscribed to Data Proxies'.
+
+In essence this is Data Proxies' ultimate purpose. We've already discussed the fact that there is no common format in the data sent from the DFPs, but the data sent from each Data Proxy to each BOS instance has to be a common format. This is what we discuss next.
+
 ## Monitoring proper operation
 
 The Data Proxy provides a HTTP endpoint for monitoring purposes. Assume that the Data Proxy is deployed on localhost:8010, then the URL is
