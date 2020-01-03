@@ -64,9 +64,9 @@ We can see from the above mappings that canceled events come in many forms, but 
 
 ## Sending Incidents to Subscribers
 
-What we really mean by 'sending to subscribers' is 'sending to the BOS of Witnesses subscribed to Data Proxies'.
+What we really mean by 'sending to subscribers' is 'sending to the BOS system of Witnesses subscribed to Data Proxies'.
 
-In essence this is Data Proxies' ultimate purpose. We've already discussed the fact that there is no common format in the data sent from the DFPs, but the data sent from each Data Proxy to each BOS instance has to be a common format. This is what we discuss next.
+In essence this is Data Proxies' ultimate purpose. We've already discussed the fact that there is no common format in the data sent from the DFPs, but the data sent from each Data Proxy to each BOS instance has to be in the same format. This is what we'll discuss next.
 
 ## Monitoring proper operation
 
