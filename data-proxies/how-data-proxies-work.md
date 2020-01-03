@@ -50,6 +50,10 @@ Using the triggers supported by BOS it then requires the Data Proxy to map these
 |9| --> (not handled)
 ```
 
+{% hint style="warning" %}
+**Note**: The `create` incident is only sent when a manual data replay is requested. It is not a trigger that is automatically sent from the Data Proxy software.
+{% endhint %}
+
 ## Monitoring proper operation
 
 The Data Proxy provides a HTTP endpoint for monitoring purposes. Assume that the Data Proxy is deployed on localhost:8010, then the URL is
