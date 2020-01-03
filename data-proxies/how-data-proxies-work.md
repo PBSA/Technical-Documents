@@ -2,14 +2,15 @@
 
 ## Incidents and Triggers
 
-There are four triggers, also called incidents, that control the flow of data to BOS from each Data Proxy.
+There are five triggers, also called incidents, that control the flow of data to BOS from each Data Proxy.
 
 * `create`  &lt;game&gt; created
 * `in_progress`  &lt;game&gt; started
 * `finish`  &lt;game&gt; finished
 * `result` &lt;game&gt; score
+* canceled &lt;game&gt; canceled / postponed / abandoned
 
-Where &lt;game&gt; represents any game \(market\) in the context of BookiePro. It's worth calling this out because right now we only think of Data Proxies in the context of BookiePro, and therefore sports data, a Data Proxy could in theory send other types of data. For example, as long as BOS receives a 'winner' and a 'loser' that data could be anything from the outcome of a coin toss to the winner of a general election!
+Where &lt;game&gt; represents any game in the context of BookiePro. It's worth calling this out because right now we only think of Data Proxies in the context of BookiePro, and therefore sports data, a Data Proxy could in theory send other types of data. For example, as long as BOS receives a 'winner' and a 'loser' that data could be anything from the outcome of a coin toss to the winner of a general election!
 
 All data incoming from data providers and sent out incidents are stored within the data provider in a "dump" sub folder.
 
