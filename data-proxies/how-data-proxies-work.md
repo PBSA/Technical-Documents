@@ -9,7 +9,7 @@ There are four triggers, also called incidents, that control the flow of data to
 * `finish`  &lt;game&gt; finished
 * `result` &lt;game&gt; score
 
- Where &lt;game&gt; represents any game \(market\) in the context of BookiePro. It is worth calling this out because while we only think of Data Proxies right now in the context of BookiePro, and therefore sports data, a Data Proxy could in theory send other types of data. For example, as long as BOS receives a 'winner' and a 'loser' that data could be anything from the outcome of a coin toss to the winner of a general election!
+Where &lt;game&gt; represents any game \(market\) in the context of BookiePro. It is worth calling this out because while we only think of Data Proxies right now in the context of BookiePro, and therefore sports data, a Data Proxy could in theory send other types of data. For example, as long as BOS receives a 'winner' and a 'loser' that data could be anything from the outcome of a coin toss to the winner of a general election!
 
 All data incoming from data providers and sent out incidents are stored within the data provider in a "dump" sub folder.
 
