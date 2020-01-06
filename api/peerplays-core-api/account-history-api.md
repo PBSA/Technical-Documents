@@ -131,7 +131,7 @@ graphene::app::history_api::get_market_history(
 * **`bucket_seconds`**: Length of each time bucket in seconds. 
 
 {% hint style="warning" %}
-**Note**: It needs to be within result of [get\_market\_history\_buckets\(\)](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d) API, otherwise no data will be returned
+**Note**: It needs to be within result of  [get\_market\_history\_buckets\(\)](account-history-api.md#get_market_history_buckets), otherwise no data will be returned
 {% endhint %}
 
 * **`start`**: The start of a time range, E.G. “2018-01-01T00:00:00”
