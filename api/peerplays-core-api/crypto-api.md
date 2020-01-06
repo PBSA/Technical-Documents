@@ -162,3 +162,23 @@ A structure with success, min and max values
 {% endtab %}
 {% endtabs %}
 
+### verify\_range\_proof\_rewind
+
+Verifies range proof rewind for 33-byte Pedersen Commitment.
+
+```cpp
+verify_range_proof_rewind_result graphene::app::crypto_api::verify_range_proof_rewind(const blind_factor_type &nonce, const fc::ecc::commitment_type &commit, const std::vector<char> &proof)
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`nonce`**: Sha-256 blind refactor type
+* **`commit`**: 33-byte pedersen commitment
+* **`proof`**: List of characters
+{% endtab %}
+
+{% tab title="Return" %}
+A structure with success, min, max, value\_out, blind\_out and message\_out values.
+{% endtab %}
+{% endtabs %}
+
