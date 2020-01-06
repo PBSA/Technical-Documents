@@ -2,27 +2,25 @@
 
 ## Overview
 
-The Data Proxy serves as a middle man between the Data Feed Providers \(DFPs\) and the Bookie Oracle System \(BOS\) operated by the Witnesses. 
+The Data Proxy serves as a middle man between the Data Feed Providers \(DFPs\) and the BOS of the Witnesses. 
 
-The simplest way to understand this relationship is knowing that as BOS requires all data it receives to be parsed/ normalized to the exactly the same format, a process needs to exist to make this happen. This 'process' is the data proxy.
+Depending on the DFP, data on sports events is collected in some fashion and analyzed for the appearance of four triggers, also called incidents within the data proxy: Creation, Start, End and Result verification of an event.
 
-Each DFP provides data on sports events in some format, but no two DFPs might use the same format, or necessarily support the same sports and events. Both Data Proxies and BOS use the [Bookiesports](../bookie-oracle-suite-bos/bookiesports/) module to manage this common format and ensure the consistency of data, regardless of how many Data Proxies are operating.
+Those incidents are normalized into a common format via [bookiesports](https://pypi.python.org/pypi/bookiesports) and then sent to the subscribed witnesses of the data proxy. All data incoming from data providers and sent out incidents are stored within the data provider in the "dump" sub folder.
 
-The normalized data is then sent to the subscribed Witnesses.
+Note: Sports, EventGroups, Betting Market Groups \(BMGs\) and Betting Markets are automatically created via bookie sync. Only events are affected by the Data Proxy.
 
-![](../.gitbook/assets/data-proxies.png)
+## Monitoring proper operation
 
-## Decentralization of Data
+The Data Proxy provides a HTTP endpoint for monitoring purposes. Assume that the Data Proxy is deployed on localhost:8010, then the URL is
 
-Popular sports betting, analysis and reporting sites are usually just tied to single data feed provider. This is fine for what they're doing because they're not claiming to be decentralized, or provably fair.
+localhost:8010/isalive
 
-But as BookiePro is the world's first decentralized sports betting exchange it's important that the decentralization includes the \(sports\) data feeds. BookiePro achieves this through the combination of independent BOS subscribers \(Witnesses\) and a diversity of Data Proxies. Each Data Proxy then further decentralizes the data by using a separate Data Feed Provider.
+The response has a json body that has three main contents:
 
-As we see in the diagram above, no two Data Proxies ever share the same DFP. However, each instance of BOS subscribes to all Data Proxies so that BOS ensures that no Incident is ever processed without a consensus from the all the Witnesses. This means that through the combination of the Data Proxy architecture and the magic of BOS, there is no single source of data for any BookiePro Incident.
+* status: String flag either "ok" or "nok", general state of the proxy
+* subscribers: List of dictionaries containing information of each subscriber. Contains a status flag as well
+* providers: List of dictionaries containing information of each provider. Contains a status flag as well
 
-It's impossible for BookiePro to record that "team A beat team B" based on only a single piece of information.
-
-{% page-ref page="data-proxies-page-1.md" %}
-
-## 
+This isalive can be called from localhost and from anywhere. No identifiable information on providers or subscribers is published when queried from anywhere. Details are added when it is called from localhost.
 
