@@ -86,5 +86,27 @@ A list of operations performed by account, ordered from most recent to oldest.
 
 ## Market History
 
+### get\_fill\_order\_history
 
+Get details of order executions occurred most recently in a trading pair.
+
+```cpp
+vector<order_history_object> 
+graphene::app::history_api::get_fill_order_history(
+    std::string a, 
+    std::string b, 
+    uint32_t limit)const
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: Asset symbol or ID in a trading pair
+* **`b`**: The other asset symbol or ID in the trading pair
+* **`limit`**: Maximum records to return
+{% endtab %}
+
+{% tab title="Return" %}
+a list of order\_history objects, in most recent first order
+{% endtab %}
+{% endtabs %}
 
