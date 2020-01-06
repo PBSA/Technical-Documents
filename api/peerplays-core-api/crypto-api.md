@@ -117,7 +117,11 @@ graphene::app::crypto_api::range_proof_sign(
 Verifies that `commits` + `neg_commits` + `excess` == 0.
 
 ```cpp
-bool graphene::app::crypto_api::verify_sum(const std::vector<commitment_type> &commits_in, const std::vector<commitment_type> &neg_commits_in, int64_t excess)
+bool 
+graphene::app::crypto_api::verify_sum(
+    const std::vector<commitment_type> &commits_in, 
+    const std::vector<commitment_type> &neg_commits_in, 
+    int64_t excess)
 ```
 
 {% tabs %}
