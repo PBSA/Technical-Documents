@@ -20,7 +20,7 @@
 
 ## Bookie Oracle Suite \(BOS\)
 
-* [Introduction to BOS](bookie-oracle-suite-bos/untitled.md)
+* [Introduction to BOS](bookie-oracle-suite-bos/intro-bos.md)
 * [BOS Installation](bookie-oracle-suite-bos/bos-and-mint-setup/README.md)
   * [Installing MongoDB](bookie-oracle-suite-bos/bos-and-mint-setup/installing-mongodb.md)
   * [Installing Redis](bookie-oracle-suite-bos/bos-and-mint-setup/installing-redis.md)
