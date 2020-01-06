@@ -82,5 +82,31 @@ A range proof info structure with exponent, mantissa, min and max values.
 {% endtab %}
 {% endtabs %}
 
+### range\_proof\_sign
 
+Proves with respect to min\_value the range for Pedersen Commitment which has the provided blinding factor and value.
+
+```cpp
+std::vector<char> 
+graphene::app::crypto_api::range_proof_sign(
+    uint64_t min_value, 
+    const commitment_type &commit, 
+    const blind_factor_type &commit_blind, 
+    const blind_factor_type &nonce, 
+    int8_t base10_exp, 
+    uint8_t min_bits, 
+    uint64_t actual_value
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`min_value`**: Positive 64-bit integer value
+* **`commit`**: 33-byte pedersen commitment
+* **`commit_blind`**: Sha-256 blind factor type for the correct digits
+* **`nonce`**: Sha-256 blind factor type for our non-forged signatures
+* **`base10_exp`**: Exponents base 10 in range \[-1 ; 18\] inclusively
+* **`min_bits`**: 8-bit positive integer, must be in range \[0 ; 64\] inclusively
+* **`actual_value`**: 64-bit positive integer, must be greater or equal min\_value
+{% endtab %}
+{% endtabs %}
 
