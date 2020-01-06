@@ -108,6 +108,10 @@ graphene::app::crypto_api::range_proof_sign(
 * **`min_bits`**: 8-bit positive integer, must be in range \[0 ; 64\] inclusively
 * **`actual_value`**: 64-bit positive integer, must be greater or equal min\_value
 {% endtab %}
+
+{% tab title="Return" %}
+A list of characters as proof in proof.
+{% endtab %}
 {% endtabs %}
 
 ## Verification
@@ -136,5 +140,22 @@ graphene::app::crypto_api::verify_sum(
 {% endtab %}
 {% endtabs %}
 
+### verify\_range
 
+Verifies range proof for 33-byte Pedersen Commitment.
+
+```cpp
+verify_range_result graphene::app::crypto_api::verify_range(const fc::ecc::commitment_type &commit, const std::vector<char> &proof)
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`commit`**: 33-byte pedersen commitment
+* **`proof`**: List of characters
+{% endtab %}
+
+{% tab title="Return" %}
+A structure with success, min and max values
+{% endtab %}
+{% endtabs %}
 
