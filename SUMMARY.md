@@ -49,7 +49,7 @@
 
 ## API
 
-* [Peerplays Core API](api/peerplays-core-api.md)
+* [Peerplays Core API](api/peerplays-core-api/README.md)
   * [Account History API](api/peerplays-core-api/account-history-api.md)
   * [Asset API](api/peerplays-core-api/asset-api.md)
   * [Block API](api/peerplays-core-api/block-api.md)
@@ -59,7 +59,9 @@
   * [Network Nodes API](api/peerplays-core-api/network-nodes-api.md)
   * [Orders API](api/peerplays-core-api/orders-api.md)
 * [Bookie API](api/bookie-api.md)
-* [Peerplays Wallet API](api/peerplays-wallet-api.md)
+* [Peerplays Wallet API](api/peerplays-wallet-api/README.md)
+  * [General Calls](api/peerplays-wallet-api/general-calls.md)
+* [Wallet Calls](api/wallet-calls.md)
 * [GPOS API](api/gpos-api.md)
 * [SON API](api/son-api.md)
 * [Python Peerplays](api/python-peerplays.md)
