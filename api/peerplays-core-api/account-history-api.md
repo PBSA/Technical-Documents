@@ -115,7 +115,13 @@ a list of order\_history objects, in most recent first order
 Get OHLCV data of a trading pair in a time range.
 
 ```cpp
-vector<bucket_object> graphene::app::history_api::get_market_history(std::string a, std::string b, uint32_t bucket_seconds, fc::time_point_sec start, fc::time_point_sec end)const
+vector<bucket_object> 
+graphene::app::history_api::get_market_history(
+    std::string a, 
+    std::string b, 
+    uint32_t bucket_seconds, 
+    fc::time_point_sec start, 
+    fc::time_point_sec end)const
 ```
 
 {% tabs %}
@@ -139,5 +145,20 @@ If there are more than 200 records in the specified time range, the first 200 re
 {% endtab %}
 {% endtabs %}
 
+### get\_market\_history\_buckets
 
+Get OHLCV time bucket lengths supported \(configured\) by this API server.
+
+```cpp
+flat_set<uint32_t> 
+graphene::app::history_api::get_market_history_buckets()const
+```
+
+{% tabs %}
+{% tab title="Return" %}
+A list of time bucket lengths in seconds. 
+
+For example, if the result contains a number “300” it means this API server supports OHLCV data aggregated in 5-minute buckets.
+{% endtab %}
+{% endtabs %}
 
