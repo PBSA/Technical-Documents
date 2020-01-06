@@ -145,7 +145,10 @@ graphene::app::crypto_api::verify_sum(
 Verifies range proof for 33-byte Pedersen Commitment.
 
 ```cpp
-verify_range_result graphene::app::crypto_api::verify_range(const fc::ecc::commitment_type &commit, const std::vector<char> &proof)
+verify_range_result 
+graphene::app::crypto_api::verify_range(
+    const fc::ecc::commitment_type &commit, 
+    const std::vector<char> &proof)
 ```
 
 {% tabs %}
