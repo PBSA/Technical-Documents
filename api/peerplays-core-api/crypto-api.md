@@ -167,7 +167,11 @@ A structure with success, min and max values
 Verifies range proof rewind for 33-byte Pedersen Commitment.
 
 ```cpp
-verify_range_proof_rewind_result graphene::app::crypto_api::verify_range_proof_rewind(const blind_factor_type &nonce, const fc::ecc::commitment_type &commit, const std::vector<char> &proof)
+verify_range_proof_rewind_result 
+graphene::app::crypto_api::verify_range_proof_rewind(
+    const blind_factor_type &nonce, 
+    const fc::ecc::commitment_type &commit, 
+    const std::vector<char> &proof)
 ```
 
 {% tabs %}
