@@ -49,9 +49,13 @@
 
 ## API
 
-* [Peerplays Core API](api/peerplays-core-api/README.md)
+* [Peerplays Core API](api/peerplays-core-api.md)
   * [Database API](api/peerplays-core-api/database-api.md)
   * [Account History API](api/peerplays-core-api/account-history-api.md)
+  * [Block API](api/peerplays-core-api/block-api.md)
+  * [Asset API](api/peerplays-core-api/asset-api.md)
+  * [Orders API](api/peerplays-core-api/orders-api.md)
+  * [Crypto API](api/peerplays-core-api/crypto-api.md)
 * [Bookie API](api/bookie-api.md)
 * [Peerplays Wallet API](api/peerplays-wallet-api.md)
 * [GPOS API](api/gpos-api.md)
