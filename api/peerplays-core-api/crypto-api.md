@@ -110,3 +110,27 @@ graphene::app::crypto_api::range_proof_sign(
 {% endtab %}
 {% endtabs %}
 
+## Verification
+
+### verify\_sum
+
+Verifies that `commits` + `neg_commits` + `excess` == 0.
+
+```cpp
+bool graphene::app::crypto_api::verify_sum(const std::vector<commitment_type> &commits_in, const std::vector<commitment_type> &neg_commits_in, int64_t excess)
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`commits_in`**: List of 33-byte Pedersen Commitments
+* **`neg_commits_in`**: List of 33-byte Pedersen Commitments
+* **`excess`**: Sum of two list of 33-byte Pedersen Commitments where sums the first set and subtracts the second
+{% endtab %}
+
+{% tab title="Return" %}
+\(Boolean\) True in event of `commits` + `neg_commits` + `excess` == 0, otherwise false
+{% endtab %}
+{% endtabs %}
+
+
+
