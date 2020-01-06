@@ -54,7 +54,33 @@ A blind factor type.
 {% endtab %}
 {% endtabs %}
 
-## Rage Proofs
+## Range Proofs
+
+### range\_get\_info
+
+Gets “range proof” information. 
+
+The cli\_wallet includes functionality for sending blind transfers in which the values of the input and output amounts are “blinded.” 
+
+{% hint style="warning" %}
+**Note**: In the case where a transaction produces two or more outputs, \(e.g. an amount to the intended recipient plus “charge” back to the sender\), a “range proof” must be supplied to prove that none of the outputs commit to a negative value.
+{% endhint %}
+
+```cpp
+range_proof_info 
+graphene::app::crypto_api::range_get_info(
+    const std::vector<char> &proof)
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+**`proof`**: List of proof’s characters
+{% endtab %}
+
+{% tab title="Return" %}
+A range proof info structure with exponent, mantissa, min and max values.
+{% endtab %}
+{% endtabs %}
 
 
 
