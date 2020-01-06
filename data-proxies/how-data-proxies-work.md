@@ -56,7 +56,7 @@ Using the triggers supported by BOS it then requires the Data Proxy to map these
 
 ### Handling Canceled Events
 
-We can see from the above mappings that canceled events come in many forms, but are all pushed to BOS as the `canceled` incident. However, depending on the circumstances a second incident needs to be sent as follows:
+We can see from the above mappings that canceled events come in many forms, but are all pushed to BOS as a `canceled` incident. However, depending on the circumstances a second incident needs to be sent as follows:
 
 * Game was abandoned - Typically this means the game will be re-scheduled. If it is then a new `create` incident will be sent with the re-scheduled date.
 * Game was postponed - By definition this means the game will be re-scheduled so a new `create` incident will also be sent with the re-scheduled date.
