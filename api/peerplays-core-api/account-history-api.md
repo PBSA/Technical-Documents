@@ -58,6 +58,32 @@ A list of operations performed by account, ordered from most recent to oldest.
 {% endtab %}
 {% endtabs %}
 
+### get\_relative\_account\_history
+
+Get operations relevant to the specified account referenced by an event numbering specific to the account. The current number of operations for the account can be found in the account statistics \(or use 0 for start\).
+
+```cpp
+vector<operation_history_object> 
+graphene::app::history_api::get_relative_account_history(
+    const std::string account_id_or_name, 
+    uint64_t stop = 0, 
+    unsigned limit = 100, 
+    uint64_t start = 0)const
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_id_or_name`**: The account ID or name whose history should be queried
+* **`stop`**: Sequence number of earliest operation. 0 is default and will query ‘limit’ number of operations.
+* **`limit`**: Maximum number of operations to retrieve \(must not exceed 100\)
+* **`start`**: Sequence number of the most recent operation to retrieve. 0 is default, which will start querying from the most recent operation.
+{% endtab %}
+
+{% tab title="Return" %}
+A list of operations performed by account, ordered from most recent to oldest.
+{% endtab %}
+{% endtabs %}
+
 ## Market History
 
 
