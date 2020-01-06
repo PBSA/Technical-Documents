@@ -28,3 +28,16 @@ A list of asset holders for the specified asset.
 
 ### get\_all\_asset\_holders
 
+Get all asset holders.
+
+```cpp
+vector<asset_holders> 
+graphene::app::asset_api::get_all_asset_holders()const
+```
+
+{% tabs %}
+{% tab title="Return" %}
+A list of all asset holders.
+{% endtab %}
+{% endtabs %}
+
