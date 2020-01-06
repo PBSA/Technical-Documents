@@ -110,3 +110,34 @@ a list of order\_history objects, in most recent first order
 {% endtab %}
 {% endtabs %}
 
+### get\_market\_history
+
+Get OHLCV data of a trading pair in a time range.
+
+```cpp
+vector<bucket_object> graphene::app::history_api::get_market_history(std::string a, std::string b, uint32_t bucket_seconds, fc::time_point_sec start, fc::time_point_sec end)const
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: Asset symbol or ID in a trading pair
+* **`b`**: The other asset symbol or ID in the trading pair
+* **`bucket_seconds`**: Length of each time bucket in seconds. 
+
+{% hint style="warning" %}
+**Note**: It needs to be within result of [get\_market\_history\_buckets\(\)](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1history__api_1a3cb82a7bb879b9f967665d69fd90c67d) API, otherwise no data will be returned
+{% endhint %}
+
+* **`start`**: The start of a time range, E.G. “2018-01-01T00:00:00”
+* **`end`**: The end of the time range
+{% endtab %}
+
+{% tab title="Return" %}
+A list of OHLCV data, in least recent first order. 
+
+If there are more than 200 records in the specified time range, the first 200 records will be returned.
+{% endtab %}
+{% endtabs %}
+
+
+
