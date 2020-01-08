@@ -786,20 +786,28 @@ Recent transactions in the market
 {% endtab %}
 {% endtabs %}
 
-### [Witnesses](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id50)
+## Witnesses
 
-#### [get\_witnesses](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id51)
-
-vector&lt;optional&lt;witness\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_witnesses`\(_const_ vector&lt;witness\_id\_type&gt; &_witness\_ids_\)_const_  
-
+### get\_witnesses
 
 Get a list of witnesses by ID.
 
-This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3), but doesn’t subscribe**Return**
+Semantically equivalent to [get\_objects](database-api.md#get_objects), but doesn’t subscribe.
 
-The witnesses corresponding to the provided IDs**Parameters**
+```cpp
+vector<optional<witness_object>> graphene::app::database_api::get_witnesses(
+    const vector<witness_id_type> &witness_ids)const
+```
 
-* `witness_ids`: IDs of the witnesses to retrieve
+{% tabs %}
+{% tab title="Parameters" %}
+* **`witness_ids`**: IDs of the witnesses to retrieve
+{% endtab %}
+
+{% tab title="Return" %}
+The witnesses corresponding to the provided IDs.
+{% endtab %}
+{% endtabs %}
 
 #### [get\_witness\_by\_account](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id52)
 
