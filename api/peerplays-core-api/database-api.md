@@ -449,16 +449,26 @@ All unclaimed balance objects for the addresses.
 
 ### get\_vested\_balances
 
-vector&lt;asset&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_vested_balances`\(_const_ vector&lt;balance\_id\_type&gt; &_objs_\)_const_  
-
-
 Calculate how much assets in the given balance objects are able to be claimed at current head block time.
 
-**Return**
+```cpp
+vector<asset> graphene::
+app
+::
+database_api
+::get_vested_balances(const vector<balance_id_type> &objs)const
 
-a list indicating how much asset in each balance object is available to be claimed**Parameters**
+```
 
-* `objs`: a list of balance object IDs
+{% tabs %}
+{% tab title="Parameters" %}
+* **`objs`**: a list of balance object IDs
+{% endtab %}
+
+{% tab title="Return" %}
+A list indicating how much asset in each balance object is available to be claimed.
+{% endtab %}
+{% endtabs %}
 
 #### [get\_vesting\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id34)
 
