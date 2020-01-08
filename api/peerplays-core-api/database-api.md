@@ -408,27 +408,46 @@ Balances of the account.
 {% endtab %}
 {% endtabs %}
 
-#### [get\_named\_account\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id31)
+### get\_named\_account\_balances
 
-vector&lt;asset&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_named_account_balances`\(_const_ std::string &_name_, _const_ flat\_set&lt;asset\_id\_type&gt; &_assets_\)_const_  
+Semantically equivalent to [get\_account\_balances](database-api.md#get_account_balances).
 
+```cpp
+vector<asset> graphene::app::database_api::get_named_account_balances(
+    const std::string &name, 
+    const flat_set<asset_id_type> &assets)const
 
-Semantically equivalent to [get\_account\_balances](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1af3a97a65a2b8a714c74a3e3f8d888019).
+```
 
-#### [get\_balance\_objects](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id32)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: name or ID of the account to get balances for.
+* **`assets`**: IDs of the assets to get balances of; if empty, get all assets account has a balance in.
+{% endtab %}
 
-vector&lt;balance\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_balance_objects`\(_const_ vector&lt;address&gt; &_addrs_\)_const_  
+{% tab title="Return" %}
+Balances of the account.
+{% endtab %}
+{% endtabs %}
 
+### get\_balance\_objects
 
-Return all unclaimed balance objects for a list of addresses.
+```cpp
+vector<balance_object> graphene::app::database_api::get_balance_objects(
+    const vector<address> &addrs)const
+```
 
-**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`addrs`**: a list of addresses
+{% endtab %}
 
-all unclaimed balance objects for the addresses**Parameters**
+{% tab title="Return" %}
+All unclaimed balance objects for the addresses.
+{% endtab %}
+{% endtabs %}
 
-* `addrs`: a list of addresses
-
-#### [get\_vested\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id33)
+### get\_vested\_balances
 
 vector&lt;asset&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_vested_balances`\(_const_ vector&lt;balance\_id\_type&gt; &_objs_\)_const_  
 
