@@ -34,35 +34,42 @@ The objects retrieved, in the order they are mentioned in ids.
 
 Register a callback handle which then can be used to subscribe to object database changes.
 
-Note: auto-subscription is enabled by default and can be disabled with[set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c) API.
+{% hint style="warning" %}
+**Note**: auto-subscription is enabled by default and can be disabled with [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c) 
+{% endhint %}
 
 ```cpp
 void 
 graphene::app::database_api::set_subscribe_callback(
     std::function<void(const variant&)> cb, 
     bool notify_remove_create, )
+
 ```
 
-  
+{% tabs %}
+{% tab title="Parameters" %}
+* **`cb`**: The callback handle to register
+* **`notify_remove_create`**: Whether subscribe to universal object creation and removal events. If this is set to true, the API server will notify all newly created objects and ID of all newly removed objects to the client, no matter whether client subscribed to the objects. By default, API servers don’t allow subscribing to universal events, which can be changed on server startup.
+{% endtab %}
+{% endtabs %}
 
-
-
-
-**Parameters**
-
-* `cb`: The callback handle to register
-* `notify_remove_create`: Whether subscribe to universal object creation and removal events. If this is set to true, the API server will notify all newly created objects and ID of all newly removed objects to the client, no matter whether client subscribed to the objects. By default, API servers don’t allow subscribing to universal events, which can be changed on server startup.
-
-#### [set\_pending\_transaction\_callback](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id5)
-
-void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::set_pending_transaction_callback`\(std::function&lt;void\(_const_ variant &signed\_transaction\_object\)&gt; _cb_\)  
-
+### set\_pending\_transaction\_callback
 
 Register a callback handle which will get notified when a transaction is pushed to database.
 
-Note: a transaction can be pushed to database and be popped from database several times while processing, before and after included in a block. Everytime when a push is done, the client will be notified.**Parameters**
+Note: a transaction can be pushed to database and be popped from database several times while processing, before and after included in a block. Everytime when a push is done, the client will be notified.
 
-* `cb`: The callback handle to register
+```cpp
+void 
+graphene::app::database_api::set_pending_transaction_callback(
+    std::function<void(const variant &signed_transaction_object)> cb)
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`cb`**: The callback handle to register
+{% endtab %}
+{% endtabs %}
 
 #### [set\_block\_applied\_callback](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id6)
 
