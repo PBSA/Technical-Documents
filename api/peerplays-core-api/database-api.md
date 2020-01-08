@@ -183,15 +183,20 @@ Retrieve the [graphene::chain::chain\_property\_object](https://dev.bitshares.wo
 
 ```cpp
 chain_property_object graphene::app::database_api::get_chain_properties()const
-
 ```
 
 ### get\_global\_properties
 
-global\_property\_object `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_global_properties`\(\)_const_  
-
-
 Retrieve the current [graphene::chain::global\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene_1_1chain_1_1global__property__object).
+
+```cpp
+global_property_object graphene::app::database_api::get_global_properties()const
+```
+
+  
+
+
+
 
 #### [get\_config](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id16)
 
