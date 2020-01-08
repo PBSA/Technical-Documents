@@ -1093,18 +1093,28 @@ _true_ if the passed in keys have enough authority to approve an operation for t
 
 ### validate\_transaction
 
-processed\_transaction `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::validate_transaction`\(_const_ signed\_transaction &_trx_\)_const_  
-
-
 Validates a transaction against the current state without broadcasting it on the network.
 
-**Return**
+```cpp
+processed_transaction graphene::
+app
+::
+database_api
+::validate_transaction(const signed_transaction &trx)const
 
-a processed\_transaction object if the transaction passes the validation, otherwise an exception will be thrown**Parameters**
+```
 
-* `trx`: a transaction to be validated
+{% tabs %}
+{% tab title="Parameters" %}
+* **`trx`**: a transaction to be validated
+{% endtab %}
 
-#### [get\_required\_fees](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id71)
+{% tab title="Return" %}
+A processed\_transaction object if the transaction passes the validation, otherwise an exception will be thrown.
+{% endtab %}
+{% endtabs %}
+
+### **get\_required\_fees**
 
 vector&lt;fc::variant&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_required_fees`\(_const_ vector&lt;operation&gt; &_ops_, _const_ std::string &_asset\_symbol\_or\_id_\)_const_  
 
