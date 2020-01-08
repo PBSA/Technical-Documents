@@ -11,8 +11,7 @@ Get the objects corresponding to the provided IDs.
 If any of the provided IDs does not map to an object, a null variant is returned in its position.
 
 ```cpp
-fc::variants 
-graphene::app::database_api::get_objects(
+fc::variants graphene::app::database_api::get_objects(
     const vector<object_id_type> &ids, 
     optional<bool> subscribe = optional<bool>())const
 ```
@@ -39,8 +38,7 @@ Register a callback handle which then can be used to subscribe to object databas
 {% endhint %}
 
 ```cpp
-void 
-graphene::app::database_api::set_subscribe_callback(
+void graphene::app::database_api::set_subscribe_callback(
     std::function<void(const variant&)> cb, 
     bool notify_remove_create, )
 
@@ -62,8 +60,7 @@ Register a callback handle which will get notified when a transaction is pushed 
 {% endhint %}
 
 ```cpp
-void 
-graphene::app::database_api::set_pending_transaction_callback(
+void graphene::app::database_api::set_pending_transaction_callback(
     std::function<void(const variant &signed_transaction_object)> cb)
 ```
 
@@ -78,12 +75,9 @@ graphene::app::database_api::set_pending_transaction_callback(
 Register a callback handle which will get notified when a block is pushed to database.
 
 ```cpp
-void 
-graphene::app::database_api::set_block_applied_callback(
+void graphene::app::database_api::set_block_applied_callback(
     std::function<void(const variant &block_id)> cb)
 ```
-
-
 
 {% tabs %}
 {% tab title="Parameters" %}
@@ -91,30 +85,36 @@ graphene::app::database_api::set_block_applied_callback(
 {% endtab %}
 {% endtabs %}
 
-#### [cancel\_all\_subscriptions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id7)
-
-void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::cancel_all_subscriptions`\(\)  
-
+### cancel\_all\_subscriptions
 
 Stop receiving any notifications.
 
-This unsubscribes from all subscribed markets and objects.  
+This unsubscribes from all subscribed markets and objects.
 
+```cpp
+void graphene::app::database_api::cancel_all_subscriptions()
+```
 
-### [Blocks and transactions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id8)
+## Blocks and transactions
 
-#### [get\_block\_header](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id9)
-
-optional&lt;block\_header&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_block_header`\(uint32\_t _block\_num_\)_const_  
-
+### get\_block\_header
 
 Retrieve a block header.
 
-**Return**
+```cpp
+optional<block_header> graphene::app::database_api::get_block_header(
+    uint32_t block_num)const
+```
 
-header of the referenced block, or null if no matching block was found**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`block_num`**: Height of the block whose header should be returned
+{% endtab %}
 
-* `block_num`: Height of the block whose header should be returned
+{% tab title="Return" %}
+* The header of the referenced block, or null if no matching block was foun
+{% endtab %}
+{% endtabs %}
 
 #### [get\_block](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id10)
 
