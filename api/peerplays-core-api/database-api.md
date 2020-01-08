@@ -41,7 +41,6 @@ Register a callback handle which then can be used to subscribe to object databas
 void graphene::app::database_api::set_subscribe_callback(
     std::function<void(const variant&)> cb, 
     bool notify_remove_create, )
-
 ```
 
 {% tabs %}
@@ -160,7 +159,6 @@ The transaction at the given position.
 ```cpp
 optional<signed_transaction> graphene::app::database_api::get_recent_transaction_by_id(
     const transaction_id_type &txid)const
-
 ```
 
 {% tabs %}
@@ -215,8 +213,6 @@ Retrieve the current [graphene::chain::dynamic\_global\_property\_object](https:
 
 ```cpp
 dynamic_global_property_object graphene::app::database_api::get_dynamic_global_properties()const
-
-
 ```
 
 ## Keys
@@ -335,7 +331,6 @@ This function has semantics identical to [get\_objects](database-api.md#get_obje
 ```cpp
 vector<optional<account_object>> graphene::app::database_api::lookup_account_names(
     const vector<string> &account_names)const
-
 ```
 
 {% tabs %}
@@ -361,7 +356,6 @@ map<string, account_id_type> graphene::app::database_api::lookup_accounts(
     const string &lower_bound_name, 
     uint32_t limit, 
     optional<bool> subscribe = optional<bool>())const
-
 ```
 
 {% tabs %}
@@ -382,7 +376,6 @@ Get the total number of accounts registered with the blockchain.
 
 ```cpp
 uint64_t graphene::app::database_api::get_account_count()const
-
 ```
 
 ## Balances
@@ -393,8 +386,8 @@ Get an account’s balances in various assets.
 
 ```cpp
 vector<asset> graphene::app::database_api::get_account_balances(
-    const std::string &account_name_or_id, const flat_set<asset_id_type> &assets)const
-
+    const std::string &account_name_or_id, 
+    const flat_set<asset_id_type> &assets)const
 ```
 
 {% tabs %}
@@ -416,7 +409,6 @@ Semantically equivalent to [get\_account\_balances](database-api.md#get_account_
 vector<asset> graphene::app::database_api::get_named_account_balances(
     const std::string &name, 
     const flat_set<asset_id_type> &assets)const
-
 ```
 
 {% tabs %}
@@ -454,7 +446,6 @@ Calculate how much assets in the given balance objects are able to be claimed at
 ```cpp
 vector<asset> graphene::app::database_api::get_vested_balances(
     const vector<balance_id_type> &objs)const
-
 ```
 
 {% tabs %}
@@ -516,11 +507,9 @@ The assets corresponding to the provided symbol names or IDs.
 Get assets alphabetically by symbol name.
 
 ```cpp
-vector<extended_asset_object> graphene::
-app
-::
-database_api
-::list_assets(const string &lower_bound_symbol, uint32_t limit)const
+vector<extended_asset_object> graphene::app::database_api::list_assets(
+    const string &lower_bound_symbol, 
+    uint32_t limit)const
 ```
 
 {% tabs %}
@@ -611,7 +600,6 @@ Get call orders \(aka margin positions\) for a given asset.
 vector<call_order_object> graphene::app::database_api::get_call_orders(
     const std::string &a, 
     uint32_t limit)const
-
 ```
 
 {% tabs %}
@@ -676,12 +664,10 @@ Callback will be passed a variant containing a vector&lt;pair&lt;operation, oper
 The vector will contain, in order, the operations which changed the market, and their results
 
 ```cpp
-void graphene::
-app
-::
-database_api
-::subscribe_to_market(std::function<void(const variant&)> callback, const std::string &a, const std::string &b, )
-
+void graphene::app::database_api::subscribe_to_market(std::function<void(
+    const variant&)> callback, 
+    const std::string &a, 
+    const std::string &b, )
 ```
 
 {% tabs %}
@@ -700,7 +686,6 @@ Unsubscribe from updates to a given market.
 void graphene::app::database_api::unsubscribe_from_market(
     const std::string &a, 
     const std::string &b)
-
 ```
 
 {% tabs %}
@@ -718,7 +703,6 @@ Returns the ticker for the market assetA:assetB.
 market_ticker graphene::app::database_api::get_ticker(
     const string &base, 
     const string &quote)const
-
 ```
 
 {% tabs %}
@@ -867,7 +851,6 @@ Semantically equivalent to [get\_objects](database-api.md#get_objects), but does
 ```cpp
 vector<optional<committee_member_object>> graphene::app::database_api::get_committee_members(
     const vector<committee_member_id_type> &committee_member_ids)const
-
 ```
 
 {% tabs %}
@@ -952,7 +935,6 @@ This will be a mixture of `committee_member_objects`, `witness_objects`, and `wo
 ```cpp
 vector<variant> graphene::app::database_api::lookup_vote_ids(
     const vector<vote_id_type> &votes)const
-
 ```
 
 {% tabs %}
@@ -976,7 +958,6 @@ Get a hexdump of the serialized binary form of a transaction.
 ```cpp
 std::string graphene::app::database_api::get_transaction_hex(
     const signed_transaction &trx)const
-
 ```
 
 {% tabs %}
@@ -997,7 +978,6 @@ This API will take a partially signed transaction and a set of public keys that 
 set<public_key_type> graphene::app::database_api::get_required_signatures(
     const signed_transaction &trx, 
     const flat_set<public_key_type> &available_keys)const
-
 ```
 
 {% tabs %}
@@ -1018,7 +998,6 @@ This method will return the set of all public keys that could possibly sign for 
 ```cpp
 set<public_key_type> graphene::app::database_api::get_potential_signatures(
     const signed_transaction &trx)const
-
 ```
 
 {% tabs %}
@@ -1038,7 +1017,6 @@ This method will return the set of all addresses that could possibly sign for a 
 ```cpp
 set<address> graphene::app::database_api::get_potential_address_signatures(
     const signed_transaction &trx)const
-
 ```
 
 {% tabs %}
@@ -1096,12 +1074,8 @@ _true_ if the passed in keys have enough authority to approve an operation for t
 Validates a transaction against the current state without broadcasting it on the network.
 
 ```cpp
-processed_transaction graphene::
-app
-::
-database_api
-::validate_transaction(const signed_transaction &trx)const
-
+processed_transaction graphene::app::database_api::validate_transaction(
+const signed_transaction &trx)const
 ```
 
 {% tabs %}
@@ -1116,49 +1090,64 @@ A processed\_transaction object if the transaction passes the validation, otherw
 
 ### **get\_required\_fees**
 
-vector&lt;fc::variant&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_required_fees`\(_const_ vector&lt;operation&gt; &_ops_, _const_ std::string &_asset\_symbol\_or\_id_\)_const_  
-
-
 For each operation calculate the required fee in the specified asset type.
 
-**Return**
+```cpp
+vector<fc::variant> graphene::app::database_api::get_required_fees(
+    const vector<operation> &ops, 
+    const std::string &asset_symbol_or_id)const
+```
 
-a list of objects which indicates required fees of each operation**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`ops`**: a list of operations to be query for required fees
+* **`asset_symbol_or_id`**: symbol name or ID of an asset that to be used to pay the fees
+{% endtab %}
 
-* `ops`: a list of operations to be query for required fees
-* `asset_symbol_or_id`: symbol name or ID of an asset that to be used to pay the fees
+{% tab title="Return" %}
+A ****list of objects which indicates required fees of each operation
+{% endtab %}
+{% endtabs %}
 
-### [Proposed Transactions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id72)
+## Proposed Transactions
 
-#### [get\_proposed\_transactions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id73)
+### get\_proposed\_transactions
 
-vector&lt;proposal\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_proposed_transactions`\(_const_ std::string _account\_name\_or\_id_\)_const_  
+Gets a set of proposed transactions \(proposals\) that the specified account can add approval to or remove approval from.
 
+```cpp
+vector<proposal_object> graphene::app::database_api::get_proposed_transactions(
+    const std::string account_name_or_id)const
+```
 
-return a set of proposed transactions \(aka proposals\) that the specified account can add approval to or remove approval from
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: The name or ID of an account
+{% endtab %}
 
-**Return**
+{% tab title="Return" %}
+A  set of proposed transactions that the specified account can act on.
+{% endtab %}
+{% endtabs %}
 
-a set of proposed transactions that the specified account can act on**Parameters**
+## **Blinded balances**
 
-* `account_name_or_id`: The name or ID of an account
+### get\_blinded\_balances
 
-### [Blinded balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id74)
+Gets the set of blinded balance objects by commitment ID.
 
-#### [get\_blinded\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id75)
+```cpp
+vector<blinded_balance_object> graphene::app::database_api::get_blinded_balances(
+    const flat_set<commitment_type> &commitments)const
+```
 
-vector&lt;blinded\_balance\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_blinded_balances`\(_const_ flat\_set&lt;commitment\_type&gt; &_commitments_\)_const_  
+{% tabs %}
+{% tab title="Parameters" %}
+* **`commitments`**: a set of commitments to query for
+{% endtab %}
 
-
-return the set of blinded balance objects by commitment ID
-
-**Return**
-
-the set of blinded balance objects by commitment ID**Parameters**
-
-* `commitments`: a set of commitments to query for
-
-  
-[Next ](https://dev.bitshares.works/en/master/api/blockchain_api/history.html)[ Previous](https://dev.bitshares.works/en/master/api/blockchain_api.html)  
-
+{% tab title="Return" %}
+The set of blinded balance objects by commitment ID.
+{% endtab %}
+{% endtabs %}
 
