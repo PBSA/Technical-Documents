@@ -240,35 +240,53 @@ ID of all accounts that refer to the specified keys.
 {% endtab %}
 {% endtabs %}
 
-### [Accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id21)
+## Accounts
 
-#### [get\_accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id22)
-
-vector&lt;optional&lt;account\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_accounts`\(_const_ vector&lt;std::string&gt; &_account\_names\_or\_ids_, optional&lt;bool&gt; _subscribe_ = optional&lt;bool&gt;\(\)\)_const_  
-
+### get\_accounts
 
 Get a list of accounts by names or IDs.
 
-This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3)**Return**
+This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3)\*\*\*\*
 
-The accounts corresponding to the provided names or IDs**Parameters**
+```cpp
+vector<optional<account_object>> graphene::app::database_api::get_accounts(
+    const vector<std::string> &account_names_or_ids, 
+    optional<bool> subscribe = optional<bool>())const
+```
 
-* `account_names_or_ids`: names or IDs of the accounts to retrieve
-* `subscribe`: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_names_or_ids`**: names or IDs of the accounts to retrieve
+* **`subscribe`**: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+{% endtab %}
 
-#### [get\_full\_accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id23)
+{% tab title="Return" %}
+The accounts corresponding to the provided names or IDs.
+{% endtab %}
+{% endtabs %}
 
-std::map&lt;string, full\_account&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_full_accounts`\(_const_ vector&lt;string&gt; &_names\_or\_ids_, optional&lt;bool&gt; _subscribe_ = optional&lt;bool&gt;\(\)\)  
-
+### get\_full\_accounts
 
 Fetch all objects relevant to the specified accounts and optionally subscribe to updates.
 
-This function fetches all relevant objects for the given accounts, and subscribes to updates to the given accounts. If any of the strings in`names_or_ids` cannot be tied to an account, that input will be ignored. All other accounts will be retrieved and subscribed.**Return**
+This function fetches all relevant objects for the given accounts, and subscribes to updates to the given accounts. If any of the strings in`names_or_ids` cannot be tied to an account, that input will be ignored. All other accounts will be retrieved and subscribed.
 
-Map of string from `names_or_ids` to the corresponding account**Parameters**
+```cpp
+std::map<string, full_account> graphene::app::database_api::get_full_accounts(
+    const vector<string> &names_or_ids, 
+    optional<bool> subscribe = optional<bool>())
+```
 
-* `names_or_ids`: Each item must be the name or ID of an account to retrieve
-* `subscribe`: _true_ to subscribe to the queried full account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`names_or_ids`**: Each item must be the name or ID of an account to retrieve
+* **`subscribe`**: _true_ to subscribe to the queried full account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+{% endtab %}
+
+{% tab title="Return" %}
+Map of string from `names_or_ids` to the corresponding account.
+{% endtab %}
+{% endtabs %}
 
 #### [get\_account\_by\_name](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id24)
 
