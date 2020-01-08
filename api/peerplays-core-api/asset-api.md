@@ -7,8 +7,7 @@
 Get asset holders for a specific asset.
 
 ```cpp
-vector<account_asset_balance> 
-graphene::app::asset_api::get_asset_holders(
+vector<account_asset_balance> graphene::app::asset_api::get_asset_holders(
     std::string asset, 
     uint32_t start, 
     uint32_t limit)const
@@ -31,8 +30,7 @@ A list of asset holders for the specified asset.
 Get all asset holders.
 
 ```cpp
-vector<asset_holders> 
-graphene::app::asset_api::get_all_asset_holders()const
+vector<asset_holders> graphene::app::asset_api::get_all_asset_holders()const
 ```
 
 {% tabs %}
