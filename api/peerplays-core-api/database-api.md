@@ -920,20 +920,26 @@ Map of committee\_member names to corresponding IDs
 {% endtab %}
 {% endtabs %}
 
-### [Workers](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id59)
+## Workers
 
-#### [get\_workers\_by\_account](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id60)
-
-vector&lt;optional&lt;worker\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_workers_by_account`\(_const_ std::string _account\_name\_or\_id_\)_const_  
-
+### get\_workers\_by\_account
 
 Get the workers owned by a given account.
 
-**Return**
+```cpp
+vector<optional<worker_object>> graphene::app::database_api::get_workers_by_account(
+    const std::string account_name_or_id)const
+```
 
-A list of worker objects owned by the account**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: The name or ID of the account whose worker should be retrieved
+{% endtab %}
 
-* `account_name_or_id`: The name or ID of the account whose worker should be retrieved
+{% tab title="Return" %}
+A list of worker objects owned by the account.
+{% endtab %}
+{% endtabs %}
 
 ### [Votes](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id61)
 
