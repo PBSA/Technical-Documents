@@ -288,31 +288,46 @@ Map of string from `names_or_ids` to the corresponding account.
 {% endtab %}
 {% endtabs %}
 
-#### [get\_account\_by\_name](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id24)
-
-optional&lt;account\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_account_by_name`\(string _name_\)_const_  
-
+### get\_account\_by\_name
 
 Get info of an account by name.
 
-**Return**
+```cpp
+optional<account_object> graphene::app::database_api::get_account_by_name(
+    string name)const
+```
 
-The account holding the provided name**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`name`**: Name of the account to retrieve
+{% endtab %}
 
-* `name`: Name of the account to retrieve
+{% tab title="Return" %}
+The account holding the provided name.
+{% endtab %}
+{% endtabs %}
 
-#### [get\_account\_references](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id25)
-
-vector&lt;account\_id\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_account_references`\(_const_ std::string _account\_name\_or\_id_\)_const_  
-
+### get\_account\_references
 
 Get all accounts that refer to the specified account in their owner or active authorities.
 
-**Return**
+```cpp
+vector<account_id_type> graphene::
+app
+::
+database_api
+::get_account_references(const std::string account_name_or_id)const
+```
 
-all accounts that refer to the specified account in their owner or active authorities**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: Account name or ID to query
+{% endtab %}
 
-* `account_name_or_id`: Account name or ID to query
+{% tab title="Return" %}
+All accounts that refer to the specified account in their owner or active authorities
+{% endtab %}
+{% endtabs %}
 
 #### [lookup\_account\_names](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id26)
 
