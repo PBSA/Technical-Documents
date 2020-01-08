@@ -860,18 +860,27 @@ uint64_t graphene::app::database_api::get_witness_count()const
 
 ### get\_committee\_members
 
-vector&lt;optional&lt;committee\_member\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_committee_members`\(_const_ vector&lt;committee\_member\_id\_type&gt; &_committee\_member\_ids_\)_const_  
-
-
 Get a list of committee\_members by ID.
 
-This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3), but doesn’t subscribe**Return**
+Semantically equivalent to [get\_objects](database-api.md#get_objects), but doesn’t subscribe.
 
-The committee\_members corresponding to the provided IDs**Parameters**
+```cpp
+vector<optional<committee_member_object>> graphene::app::database_api::get_committee_members(
+    const vector<committee_member_id_type> &committee_member_ids)const
 
-* `committee_member_ids`: IDs of the committee\_members to retrieve
+```
 
-#### [get\_committee\_member\_by\_account](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id57)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`committee_member_ids`**: IDs of the committee\_members to retrieve
+{% endtab %}
+
+{% tab title="Return" %}
+The committee\_members corresponding to the provided IDs.
+{% endtab %}
+{% endtabs %}
+
+### **get\_committee\_member\_by\_account**
 
 fc::optional&lt;committee\_member\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_committee_member_by_account`\(_const_ string _account\_name\_or\_id_\)_const_  
 
