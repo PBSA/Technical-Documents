@@ -7,8 +7,7 @@
 Get signed blocks.
 
 ```cpp
-vector<optional<signed_block>> 
-graphene::app::block_api::get_blocks(
+vector<optional<signed_block>> graphene::app::block_api::get_blocks(
     uint32_t block_num_from, 
     uint32_t block_num_to)const
 ```
