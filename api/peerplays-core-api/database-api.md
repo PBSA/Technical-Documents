@@ -219,20 +219,26 @@ dynamic_global_property_object graphene::app::database_api::get_dynamic_global_p
 
 ```
 
-### [Keys](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id19)
+## Keys
 
-#### [get\_key\_references](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id20)
-
-vector&lt;flat\_set&lt;account\_id\_type&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_key_references`\(vector&lt;public\_key\_type&gt; _keys_\)_const_  
-
+### get\_key\_references
 
 Get all accounts that refer to the specified public keys in their owner authority, active authorities or memo key.
 
-**Return**
+```cpp
+vector<flat_set<account_id_type>> graphene::app::database_api::get_key_references(
+    vector<public_key_type> keys)const
+```
 
-ID of all accounts that refer to the specified keys**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`keys`**: a list of public keys to query
+{% endtab %}
 
-* `keys`: a list of public keys to query
+{% tab title="Return" %}
+ID of all accounts that refer to the specified keys.
+{% endtab %}
+{% endtabs %}
 
 ### [Accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id21)
 
