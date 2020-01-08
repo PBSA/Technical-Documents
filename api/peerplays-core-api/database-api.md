@@ -116,34 +116,51 @@ optional<block_header> graphene::app::database_api::get_block_header(
 {% endtab %}
 {% endtabs %}
 
-#### [get\_block](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id10)
-
-optional&lt;signed\_block&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_block`\(uint32\_t _block\_num_\)_const_  
-
+### get\_block
 
 Retrieve a full, signed block.
 
-**Return**
+```cpp
+optional<signed_block> graphene::app::database_api::get_block(
+    uint32_t block_num)const
+```
 
-the referenced block, or null if no matching block was found**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`block_num`**: Height of the block to be returned
+{% endtab %}
 
-* `block_num`: Height of the block to be returned
+{% tab title="Return" %}
+The referenced block, or null if no matching block was found.
+{% endtab %}
+{% endtabs %}
 
-#### [get\_transaction](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id11)
+### get\_transaction
 
-processed\_transaction `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_transaction`\(uint32\_t _block\_num_, uint32\_t _trx\_in\_block_\)_const_  
+Fetch an individual transaction.
+
+```cpp
+processed_transaction graphene::
+app
+::
+database_api
+::get_transaction(uint32_t block_num, uint32_t trx_in_block)const
+```
 
 
-used to fetch an individual transaction.
 
-**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`block_num`**: height of the block to fetch
+* **`trx_in_block`**: the index \(sequence number\) of the transaction in the block, starts from 0
+{% endtab %}
 
-the transaction at the given position**Parameters**
+{% tab title="Return" %}
+The transaction at the given position.
+{% endtab %}
+{% endtabs %}
 
-* `block_num`: height of the block to fetch
-* `trx_in_block`: the index \(sequence number\) of the transaction in the block, starts from 0
-
-#### [get\_recent\_transaction\_by\_id](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id12)
+### get\_recent\_transaction\_by\_id
 
 optional&lt;signed\_transaction&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_recent_transaction_by_id`\(_const_ transaction\_id\_type &_txid_\)_const_  
 
