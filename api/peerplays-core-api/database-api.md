@@ -630,15 +630,10 @@ The call orders, ordered from earliest to be called to latest
 Get forced settlement orders in a given asset.
 
 ```cpp
-vector<force_settlement_object> graphene::
-app
-::
-database_api
-::get_settle_orders(const std::string &a, uint32_t limit)const
+vector<force_settlement_object> graphene::app::database_api::get_settle_orders(
+    const std::string &a, 
+    uint32_t limit)const
 ```
-
-  
-
 
 {% tabs %}
 {% tab title="Parameters" %}
@@ -651,18 +646,26 @@ The settle orders, ordered from earliest settlement date to latest.
 {% endtab %}
 {% endtabs %}
 
-#### [get\_margin\_positions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id44)
-
-vector&lt;call\_order\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_margin_positions`\(_const_ std::string _account\_name\_or\_id_\)_const_  
-
+### get\_margin\_positions
 
 Get all open margin positions of a given account.
 
-Similar to[get\_call\_orders\_by\_account](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a78eb082a3a0cfb33ccd00adeb8cfac1d), but without pagination.**Return**
+Similar to [get\_call\_orders\_by\_account](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a78eb082a3a0cfb33ccd00adeb8cfac1d), but without pagination.
 
-all open margin positions of the account**Parameters**
+```cpp
+vector<call_order_object> graphene::app::database_api::get_margin_positions(
+    const std::string account_name_or_id)const
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
 * `account_name_or_id`: name or ID of an account
+{% endtab %}
+
+{% tab title="Return" %}
+All open margin positions of the account.
+{% endtab %}
+{% endtabs %}
 
 #### [subscribe\_to\_market](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id45)
 
