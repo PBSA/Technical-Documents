@@ -387,19 +387,26 @@ uint64_t graphene::app::database_api::get_account_count()const
 
 ## Balances
 
-#### [get\_account\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id30)
-
-vector&lt;asset&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_account_balances`\(_const_ std::string &_account\_name\_or\_id_, _const_ flat\_set&lt;asset\_id\_type&gt; &_assets_\)_const_  
-
+### get\_account\_balances
 
 Get an account’s balances in various assets.
 
-**Return**
+```cpp
+vector<asset> graphene::app::database_api::get_account_balances(
+    const std::string &account_name_or_id, const flat_set<asset_id_type> &assets)const
 
-Balances of the account**Parameters**
+```
 
-* `account_name_or_id`: name or ID of the account to get balances for
-* `assets`: IDs of the assets to get balances of; if empty, get all assets account has a balance in
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: name or ID of the account to get balances for.
+* **`assets`**: IDs of the assets to get balances of; if empty, get all assets account has a balance in.
+{% endtab %}
+
+{% tab title="Return" %}
+Balances of the account.
+{% endtab %}
+{% endtabs %}
 
 #### [get\_named\_account\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id31)
 
