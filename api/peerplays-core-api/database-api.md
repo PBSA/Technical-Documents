@@ -809,44 +809,56 @@ The witnesses corresponding to the provided IDs.
 {% endtab %}
 {% endtabs %}
 
-#### [get\_witness\_by\_account](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id52)
-
-fc::optional&lt;witness\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_witness_by_account`\(_const_ std::string _account\_name\_or\_id_\)_const_  
-
+### get\_witness\_by\_account
 
 Get the witness owned by a given account.
 
-**Return**
+```cpp
+fc::optional<witness_object> graphene::app::database_api::get_witness_by_account(
+    const std::string account_name_or_id)const
+```
 
-The witness object, or null if the account does not have a witness**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: The name or ID of the account whose witness should be retrieved
+{% endtab %}
 
-* `account_name_or_id`: The name or ID of the account whose witness should be retrieved
+{% tab title="Return" %}
+The witness object, or null if the account does not have a witness.
+{% endtab %}
+{% endtabs %}
 
-#### [lookup\_witness\_accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id53)
-
-map&lt;string, witness\_id\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_witness_accounts`\(_const_ string &_lower\_bound\_name_, uint32\_t _limit_\)_const_  
-
+### **lookup\_witness\_accounts**
 
 Get names and IDs for registered witnesses.
 
-**Return**
+```cpp
+map<string, witness_id_type> graphene::app::database_api::lookup_witness_accounts(
+    const string &lower_bound_name, uint32_t limit)const
+```
 
-Map of witness names to corresponding IDs**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`lower_bound_name`**: Lower bound of the first name to return
+* **`limit`**: Maximum number of results to return must not exceed 1000
+{% endtab %}
 
-* `lower_bound_name`: Lower bound of the first name to return
-* `limit`: Maximum number of results to return must not exceed 1000
+{% tab title="Return" %}
+Map of witness names to corresponding IDs**.**
+{% endtab %}
+{% endtabs %}
 
-#### [get\_witness\_count](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id54)
+### get\_witness\_count
 
-uint64\_t `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_witness_count`\(\)_const_  
+Get the total number of witnesses registered with the blockchain.
 
+```cpp
+uint64_t graphene::app::database_api::get_witness_count()const
+```
 
-Get the total number of witnesses registered with the blockchain.  
+## Committee members
 
-
-### [Committee members](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id55)
-
-#### [get\_committee\_members](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id56)
+### get\_committee\_members
 
 vector&lt;optional&lt;committee\_member\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_committee_members`\(_const_ vector&lt;committee\_member\_id\_type&gt; &_committee\_member\_ids_\)_const_  
 
