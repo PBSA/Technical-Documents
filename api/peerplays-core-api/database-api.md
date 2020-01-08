@@ -692,31 +692,45 @@ database_api
 {% endtab %}
 {% endtabs %}
 
-#### [unsubscribe\_from\_market](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id46)
-
-void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::unsubscribe_from_market`\(_const_ std::string &_a_, _const_ std::string &_b_\)  
-
+### unsubscribe\_from\_market
 
 Unsubscribe from updates to a given market.
 
-**Parameters**
+```cpp
+void graphene::app::database_api::unsubscribe_from_market(
+    const std::string &a, 
+    const std::string &b)
 
-* `a`: symbol name or ID of the first asset
-* `b`: symbol name or ID of the second asset
+```
 
-#### [get\_ticker](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id47)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: symbol name or ID of the first asset
+* **`b`**: symbol name or ID of the second asset
+{% endtab %}
+{% endtabs %}
 
-market\_ticker `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_ticker`\(_const_ string &_base_, _const_ string &_quote_\)_const_  
-
+### get\_ticker
 
 Returns the ticker for the market assetA:assetB.
 
-**Return**
+```cpp
+market_ticker graphene::app::database_api::get_ticker(
+    const string &base, 
+    const string &quote)const
 
-The market ticker for the past 24 hours.**Parameters**
+```
 
-* `base`: symbol name or ID of the base asset
-* `quote`: symbol name or ID of the quote asset
+{% tabs %}
+{% tab title="Parameters" %}
+* **`base`**: symbol name or ID of the base asset
+* **`quote`**: symbol name or ID of the quote asset
+{% endtab %}
+
+{% tab title="Return" %}
+The market ticker for the past 24 hours.
+{% endtab %}
+{% endtabs %}
 
 #### [get\_24\_volume](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id48)
 
