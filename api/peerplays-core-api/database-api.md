@@ -882,30 +882,43 @@ The committee\_members corresponding to the provided IDs.
 
 ### **get\_committee\_member\_by\_account**
 
-fc::optional&lt;committee\_member\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_committee_member_by_account`\(_const_ string _account\_name\_or\_id_\)_const_  
-
-
 Get the committee\_member owned by a given account.
 
-**Return**
+```cpp
+fc::optional<committee_member_object> graphene::app::database_api::get_committee_member_by_account(
+    const string account_name_or_id)const
+```
 
-The committee\_member object, or null if the account does not have a committee\_member**Parameters**
-
+{% tabs %}
+{% tab title="Parameters" %}
 * `account_name_or_id`: The name or ID of the account whose committee\_member should be retrieved
+{% endtab %}
 
-#### [lookup\_committee\_member\_accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id58)
+{% tab title="Return" %}
+The committee\_member object, or null if the account does not have a committee\_member**.**
+{% endtab %}
+{% endtabs %}
 
-map&lt;string, committee\_member\_id\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_committee_member_accounts`\(_const_ string &_lower\_bound\_name_, uint32\_t _limit_\)_const_  
-
+### lookup\_committee\_member\_accounts
 
 Get names and IDs for registered committee\_members.
 
-**Return**
+```cpp
+map<string, committee_member_id_type> graphene::app::database_api::lookup_committee_member_accounts(
+    const string &lower_bound_name, 
+    uint32_t limit)const
+```
 
-Map of committee\_member names to corresponding IDs**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`lower_bound_name`**: Lower bound of the first name to return
+* **`limit`**: Maximum number of results to return must not exceed 1000
+{% endtab %}
 
-* `lower_bound_name`: Lower bound of the first name to return
-* `limit`: Maximum number of results to return must not exceed 1000
+{% tab title="Return" %}
+Map of committee\_member names to corresponding IDs
+{% endtab %}
+{% endtabs %}
 
 ### [Workers](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id59)
 
