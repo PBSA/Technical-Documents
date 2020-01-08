@@ -15,8 +15,7 @@ Generates a Pedersen Commitment: \*commit = blind \* G + value \* G2. The commit
 {% endhint %}
 
 ```cpp
-commitment_type 
-graphene::app::crypto_api::blind(
+commitment_type graphene::app::crypto_api::blind(
     const fc::ecc::blind_factor_type &blind, 
     uint64_t value)
 ```
@@ -37,8 +36,7 @@ A 33-byte Pedersen Commitment: _commit = blind_  G + value \* G2
 Get SHA-256 blind factor type.
 
 ```cpp
-blind_factor_type 
-graphene::app::crypto_api::blind_sum(
+blind_factor_type graphene::app::crypto_api::blind_sum(
     const std::vector<blind_factor_type> &blinds_in, 
     uint32_t non_neg)
 ```
@@ -67,8 +65,7 @@ The cli\_wallet includes functionality for sending blind transfers in which the 
 {% endhint %}
 
 ```cpp
-range_proof_info 
-graphene::app::crypto_api::range_get_info(
+range_proof_info graphene::app::crypto_api::range_get_info(
     const std::vector<char> &proof)
 ```
 
@@ -87,8 +84,7 @@ A range proof info structure with exponent, mantissa, min and max values.
 Proves with respect to min\_value the range for Pedersen Commitment which has the provided blinding factor and value.
 
 ```cpp
-std::vector<char> 
-graphene::app::crypto_api::range_proof_sign(
+std::vector<char> graphene::app::crypto_api::range_proof_sign(
     uint64_t min_value, 
     const commitment_type &commit, 
     const blind_factor_type &commit_blind, 
@@ -121,8 +117,7 @@ A list of characters as proof in proof.
 Verifies that `commits` + `neg_commits` + `excess` == 0.
 
 ```cpp
-bool 
-graphene::app::crypto_api::verify_sum(
+bool graphene::app::crypto_api::verify_sum(
     const std::vector<commitment_type> &commits_in, 
     const std::vector<commitment_type> &neg_commits_in, 
     int64_t excess)
@@ -145,8 +140,7 @@ graphene::app::crypto_api::verify_sum(
 Verifies range proof for 33-byte Pedersen Commitment.
 
 ```cpp
-verify_range_result 
-graphene::app::crypto_api::verify_range(
+verify_range_result graphene::app::crypto_api::verify_range(
     const fc::ecc::commitment_type &commit, 
     const std::vector<char> &proof)
 ```
@@ -167,8 +161,7 @@ A structure with success, min and max values
 Verifies range proof rewind for 33-byte Pedersen Commitment.
 
 ```cpp
-verify_range_proof_rewind_result 
-graphene::app::crypto_api::verify_range_proof_rewind(
+verify_range_proof_rewind_result graphene::app::crypto_api::verify_range_proof_rewind(
     const blind_factor_type &nonce, 
     const fc::ecc::commitment_type &commit, 
     const std::vector<char> &proof)
