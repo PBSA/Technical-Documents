@@ -1070,23 +1070,28 @@ true if the `trx` has all of the required signatures, otherwise throws an except
 {% endtab %}
 {% endtabs %}
 
-\*\*\*\*
-
-* \*\*\*\*[**verify\_account\_authority**](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id69)\*\*\*\*
-
-bool `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::verify_account_authority`\(_const_ string &_account\_name\_or\_id_, _const_ flat\_set&lt;public\_key\_type&gt; &_signers_\)_const_  
-
+### **verify\_account\_authority**
 
 Verify that the public keys have enough authority to approve an operation for this account.
 
-**Return**
+```cpp
+bool graphene::app::database_api::verify_account_authority(
+    const string &account_name_or_id, 
+    const flat_set<public_key_type> &signers)const
+```
 
-true if the passed in keys have enough authority to approve an operation for this account**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: name or ID of an account to check
+* **`signers`**: the public keys
+{% endtab %}
 
-* `account_name_or_id`: name or ID of an account to check
-* `signers`: the public keys
+{% tab title="Return" %}
+_true_ if the passed in keys have enough authority to approve an operation for this account**.**
+{% endtab %}
+{% endtabs %}
 
-#### [validate\_transaction](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id70)
+### validate\_transaction
 
 processed\_transaction `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::validate_transaction`\(_const_ signed\_transaction &_trx_\)_const_  
 
