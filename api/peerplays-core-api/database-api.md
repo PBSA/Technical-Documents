@@ -193,17 +193,13 @@ Retrieve the current [graphene::chain::global\_property\_object](https://dev.bit
 global_property_object graphene::app::database_api::get_global_properties()const
 ```
 
-  
-
-
-
-
-#### [get\_config](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id16)
-
-fc::variant\_object `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_config`\(\)_const_  
-
+### get\_config
 
 Retrieve compile-time constants.
+
+```cpp
+fc::variant_object graphene::app::database_api::get_config()const
+```
 
 #### [get\_chain\_id](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id17)
 
