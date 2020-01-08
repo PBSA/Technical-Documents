@@ -1043,7 +1043,7 @@ set<address> graphene::app::database_api::get_potential_address_signatures(
 
 {% tabs %}
 {% tab title="Parameters" %}
-* `trx`: the transaction to be signed
+* **`trx`**: the transaction to be signed
 {% endtab %}
 
 {% tab title="Return" %}
@@ -1051,18 +1051,28 @@ A set of addresses that could possibly sign for the given transaction.
 {% endtab %}
 {% endtabs %}
 
-* \*\*\*\*[**verify\_authority**](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id68)\*\*\*\*
+### **verify\_authority**
 
-bool `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::verify_authority`\(_const_ signed\_transaction &_trx_\)_const_  
+Check whether a transaction has all of the required signatures
 
+```cpp
+bool graphene::app::database_api::verify_authority(
+    const signed_transaction &trx)const
+```
 
-Check whether a transaction has all of the required signatures**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`trx`**: a transaction to be verified
+{% endtab %}
 
-true if the `trx` has all of the required signatures, otherwise throws an exception**Parameters**
+{% tab title="Return" %}
+true if the `trx` has all of the required signatures, otherwise throws an exception**.**
+{% endtab %}
+{% endtabs %}
 
-* `trx`: a transaction to be verified
+\*\*\*\*
 
-#### [verify\_account\_authority](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id69)
+* \*\*\*\*[**verify\_account\_authority**](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id69)\*\*\*\*
 
 bool `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::verify_account_authority`\(_const_ string &_account\_name\_or\_id_, _const_ flat\_set&lt;public\_key\_type&gt; &_signers_\)_const_  
 
