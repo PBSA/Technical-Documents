@@ -1,6 +1,6 @@
 # Database API
 
-The database API is available from the full node via websockets.
+The database API is available from the full node via web-sockets.
 
 ## Objects
 
@@ -201,20 +201,23 @@ Retrieve compile-time constants.
 fc::variant_object graphene::app::database_api::get_config()const
 ```
 
-#### [get\_chain\_id](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id17)
-
-chain\_id\_type `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_chain_id`\(\)_const_  
-
+### get\_chain\_id
 
 Get the chain ID.
 
-#### [get\_dynamic\_global\_properties](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id18)
+```cpp
+chain_id_type graphene::app::database_api::get_chain_id()cons
+```
 
-dynamic\_global\_property\_object `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_dynamic_global_properties`\(\)_const_  
+### get\_dynamic\_global\_properties
+
+Retrieve the current [graphene::chain::dynamic\_global\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene_1_1chain_1_1dynamic__global__property__object).
+
+```cpp
+dynamic_global_property_object graphene::app::database_api::get_dynamic_global_properties()const
 
 
-Retrieve the current [graphene::chain::dynamic\_global\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene_1_1chain_1_1dynamic__global__property__object).  
-
+```
 
 ### [Keys](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id19)
 
