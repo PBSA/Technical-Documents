@@ -941,23 +941,31 @@ A list of worker objects owned by the account.
 {% endtab %}
 {% endtabs %}
 
-### [Votes](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id61)
+## Votes
 
-#### [lookup\_vote\_ids](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id62)
+### lookup\_vote\_ids
 
-vector&lt;variant&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_vote_ids`\(_const_ vector&lt;vote\_id\_type&gt; &_votes_\)_const_  
+Given a set of votes, returns the objects they are voting for.
 
+This will be a mixture of `committee_member_objects`, `witness_objects`, and `worker_objects`
 
-Given a set of votes, return the objects they are voting for.
+```cpp
+vector<variant> graphene::app::database_api::lookup_vote_ids(
+    const vector<vote_id_type> &votes)const
 
-This will be a mixture of committee\_member\_objects, witness\_objects, and worker\_objects**Return**
+```
 
-the referenced objects**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`votes`**: a list of vote IDs
+{% endtab %}
 
-* `votes`: a list of vote IDs
+{% tab title="Return" %}
+The referenced objects
 
-The results will be in the same order as the votes. Null will be returned for any vote IDs that are not found.  
-
+The results will be in the same order as the votes. Null will be returned for any vote IDs that are not found.
+{% endtab %}
+{% endtabs %}
 
 ### [Authority / Validation](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id63)
 
