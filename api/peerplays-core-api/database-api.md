@@ -555,7 +555,7 @@ The assets corresponding to the provided symbols or IDs
 {% endtab %}
 {% endtabs %}
 
-### Markets / Feeds
+## Markets / Feeds
 
 ### get\_order\_book
 
@@ -667,18 +667,30 @@ All open margin positions of the account.
 {% endtab %}
 {% endtabs %}
 
-#### [subscribe\_to\_market](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id45)
-
-void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::subscribe_to_market`\(std::function&lt;void\(_const_ variant&\)&gt; _callback_, _const_ std::string &_a_, _const_ std::string &_b_, \)  
-
+### subscribe\_to\_market
 
 Request notification when the active orders in the market between two assets changes.
 
-Callback will be passed a variant containing a vector&lt;pair&lt;operation, operation\_result&gt;&gt;. The vector will contain, in order, the operations which changed the market, and their results.**Parameters**
+Callback will be passed a variant containing a vector&lt;pair&lt;operation, operation\_result&gt;&gt;. 
 
-* `callback`: Callback method which is called when the market changes
-* `a`: symbol name or ID of the first asset
-* `b`: symbol name or ID of the second asset
+The vector will contain, in order, the operations which changed the market, and their results
+
+```cpp
+void graphene::
+app
+::
+database_api
+::subscribe_to_market(std::function<void(const variant&)> callback, const std::string &a, const std::string &b, )
+
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`callback`**: Callback method which is called when the market changes
+* **`a`**: symbol name or ID of the first asset
+* **`b`**: symbol name or ID of the second asset
+{% endtab %}
+{% endtabs %}
 
 #### [unsubscribe\_from\_market](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id46)
 
