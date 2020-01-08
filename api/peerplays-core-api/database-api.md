@@ -57,7 +57,9 @@ graphene::app::database_api::set_subscribe_callback(
 
 Register a callback handle which will get notified when a transaction is pushed to database.
 
-Note: a transaction can be pushed to database and be popped from database several times while processing, before and after included in a block. Everytime when a push is done, the client will be notified.
+{% hint style="warning" %}
+**Note**: A transaction can be pushed to the database and be popped from the database several times while processing, before and after,, included in a block. Every time a push is done, the client will be notified.
+{% endhint %}
 
 ```cpp
 void 
@@ -71,7 +73,7 @@ graphene::app::database_api::set_pending_transaction_callback(
 {% endtab %}
 {% endtabs %}
 
-#### [set\_block\_applied\_callback](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id6)
+### set\_block\_applied\_callback
 
 void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::set_block_applied_callback`\(std::function&lt;void\(_const_ variant &block\_id\)&gt; _cb_\)  
 
