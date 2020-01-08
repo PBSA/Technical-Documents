@@ -9,8 +9,7 @@ The history API is available from the full node via websockets.
 Get operations relevant to the specified account.
 
 ```cpp
-vector<operation_history_object> 
-graphene::app::history_api::get_account_history(
+vector<operation_history_object> graphene::app::history_api::get_account_history(
     const std::string account_id_or_name, 
     operation_history_id_type stop = operation_history_id_type(), 
     unsigned limit = 100, 
@@ -35,8 +34,7 @@ A list of operations performed by account, ordered from most recent to oldest.
 Get only asked operations relevant to the specified account.
 
 ```cpp
-vector<operation_history_object> 
-graphene::app::history_api::get_account_history_operations(
+vector<operation_history_object> graphene::app::history_api::get_account_history_operations(
     const std::string account_id_or_name, 
     int operation_type, 
     operation_history_id_type start = operation_history_id_type(), 
@@ -63,8 +61,7 @@ A list of operations performed by account, ordered from most recent to oldest.
 Get operations relevant to the specified account referenced by an event numbering specific to the account. The current number of operations for the account can be found in the account statistics \(or use 0 for start\).
 
 ```cpp
-vector<operation_history_object> 
-graphene::app::history_api::get_relative_account_history(
+vector<operation_history_object> graphene::app::history_api::get_relative_account_history(
     const std::string account_id_or_name, 
     uint64_t stop = 0, 
     unsigned limit = 100, 
@@ -91,8 +88,7 @@ A list of operations performed by account, ordered from most recent to oldest.
 Get details of order executions occurred most recently in a trading pair.
 
 ```cpp
-vector<order_history_object> 
-graphene::app::history_api::get_fill_order_history(
+vector<order_history_object> graphene::app::history_api::get_fill_order_history(
     std::string a, 
     std::string b, 
     uint32_t limit)const
@@ -115,8 +111,7 @@ a list of order\_history objects, in most recent first order
 Get OHLCV data of a trading pair in a time range.
 
 ```cpp
-vector<bucket_object> 
-graphene::app::history_api::get_market_history(
+vector<bucket_object> graphene::app::history_api::get_market_history(
     std::string a, 
     std::string b, 
     uint32_t bucket_seconds, 
@@ -150,8 +145,7 @@ If there are more than 200 records in the specified time range, the first 200 re
 Get OHLCV time bucket lengths supported \(configured\) by this API server.
 
 ```cpp
-flat_set<uint32_t> 
-graphene::app::history_api::get_market_history_buckets()const
+flat_set<uint32_t> graphene::app::history_api::get_market_history_buckets()const
 ```
 
 {% tabs %}
