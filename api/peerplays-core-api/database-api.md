@@ -511,92 +511,145 @@ The assets corresponding to the provided symbol names or IDs.
 {% endtab %}
 {% endtabs %}
 
-#### [list\_assets](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id37)
-
-vector&lt;extended\_asset\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::list_assets`\(_const_ string &_lower\_bound\_symbol_, uint32\_t _limit_\)_const_  
-
+### list\_assets
 
 Get assets alphabetically by symbol name.
 
-**Return**
+```cpp
+vector<extended_asset_object> graphene::
+app
+::
+database_api
+::list_assets(const string &lower_bound_symbol, uint32_t limit)const
+```
 
-The assets found**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`lower_bound_symbol`**: Lower bound of symbol names to retrieve
+* **`limit`**: Maximum number of assets to fetch \(must not exceed 101\)
+{% endtab %}
 
-* `lower_bound_symbol`: Lower bound of symbol names to retrieve
-* `limit`: Maximum number of assets to fetch \(must not exceed 101\)
+{% tab title="Return" %}
+The assets found.
+{% endtab %}
+{% endtabs %}
 
-#### [lookup\_asset\_symbols](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id38)
-
-vector&lt;optional&lt;extended\_asset\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_asset_symbols`\(_const_ vector&lt;string&gt; &_symbols\_or\_ids_\)_const_  
-
+### lookup\_asset\_symbols
 
 Get a list of assets by symbol names or IDs.
 
-This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3), but doesn’t subscribe**Return**
+Semantically equivalent to [get\_objects](database-api.md#get_objects), but doesn’t subscribe.
 
-The assets corresponding to the provided symbols or IDs**Parameters**
+```cpp
+vector<optional<extended_asset_object>> graphene::app::database_api::lookup_asset_symbols(
+    const vector<string> &symbols_or_ids)const
+```
 
-* `symbols_or_ids`: symbol names or IDs of the assets to retrieve
+{% tabs %}
+{% tab title="Parameters" %}
+* **`symbols_or_ids`**: symbol names or IDs of the assets to retrieve
+{% endtab %}
 
-### [Markets / feeds](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id39)
+{% tab title="Return" %}
+The assets corresponding to the provided symbols or IDs
+{% endtab %}
+{% endtabs %}
 
-#### [get\_order\_book](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id40)
+### Markets / Feeds
 
-order\_book `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_order_book`\(_const_ string &_base_, _const_ string &_quote_, unsigned _limit_ = 50\)_const_  
+### get\_order\_book
 
+Returns the order book for the market base
 
-Returns the order book for the market base:quote.
+```cpp
+order_book graphene::app::database_api::get_order_book(
+    const string &base, 
+    const string &quote, 
+    unsigned limit = 50)const
+```
 
-**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`base`**: symbol name or ID of the base asset
+* **`quote`**: symbol name or ID of the quote asset
+* **`limit`**: depth of the order book to retrieve, for bids and asks each, capped at 50
+{% endtab %}
 
-Order book of the market**Parameters**
+{% tab title="Return" %}
+Order book of the market.
+{% endtab %}
+{% endtabs %}
 
-* `base`: symbol name or ID of the base asset
-* `quote`: symbol name or ID of the quote asset
-* `limit`: depth of the order book to retrieve, for bids and asks each, capped at 50
-
-#### [get\_limit\_orders](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id41)
-
-vector&lt;limit\_order\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_limit_orders`\(std::string _a_, std::string _b_, uint32\_t _limit_\)_const_  
-
+### get\_limit\_orders
 
 Get limit orders in a given market.
 
-**Return**
+```cpp
+vector<limit_order_object> graphene::app::database_api::get_limit_orders(
+    std::string a, 
+    std::string b, 
+    uint32_t limit)const
+```
 
-The limit orders, ordered from least price to greatest**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: symbol or ID of asset being sold
+* **`b`**: symbol or ID of asset being purchased
+* **`limit`**: Maximum number of orders to retrieve
+{% endtab %}
 
-* `a`: symbol or ID of asset being sold
-* `b`: symbol or ID of asset being purchased
-* `limit`: Maximum number of orders to retrieve
+{% tab title="Return" %}
+The limit orders, ordered from least price to greatest.
+{% endtab %}
+{% endtabs %}
 
-#### [get\_call\_orders](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id42)
-
-vector&lt;call\_order\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_call_orders`\(_const_ std::string &_a_, uint32\_t _limit_\)_const_  
-
+### get\_call\_orders
 
 Get call orders \(aka margin positions\) for a given asset.
 
-**Return**
+```cpp
+vector<call_order_object> graphene::app::database_api::get_call_orders(
+    const std::string &a, 
+    uint32_t limit)const
 
-The call orders, ordered from earliest to be called to latest**Parameters**
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
 * `a`: symbol name or ID of the debt asset
 * `limit`: Maximum number of orders to retrieve
+{% endtab %}
 
-#### [get\_settle\_orders](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id43)
+{% tab title="Return" %}
+The call orders, ordered from earliest to be called to latest
+{% endtab %}
+{% endtabs %}
 
-vector&lt;force\_settlement\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_settle_orders`\(_const_ std::string &_a_, uint32\_t _limit_\)_const_  
-
+### get\_settle\_orders
 
 Get forced settlement orders in a given asset.
 
-**Return**
+```cpp
+vector<force_settlement_object> graphene::
+app
+::
+database_api
+::get_settle_orders(const std::string &a, uint32_t limit)const
+```
 
-The settle orders, ordered from earliest settlement date to latest**Parameters**
+  
 
-* `a`: Symbol or ID of asset being settled
-* `limit`: Maximum number of orders to retrieve
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: Symbol or ID of asset being settled
+* **`limit`**: Maximum number of orders to retrieve
+{% endtab %}
+
+{% tab title="Return" %}
+The settle orders, ordered from earliest settlement date to latest.
+{% endtab %}
+{% endtabs %}
 
 #### [get\_margin\_positions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id44)
 
