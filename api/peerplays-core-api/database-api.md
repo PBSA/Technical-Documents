@@ -312,11 +312,8 @@ The account holding the provided name.
 Get all accounts that refer to the specified account in their owner or active authorities.
 
 ```cpp
-vector<account_id_type> graphene::
-app
-::
-database_api
-::get_account_references(const std::string account_name_or_id)const
+vector<account_id_type> graphene::app::database_api::get_account_references(
+    const std::string account_name_or_id)const
 ```
 
 {% tabs %}
@@ -329,25 +326,41 @@ All accounts that refer to the specified account in their owner or active author
 {% endtab %}
 {% endtabs %}
 
-#### [lookup\_account\_names](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id26)
-
-vector&lt;optional&lt;account\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_account_names`\(_const_ vector&lt;string&gt; &_account\_names_\)_const_  
-
+### lookup\_account\_names
 
 Get a list of accounts by name.
 
-This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3), but doesn’t subscribe.**Return**
+This function has semantics identical to [get\_objects](database-api.md#get_objects), but doesn’t subscribe
 
-The accounts holding the provided names**Parameters**
+```cpp
+vector<optional<account_object>> graphene::app::database_api::lookup_account_names(
+    const vector<string> &account_names)const
 
-* `account_names`: Names of the accounts to retrieve
+```
 
-#### [lookup\_accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id27)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_names`**: Names of the accounts to retrieve
+{% endtab %}
 
-map&lt;string, account\_id\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_accounts`\(_const_ string &_lower\_bound\_name_, uint32\_t _limit_, optional&lt;bool&gt; _subscribe_ = optional&lt;bool&gt;\(\)\)_const_  
+{% tab title="Return" %}
+The accounts holding the provided names.
+{% endtab %}
+{% endtabs %}
 
+### lookup\_accounts
 
 Get names and IDs for registered accounts.
+
+```cpp
+map<string, account_id_type> graphene::app::database_api::lookup_accounts(
+    const string &lower_bound_name, uint32_t limit, optional<bool> subscribe = optional<bool>())const
+```
+
+  
+
+
+
 
 **Return**
 
