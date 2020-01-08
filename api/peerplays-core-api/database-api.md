@@ -452,11 +452,8 @@ All unclaimed balance objects for the addresses.
 Calculate how much assets in the given balance objects are able to be claimed at current head block time.
 
 ```cpp
-vector<asset> graphene::
-app
-::
-database_api
-::get_vested_balances(const vector<balance_id_type> &objs)const
+vector<asset> graphene::app::database_api::get_vested_balances(
+    const vector<balance_id_type> &objs)const
 
 ```
 
@@ -470,34 +467,49 @@ A list indicating how much asset in each balance object is available to be claim
 {% endtab %}
 {% endtabs %}
 
-#### [get\_vesting\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id34)
-
-vector&lt;vesting\_balance\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_vesting_balances`\(_const_ std::string _account\_name\_or\_id_\)_const_  
-
+### get\_vesting\_balances
 
 Return all vesting balance objects owned by an account.
 
-**Return**
+```cpp
+vector<vesting_balance_object> graphene::app::database_api::get_vesting_balances(
+    const std::string account_name_or_id)const
+```
 
-all vesting balance objects owned by the account**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: name or ID of an account
+{% endtab %}
 
-* `account_name_or_id`: name or ID of an account
+{% tab title="Return" %}
+All vesting balance objects owned by the account.
+{% endtab %}
+{% endtabs %}
 
-### [Assets](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id35)
+## Assets
 
-#### [get\_assets](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id36)
-
-vector&lt;optional&lt;extended\_asset\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_assets`\(_const_ vector&lt;std::string&gt; &_asset\_symbols\_or\_ids_, optional&lt;bool&gt; _subscribe_ = optional&lt;bool&gt;\(\)\)_const_  
-
+### get\_assets
 
 Get a list of assets by symbol names or IDs.
 
-This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3)**Return**
+Semantically equivalent to [get\_objects](database-api.md#get_objects).
 
-The assets corresponding to the provided symbol names or IDs**Parameters**
+```cpp
+vector<optional<extended_asset_object>> graphene::app::database_api::get_assets(
+    const vector<std::string> &asset_symbols_or_ids, 
+    optional<bool> subscribe = optional<bool>())const
+```
 
-* `asset_symbols_or_ids`: symbol names or IDs of the assets to retrieve
-* `subscribe`: _true_ to subscribe to the queried asset objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`asset_symbols_or_ids`**: symbol names or IDs of the assets to retrieve
+* **`subscribe`**: _true_ to subscribe to the queried asset objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+{% endtab %}
+
+{% tab title="Return" %}
+The assets corresponding to the provided symbol names or IDs.
+{% endtab %}
+{% endtabs %}
 
 #### [list\_assets](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id37)
 
