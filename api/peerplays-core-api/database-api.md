@@ -175,16 +175,18 @@ The corresponding transaction if found, or null if not found.
 
 If the transaction has not expired, this method will return the transaction for the given ID or it will return NULL if it is not known. Just because it is not known does not mean it wasn’t included in the blockchain.
 
-### [Globals](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id13)
+## Globals
 
-#### [get\_chain\_properties](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id14)
-
-chain\_property\_object `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_chain_properties`\(\)_const_  
-
+### get\_chain\_properties
 
 Retrieve the [graphene::chain::chain\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene_1_1chain_1_1chain__property__object) associated with the chain.
 
-#### [get\_global\_properties](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id15)
+```cpp
+chain_property_object graphene::app::database_api::get_chain_properties()const
+
+```
+
+### get\_global\_properties
 
 global\_property\_object `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_global_properties`\(\)_const_  
 
