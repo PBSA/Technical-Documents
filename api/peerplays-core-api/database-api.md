@@ -387,5 +387,515 @@ uint64_t graphene::app::database_api::get_account_count()const
 
 ## Balances
 
+#### [get\_account\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id30)
+
+vector&lt;asset&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_account_balances`\(_const_ std::string &_account\_name\_or\_id_, _const_ flat\_set&lt;asset\_id\_type&gt; &_assets_\)_const_  
+
+
+Get an account’s balances in various assets.
+
+**Return**
+
+Balances of the account**Parameters**
+
+* `account_name_or_id`: name or ID of the account to get balances for
+* `assets`: IDs of the assets to get balances of; if empty, get all assets account has a balance in
+
+#### [get\_named\_account\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id31)
+
+vector&lt;asset&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_named_account_balances`\(_const_ std::string &_name_, _const_ flat\_set&lt;asset\_id\_type&gt; &_assets_\)_const_  
+
+
+Semantically equivalent to [get\_account\_balances](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1af3a97a65a2b8a714c74a3e3f8d888019).
+
+#### [get\_balance\_objects](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id32)
+
+vector&lt;balance\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_balance_objects`\(_const_ vector&lt;address&gt; &_addrs_\)_const_  
+
+
+Return all unclaimed balance objects for a list of addresses.
+
+**Return**
+
+all unclaimed balance objects for the addresses**Parameters**
+
+* `addrs`: a list of addresses
+
+#### [get\_vested\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id33)
+
+vector&lt;asset&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_vested_balances`\(_const_ vector&lt;balance\_id\_type&gt; &_objs_\)_const_  
+
+
+Calculate how much assets in the given balance objects are able to be claimed at current head block time.
+
+**Return**
+
+a list indicating how much asset in each balance object is available to be claimed**Parameters**
+
+* `objs`: a list of balance object IDs
+
+#### [get\_vesting\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id34)
+
+vector&lt;vesting\_balance\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_vesting_balances`\(_const_ std::string _account\_name\_or\_id_\)_const_  
+
+
+Return all vesting balance objects owned by an account.
+
+**Return**
+
+all vesting balance objects owned by the account**Parameters**
+
+* `account_name_or_id`: name or ID of an account
+
+### [Assets](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id35)
+
+#### [get\_assets](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id36)
+
+vector&lt;optional&lt;extended\_asset\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_assets`\(_const_ vector&lt;std::string&gt; &_asset\_symbols\_or\_ids_, optional&lt;bool&gt; _subscribe_ = optional&lt;bool&gt;\(\)\)_const_  
+
+
+Get a list of assets by symbol names or IDs.
+
+This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3)**Return**
+
+The assets corresponding to the provided symbol names or IDs**Parameters**
+
+* `asset_symbols_or_ids`: symbol names or IDs of the assets to retrieve
+* `subscribe`: _true_ to subscribe to the queried asset objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+
+#### [list\_assets](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id37)
+
+vector&lt;extended\_asset\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::list_assets`\(_const_ string &_lower\_bound\_symbol_, uint32\_t _limit_\)_const_  
+
+
+Get assets alphabetically by symbol name.
+
+**Return**
+
+The assets found**Parameters**
+
+* `lower_bound_symbol`: Lower bound of symbol names to retrieve
+* `limit`: Maximum number of assets to fetch \(must not exceed 101\)
+
+#### [lookup\_asset\_symbols](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id38)
+
+vector&lt;optional&lt;extended\_asset\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_asset_symbols`\(_const_ vector&lt;string&gt; &_symbols\_or\_ids_\)_const_  
+
+
+Get a list of assets by symbol names or IDs.
+
+This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3), but doesn’t subscribe**Return**
+
+The assets corresponding to the provided symbols or IDs**Parameters**
+
+* `symbols_or_ids`: symbol names or IDs of the assets to retrieve
+
+### [Markets / feeds](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id39)
+
+#### [get\_order\_book](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id40)
+
+order\_book `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_order_book`\(_const_ string &_base_, _const_ string &_quote_, unsigned _limit_ = 50\)_const_  
+
+
+Returns the order book for the market base:quote.
+
+**Return**
+
+Order book of the market**Parameters**
+
+* `base`: symbol name or ID of the base asset
+* `quote`: symbol name or ID of the quote asset
+* `limit`: depth of the order book to retrieve, for bids and asks each, capped at 50
+
+#### [get\_limit\_orders](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id41)
+
+vector&lt;limit\_order\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_limit_orders`\(std::string _a_, std::string _b_, uint32\_t _limit_\)_const_  
+
+
+Get limit orders in a given market.
+
+**Return**
+
+The limit orders, ordered from least price to greatest**Parameters**
+
+* `a`: symbol or ID of asset being sold
+* `b`: symbol or ID of asset being purchased
+* `limit`: Maximum number of orders to retrieve
+
+#### [get\_call\_orders](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id42)
+
+vector&lt;call\_order\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_call_orders`\(_const_ std::string &_a_, uint32\_t _limit_\)_const_  
+
+
+Get call orders \(aka margin positions\) for a given asset.
+
+**Return**
+
+The call orders, ordered from earliest to be called to latest**Parameters**
+
+* `a`: symbol name or ID of the debt asset
+* `limit`: Maximum number of orders to retrieve
+
+#### [get\_settle\_orders](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id43)
+
+vector&lt;force\_settlement\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_settle_orders`\(_const_ std::string &_a_, uint32\_t _limit_\)_const_  
+
+
+Get forced settlement orders in a given asset.
+
+**Return**
+
+The settle orders, ordered from earliest settlement date to latest**Parameters**
+
+* `a`: Symbol or ID of asset being settled
+* `limit`: Maximum number of orders to retrieve
+
+#### [get\_margin\_positions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id44)
+
+vector&lt;call\_order\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_margin_positions`\(_const_ std::string _account\_name\_or\_id_\)_const_  
+
+
+Get all open margin positions of a given account.
+
+Similar to[get\_call\_orders\_by\_account](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a78eb082a3a0cfb33ccd00adeb8cfac1d), but without pagination.**Return**
+
+all open margin positions of the account**Parameters**
+
+* `account_name_or_id`: name or ID of an account
+
+#### [subscribe\_to\_market](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id45)
+
+void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::subscribe_to_market`\(std::function&lt;void\(_const_ variant&\)&gt; _callback_, _const_ std::string &_a_, _const_ std::string &_b_, \)  
+
+
+Request notification when the active orders in the market between two assets changes.
+
+Callback will be passed a variant containing a vector&lt;pair&lt;operation, operation\_result&gt;&gt;. The vector will contain, in order, the operations which changed the market, and their results.**Parameters**
+
+* `callback`: Callback method which is called when the market changes
+* `a`: symbol name or ID of the first asset
+* `b`: symbol name or ID of the second asset
+
+#### [unsubscribe\_from\_market](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id46)
+
+void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::unsubscribe_from_market`\(_const_ std::string &_a_, _const_ std::string &_b_\)  
+
+
+Unsubscribe from updates to a given market.
+
+**Parameters**
+
+* `a`: symbol name or ID of the first asset
+* `b`: symbol name or ID of the second asset
+
+#### [get\_ticker](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id47)
+
+market\_ticker `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_ticker`\(_const_ string &_base_, _const_ string &_quote_\)_const_  
+
+
+Returns the ticker for the market assetA:assetB.
+
+**Return**
+
+The market ticker for the past 24 hours.**Parameters**
+
+* `base`: symbol name or ID of the base asset
+* `quote`: symbol name or ID of the quote asset
+
+#### [get\_24\_volume](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id48)
+
+market\_volume `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_24_volume`\(_const_ string &_base_, _const_ string &_quote_\)_const_  
+
+
+Returns the 24 hour volume for the market assetA:assetB.
+
+**Return**
+
+The market volume over the past 24 hours**Parameters**
+
+* `base`: symbol name or ID of the base asset
+* `quote`: symbol name or ID of the quote asset
+
+#### [get\_trade\_history](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id49)
+
+vector&lt;market\_trade&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_trade_history`\(_const_ string &_base_, _const_ string &_quote_, fc::time\_point\_sec _start_, fc::time\_point\_sec _stop_, unsigned _limit_ = 100\)_const_  
+
+
+Returns recent trades for the market base:quote, ordered by time, most recent first. Note: Currently, timezone offsets are not supported. The time must be UTC. The range is \[stop, start\). In case when there are more than 100 trades occurred in the same second, this API only returns the first 100 records, can use another API [get\_trade\_history\_by\_sequence](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a19c22f540701825c9292e4a790a4b0d3) to query for the rest.
+
+**Return**
+
+Recent transactions in the market**Parameters**
+
+* `base`: symbol or ID of the base asset
+* `quote`: symbol or ID of the quote asset
+* `start`: Start time as a UNIX timestamp, the latest trade to retrieve
+* `stop`: Stop time as a UNIX timestamp, the earliest trade to retrieve
+* `limit`: Number of trasactions to retrieve, capped at 100.
+
+### [Witnesses](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id50)
+
+#### [get\_witnesses](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id51)
+
+vector&lt;optional&lt;witness\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_witnesses`\(_const_ vector&lt;witness\_id\_type&gt; &_witness\_ids_\)_const_  
+
+
+Get a list of witnesses by ID.
+
+This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3), but doesn’t subscribe**Return**
+
+The witnesses corresponding to the provided IDs**Parameters**
+
+* `witness_ids`: IDs of the witnesses to retrieve
+
+#### [get\_witness\_by\_account](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id52)
+
+fc::optional&lt;witness\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_witness_by_account`\(_const_ std::string _account\_name\_or\_id_\)_const_  
+
+
+Get the witness owned by a given account.
+
+**Return**
+
+The witness object, or null if the account does not have a witness**Parameters**
+
+* `account_name_or_id`: The name or ID of the account whose witness should be retrieved
+
+#### [lookup\_witness\_accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id53)
+
+map&lt;string, witness\_id\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_witness_accounts`\(_const_ string &_lower\_bound\_name_, uint32\_t _limit_\)_const_  
+
+
+Get names and IDs for registered witnesses.
+
+**Return**
+
+Map of witness names to corresponding IDs**Parameters**
+
+* `lower_bound_name`: Lower bound of the first name to return
+* `limit`: Maximum number of results to return must not exceed 1000
+
+#### [get\_witness\_count](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id54)
+
+uint64\_t `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_witness_count`\(\)_const_  
+
+
+Get the total number of witnesses registered with the blockchain.  
+
+
+### [Committee members](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id55)
+
+#### [get\_committee\_members](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id56)
+
+vector&lt;optional&lt;committee\_member\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_committee_members`\(_const_ vector&lt;committee\_member\_id\_type&gt; &_committee\_member\_ids_\)_const_  
+
+
+Get a list of committee\_members by ID.
+
+This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3), but doesn’t subscribe**Return**
+
+The committee\_members corresponding to the provided IDs**Parameters**
+
+* `committee_member_ids`: IDs of the committee\_members to retrieve
+
+#### [get\_committee\_member\_by\_account](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id57)
+
+fc::optional&lt;committee\_member\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_committee_member_by_account`\(_const_ string _account\_name\_or\_id_\)_const_  
+
+
+Get the committee\_member owned by a given account.
+
+**Return**
+
+The committee\_member object, or null if the account does not have a committee\_member**Parameters**
+
+* `account_name_or_id`: The name or ID of the account whose committee\_member should be retrieved
+
+#### [lookup\_committee\_member\_accounts](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id58)
+
+map&lt;string, committee\_member\_id\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_committee_member_accounts`\(_const_ string &_lower\_bound\_name_, uint32\_t _limit_\)_const_  
+
+
+Get names and IDs for registered committee\_members.
+
+**Return**
+
+Map of committee\_member names to corresponding IDs**Parameters**
+
+* `lower_bound_name`: Lower bound of the first name to return
+* `limit`: Maximum number of results to return must not exceed 1000
+
+### [Workers](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id59)
+
+#### [get\_workers\_by\_account](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id60)
+
+vector&lt;optional&lt;worker\_object&gt;&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_workers_by_account`\(_const_ std::string _account\_name\_or\_id_\)_const_  
+
+
+Get the workers owned by a given account.
+
+**Return**
+
+A list of worker objects owned by the account**Parameters**
+
+* `account_name_or_id`: The name or ID of the account whose worker should be retrieved
+
+### [Votes](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id61)
+
+#### [lookup\_vote\_ids](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id62)
+
+vector&lt;variant&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::lookup_vote_ids`\(_const_ vector&lt;vote\_id\_type&gt; &_votes_\)_const_  
+
+
+Given a set of votes, return the objects they are voting for.
+
+This will be a mixture of committee\_member\_objects, witness\_objects, and worker\_objects**Return**
+
+the referenced objects**Parameters**
+
+* `votes`: a list of vote IDs
+
+The results will be in the same order as the votes. Null will be returned for any vote IDs that are not found.  
+
+
+### [Authority / Validation](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id63)
+
+#### [get\_transaction\_hex](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id64)
+
+std::string `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_transaction_hex`\(_const_ signed\_transaction &_trx_\)_const_  
+
+
+Get a hexdump of the serialized binary form of a transaction.
+
+**Return**
+
+the hexdump of the transaction**Parameters**
+
+* `trx`: a transaction to get hexdump from
+
+#### [get\_required\_signatures](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id65)
+
+set&lt;public\_key\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_required_signatures`\(_const_ signed\_transaction &_trx_, _const_ flat\_set&lt;public\_key\_type&gt; &_available\_keys_\)_const_  
+
+
+This API will take a partially signed transaction and a set of public keys that the owner has the ability to sign for and return the minimal subset of public keys that should add signatures to the transaction.
+
+**Return**
+
+a subset of `available_keys` that could sign for the given transaction**Parameters**
+
+* `trx`: the transaction to be signed
+* `available_keys`: a set of public keys
+
+#### [get\_potential\_signatures](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id66)
+
+set&lt;public\_key\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_potential_signatures`\(_const_ signed\_transaction &_trx_\)_const_  
+
+
+This method will return the set of all public keys that could possibly sign for a given transaction. This call can be used by wallets to filter their set of public keys to just the relevant subset prior to calling [get\_required\_signatures](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a9ae2eb6a83c27a7b4eec2b00ee8ba371) to get the minimum subset.
+
+**Return**
+
+a set of public keys that could possibly sign for the given transaction**Parameters**
+
+* `trx`: the transaction to be signed
+
+#### [get\_potential\_address\_signatures](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id67)
+
+set&lt;address&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_potential_address_signatures`\(_const_ signed\_transaction &_trx_\)_const_  
+
+
+This method will return the set of all addresses that could possibly sign for a given transaction.
+
+**Return**
+
+a set of addresses that could possibly sign for the given transaction**Parameters**
+
+* `trx`: the transaction to be signed
+
+#### [verify\_authority](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id68)
+
+bool `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::verify_authority`\(_const_ signed\_transaction &_trx_\)_const_  
+
+
+Check whether a transaction has all of the required signatures**Return**
+
+true if the `trx` has all of the required signatures, otherwise throws an exception**Parameters**
+
+* `trx`: a transaction to be verified
+
+#### [verify\_account\_authority](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id69)
+
+bool `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::verify_account_authority`\(_const_ string &_account\_name\_or\_id_, _const_ flat\_set&lt;public\_key\_type&gt; &_signers_\)_const_  
+
+
+Verify that the public keys have enough authority to approve an operation for this account.
+
+**Return**
+
+true if the passed in keys have enough authority to approve an operation for this account**Parameters**
+
+* `account_name_or_id`: name or ID of an account to check
+* `signers`: the public keys
+
+#### [validate\_transaction](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id70)
+
+processed\_transaction `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::validate_transaction`\(_const_ signed\_transaction &_trx_\)_const_  
+
+
+Validates a transaction against the current state without broadcasting it on the network.
+
+**Return**
+
+a processed\_transaction object if the transaction passes the validation, otherwise an exception will be thrown**Parameters**
+
+* `trx`: a transaction to be validated
+
+#### [get\_required\_fees](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id71)
+
+vector&lt;fc::variant&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_required_fees`\(_const_ vector&lt;operation&gt; &_ops_, _const_ std::string &_asset\_symbol\_or\_id_\)_const_  
+
+
+For each operation calculate the required fee in the specified asset type.
+
+**Return**
+
+a list of objects which indicates required fees of each operation**Parameters**
+
+* `ops`: a list of operations to be query for required fees
+* `asset_symbol_or_id`: symbol name or ID of an asset that to be used to pay the fees
+
+### [Proposed Transactions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id72)
+
+#### [get\_proposed\_transactions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id73)
+
+vector&lt;proposal\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_proposed_transactions`\(_const_ std::string _account\_name\_or\_id_\)_const_  
+
+
+return a set of proposed transactions \(aka proposals\) that the specified account can add approval to or remove approval from
+
+**Return**
+
+a set of proposed transactions that the specified account can act on**Parameters**
+
+* `account_name_or_id`: The name or ID of an account
+
+### [Blinded balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id74)
+
+#### [get\_blinded\_balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id75)
+
+vector&lt;blinded\_balance\_object&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_blinded_balances`\(_const_ flat\_set&lt;commitment\_type&gt; &_commitments_\)_const_  
+
+
+return the set of blinded balance objects by commitment ID
+
+**Return**
+
+the set of blinded balance objects by commitment ID**Parameters**
+
+* `commitments`: a set of commitments to query for
+
+  
+[Next ](https://dev.bitshares.works/en/master/api/blockchain_api/history.html)[ Previous](https://dev.bitshares.works/en/master/api/blockchain_api.html)  
 
 
