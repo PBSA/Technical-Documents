@@ -352,35 +352,40 @@ The accounts holding the provided names.
 
 Get names and IDs for registered accounts.
 
+{% hint style="warning" %}
+**Note**: In addition to the common auto-subscription rules, this API will subscribe to the returned account only if `limit` is 1.
+{% endhint %}
+
 ```cpp
 map<string, account_id_type> graphene::app::database_api::lookup_accounts(
-    const string &lower_bound_name, uint32_t limit, optional<bool> subscribe = optional<bool>())const
+    const string &lower_bound_name, 
+    uint32_t limit, 
+    optional<bool> subscribe = optional<bool>())const
+
 ```
 
-  
+{% tabs %}
+{% tab title="Parameters" %}
+* **`lower_bound_name`**: Lower bound of the first name to return
+* **`limit`**: Maximum number of results to return must not exceed 1000
+* **`subscribe`**: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\).
+{% endtab %}
 
+{% tab title="Return" %}
+Map of account names to corresponding IDs.
+{% endtab %}
+{% endtabs %}
 
+### get\_account\_count
 
+Get the total number of accounts registered with the blockchain.
 
-**Return**
+```cpp
+uint64_t graphene::app::database_api::get_account_count()const
 
-Map of account names to corresponding IDs**Note**
+```
 
-In addition to the common auto-subscription rules, this API will subscribe to the returned account only if `limit` is 1.**Parameters**
-
-* `lower_bound_name`: Lower bound of the first name to return
-* `limit`: Maximum number of results to return must not exceed 1000
-* `subscribe`: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
-
-#### [get\_account\_count](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id28)
-
-uint64\_t `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_account_count`\(\)_const_  
-
-
-Get the total number of accounts registered with the blockchain.  
-
-
-### [Balances](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id29)
+## Balances
 
 
 
