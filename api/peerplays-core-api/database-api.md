@@ -732,36 +732,59 @@ The market ticker for the past 24 hours.
 {% endtab %}
 {% endtabs %}
 
-#### [get\_24\_volume](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id48)
-
-market\_volume `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_24_volume`\(_const_ string &_base_, _const_ string &_quote_\)_const_  
-
+### get\_24\_volume
 
 Returns the 24 hour volume for the market assetA:assetB.
 
-**Return**
+```cpp
+market_volume graphene::app::database_api::get_24_volume(
+    const string &base, 
+    const string &quote)const
+```
 
-The market volume over the past 24 hours**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`base`**: symbol name or ID of the base asset
+* **`quote`**: symbol name or ID of the quote asset
+{% endtab %}
 
-* `base`: symbol name or ID of the base asset
-* `quote`: symbol name or ID of the quote asset
+{% tab title="Return" %}
+The market volume over the past 24 hours.
+{% endtab %}
+{% endtabs %}
 
-#### [get\_trade\_history](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id49)
+### get\_trade\_history
 
-vector&lt;market\_trade&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_trade_history`\(_const_ string &_base_, _const_ string &_quote_, fc::time\_point\_sec _start_, fc::time\_point\_sec _stop_, unsigned _limit_ = 100\)_const_  
+Returns recent trades for the market base:quote, ordered by time, most recent first. 
 
+{% hint style="warning" %}
+**Note**: Currently, timezone offsets are not supported. The time must be UTC.
+{% endhint %}
 
-Returns recent trades for the market base:quote, ordered by time, most recent first. Note: Currently, timezone offsets are not supported. The time must be UTC. The range is \[stop, start\). In case when there are more than 100 trades occurred in the same second, this API only returns the first 100 records, can use another API [get\_trade\_history\_by\_sequence](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a19c22f540701825c9292e4a790a4b0d3) to query for the rest.
+The range is \[stop, start\). In case  there are more than 100 trades occurring in the same second, this API only returns the first 100 records; use [get\_trade\_history\_by\_sequence](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a19c22f540701825c9292e4a790a4b0d3) to query for the rest.
 
-**Return**
+```cpp
+vector<market_trade> graphene::app::database_api::get_trade_history(
+    const string &base, 
+    const string &quote, 
+    fc::time_point_sec start, 
+    fc::time_point_sec stop, 
+    unsigned limit = 100)const
+```
 
-Recent transactions in the market**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`base`**: symbol or ID of the base asset
+* **`quote`**: symbol or ID of the quote asset
+* **`start`**: Start time as a UNIX timestamp, the latest trade to retrieve
+* **`stop`**: Stop time as a UNIX timestamp, the earliest trade to retrieve
+* **`limit`**: Number of transactions to retrieve, capped at 100.
+{% endtab %}
 
-* `base`: symbol or ID of the base asset
-* `quote`: symbol or ID of the quote asset
-* `start`: Start time as a UNIX timestamp, the latest trade to retrieve
-* `stop`: Stop time as a UNIX timestamp, the earliest trade to retrieve
-* `limit`: Number of trasactions to retrieve, capped at 100.
+{% tab title="Return" %}
+Recent transactions in the market
+{% endtab %}
+{% endtabs %}
 
 ### [Witnesses](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id50)
 
