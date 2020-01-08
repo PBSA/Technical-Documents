@@ -967,62 +967,91 @@ The results will be in the same order as the votes. Null will be returned for an
 {% endtab %}
 {% endtabs %}
 
-### [Authority / Validation](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id63)
+## Authority / Validation
 
-#### [get\_transaction\_hex](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id64)
-
-std::string `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_transaction_hex`\(_const_ signed\_transaction &_trx_\)_const_  
-
+### get\_transaction\_hex
 
 Get a hexdump of the serialized binary form of a transaction.
 
-**Return**
+```cpp
+std::string graphene::app::database_api::get_transaction_hex(
+    const signed_transaction &trx)const
 
-the hexdump of the transaction**Parameters**
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
 * `trx`: a transaction to get hexdump from
+{% endtab %}
 
-#### [get\_required\_signatures](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id65)
+{% tab title="Return" %}
+The hexdump of the transaction.
+{% endtab %}
+{% endtabs %}
 
-set&lt;public\_key\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_required_signatures`\(_const_ signed\_transaction &_trx_, _const_ flat\_set&lt;public\_key\_type&gt; &_available\_keys_\)_const_  
-
+### **get\_required\_signatures**
 
 This API will take a partially signed transaction and a set of public keys that the owner has the ability to sign for and return the minimal subset of public keys that should add signatures to the transaction.
 
-**Return**
+```cpp
+set<public_key_type> graphene::app::database_api::get_required_signatures(
+    const signed_transaction &trx, 
+    const flat_set<public_key_type> &available_keys)const
 
-a subset of `available_keys` that could sign for the given transaction**Parameters**
+```
 
-* `trx`: the transaction to be signed
-* `available_keys`: a set of public keys
+{% tabs %}
+{% tab title="Parameters" %}
+* **`trx`**: the transaction to be signed
+* **`available_keys`**: a set of public keys
+{% endtab %}
 
-#### [get\_potential\_signatures](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id66)
+{% tab title="Return" %}
+A subset of `available_keys` that could sign for the given transaction.
+{% endtab %}
+{% endtabs %}
 
-set&lt;public\_key\_type&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_potential_signatures`\(_const_ signed\_transaction &_trx_\)_const_  
-
+### get\_potential\_signatures
 
 This method will return the set of all public keys that could possibly sign for a given transaction. This call can be used by wallets to filter their set of public keys to just the relevant subset prior to calling [get\_required\_signatures](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a9ae2eb6a83c27a7b4eec2b00ee8ba371) to get the minimum subset.
 
-**Return**
+```cpp
+set<public_key_type> graphene::app::database_api::get_potential_signatures(
+    const signed_transaction &trx)const
 
-a set of public keys that could possibly sign for the given transaction**Parameters**
+```
 
-* `trx`: the transaction to be signed
+{% tabs %}
+{% tab title="Parameters" %}
+* **`trx`**: the transaction to be signed
+{% endtab %}
 
-#### [get\_potential\_address\_signatures](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id67)
+{% tab title="Return" %}
+A set of public keys that could possibly sign for the given transaction.
+{% endtab %}
+{% endtabs %}
 
-set&lt;address&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_potential_address_signatures`\(_const_ signed\_transaction &_trx_\)_const_  
-
+### **get\_potential\_address\_signatures**
 
 This method will return the set of all addresses that could possibly sign for a given transaction.
 
-**Return**
+```cpp
+set<address> graphene::app::database_api::get_potential_address_signatures(
+    const signed_transaction &trx)const
 
-a set of addresses that could possibly sign for the given transaction**Parameters**
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
 * `trx`: the transaction to be signed
+{% endtab %}
 
-#### [verify\_authority](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id68)
+{% tab title="Return" %}
+A set of addresses that could possibly sign for the given transaction.
+{% endtab %}
+{% endtabs %}
+
+* \*\*\*\*[**verify\_authority**](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id68)\*\*\*\*
 
 bool `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::verify_authority`\(_const_ signed\_transaction &_trx_\)_const_  
 
