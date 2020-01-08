@@ -75,14 +75,21 @@ graphene::app::database_api::set_pending_transaction_callback(
 
 ### set\_block\_applied\_callback
 
-void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::set_block_applied_callback`\(std::function&lt;void\(_const_ variant &block\_id\)&gt; _cb_\)  
-
-
 Register a callback handle which will get notified when a block is pushed to database.
 
-**Parameters**
+```cpp
+void 
+graphene::app::database_api::set_block_applied_callback(
+    std::function<void(const variant &block_id)> cb)
+```
 
-* `cb`: The callback handle to register
+
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`cb`**: The callback handle to register
+{% endtab %}
+{% endtabs %}
 
 #### [cancel\_all\_subscriptions](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id7)
 
