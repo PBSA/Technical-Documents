@@ -140,14 +140,9 @@ The referenced block, or null if no matching block was found.
 Fetch an individual transaction.
 
 ```cpp
-processed_transaction graphene::
-app
-::
-database_api
-::get_transaction(uint32_t block_num, uint32_t trx_in_block)const
+processed_transaction graphene::app::database_api::get_transaction(
+    uint32_t block_num, uint32_t trx_in_block)const
 ```
-
-
 
 {% tabs %}
 {% tab title="Parameters" %}
@@ -162,16 +157,23 @@ The transaction at the given position.
 
 ### get\_recent\_transaction\_by\_id
 
-optional&lt;signed\_transaction&gt; `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`database_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app12database_apiE)`::get_recent_transaction_by_id`\(_const_ transaction\_id\_type &_txid_\)_const_  
+```cpp
+optional<signed_transaction> graphene::app::database_api::get_recent_transaction_by_id(
+    const transaction_id_type &txid)const
 
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`txid`**: hash of the transaction
+{% endtab %}
+
+{% tab title="Return" %}
+The corresponding transaction if found, or null if not found.
+{% endtab %}
+{% endtabs %}
 
 If the transaction has not expired, this method will return the transaction for the given ID or it will return NULL if it is not known. Just because it is not known does not mean it wasn’t included in the blockchain.
-
-**Return**
-
-the corresponding transaction if found, or null if not found**Parameters**
-
-* `txid`: hash of the transaction
 
 ### [Globals](https://dev.bitshares.works/en/master/api/blockchain_api/database.html#id13)
 
