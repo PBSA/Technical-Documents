@@ -50,6 +50,7 @@
 ## API
 
 * [Peerplays Core API](api/peerplays-core-api.md)
+  * [Popular API Calls](api/peerplays-core-api/popular-api-calls.md)
   * [Account History API](api/peerplays-core-api/account-history-api.md)
   * [Asset API](api/peerplays-core-api/asset-api.md)
   * [Block API](api/peerplays-core-api/block-api.md)
