@@ -68,7 +68,7 @@ What we really mean by 'sending to subscribers' is 'sending to the BOS system fo
 
 In essence this is Data Proxies' ultimate purpose. We've already discussed the fact that there is no common format in the data sent from the DFPs, but the data sent from each Data Proxy to each BOS instance has to be in the same format. This is what we'll discuss next.
 
-## Monitoring proper operation
+## Monitoring Proper Operation
 
 The Data Proxy provides a HTTP endpoint for monitoring purposes. Assume that the Data Proxy is deployed on localhost:8010, then the URL is
 
