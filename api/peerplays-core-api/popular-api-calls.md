@@ -142,11 +142,12 @@ print(json.dumps(res,indent=4))
 This method works just like transfer, except it always broadcasts and returns the transaction ID \(hash\) along with the signed transaction.
 
 ```cpp
-pair<transaction_id_type, signed_transaction> graphene::
-wallet
-::
-wallet_api
-::transfer2(string from, string to, string amount, string asset_symbol, string memo)
+pair<transaction_id_type, signed_transaction> graphene::wallet::wallet_api::transfer2(
+    string from, 
+    string to, 
+    string amount, 
+    string asset_symbol, 
+    string memo)
 ```
 
 {% tabs %}
@@ -210,21 +211,40 @@ print(json.dumps(res,indent=4))
 {% endtab %}
 {% endtabs %}
 
-#### [`get_account_history <account> <limit>`](https://dev.bitshares.works/en/master/api/often-used-calls.html#id6)
+### get\_account\_history
 
-**Script**
+Returns the most recent operations on the named account.
 
-```text
+This returns a list of operation history objects, which describe activity on the account.
+
+```cpp
+vector<operation_detail> graphene::wallet::wallet_api::get_account_history(
+    string name, 
+    int limit)const
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`name`**: the name or id of the account
+* **`limit`**: the number of entries to return \(starting from the most recent\)
+{% endtab %}
+
+{% tab title="Return" %}
+A list of `operation_history_objects.`
+{% endtab %}
+
+{% tab title="Script" %}
+```javascript
 import json
 from grapheneapi import GrapheneAPI
 client = GrapheneAPI("localhost", 8092, "", "")
 res = client.get_account_history("dan", 1)
 print(json.dumps(res,indent=4))
 ```
+{% endtab %}
 
-**Result**
-
-```text
+{% tab title="Result" %}
+```javascript
 [
      {
          "description": "fill_order_operation dan fee: 0 CORE",
@@ -262,36 +282,41 @@ print(json.dumps(res,indent=4))
      }
  ]
 ```
+{% endtab %}
+{% endtabs %}
 
-**Reference**vector&lt;operation\_detail&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_account_history`\(string _name_, int _limit_\)_const_  
+### get\_object
 
+Returns the blockchain object corresponding to the given id.
 
-Returns the most recent operations on the named account.
+This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](asset-api.md), accounts have [`get_account()`](https://dev.bitshares.works/en/master/api/wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ae4133a2fe8f63695385c20d327a88ff9), but this function will work for any object.
 
-This returns a list of operation history objects, which describe activity on the account.
+```cpp
+variant graphene::wallet::wallet_api::get_object(
+    object_id_type id)const
+```
 
-**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`id`**: the id of the object to return
+{% endtab %}
 
-a list of `operation_history_objects`**Parameters**
+{% tab title="Return" %}
+The requested object.
+{% endtab %}
 
-* `name`: the name or id of the account
-* `limit`: the number of entries to return \(starting from the most recent\)
-
-#### [`get_object "1.11.<id>"`](https://dev.bitshares.works/en/master/api/often-used-calls.html#id7)
-
-**Script**
-
-```text
+{% tab title="Script" %}
+```javascript
 import json
 from grapheneapi import GrapheneAPI
 client = GrapheneAPI("localhost", 8092, "", "")
 res = client.get_object("1.11.213277")
 print(json.dumps(res,indent=4))
 ```
+{% endtab %}
 
-**Result**
-
-```text
+{% tab title="Result" %}
+```javascript
 {
     "trx_in_block": 0,
     "id": "1.11.213277",
@@ -323,19 +348,8 @@ print(json.dumps(res,indent=4))
     "virtual_op": 47888
 }
 ```
-
-**Reference**variant `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_object`\(object\_id\_type _id_\)_const_  
-
-
-Returns the blockchain object corresponding to the given id.
-
-This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1aae54080626cf4e4b24572f4836e8dfdd), accounts have [`get_account()`](https://dev.bitshares.works/en/master/api/wallet_api.html#classgraphene_1_1wallet_1_1wallet__api_1ae4133a2fe8f63695385c20d327a88ff9), but this function will work for any object.
-
-**Return**
-
-the requested object**Parameters**
-
-* `id`: the id of the object to return
+{% endtab %}
+{% endtabs %}
 
 #### [`get_asset <USD>`](https://dev.bitshares.works/en/master/api/often-used-calls.html#id8)
 
