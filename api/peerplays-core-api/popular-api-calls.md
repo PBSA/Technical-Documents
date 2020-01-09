@@ -24,7 +24,7 @@ vector<asset> graphene::wallet::wallet_api::list_account_balances(
 A list of the given account’s balances.
 {% endtab %}
 
-{% tab title="Example" %}
+{% tab title="Script" %}
 ```javascript
 import json
 from grapheneapi import GrapheneAPI
