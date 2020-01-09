@@ -36,27 +36,35 @@ Get advanced node parameters, such as desired and max number of connections.
 fc::variant_object graphene::app::network_node_api::get_advanced_node_parameters()const
 ```
 
-### [Change Network Settings](https://dev.bitshares.works/en/master/api/blockchain_api/network_node.html#id6)
+## Change Network Settings
 
-#### [add\_node](https://dev.bitshares.works/en/master/api/blockchain_api/network_node.html#id7)
+### add\_node
 
-void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`network_node_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app16network_node_apiE)`::add_node`\(_const_ fc::ip::endpoint &_ep_\)  
+Connect to a new peer
 
+```cpp
+void graphene::app::network_node_api::add_node(
+    const fc::ip::endpoint &ep)
+```
 
-add\_node Connect to a new peer
+{% tabs %}
+{% tab title="Parameters" %}
+* **`ep`**: The IP/Port of the peer to connect to
+{% endtab %}
+{% endtabs %}
 
-**Parameters**
-
-* `ep`: The IP/Port of the peer to connect to
-
-#### [set\_advanced\_node\_parameters](https://dev.bitshares.works/en/master/api/blockchain_api/network_node.html#id8)
-
-void `graphene::`[`app`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3appE)`::`[`network_node_api`](https://dev.bitshares.works/en/master/api/namespaces/app.html#_CPPv4N8graphene3app16network_node_apiE)`::set_advanced_node_parameters`\(_const_ fc::variant\_object &_params_\)  
-
+### **set\_advanced\_node\_parameters**
 
 Set advanced node parameters, such as desired and max number of connections.
 
-**Parameters**
+```cpp
+void graphene::app::network_node_api::set_advanced_node_parameters(
+    const fc::variant_object &params)
+```
 
-* `params`: a JSON object containing the name/value pairs for the parameters to set
+{% tabs %}
+{% tab title="Parameters" %}
+* **`params`**: a JSON object containing the name/value pairs for the parameters to set
+{% endtab %}
+{% endtabs %}
 
