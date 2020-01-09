@@ -351,21 +351,36 @@ print(json.dumps(res,indent=4))
 {% endtab %}
 {% endtabs %}
 
-#### [`get_asset <USD>`](https://dev.bitshares.works/en/master/api/often-used-calls.html#id8)
+### get\_asset
 
-**Script**
+Returns information about the given asset.
 
-```text
+```cpp
+extended_asset_object graphene::wallet::wallet_api::get_asset(
+    string asset_name_or_id)const
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`asset_name_or_id`**: the symbol or id of the asset in question
+{% endtab %}
+
+{% tab title="Return" %}
+**T**he information about the asset stored in the block chain.
+{% endtab %}
+
+{% tab title="Script" %}
+```javascript
 import json
 from grapheneapi import GrapheneAPI
 client = GrapheneAPI("localhost", 8092, "", "")
 res = client.get_asset("USD")
 print(json.dumps(res,indent=4))
 ```
+{% endtab %}
 
-**Result**
-
-```text
+{% tab title="Result" %}
+```javascript
 {
     "symbol": "USD",
     "issuer": "1.2.1",
@@ -398,13 +413,6 @@ print(json.dumps(res,indent=4))
     "precision": 4
 }
 ```
-
-**Reference**extended\_asset\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_asset`\(string _asset\_name\_or\_id_\)_const_  
-
-
-Returns information about the given asset.**Return**
-
-the information about the asset stored in the block chain**Parameters**
-
-* `asset_name_or_id`: the symbol or id of the asset in question
+{% endtab %}
+{% endtabs %}
 
