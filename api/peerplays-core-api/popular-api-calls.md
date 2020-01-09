@@ -6,6 +6,8 @@ Some of the most interesting API calls for exchanges and gateways are listed in 
 
 We will now take a look at some sample outputs for some of the API calls.
 
+## API Calls
+
 ### list\_account\_balances
 
 List the balances of an account. Each account can have multiple balances, one for each type of asset owned by that account. The returned list will only contain assets for which the account has a nonzero balance.
@@ -58,25 +60,48 @@ print(json.dumps(res,indent=4))
 {% endtab %}
 {% endtabs %}
 
+### transfer
 
+Transfer an amount from one account to another.
 
-#### [`transfer <from> <to> <amount> <asset> "<memo>" <broadcast>`](https://dev.bitshares.works/en/master/api/often-used-calls.html#id4)
+```cpp
+signed_transaction graphene::wallet::wallet_api::transfer(
+    string from, 
+    string to, 
+    string amount, 
+    string asset_symbol, 
+    string memo, 
+    bool broadcast = false)
+```
 
-**Script**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`from`**: the name or id of the account sending the funds
+* **`to`**: the name or id of the account receiving the funds
+* **`amount`**: the amount to send \(in nominal units to send half of a BTS, specify 0.5\)
+* **`asset_symbol`**: the symbol or id of the asset to send
+* **`memo`**: a memo to attach to the transaction. The memo will be encrypted in the transaction and readable for the receiver. There is no length limit other than the limit imposed by maximum transaction size, but transaction increase with transaction size
+* **`broadcast`**: true to broadcast the transaction on the network
 
-```text
+The final parameter _True_ states that the signed transaction will be broadcast. If this parameter is _False_ the transaction will be signed but not broadcast, hence not executed.
+{% endtab %}
+
+{% tab title="Return" %}
+The signed transaction transferring funds.
+{% endtab %}
+
+{% tab title="Script" %}
+```javascript
 import json
 from grapheneapi import GrapheneAPI
 client = GrapheneAPI("localhost", 8092, "", "")
 res = client.transfer("fromaccount","toaccount","10", "USD", "$10 gift", True);
 print(json.dumps(res,indent=4))
 ```
+{% endtab %}
 
-The final parameter `True` states that the signed transaction will be broadcast. If this parameter is `False` the transaction will be signed but not broadcast, hence not executed.
-
-**Result**
-
-```text
+{% tab title="Result" %}
+```javascript
 {
   "ref_block_num": 18,
   "ref_block_prefix": 2320098938,
@@ -109,38 +134,46 @@ The final parameter `True` states that the signed transaction will be broadcast.
   ]
 }
 ```
+{% endtab %}
+{% endtabs %}
 
-**Reference**signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::transfer`\(string _from_, string _to_, string _amount_, string _asset\_symbol_, string _memo_, bool _broadcast_ = false\)  
+### transfer2
 
+This method works just like transfer, except it always broadcasts and returns the transaction ID \(hash\) along with the signed transaction.
 
-Transfer an amount from one account to another.**Return**
+```cpp
+pair<transaction_id_type, signed_transaction> graphene::
+wallet
+::
+wallet_api
+::transfer2(string from, string to, string amount, string asset_symbol, string memo)
+```
 
-the signed transaction transferring funds**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`from`**: the name or id of the account sending the funds
+* **`to`**: the name or id of the account receiving the funds
+* **`amount`**: the amount to send
+* **`asset_symbol`**: the symbol or id of the asset to send
+* **`memo`**: a memo to attach to the transaction. The memo will be encrypted in the transaction and readable for the receiver. There is no length limit other than the limit imposed by maximum transaction size, but transaction increase with transaction size
+{% endtab %}
 
-* `from`: the name or id of the account sending the funds
-* `to`: the name or id of the account receiving the funds
-* `amount`: the amount to send \(in nominal units to send half of a BTS, specify 0.5\)
-* `asset_symbol`: the symbol or id of the asset to send
-* `memo`: a memo to attach to the transaction. The memo will be encrypted in the transaction and readable for the receiver. There is no length limit other than the limit imposed by maximum transaction size, but transaction increase with transaction size
-* `broadcast`: true to broadcast the transaction on the network
+{% tab title="Return" %}
+The transaction ID \(hash\) along with the signed transaction transferring funds
+{% endtab %}
 
-#### [`transfer2 <from> <to> <amount> <asset> "<memo>"`](https://dev.bitshares.works/en/master/api/often-used-calls.html#id5)
-
-**Script**
-
-```text
+{% tab title="Script" %}
+```javascript
 import json
 from grapheneapi import GrapheneAPI
 client = GrapheneAPI("localhost", 8092, "", "")
 res = client.transfer2("fromaccount","toaccount","10", "USD", "$10 gift");
 print(json.dumps(res,indent=4))
 ```
+{% endtab %}
 
-This method works just like transfer, except it always broadcasts and returns the transaction ID along with the signed transaction.
-
-**Result**
-
-```text
+{% tab title="Result" %}
+```javascript
  [b546a75a891b5c51de6d1aafd40d10e91a717bb3,{
    "ref_block_num": 18,
    "ref_block_prefix": 2320098938,
@@ -174,19 +207,8 @@ This method works just like transfer, except it always broadcasts and returns th
  }
 ]
 ```
-
-**Reference**pair&lt;transaction\_id\_type, signed\_transaction&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::transfer2`\(string _from_, string _to_, string _amount_, string _asset\_symbol_, string _memo_\)  
-
-
-This method works just like transfer, except it always broadcasts and returns the transaction ID \(hash\) along with the signed transaction.**Return**
-
-the transaction ID \(hash\) along with the signed transaction transferring funds**Parameters**
-
-* `from`: the name or id of the account sending the funds
-* `to`: the name or id of the account receiving the funds
-* `amount`: the amount to send \(in nominal units to send half of a BTS, specify 0.5\)
-* `asset_symbol`: the symbol or id of the asset to send
-* `memo`: a memo to attach to the transaction. The memo will be encrypted in the transaction and readable for the receiver. There is no length limit other than the limit imposed by maximum transaction size, but transaction increase with transaction size
+{% endtab %}
+{% endtabs %}
 
 #### [`get_account_history <account> <limit>`](https://dev.bitshares.works/en/master/api/often-used-calls.html#id6)
 
