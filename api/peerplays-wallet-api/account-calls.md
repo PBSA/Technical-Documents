@@ -213,7 +213,6 @@ signed_transaction graphene::wallet::wallet_api::whitelist_account(
     string account_to_list, 
     account_whitelist_operation::account_listing new_listing_status, 
     bool broadcast = false)
-
 ```
 
 {% tabs %}
@@ -321,7 +320,6 @@ This returns a list of operation history objects, which describe activity on the
 vector<operation_detail> graphene::wallet::wallet_api::get_account_history(
     string name, 
     int limit)const
-
 ```
 
 {% tabs %}
@@ -345,7 +343,6 @@ signed_transaction graphene::wallet::wallet_api::approve_proposal(
     const string &proposal_id, 
     const approval_delta &delta, 
     bool broadcast)
-
 ```
 
 {% tabs %}
