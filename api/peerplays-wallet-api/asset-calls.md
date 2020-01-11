@@ -25,10 +25,7 @@ The list of asset objects, ordered by symbol.
 {% endtab %}
 {% endtabs %}
 
-#### [create\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id53)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_asset`\(string _issuer_, string _symbol_, uint8\_t _precision_, asset\_options _common_, fc::optional&lt;bitasset\_options&gt; _bitasset\_opts_, bool _broadcast_ = false\)  
-
+### create\_asset
 
 Creates a new user-issued or market-issued asset.
 
@@ -36,16 +33,30 @@ Many options can be changed later using [`update_asset()`](https://dev.bitshares
 
 Right now this function is difficult to use because you must provide raw JSON data structures for the options objects, and those include prices and asset ids.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::create_asset(
+    string issuer, 
+    string symbol, 
+    uint8_t precision, 
+    asset_options common, 
+    fc::optional<bitasset_options> bitasset_opts, 
+    bool broadcast = false)
+```
 
-the signed transaction creating a new asset**Parameters**
-
-* `issuer`: the name or id of the account who will pay the fee and become the issuer of the new asset. This can be updated later
-* `symbol`: the ticker symbol of the new asset
+{% tabs %}
+{% tab title="Parameters" %}
+* **`issuer`**: the name or id of the account who will pay the fee and become the issuer of the new asset. This can be updated later
+* **`symbol`**: the ticker symbol of the new asset
 * `precision`: the number of digits of precision to the right of the decimal point, must be less than or equal to 12
-* `common`: asset options required for all new assets. Note that core\_exchange\_rate technically needs to store the asset ID of this new asset. Since this ID is not known at the time this operation is created, create this price as though the new asset has instance ID 1, and the chain will overwrite it with the new asset’s ID.
-* `bitasset_opts`: options specific to BitAssets. This may be null unless the `market_issued` flag is set in common.flags
-* `broadcast`: true to broadcast the transaction on the network
+* **`common`**: asset options required for all new assets. Note that core\_exchange\_rate technically needs to store the asset ID of this new asset. Since this ID is not known at the time this operation is created, create this price as though the new asset has instance ID 1, and the chain will overwrite it with the new asset’s ID.
+* **`bitasset_opts`**: options specific to BitAssets. This may be null unless the `market_issued` flag is set in common.flags
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
+
+{% tab title="Return" %}
+The signed transaction creating a new asset.
+{% endtab %}
+{% endtabs %}
 
 #### [update\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id54)
 
