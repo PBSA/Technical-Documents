@@ -29,7 +29,7 @@ The list of asset objects, ordered by symbol.
 
 Creates a new user-issued or market-issued asset.
 
-Many options can be changed later using [`update_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a6c2a57593b39390b286efeecca2702d6)
+Many options can be changed later using [`update_asset()`](asset-calls.md#update_asset)\`\`
 
 Right now this function is difficult to use because you must provide raw JSON data structures for the options objects, and those include prices and asset ids.
 
@@ -60,21 +60,32 @@ The signed transaction creating a new asset.
 
 #### [update\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id54)
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::update_asset`\(string _symbol_, optional&lt;string&gt; _new\_issuer_, asset\_options _new\_options_, bool _broadcast_ = false\)  
+Update the core options on an asset. There are a number of options which all assets in the network use. These options are enumerated in the `asset_object::asset_options` struct. 
 
+This command is used to update these options for an existing asset.
 
-Update the core options on an asset. There are a number of options which all assets in the network use. These options are enumerated in the asset\_object::asset\_options struct. This command is used to update these options for an existing asset.
+```cpp
+signed_transaction graphene::
+wallet
+::
+wallet_api
+::update_asset(string symbol, optional<string> new_issuer, asset_options new_options, bool broadcast = false)
+```
 
-**Note**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`symbol`**: the name or id of the asset to update
+* **`new_issuer`**: if changing the asset’s issuer, the name or id of the new issuer. null if you wish to remain the issuer of the asset
+* **`new_options`**: the new asset\_options object, which will entirely replace the existing options.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-This operation cannot be used to update BitAsset-specific options. For these options, [`update_bitasset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aebe4459f45a748739595939d60b95b6b) instead.**Return**
+{% tab title="Return" %}
+The signed transaction updating the asset
+{% endtab %}
+{% endtabs %}
 
-the signed transaction updating the asset**Parameters**
-
-* `symbol`: the name or id of the asset to update
-* `new_issuer`: if changing the asset’s issuer, the name or id of the new issuer. null if you wish to remain the issuer of the asset
-* `new_options`: the new asset\_options object, which will entirely replace the existing options.
-* `broadcast`: true to broadcast the transaction on the network
+\`\`
 
 #### [update\_bitasset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id55)
 
