@@ -294,50 +294,70 @@ The public account data stored in the blockchain
 
 ### **get\_account\_id**
 
-\*\*\*\*
+Lookup the id of a named account.
 
 ```cpp
-
+account_id_type graphene::wallet::wallet_api::get_account_id(
+    string account_name_or_id)const
 ```
 
-account\_id\_type `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_account_id`\(string _account\_name\_or\_id_\)_const_  
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: the name or ID of the account to look up
+{% endtab %}
 
+{% tab title="Return" %}
+The id of the named account
+{% endtab %}
+{% endtabs %}
 
-Lookup the id of a named account.**Return**
-
-the id of the named account**Parameters**
-
-* `account_name_or_id`: the name or ID of the account to look up
-
-#### [get\_account\_history](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id40)
-
-vector&lt;operation\_detail&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_account_history`\(string _name_, int _limit_\)_const_  
-
+### get\_account\_history
 
 Returns the most recent operations on the named account.
 
 This returns a list of operation history objects, which describe activity on the account.
 
-**Return**
+```cpp
+vector<operation_detail> graphene::wallet::wallet_api::get_account_history(
+    string name, 
+    int limit)const
 
-a list of `operation_history_objects`**Parameters**
+```
 
-* `name`: the name or id of the account
-* `limit`: the number of entries to return \(starting from the most recent\)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`name`**: the name or id of the account
+* **`limit`**: the number of entries to return \(starting from the most recent\)
+{% endtab %}
 
-#### [approve\_proposal](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id41)
+{% tab title="Return" %}
+A list of `operation_history_objects`
+{% endtab %}
+{% endtabs %}
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::approve_proposal`\(_const_ string &_fee\_paying\_account_, _const_ string &_proposal\_id_, _const_ approval\_delta &_delta_, bool _broadcast_\)  
-
+### approve\_proposal
 
 Approve or disapprove a proposal.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::approve_proposal(
+    const string &fee_paying_account, 
+    const string &proposal_id, 
+    const approval_delta &delta, 
+    bool broadcast)
 
-the signed version of the transaction**Parameters**
+```
 
-* `fee_paying_account`: The account paying the fee for the op.
-* `proposal_id`: The proposal to modify.
-* `delta`: Members contain approvals to create or remove. In JSON you can leave empty members undefined.
-* `broadcast`: true if you wish to broadcast the transaction
+{% tabs %}
+{% tab title="Parameters" %}
+* **`fee_paying_account`**: The account paying the fee for the op.
+* **`proposal_id`**: The proposal to modify.
+* **`delta`**: Members contain approvals to create or remove. In JSON you can leave empty members undefined.
+* **`broadcast`**: true if you wish to broadcast the transaction
+{% endtab %}
+
+{% tab title="Return" %}
+The signed version of the transaction
+{% endtab %}
+{% endtabs %}
 
