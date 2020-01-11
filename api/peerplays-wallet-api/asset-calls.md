@@ -1,22 +1,29 @@
 # Asset Calls
 
-### [Asset Calls](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id51)
+## Asset Calls
 
-#### [list\_assets](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id52)
-
-vector&lt;extended\_asset\_object&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::list_assets`\(_const_ string &_lowerbound_, uint32\_t _limit_\)_const_  
-
+### list\_assets
 
 Lists all assets registered on the blockchain.
 
 To list all assets, pass the empty string `""` for the lowerbound to start at the beginning of the list, and iterate as necessary.
 
-**Return**
+```cpp
+vector<extended_asset_object> graphene::wallet::wallet_api::list_assets(
+    const string &lowerbound, 
+    uint32_t limit)const
+```
 
-the list of asset objects, ordered by symbol**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`lowerbound`**: the symbol of the first asset to include in the list.
+* **`limit`**: the maximum number of assets to return \(max: 100\)
+{% endtab %}
 
-* `lowerbound`: the symbol of the first asset to include in the list.
-* `limit`: the maximum number of assets to return \(max: 100\)
+{% tab title="Return" %}
+The list of asset objects, ordered by symbol.
+{% endtab %}
+{% endtabs %}
 
 #### [create\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id53)
 
