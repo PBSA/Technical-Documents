@@ -1,2 +1,0 @@
-# Peerplays Core API
-
