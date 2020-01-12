@@ -366,21 +366,28 @@ The signed version of the transaction
 {% endtab %}
 {% endtabs %}
 
-\`\`
-
-#### [propose\_fee\_change](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id79)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::propose_fee_change`\(_const_ string &_proposing\_account_, fc::time\_point\_sec _expiration\_time_, _const_ variant\_object &_changed\_values_, bool _broadcast_ = false\)  
-
+### propose\_fee\_change
 
 Propose a fee change.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::propose_fee_change(
+    const string &proposing_account, 
+    fc::time_point_sec expiration_time, 
+    const variant_object &changed_values, 
+    bool broadcast = false)
+```
 
-the signed version of the transaction**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`proposing_account`**: The account paying the fee to propose the tx
+* **`expiration_time`**: Timestamp specifying when the proposal will either take effect or expire.
+* **`changed_values`**: Map of operation type to new fee. Operations may be specified by name or ID. The “scale” key changes the scale. All other operations will maintain current values.
+* **`broadcast`**: true if you wish to broadcast the transaction
+{% endtab %}
 
-* `proposing_account`: The account paying the fee to propose the tx
-* `expiration_time`: Timestamp specifying when the proposal will either take effect or expire.
-* `changed_values`: Map of operation type to new fee. Operations may be specified by name or ID. The “scale” key changes the scale. All other operations will maintain current values.
-* `broadcast`: true if you wish to broadcast the transaction
+{% tab title="Return" %}
+The signed version of the transaction
+{% endtab %}
+{% endtabs %}
 
