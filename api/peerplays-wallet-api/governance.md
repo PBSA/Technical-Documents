@@ -138,41 +138,63 @@ The signed transaction registering a witness
 {% endtab %}
 {% endtabs %}
 
-#### [update\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id71)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::update_witness`\(string _witness\_name_, string _url_, string _block\_signing\_key_, bool _broadcast_ = false\)  
-
+### update\_witness
 
 Update a witness object owned by the given account.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::update_witness(
+    string witness_name, 
+    string url, 
+    string block_signing_key, 
+    bool broadcast = false)
 
-the signed transaction**Parameters**
+```
 
-* `witness_name`: The name of the witness’s owner account. Also accepts the ID of the owner account or the ID of the witness.
-* `url`: Same as for create\_witness. The empty string makes it remain the same.
-* `block_signing_key`: The new block signing public key. The empty string makes it remain the same.
-* `broadcast`: true if you wish to broadcast the transaction.
+{% tabs %}
+{% tab title="Parameters" %}
+* **`witness_name`**: The name of the witness’s owner account. Also accepts the ID of the owner account or the ID of the witness.
+* **`url`**: Same as for create\_witness. The empty string makes it remain the same.
+* **`block_signing_key`**: The new block signing public key. The empty string makes it remain the same.
+* **`broadcast`**: true if you wish to broadcast the transaction.
+{% endtab %}
 
-#### [create\_worker](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id72)
+{% tab title="Return" %}
+The signed transaction
+{% endtab %}
+{% endtabs %}
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_worker`\(string _owner\_account_, time\_point\_sec _work\_begin\_date_, time\_point\_sec _work\_end\_date_, share\_type _daily\_pay_, string _name_, string _url_, variant _worker\_settings_, bool _broadcast_ = false\)  
-
+### create\_worker
 
 Create a worker object.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::create_worker(
+    string owner_account, 
+    time_point_sec work_begin_date, 
+    time_point_sec work_end_date, 
+    share_type daily_pay, 
+    string name, string url, 
+    variant worker_settings, 
+    bool broadcast = false)
+```
 
-the signed transaction**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`owner_account`**: The account which owns the worker and will be paid
+* **`work_begin_date`**: When the work begins
+* **`work_end_date`**: When the work ends
+* **`daily_pay`**: Amount of pay per day \(NOT per maint interval\)
+* **`name`**: Any text
+* **`url`**: Any text
+* **`worker_settings`**: {“type” : “burn”\|”refund”\|”vesting”, “pay\_vesting\_period\_days” : x}
+* **`broadcast`**: true if you wish to broadcast the transaction.
+{% endtab %}
 
-* `owner_account`: The account which owns the worker and will be paid
-* `work_begin_date`: When the work begins
-* `work_end_date`: When the work ends
-* `daily_pay`: Amount of pay per day \(NOT per maint interval\)
-* `name`: Any text
-* `url`: Any text
-* `worker_settings`: {“type” : “burn”\|”refund”\|”vesting”, “pay\_vesting\_period\_days” : x}
-* `broadcast`: true if you wish to broadcast the transaction.
+{% tab title="Return" %}
+The signed transaction
+{% endtab %}
+{% endtabs %}
 
 #### [update\_worker\_votes](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id73)
 
