@@ -65,21 +65,29 @@ committee_member_object graphene::wallet::wallet_api::get_committee_member(
 {% endtab %}
 {% endtabs %}
 
-#### [list\_witnesses](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id68)
+### list\_witnesses
 
-map&lt;string, witness\_id\_type&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::list_witnesses`\(_const_ string &_lowerbound_, uint32\_t _limit_\)  
+Lists all Witnesses registered in the blockchain. This returns a list of all account names that own Witnesses, and the associated witness id, sorted by name. This lists Witnesses whether they are currently voted in or not.
 
+Use the `lowerbound` and limit parameters to page through the list. To retrieve all Witness's, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last witness name returned as the `lowerbound` for the next `list_witnesss()` call.
 
-Lists all witnesses registered in the blockchain. This returns a list of all account names that own witnesses, and the associated witness id, sorted by name. This lists witnesses whether they are currently voted in or not.
+```cpp
+map<string, witness_id_type> graphene::wallet::wallet_api::list_witnesses(
+    const string &lowerbound, 
+    uint32_t limit)
 
-Use the `lowerbound` and limit parameters to page through the list. To retrieve all witnesss, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last witness name returned as the `lowerbound` for the next `list_witnesss()` call.
+```
 
-**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* `lowerbound`: the name of the first Witness to return. If the named Witness does not exist, the list will start at the witness that comes after `lowerbound`
+* `limit`: the maximum number of Witness's to return \(max: 1000\)
+{% endtab %}
 
-a list of witnesss mapping witness names to witness ids**Parameters**
-
-* `lowerbound`: the name of the first witness to return. If the named witness does not exist, the list will start at the witness that comes after `lowerbound`
-* `limit`: the maximum number of witnesss to return \(max: 1000\)
+{% tab title="Return" %}
+A list of Witness's mapping witness names to witness ids
+{% endtab %}
+{% endtabs %}
 
 #### [list\_committee\_members](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id69)
 
