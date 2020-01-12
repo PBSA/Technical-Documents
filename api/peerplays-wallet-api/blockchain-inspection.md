@@ -1,48 +1,73 @@
 # Blockchain Inspection
 
-### [Blockchain Inspection](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id93)
+## Blockchain Inspection
 
-#### [get\_block](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id94)
+### get\_block
 
-optional&lt;signed\_block\_with\_info&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_block`\(uint32\_t _num_\)  
+Returns info about a specified block.
 
+```cpp
+optional<signed_block_with_info> graphene::wallet::wallet_api::get_block(
+    uint32_t num)
+```
 
-Returns info about a specified block.**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`num`**: height of the block to retrieve
+{% endtab %}
 
-info about the block, or null if not found**Parameters**
+{% tab title="Return" %}
+Info about the block, or null if not found.
+{% endtab %}
+{% endtabs %}
 
-* `num`: height of the block to retrieve
+### **get\_account\_count**
 
-#### [get\_account\_count](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id95)
+Returns the number of accounts registered on the blockchain**.**
 
-uint64\_t `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_account_count`\(\)_const_  
+```cpp
+uint64_t graphene::wallet::wallet_api::get_account_count()const
+```
 
+{% tabs %}
+{% tab title="Return" %}
+The number of registered accounts
+{% endtab %}
+{% endtabs %}
 
-Returns the number of accounts registered on the blockchain**Return**
+### get\_global\_properties
 
-the number of registered accounts
+Returns the block chain’s slowly-changing settings. 
 
-#### [get\_global\_properties](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id96)
+This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval \(daily\) such as the current list of witnesses, committee\_members, block interval, etc.
 
-global\_property\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_global_properties`\(\)_const_  
+**See** [`get_dynamic_global_properties()`](blockchain-inspection.md#get_dynamic_global_properties) for frequently changing properties.
 
+```cpp
+global_property_object graphene::wallet::wallet_api::get_global_properties()const
+```
 
-Returns the block chain’s slowly-changing settings. This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval \(daily\) such as the current list of witnesses, committee\_members, block interval, etc.**See**
+{% tabs %}
+{% tab title="Return" %}
+The global properties.
+{% endtab %}
+{% endtabs %}
 
-[`get_dynamic_global_properties()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aaa8f1ab2e2e5fe7a414ada5375e14566) for frequently changing properties**Return**
-
-the global properties
-
-#### [get\_dynamic\_global\_properties](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id97)
-
-dynamic\_global\_property\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_dynamic_global_properties`\(\)_const_  
-
+### get\_dynamic\_global\_properties
 
 Returns the block chain’s rapidly-changing properties. The returned object contains information that changes every block interval such as the head block number, the next witness, etc.**See**
 
-[`get_global_properties()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a9f44d453c99ffc99bbd99caa9e065a95) for less-frequently changing properties**Return**
+\`\`[`get_global_properties()`](blockchain-inspection.md#get_global_properties) for less-frequently changing properties
 
-the dynamic global properties
+```cpp
+dynamic_global_property_object graphene::wallet::wallet_api::get_dynamic_global_properties()const
+```
+
+{% tabs %}
+{% tab title="Return" %}
+The dynamic global properties.
+{% endtab %}
+{% endtabs %}
 
 #### [get\_object](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id98)
 
