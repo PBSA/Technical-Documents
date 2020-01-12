@@ -69,18 +69,24 @@ The dynamic global properties.
 {% endtab %}
 {% endtabs %}
 
-#### [get\_object](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id98)
-
-variant `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_object`\(object\_id\_type _id_\)_const_  
-
+### get\_object
 
 Returns the blockchain object corresponding to the given id.
 
-This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aae54080626cf4e4b24572f4836e8dfdd), accounts have [`get_account()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ae4133a2fe8f63695385c20d327a88ff9), but this function will work for any object.
+This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](asset-calls.md#get_asset), accounts have [`get_account()`](account-calls.md#get_account), but this function will work for any object.
 
-**Return**
+```cpp
+variant graphene::wallet::wallet_api::get_object(
+    object_id_type id)const
+```
 
-the requested object**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`id`**: the id of the object to return.
+{% endtab %}
 
-* `id`: the id of the object to return
+{% tab title="Return" %}
+The requested object.
+{% endtab %}
+{% endtabs %}
 
