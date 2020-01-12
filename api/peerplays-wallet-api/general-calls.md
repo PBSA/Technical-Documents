@@ -20,23 +20,36 @@ A multi-line string suitable for displaying on a terminal.
 
 ### gethelp
 
-string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::gethelp`\(_const_ string &_method_\)_const_  
+Returns detailed help on a single API command.
 
+```cpp
+string graphene::wallet::wallet_api::gethelp(
+    const string &method)const
+```
 
-Returns detailed help on a single API command.**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`method`**: the name of the API command you want help with
+{% endtab %}
 
-a multi-line string suitable for displaying on a terminal**Parameters**
+{% tab title="Return" %}
+A multi-line string suitable for displaying on a terminal.
+{% endtab %}
+{% endtabs %}
 
-* `method`: the name of the API command you want help with
+### info
 
-#### [info](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id5)
+Returns info about head block, chain\_id, maintenance, participation, current active witnesses and committee members.
 
-variant `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::info`\(\)  
+```cpp
+variant graphene::wallet::wallet_api::info()
+```
 
-
-Returns info about head block, chain\_id, maintenance, participation, current active witnesses and committee members.**Return**
-
-runtime info about the blockchain
+{% tabs %}
+{% tab title="Return" %}
+Runtime info about the blockchain
+{% endtab %}
+{% endtabs %}
 
 #### [about](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id6)
 
