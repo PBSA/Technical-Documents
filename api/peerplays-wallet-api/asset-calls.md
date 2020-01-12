@@ -58,18 +58,18 @@ The signed transaction creating a new asset.
 {% endtab %}
 {% endtabs %}
 
-#### [update\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id54)
+### update\_asset
 
 Update the core options on an asset. There are a number of options which all assets in the network use. These options are enumerated in the `asset_object::asset_options` struct. 
 
 This command is used to update these options for an existing asset.
 
 ```cpp
-signed_transaction graphene::
-wallet
-::
-wallet_api
-::update_asset(string symbol, optional<string> new_issuer, asset_options new_options, bool broadcast = false)
+signed_transaction graphene::wallet::wallet_api::update_asset(
+    string symbol, 
+    optional<string> new_issuer, 
+    asset_options new_options, 
+    bool broadcast = false)
 ```
 
 {% tabs %}
@@ -85,26 +85,34 @@ The signed transaction updating the asset
 {% endtab %}
 {% endtabs %}
 
-\`\`
-
-#### [update\_bitasset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id55)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::update_bitasset`\(string _symbol_, bitasset\_options _new\_options_, bool _broadcast_ = false\)  
-
+### update\_bitasset
 
 Update the options specific to a BitAsset.
 
 BitAssets have some options which are not relevant to other asset types. This operation is used to update those options an an existing BitAsset.
 
-**See**
+**See** [update\_asset\(\)](asset-calls.md#update_asset)
 
-[update\_asset\(\)](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a6c2a57593b39390b286efeecca2702d6)**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::update_bitasset(
+    string symbol, 
+    bitasset_options new_options, 
+    bool broadcast = false)
+```
 
-the signed transaction updating the bitasset**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`symbol`**: the name or id of the asset to update, which must be a market-issued asset
+* **`new_options`**: the new `bitasset_options` object, which will entirely replace the existing options.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-* `symbol`: the name or id of the asset to update, which must be a market-issued asset
-* `new_options`: the new bitasset\_options object, which will entirely replace the existing options.
-* `broadcast`: true to broadcast the transaction on the network
+{% tab title="Return" %}
+The signed transaction updating the Bitasset
+{% endtab %}
+{% endtabs %}
+
+\`\`
 
 #### [update\_asset\_feed\_producers](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id56)
 
