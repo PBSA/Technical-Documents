@@ -196,40 +196,60 @@ The signed transaction
 {% endtab %}
 {% endtabs %}
 
-#### [update\_worker\_votes](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id73)
+### update\_worker\_votes
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::update_worker_votes`\(string _account_, worker\_vote\_delta _delta_, bool _broadcast_ = false\)  
+Update your votes for workers.
 
+```cpp
+signed_transaction graphene::wallet::wallet_api::update_worker_votes(
+    string account, 
+    worker_vote_delta delta,
+    bool broadcast = false)
 
-Update your votes for workers
+```
 
-**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account`**: The account which will pay the fee and update votes.
+* **`delta`**: {“vote\_for” : \[…\], “vote\_against” : \[…\], “vote\_abstain” : \[…\]}
+* **`broadcast`**: true if you wish to broadcast the transaction.
+{% endtab %}
 
-the signed transaction**Parameters**
+{% tab title="Return" %}
+The signed transaction
+{% endtab %}
+{% endtabs %}
 
-* `account`: The account which will pay the fee and update votes.
-* `delta`: {“vote\_for” : \[…\], “vote\_against” : \[…\], “vote\_abstain” : \[…\]}
-* `broadcast`: true if you wish to broadcast the transaction.
-
-#### [vote\_for\_committee\_member](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id74)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::vote_for_committee_member`\(string _voting\_account_, string _committee\_member_, bool _approve_, bool _broadcast_ = false\)  
-
+### vote\_for\_committee\_member
 
 Vote for a given committee\_member.
 
 An account can publish a list of all committee\_members they approve of. This command allows you to add or remove committee\_members from this list. Each account’s vote is weighted according to the number of shares of the core asset owned by that account at the time the votes are tallied.
 
-**Note**
+{% hint style="warning" %}
+**Note:** You can't vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.
+{% endhint %}
 
-you cannot vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::vote_for_committee_member(
+    string voting_account, 
+    string committee_member, 
+    bool approve, 
+    bool broadcast = false)
+```
 
-the signed transaction changing your vote for the given committee\_member**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`voting_account`**: the name or id of the account who is voting with their shares
+* **`committee_member`**: the name or id of the committee\_member’ owner account
+* **`approve`**: true if you wish to vote in favour of that committee\_member, false to remove your vote in favour of that committee\_member
+* **`broadcast`**: true if you wish to broadcast the transaction
+{% endtab %}
 
-* `voting_account`: the name or id of the account who is voting with their shares
-* `committee_member`: the name or id of the committee\_member’ owner account
-* `approve`: true if you wish to vote in favor of that committee\_member, false to remove your vote in favor of that committee\_member
-* `broadcast`: true if you wish to broadcast the transaction
+{% tab title="Return" %}
+The signed transaction changing your vote for the given committee\_member.
+{% endtab %}
+{% endtabs %}
 
 #### [vote\_for\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id75)
 
