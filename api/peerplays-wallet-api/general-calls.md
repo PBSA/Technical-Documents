@@ -51,21 +51,46 @@ Runtime info about the blockchain
 {% endtab %}
 {% endtabs %}
 
-#### [about](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id6)
+### about
 
-variant\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::about`\(\)_const_  
+Returns info such as client version, git version of graphene/fc, version of boost, openssl etc.
 
+```cpp
+variant_object graphene::
+wallet
+::
+wallet_api
+::about()const
+```
 
-Returns info such as client version, git version of graphene/fc, version of boost, openssl.**Return**
+{% tabs %}
+{% tab title="Return" %}
+Compile time info and client and dependencies versions.
+{% endtab %}
+{% endtabs %}
 
-compile time info and client and dependencies versions
+#### network\_add\_nodes
 
-#### [network\_add\_nodes](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id7)
+```cpp
+void graphene::wallet::wallet_api::network_add_nodes(
+    const vector<string> &nodes)
+```
 
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::network_add_nodes`\(_const_ vector&lt;string&gt; &_nodes_\)  
+{% tabs %}
+{% tab title="Parameters" %}
+**`nodes`**: Nodes to be added.  
+{% endtab %}
+{% endtabs %}
 
+### network\_get\_connected\_peers
 
-#### [network\_get\_connected\_peers](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id8)
+```cpp
+vector<variant> graphene::wallet::wallet_api::network_get_connected_peers()
+```
 
-vector&lt;variant&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::network_get_connected_peers`\(\)
+{% tabs %}
+{% tab title="Return" %}
+List of connected peers.
+{% endtab %}
+{% endtabs %}
 
