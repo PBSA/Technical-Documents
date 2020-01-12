@@ -89,38 +89,54 @@ A list of Witness's mapping witness names to witness ids
 {% endtab %}
 {% endtabs %}
 
-#### [list\_committee\_members](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id69)
-
-map&lt;string, committee\_member\_id\_type&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::list_committee_members`\(_const_ string &_lowerbound_, uint32\_t _limit_\)  
-
+### list\_committee\_members
 
 Lists all committee\_members registered in the blockchain. This returns a list of all account names that own committee\_members, and the associated committee\_member id, sorted by name. This lists committee\_members whether they are currently voted in or not.
 
-Use the `lowerbound` and limit parameters to page through the list. To retrieve all committee\_members, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last committee\_member name returned as the `lowerbound` for the next [`list_committee_members()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ab08449f00d6b4147787b23afa7aa6af6) call.
+Use the `lowerbound` and limit parameters to page through the list. To retrieve all committee\_members, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last committee\_member name returned as the `lowerbound` for the next `list_committee_members()` call.
 
-**Return**
+```cpp
+map<string, committee_member_id_type> graphene::wallet::wallet_api::list_committee_members(
+    const string &lowerbound, 
+    uint32_t limit)
+```
 
-a list of committee\_members mapping committee\_member names to committee\_member ids**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`lowerbound`**: the name of the first committee\_member to return. If the named committee\_member does not exist, the list will start at the committee\_member that comes after `lowerbound`
+* **`limit`**: the maximum number of committee\_members to return \(max: 1000\)
+{% endtab %}
 
-* `lowerbound`: the name of the first committee\_member to return. If the named committee\_member does not exist, the list will start at the committee\_member that comes after `lowerbound`
-* `limit`: the maximum number of committee\_members to return \(max: 1000\)
+{% tab title="Return" %}
+A list of committee\_members mapping committee\_member names to committee\_member ids
+{% endtab %}
+{% endtabs %}
 
-#### [create\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id70)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_witness`\(string _owner\_account_, string _url_, bool _broadcast_ = false\)  
-
+### create\_witness
 
 Creates a witness object owned by the given account.
 
 An account can have at most one witness object.
 
-**Return**
+```cpp
+signed_transaction graphene::
+wallet
+::
+wallet_api
+::create_witness(string owner_account, string url, bool broadcast = false)
+```
 
-the signed transaction registering a witness**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`owner_account`**: the name or id of the account which is creating the witness
+* **`url`**: a URL to include in the witness record in the blockchain. Clients may display this when showing a list of witnesses. May be blank.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-* `owner_account`: the name or id of the account which is creating the witness
-* `url`: a URL to include in the witness record in the blockchain. Clients may display this when showing a list of witnesses. May be blank.
-* `broadcast`: true to broadcast the transaction on the network
+{% tab title="Return" %}
+The signed transaction registering a witness
+{% endtab %}
+{% endtabs %}
 
 #### [update\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id71)
 
