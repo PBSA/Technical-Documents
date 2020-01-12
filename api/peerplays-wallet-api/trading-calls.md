@@ -1,15 +1,8 @@
 # Trading Calls
 
+## Trading Calls
 
-
-### 
-
-### [Trading Calls](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id42)
-
-#### [sell\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id43)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::sell_asset`\(string _seller\_account_, string _amount\_to\_sell_, string _symbol\_to\_sell_, string _min\_to\_receive_, string _symbol\_to\_receive_, uint32\_t _timeout\_sec_ = 0, bool _fill\_or\_kill_ = false, bool _broadcast_ = false\)  
-
+### sell\_asset
 
 Place a limit order attempting to sell one asset for another.
 
@@ -23,37 +16,64 @@ If either the selling asset or the receiving asset is whitelist restricted, the 
 
 Market orders are matched in the order they are included in the block chain.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::sell_asset(
+    string seller_account, 
+    string amount_to_sell, 
+    string symbol_to_sell, 
+    string min_to_receive, 
+    string symbol_to_receive, 
+    uint32_t timeout_sec = 0, 
+    bool fill_or_kill = false, 
+    bool broadcast = false)
+```
 
-the signed transaction selling the funds**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`seller_account`**: the account providing the asset being sold, and which will receive the proceeds of the sale.
+* **`amount_to_sell`**: the amount of the asset being sold to sell \(in nominal units\)
+* **`symbol_to_sell`**: the name or id of the asset to sell
+* **`min_to_receive`**: the minimum amount you are willing to receive in return for selling the entire amount\_to\_sell
+* **`symbol_to_receive`**: the name or id of the asset you wish to receive
+* **`timeout_sec`**: if the order does not fill immediately, this is the length of time the order will remain on the order books before it is cancelled and the un-spent funds are returned to the seller’s account
+* **`fill_or_kill`**: if true, the order will only be included in the blockchain if it is filled immediately; if false, an open order will be left on the books to fill any amount that cannot be filled immediately.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-* `seller_account`: the account providing the asset being sold, and which will receive the proceeds of the sale.
-* `amount_to_sell`: the amount of the asset being sold to sell \(in nominal units\)
-* `symbol_to_sell`: the name or id of the asset to sell
-* `min_to_receive`: the minimum amount you are willing to receive in return for selling the entire amount\_to\_sell
-* `symbol_to_receive`: the name or id of the asset you wish to receive
-* `timeout_sec`: if the order does not fill immediately, this is the length of time the order will remain on the order books before it is cancelled and the un-spent funds are returned to the seller’s account
-* `fill_or_kill`: if true, the order will only be included in the blockchain if it is filled immediately; if false, an open order will be left on the books to fill any amount that cannot be filled immediately.
-* `broadcast`: true to broadcast the transaction on the network
+{% tab title="Return" %}
+The signed transaction selling the funds.
+{% endtab %}
+{% endtabs %}
 
-#### [borrow\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id44)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::borrow_asset`\(string _borrower\_name_, string _amount\_to\_borrow_, string _asset\_symbol_, string _amount\_of\_collateral_, bool _broadcast_ = false\)  
-
+### borrow\_asset
 
 Borrow an asset or update the debt/collateral ratio for the loan.
 
-This is the first step in shorting an asset. Call [`sell_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aeb0d71a0ed4c6d05a003e48c3a0cb6d3) to complete the short.
+This is the first step in shorting an asset. 
 
-**Return**
+Call [`sell_asset()`](trading-calls.md#sell_asset) to complete the short.
 
-the signed transaction borrowing the asset**Parameters**
+```cpp
+signed_transaction graphene::
+wallet
+::
+wallet_api
+::borrow_asset(string borrower_name, string amount_to_borrow, string asset_symbol, string amount_of_collateral, bool broadcast = false)
+```
 
-* `borrower_name`: the name or id of the account associated with the transaction.
-* `amount_to_borrow`: the amount of the asset being borrowed. Make this value negative to pay back debt.
-* `asset_symbol`: the symbol or id of the asset being borrowed.
-* `amount_of_collateral`: the amount of the backing asset to add to your collateral position. Make this negative to claim back some of your collateral. The backing asset is defined in the `bitasset_options` for the asset being borrowed.
-* `broadcast`: true to broadcast the transaction on the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`borrower_name`**: the name or id of the account associated with the transaction.
+* **`amount_to_borrow`**: the amount of the asset being borrowed. Make this value negative to pay back debt.
+* **`asset_symbol`**: the symbol or id of the asset being borrowed.
+* **`amount_of_collateral`**: the amount of the backing asset to add to your collateral position. Make this negative to claim back some of your collateral. The backing asset is defined in the **`bitasset_options`** for the asset being borrowed.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
+
+{% tab title="Return" %}
+The signed transaction borrowing the asset
+{% endtab %}
+{% endtabs %}
 
 #### [cancel\_order](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id45)
 

@@ -118,11 +118,10 @@ Creates a witness object owned by the given account.
 An account can have at most one witness object.
 
 ```cpp
-signed_transaction graphene::
-wallet
-::
-wallet_api
-::create_witness(string owner_account, string url, bool broadcast = false)
+signed_transaction graphene::wallet::wallet_api::create_witness(
+    string owner_account, 
+    string url, 
+    bool broadcast = false)
 ```
 
 {% tabs %}
