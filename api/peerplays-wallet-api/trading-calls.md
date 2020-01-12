@@ -185,8 +185,6 @@ vector<call_order_object> graphene::wallet::wallet_api::get_call_orders(
     uint32_t limit)const
 ```
 
-
-
 {% tabs %}
 {% tab title="Parameters" %}
 * **`a`**: symbol name or ID of the debt asset
@@ -198,17 +196,25 @@ The call orders, ordered from earliest to be called to latest
 {% endtab %}
 {% endtabs %}
 
-#### [get\_settle\_orders](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id50)
-
-vector&lt;force\_settlement\_object&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_settle_orders`\(string _a_, uint32\_t _limit_\)_const_  
-
+### get\_settle\_orders
 
 Get forced settlement orders in a given asset.
 
-**Return**
+```cpp
+vector<force_settlement_object> graphene::wallet::wallet_api::get_settle_orders(
+    string a, 
+    uint32_t limit)const
 
-The settle orders, ordered from earliest settlement date to latest**Parameters**
+```
 
-* `a`: Symbol or ID of asset being settled
-* `limit`: Maximum number of orders to retrieve
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: Symbol or ID of asset being settled
+* **`limit`**: Maximum number of orders to retrieve
+{% endtab %}
+
+{% tab title="Return" %}
+The settle orders, ordered from earliest settlement date to latest
+{% endtab %}
+{% endtabs %}
 
