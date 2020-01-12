@@ -112,22 +112,33 @@ The signed transaction updating the Bitasset
 {% endtab %}
 {% endtabs %}
 
-\`\`
-
-#### [update\_asset\_feed\_producers](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id56)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::update_asset_feed_producers`\(string _symbol_, flat\_set&lt;string&gt; _new\_feed\_producers_, bool _broadcast_ = false\)  
-
+### update\_asset\_feed\_producers
 
 Update the set of feed-producing accounts for a BitAsset.
 
-BitAssets have price feeds selected by taking the median values of recommendations from a set of feed producers. This command is used to specify which accounts may produce feeds for a given BitAsset.**Return**
+BitAssets have price feeds selected by taking the median values of recommendations from a set of feed producers. This command is used to specify which accounts may produce feeds for a given BitAsset.
 
-the signed transaction updating the bitasset’s feed producers**Parameters**
+```cpp
+signed_transaction graphene::
+wallet
+::
+wallet_api
+::update_asset_feed_producers(string symbol, flat_set<string> new_feed_producers, bool broadcast = false)
+```
 
-* `symbol`: the name or id of the asset to update
-* `new_feed_producers`: a list of account names or ids which are authorized to produce feeds for the asset. this list will completely replace the existing list
-* `broadcast`: true to broadcast the transaction on the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`symbol`**: the name or id of the asset to update
+* **`new_feed_producers`**: a list of account names or ids which are authorized to produce feeds for the asset. this list will completely replace the existing list
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
+
+{% tab title="Return" %}
+The signed transaction updating the BitAsset’s feed producers
+{% endtab %}
+{% endtabs %}
+
+\`\`
 
 #### [publish\_asset\_feed](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id57)
 
