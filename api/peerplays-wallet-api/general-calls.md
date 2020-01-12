@@ -1,21 +1,24 @@
 # General Calls
 
-### [General Calls](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id2)
+## General Calls
 
-#### [help](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id3)
-
-string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::help`\(\)_const_  
-
+### help
 
 Returns a list of all commands supported by the wallet API.
 
-This lists each command, along with its arguments and return types. For more detailed help on a single command, use [`gethelp()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a21d6b9297891d2a7317bfc3be9e6a917)
+This lists each command, along with its arguments and return types. For more detailed help on a single command, use [`gethelp()`](general-calls.md#gethelp)\`\`
 
-**Return**
+```cpp
+string graphene::wallet::wallet_api::help()const
+```
 
-a multi-line string suitable for displaying on a terminal
+{% tabs %}
+{% tab title="Return" %}
+A multi-line string suitable for displaying on a terminal.
+{% endtab %}
+{% endtabs %}
 
-#### [gethelp](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id4)
+### gethelp
 
 string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::gethelp`\(_const_ string &_method_\)_const_  
 
