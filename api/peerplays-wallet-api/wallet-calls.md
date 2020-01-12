@@ -1,15 +1,25 @@
 # Wallet Calls
 
-### [Wallet Calls](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id9)
+## Wallet Calls
 
-#### [is\_new](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id10)
-
-bool `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::is_new`\(\)_const_  
-
+### is\_new
 
 Checks whether the wallet has just been created and has not yet had a password set.
 
-Calling `set_password` will transition the wallet to the locked state.**Return**
+Calling `set_password` will transition the wallet to the locked state.
+
+```text
+bool graphene::
+wallet
+::
+wallet_api
+::is_new()const
+```
+
+  
+
+
+**Return**
 
 true if the wallet is new
 

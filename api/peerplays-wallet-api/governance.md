@@ -1,45 +1,69 @@
 # Governance
 
-### [Governance](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id64)
+## Governance
 
-#### [create\_committee\_member](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id65)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_committee_member`\(string _owner\_account_, string _url_, bool _broadcast_ = false\)  
-
+### create\_committee\_member
 
 Creates a committee\_member object owned by the given account.
 
 An account can have at most one committee\_member object.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::create_committee_member(
+    string owner_account, 
+    string url, 
+    bool broadcast = false)
+```
 
-the signed transaction registering a committee\_member**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`owner_account`**: the name or id of the account which is creating the committee\_member
+* **`url`**: a URL to include in the committee\_member record in the blockchain. Clients may display this when showing a list of committee\_members. May be blank.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-* `owner_account`: the name or id of the account which is creating the committee\_member
-* `url`: a URL to include in the committee\_member record in the blockchain. Clients may display this when showing a list of committee\_members. May be blank.
-* `broadcast`: true to broadcast the transaction on the network
+{% tab title="Return" %}
+The signed transaction registering a committee\_member
+{% endtab %}
+{% endtabs %}
 
-#### [get\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id66)
+### get\_witness
 
-witness\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_witness`\(string _owner\_account_\)  
+Returns information about the given witness.
 
+```cpp
+witness_object graphene::wallet::wallet_api::get_witness(
+    string owner_account)
+```
 
-Returns information about the given witness.**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`owner_account`**: the name or id of the witness account owner, or the id of the witness
+{% endtab %}
 
-the information about the witness stored in the block chain**Parameters**
+{% tab title="Return" %}
+The information about the witness stored in the block chain.
+{% endtab %}
+{% endtabs %}
 
-* `owner_account`: the name or id of the witness account owner, or the id of the witness
+### **get\_committee\_member**
 
-#### [get\_committee\_member](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id67)
+Returns information about the given committee\_member.
 
-committee\_member\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_committee_member`\(string _owner\_account_\)  
+```cpp
+committee_member_object graphene::wallet::wallet_api::get_committee_member(
+    string owner_account)
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
+* **`owner_account`**: the name or id of the committee\_member account owner, or the id of the committee\_member.
+{% endtab %}
 
-Returns information about the given committee\_member.**Return**
-
-the information about the committee\_member stored in the block chain**Parameters**
-
-* `owner_account`: the name or id of the committee\_member account owner, or the id of the committee\_member
+{% tab title="Return" %}
+**T**he information about the committee\_member stored in the block chain
+{% endtab %}
+{% endtabs %}
 
 #### [list\_witnesses](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id68)
 
