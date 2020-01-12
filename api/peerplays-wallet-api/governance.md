@@ -1,284 +1,190 @@
 # Governance
 
-## Governance
+### [Governance](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id64)
 
-### create\_committee\_member
+#### [create\_committee\_member](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id65)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_committee_member`\(string _owner\_account_, string _url_, bool _broadcast_ = false\)  
+
 
 Creates a committee\_member object owned by the given account.
 
 An account can have at most one committee\_member object.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::create_committee_member(
-    string owner_account, 
-    string url, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`owner_account`**: the name or id of the account which is creating the committee\_member
-* **`url`**: a URL to include in the committee\_member record in the blockchain. Clients may display this when showing a list of committee\_members. May be blank.
-* **`broadcast`**: true to broadcast the transaction on the network
-{% endtab %}
+the signed transaction registering a committee\_member**Parameters**
 
-{% tab title="Return" %}
-The signed transaction registering a committee\_member
-{% endtab %}
-{% endtabs %}
+* `owner_account`: the name or id of the account which is creating the committee\_member
+* `url`: a URL to include in the committee\_member record in the blockchain. Clients may display this when showing a list of committee\_members. May be blank.
+* `broadcast`: true to broadcast the transaction on the network
 
-### get\_witness
+#### [get\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id66)
 
-Returns information about the given witness.
+witness\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_witness`\(string _owner\_account_\)  
 
-```cpp
-witness_object graphene::wallet::wallet_api::get_witness(
-    string owner_account)
-```
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`owner_account`**: the name or id of the witness account owner, or the id of the witness
-{% endtab %}
+Returns information about the given witness.**Return**
 
-{% tab title="Return" %}
-The information about the witness stored in the block chain.
-{% endtab %}
-{% endtabs %}
+the information about the witness stored in the block chain**Parameters**
 
-### **get\_committee\_member**
+* `owner_account`: the name or id of the witness account owner, or the id of the witness
 
-Returns information about the given committee\_member.
+#### [get\_committee\_member](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id67)
 
-```cpp
-committee_member_object graphene::wallet::wallet_api::get_committee_member(
-    string owner_account)
-```
+committee\_member\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_committee_member`\(string _owner\_account_\)  
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`owner_account`**: the name or id of the committee\_member account owner, or the id of the committee\_member.
-{% endtab %}
 
-{% tab title="Return" %}
-**T**he information about the committee\_member stored in the block chain
-{% endtab %}
-{% endtabs %}
+Returns information about the given committee\_member.**Return**
 
-### list\_witnesses
+the information about the committee\_member stored in the block chain**Parameters**
 
-Lists all Witnesses registered in the blockchain. This returns a list of all account names that own Witnesses, and the associated witness id, sorted by name. This lists Witnesses whether they are currently voted in or not.
+* `owner_account`: the name or id of the committee\_member account owner, or the id of the committee\_member
 
-Use the `lowerbound` and limit parameters to page through the list. To retrieve all Witness's, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last witness name returned as the `lowerbound` for the next `list_witnesss()` call.
+#### [list\_witnesses](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id68)
 
-```cpp
-map<string, witness_id_type> graphene::wallet::wallet_api::list_witnesses(
-    const string &lowerbound, 
-    uint32_t limit)
-```
+map&lt;string, witness\_id\_type&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::list_witnesses`\(_const_ string &_lowerbound_, uint32\_t _limit_\)  
 
-{% tabs %}
-{% tab title="Parameters" %}
-* `lowerbound`: the name of the first Witness to return. If the named Witness does not exist, the list will start at the witness that comes after `lowerbound`
-* `limit`: the maximum number of Witness's to return \(max: 1000\)
-{% endtab %}
 
-{% tab title="Return" %}
-A list of Witness's mapping witness names to witness ids
-{% endtab %}
-{% endtabs %}
+Lists all witnesses registered in the blockchain. This returns a list of all account names that own witnesses, and the associated witness id, sorted by name. This lists witnesses whether they are currently voted in or not.
 
-### list\_committee\_members
+Use the `lowerbound` and limit parameters to page through the list. To retrieve all witnesss, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last witness name returned as the `lowerbound` for the next `list_witnesss()` call.
+
+**Return**
+
+a list of witnesss mapping witness names to witness ids**Parameters**
+
+* `lowerbound`: the name of the first witness to return. If the named witness does not exist, the list will start at the witness that comes after `lowerbound`
+* `limit`: the maximum number of witnesss to return \(max: 1000\)
+
+#### [list\_committee\_members](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id69)
+
+map&lt;string, committee\_member\_id\_type&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::list_committee_members`\(_const_ string &_lowerbound_, uint32\_t _limit_\)  
+
 
 Lists all committee\_members registered in the blockchain. This returns a list of all account names that own committee\_members, and the associated committee\_member id, sorted by name. This lists committee\_members whether they are currently voted in or not.
 
-Use the `lowerbound` and limit parameters to page through the list. To retrieve all committee\_members, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last committee\_member name returned as the `lowerbound` for the next `list_committee_members()` call.
+Use the `lowerbound` and limit parameters to page through the list. To retrieve all committee\_members, start by setting `lowerbound` to the empty string `""`, and then each iteration, pass the last committee\_member name returned as the `lowerbound` for the next [`list_committee_members()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ab08449f00d6b4147787b23afa7aa6af6) call.
 
-```cpp
-map<string, committee_member_id_type> graphene::wallet::wallet_api::list_committee_members(
-    const string &lowerbound, 
-    uint32_t limit)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`lowerbound`**: the name of the first committee\_member to return. If the named committee\_member does not exist, the list will start at the committee\_member that comes after `lowerbound`
-* **`limit`**: the maximum number of committee\_members to return \(max: 1000\)
-{% endtab %}
+a list of committee\_members mapping committee\_member names to committee\_member ids**Parameters**
 
-{% tab title="Return" %}
-A list of committee\_members mapping committee\_member names to committee\_member ids
-{% endtab %}
-{% endtabs %}
+* `lowerbound`: the name of the first committee\_member to return. If the named committee\_member does not exist, the list will start at the committee\_member that comes after `lowerbound`
+* `limit`: the maximum number of committee\_members to return \(max: 1000\)
 
-### create\_witness
+#### [create\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id70)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_witness`\(string _owner\_account_, string _url_, bool _broadcast_ = false\)  
+
 
 Creates a witness object owned by the given account.
 
 An account can have at most one witness object.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::create_witness(
-    string owner_account, 
-    string url, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`owner_account`**: the name or id of the account which is creating the witness
-* **`url`**: a URL to include in the witness record in the blockchain. Clients may display this when showing a list of witnesses. May be blank.
-* **`broadcast`**: true to broadcast the transaction on the network
-{% endtab %}
+the signed transaction registering a witness**Parameters**
 
-{% tab title="Return" %}
-The signed transaction registering a witness
-{% endtab %}
-{% endtabs %}
+* `owner_account`: the name or id of the account which is creating the witness
+* `url`: a URL to include in the witness record in the blockchain. Clients may display this when showing a list of witnesses. May be blank.
+* `broadcast`: true to broadcast the transaction on the network
 
-### update\_witness
+#### [update\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id71)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::update_witness`\(string _witness\_name_, string _url_, string _block\_signing\_key_, bool _broadcast_ = false\)  
+
 
 Update a witness object owned by the given account.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::update_witness(
-    string witness_name, 
-    string url, 
-    string block_signing_key, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`witness_name`**: The name of the witness’s owner account. Also accepts the ID of the owner account or the ID of the witness.
-* **`url`**: Same as for create\_witness. The empty string makes it remain the same.
-* **`block_signing_key`**: The new block signing public key. The empty string makes it remain the same.
-* **`broadcast`**: true if you wish to broadcast the transaction.
-{% endtab %}
+the signed transaction**Parameters**
 
-{% tab title="Return" %}
-The signed transaction
-{% endtab %}
-{% endtabs %}
+* `witness_name`: The name of the witness’s owner account. Also accepts the ID of the owner account or the ID of the witness.
+* `url`: Same as for create\_witness. The empty string makes it remain the same.
+* `block_signing_key`: The new block signing public key. The empty string makes it remain the same.
+* `broadcast`: true if you wish to broadcast the transaction.
 
-### create\_worker
+#### [create\_worker](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id72)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_worker`\(string _owner\_account_, time\_point\_sec _work\_begin\_date_, time\_point\_sec _work\_end\_date_, share\_type _daily\_pay_, string _name_, string _url_, variant _worker\_settings_, bool _broadcast_ = false\)  
+
 
 Create a worker object.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::create_worker(
-    string owner_account, 
-    time_point_sec work_begin_date, 
-    time_point_sec work_end_date, 
-    share_type daily_pay, 
-    string name, string url, 
-    variant worker_settings, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`owner_account`**: The account which owns the worker and will be paid
-* **`work_begin_date`**: When the work begins
-* **`work_end_date`**: When the work ends
-* **`daily_pay`**: Amount of pay per day \(NOT per maint interval\)
-* **`name`**: Any text
-* **`url`**: Any text
-* **`worker_settings`**: {“type” : “burn”\|”refund”\|”vesting”, “pay\_vesting\_period\_days” : x}
-* **`broadcast`**: true if you wish to broadcast the transaction.
-{% endtab %}
+the signed transaction**Parameters**
 
-{% tab title="Return" %}
-The signed transaction
-{% endtab %}
-{% endtabs %}
+* `owner_account`: The account which owns the worker and will be paid
+* `work_begin_date`: When the work begins
+* `work_end_date`: When the work ends
+* `daily_pay`: Amount of pay per day \(NOT per maint interval\)
+* `name`: Any text
+* `url`: Any text
+* `worker_settings`: {“type” : “burn”\|”refund”\|”vesting”, “pay\_vesting\_period\_days” : x}
+* `broadcast`: true if you wish to broadcast the transaction.
 
-### update\_worker\_votes
+#### [update\_worker\_votes](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id73)
 
-Update your votes for workers.
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::update_worker_votes`\(string _account_, worker\_vote\_delta _delta_, bool _broadcast_ = false\)  
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::update_worker_votes(
-    string account, 
-    worker_vote_delta delta,
-    bool broadcast = false)
-```
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`account`**: The account which will pay the fee and update votes.
-* **`delta`**: {“vote\_for” : \[…\], “vote\_against” : \[…\], “vote\_abstain” : \[…\]}
-* **`broadcast`**: true if you wish to broadcast the transaction.
-{% endtab %}
+Update your votes for workers
 
-{% tab title="Return" %}
-The signed transaction
-{% endtab %}
-{% endtabs %}
+**Return**
 
-### vote\_for\_committee\_member
+the signed transaction**Parameters**
+
+* `account`: The account which will pay the fee and update votes.
+* `delta`: {“vote\_for” : \[…\], “vote\_against” : \[…\], “vote\_abstain” : \[…\]}
+* `broadcast`: true if you wish to broadcast the transaction.
+
+#### [vote\_for\_committee\_member](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id74)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::vote_for_committee_member`\(string _voting\_account_, string _committee\_member_, bool _approve_, bool _broadcast_ = false\)  
+
 
 Vote for a given committee\_member.
 
 An account can publish a list of all committee\_members they approve of. This command allows you to add or remove committee\_members from this list. Each account’s vote is weighted according to the number of shares of the core asset owned by that account at the time the votes are tallied.
 
-{% hint style="warning" %}
-**Note:** You can't vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.
-{% endhint %}
+**Note**
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::vote_for_committee_member(
-    string voting_account, 
-    string committee_member, 
-    bool approve, 
-    bool broadcast = false)
-```
+you cannot vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`voting_account`**: the name or id of the account who is voting with their shares
-* **`committee_member`**: the name or id of the committee\_member’ owner account
-* **`approve`**: true if you wish to vote in favour of that committee\_member, false to remove your vote in favour of that committee\_member
-* **`broadcast`**: true if you wish to broadcast the transaction
-{% endtab %}
+the signed transaction changing your vote for the given committee\_member**Parameters**
 
-{% tab title="Return" %}
-The signed transaction changing your vote for the given committee\_member.
-{% endtab %}
-{% endtabs %}
+* `voting_account`: the name or id of the account who is voting with their shares
+* `committee_member`: the name or id of the committee\_member’ owner account
+* `approve`: true if you wish to vote in favor of that committee\_member, false to remove your vote in favor of that committee\_member
+* `broadcast`: true if you wish to broadcast the transaction
 
-### vote\_for\_witness
+#### [vote\_for\_witness](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id75)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::vote_for_witness`\(string _voting\_account_, string _witness_, bool _approve_, bool _broadcast_ = false\)  
+
 
 Vote for a given witness.
 
 An account can publish a list of all witnesses they approve of. This command allows you to add or remove witnesses from this list. Each account’s vote is weighted according to the number of shares of the core asset owned by that account at the time the votes are tallied.
 
-{% hint style="warning" %}
-Note: You can't vote against a witness, you can only vote for the witness or not vote for the witness.
-{% endhint %}
+**Note**
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::vote_for_witness(
-    string voting_account, 
-    string witness, 
-    bool approve, 
-    bool broadcast = false)
-```
+you cannot vote against a witness, you can only vote for the witness or not vote for the witness.**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`voting_account`**: the name or id of the account who is voting with their shares
-* **`witness`**: the name or id of the witness’ owner account
-* **`approve`**: true if you wish to vote in favour of that witness, false to remove your vote in favour of that witness
-* **`broadcast`**: true if you wish to broadcast the transaction
-{% endtab %}
+the signed transaction changing your vote for the given witness**Parameters**
 
-{% tab title="Return" %}
-The signed transaction changing your vote for the given witness
-{% endtab %}
-{% endtabs %}
+* `voting_account`: the name or id of the account who is voting with their shares
+* `witness`: the name or id of the witness’ owner account
+* `approve`: true if you wish to vote in favor of that witness, false to remove your vote in favor of that witness
+* `broadcast`: true if you wish to broadcast the transaction
 
-### set\_voting\_proxy
+#### [set\_voting\_proxy](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id76)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::set_voting_proxy`\(string _account\_to\_modify_, optional&lt;string&gt; _voting\_account_, bool _broadcast_ = false\)  
+
 
 Set the voting proxy for an account.
 
@@ -288,26 +194,18 @@ Setting a vote proxy does not remove your previous votes from the blockchain, th
 
 This setting can be changed at any time.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::set_voting_proxy(
-    string account_to_modify, 
-    optional<string> voting_account, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`account_to_modify`**: the name or id of the account to update
-* **`voting_account`**: the name or id of an account authorized to vote account\_to\_modify’s shares, or null to vote your own shares
-* **`broadcast`**: true if you wish to broadcast the transaction
-{% endtab %}
+the signed transaction changing your vote proxy settings**Parameters**
 
-{% tab title="Return" %}
-The signed transaction changing your vote proxy settings
-{% endtab %}
-{% endtabs %}
+* `account_to_modify`: the name or id of the account to update
+* `voting_account`: the name or id of an account authorized to vote account\_to\_modify’s shares, or null to vote your own shares
+* `broadcast`: true if you wish to broadcast the transaction
 
-### set\_desired\_witness\_and\_committee\_member\_count
+#### [set\_desired\_witness\_and\_committee\_member\_count](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id77)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::set_desired_witness_and_committee_member_count`\(string _account\_to\_modify_, uint16\_t _desired\_number\_of\_witnesses_, uint16\_t _desired\_number\_of\_committee\_members_, bool _broadcast_ = false\)  
+
 
 Set your vote for the number of witnesses and committee\_members in the system.
 
@@ -317,76 +215,46 @@ There are maximum values for each set in the blockchain parameters \(currently d
 
 This setting can be changed at any time. If your account has a voting proxy set, your preferences will be ignored.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::set_desired_witness_and_committee_member_count(
-    string account_to_modify, 
-    uint16_t desired_number_of_witnesses, 
-    uint16_t desired_number_of_committee_members, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`account_to_modify`**: the name or id of the account to update
-* **`desired_number_of_witnesses`**: desired number of active witnesses
-* **`desired_number_of_committee_members`**: desired number of active committee members
-* **`broadcast`**: true if you wish to broadcast the transaction
-{% endtab %}
+the signed transaction changing your vote proxy settings**Parameters**
 
-{% tab title="Result" %}
-The signed transaction changing your vote proxy settings
-{% endtab %}
-{% endtabs %}
+* `account_to_modify`: the name or id of the account to update
+* `desired_number_of_witnesses`: desired number of active witnesses
+* `desired_number_of_committee_members`: desired number of active committee members
+* `broadcast`: true if you wish to broadcast the transaction
 
-### propose\_parameter\_change
+#### [propose\_parameter\_change](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id78)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::propose_parameter_change`\(_const_ string &_proposing\_account_, fc::time\_point\_sec _expiration\_time_, _const_ variant\_object &_changed\_values_, bool _broadcast_ = false\)  
+
 
 Creates a transaction to propose a parameter change.
 
 Multiple parameters can be specified if an atomic change is desired.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::propose_parameter_change(
-    const string &proposing_account, 
-    fc::time_point_sec expiration_time, 
-    const variant_object &changed_values, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`proposing_account`**: The account paying the fee to propose the tx
-* **`expiration_time`**: Timestamp specifying when the proposal will either take effect or expire.
-* **`changed_values`**: The values to change; all other chain parameters are filled in with default values
-* **`broadcast`**: true if you wish to broadcast the transaction
-{% endtab %}
+the signed version of the transaction**Parameters**
 
-{% tab title="Return" %}
-The signed version of the transaction
-{% endtab %}
-{% endtabs %}
+* `proposing_account`: The account paying the fee to propose the tx
+* `expiration_time`: Timestamp specifying when the proposal will either take effect or expire.
+* `changed_values`: The values to change; all other chain parameters are filled in with default values
+* `broadcast`: true if you wish to broadcast the transaction
 
-### propose\_fee\_change
+#### [propose\_fee\_change](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id79)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::propose_fee_change`\(_const_ string &_proposing\_account_, fc::time\_point\_sec _expiration\_time_, _const_ variant\_object &_changed\_values_, bool _broadcast_ = false\)  
+
 
 Propose a fee change.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::propose_fee_change(
-    const string &proposing_account, 
-    fc::time_point_sec expiration_time, 
-    const variant_object &changed_values, 
-    bool broadcast = false)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`proposing_account`**: The account paying the fee to propose the tx
-* **`expiration_time`**: Timestamp specifying when the proposal will either take effect or expire.
-* **`changed_values`**: Map of operation type to new fee. Operations may be specified by name or ID. The “scale” key changes the scale. All other operations will maintain current values.
-* **`broadcast`**: true if you wish to broadcast the transaction
-{% endtab %}
+the signed version of the transaction**Parameters**
 
-{% tab title="Return" %}
-The signed version of the transaction
-{% endtab %}
-{% endtabs %}
+* `proposing_account`: The account paying the fee to propose the tx
+* `expiration_time`: Timestamp specifying when the proposal will either take effect or expire.
+* `changed_values`: Map of operation type to new fee. Operations may be specified by name or ID. The “scale” key changes the scale. All other operations will maintain current values.
+* `broadcast`: true if you wish to broadcast the transaction
 

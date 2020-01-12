@@ -1,263 +1,153 @@
 # Privacy Mode
 
-## Privacy Mode
+### [Privacy Mode](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id80)
 
-### set\_key\_label
+#### [set\_key\_label](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id81)
+
+bool `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::set_key_label`\(public\_key\_type _key_, string _label_\)  
+
 
 These methods are used for stealth transfers This method can be used to set a label for a public key
 
-{% hint style="warning" %}
-**Note**: No two keys can have the same label.
-{% endhint %}
+**Note**
 
-```cpp
-bool graphene::wallet::wallet_api::set_key_label(
-    public_key_type key, 
-    string label)
-```
+No two keys can have the same label.**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`key`**: a public key
-* **`label`**: a user-defined string as label
-{% endtab %}
+true if the label was set, otherwise false**Parameters**
 
-{% tab title="Return" %}
-_True_ if the label was set, otherwise _false_
-{% endtab %}
-{% endtabs %}
+* `key`: a public key
+* `label`: a user-defined string as label
 
-### get\_key\_label
+#### [get\_key\_label](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id82)
 
-Get label of a public key.
+string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_key_label`\(public\_key\_type _key_\)_const_  
 
-```cpp
-string graphene::wallet::wallet_api::get_key_label(
-    public_key_type key)const
-```
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`key`**: a public key
-{% endtab %}
+Get label of a public key.**Return**
 
-{% tab title="Return" %}
-The label if already set by [`set_key_label()`](privacy-mode.md#set_key_label), or an empty string if not set
-{% endtab %}
-{% endtabs %}
+the label if already set by [`set_key_label()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a33146d388f60a77c23ee4d85f949859e), or an empty string if not set**Parameters**
 
-### get\_public\_key
+* `key`: a public key
 
-Get the public key associated with a given label
+#### [get\_public\_key](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id83)
 
-```cpp
-public_key_type graphene::wallet::wallet_api::get_public_key(
-    string label)const
-```
+public\_key\_type `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_public_key`\(string _label_\)_const_  
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`label`**: a label
-{% endtab %}
 
-{% tab title="Return" %}
-The public key associated with the given label.
-{% endtab %}
-{% endtabs %}
+Get the public key associated with a given label.**Return**
 
-### get\_blind\_accounts
+the public key associated with the given label**Parameters**
 
-Get all blind accounts.
+* `label`: a label
 
-```cpp
-map<string, public_key_type> graphene::
-wallet
-::
-wallet_api
-::get_blind_accounts()const
-```
+#### [get\_blind\_accounts](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id84)
 
-{% tabs %}
-{% tab title="Return" %}
-All blind accounts
-{% endtab %}
-{% endtabs %}
+map&lt;string, public\_key\_type&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_blind_accounts`\(\)_const_  
 
-### get\_my\_blind\_accounts
 
-Get all blind accounts for which this wallet has the private key.
+Get all blind accounts.**Return**
 
-```cpp
-map<string, public_key_type> graphene::wallet::wallet_api::get_my_blind_accounts()const
-```
+all blind accounts
 
-{% tabs %}
-{% tab title="Return" %}
-All blind accounts for which this wallet has the private key.
-{% endtab %}
-{% endtabs %}
+#### [get\_my\_blind\_accounts](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id85)
 
-### get\_blind\_balances
+map&lt;string, public\_key\_type&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_my_blind_accounts`\(\)_const_  
 
-Return the total balances of all blinded commitments that can be claimed by the given account key or label.
 
-```cpp
-vector<asset> graphene::wallet::wallet_api::get_blind_balances(
-    string key_or_label)
-```
+Get all blind accounts for which this wallet has the private key.**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`key_or_label`**: a public key in Base58 format or a label
-{% endtab %}
+all blind accounts for which this wallet has the private key
 
-{% tab title="Return" %}
-The total balances of all blinded commitments that can be claimed by the given account key or label
-{% endtab %}
-{% endtabs %}
+#### [get\_blind\_balances](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id86)
 
-### **create\_blind\_account**
+vector&lt;asset&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_blind_balances`\(string _key\_or\_label_\)  
 
-Generates a new blind account for the given brain key and assigns it the given label
 
-```cpp
-public_key_type graphene::
-wallet
-::
-wallet_api
-::create_blind_account(string label, string brain_key)
-```
+Return the total balances of all blinded commitments that can be claimed by the given account key or label.**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`label`**: a label
-* **`brain_key`**: the brain key to be used to generate a new blind account
-{% endtab %}
+the total balances of all blinded commitments that can be claimed by the given account key or label**Parameters**
 
-{% tab title="Return" %}
-The public key of the new account
-{% endtab %}
-{% endtabs %}
+* `key_or_label`: a public key in Base58 format or a label
 
-### transfer\_to\_blind
+#### [create\_blind\_account](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id87)
 
-Transfers a public balance from `from_account_id_or_name` to one or more blinded balances using a stealth transfer.
+public\_key\_type `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::create_blind_account`\(string _label_, string _brain\_key_\)  
 
-```cpp
-blind_confirmationgraphene::wallet::wallet_api::transfer_to_blind(
-    string from_account_id_or_name, 
-    string asset_symbol, 
-    vector<pair<string, string>> to_amounts, 
-    bool broadcast = false)
-```
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`from_account_id_or_name`**: ID or name of an account to transfer from
-* **`asset_symbol`**: symbol or ID of the asset to be transferred
-* **`to_amounts`**: map from key or label to amount
-* **`broadcast`**: true to broadcast the transaction on the network
-{% endtab %}
+Generates a new blind account for the given brain key and assigns it the given label.**Return**
 
-{% tab title="Return" %}
-A blind confirmation
-{% endtab %}
-{% endtabs %}
+the public key of the new account**Parameters**
 
-### transfer\_from\_blind
+* `label`: a label
+* `brain_key`: the brain key to be used to generate a new blind account
 
-Transfers funds from a set of blinded balances to a public account balance.
+#### [transfer\_to\_blind](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id88)
 
-```cpp
-blind_confirmationgraphene::wallet::wallet_api::transfer_from_blind(
-    string from_blind_account_key_or_label, 
-    string to_account_id_or_name, 
-    string amount, 
-    string asset_symbol, 
-    bool broadcast = false)
-```
+[blind\_confirmation](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet18blind_confirmationE)`graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::transfer_to_blind`\(string _from\_account\_id\_or\_name_, string _asset\_symbol_, vector&lt;pair&lt;string, string&gt;&gt; _to\_amounts_, bool _broadcast_ = false\)  
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`from_blind_account_key_or_label`**: a public key in Base58 format or a label to transfer from
-* **`to_account_id_or_name`**: ID or name of an account to transfer to
-* **`amount`**: the amount to be transferred
-* **`asset_symbol`**: symbol or ID of the asset to be transferred
-* **`broadcast`**: true to broadcast the transaction on the network
-{% endtab %}
 
-{% tab title="Return" %}
-A blind confirmation.
-{% endtab %}
-{% endtabs %}
+Transfers a public balance from `from_account_id_or_name` to one or more blinded balances using a stealth transfer.**Return**
 
-### blind\_transfer
+a blind confirmation**Parameters**
 
-Transfer from one set of blinded balances to another.
+* `from_account_id_or_name`: ID or name of an account to transfer from
+* `asset_symbol`: symbol or ID of the asset to be transferred
+* `to_amounts`: map from key or label to amount
+* `broadcast`: true to broadcast the transaction on the network
 
-```cpp
-blind_confirmationgraphene::wallet::wallet_api::blind_transfer(
-    string from_key_or_label, 
-    string to_key_or_label, 
-    string amount, 
-    string symbol, 
-    bool broadcast = false)
-```
+#### [transfer\_from\_blind](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id89)
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`from_key_or_label`**: a public key in Base58 format or a label to transfer from
-* **`to_key_or_label`**: a public key in Base58 format or a label to transfer to
-* **`amount`**: the amount to be transferred
-* **`symbol`**: symbol or ID of the asset to be transferred
-* **`broadcast`**: true to broadcast the transaction on the network
-{% endtab %}
+[blind\_confirmation](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet18blind_confirmationE)`graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::transfer_from_blind`\(string _from\_blind\_account\_key\_or\_label_, string _to\_account\_id\_or\_name_, string _amount_, string _asset\_symbol_, bool _broadcast_ = false\)  
 
-{% tab title="Return" %}
-A blind confirmation
-{% endtab %}
-{% endtabs %}
 
-### blind\_history
+Transfers funds from a set of blinded balances to a public account balance.**Return**
 
-Get all blind receipts to/form a particular account.
+a blind confirmation**Parameters**
 
-```cpp
-vector<blind_receipt> graphene::wallet::wallet_api::blind_history(
-    string key_or_account)
-```
+* `from_blind_account_key_or_label`: a public key in Base58 format or a label to transfer from
+* `to_account_id_or_name`: ID or name of an account to transfer to
+* `amount`: the amount to be transferred
+* `asset_symbol`: symbol or ID of the asset to be transferred
+* `broadcast`: true to broadcast the transaction on the network
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`key_or_account`**: a public key in Base58 format or an account
-{% endtab %}
+#### [blind\_transfer](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id90)
 
-{% tab title="Return" %}
-All blind receipts to/form the account.
-{% endtab %}
-{% endtabs %}
+[blind\_confirmation](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet18blind_confirmationE)`graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::blind_transfer`\(string _from\_key\_or\_label_, string _to\_key\_or\_label_, string _amount_, string _symbol_, bool _broadcast_ = false\)  
 
-### **receive\_blind\_transfer**
+
+Transfer from one set of blinded balances to another.**Return**
+
+a blind confirmation**Parameters**
+
+* `from_key_or_label`: a public key in Base58 format or a label to transfer from
+* `to_key_or_label`: a public key in Base58 format or a label to transfer to
+* `amount`: the amount to be transferred
+* `symbol`: symbol or ID of the asset to be transferred
+* `broadcast`: true to broadcast the transaction on the network
+
+#### [blind\_history](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id91)
+
+vector&lt;blind\_receipt&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::blind_history`\(string _key\_or\_account_\)  
+
+
+Get all blind receipts to/form a particular account**Return**
+
+all blind receipts to/form the account**Parameters**
+
+* `key_or_account`: a public key in Base58 format or an account
+
+#### [receive\_blind\_transfer](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id92)
+
+blind\_receipt `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::receive_blind_transfer`\(string _confirmation\_receipt_, string _opt\_from_, string _opt\_memo_\)  
+
 
 Given a confirmation receipt, this method will parse it for a blinded balance and confirm that it exists in the blockchain. If it exists then it will report the amount received and who sent it.
 
-```cpp
-blind_receipt graphene::
-wallet
-::
-wallet_api
-::receive_blind_transfer(string confirmation_receipt, string opt_from, string opt_memo)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`confirmation_receipt`**: a base58 encoded stealth confirmation
-* **`opt_from`**: if not empty and the sender is a unknown public key, then the unknown public key will be given the label `opt_from`
-* **`opt_memo`**: a self-defined label for this transfer to be saved in local wallet file
-{% endtab %}
+a blind receipt**Parameters**
 
-{% tab title="Return" %}
-A blind receipt.
-{% endtab %}
-{% endtabs %}
+* `confirmation_receipt`: a base58 encoded stealth confirmation
+* `opt_from`: if not empty and the sender is a unknown public key, then the unknown public key will be given the label `opt_from`
+* `opt_memo`: a self-defined label for this transfer to be saved in local wallet file
 

@@ -1,92 +1,61 @@
 # Blockchain Inspection
 
-## Blockchain Inspection
+### [Blockchain Inspection](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id93)
 
-### get\_block
+#### [get\_block](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id94)
 
-Returns info about a specified block.
+optional&lt;signed\_block\_with\_info&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_block`\(uint32\_t _num_\)  
 
-```cpp
-optional<signed_block_with_info> graphene::wallet::wallet_api::get_block(
-    uint32_t num)
-```
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`num`**: height of the block to retrieve
-{% endtab %}
+Returns info about a specified block.**Return**
 
-{% tab title="Return" %}
-Info about the block, or null if not found.
-{% endtab %}
-{% endtabs %}
+info about the block, or null if not found**Parameters**
 
-### **get\_account\_count**
+* `num`: height of the block to retrieve
 
-Returns the number of accounts registered on the blockchain**.**
+#### [get\_account\_count](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id95)
 
-```cpp
-uint64_t graphene::wallet::wallet_api::get_account_count()const
-```
+uint64\_t `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_account_count`\(\)_const_  
 
-{% tabs %}
-{% tab title="Return" %}
-The number of registered accounts
-{% endtab %}
-{% endtabs %}
 
-### get\_global\_properties
+Returns the number of accounts registered on the blockchain**Return**
 
-Returns the block chain’s slowly-changing settings. 
+the number of registered accounts
 
-This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval \(daily\) such as the current list of witnesses, committee\_members, block interval, etc.
+#### [get\_global\_properties](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id96)
 
-**See** [`get_dynamic_global_properties()`](blockchain-inspection.md#get_dynamic_global_properties) for frequently changing properties.
+global\_property\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_global_properties`\(\)_const_  
 
-```cpp
-global_property_object graphene::wallet::wallet_api::get_global_properties()const
-```
 
-{% tabs %}
-{% tab title="Return" %}
-The global properties.
-{% endtab %}
-{% endtabs %}
+Returns the block chain’s slowly-changing settings. This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval \(daily\) such as the current list of witnesses, committee\_members, block interval, etc.**See**
 
-### get\_dynamic\_global\_properties
+[`get_dynamic_global_properties()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aaa8f1ab2e2e5fe7a414ada5375e14566) for frequently changing properties**Return**
+
+the global properties
+
+#### [get\_dynamic\_global\_properties](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id97)
+
+dynamic\_global\_property\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_dynamic_global_properties`\(\)_const_  
+
 
 Returns the block chain’s rapidly-changing properties. The returned object contains information that changes every block interval such as the head block number, the next witness, etc.**See**
 
-\`\`[`get_global_properties()`](blockchain-inspection.md#get_global_properties) for less-frequently changing properties
+[`get_global_properties()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a9f44d453c99ffc99bbd99caa9e065a95) for less-frequently changing properties**Return**
 
-```cpp
-dynamic_global_property_object graphene::wallet::wallet_api::get_dynamic_global_properties()const
-```
+the dynamic global properties
 
-{% tabs %}
-{% tab title="Return" %}
-The dynamic global properties.
-{% endtab %}
-{% endtabs %}
+#### [get\_object](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id98)
 
-### get\_object
+variant `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_object`\(object\_id\_type _id_\)_const_  
+
 
 Returns the blockchain object corresponding to the given id.
 
-This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](asset-calls.md#get_asset), accounts have [`get_account()`](account-calls.md#get_account), but this function will work for any object.
+This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aae54080626cf4e4b24572f4836e8dfdd), accounts have [`get_account()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ae4133a2fe8f63695385c20d327a88ff9), but this function will work for any object.
 
-```cpp
-variant graphene::wallet::wallet_api::get_object(
-    object_id_type id)const
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`id`**: the id of the object to return.
-{% endtab %}
+the requested object**Parameters**
 
-{% tab title="Return" %}
-The requested object.
-{% endtab %}
-{% endtabs %}
+* `id`: the id of the object to return
 
