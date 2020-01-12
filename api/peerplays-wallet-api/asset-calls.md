@@ -6,7 +6,7 @@
 
 Lists all assets registered on the blockchain.
 
-To list all assets, pass the empty string `""` for the lowerbound to start at the beginning of the list, and iterate as necessary.
+To list all assets, pass the empty string `""` for the `lowerbound` to start at the beginning of the list, and iterate as necessary.
 
 ```cpp
 vector<extended_asset_object> graphene::wallet::wallet_api::list_assets(
@@ -31,7 +31,9 @@ Creates a new user-issued or market-issued asset.
 
 Many options can be changed later using [`update_asset()`](asset-calls.md#update_asset)\`\`
 
-Right now this function is difficult to use because you must provide raw JSON data structures for the options objects, and those include prices and asset ids.
+{% hint style="warning" %}
+**Note**: Right now this function is difficult to use because you must provide raw JSON data structures for the options objects, and those include prices and asset ids.
+{% endhint %}
 
 ```cpp
 signed_transaction graphene::wallet::wallet_api::create_asset(
@@ -119,11 +121,10 @@ Update the set of feed-producing accounts for a BitAsset.
 BitAssets have price feeds selected by taking the median values of recommendations from a set of feed producers. This command is used to specify which accounts may produce feeds for a given BitAsset.
 
 ```cpp
-signed_transaction graphene::
-wallet
-::
-wallet_api
-::update_asset_feed_producers(string symbol, flat_set<string> new_feed_producers, bool broadcast = false)
+signed_transaction graphene::wallet::wallet_api::update_asset_feed_producers(
+    string symbol, 
+    flat_set<string> new_feed_producers, 
+    bool broadcast = false)
 ```
 
 {% tabs %}
@@ -138,44 +139,73 @@ The signed transaction updating the BitAsset’s feed producers
 {% endtab %}
 {% endtabs %}
 
-\`\`
-
-#### [publish\_asset\_feed](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id57)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::publish_asset_feed`\(string _publishing\_account_, string _symbol_, price\_feed _feed_, bool _broadcast_ = false\)  
-
+### publish\_asset\_feed
 
 Publishes a price feed for the named asset.
 
 Price feed providers use this command to publish their price feeds for market-issued assets. A price feed is used to tune the market for a particular market-issued asset. For each value in the feed, the median across all committee\_member feeds for that asset is calculated and the market for the asset is configured with the median of that value.
 
-The feed object in this command contains three prices: a call price limit, a short price limit, and a settlement price. The call limit price is structured as \(collateral asset\) / \(debt asset\) and the short limit price is structured as \(asset for sale\) / \(collateral asset\). Note that the asset IDs are opposite to eachother, so if we’re publishing a feed for USD, the call limit price will be CORE/USD and the short limit price will be USD/CORE. The settlement price may be flipped either direction, as long as it is a ratio between the market-issued asset and its collateral.
+The feed object in this command contains three prices: 
 
-**Return**
+* A call price limit
+* A short price limit,
+* A settlement price
 
-the signed transaction updating the price feed for the given asset**Parameters**
+The call limit price is structured as \(collateral asset\) / \(debt asset\) and the short limit price is structured as \(asset for sale\) / \(collateral asset\). 
 
-* `publishing_account`: the account publishing the price feed
-* `symbol`: the name or id of the asset whose feed we’re publishing
-* `feed`: the price\_feed object containing the three prices making up the feed
-* `broadcast`: true to broadcast the transaction on the network
+{% hint style="warning" %}
+**Note**:  The asset IDs are opposite to each other, so if we’re publishing a feed for USD, the call limit price will be CORE/USD and the short limit price will be USD/CORE. 
+{% endhint %}
 
-#### [issue\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id58)
+The settlement price may be flipped either direction, as long as it is a ratio between the market-issued asset and its collateral.
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::issue_asset`\(string _to\_account_, string _amount_, string _symbol_, string _memo_, bool _broadcast_ = false\)  
+```cpp
+signed_transaction graphene::wallet::wallet_api::publish_asset_feed(
+    string publishing_account, 
+    string symbol, 
+    price_feed feed, 
+    bool broadcast = false)
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
+* **`publishing_account`**: the account publishing the price feed
+* **`symbol`**: the name or id of the asset whose feed we’re publishing
+* **`feed`**: the price\_feed object containing the three prices making up the feed
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
+
+{% tab title="Return" %}
+The signed transaction updating the price feed for the given asset.
+{% endtab %}
+{% endtabs %}
+
+### issue\_asset
 
 Issue new shares of an asset.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::issue_asset(
+    string to_account, 
+    string amount, 
+    string symbol, 
+    string memo, 
+    bool broadcast = false)
+```
 
-the signed transaction issuing the new shares**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`to_account`**: the name or id of the account to receive the new shares
+* **`amount`**: the amount to issue, in nominal units
+* **`symbol`**: the ticker symbol of the asset to issue
+* **`memo`**: a memo to include in the transaction, readable by the recipient
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-* `to_account`: the name or id of the account to receive the new shares
-* `amount`: the amount to issue, in nominal units
-* `symbol`: the ticker symbol of the asset to issue
-* `memo`: a memo to include in the transaction, readable by the recipient
-* `broadcast`: true to broadcast the transaction on the network
+{% tab title="Return" %}
+The signed transaction issuing the new shares
+{% endtab %}
+{% endtabs %}
 
 #### [get\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id59)
 
