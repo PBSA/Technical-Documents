@@ -80,30 +80,21 @@ The signed transaction borrowing the asset
 Cancel an existing order.
 
 ```cpp
-signed_transaction graphene::
-wallet
-::
-wallet_api
-::cancel_order(object_id_type order_id, bool broadcast = false)
+signed_transaction graphene::wallet::wallet_api::cancel_order(
+    object_id_type order_id, 
+    bool broadcast = false)
 ```
 
 {% tabs %}
 {% tab title="Parameters" %}
-* `order_id`: the id of order to be cancelled
-* `broadcast`: true to broadcast the transaction on the network
+* **`order_id`**: the id of order to be cancelled
+* **`broadcast`**: true to broadcast the transaction on the network
 {% endtab %}
 
 {% tab title="Return" %}
-
+The signed transaction canceling the order
 {% endtab %}
 {% endtabs %}
-
-**Return**
-
-the signed transaction canceling the order**Parameters**
-
-* `order_id`: the id of order to be cancelled
-* `broadcast`: true to broadcast the transaction on the network
 
 #### [settle\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id46)
 
