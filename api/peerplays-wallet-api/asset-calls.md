@@ -207,32 +207,45 @@ The signed transaction issuing the new shares
 {% endtab %}
 {% endtabs %}
 
-#### [get\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id59)
+### get\_asset
 
-extended\_asset\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_asset`\(string _asset\_name\_or\_id_\)_const_  
+Returns information about the given asset.
 
+```cpp
+extended_asset_object graphene::wallet::wallet_api::get_asset(
+    string asset_name_or_id)const
+```
 
-Returns information about the given asset.**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`asset_name_or_id`**: the symbol or id of the asset in question
+{% endtab %}
 
-the information about the asset stored in the block chain**Parameters**
+{% tab title="Return" %}
+The information about the asset stored in the block chain.
+{% endtab %}
+{% endtabs %}
 
-* `asset_name_or_id`: the symbol or id of the asset in question
+### **get\_bitasset\_data**
 
-#### [get\_bitasset\_data](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id60)
+Returns the BitAsset-specific data for a given asset. Market-issued assets’s behaviour are determined both by their “BitAsset Data” and their basic asset data, as returned by [`get_asset()`](asset-calls.md#get_asset)\`\`
 
-asset\_bitasset\_data\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_bitasset_data`\(string _asset\_name\_or\_id_\)_const_  
+```cpp
+asset_bitasset_data_object graphene::wallet::wallet_api::get_bitasset_data(
+    string asset_name_or_id)const
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
+* **`asset_name_or_id`**: the symbol or id of the BitAsset in question
+{% endtab %}
 
-Returns the BitAsset-specific data for a given asset. Market-issued assets’s behavior are determined both by their “BitAsset Data” and their basic asset data, as returned by [`get_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aae54080626cf4e4b24572f4836e8dfdd).**Return**
+{% tab title="Return" %}
+The BitAsset-specific data for this asset
+{% endtab %}
+{% endtabs %}
 
-the BitAsset-specific data for this asset**Parameters**
-
-* `asset_name_or_id`: the symbol or id of the BitAsset in question
-
-#### [fund\_asset\_fee\_pool](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id61)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::fund_asset_fee_pool`\(string _from_, string _symbol_, string _amount_, bool _broadcast_ = false\)  
-
+### **fund\_asset\_fee\_pool**
 
 Pay into the fee pool for the given asset.
 
@@ -240,51 +253,91 @@ User-issued assets can optionally have a pool of the core asset which is automat
 
 This command allows anyone to deposit the core asset into this fee pool.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::fund_asset_fee_pool(
+    string from, 
+    string symbol, 
+    string amount, 
+    bool broadcast = false)
 
-the signed transaction funding the fee pool**Parameters**
+```
 
-* `from`: the name or id of the account sending the core asset
-* `symbol`: the name or id of the asset whose fee pool you wish to fund
-* `amount`: the amount of the core asset to deposit
-* `broadcast`: true to broadcast the transaction on the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`from`**: the name or id of the account sending the core asset
+* **`symbol`**: the name or id of the asset whose fee pool you wish to fund
+* **`amount`**: the amount of the core asset to deposit
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-#### [reserve\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id62)
+{% tab title="Return" %}
+**T**he signed transaction funding the fee pool.
+{% endtab %}
+{% endtabs %}
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::reserve_asset`\(string _from_, string _amount_, string _symbol_, bool _broadcast_ = false\)  
-
+### reserve\_asset
 
 Burns an amount of given asset.
 
-This command burns an amount of given asset to reduce the amount in circulation.**Note**
+This command burns an amount of given asset to reduce the amount in circulation.
 
-you cannot burn market-issued assets.**Return**
+{% hint style="warning" %}
+**Note: Y**ou can't burn market-issued assets.
+{% endhint %}
 
-the signed transaction burning the asset**Parameters**
+```cpp
+signed_transaction graphene::
+wallet
+::
+wallet_api
+::reserve_asset(string from, string amount, string symbol, bool broadcast = false)
+```
 
-* `from`: the account containing the asset you wish to burn
-* `amount`: the amount to burn, in nominal units
-* `symbol`: the name or id of the asset to burn
-* `broadcast`: true to broadcast the transaction on the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`from`**: the account containing the asset you wish to burn
+* **`amount`**: the amount to burn, in nominal units
+* **`symbol`**: the name or id of the asset to burn
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-#### [global\_settle\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id63)
+{% tab title="Return" %}
+The signed transaction burning the asset
+{% endtab %}
+{% endtabs %}
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::global_settle_asset`\(string _symbol_, price _settle\_price_, bool _broadcast_ = false\)  
-
+### global\_settle\_asset
 
 Forces a global settling of the given asset \(black swan or prediction markets\).
 
-In order to use this operation, asset\_to\_settle must have the global\_settle flag set
+In order to use this operation, `asset_to_settle` must have the `global_settle` flag set
 
-When this operation is executed all open margin positions are called at the settle price. A pool will be formed containing the collateral got from the margin positions. Users owning an amount of the asset may use [`settle_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a95a3baa4b0c83c1fce14827acbbddd62) to claim collateral instantly at the settle price from the pool. If this asset is used as backing for other bitassets, those bitassets will not be affected.
+When this operation is executed all open margin positions are called at the settle price. A pool will be formed containing the collateral got from the margin positions. Users owning an amount of the asset may use [`settle_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a95a3baa4b0c83c1fce14827acbbddd62) to claim collateral instantly at the settle price from the pool. 
 
-**Note**
+If this asset is used as backing for other BitAssets, those BitAssets will not be affected.
 
-this operation is used only by the asset issuer.**Return**
+{% hint style="warning" %}
+**Note: T**his operation is used only by the asset issuer.
+{% endhint %}
 
-the signed transaction settling the named asset**Parameters**
+```cpp
+signed_transaction graphene::
+wallet
+::
+wallet_api
+::global_settle_asset(string symbol, price settle_price, bool broadcast = false)
 
-* `symbol`: the name or id of the asset to globally settle
-* `settle_price`: the price at which to settle
-* `broadcast`: true to broadcast the transaction on the network
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* **`symbol`**: the name or id of the asset to globally settle
+* **`settle_price`**: the price at which to settle
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
+
+{% tab title="Return" %}
+The signed transaction settling the named asset
+{% endtab %}
+{% endtabs %}
 
