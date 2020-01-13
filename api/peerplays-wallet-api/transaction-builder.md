@@ -185,47 +185,68 @@ void graphene::wallet::wallet_api::remove_builder_transaction(
 {% endtab %}
 {% endtabs %}
 
-#### [serialize\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id109)
-
-string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::serialize_transaction`\(signed\_transaction _tx_\)_const_  
-
+### serialize\_transaction
 
 Converts a signed\_transaction in JSON form to its binary representation.
 
-**Return**
+```cpp
+string graphene::wallet::wallet_api::serialize_transaction(
+    signed_transaction tx)const
+```
 
-the binary form of the transaction. It will not be hex encoded, this returns a raw string that may have null characters embedded in it**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`tx`**: the transaction to serialize
+{% endtab %}
 
-* `tx`: the transaction to serialize
+{% tab title="Return" %}
+The binary form of the transaction. It will not be hex encoded, this returns a raw string that may have null characters embedded in it
+{% endtab %}
+{% endtabs %}
 
-#### [sign\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id110)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::sign_transaction`\(signed\_transaction _tx_, bool _broadcast_ = false\)  
-
+### **sign\_transaction**
 
 Signs a transaction.
 
-Given a fully-formed transaction that is only lacking signatures, this signs the transaction with the necessary keys and optionally broadcasts the transaction**Return**
+Given a fully-formed transaction that is only lacking signatures, this signs the transaction with the necessary keys and optionally broadcasts the transaction**.**
 
-the signed version of the transaction**Parameters**
+```cpp
+signed_transaction graphene::wallet::wallet_api::sign_transaction(
+    signed_transaction tx, 
+    bool broadcast = false)
+```
 
-* `tx`: the unsigned transaction
-* `broadcast`: true if you wish to broadcast the transaction
+{% tabs %}
+{% tab title="Parameters" %}
+* **`tx`**: the unsigned transaction
+* **`broadcast`**: true if you wish to broadcast the transaction
+{% endtab %}
 
-#### [get\_prototype\_operation](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id111)
+{% tab title="Return" %}
+The signed version of the transaction
+{% endtab %}
+{% endtabs %}
 
-operation `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_prototype_operation`\(string _operation\_type_\)  
-
+### get\_prototype\_operation
 
 Returns an uninitialized object representing a given blockchain operation.
 
 This returns a default-initialized object of the given type; it can be used during early development of the wallet when we don’t yet have custom commands for creating all of the operations the blockchain supports.
 
-Any operation the blockchain supports can be created using the transaction builder’s [`add_operation_to_builder_transaction()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ab5cd568be3fd1c283e0ed2c1fd3c5469) , but to do that from the CLI you need to know what the JSON form of the operation looks like. This will give you a template you can fill in. It’s better than nothing.
+Any operation the blockchain supports can be created using the transaction builder’s [`add_operation_to_builder_transaction()`](transaction-builder.md#add_operation_to_builder_transaction) , but to do that from the CLI you need to know what the JSON form of the operation looks like. This will give you a template you can fill in. It’s better than nothing.
 
-**Return**
+```cpp
+operation graphene::wallet::wallet_api::get_prototype_operation(
+    string operation_type)
+```
 
-a default-constructed operation of the given type**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`operation_type`**: the type of operation to return, must be one of the operations defined in `graphene/protocol/operations.hpp` \(e.g., “global\_parameters\_update\_operation”\)
+{% endtab %}
 
-* `operation_type`: the type of operation to return, must be one of the operations defined in `graphene/protocol/operations.hpp` \(e.g., “global\_parameters\_update\_operation”\)
+{% tab title="Return" %}
+A default-constructed operation of the given type.
+{% endtab %}
+{% endtabs %}
 
