@@ -73,28 +73,45 @@ Total fees.
 {% endtab %}
 {% endtabs %}
 
-#### [preview\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id104)
+### preview\_builder\_transaction
 
-transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::preview_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_\)  
+Show content of a transaction builder.
 
+```cpp
+transaction graphene::wallet::wallet_api::preview_builder_transaction(
+    transaction_handle_typehandle)
+```
 
-Show content of a transaction builder.**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`handle`**: handle of the transaction builder
+{% endtab %}
 
-a transaction**Parameters**
+{% tab title="Return" %}
+A transaction.
+{% endtab %}
+{% endtabs %}
 
-* `handle`: handle of the transaction builder
+### **sign\_builder\_transaction**
 
-#### [sign\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id105)
+Sign the transaction in a transaction builder and optionally broadcast to the network.
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::sign_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_transaction\_handle_, bool _broadcast_ = true\)  
+```cpp
+signed_transaction graphene::wallet::wallet_api::sign_builder_transaction(
+    transaction_handle_typetransaction_handle, 
+    bool broadcast = true)
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
+* **`transaction_handle`**: handle of the transaction builder
+* **`broadcast`**: whether to broadcast the signed transaction to the network
+{% endtab %}
 
-Sign the transaction in a transaction builder and optionally broadcast to the network.**Return**
-
-a signed transaction**Parameters**
-
-* `transaction_handle`: handle of the transaction builder
-* `broadcast`: whether to broadcast the signed transaction to the network
+{% tab title="Return" %}
+A signed transaction.
+{% endtab %}
+{% endtabs %}
 
 #### [propose\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id106)
 
