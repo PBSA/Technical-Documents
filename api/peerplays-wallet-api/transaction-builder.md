@@ -16,38 +16,62 @@ Handle of the new transaction builder.
 {% endtab %}
 {% endtabs %}
 
-#### [add\_operation\_to\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id101)
+### add\_operation\_to\_builder\_transaction
 
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::add_operation_to_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_transaction\_handle_, _const_ operation &_op_\)  
+Append a new operation to a transaction builder.
 
+```cpp
+void graphene::wallet::wallet_api::add_operation_to_builder_transaction(
+    transaction_handle_typetransaction_handle, 
+    const operation &op)
+```
 
-Append a new operation to a transaction builder.**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`transaction_handle`**: handle of the transaction builder
+* **`op`**: the operation in JSON format
+{% endtab %}
+{% endtabs %}
 
-* `transaction_handle`: handle of the transaction builder
-* `op`: the operation in JSON format
+### replace\_operation\_in\_builder\_transaction
 
-#### [replace\_operation\_in\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id102)
+Replace an operation in a transaction builder with a new operation.
 
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::replace_operation_in_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, unsigned _operation\_index_, _const_ operation &_new\_op_\)  
+```cpp
+void graphene::wallet::wallet_api::replace_operation_in_builder_transaction(
+    transaction_handle_typehandle, 
+    unsigned operation_index, 
+    const operation &new_op)
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
+* **`handle`**: handle of the transaction builder
+* **`operation_index`**: the index of the old operation in the builder to be replaced
+* **`new_op`**: the new operation in JSON format
+{% endtab %}
+{% endtabs %}
 
-Replace an operation in a transaction builder with a new operation.**Parameters**
+### set\_fees\_on\_builder\_transaction
 
-* `handle`: handle of the transaction builder
-* `operation_index`: the index of the old operation in the builder to be replaced
-* `new_op`: the new operation in JSON format
+Calculate and update fees for the operations in a transaction builder.
 
-#### [set\_fees\_on\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id103)
+```cpp
+asset graphene::wallet::wallet_api::set_fees_on_builder_transaction(
+    transaction_handle_typehandle, 
+    string fee_asset = GRAPHENE_SYMBOL)
+```
 
-asset `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::set_fees_on_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, string _fee\_asset_ = GRAPHENE\_SYMBOL\)  
+{% tabs %}
+{% tab title="Parameters" %}
+* **`handle`**: handle of the transaction builder
+* **`fee_asset`**: name or ID of an asset that to be used to pay fees
+{% endtab %}
 
-
-Calculate and update fees for the operations in a transaction builder.**Return**
-
-total fees**Parameters**
-
-* `handle`: handle of the transaction builder
-* `fee_asset`: name or ID of an asset that to be used to pay fees
+{% tab title="Return" %}
+Total fees.
+{% endtab %}
+{% endtabs %}
 
 #### [preview\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id104)
 
