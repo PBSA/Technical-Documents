@@ -105,36 +105,42 @@ The private key must match either an owner key or an active key for the named ac
 See also ****[`dump_private_keys()`](wallet-calls.md#dump_private_keys)\`\`
 
 ```cpp
-bool graphene::
-wallet
-::
-wallet_api
-::import_key(string account_name_or_id, string wif_key)
+bool graphene::wallet::wallet_api::import_key(
+    string account_name_or_id, 
+    string wif_key)
 ```
 
-  
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: the account owning the key
+* **`wif_key`**: the private key in WIF format
+{% endtab %}
 
+{% tab title="Return" %}
+_true_ if the key was imported
+{% endtab %}
+{% endtabs %}
 
-**Return**
-
-true if the key was imported**Parameters**
-
-* `account_name_or_id`: the account owning the key
-* `wif_key`: the private key in WIF format
-
-#### [import\_accounts](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id17)
-
-map&lt;string, bool&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::import_accounts`\(string _filename_, string _password_\)  
-
+### import\_accounts
 
 Imports accounts from a BitShares 0.x wallet file. Current wallet file must be unlocked to perform the import.
 
-**Return**
+```cpp
+map<string, bool> graphene::wallet::wallet_api::import_accounts(
+    string filename, 
+    string password)
+```
 
-a map containing the accounts found and whether imported**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`filename`**: the BitShares 0.x wallet file to import
+* **`password`**: the password to encrypt the BitShares 0.x wallet file
+{% endtab %}
 
-* `filename`: the BitShares 0.x wallet file to import
-* `password`: the password to encrypt the BitShares 0.x wallet file
+{% tab title="Return" %}
+A map containing the accounts found and whether imported.
+{% endtab %}
+{% endtabs %}
 
 #### [import\_account\_keys](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id18)
 
