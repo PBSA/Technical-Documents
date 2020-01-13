@@ -18,28 +18,31 @@ _true_ if the wallet is new.
 {% endtab %}
 {% endtabs %}
 
-#### [is\_locked](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id11)
-
-bool `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::is_locked`\(\)_const_  
-
+### is\_locked
 
 Checks whether the wallet is locked \(is unable to use its private keys\).
 
-This state can be changed by calling [`lock()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a5e7950c9039f0c59e1266d6732d94e09) or [`unlock()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ae16994a63cfdef1616b6b968117fd29d).**Return**
+This state can be changed by calling [`lock()`](wallet-calls.md#lock) or [`unlock()`](wallet-calls.md#unlock)\`\`
 
-true if the wallet is locked
+```cpp
+bool graphene::wallet::wallet_api::is_locked()const
+```
 
-#### [lock](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id12)
+{% tabs %}
+{% tab title="Return" %}
+True if the wallet is locked
+{% endtab %}
+{% endtabs %}
 
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::lock`\(\)  
-
+### lock
 
 Locks the wallet immediately.
 
-#### [unlock](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id13)
+```cpp
+void graphene::wallet::wallet_api::lock()
+```
 
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::unlock`\(string _password_\)  
-
+### unlock
 
 Unlocks the wallet.
 
@@ -47,14 +50,18 @@ The wallet remain unlocked until the `lock` is called or the program exits.
 
 When used in command line, if typed “unlock” without a password followed, the user will be prompted to input a password without echo.
 
-**Parameters**
+```cpp
+void graphene::wallet::wallet_api::unlock(
+    string password)
+```
 
-* `password`: the password previously set with [`set_password()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a2a5d174ec4fde8633b8e962fabc00804)
+{% tabs %}
+{% tab title="Parameters" %}
+* **`password`**: the password previously set with [`set_password()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a2a5d174ec4fde8633b8e962fabc00804)
+{% endtab %}
+{% endtabs %}
 
-#### [set\_password](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id14)
-
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::set_password`\(string _password_\)  
-
+### **set\_password**
 
 Sets a new password on the wallet.
 
@@ -62,33 +69,53 @@ The wallet must be either ‘new’ or ‘unlocked’ to execute this command.
 
 When used in command line, if typed “set\_password” without a password followed, the user will be prompted to input a password without echo.
 
-**Parameters**
+```cpp
+void graphene::wallet::wallet_api::set_password(
+    string password)
+```
 
-* `password`: a new password
+{% tabs %}
+{% tab title="Parameters" %}
+* **`password`**: a new password
+{% endtab %}
+{% endtabs %}
 
-#### [dump\_private\_keys](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id15)
-
-map&lt;public\_key\_type, string&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::dump_private_keys`\(\)  
-
+### **dump\_private\_keys**
 
 Dumps all private keys owned by the wallet.
 
-The keys are printed in WIF format. You can import these keys into another wallet using [`import_key()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a45e93f4a83143cb8ec6a09b67f91f4bb)**Return**
+The keys are printed in WIF format. You can import these keys into another wallet using [`import_key()`](wallet-calls.md#import_key)\`\`
 
-a map containing the private keys, indexed by their public key
+```cpp
+map<public_key_type, string> graphene::wallet::wallet_api::dump_private_keys()
+```
 
-#### [import\_key](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id16)
+{% tabs %}
+{% tab title="Return" %}
+A ****map containing the private keys, indexed by their public key
+{% endtab %}
+{% endtabs %}
 
-bool `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::import_key`\(string _account\_name\_or\_id_, string _wif\_key_\)  
-
+### import\_key
 
 Imports the private key for an existing account.
 
 The private key must match either an owner key or an active key for the named account.
 
-**See**
+See also ****[`dump_private_keys()`](wallet-calls.md#dump_private_keys)\`\`
 
-[dump\_private\_keys\(\)](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a98369ea6e10699066c7beb181996a219)**Return**
+```cpp
+bool graphene::
+wallet
+::
+wallet_api
+::import_key(string account_name_or_id, string wif_key)
+```
+
+  
+
+
+**Return**
 
 true if the key was imported**Parameters**
 
