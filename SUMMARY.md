@@ -60,6 +60,7 @@
   * [Network Nodes API](api/peerplays-core-api/network-nodes-api.md)
   * [Orders API](api/peerplays-core-api/orders-api.md)
 * [Bookie API](api/bookie-api.md)
+* [Market Maker API](api/market-maker-api.md)
 * [Wallet API](api/peerplays-wallet-api/README.md)
   * [Account Calls](api/peerplays-wallet-api/account-calls.md)
   * [Asset Calls](api/peerplays-wallet-api/asset-calls.md)
@@ -74,5 +75,4 @@
 * [SON API](api/son-api.md)
 * [Python Peerplays](api/python-peerplays.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
-* [Graphene Namespaces](api/graphene-namespaces.md)
 

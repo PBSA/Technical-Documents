@@ -1,15 +1,8 @@
 # Trading Calls
 
+## Trading Calls
 
-
-### 
-
-### [Trading Calls](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id42)
-
-#### [sell\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id43)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::sell_asset`\(string _seller\_account_, string _amount\_to\_sell_, string _symbol\_to\_sell_, string _min\_to\_receive_, string _symbol\_to\_receive_, uint32\_t _timeout\_sec_ = 0, bool _fill\_or\_kill_ = false, bool _broadcast_ = false\)  
-
+### sell\_asset
 
 Place a limit order attempting to sell one asset for another.
 
@@ -23,127 +16,205 @@ If either the selling asset or the receiving asset is whitelist restricted, the 
 
 Market orders are matched in the order they are included in the block chain.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::sell_asset(
+    string seller_account, 
+    string amount_to_sell, 
+    string symbol_to_sell, 
+    string min_to_receive, 
+    string symbol_to_receive, 
+    uint32_t timeout_sec = 0, 
+    bool fill_or_kill = false, 
+    bool broadcast = false)
+```
 
-the signed transaction selling the funds**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`seller_account`**: the account providing the asset being sold, and which will receive the proceeds of the sale.
+* **`amount_to_sell`**: the amount of the asset being sold to sell \(in nominal units\)
+* **`symbol_to_sell`**: the name or id of the asset to sell
+* **`min_to_receive`**: the minimum amount you are willing to receive in return for selling the entire amount\_to\_sell
+* **`symbol_to_receive`**: the name or id of the asset you wish to receive
+* **`timeout_sec`**: if the order does not fill immediately, this is the length of time the order will remain on the order books before it is cancelled and the un-spent funds are returned to the seller’s account
+* **`fill_or_kill`**: if true, the order will only be included in the blockchain if it is filled immediately; if false, an open order will be left on the books to fill any amount that cannot be filled immediately.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-* `seller_account`: the account providing the asset being sold, and which will receive the proceeds of the sale.
-* `amount_to_sell`: the amount of the asset being sold to sell \(in nominal units\)
-* `symbol_to_sell`: the name or id of the asset to sell
-* `min_to_receive`: the minimum amount you are willing to receive in return for selling the entire amount\_to\_sell
-* `symbol_to_receive`: the name or id of the asset you wish to receive
-* `timeout_sec`: if the order does not fill immediately, this is the length of time the order will remain on the order books before it is cancelled and the un-spent funds are returned to the seller’s account
-* `fill_or_kill`: if true, the order will only be included in the blockchain if it is filled immediately; if false, an open order will be left on the books to fill any amount that cannot be filled immediately.
-* `broadcast`: true to broadcast the transaction on the network
+{% tab title="Return" %}
+The signed transaction selling the funds.
+{% endtab %}
+{% endtabs %}
 
-#### [borrow\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id44)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::borrow_asset`\(string _borrower\_name_, string _amount\_to\_borrow_, string _asset\_symbol_, string _amount\_of\_collateral_, bool _broadcast_ = false\)  
-
+### borrow\_asset
 
 Borrow an asset or update the debt/collateral ratio for the loan.
 
-This is the first step in shorting an asset. Call [`sell_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1aeb0d71a0ed4c6d05a003e48c3a0cb6d3) to complete the short.
+This is the first step in shorting an asset. 
 
-**Return**
+Call [`sell_asset()`](trading-calls.md#sell_asset) to complete the short.
 
-the signed transaction borrowing the asset**Parameters**
+```cpp
+signed_transaction graphene::
+wallet
+::
+wallet_api
+::borrow_asset(string borrower_name, string amount_to_borrow, string asset_symbol, string amount_of_collateral, bool broadcast = false)
+```
 
-* `borrower_name`: the name or id of the account associated with the transaction.
-* `amount_to_borrow`: the amount of the asset being borrowed. Make this value negative to pay back debt.
-* `asset_symbol`: the symbol or id of the asset being borrowed.
-* `amount_of_collateral`: the amount of the backing asset to add to your collateral position. Make this negative to claim back some of your collateral. The backing asset is defined in the `bitasset_options` for the asset being borrowed.
-* `broadcast`: true to broadcast the transaction on the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`borrower_name`**: the name or id of the account associated with the transaction.
+* **`amount_to_borrow`**: the amount of the asset being borrowed. Make this value negative to pay back debt.
+* **`asset_symbol`**: the symbol or id of the asset being borrowed.
+* **`amount_of_collateral`**: the amount of the backing asset to add to your collateral position. Make this negative to claim back some of your collateral. The backing asset is defined in the **`bitasset_options`** for the asset being borrowed.
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-#### [cancel\_order](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id45)
+{% tab title="Return" %}
+The signed transaction borrowing the asset
+{% endtab %}
+{% endtabs %}
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::cancel_order`\(object\_id\_type _order\_id_, bool _broadcast_ = false\)  
+### cancel\_order
 
+Cancel an existing order.
 
-Cancel an existing order
+```cpp
+signed_transaction graphene::wallet::wallet_api::cancel_order(
+    object_id_type order_id, 
+    bool broadcast = false)
+```
 
-**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`order_id`**: the id of order to be cancelled
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-the signed transaction canceling the order**Parameters**
+{% tab title="Return" %}
+The signed transaction canceling the order
+{% endtab %}
+{% endtabs %}
 
-* `order_id`: the id of order to be cancelled
-* `broadcast`: true to broadcast the transaction on the network
-
-#### [settle\_asset](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id46)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::settle_asset`\(string _account\_to\_settle_, string _amount\_to\_settle_, string _symbol_, bool _broadcast_ = false\)  
-
+### settle\_asset
 
 Schedules a market-issued asset for automatic settlement.
 
-Holders of market-issued assests may request a forced settlement for some amount of their asset. This means that the specified sum will be locked by the chain and held for the settlement period, after which time the chain will choose a margin posision holder and buy the settled asset using the margin’s collateral. The price of this sale will be based on the feed price for the market-issued asset being settled. The exact settlement price will be the feed price at the time of settlement with an offset in favor of the margin position, where the offset is a blockchain parameter set in the global\_property\_object.
+Holders of market-issued assets may request a forced settlement for some amount of their asset. This means that the specified sum will be locked by the chain and held for the settlement period, after which time the chain will choose a margin position holder and buy the settled asset using the margin’s collateral.
 
-**Return**
+The price of this sale will be based on the feed price for the market-issued asset being settled. The exact settlement price will be the feed price at the time of settlement with an offset in favour of the margin position, where the offset is a blockchain parameter set in the global\_property\_object.
 
-the signed transaction settling the named asset**Parameters**
+```cpp
+signed_transaction graphene::wallet::wallet_api::settle_asset(
+    string account_to_settle, 
+    string amount_to_settle, 
+    string symbol, 
+    bool broadcast = false)
+```
 
-* `account_to_settle`: the name or id of the account owning the asset
-* `amount_to_settle`: the amount of the named asset to schedule for settlement
-* `symbol`: the name or id of the asset to settle
-* `broadcast`: true to broadcast the transaction on the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_to_settle`**: the name or id of the account owning the asset
+* **`amount_to_settle`**: the amount of the named asset to schedule for settlement
+* **`symbol`**: the name or id of the asset to settle
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
 
-#### [get\_market\_history](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id47)
+{% tab title="Return" %}
+The signed transaction settling the named asset.
+{% endtab %}
+{% endtabs %}
 
-vector&lt;bucket\_object&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_market_history`\(string _symbol_, string _symbol2_, uint32\_t _bucket_, fc::time\_point\_sec _start_, fc::time\_point\_sec _end_\)_const_  
-
+### get\_market\_history
 
 Get OHLCV data of a trading pair in a time range.
 
-**Return**
+```cpp
+vector<bucket_object> graphene::wallet::wallet_api::get_market_history(
+    string symbol, 
+    string symbol2, 
+    uint32_t bucket, 
+    fc::time_point_sec start, 
+    fc::time_point_sec end)const
+```
 
-A list of OHLCV data, in “least recent first” order.**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`symbol`**: name or ID of the base asset
+* **`symbol2`**: name or ID of the quote asset
+* **`bucket`**: length of each time bucket in seconds.
+* **`start`**: the start of a time range, E.G. “2018-01-01T00:00:00”
+* **`end`**: the end of the time range
+{% endtab %}
 
-* `symbol`: name or ID of the base asset
-* `symbol2`: name or ID of the quote asset
-* `bucket`: length of each time bucket in seconds.
-* `start`: the start of a time range, E.G. “2018-01-01T00:00:00”
-* `end`: the end of the time range
+{% tab title="Return" %}
+A list of OHLCV data, in “least recent first” order.
+{% endtab %}
+{% endtabs %}
 
-#### [get\_limit\_orders](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id48)
-
-vector&lt;limit\_order\_object&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_limit_orders`\(string _a_, string _b_, uint32\_t _limit_\)_const_  
-
+### get\_limit\_orders
 
 Get limit orders in a given market.
 
-**Return**
+```cpp
+vector<limit_order_object> graphene::wallet::wallet_api::get_limit_orders(
+    string a, 
+    string b, 
+    uint32_t limit)const
+```
 
-The limit orders, ordered from least price to greatest**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: symbol or ID of asset being sold
+* **`b`**: symbol or ID of asset being purchased
+* **`limit`**: Maximum number of orders to retrieve
+{% endtab %}
 
-* `a`: symbol or ID of asset being sold
-* `b`: symbol or ID of asset being purchased
-* `limit`: Maximum number of orders to retrieve
+{% tab title="Return" %}
+The limit orders, ordered from least price to greatest.
+{% endtab %}
+{% endtabs %}
 
-#### [get\_call\_orders](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id49)
-
-vector&lt;call\_order\_object&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_call_orders`\(string _a_, uint32\_t _limit_\)_const_  
-
+### get\_call\_orders
 
 Get call orders \(aka margin positions\) for a given asset.
 
-**Return**
+```cpp
+vector<call_order_object> graphene::wallet::wallet_api::get_call_orders(
+    string a, 
+    uint32_t limit)const
+```
 
-The call orders, ordered from earliest to be called to latest**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: symbol name or ID of the debt asset
+* **`limit`**: Maximum number of orders to retrieve
+{% endtab %}
 
-* `a`: symbol name or ID of the debt asset
-* `limit`: Maximum number of orders to retrieve
+{% tab title="Return" %}
+The call orders, ordered from earliest to be called to latest
+{% endtab %}
+{% endtabs %}
 
-#### [get\_settle\_orders](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id50)
-
-vector&lt;force\_settlement\_object&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_settle_orders`\(string _a_, uint32\_t _limit_\)_const_  
-
+### get\_settle\_orders
 
 Get forced settlement orders in a given asset.
 
-**Return**
+```cpp
+vector<force_settlement_object> graphene::wallet::wallet_api::get_settle_orders(
+    string a, 
+    uint32_t limit)const
 
-The settle orders, ordered from earliest settlement date to latest**Parameters**
+```
 
-* `a`: Symbol or ID of asset being settled
-* `limit`: Maximum number of orders to retrieve
+{% tabs %}
+{% tab title="Parameters" %}
+* **`a`**: Symbol or ID of asset being settled
+* **`limit`**: Maximum number of orders to retrieve
+{% endtab %}
+
+{% tab title="Return" %}
+The settle orders, ordered from earliest settlement date to latest
+{% endtab %}
+{% endtabs %}
 

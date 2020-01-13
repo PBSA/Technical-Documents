@@ -1,55 +1,96 @@
 # General Calls
 
-### [General Calls](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id2)
+## General Calls
 
-#### [help](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id3)
-
-string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::help`\(\)_const_  
-
+### help
 
 Returns a list of all commands supported by the wallet API.
 
-This lists each command, along with its arguments and return types. For more detailed help on a single command, use [`gethelp()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a21d6b9297891d2a7317bfc3be9e6a917)
+This lists each command, along with its arguments and return types. For more detailed help on a single command, use [`gethelp()`](general-calls.md#gethelp)\`\`
 
-**Return**
+```cpp
+string graphene::wallet::wallet_api::help()const
+```
 
-a multi-line string suitable for displaying on a terminal
+{% tabs %}
+{% tab title="Return" %}
+A multi-line string suitable for displaying on a terminal.
+{% endtab %}
+{% endtabs %}
 
-#### [gethelp](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id4)
+### gethelp
 
-string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::gethelp`\(_const_ string &_method_\)_const_  
+Returns detailed help on a single API command.
 
+```cpp
+string graphene::wallet::wallet_api::gethelp(
+    const string &method)const
+```
 
-Returns detailed help on a single API command.**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`method`**: the name of the API command you want help with
+{% endtab %}
 
-a multi-line string suitable for displaying on a terminal**Parameters**
+{% tab title="Return" %}
+A multi-line string suitable for displaying on a terminal.
+{% endtab %}
+{% endtabs %}
 
-* `method`: the name of the API command you want help with
+### info
 
-#### [info](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id5)
+Returns info about head block, chain\_id, maintenance, participation, current active witnesses and committee members.
 
-variant `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::info`\(\)  
+```cpp
+variant graphene::wallet::wallet_api::info()
+```
 
+{% tabs %}
+{% tab title="Return" %}
+Runtime info about the blockchain
+{% endtab %}
+{% endtabs %}
 
-Returns info about head block, chain\_id, maintenance, participation, current active witnesses and committee members.**Return**
+### about
 
-runtime info about the blockchain
+Returns info such as client version, git version of graphene/fc, version of boost, openssl etc.
 
-#### [about](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id6)
+```cpp
+variant_object graphene::
+wallet
+::
+wallet_api
+::about()const
+```
 
-variant\_object `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::about`\(\)_const_  
+{% tabs %}
+{% tab title="Return" %}
+Compile time info and client and dependencies versions.
+{% endtab %}
+{% endtabs %}
 
+#### network\_add\_nodes
 
-Returns info such as client version, git version of graphene/fc, version of boost, openssl.**Return**
+```cpp
+void graphene::wallet::wallet_api::network_add_nodes(
+    const vector<string> &nodes)
+```
 
-compile time info and client and dependencies versions
+{% tabs %}
+{% tab title="Parameters" %}
+**`nodes`**: Nodes to be added.  
+{% endtab %}
+{% endtabs %}
 
-#### [network\_add\_nodes](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id7)
+### network\_get\_connected\_peers
 
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::network_add_nodes`\(_const_ vector&lt;string&gt; &_nodes_\)  
+```cpp
+vector<variant> graphene::wallet::wallet_api::network_get_connected_peers()
+```
 
-
-#### [network\_get\_connected\_peers](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id8)
-
-vector&lt;variant&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::network_get_connected_peers`\(\)
+{% tabs %}
+{% tab title="Return" %}
+List of connected peers.
+{% endtab %}
+{% endtabs %}
 

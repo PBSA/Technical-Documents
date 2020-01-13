@@ -286,18 +286,22 @@ The brain key in its normalized form.
 {% endtab %}
 {% endtabs %}
 
-\*\*\*\*
-
-* \*\*\*\*[**save\_wallet\_file**](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id25)\*\*\*\*
-
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::save_wallet_file`\(string _wallet\_filename_ = ""\)  
-
+### **save\_wallet\_file**
 
 Saves the current wallet to the given filename.
 
-**Warning**
+{% hint style="danger" %}
+**Important:** This does not change the wallet filename that will be used for future writes, so think of this function as ‘Save a Copy As…’ instead of ‘Save As…’. Use `set_wallet_filename()` to make the filename persist.
+{% endhint %}
 
-This does not change the wallet filename that will be used for future writes, so think of this function as ‘Save a Copy As…’ instead of ‘Save As…’. Use [`set_wallet_filename()`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#classgraphene_1_1wallet_1_1wallet__api_1aa5804e1ee29ff8f2c3bcc668ad2bfbcd) to make the filename persist.**Parameters**
+```cpp
+void graphene::wallet::wallet_api::save_wallet_file(
+    string wallet_filename = "")
+```
 
-* `wallet_filename`: the filename of the new wallet JSON file to create or overwrite. If `wallet_filename` is empty, save to the current filename.
+{% tabs %}
+{% tab title="Parameters" %}
+* **`wallet_filename`**: the filename of the new wallet JSON file to create or overwrite. If `wallet_filename` is empty, save to the current filename.
+{% endtab %}
+{% endtabs %}
 
