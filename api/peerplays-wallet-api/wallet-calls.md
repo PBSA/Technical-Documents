@@ -14,7 +14,7 @@ bool graphene::wallet::wallet_api::is_new()const
 
 {% tabs %}
 {% tab title="Return" %}
-_true_ if the wallet is new.
+_True_ if the wallet is new.
 {% endtab %}
 {% endtabs %}
 
@@ -30,7 +30,7 @@ bool graphene::wallet::wallet_api::is_locked()const
 
 {% tabs %}
 {% tab title="Return" %}
-True if the wallet is locked
+_True_ if the wallet is locked
 {% endtab %}
 {% endtabs %}
 
@@ -186,68 +186,109 @@ vector<signed_transaction> graphene::wallet::wallet_api::import_balance(
 {% endtab %}
 {% endtabs %}
 
-#### [suggest\_brain\_key](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id20)
+### suggest\_brain\_key
 
-brain\_key\_info `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::suggest_brain_key`\(\)_const_  
+Suggests a safe brain key to use for creating your account. [`create_account_with_brain_key()`](account-calls.md#create_account_with_brain_key) requires you to specify a ‘brain key’, a long passphrase that provides enough entropy to generate cryptographic keys. 
 
+This function will suggest a suitably random string that should be easy to write down \(and, with effort, memorize\).
 
-Suggests a safe brain key to use for creating your account. [`create_account_with_brain_key()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ac27928f7ca6db74e0ec4aee3ff0c545e) requires you to specify a ‘brain key’, a long passphrase that provides enough entropy to generate cyrptographic keys. This function will suggest a suitably random string that should be easy to write down \(and, with effort, memorize\).**Return**
+```cpp
+brain_key_info graphene::wallet::wallet_api::suggest_brain_key()const
+```
 
-a suggested brain\_key
+{% tabs %}
+{% tab title="Return" %}
+A suggested brain\_key
+{% endtab %}
+{% endtabs %}
 
-#### [get\_transaction\_id](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id21)
+### get\_transaction\_id
 
-transaction\_id\_type `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_transaction_id`\(_const_ signed\_transaction &_trx_\)_const_  
+This method is used to convert a JSON transaction to its transacting ID.
 
+```cpp
+transaction_id_type graphene::wallet::wallet_api::get_transaction_id(
+    const signed_transaction &trx)const
+```
 
-This method is used to convert a JSON transaction to its transactin ID.**Return**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`trx`**: a JSON transaction
+{% endtab %}
 
-the ID \(hash\) of the transaction**Parameters**
+{% tab title="Return" %}
+The ID \(hash\) of the transaction.
+{% endtab %}
+{% endtabs %}
 
-* `trx`: a JSON transaction
+### **get\_private\_key**
 
-#### [get\_private\_key](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id22)
+Get the WIF private key corresponding to a public key. The private key must already be in the wallet.
 
-string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_private_key`\(public\_key\_type _pubkey_\)_const_  
+```cpp
+string graphene::wallet::wallet_api::get_private_key(
+    public_key_type pubkey)const
+```
 
+{% tabs %}
+{% tab title="Parameters" %}
+* **`pubkey`**: a public key in Base58 format
+{% endtab %}
 
-Get the WIF private key corresponding to a public key. The private key must already be in the wallet.**Return**
+{% tab title="Return" %}
+**T**he WIF private key
+{% endtab %}
+{% endtabs %}
 
-the WIF private key**Parameters**
-
-* `pubkey`: a public key in Base58 format
-
-#### [load\_wallet\_file](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id23)
-
-bool `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::load_wallet_file`\(string _wallet\_filename_ = ""\)  
-
+### **load\_wallet\_file**
 
 Loads a specified Graphene wallet.
 
 The current wallet is closed before the new wallet is loaded.
 
-**Warning**
+{% hint style="danger" %}
+**Important:** This does not change the filename that will be used for future wallet writes, so this may cause you to overwrite your original wallet unless you also call `set_wallet_filename()`
+{% endhint %}
 
-This does not change the filename that will be used for future wallet writes, so this may cause you to overwrite your original wallet unless you also call [`set_wallet_filename()`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#classgraphene_1_1wallet_1_1wallet__api_1aa5804e1ee29ff8f2c3bcc668ad2bfbcd)**Return**
+```cpp
+bool graphene::wallet::wallet_api::load_wallet_file(
+    string wallet_filename = "")
+```
 
-true if the specified wallet is loaded**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`wallet_filename`**: the filename of the wallet JSON file to load. If `wallet_filename` is empty, it reloads the existing wallet file.
+{% endtab %}
 
-* `wallet_filename`: the filename of the wallet JSON file to load. If `wallet_filename` is empty, it reloads the existing wallet file
+{% tab title="Return" %}
+_True_ if the specified wallet is loaded.
+{% endtab %}
+{% endtabs %}
 
-#### [normalize\_brain\_key](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id24)
-
-string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::normalize_brain_key`\(string _s_\)_const_  
-
+### normalize\_brain\_key
 
 Transforms a brain key to reduce the chance of errors when re-entering the key from memory.
 
-This takes a user-supplied brain key and normalizes it into the form used for generating private keys. In particular, this upper-cases all ASCII characters and collapses multiple spaces into one.**Return**
+This takes a user-supplied brain key and normalizes it into the form used for generating private keys. In particular, this upper-cases all ASCII characters and collapses multiple spaces into one.
 
-the brain key in its normalized form**Parameters**
+```cpp
+string graphene::wallet::wallet_api::normalize_brain_key(
+    string s)const
+```
 
-* `s`: the brain key as supplied by the user
+{% tabs %}
+{% tab title="Parameters" %}
+* **`s`**: the brain key as supplied by the user
+{% endtab %}
 
-#### [save\_wallet\_file](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id25)
+{% tab title="Return" %}
+The brain key in its normalized form.
+{% endtab %}
+{% endtabs %}
+
+\*\*\*\*
+
+* \*\*\*\*[**save\_wallet\_file**](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id25)\*\*\*\*
 
 void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::save_wallet_file`\(string _wallet\_filename_ = ""\)  
 
