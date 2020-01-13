@@ -1,252 +1,157 @@
 # Transaction Builder
 
-## Transaction Builder
+### [Transaction Builder](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id99)
 
-### begin\_builder\_transaction
+#### [begin\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id100)
 
-Create a new transaction builder.
+[transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)`graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::begin_builder_transaction`\(\)  
 
-```cpp
-transaction_handle_typegraphene::wallet::wallet_api::begin_builder_transaction()
-```
 
-{% tabs %}
-{% tab title="Return" %}
-Handle of the new transaction builder.
-{% endtab %}
-{% endtabs %}
+Create a new transaction builder.**Return**
 
-### add\_operation\_to\_builder\_transaction
+handle of the new transaction builder
 
-Append a new operation to a transaction builder.
+#### [add\_operation\_to\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id101)
 
-```cpp
-void graphene::wallet::wallet_api::add_operation_to_builder_transaction(
-    transaction_handle_typetransaction_handle, 
-    const operation &op)
-```
+void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::add_operation_to_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_transaction\_handle_, _const_ operation &_op_\)  
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`transaction_handle`**: handle of the transaction builder
-* **`op`**: the operation in JSON format
-{% endtab %}
-{% endtabs %}
 
-### replace\_operation\_in\_builder\_transaction
+Append a new operation to a transaction builder.**Parameters**
 
-Replace an operation in a transaction builder with a new operation.
+* `transaction_handle`: handle of the transaction builder
+* `op`: the operation in JSON format
 
-```cpp
-void graphene::wallet::wallet_api::replace_operation_in_builder_transaction(
-    transaction_handle_typehandle, 
-    unsigned operation_index, 
-    const operation &new_op)
-```
+#### [replace\_operation\_in\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id102)
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`handle`**: handle of the transaction builder
-* **`operation_index`**: the index of the old operation in the builder to be replaced
-* **`new_op`**: the new operation in JSON format
-{% endtab %}
-{% endtabs %}
+void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::replace_operation_in_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, unsigned _operation\_index_, _const_ operation &_new\_op_\)  
 
-### set\_fees\_on\_builder\_transaction
 
-Calculate and update fees for the operations in a transaction builder.
+Replace an operation in a transaction builder with a new operation.**Parameters**
 
-```cpp
-asset graphene::wallet::wallet_api::set_fees_on_builder_transaction(
-    transaction_handle_typehandle, 
-    string fee_asset = GRAPHENE_SYMBOL)
-```
+* `handle`: handle of the transaction builder
+* `operation_index`: the index of the old operation in the builder to be replaced
+* `new_op`: the new operation in JSON format
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`handle`**: handle of the transaction builder
-* **`fee_asset`**: name or ID of an asset that to be used to pay fees
-{% endtab %}
+#### [set\_fees\_on\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id103)
 
-{% tab title="Return" %}
-Total fees.
-{% endtab %}
-{% endtabs %}
+asset `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::set_fees_on_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, string _fee\_asset_ = GRAPHENE\_SYMBOL\)  
 
-### preview\_builder\_transaction
 
-Show content of a transaction builder.
+Calculate and update fees for the operations in a transaction builder.**Return**
 
-```cpp
-transaction graphene::wallet::wallet_api::preview_builder_transaction(
-    transaction_handle_typehandle)
-```
+total fees**Parameters**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`handle`**: handle of the transaction builder
-{% endtab %}
+* `handle`: handle of the transaction builder
+* `fee_asset`: name or ID of an asset that to be used to pay fees
 
-{% tab title="Return" %}
-A transaction.
-{% endtab %}
-{% endtabs %}
+#### [preview\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id104)
 
-### **sign\_builder\_transaction**
+transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::preview_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_\)  
 
-Sign the transaction in a transaction builder and optionally broadcast to the network.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::sign_builder_transaction(
-    transaction_handle_typetransaction_handle, 
-    bool broadcast = true)
-```
+Show content of a transaction builder.**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`transaction_handle`**: handle of the transaction builder
-* **`broadcast`**: whether to broadcast the signed transaction to the network
-{% endtab %}
+a transaction**Parameters**
 
-{% tab title="Return" %}
-A signed transaction.
-{% endtab %}
-{% endtabs %}
+* `handle`: handle of the transaction builder
 
-### propose\_builder\_transaction
+#### [sign\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id105)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::sign_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_transaction\_handle_, bool _broadcast_ = true\)  
+
+
+Sign the transaction in a transaction builder and optionally broadcast to the network.**Return**
+
+a signed transaction**Parameters**
+
+* `transaction_handle`: handle of the transaction builder
+* `broadcast`: whether to broadcast the signed transaction to the network
+
+#### [propose\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id106)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::propose_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, time\_point\_sec _expiration_ = time\_point::now\(\) + fc::minutes\(1\), uint32\_t _review\_period\_seconds_ = 0, bool _broadcast_ = true\)  
+
 
 Create a proposal containing the operations in a transaction builder \(create a new proposal\_create operation, then replace the transaction builder with the new operation\), then sign the transaction and optionally broadcast to the network.
 
-{% hint style="warning" %}
-**Note**: this command is not effective because you're unable to specify a proposer. It will be deprecated in a future release. Use [`propose_builder_transaction2()`](transaction-builder.md#propose_builder_transaction2) instead.
-{% endhint %}
+Note: this command is buggy because unable to specify proposer. It will be deprecated in a future release. Please use [`propose_builder_transaction2()`](https://dev.bitshares.works/en/master/bts_guide/tutorials/propose-transaction.html#classgraphene_1_1wallet_1_1wallet__api_1ad33bc4056cefd13bca5d74f4cc0c017f) instead.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::propose_builder_transaction(
-    transaction_handle_typehandle, 
-    time_point_sec expiration = time_point::now() + fc::minutes(1), 
-    uint32_t review_period_seconds = 0, 
-    bool broadcast = true)
+**Return**
 
-```
+a signed transaction**Parameters**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`handle`**: handle of the transaction builder
-* **`expiration`**: when the proposal will expire
-* **`review_period_seconds`**: review period of the proposal in seconds
-* **`broadcast`**: whether to broadcast the signed transaction to the network
-{% endtab %}
+* `handle`: handle of the transaction builder
+* `expiration`: when the proposal will expire
+* `review_period_seconds`: review period of the proposal in seconds
+* `broadcast`: whether to broadcast the signed transaction to the network
 
-{% tab title="Return" %}
-A signed transaction.
-{% endtab %}
-{% endtabs %}
+#### [propose\_builder\_transaction2](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id107)
 
-### propose\_builder\_transaction2
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::propose_builder_transaction2`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, string _account\_name\_or\_id_, time\_point\_sec _expiration_ = time\_point::now\(\) + fc::minutes\(1\), uint32\_t _review\_period\_seconds_ = 0, bool _broadcast_ = true\)  
+
 
 Create a proposal containing the operations in a transaction builder \(create a new proposal\_create operation, then replace the transaction builder with the new operation\), then sign the transaction and optionally broadcast to the network.
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::propose_builder_transaction2(
-    transaction_handle_typehandle, 
-    string account_name_or_id, 
-    time_point_sec expiration = time_point::now() + fc::minutes(1), 
-    uint32_t review_period_seconds = 0, 
-    bool broadcast = true)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`handle`**: handle of the transaction builder
-* **`account_name_or_id`**: name or ID of the account who would pay fees for creating the proposal
-* **`expiration`**: when the proposal will expire
-* **`review_period_seconds`**: review period of the proposal in seconds
-* **`broadcast`**: whether to broadcast the signed transaction to the network
-{% endtab %}
+a signed transaction**Parameters**
 
-{% tab title="Return" %}
-A signed transaction.
-{% endtab %}
-{% endtabs %}
+* `handle`: handle of the transaction builder
+* `account_name_or_id`: name or ID of the account who would pay fees for creating the proposal
+* `expiration`: when the proposal will expire
+* `review_period_seconds`: review period of the proposal in seconds
+* `broadcast`: whether to broadcast the signed transaction to the network
 
-### remove\_builder\_transaction
+#### [remove\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id108)
 
-Destroy a transaction builder.
+void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::remove_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_\)  
 
-```cpp
-void graphene::wallet::wallet_api::remove_builder_transaction(
-    transaction_handle_typehandle)
-```
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`handle`**: handle of the transaction builder
-{% endtab %}
-{% endtabs %}
+Destroy a transaction builder.**Parameters**
 
-### serialize\_transaction
+* `handle`: handle of the transaction builder
+
+#### [serialize\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id109)
+
+string `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::serialize_transaction`\(signed\_transaction _tx_\)_const_  
+
 
 Converts a signed\_transaction in JSON form to its binary representation.
 
-```cpp
-string graphene::wallet::wallet_api::serialize_transaction(
-    signed_transaction tx)const
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`tx`**: the transaction to serialize
-{% endtab %}
+the binary form of the transaction. It will not be hex encoded, this returns a raw string that may have null characters embedded in it**Parameters**
 
-{% tab title="Return" %}
-The binary form of the transaction. It will not be hex encoded, this returns a raw string that may have null characters embedded in it
-{% endtab %}
-{% endtabs %}
+* `tx`: the transaction to serialize
 
-### **sign\_transaction**
+#### [sign\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id110)
+
+signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::sign_transaction`\(signed\_transaction _tx_, bool _broadcast_ = false\)  
+
 
 Signs a transaction.
 
-Given a fully-formed transaction that is only lacking signatures, this signs the transaction with the necessary keys and optionally broadcasts the transaction**.**
+Given a fully-formed transaction that is only lacking signatures, this signs the transaction with the necessary keys and optionally broadcasts the transaction**Return**
 
-```cpp
-signed_transaction graphene::wallet::wallet_api::sign_transaction(
-    signed_transaction tx, 
-    bool broadcast = false)
-```
+the signed version of the transaction**Parameters**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`tx`**: the unsigned transaction
-* **`broadcast`**: true if you wish to broadcast the transaction
-{% endtab %}
+* `tx`: the unsigned transaction
+* `broadcast`: true if you wish to broadcast the transaction
 
-{% tab title="Return" %}
-The signed version of the transaction
-{% endtab %}
-{% endtabs %}
+#### [get\_prototype\_operation](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id111)
 
-### get\_prototype\_operation
+operation `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::get_prototype_operation`\(string _operation\_type_\)  
+
 
 Returns an uninitialized object representing a given blockchain operation.
 
 This returns a default-initialized object of the given type; it can be used during early development of the wallet when we don’t yet have custom commands for creating all of the operations the blockchain supports.
 
-Any operation the blockchain supports can be created using the transaction builder’s [`add_operation_to_builder_transaction()`](transaction-builder.md#add_operation_to_builder_transaction) , but to do that from the CLI you need to know what the JSON form of the operation looks like. This will give you a template you can fill in. It’s better than nothing.
+Any operation the blockchain supports can be created using the transaction builder’s [`add_operation_to_builder_transaction()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1ab5cd568be3fd1c283e0ed2c1fd3c5469) , but to do that from the CLI you need to know what the JSON form of the operation looks like. This will give you a template you can fill in. It’s better than nothing.
 
-```cpp
-operation graphene::wallet::wallet_api::get_prototype_operation(
-    string operation_type)
-```
+**Return**
 
-{% tabs %}
-{% tab title="Parameters" %}
-* **`operation_type`**: the type of operation to return, must be one of the operations defined in `graphene/protocol/operations.hpp` \(e.g., “global\_parameters\_update\_operation”\)
-{% endtab %}
+a default-constructed operation of the given type**Parameters**
 
-{% tab title="Return" %}
-A default-constructed operation of the given type.
-{% endtab %}
-{% endtabs %}
+* `operation_type`: the type of operation to return, must be one of the operations defined in `graphene/protocol/operations.hpp` \(e.g., “global\_parameters\_update\_operation”\)
 
