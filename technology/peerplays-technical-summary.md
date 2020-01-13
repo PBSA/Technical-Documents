@@ -87,7 +87,7 @@ We'll now look at each of the three subdirectories in greater detail.
 
 ### The Peerplays Libraries
 
-Peerplays is implemented in several `libraries` within the libraries subdirectory of the repository. A high level description of each of the libraries is as follows:
+Peerplays is implemented in several `libraries` within the libraries sub directory of the repository. A high level description of each of the libraries is as follows:
 
 * `app` contains the `application` class, which implements the heart of a Peerplays node
 * `chain` contains the bulk of the blockchain implementation, including all Peerplays specific functionality
