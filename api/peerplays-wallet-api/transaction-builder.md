@@ -1,15 +1,20 @@
 # Transaction Builder
 
-### [Transaction Builder](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id99)
+## Transaction Builder
 
-#### [begin\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id100)
+### begin\_builder\_transaction
 
-[transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)`graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::begin_builder_transaction`\(\)  
+Create a new transaction builder.
 
+```cpp
+transaction_handle_typegraphene::wallet::wallet_api::begin_builder_transaction()
+```
 
-Create a new transaction builder.**Return**
-
-handle of the new transaction builder
+{% tabs %}
+{% tab title="Return" %}
+Handle of the new transaction builder.
+{% endtab %}
+{% endtabs %}
 
 #### [add\_operation\_to\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id101)
 
