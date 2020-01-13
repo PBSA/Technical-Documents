@@ -142,34 +142,49 @@ A map containing the accounts found and whether imported.
 {% endtab %}
 {% endtabs %}
 
-#### [import\_account\_keys](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id18)
-
-bool `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::import_account_keys`\(string _filename_, string _password_, string _src\_account\_name_, string _dest\_account\_name_\)  
-
+### import\_account\_keys
 
 Imports from a BitShares 0.x wallet file, find keys that were bound to a given account name on the BitShares 0.x chain, rebind them to an account name on the 2.0 chain. Current wallet file must be unlocked to perform the import.
 
-**Return**
+```cpp
+bool graphene::wallet::wallet_api::import_account_keys(
+    string filename, 
+    string password, 
+    string src_account_name, 
+    string dest_account_name)
+```
 
-whether the import has succeeded**Parameters**
+{% tabs %}
+{% tab title="First Tab" %}
+* **`filename`**: the BitShares 0.x wallet file to import
+* **`password`**: the password to encrypt the BitShares 0.x wallet file
+* **`src_account_name`**: name of the account on BitShares 0.x chain
+* **`dest_account_name`**: name of the account on BitShares 2.0 chain, can be same or different to `src_account_name`
+{% endtab %}
 
-* `filename`: the BitShares 0.x wallet file to import
-* `password`: the password to encrypt the BitShares 0.x wallet file
-* `src_account_name`: name of the account on BitShares 0.x chain
-* `dest_account_name`: name of the account on BitShares 2.0 chain, can be same or different to `src_account_name`
+{% tab title="Return" %}
+Whether the import has succeeded
+{% endtab %}
+{% endtabs %}
 
-#### [import\_balance](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id19)
+### import\_balance
 
-vector&lt;signed\_transaction&gt; `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::import_balance`\(string _account\_name\_or\_id_, _const_ vector&lt;string&gt; &_wif\_keys_, bool _broadcast_\)  
+This call will construct transaction\(s\) that will claim all balances controlled by wif\_keys and deposit them into the given account.
 
+```cpp
+vector<signed_transaction> graphene::wallet::wallet_api::import_balance(
+    string account_name_or_id, 
+    const vector<string> &wif_keys, 
+    bool broadcast)
+```
 
-This call will construct transaction\(s\) that will claim all balances controled by wif\_keys and deposit them into the given account.
-
-**Parameters**
-
-* `account_name_or_id`: name or ID of an account that to claim balances to
-* `wif_keys`: private WIF keys of balance objects to claim balances from
-* `broadcast`: true to broadcast the transaction on the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`account_name_or_id`**: name or ID of an account that to claim balances to
+* **`wif_keys`**: private WIF keys of balance objects to claim balances from
+* **`broadcast`**: true to broadcast the transaction on the network
+{% endtab %}
+{% endtabs %}
 
 #### [suggest\_brain\_key](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id20)
 
