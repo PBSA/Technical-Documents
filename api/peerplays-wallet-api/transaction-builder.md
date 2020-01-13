@@ -113,49 +113,77 @@ A signed transaction.
 {% endtab %}
 {% endtabs %}
 
-#### [propose\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id106)
-
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::propose_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, time\_point\_sec _expiration_ = time\_point::now\(\) + fc::minutes\(1\), uint32\_t _review\_period\_seconds_ = 0, bool _broadcast_ = true\)  
-
+### propose\_builder\_transaction
 
 Create a proposal containing the operations in a transaction builder \(create a new proposal\_create operation, then replace the transaction builder with the new operation\), then sign the transaction and optionally broadcast to the network.
 
-Note: this command is buggy because unable to specify proposer. It will be deprecated in a future release. Please use [`propose_builder_transaction2()`](https://dev.bitshares.works/en/master/bts_guide/tutorials/propose-transaction.html#classgraphene_1_1wallet_1_1wallet__api_1ad33bc4056cefd13bca5d74f4cc0c017f) instead.
+{% hint style="warning" %}
+**Note**: this command is not effective because you're unable to specify a proposer. It will be deprecated in a future release. Use [`propose_builder_transaction2()`](transaction-builder.md#propose_builder_transaction2) instead.
+{% endhint %}
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::propose_builder_transaction(
+    transaction_handle_typehandle, 
+    time_point_sec expiration = time_point::now() + fc::minutes(1), 
+    uint32_t review_period_seconds = 0, 
+    bool broadcast = true)
 
-a signed transaction**Parameters**
+```
 
-* `handle`: handle of the transaction builder
-* `expiration`: when the proposal will expire
-* `review_period_seconds`: review period of the proposal in seconds
-* `broadcast`: whether to broadcast the signed transaction to the network
+{% tabs %}
+{% tab title="Parameters" %}
+* **`handle`**: handle of the transaction builder
+* **`expiration`**: when the proposal will expire
+* **`review_period_seconds`**: review period of the proposal in seconds
+* **`broadcast`**: whether to broadcast the signed transaction to the network
+{% endtab %}
 
-#### [propose\_builder\_transaction2](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id107)
+{% tab title="Return" %}
+A signed transaction.
+{% endtab %}
+{% endtabs %}
 
-signed\_transaction `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::propose_builder_transaction2`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_, string _account\_name\_or\_id_, time\_point\_sec _expiration_ = time\_point::now\(\) + fc::minutes\(1\), uint32\_t _review\_period\_seconds_ = 0, bool _broadcast_ = true\)  
-
+### propose\_builder\_transaction2
 
 Create a proposal containing the operations in a transaction builder \(create a new proposal\_create operation, then replace the transaction builder with the new operation\), then sign the transaction and optionally broadcast to the network.
 
-**Return**
+```cpp
+signed_transaction graphene::wallet::wallet_api::propose_builder_transaction2(
+    transaction_handle_typehandle, 
+    string account_name_or_id, 
+    time_point_sec expiration = time_point::now() + fc::minutes(1), 
+    uint32_t review_period_seconds = 0, 
+    bool broadcast = true)
+```
 
-a signed transaction**Parameters**
+{% tabs %}
+{% tab title="Parameters" %}
+* **`handle`**: handle of the transaction builder
+* **`account_name_or_id`**: name or ID of the account who would pay fees for creating the proposal
+* **`expiration`**: when the proposal will expire
+* **`review_period_seconds`**: review period of the proposal in seconds
+* **`broadcast`**: whether to broadcast the signed transaction to the network
+{% endtab %}
 
-* `handle`: handle of the transaction builder
-* `account_name_or_id`: name or ID of the account who would pay fees for creating the proposal
-* `expiration`: when the proposal will expire
-* `review_period_seconds`: review period of the proposal in seconds
-* `broadcast`: whether to broadcast the signed transaction to the network
+{% tab title="Return" %}
+A signed transaction.
+{% endtab %}
+{% endtabs %}
 
-#### [remove\_builder\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id108)
+### remove\_builder\_transaction
 
-void `graphene::`[`wallet`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6walletE)`::`[`wallet_api`](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet10wallet_apiE)`::remove_builder_transaction`\([transaction\_handle\_type](https://dev.bitshares.works/en/master/api/namespaces/wallet.html#_CPPv4N8graphene6wallet23transaction_handle_typeE)_handle_\)  
+Destroy a transaction builder.
 
+```cpp
+void graphene::wallet::wallet_api::remove_builder_transaction(
+    transaction_handle_typehandle)
+```
 
-Destroy a transaction builder.**Parameters**
-
-* `handle`: handle of the transaction builder
+{% tabs %}
+{% tab title="Parameters" %}
+* **`handle`**: handle of the transaction builder
+{% endtab %}
+{% endtabs %}
 
 #### [serialize\_transaction](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#id109)
 
