@@ -9,6 +9,7 @@
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
 * [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons.md)
+* [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 
 ## Witnesses
 
@@ -73,6 +74,7 @@
   * [Wallet Calls](api/peerplays-wallet-api/wallet-calls.md)
 * [GPOS API](api/gpos-api.md)
 * [SON API](api/son-api.md)
+* [Sweeps API](api/sweeps-api.md)
 * [Python Peerplays](api/python-peerplays.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
 
