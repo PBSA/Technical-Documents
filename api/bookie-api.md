@@ -1,8 +1,46 @@
 # Bookie API
 
-This page documents the BookiePro data abstraction layer with the Peerplays blockchain. BookiePro communicates with the database \(i.e., the blockchain\) using websocket API calls.
+This page documents the BookiePro data abstraction layer with the Peerplays blockchain. 
 
+BookiePro communicates with the blockchain using web-socket API calls.
 
+### **get\_events\_containing\_sub\_string**
+
+Used to search for events.
+
+```javascript
+Apis.instance().bookie_api().exec( 
+"get_events_containing_sub_string", [ sub_string, language ])
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+`sub_string:` The \(sub\) string of text to search for
+
+`language`: Language id.
+{% endtab %}
+
+{% tab title="Return" %}
+List of events that contain the `sub-string`
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getEventsContainingSubString = function getEventsContainingSubString(sub_string, language) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().bookie_api().exec('get_events_containing_sub_string', [sub_string, language]).then(
+        function (events_containing_sub_string) {
+        if (events_containing_sub_string) {
+          resolve(events_containing_sub_string);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
 
 
 
@@ -14,7 +52,7 @@ This page documents the BookiePro data abstraction layer with the Peerplays bloc
 
 | Purpose | Code File | Example |  |
 | :--- | :--- | :--- | :--- |
-| **get\_events\_containing\_sub\_string** | Used to search for events. | ChainStore.js | Apis.instance\(\).bookie\_api\(\).exec\( "get\_events\_containing\_sub\_string", \[ sub\_string, language \] \) |
+| \*\*\*\* | Used to search for events. | ChainStore.js | Apis.instance\(\).bookie\_api\(\).exec\( "get\_events\_containing\_sub\_string", \[ sub\_string, language \] \) |
 | **get\_binned\_order\_book** |  | ChainStore.js | Apis.instance\(\).bookie\_api\(\).exec\( "get\_binned\_order\_book", \[ betting\_market\_id, precision \] \) |
 | **get\_global\_betting\_statistics** |  | ChainStore.js | Apis.instance\(\).db\_api\(\).exec\( "get\_global\_betting\_statistics", \[\] \) |
 | **get\_total\_matched\_bet\_amount\_for\_betting\_market\_group** | Get the total matched bets for the BMG. | ChainStore.js | Apis.instance\(\).bookie\_api\(\).exec\( "get\_total\_matched\_bet\_amount\_for\_betting\_market\_group", \[ group\_id \] \) |
