@@ -26,7 +26,7 @@ List of events that contain the `sub-string`
 
 {% tab title="Code" %}
 ```javascript
-ChainStore.getEventsContainingSubString = function getEventsContainingSubString(sub_string, language) {
+function getEventsContainingSubString(sub_string, language) {
     return new Promise(function (resolve, reject) {
       _ws.Apis.instance().bookie_api().exec('get_events_containing_sub_string', [sub_string, language]).then(
         function (events_containing_sub_string) {
