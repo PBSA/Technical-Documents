@@ -4,42 +4,6 @@ This page documents the BookiePro data abstraction layer with the Peerplays bloc
 
 BookiePro communicates with the blockchain using web-socket API calls.
 
-### **get\_events\_containing\_sub\_string**
-
-Used to search for events.
-
-```javascript
-Apis.instance().bookie_api().exec( "get_events_containing_sub_string", [ sub_string, language ])
-```
-
-{% tabs %}
-{% tab title="Parameters" %}
-* `sub_string:` The \(sub\) string of text to search for
-* `language`: Language id.
-{% endtab %}
-
-{% tab title="Return" %}
-List of events that contain the `sub-string`
-{% endtab %}
-
-{% tab title="Code" %}
-```javascript
-function getEventsContainingSubString(sub_string, language) {
-    return new Promise(function (resolve, reject) {
-      _ws.Apis.instance().bookie_api().exec('get_events_containing_sub_string', [sub_string, language]).then(
-        function (events_containing_sub_string) {
-        if (events_containing_sub_string) {
-          resolve(events_containing_sub_string);
-        } else {
-          resolve(null);
-        }
-      }, reject);
-    });
-  };
-```
-{% endtab %}
-{% endtabs %}
-
 ### list\_sports
 
 Get a list of available sports.
@@ -302,6 +266,115 @@ ChainStore.getTotalMatchedBetAmountForBettingMarketGroup = function getTotalMatc
       _ws.Apis.instance().bookie_api().exec('get_total_matched_bet_amount_for_betting_market_group', [group_id]).then(function (total_matched_bet_amount) {
         if (total_matched_bet_amount) {
           resolve(total_matched_bet_amount);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### **get\_events\_containing\_sub\_string**
+
+Used to search for events.
+
+```javascript
+Apis.instance().bookie_api().exec( "get_events_containing_sub_string", [ sub_string, language ])
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `sub_string:` The \(sub\) string of text to search for
+* `language`: Language id.
+{% endtab %}
+
+{% tab title="Return" %}
+List of events that contain the `sub-string`
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+function getEventsContainingSubString(sub_string, language) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().bookie_api().exec('get_events_containing_sub_string', [sub_string, language]).then(
+        function (events_containing_sub_string) {
+        if (events_containing_sub_string) {
+          resolve(events_containing_sub_string);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### get\_unmatched\_bets\_for\_bettor
+
+Get unmatched bets for a bettor.
+
+```javascript
+Apis.instance().bookie_api().exec( "get_matched_bets_for_bettor", [ bettor_id ] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `bettor_id`: The id of the bettor.
+{% endtab %}
+
+{% tab title="Return" %}
+List of all matched bets for a bettor.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getUnmatchedBetsForBettor = function getUnmatchedBetsForBettor(betting_market_id_type, account_id_type) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().db_api().exec('get_unmatched_bets_for_bettor', [betting_market_id_type, account_id_type]).then(function (unmatched_bets_for_bettor) {
+        if (unmatched_bets_for_bettor) {
+          resolve(unmatched_bets_for_bettor);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### list\_events\_in\_group
+
+Get a list of events in any event group.
+
+```javascript
+Apis.instance().db_api().exec( "list_events_in_group", [ event_group_id ] )
+
+
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `event_group_id`: The id of the event group.
+
+  |  |
+  | :--- |
+{% endtab %}
+
+{% tab title="Return" %}
+A list of all the events in the event group.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ ChainStore.listEventsInGroup = function listEventsInGroup(event_group_id) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().db_api().exec('list_events_in_group', [event_group_id]).then(function (events_in_group) {
+        if (events_in_group) {
+          resolve(events_in_group);
         } else {
           resolve(null);
         }
