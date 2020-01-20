@@ -60,7 +60,7 @@
   * [Network Broadcast API](api/peerplays-core-api/network-broadcast-api.md)
   * [Network Nodes API](api/peerplays-core-api/network-nodes-api.md)
   * [Orders API](api/peerplays-core-api/orders-api.md)
-* [Bookie API](api/bookie-api/README.md)
+* [Bookie API](api/bookie-api.md)
   * [General](api/bookie-api/general.md)
   * [Tournaments](api/bookie-api/tournaments.md)
   * [Listeners](api/bookie-api/listeners.md)

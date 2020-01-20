@@ -1,7 +1,5 @@
 # General
 
-
-
 This page documents the BookiePro data abstraction layer with the Peerplays blockchain. 
 
 BookiePro communicates with the blockchain using web-socket API calls.
