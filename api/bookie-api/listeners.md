@@ -32,5 +32,3 @@ Apis.instance().db_api().exec( "unsubscribe_from_market", [updateListener, "1.3.
 {% endtab %}
 {% endtabs %}
 
-\*\*\*\*
-
