@@ -73,7 +73,7 @@ ChainStore.getSportsList = function getSportsList() {
 
 ### list\_event\_groups
 
-Get a list of all event groups for a sport \(e.g. all soccer leagues in soccer\).
+Get a list of all event groups for a sport, for example, all soccer leagues in soccer.
 
 ```javascript
 Apis.instance().db_api().exec( "list_event_groups", [sportId] )
@@ -81,7 +81,7 @@ Apis.instance().db_api().exec( "list_event_groups", [sportId] )
 
 {% tabs %}
 {% tab title="Parameters" %}
-`sportId`: The id of the sport that the event groups are to be listed.
+`sportId`: The id of the sport that the event groups are to be listed for.
 {% endtab %}
 
 {% tab title="Return" %}
@@ -120,5 +120,50 @@ ChainStore.prototype.getEventGroupsList = function getEventGroupsList(sportId) {
 
 ### list\_betting\_market\_groups
 
-Get a list of all betting market groups for an event
+Get a list of all betting market groups for an event, for example, Moneyline and OVER/UNDER for soccer\)
+
+```javascript
+Apis.instance().db_api().exec( "list_betting_market_groups", [eventId] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+`eventId`: The id of the event that the betting market groups are to be listed for.
+{% endtab %}
+
+{% tab title="Return" %}
+A list of all the betting market groups for the event.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.prototype.getBettingMarketGroupsList = function getBettingMarketGroupsList(eventId) {
+    var _this18 = this;
+
+    var bettingMarketGroupsList = this.betting_market_groups_list_by_sport_id.get(eventId);
+
+    if (bettingMarketGroupsList === undefined) {
+      this.betting_market_groups_list_by_sport_id = this.betting_market_groups_list_by_sport_id.set(eventId, _immutable2.default.Set());
+
+      _ws.Apis.instance().db_api().exec('list_betting_market_groups', [eventId]).then(function (bettingMarketGroups) {
+        var set = new Set();
+
+        for (var i = 0, len = bettingMarketGroups.length; i < len; ++i) {
+          set.add(bettingMarketGroups[i]);
+        }
+
+        _this18.betting_market_groups_list_by_sport_id = _this18.betting_market_groups_list_by_sport_id.set( // eslint-disable-line
+        eventId, _immutable2.default.Set(set));
+        _this18.notifySubscribers();
+      }, function () {
+        _this18.betting_market_groups_list_by_sport_id = _this18.betting_market_groups_list_by_sport_id.delete( // eslint-disable-line
+        eventId);
+      });
+    }
+
+    return this.betting_market_groups_list_by_sport_id.get(eventId);
+  };
+```
+{% endtab %}
+{% endtabs %}
 
