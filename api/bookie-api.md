@@ -414,3 +414,37 @@ ChainStore.getAllUnmatchedBetsForBettor = function getAllUnmatchedBetsForBettor(
 {% endtab %}
 {% endtabs %}
 
+### get\_matched\_bets\_for\_bettor
+
+Get the matched bets for a bettor.
+
+```javascript
+Apis.instance().bookie_api().exec( "get_matched_bets_for_bettor", [ bettor_id ] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `bettor_id`: The id of the bettor.
+{% endtab %}
+
+{% tab title="Return" %}
+All matched bets for the bettor.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getMatchedBetsForBettor = function getMatchedBetsForBettor(bettor_id) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().bookie_api().exec('get_matched_bets_for_bettor', [bettor_id]).then(function (matched_bets_for_bettor) {
+        if (matched_bets_for_bettor) {
+          resolve(matched_bets_for_bettor);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
