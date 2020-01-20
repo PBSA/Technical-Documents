@@ -14,9 +14,8 @@ Apis.instance().bookie_api().exec( "get_events_containing_sub_string", [ sub_str
 
 {% tabs %}
 {% tab title="Parameters" %}
-`sub_string:` The \(sub\) string of text to search for
-
-`language`: Language id.
+* `sub_string:` The \(sub\) string of text to search for
+* `language`: Language id.
 {% endtab %}
 
 {% tab title="Return" %}
@@ -167,5 +166,149 @@ ChainStore.prototype.getBettingMarketGroupsList = function getBettingMarketGroup
 {% endtab %}
 {% endtabs %}
 
+### list\_betting\_markets
 
+Get a list of all betting markets for a betting market group \(BMG\).
+
+```javascript
+Apis.instance().db_api().exec( "list_betting_markets", [bettingMarketGroupId] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+`bettingMarketGroupId:` The id of the betting market group that the betting markets are to be listed for.
+{% endtab %}
+
+{% tab title="Return" %}
+A list of all the betting markets for the betting market group.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.prototype.getBettingMarketsList = function getBettingMarketsList(bettingMarketGroupId) {
+    var _this19 = this;
+
+    var bettingMarketsList = this.betting_markets_list_by_sport_id.get(bettingMarketGroupId);
+
+    if (bettingMarketsList === undefined) {
+      this.betting_markets_list_by_sport_id = this.betting_markets_list_by_sport_id.set(bettingMarketGroupId, _immutable2.default.Set());
+
+      _ws.Apis.instance().db_api().exec('list_betting_markets', [bettingMarketGroupId]).then(function (bettingMarkets) {
+        var set = new Set();
+
+        for (var i = 0, len = bettingMarkets.length; i < len; ++i) {
+          set.add(bettingMarkets[i]);
+        }
+
+        _this19.betting_markets_list_by_sport_id = _this19.betting_markets_list_by_sport_id.set(bettingMarketGroupId, _immutable2.default.Set(set));
+        _this19.notifySubscribers();
+      }, function () {
+        _this19.betting_markets_list_by_sport_id = _this19.betting_markets_list_by_sport_id.delete(bettingMarketGroupId);
+      });
+    }
+
+    return this.betting_markets_list_by_sport_id.get(bettingMarketGroupId);
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### get\_global\_betting\_statistics
+
+Get global betting statistics
+
+```javascript
+Apis.instance().db_api().exec( "get_global_betting_statistics", [] )
+```
+
+{% tabs %}
+{% tab title="Return" %}
+A list of all the global betting statistics.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getGlobalBettingStatistics = function getGlobalBettingStatistics() {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().db_api().exec('get_global_betting_statistics', []).then(function (getGlobalBettingStatistics) {
+        if (getGlobalBettingStatistics) {
+          resolve(getGlobalBettingStatistics);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### get\_binned\_order\_book
+
+Get the binned order book for a betting market.
+
+```javascript
+Apis.instance().bookie_api().exec( "get_binned_order_book", [ betting_market_id, precision ] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `betting_market_id:` The id of the betting market for the order book.
+* `precision:` Precision
+{% endtab %}
+
+{% tab title="Return" %}
+A list of binned orders for the betting market.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getBinnedOrderBook = function getBinnedOrderBook(betting_market_id, precision) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().bookie_api().exec('get_binned_order_book', [betting_market_id, precision]).then(function (order_book_object) {
+        if (order_book_object) {
+          resolve(order_book_object);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### get\_total\_matched\_bet\_amount\_for\_betting\_market\_group
+
+Get the total matched bets for a betting market group \(BMG\).
+
+```javascript
+Apis.instance().bookie_api().exec( "get_total_matched_bet_amount_for_betting_market_group", [ group_id ] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `group_id`: The betting market group id.
+{% endtab %}
+
+{% tab title="Return" %}
+Total of all the matched bet amounts for the selected betting market group.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getTotalMatchedBetAmountForBettingMarketGroup = function getTotalMatchedBetAmountForBettingMarketGroup(group_id) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().bookie_api().exec('get_total_matched_bet_amount_for_betting_market_group', [group_id]).then(function (total_matched_bet_amount) {
+        if (total_matched_bet_amount) {
+          resolve(total_matched_bet_amount);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
 
