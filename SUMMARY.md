@@ -15,9 +15,9 @@
 
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
-* [Setting up a Witness Node](witnesses/setting-up-a-witness-node./README.md)
-  * [Creating a Backup Server](witnesses/setting-up-a-witness-node./creating-a-backup-server.md)
-  * [CLI Wallet Setup](witnesses/setting-up-a-witness-node./cli-wallet-setup.md)
+* [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
+  * [Creating a Backup Server](witnesses/setting-up-a-witness-node/creating-a-backup-server.md)
+  * [CLI Wallet Setup](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
 
 ## Bookie Oracle Suite \(BOS\)
 
@@ -60,7 +60,7 @@
   * [Network Broadcast API](api/peerplays-core-api/network-broadcast-api.md)
   * [Network Nodes API](api/peerplays-core-api/network-nodes-api.md)
   * [Orders API](api/peerplays-core-api/orders-api.md)
-* [Bookie API](api/bookie-api.md)
+* [Bookie API](api/bookie-api/README.md)
   * [General](api/bookie-api/general.md)
   * [Tournaments](api/bookie-api/tournaments.md)
   * [Listeners](api/bookie-api/listeners.md)

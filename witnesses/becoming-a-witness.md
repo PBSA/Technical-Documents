@@ -112,7 +112,7 @@ Once you've procured your servers then it's time to set them up.
 
 You're now ready to take the next step, setting up your own Witness node.
 
-{% page-ref page="setting-up-a-witness-node./" %}
+{% page-ref page="setting-up-a-witness-node/" %}
 
 
 
