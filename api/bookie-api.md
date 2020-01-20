@@ -352,8 +352,6 @@ Get a list of events in any event group.
 
 ```javascript
 Apis.instance().db_api().exec( "list_events_in_group", [ event_group_id ] )
-
-
 ```
 
 {% tabs %}
@@ -372,6 +370,40 @@ A list of all the events in the event group.
       _ws.Apis.instance().db_api().exec('list_events_in_group', [event_group_id]).then(function (events_in_group) {
         if (events_in_group) {
           resolve(events_in_group);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### get\_all\_unmatched\_bets\_for\_bettor
+
+Get all unmatched bets of a bettor according to account type.
+
+```javascript
+Apis.instance().db_api().exec( "get_all_unmatched_bets_for_bettor", [ account_id_type ] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `account_type_id`: The id of the bettor account type/
+{% endtab %}
+
+{% tab title="Return" %}
+All unmatched bets by bettor account type.
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getAllUnmatchedBetsForBettor = function getAllUnmatchedBetsForBettor(account_id_type) {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().db_api().exec('get_all_unmatched_bets_for_bettor', [account_id_type]).then(function (all_unmatched_bets_for_bettor) {
+        if (all_unmatched_bets_for_bettor) {
+          resolve(all_unmatched_bets_for_bettor);
         } else {
           resolve(null);
         }
