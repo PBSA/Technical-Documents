@@ -9,8 +9,7 @@ BookiePro communicates with the blockchain using web-socket API calls.
 Used to search for events.
 
 ```javascript
-Apis.instance().bookie_api().exec( 
-"get_events_containing_sub_string", [ sub_string, language ])
+Apis.instance().bookie_api().exec( "get_events_containing_sub_string", [ sub_string, language ])
 ```
 
 {% tabs %}
@@ -42,11 +41,43 @@ function getEventsContainingSubString(sub_string, language) {
 {% endtab %}
 {% endtabs %}
 
+### list\_sports
 
+Get a list of available sports.
 
+```javascript
+Apis.instance().db_api().exec( "list_sports", [] )
+```
 
+{% tabs %}
+{% tab title="Return" %}
+A list of all the available sports.
+{% endtab %}
 
+{% tab title="Code" %}
+```javascript
+ChainStore.getSportsList = function getSportsList() {
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().db_api().exec('list_sports', []).then(function (sportsList) {
+        if (sportsList) {
+          resolve(sportsList);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
 
+### list\_event\_groups
+
+Get a list of all event groups for a sport \(e.g. all soccer leagues in soccer\).
+
+```javascript
+
+```
 
 
 
