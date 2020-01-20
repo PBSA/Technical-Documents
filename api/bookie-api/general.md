@@ -1,4 +1,6 @@
-# Bookie API
+# General
+
+
 
 This page documents the BookiePro data abstraction layer with the Peerplays blockchain. 
 
@@ -438,6 +440,44 @@ ChainStore.getMatchedBetsForBettor = function getMatchedBetsForBettor(bettor_id)
       _ws.Apis.instance().bookie_api().exec('get_matched_bets_for_bettor', [bettor_id]).then(function (matched_bets_for_bettor) {
         if (matched_bets_for_bettor) {
           resolve(matched_bets_for_bettor);
+        } else {
+          resolve(null);
+        }
+      }, reject);
+    });
+  };
+```
+{% endtab %}
+{% endtabs %}
+
+### get\_all\_matched\_bets\_for\_bettor
+
+Get all matched bets for a bettor within a range.
+
+```javascript
+Apis.instance().bookie_api().exec( "get_all_matched_bets_for_bettor", [ bettor_id, start, limit ] )
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+* `bettor_id`: The id of the bettor
+* `start`: The start date
+* `limit`: Number of bets to be returned
+{% endtab %}
+
+{% tab title="Return" %}
+All matched bets for the better within the range `start` to `limit.`
+{% endtab %}
+
+{% tab title="Code" %}
+```javascript
+ChainStore.getAllMatchedBetsForBettor = function getAllMatchedBetsForBettor(bettor_id, start) {
+    var limit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
+
+    return new Promise(function (resolve, reject) {
+      _ws.Apis.instance().bookie_api().exec('get_all_matched_bets_for_bettor', [bettor_id, start, limit]).then(function (all_matched_bets_for_bettor) {
+        if (all_matched_bets_for_bettor) {
+          resolve(all_matched_bets_for_bettor);
         } else {
           resolve(null);
         }
