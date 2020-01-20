@@ -98,8 +98,8 @@ Unlike mining Bitcoin, or other POW based blockchains, the processing power at y
 
 However, there are requirements in terms of what hardware and software you should be running.
 
-{% hint style="info" %}
-The following table shows the minimum requirements for each server. 
+{% hint style="danger" %}
+Important: The following table shows the minimum requirements for each server. 
 {% endhint %}
 
 | CPU | Memory | Storage | Bandwidth | OS |
