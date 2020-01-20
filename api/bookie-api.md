@@ -359,9 +359,6 @@ Apis.instance().db_api().exec( "list_events_in_group", [ event_group_id ] )
 {% tabs %}
 {% tab title="Parameters" %}
 * `event_group_id`: The id of the event group.
-
-  |  |
-  | :--- |
 {% endtab %}
 
 {% tab title="Return" %}
