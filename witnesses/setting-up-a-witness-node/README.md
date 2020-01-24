@@ -51,6 +51,7 @@ git clone https://github.com/peerplays-network/peerplays.git
 cd peerplays
 git checkout #master# --> replace with most recent tag
 git submodule update --init --recursive
+git submodule sync --recursive
 cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 
@@ -146,6 +147,24 @@ Start the Witness node back up.
 
 ```text
 ./programs/witness_node/witness_node
+```
+
+### Starting the witness as a service
+
+We can add the peerplays blockchain node as a service using the following steps.
+
+under, `/etc/systemd/system` create a file with the following content.
+
+```text
+[Unit]
+Description=Witness
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/beatrice
+ExecStart=/home/ubuntu/beatrice/witness_node
+Restart=always
+[Install]
+WantedBy=mult-user.target
 ```
 
 ### Upgrading A Peerplays Witness Node
