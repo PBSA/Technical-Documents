@@ -61,6 +61,17 @@ make install # this can install the executable files under /usr/local
 **Note**: \#master\# can be replaced with the most recent release tag.
 {% endhint %}
 
+#### Starting the Peerplays Witness Node
+
+If we have installed the blockchain following the above steps, the node can be started as follows:
+
+```text
+witness_node 
+
+# If you need the logs, the following can be helpful
+# witness_node 2>&1 peerplays.log
+```
+
 ## Install Docker Image
 
 This Docker image can be installed as an alternative to the previous steps. It doesn't need to be run if those steps have already been completed.
