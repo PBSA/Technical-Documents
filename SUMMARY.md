@@ -48,6 +48,10 @@
 
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
 
+## Random Number Generator \(RNG\)
+
+* [RNG Technical Summary](random-number-generator-rng/rng-technical-summary.md)
+
 ## API
 
 * [Peerplays Core API](api/peerplays-core-api/README.md)
