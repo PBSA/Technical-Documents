@@ -14,10 +14,28 @@ For more information on the `ripemd160` algorithm see:
 [https://en.wikipedia.org/wiki/RIPEMD](https://en.wikipedia.org/wiki/RIPEMD)
 {% endhint %}
 
+### API
+
+Get a random number
+
+```cpp
+Function uint64_t database::get_random_bits(uint64_t bound) 
+```
+
+{% tabs %}
+{% tab title="Parameters" %}
+**`bound`**`:` The upper limit for the random number.
+{% endtab %}
+
+{% tab title="Returns" %}
+A random number within the `bound` range.
+{% endtab %}
+{% endtabs %}
+
 ```cpp
 
-
-Function uint64_t database::get_random_bits(uint64_t bound) returns random number, where parameter bound represents upper limit.
+Function uint64_t database::get_random_bits(uint64_t bound) 
+//returns random number, where parameter bound represents upper limit.
 
 
 
