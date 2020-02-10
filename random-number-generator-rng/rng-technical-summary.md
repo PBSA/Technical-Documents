@@ -16,21 +16,15 @@ For more information on the `ripemd160` algorithm see:
 [https://en.wikipedia.org/wiki/RIPEMD](https://en.wikipedia.org/wiki/RIPEMD)
 {% endhint %}
 
-
-
-### 
-
-  
-For more understanding why RNG generation is done this way, read the following article  
-[https://medium.com/ginar-io/a-review-of-random-number-generator-rng-on-blockchain-fe342d76261b](https://medium.com/ginar-io/a-review-of-random-number-generator-rng-on-blockchain-fe342d76261b)
-
-**Important part:**
-
-**Block-hash**
+### **Block-Hash Randomness**
 
 In this approach, the hash of blocks or transactions is used as the source of randomness. As the hash is deterministic, everyone will get the same result. A block, once added to the blockchain, is likely to stay there forever, therefore, everyone can verify the correctness of the generated numbers.
 
-Consider an example of a lottery service that adopts this method. The players first buy a ticket by placing their number before a specific time, say 7PM everyday. After 7PM, the buying ticket phase is closed, the protocol proceeds to the next phase which is to determine the winning numbers for a ticket. This ticket is calculated based on the hash of the first block accessible for everyone on the Bitcoin blockchain after 8PM. As we can see, at 7PM, no one can predict the hash of block at 8 PM which makes the service seemingly a sound one. However, this hash is subject to manipulation by the miners guarding the blockchain. When the reward of the lottery is small, the miners have little motivation to tamper with the block but as soon as this amount is larger than the block reward plus the transaction fees, there is a chance that miners will start influencing the block-hash to generate their desired numbers. Thus, for high-stake randomness-based applications, this method is not a secure one.
+Consider an example of a lottery service that adopts this method. The players first buy a ticket by placing their number before a specific time, say 7PM everyday. After 8PM, the buying ticket phase is closed, the protocol proceeds to the next phase which is to determine the winning numbers for a ticket. This ticket is calculated based on the hash of the first block accessible for everyone on the blockchain after 8PM. 
+
+As we can see, at 7PM, no one can predict the hash of block at 8PM which makes the service seemingly a sound one. However, this hash is subject to manipulation by the witnesses of the blockchain. When the reward of the lottery is small, the witnesses have little motivation to tamper with the block, but as soon as this amount is larger than the block reward plus the transaction fees, there is a chance that witnesses will start influencing the block-hash to generate their desired numbers. 
+
+So on it's own this level of randomness is not enough. This is why the Peerplays RNG extends the block-hash mechanism by using the hash as a seed for randomization along with the `repemd160` algorithm and Secure Hash Algorithm \(SHA\)
 
 ### API
 
