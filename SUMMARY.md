@@ -51,7 +51,7 @@
 ## Random Number Generator \(RNG\)
 
 * [RNG Technical Summary](random-number-generator-rng/rng-technical-summary.md)
-* [API](random-number-generator-rng/api.md)
+* [RNG API](random-number-generator-rng/api.md)
 
 ## API
 

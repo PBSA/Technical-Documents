@@ -1,4 +1,4 @@
-# API
+# RNG API
 
 Get a random number
 
@@ -30,7 +30,7 @@ class hash_ctr_rng
 {...}
 ```
 
-#### Declaration
+### Declaration
 
 ```cpp
 peerplays/libraries/chain/include/graphene/chain/database.hpp 
@@ -38,35 +38,19 @@ peerplays/libraries/chain/include/graphene/chain/database.hpp
 fc::hash_ctr_rng<secret_hash_type, 20> _random_number_generator;
 ```
 
+### Examples
+
+#### Initialization in constructor
+
 ```cpp
-
-
-Typedefs
-
-
-
-
-
-
-Declaration
-
-
-
-
-
-
-Default initialization in constructor
-
-
 peerplays/libraries/chain/db_management.cpp
 
 _random_number_generator(fc::ripemd160().data())
+```
 
+#### Updating seed on a new block
 
-
-Updating seed on new block
-
-
+```cpp
 peerplays/libraries/chain/db_update.cpp
 
 modify( _dgp, [&]( dynamic_global_property_object& dgp ){
@@ -75,10 +59,11 @@ modify( _dgp, [&]( dynamic_global_property_object& dgp ){
       fc::raw::pack( enc, b.previous_secret );        
       dgp.random = enc.result();
       _random_number_generator = fc::hash_ctr_rng<secret_hash_type, 20>(dgp.random.data());
+```
 
+#### Getting a new random number
 
-Getting new random number
-
+```cpp
 peerplays/libraries/chain/db_update.cpp
 
 uint64_t database::get_random_bits( uint64_t bound )
@@ -103,8 +88,4 @@ peerplays/libraries/fc/include/fc/crypto/hash_ctr_rng.hpp
          }
       }
 ```
-
-#### Examples
-
-
 
