@@ -57,6 +57,18 @@ For more information on Dieharder see:
 [https://webhome.phy.duke.edu/~rgb/General/dieharder.php](https://webhome.phy.duke.edu/~rgb/General/dieharder.php)
 {% endhint %}
 
+### Install prerequisites for running RNG tests
+
+```text
+sudo apt install dieharder
+```
+
+### To run RNG test suite, use the following command: <a id="RandomNumberGenerationonPeerplays-howit&apos;sdone?-TorunRNGtestsuite,usethefollowingcommand:"></a>
+
+```text
+$ ./tests/random_test 
+```
+
 ## API
 
 The RNG has a very simple API for generating random numbers,  requiring just a single API call to `get_random_bits(bound)` ; supplying an upper bound.
