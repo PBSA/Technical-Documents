@@ -38,7 +38,7 @@ The immutability of DLT is critical for the RNG because it ensures that once a r
 
 Peerplays is based on the Delegated Proof of Stake \(DPOS\) consensus mechanism, which means that the block signers \(Witnesses\) are all elected by the token holders. This is important from an RNG perspective because it requires loyalty, commitment and honesty to get voted in as a Witness. Since a component of the randomness is based on the block hash, knowing that the block signers are a trusted, elected, group greatly mitigates the risk of block tampering.
 
-Peerplays further extends the block-signing robustness and randomness by:
+Peerplays further extends the block-signing robustness and randomness because:
 
 1. Not all Witnesses are block-signing \(active\) Witnesses. There is a second level of consensus that has to happen before a Witness is promoted to an active Witness.
 2. Not all active Witnesses are signing blocks at any given time. The blockchain randomly selects which Witnesses are signing at ten minute intervals.
