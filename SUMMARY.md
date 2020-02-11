@@ -27,7 +27,6 @@
   * [Installing Redis](bookie-oracle-suite-bos/bos-and-mint-setup/installing-redis.md)
   * [Configuration of bos-auto](bookie-oracle-suite-bos/bos-and-mint-setup/configuration-of-bos-auto.md)
   * [Spinning Up bos-auto](bookie-oracle-suite-bos/bos-and-mint-setup/spinning-up-bos-auto.md)
-  * [Command Line Tool](bookie-oracle-suite-bos/bos-and-mint-setup/command-line-tool.md)
 * [BookieSports](bookie-oracle-suite-bos/bookiesports/README.md)
   * [Installing Bookiesports](bookie-oracle-suite-bos/bookiesports/installing-bookiesports.md)
   * [Synchronizing BOS with BookieSports](bookie-oracle-suite-bos/bookiesports/synchronizing-bos-with-bookiesports.md)
@@ -41,8 +40,10 @@
 ## Data Proxies
 
 * [Introduction to Data Proxies](data-proxies/data-proxies-page-1.md)
-* [How Data Proxies Work](data-proxies/how-data-proxies-work.md)
+* [How Data Proxies Work](data-proxies/how-data-proxies-work/README.md)
+  * [Incident Schema](data-proxies/how-data-proxies-work/incident-schema.md)
 * [Data Proxy Set Up](data-proxies/data-proxy-set-up.md)
+* [Creating Your Own Data Proxy](data-proxies/creating-your-own-data-proxy.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 

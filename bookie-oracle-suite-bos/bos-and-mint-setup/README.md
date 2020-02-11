@@ -208,8 +208,6 @@ We need to provide the wallet pass phrase in order for the worker to be able to 
 
 ## Command Line Tool
 
-{% page-ref page="command-line-tool.md" %}
-
 ## Schema
 
 The messages sent to the API need to follow a particular message schema which is defined in `endpointschema.py`
