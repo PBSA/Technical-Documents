@@ -8,7 +8,7 @@ The first release of the RNG was localized to the Easy5050 DApp and wasn't expos
 
 For the second release of the RNG the functionality was extended to become a general RNG, with a public API, for supporting games such as Slots, Poker, Roulette, Raffle, Bingo, Keno, etc.
 
-## How are Random Numbers Generated <a id="RandomNumberGenerationonPeerplays-howit&apos;sdone?-HowisRNGgenerated"></a>
+## How the Random Numbers are Generated <a id="RandomNumberGenerationonPeerplays-howit&apos;sdone?-HowisRNGgenerated"></a>
 
 Random numbers are generated from secret hashes taken from the previous and current block, which are then combined into a single data stream and encoded using the  `ripemd160` algorithm, and finally fed into a random number generator as a seed.
 
