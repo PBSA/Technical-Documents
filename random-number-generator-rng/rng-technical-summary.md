@@ -43,17 +43,29 @@ Peerplays then further extends the block-signing robustness and randomness by:
 
 Because of the role of the Witnesses, Peerplays has two levels of randomness. First the Witnesses themselves are randomly selected, and secondly the randomness of the number generation itself. 
 
+## Testing
+
+For testing the RNG, we used the “Dieharder” random number generator testing suite.
+
+Dieharder is intended to test generators, not files of possibly random numbers as the latter is based on the mistaken view of what it means to be random. Perfect random number generators produce "unlikely" sequences of random numbers -- at exactly the right average rate. Testing an RNG is therefore quite subtle.
+
+Dieharder is a tool designed to push a weak generator to unambiguous failure.
+
+{% hint style="info" %}
+For more information on Dieharder see:
+
+[https://webhome.phy.duke.edu/~rgb/General/dieharder.php](https://webhome.phy.duke.edu/~rgb/General/dieharder.php)
+{% endhint %}
+
 ## API
 
 The RNG has a very simple API for generating random numbers,  requiring just a single API call to `get_random_bits(bound)` ; supplying an upper bound.
 
-For more information on the API see:
-
-{% page-ref page="api.md" %}
-
-
-
 ```cpp
 get_random_bits(uint64_t bound) 
 ```
+
+For more information on the API see:
+
+{% page-ref page="api.md" %}
 
