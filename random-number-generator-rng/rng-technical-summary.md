@@ -1,10 +1,12 @@
 # RNG Technical Summary
 
-\[TODO\] Start with [https://peerplays.atlassian.net/wiki/spaces/PROJECTS/pages/330957016/RNG-on-Chain](https://peerplays.atlassian.net/wiki/spaces/PROJECTS/pages/330957016/RNG-on-Chain)
+## Introduction <a id="RandomNumberGenerationonPeerplays-howit&apos;sdone?-HowisRNGgenerated"></a>
 
-## Introducing the Peerplays Random Number Generator <a id="RandomNumberGenerationonPeerplays-howit&apos;sdone?-HowisRNGgenerated"></a>
+The Peerplays blockchain RNG was initially added to the blockchain to provide draw features for the Easy5050 decentralized application \(DApp\). 
 
+The first release of the RNG was localized to the Easy5050 DApp and wasn't exposing the number generated via an API, or a similar mechanism, such that other DApps or users can consume them. For 5050 the RNG is posted to the block once the draw is completed or rather once the RNG is used. We need to extend our RNG to a general purpose RNG supporting games like Slot, Poker, Roulette, Raffle, Bingo, Keno, etc
 
+GLI generally performs the testing of the applications / games like Keno as opposed to an API. The game testing will automatically include the backend API as well. For each new game, different testing will be required. An example will be to get 5050 tested and with the new version of the 5050 release it will be tested again.
 
 ## How are Random Numbers Generated <a id="RandomNumberGenerationonPeerplays-howit&apos;sdone?-HowisRNGgenerated"></a>
 
