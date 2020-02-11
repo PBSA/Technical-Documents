@@ -75,7 +75,7 @@ $ ./tests/random_test
 
 GLI are an internationally recognized institute offering the the most experienced and robust RNG testing methodologies in the world. This includes software-based \(pseudo-algorithmic\) RNG’s, hardware RNG’s, and hybrid combinations of both.
 
-The Peerplays RNG has been submitted to GLI for approval.
+The Peerplays RNG has been submitted to GLI for approval \[TBD: or has 'been approved'\]
 
 GLI generally performs the testing of applications and games, such as Keno, as opposed to an API. The game testing will automatically include the backend API as well. On successful completion of all tests each application will be certified by GLI.
 
