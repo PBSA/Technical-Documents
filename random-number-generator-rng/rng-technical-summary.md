@@ -24,7 +24,9 @@ Consider an example of a lottery service that adopts this method. The players fi
 
 As we can see, at 7PM, no one can predict the hash of block at 8PM which makes the service seemingly a sound one. However, this hash is subject to manipulation by the witnesses of the blockchain. When the reward of the lottery is small, the witnesses have little motivation to tamper with the block, but as soon as this amount is larger than the block reward plus the transaction fees, there is a chance that witnesses will start influencing the block-hash to generate their desired numbers. 
 
-So on it's own this level of randomness is not enough. This is why the Peerplays RNG extends the block-hash mechanism by using the hash as a seed for randomization along with the `repemd160` algorithm and Secure Hash Algorithm \(SHA\)
+So on it's own a block-hash level of randomness is not enough. This is why the Peerplays RNG extends the block-hash mechanism by using the hash as a seed for randomization along with the `repemd160` algorithm and Secure Hash Algorithm \(SHA\).
+
+
 
 ### API
 
