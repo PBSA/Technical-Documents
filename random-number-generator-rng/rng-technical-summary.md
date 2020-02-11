@@ -22,11 +22,20 @@ In this approach, the hash of blocks or transactions is used as the source of ra
 
 Consider an example of a lottery service that adopts this method. The players first buy a ticket by placing their number before a specific time, say 7PM everyday. After 8PM, the buying ticket phase is closed, the protocol proceeds to the next phase which is to determine the winning numbers for a ticket. This ticket is calculated based on the hash of the first block accessible for everyone on the blockchain after 8PM. 
 
-As we can see, at 7PM, no one can predict the hash of block at 8PM which makes the service seemingly a sound one. However, this hash is subject to manipulation by the witnesses of the blockchain. When the reward of the lottery is small, the witnesses have little motivation to tamper with the block, but as soon as this amount is larger than the block reward plus the transaction fees, there is a chance that witnesses will start influencing the block-hash to generate their desired numbers. 
+As we can see, at 7PM, no one can predict the hash of block at 8PM which makes the service seemingly a sound one. However, this hash is subject to manipulation by the block-signers of the blockchain. When the reward of the lottery is small, the block-signers have little motivation to tamper with the block, but as soon as this amount is larger than the block reward plus the transaction fees, there is a chance that witnesses will start influencing the block-hash to generate their desired numbers. 
 
 So on it's own a block-hash level of randomness is not enough. This is why the Peerplays RNG extends the block-hash mechanism by using the hash as a seed for randomization along with the `repemd160` algorithm and Secure Hash Algorithm \(SHA\).
 
+### Witness Randomness
 
+Peerplays is based on the Delegated Proof of Stake \(DPOS\) consensus mechanism, which means that that the block signers \(Witnesses\) are all elected by the token holders. This is important from an RNG perspective because it requires loyalty, commitment and honesty to get voted in as a Witness. Since a component of the randomness is based on the block hash, knowing that the block signers are a closed group greatly mitigates the risk of block tampering.
+
+Peerplays then further extends the block-signing robustness and randomness by:
+
+1. Not all Witnesses are block-signing \(active\) Witnesses. There is a second level of consensus that has to happen before a Witness is promoted to an active Witness.
+2. Not all active Witnesses are signing blocks at any given time. The blockchain randomly selects which Witnesses are signing at ten minute intervals.
+
+Because of the importance of the Witness role we see that the Peerplays has two levels of randomness. First the block producers themselves are randomly selected, and then secondly the randomness of the number generation itself. 
 
 ### API
 
