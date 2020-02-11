@@ -32,13 +32,13 @@ So on it's own a block-hash level of randomness is not enough. This is why the P
 
 Peerplays, and other blockchains, are one type of a distributed ledger. Distributed ledgers use independent computers \(referred to as nodes\) to record, share and synchronize transactions in their respective electronic ledgers \(instead of keeping data centralized as in a traditional ledger\). 
 
-The immutability of DLT is very important for the RNG because it ensures that once a random number is generated it is authentic and can't be changed.
+The immutability of DLT is critical for the RNG because it ensures that once a random number is generated it is authentic and can't be changed.
 
 ### Witness Randomness
 
-Peerplays is based on the Delegated Proof of Stake \(DPOS\) consensus mechanism, which means that that the block signers \(Witnesses\) are all elected by the token holders. This is important from an RNG perspective because it requires loyalty, commitment and honesty to get voted in as a Witness. Since a component of the randomness is based on the block hash, knowing that the block signers are a closed group greatly mitigates the risk of block tampering.
+Peerplays is based on the Delegated Proof of Stake \(DPOS\) consensus mechanism, which means that the block signers \(Witnesses\) are all elected by the token holders. This is important from an RNG perspective because it requires loyalty, commitment and honesty to get voted in as a Witness. Since a component of the randomness is based on the block hash, knowing that the block signers are a trusted, elected, group greatly mitigates the risk of block tampering.
 
-Peerplays then further extends the block-signing robustness and randomness by:
+Peerplays further extends the block-signing robustness and randomness by:
 
 1. Not all Witnesses are block-signing \(active\) Witnesses. There is a second level of consensus that has to happen before a Witness is promoted to an active Witness.
 2. Not all active Witnesses are signing blocks at any given time. The blockchain randomly selects which Witnesses are signing at ten minute intervals.
@@ -71,9 +71,17 @@ sudo apt install dieharder
 $ ./tests/random_test 
 ```
 
-## GLI
+## Gaming Laboratories International \(GLI\)
 
-GLI generally performs the testing of the applications / games like Keno as opposed to an API. The game testing will automatically include the backend API as well. For each new game, different testing will be required. An example will be to get 5050 tested and with the new version of the 5050 release it will be tested again.
+GLI are an internationally recognized institute offering the the most experienced and robust RNG testing methodologies in the world. This includes software-based \(pseudo-algorithmic\) RNG’s, hardware RNG’s, and hybrid combinations of both.
+
+The Peerplays RNG has been submitted to GLI for approval.
+
+GLI generally performs the testing of applications and games, such as Keno, as opposed to an API. The game testing will automatically include the backend API as well. On successful completion of all tests each application will be certified by GLI.
+
+For each new game, different testing will be required. An example would be the Easy5050 DApp that can be tested and with all subsequent releases, tested again.
+
+However, as the core Peerplays RNG is a blockchain \(back-end\) implementation and not an application it can only be approved by GLI rather than certified.
 
 ## API
 
