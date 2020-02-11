@@ -20,7 +20,7 @@ For more information on the `ripemd160` algorithm see:
 
 ### **Block-Hash Randomness**
 
-In this approach, the hash of blocks or transactions is used as the source of randomness. As the hash is deterministic, everyone will get the same result. A block, once added to the blockchain, is likely to stay there forever, therefore, everyone can verify the correctness of the generated numbers.
+In this approach, the hash of blocks or transactions is used as the source of randomness. As the hash is deterministic, everyone will get the same result. A block, once added to the blockchain, is likely to stay there forever, therefore everyone can verify the correctness of the generated numbers.
 
 Consider an example of a lottery service that adopts this method. The players first buy a ticket by placing their number before a specific time, say 7PM everyday. After 8PM, the buying ticket phase is closed, the protocol proceeds to the next phase which is to determine the winning numbers for a ticket. This ticket is calculated based on the hash of the first block accessible for everyone on the blockchain after 8PM. 
 
@@ -47,7 +47,7 @@ Because of the role of the Witnesses, Peerplays has two levels of randomness. Fi
 
 ## Testing
 
-For testing the RNG, we used the “Dieharder” random number generator testing suite.
+For testing the RNG, the “Dieharder” random number generator testing suite was used.
 
 Dieharder is intended to test generators, not files of possibly random numbers as the latter is based on the mistaken view of what it means to be random. Perfect random number generators produce "unlikely" sequences of random numbers -- at exactly the right average rate. Testing an RNG is therefore quite subtle.
 
