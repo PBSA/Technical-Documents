@@ -26,6 +26,12 @@ As we can see, at 7PM, no one can predict the hash of block at 8PM which makes t
 
 So on it's own a block-hash level of randomness is not enough. This is why the Peerplays RNG extends the block-hash mechanism by using the hash as a seed for randomization along with the `repemd160` algorithm and Secure Hash Algorithm \(SHA\).
 
+### Distributed Ledger Technology \(DLT\)
+
+Peerplays, and other blockchains, are one type of a distributed ledger. Distributed ledgers use independent computers \(referred to as nodes\) to record, share and synchronize transactions in their respective electronic ledgers \(instead of keeping data centralized as in a traditional ledger\). 
+
+The immutability of DLT is very important for the RNG because it ensures that once a random number is generated it is authentic and can't be changed.
+
 ### Witness Randomness
 
 Peerplays is based on the Delegated Proof of Stake \(DPOS\) consensus mechanism, which means that that the block signers \(Witnesses\) are all elected by the token holders. This is important from an RNG perspective because it requires loyalty, commitment and honesty to get voted in as a Witness. Since a component of the randomness is based on the block hash, knowing that the block signers are a closed group greatly mitigates the risk of block tampering.
@@ -35,9 +41,9 @@ Peerplays then further extends the block-signing robustness and randomness by:
 1. Not all Witnesses are block-signing \(active\) Witnesses. There is a second level of consensus that has to happen before a Witness is promoted to an active Witness.
 2. Not all active Witnesses are signing blocks at any given time. The blockchain randomly selects which Witnesses are signing at ten minute intervals.
 
-Because of the importance of the Witness role we see that the Peerplays has two levels of randomness. First the block producers themselves are randomly selected, and then secondly the randomness of the number generation itself. 
+Because of the role of the Witnesses, Peerplays has two levels of randomness. First the Witnesses themselves are randomly selected, and secondly the randomness of the number generation itself. 
 
-### API
+## API
 
 The RNG has a very simple API for generating random numbers,  requiring just a single API call to `get_random_bits(bound)` ; supplying an upper bound.
 
