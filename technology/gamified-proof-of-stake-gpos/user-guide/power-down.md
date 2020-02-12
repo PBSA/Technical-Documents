@@ -16,7 +16,12 @@ You can withdraw up to the total of your Opening GPOS Balance.
 
 In the example above the user has no vested balance. If an amount of 80PPY is vested the New GPOS Balance will be 80PPY and if the user power's up again the Opening GPOS Balance will be 80PPY as will the New GPOS Balance.
 
-### GPOS Balance Holding Period
+### GPOS Balance holding Period
 
+In the example above note that although the Opening GPOS Balance is 80PPY the Available GPOS Balance is zero. This is because there is a 30 day holding period on new deposits. In the example above the deposit was made the same day as the requested withdrawal.
 
+The main reasons for having a holding period are:
+
+* It's in your best interest to maintain a GPOS balance, withdrawing from the balance will effect your participation rewards.
+* Withdrawing all the balance before 30 days could also effect your reward percentage by not allowing you to vote.
 
