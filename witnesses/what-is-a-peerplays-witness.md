@@ -30,7 +30,7 @@ To earn the right to be a Witness every prospect must accumulate votes by demons
 
 Peerplays has a unique enhancement to Delegated Proof of Stake called Gamified Proof of Stake \(GPOS\). In the context of Witness voting this is important as it incentivizes PPY token holders to vote. More information about GPOS can be found here:
 
-{% page-ref page="../technology/gamified-proof-of-stake-gpos.md" %}
+{% page-ref page="../technology/gamified-proof-of-stake-gpos/" %}
 
 Vote strength is determined by how many PPY tokens somebody holds. This means that people who have more tokens will influence the network more than people who have very few tokens. Vote power is determined by ‘stake’.
 

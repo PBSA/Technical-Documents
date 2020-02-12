@@ -38,7 +38,7 @@ This is the percentage of a user's maximum possible reward received based on the
 
 ### **Estimated Rake Reward %**
 
-This is the potential percentage reward a user could receive based on the [qualified reward percentage](gamified-proof-of-stake-gpos.md#qualified-reward), the amount of PPY they have vested and their share of the total GPOS balance. 
+This is the potential percentage reward a user could receive based on the [qualified reward percentage](./#qualified-reward), the amount of PPY they have vested and their share of the total GPOS balance. 
 
 So the estimated rake reward is calculated as:
 

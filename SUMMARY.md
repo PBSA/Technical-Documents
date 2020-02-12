@@ -7,7 +7,9 @@
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
-* [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos.md)
+* [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos/README.md)
+  * [User Guide](technology/gamified-proof-of-stake-gpos/user-guide.md)
+  * [FAQ](technology/gamified-proof-of-stake-gpos/faq.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 
