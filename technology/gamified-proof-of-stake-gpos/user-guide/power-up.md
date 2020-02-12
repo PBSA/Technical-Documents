@@ -14,3 +14,7 @@ In the example above the user has no vested balance. If an amount of 80PPY is ve
 
 Click on the `CANCEL` button to leave this screen without saving any changes. Or click on `SUBMIT` to save changes and return to the [GPOS Landing Page.](gpos-landing-page.md)
 
+{% hint style="warning" %}
+**Note**: Creating a GPOS balance doesn't yet qualify you to receive participation rewards, you must still [vote](vote.md).
+{% endhint %}
+
