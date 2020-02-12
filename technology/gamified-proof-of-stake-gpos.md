@@ -49,7 +49,7 @@ Qualified reward % = q
 
 Estimated Rake Reward% = \(b / TB\) \* q
 
-For example:
+**For example:**
 
 A user has a GPOS balance of 1,000PPY and is entitled to 100% of their reward based on voting performance. The total GPOS balance on the blockchain is 4,000,000PPY.
 
