@@ -16,5 +16,9 @@ Voting qualifies you for participation rewards but the actual amount you qualify
 
 Every time you withdraw from you GPOS balance there is a transaction fee of 0.01PPY.
 
- 
+###  My voting performance is 'OK Rewards', how do I improve this?
+
+Basically, vote more often!
+
+The performance rating is based on voting performance, to have a rating of 'OK' would mean that you've missed voting for about three months.
 
