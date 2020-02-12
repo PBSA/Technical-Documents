@@ -14,6 +14,7 @@
     * [Power Up](technology/gamified-proof-of-stake-gpos/user-guide/power-up.md)
     * [Power Down](technology/gamified-proof-of-stake-gpos/user-guide/power-down.md)
     * [Vote](technology/gamified-proof-of-stake-gpos/user-guide/vote.md)
+    * [Thank you for voting!](technology/gamified-proof-of-stake-gpos/user-guide/thank-you-for-voting.md)
   * [FAQ](technology/gamified-proof-of-stake-gpos/faq.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
