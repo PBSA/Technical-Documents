@@ -8,7 +8,7 @@
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
 * [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos/README.md)
-  * [User Guide](technology/gamified-proof-of-stake-gpos/user-guide/README.md)
+  * [Wallet User Guide](technology/gamified-proof-of-stake-gpos/user-guide/README.md)
     * [GPOS Panel](technology/gamified-proof-of-stake-gpos/user-guide/gpos-panel.md)
     * [GPOS Landing Page](technology/gamified-proof-of-stake-gpos/user-guide/gpos-landing-page.md)
     * [Power Up](technology/gamified-proof-of-stake-gpos/user-guide/power-up.md)
