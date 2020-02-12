@@ -25,7 +25,7 @@ In the example above note that although the Opening GPOS Balance is 80PPY the Av
 The main reasons for having a holding period are:
 
 * It's in your best interest to maintain a GPOS balance, withdrawing from the balance will effect your participation rewards.
-* Withdrawing all the balance before 30 days could also effect your reward percentage by not allowing you to vote.
+* Withdrawing all the balance before 30 days could also effect your reward percentage by stopping you from voting.
 * There are fees associated with creating a balance and withdrawing from it. A holding period protects you from 'experimenting' with vesting and incurring unexpected fees.
 
 Click on the `CANCEL` button to leave this screen without saving any changes. Or click on `SUBMIT` to save changes and return to the [GPOS Landing Page.](gpos-landing-page.md)
