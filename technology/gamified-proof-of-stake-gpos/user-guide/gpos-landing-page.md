@@ -28,7 +28,3 @@ For anybody familiar with earlier versions of the Peerplays wallet, the voting s
 **Important**: If you have a GPOS balance of zero the `Vote` button will be disabled
 {% endhint %}
 
-
-
-
-
