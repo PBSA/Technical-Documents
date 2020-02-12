@@ -10,7 +10,7 @@ The features of the panel are:
 
 ### GPOS Balance
 
-This is the total amount of PPY that has been vested. In the above example the amount is zero which is then reflecting in the:
+This is the total amount of PPY that has been vested. In the above example the amount is zero which is  reflected in the Voting Performance.
 
 ### Voting Performance
 
@@ -71,7 +71,15 @@ Voting performance is calculated based on the last time you voted for either Wit
   </tbody>
 </table>### Get Started
 
-Clicking on the `Get Started` button will begin the GPOS vesting process if you have a zero GPOS balance, which will always be the case if this is the first time you are using it.
+Clicking on the `GET STARTED` button will begin the GPOS vesting process.
 
-The text on the button will change to \[\] once a balance is vested. See
+ If you have a zero GPOS balance, which will always be the case if this is the first time you are using it, the button will always say `Get Started`. However, the text on the button will change to `PATICIPATE` once a balance is vested. See[ Power Up](power-up.md)
+
+![](../../../.gitbook/assets/screen-shot-2020-02-12-at-3.34.09-pm.png)
+
+### Participate
+
+As mentioned, this option is only available once you have a GPOS balance.
+
+Clicking on `PARTICIPATE` will take you to the GPOS Landing Page as before, except this time both the `Power Down` and `Vote` buttons will be enabled.
 

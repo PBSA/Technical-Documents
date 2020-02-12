@@ -12,3 +12,5 @@ The functionality of this screen is very straightforward. Simply select an amoun
 
 In the example above the user has no vested balance. If an amount of 80PPY is vested the New GPOS Balance will be 80PPY and if the user power's up again the Opening GPOS Balance will be 80PPY as will the New GPOS Balance.
 
+Click on the `CANCEL` button to leave this screen without saving any changes. Or click on `SUBMIT` to save changes and return to the [GPOS Landing Page.](gpos-landing-page.md)
+
