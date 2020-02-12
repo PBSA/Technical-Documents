@@ -38,24 +38,24 @@ This is the percentage of a user's maximum possible reward received based on the
 
 ### **Estimated Rake Reward %**
 
-This is the potential percentage reward a user could receive based on qualified reward percentage, the amount of PPY they have vested and their share of the total GPOS balance, as:
+This is the potential percentage reward a user could receive based on the [qualified reward percentage](gamified-proof-of-stake-gpos.md#qualified-reward), the amount of PPY they have vested and their share of the total GPOS balance. 
 
-Estimated rake reward %= r  
+So the estimated rake reward is calculated as:
+
+  
 GPOS balance = b  
 Total GPOS balance on blockchain = TB  
-Reward % = p
+Qualified reward % = q
 
-r = \(b / TB\) \* p
+Estimated Rake Reward% = \(b / TB\) \* q
 
 For example:
 
-A user has a GPOS balance of 1,000PPY and is entitled to 100% of his reward based on voting performance. The total GPOS balance on the blockchain is 4,000,000PPY.
+A user has a GPOS balance of 1,000PPY and is entitled to 100% of their reward based on voting performance. The total GPOS balance on the blockchain is 4,000,000PPY.
 
 The user would receive the following percentage of the rake:
 
 \(1,000 / 4,000,000\) \* 100% = 0.025%
 
 So if the total \(month\) rake was 100,000PPY then the user would receive 25PPY
-
-
 
