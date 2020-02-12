@@ -42,7 +42,6 @@ This is the potential percentage reward a user could receive based on the [quali
 
 So the estimated rake reward is calculated as:
 
-  
 GPOS balance = b  
 Total GPOS balance on blockchain = TB  
 Qualified reward % = q
@@ -57,5 +56,5 @@ The user would receive the following percentage of the rake:
 
 \(1,000 / 4,000,000\) \* 100% = 0.025%
 
-So if the total \(month\) rake was 100,000PPY then the user would receive 25PPY
+So if the total \(month\) rake was 100,000PPY then the user would receive 25PPY.
 
