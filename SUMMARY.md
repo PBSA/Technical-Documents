@@ -10,9 +10,13 @@
 * [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos/README.md)
   * [User Guide](technology/gamified-proof-of-stake-gpos/user-guide/README.md)
     * [GPOS Panel](technology/gamified-proof-of-stake-gpos/user-guide/gpos-panel.md)
+    * [GPOS Landing Page](technology/gamified-proof-of-stake-gpos/user-guide/gpos-landing-page.md)
+    * [Power Up](technology/gamified-proof-of-stake-gpos/user-guide/power-up.md)
   * [FAQ](technology/gamified-proof-of-stake-gpos/faq.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
+
+## Peerplays Core Wallet
 
 ## Witnesses
 

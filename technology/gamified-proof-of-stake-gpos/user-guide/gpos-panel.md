@@ -75,5 +75,3 @@ Clicking on the `Get Started` button will begin the GPOS vesting process if you 
 
 The text on the button will change to \[\] once a balance is vested. See
 
-
-
