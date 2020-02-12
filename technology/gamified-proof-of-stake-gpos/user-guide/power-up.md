@@ -1,6 +1,6 @@
 # Power Up
 
-After clicking on the `Power Up` button from the [GPOS landing page](gpos-landing-page.md) you'll be taken to the Power Up screen from where you can vest towards your GPOS balance.
+After clicking on the `Power Up` button on the [GPOS landing page](gpos-landing-page.md) you'll be taken to the Power Up screen from where you can add to your GPOS balance.
 
 ![](../../../.gitbook/assets/screen-shot-2020-02-12-at-2.29.22-pm.png)
 
