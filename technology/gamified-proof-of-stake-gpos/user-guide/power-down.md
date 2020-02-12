@@ -1,14 +1,16 @@
 # Power Down
 
-After clicking on the `Power Down` button on the [GPOS landing page](gpos-landing-page.md) you'll be taken to the Power Down screen from where you can withdraw from your GPOS balance.
+If you have a GPOS balance then you can access the Power Down screen from the [GPOS Landing Page](gpos-landing-page.md).
+
+After clicking on the `Power Down` button you'll be taken to the Power Down screen from where you can withdraw from your GPOS balance.
 
 Unsurprisingly the Power Down screen follows a very similar format to [Power Up](power-up.md); you just use it to withdraw from your GPOS balance, instead of adding to it.
 
 ![](../../../.gitbook/assets/screen-shot-2020-02-12-at-2.47.05-pm.png)
 
-Just like the [Power Up](power-up.md) screen you can select an amount by scrolling up and down using the `+` and `-` buttons. The amount you select will be shown in the Withdraw field and reflected in your New GPOS Balance as well.
+And just like the [Power Up](power-up.md) screen you can select an amount by scrolling up and down using the `+` and `-` buttons. The amount you select will be shown in the Withdraw field and reflected in your New GPOS Balance.
 
-You can withdraw up to the total of your Opening GPOS Balance.
+You can withdraw up to the total amount of your Opening GPOS Balance.
 
 {% hint style="warning" %}
 **Note**: There is a transaction fee of 0.01PPY each time a withdrawal is made.
