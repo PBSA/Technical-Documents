@@ -12,9 +12,13 @@ The best way to understand this is to compare it to the difference between stock
 
 GPOS works the same way, instead of all token holders being entitled to dividends just by virtue of holding tokens \(shares\), token holders now have a PPY balance \(options\) that they only profit from when they are vested in GPOS \(become shares\).
 
-### What is in it for me?
+### Did I just lose some share of the Peerplays rake?
 
-Well, actually a lot! 
+No, in fact far from it. GPOS gives you every opportunity to not just receive the same dividends as before but actually get higher dividends if there are token holders that don't vote. Just remember to vest a GPOS balance and then vote at least once a month.
 
-Your active participation in the governance of the blockchain will strengthen the democratic process and make the operators of Peerplays much more accountable. Not only do you have the opportunity to earn maximum dividends as before, but if you are a diligent voter you can also profit from the token holders that aren't as reliable.
+### Why is GPOS better for Peerplays?
+
+GPOS encourages all PPY token holders to take a much bigger interest, and say, in the governance of the blockchain. This will strengthen the democratic process that goes into electing the operators of   Peerplays, and make them much more accountable. 
+
+Before GPOS token holder voting was poor and that opened up the opportunity for one or two major token holders to influence the operation of the blockchain. Full participation by token holders in the voting process will mitigate this risk and keep the blockchain secure.
 
