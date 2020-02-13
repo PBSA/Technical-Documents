@@ -2,7 +2,7 @@
 
 After clicking on the `Power Up` button on the [GPOS landing page](gpos-landing-page.md) you'll be taken to the Power Up screen from where you can add to your GPOS balance.
 
-![](../../../.gitbook/assets/screen-shot-2020-02-12-at-2.29.22-pm.png)
+![](../../../.gitbook/assets/screen-shot-2020-02-13-at-2.27.10-pm.png)
 
 The functionality of this screen is very straightforward. Simply select an amount of PPY to vest by either entering it in the Deposit field, or scroll the amount up and down using the `+` and `-` buttons.
 

@@ -6,7 +6,7 @@ After clicking on the `Power Down` button you'll be taken to the Power Down scre
 
 Unsurprisingly the Power Down screen follows a very similar format to [Power Up](power-up.md); you just use it to withdraw from your GPOS balance, instead of adding to it.
 
-![](../../../.gitbook/assets/screen-shot-2020-02-12-at-2.47.05-pm.png)
+![](../../../.gitbook/assets/screen-shot-2020-02-13-at-2.28.19-pm%20%281%29.png)
 
 And just like the [Power Up](power-up.md) screen you can select an amount by scrolling up and down using the `+` and `-` buttons. The amount you select will be shown in the Withdraw field and reflected in your New GPOS Balance.
 
