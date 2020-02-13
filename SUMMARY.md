@@ -19,7 +19,6 @@
     * [General](technology/gamified-proof-of-stake-gpos/faq/general.md)
     * [GPOS Panel](technology/gamified-proof-of-stake-gpos/faq/gpos-panel.md)
     * [Power Up & Power Down](technology/gamified-proof-of-stake-gpos/faq/power-up-and-power-down.md)
-    * [Depositing & Withdrawing](technology/gamified-proof-of-stake-gpos/faq/depositing-and-withdrawing.md)
     * [Voting](technology/gamified-proof-of-stake-gpos/faq/voting.md)
     * [Participation Rewards](technology/gamified-proof-of-stake-gpos/faq/participation-rewards.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons.md)
