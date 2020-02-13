@@ -1,6 +1,6 @@
 # Voting
 
-### Does GPOS effect how I vote?
+### Does GPOS affect how I vote?
 
 Yes and no. The functionality of the voting feature in the Peerplays wallet hasn't changed in the newest version, only the steps you go through to vote have changed.
 
