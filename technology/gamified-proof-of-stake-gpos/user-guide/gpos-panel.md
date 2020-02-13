@@ -10,11 +10,11 @@ The features of the panel are:
 
 ### GPOS Balance
 
-This is the total amount of PPY that has been vested. In the above example the amount is zero which is  reflected in the Voting Performance.
+This is the total amount of PPY that has been vested. In the above example the amount is zero which is  reflected in the Voting Performance as well.
 
 ### Voting Performance
 
-Voting performance is calculated based on the last time you voted for either Witnesses, Advisors or Proxies. The text and colour of the caption indicates you performance according to the following table:
+Voting performance is calculated based on the last time you voted for either Witnesses, Advisors or Proxies. The text and colour of the caption indicates your performance according to the following table:
 
 <table>
   <thead>
