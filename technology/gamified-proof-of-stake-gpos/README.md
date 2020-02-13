@@ -34,6 +34,14 @@ This is the percentage of a user's maximum possible reward received based on the
 
 {% hint style="warning" %}
 **Note**: Complete decay was set at six consecutive months to coincide with the dividend distribution periods.
+
+Below are the some of the key GPOS parameters that currently set on mainnet.
+
+GPOS period = 6 months\(180 days\)
+
+GPOS sub-period = 30 days
+
+GPOS lock-in period = 30 days
 {% endhint %}
 
 ### **Estimated Rake Reward %**
