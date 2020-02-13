@@ -4,7 +4,7 @@
 
 The home page of the wallet now includes a panel to display your GPOS status.
 
-![](../../../.gitbook/assets/screen-shot-2020-02-12-at-1.23.09-pm.png)
+![](../../../.gitbook/assets/screen-shot-2020-02-13-at-2.33.27-pm.png)
 
 The features of the panel are:
 
