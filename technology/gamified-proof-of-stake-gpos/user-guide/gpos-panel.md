@@ -73,7 +73,7 @@ Voting performance is calculated based on the last time you voted for either Wit
 
 Clicking on the `GET STARTED` button will begin the GPOS vesting process.
 
- If you have a zero GPOS balance, which will always be the case if this is the first time you are using it, the button will always say `Get Started`. However, the text on the button will change to `PATICIPATE` once a balance is vested. See[ Power Up](power-up.md)
+ If you have a zero GPOS balance, which will always be the case if this is the first time you are using it, the button text will be `Get Started`. However, the text on the button will change to `PATICIPATE` once a balance is vested. See[ Power Up](power-up.md)
 
 ![](../../../.gitbook/assets/screen-shot-2020-02-12-at-3.34.09-pm.png)
 
