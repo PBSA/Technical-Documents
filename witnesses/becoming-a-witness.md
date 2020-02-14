@@ -60,9 +60,7 @@ A good place to start would be by checking out the web pages for existing witnes
 
 Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. Qualities that voters are going to be looking for include, experience, knowledge, commitment, responsibility and community participation.
 
-{% hint style="info" %}
 Some useful links:
-{% endhint %}
 
 Peerplays official Telegram channel:
 
@@ -104,7 +102,7 @@ Important: The following table shows the minimum requirements for each server.
 
 | CPU | Memory | Storage | Bandwidth | OS |
 | :--- | :--- | :--- | :--- | :--- |
-| 8 Cores | 64GB | 300GB SSD | 1Gbps | Ubuntu 18.04 |
+| 8 Cores | 8GB | 300GB SSD | 1Gbps | Ubuntu 18.04 |
 
 These requirements are as of the time of writing, so consider deploying a server with specs slightly higher than the ones listed above in order to "future proof" your server in case the minimum requirements grow in the future.
 
