@@ -2,7 +2,7 @@
 
 If you have a GPOS balance then you can access the Power Down screen from the [GPOS Landing Page](gpos-landing-page.md).
 
-After clicking on the `Power Down` button you'll be taken to the Power Down screen from where you can withdraw from your GPOS balance.
+After clicking on the `Power Down` button you'll be taken to the Power Down screen; from here you can withdraw from your GPOS balance.
 
 Unsurprisingly the Power Down screen follows a very similar format to [Power Up](power-up.md); you just use it to withdraw from your GPOS balance, instead of adding to it.
 

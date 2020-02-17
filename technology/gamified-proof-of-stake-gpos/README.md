@@ -8,7 +8,7 @@ The original intent of Peerplays was to operate as a Decentralized Autonomous Co
 
 ## What Makes GPOS Different?
 
-GPOS made a protocol change such that PPY token holders now receive a _participation reward_  based on their voting performance and how many PPY they have vested or _staked_.
+GPOS made a protocol change such that PPY token holders now receive a _participation reward_ based on their voting performance and how many PPY they have vested or _staked_.
 
 This is a significant change from the original protocol where token holders were rewarded with their share of a rake, taken from a percentage of the blockchain fees, and then distributed to token holders relative to their token holdings, regardless of any voting participation.
 
@@ -16,7 +16,7 @@ Put simply, this means that each PPY token holder needs to vest some, or potenti
 
 ## Why is GPOS Important?
 
-Being a DPOS consensus blockchain, the importance of voter participation from the PPY token holders is paramount to the security of the blockchain. The introduction of GPOS ensures that token holders will take an active interest in the operation and governance of Peerplays.
+Being a DPOS consensus blockchain, the importance of voter participation of the PPY token holders is paramount to the security of the blockchain. The introduction of GPOS ensures that token holders will take an active interest in the operation and governance of Peerplays.
 
 Each vote cast impacts the people behind the successful operation of Peerplays, in particular the  Witnesses. A Witness receiving high votes is much more likely to be elected as a block producing \(active\) Witness.
 
