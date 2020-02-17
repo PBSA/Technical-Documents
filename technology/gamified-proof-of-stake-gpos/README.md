@@ -8,7 +8,7 @@ The original intent of Peerplays was to operate as a Decentralized Autonomous Co
 
 ## What Makes GPOS Different?
 
-GPOS made a protocol change such that PPY token holders now receive a _participation reward_ based on their voting performance and how many PPY they have vested or _staked_.
+GPOS made a protocol change such that PPY token holders now receive a _participation reward_  based on their voting performance and how many PPY they have vested or _staked_.
 
 This is a significant change from the original protocol where token holders were rewarded with their share of a rake, taken from a percentage of the blockchain fees, and then distributed to token holders relative to their token holdings, regardless of any voting participation.
 
