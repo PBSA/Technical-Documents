@@ -22,7 +22,7 @@ You can withdraw form your GPOS balance at any time up to the value of your bala
 
 ## Vote
 
-For anybody familiar with earlier versions of the Peerplays wallet, the voting section is much the same as before. Only the steps to go through to access this feature has changed.
+For anybody familiar with earlier versions of the Peerplays wallet, the voting section is much the same as before. Only the steps to go through to access this feature have changed.
 
 {% hint style="danger" %}
 **Important**: If you have a GPOS balance of zero the `Vote` button will be disabled
