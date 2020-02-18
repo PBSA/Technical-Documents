@@ -12,6 +12,10 @@ The best way to understand this is to compare it to the difference between stock
 
 GPOS works the same way, instead of all token holders being entitled to dividends just by virtue of holding tokens \(shares\), token holders now have a PPY balance \(options\) that they only profit from when they are vested in GPOS \(become shares\).
 
+### Are there any fees associated with GPOS?
+
+Yes, there is a fee of 1PPY for Powering Up \(depositing\) and a nominal fee of 0.01PPY for Powering Down \(withdrawing\).
+
 ### Did I just lose some share of the Peerplays rake?
 
 No, in fact far from it. GPOS gives you every opportunity to not just receive the same dividends as before but actually get higher dividends if there are token holders that don't vote. Just remember to vest a GPOS balance and then vote at least once a month.
