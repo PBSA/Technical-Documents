@@ -24,5 +24,5 @@ Yes, regardless of your level of voting performance as soon as you vote it'll re
 
 ### Can I just vote for a proxy and then let them manage my account?
 
-Yes, this is the role of the proxy ... but if you do this make sure your proxy is reliable as your voting performance is in their hands!
+Yes, this is the role of the proxy ... but if you do this make sure your proxy is reliable as your voting performance is in their hands, and you still need to vote once a month.
 
