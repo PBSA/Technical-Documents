@@ -30,5 +30,9 @@ The Peerplays Advisors are a committee that makes decisions on software changes 
 
 Selecting an Advisor works exactly the same way as selecting a Witness.
 
+{% hint style="danger" %}
+**Important**: Whether voting for Witnesses, Advisors or Proxies you must first click on`PUBLISH` `CHANGES` before you'll be able to click on`FINISH`.
+{% endhint %}
+
 Click on `CANCEL` to return to the GPOS Landing Page without voting, or click on `FINISH` to go to the [Thank you for voting! ](thank-you-for-voting.md)screen.
 
