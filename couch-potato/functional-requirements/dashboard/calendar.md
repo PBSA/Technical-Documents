@@ -1,7 +1,5 @@
 # Calendar
 
-
-
 The calendar component is the main 'engine' of the application. It's here that the user will navigate through, enter and select new games.
 
 ![](../../../.gitbook/assets/image.png)
