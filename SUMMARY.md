@@ -89,8 +89,12 @@
     * [Tables](couch-potato/database/objects/tables.md)
     * [Views](couch-potato/database/objects/views.md)
   * [Scripts](couch-potato/database/scripts.md)
-* [API](couch-potato/api-1.md)
-* [Using the API](couch-potato/using-the-api.md)
+* [API](couch-potato/api-1/README.md)
+  * [Using the API](couch-potato/api-1/using-the-api.md)
+  * [API Reference](couch-potato/api-1/api-reference/README.md)
+    * [Objects](couch-potato/api-1/api-reference/objects.md)
+    * [Error Codes](couch-potato/api-1/api-reference/error-codes.md)
+  * [BOS Schema](couch-potato/api-1/bos-schema.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
