@@ -17,7 +17,7 @@ The colour of the notes is very important and must be visibly obvious. The colou
 * Any game that is in the range 30 - 15 minutes to it's scheduled start time.
 * Any game that is in the range 30 - 15 minutes from it's predicted end time.
 
-![](../../../.gitbook/assets/image%20%2820%29.png)
+![](../../../.gitbook/assets/image%20%2821%29.png)
 
 **Amber**
 

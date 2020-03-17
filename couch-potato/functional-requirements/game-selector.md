@@ -30,7 +30,7 @@ The game selector header displays the following information:
 
 To add new game use the input fields at the bottom of the screen and then click on the `ADD` button.
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2822%29.png)
 
 **Captions**
 
