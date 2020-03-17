@@ -63,6 +63,8 @@
 ## Couch Potato
 
 * [Introduction](couch-potato/introduction.md)
+* [Tecnical](couch-potato/tecnical/README.md)
+  * [Flow Diagrams](couch-potato/tecnical/flow-diagrams.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
