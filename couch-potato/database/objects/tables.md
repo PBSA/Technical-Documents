@@ -4,8 +4,6 @@ description: 'The following is a list of the tables in the Couch Potato database
 
 # Tables
 
-
-
 **Legend**:
 
 **PK**- Primary Key
