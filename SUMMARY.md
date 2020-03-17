@@ -74,6 +74,9 @@
     * [Calendar](couch-potato/tecnical/dashboard/calendar.md)
     * [Notifications](couch-potato/tecnical/dashboard/notifications.md)
     * [Replay](couch-potato/tecnical/dashboard/replay.md)
+    * [Account Menu](couch-potato/tecnical/dashboard/account-menu.md)
+  * [Game Selector](couch-potato/tecnical/game-selector.md)
+  * [Change Password](couch-potato/tecnical/change-password.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
