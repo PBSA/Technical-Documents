@@ -71,6 +71,9 @@
     * [Header](couch-potato/tecnical/dashboard/header.md)
     * [Sports Tabs](couch-potato/tecnical/dashboard/sports-tabs.md)
     * [League Tabs](couch-potato/tecnical/dashboard/league-tabs.md)
+    * [Calendar](couch-potato/tecnical/dashboard/calendar.md)
+    * [Notifications](couch-potato/tecnical/dashboard/notifications.md)
+    * [Replay](couch-potato/tecnical/dashboard/replay.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
