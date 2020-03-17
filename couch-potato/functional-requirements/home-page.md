@@ -2,7 +2,7 @@
 
 The home page will be the first page to load and from where the user will be able to login or create an account.
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
 ### **Inputs**
 
@@ -49,5 +49,5 @@ The home page will be the first page to load and from where the user will be abl
 
 ### **Assets**
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 

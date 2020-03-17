@@ -2,7 +2,7 @@
 
 The leagues tab runs vertically down the left side of the dashboard and displays one tab for each league that is configured for the selected sport. The tabs are dynamic and configured through the MySql database [`Leagues`]() table. 
 
-![](../../../.gitbook/assets/image.png)
+![](../../../.gitbook/assets/image%20%281%29.png)
 
 The order the leagues tabs are displayed in is defined by their `id` value in the [`Leagues`]() table.
 
