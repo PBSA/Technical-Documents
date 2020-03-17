@@ -2,7 +2,7 @@
 
 The dashboard header is shown at the top of the screen and is non-scrollable. That is to say that if the application is run on a small display such that the user has to scroll up and down to see all of the dashboard, the header is always 'pinned' at the top of the screen.
 
-![](../../../.gitbook/assets/image%20%282%29.png)
+![](../../../.gitbook/assets/image%20%283%29.png)
 
 ### **Captions**
 
@@ -24,5 +24,5 @@ The dashboard header is shown at the top of the screen and is non-scrollable. Th
 
 ### Assets
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../../.gitbook/assets/image%20%282%29.png)
 

@@ -2,7 +2,7 @@
 
 The sports tab runs horizontally across the dashboard and displays one tab for each sport that is enabled. The tabs are dynamic and configured through the MySql database [`Sports`]() table. 
 
-![](../../../.gitbook/assets/image%20%288%29.png)
+![](../../../.gitbook/assets/image%20%289%29.png)
 
 The order the sports tabs are displayed in is defined by their `id` value in the [`Sports`]()  table.
 
