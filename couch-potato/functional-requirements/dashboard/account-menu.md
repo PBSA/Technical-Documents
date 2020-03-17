@@ -4,11 +4,11 @@
 
 The account menu is accessed by clicking on the user icon at the far left of the header.
 
-![](../../../.gitbook/assets/image%20%2811%29.png)
+![](../../../.gitbook/assets/image%20%2812%29.png)
 
 The account menu has two features.
 
-![](../../../.gitbook/assets/image%20%285%29.png)
+![](../../../.gitbook/assets/image%20%286%29.png)
 
 ### Change Password
 
