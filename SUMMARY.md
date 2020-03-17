@@ -80,8 +80,13 @@
 * [Getting Started](couch-potato/getting-started/README.md)
   * [Installation](couch-potato/getting-started/installation.md)
 * [Help](couch-potato/help/README.md)
-  * [User Guide](couch-potato/help/user-guide.md)
+  * [User Guide](couch-potato/help/user-guide/README.md)
+    * [Introduction](couch-potato/help/user-guide/introduction.md)
   * [FAQ](couch-potato/help/faq.md)
+* [Database](couch-potato/database/README.md)
+  * [Schema](couch-potato/database/schema.md)
+  * [Objects](couch-potato/database/objects.md)
+  * [Scripts](couch-potato/database/scripts.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
