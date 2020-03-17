@@ -65,6 +65,12 @@
 * [Introduction](couch-potato/introduction.md)
 * [Tecnical](couch-potato/tecnical/README.md)
   * [Flow Diagrams](couch-potato/tecnical/flow-diagrams.md)
+  * [Home Page](couch-potato/tecnical/home-page.md)
+  * [Create Account](couch-potato/tecnical/create-account.md)
+  * [Dashboard](couch-potato/tecnical/dashboard/README.md)
+    * [Header](couch-potato/tecnical/dashboard/header.md)
+    * [Sports Tabs](couch-potato/tecnical/dashboard/sports-tabs.md)
+    * [League Tabs](couch-potato/tecnical/dashboard/league-tabs.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
