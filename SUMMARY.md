@@ -77,6 +77,11 @@
     * [Account Menu](couch-potato/functional-requirements/dashboard/account-menu.md)
   * [Game Selector](couch-potato/functional-requirements/game-selector.md)
   * [Change Password](couch-potato/functional-requirements/change-password.md)
+* [Getting Started](couch-potato/getting-started/README.md)
+  * [Installation](couch-potato/getting-started/installation.md)
+* [Help](couch-potato/help/README.md)
+  * [User Guide](couch-potato/help/user-guide.md)
+  * [FAQ](couch-potato/help/faq.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
