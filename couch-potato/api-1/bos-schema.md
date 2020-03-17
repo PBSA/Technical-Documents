@@ -1,7 +1,5 @@
 # BOS Schema
 
-
-
 These objects are used for the five BOS incident messages. The objects are created and populated internally by the Couch Potato API.
 
 ## create
