@@ -85,7 +85,9 @@
   * [FAQ](couch-potato/help/faq.md)
 * [Database](couch-potato/database/README.md)
   * [Schema](couch-potato/database/schema.md)
-  * [Objects](couch-potato/database/objects.md)
+  * [Objects](couch-potato/database/objects/README.md)
+    * [Tables](couch-potato/database/objects/tables.md)
+    * [Views](couch-potato/database/objects/views.md)
   * [Scripts](couch-potato/database/scripts.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>

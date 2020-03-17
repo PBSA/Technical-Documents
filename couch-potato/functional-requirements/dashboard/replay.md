@@ -4,7 +4,7 @@
 
 The replay screen is displayed by clicking on the `REPLAY` button on the Dashboard header.
 
-![](../../../.gitbook/assets/image%20%287%29.png)
+![](../../../.gitbook/assets/image%20%288%29.png)
 
 The purpose of the Replay feature is to give the user a manual way to send, or re-send, game create incidents to all of the BOS endpoints if for any reason they weren't correctly sent before.
 

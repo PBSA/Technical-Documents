@@ -2,7 +2,7 @@
 
 The Change Password screen is opened by clicking on the `Change Password` menu item in the the [account menu.]()
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/image%20%2818%29.png)
 
 **Captions**
 
