@@ -49,3 +49,5 @@ The home page will be the first page to load and from where the user will be abl
 
 ### **Assets**
 
+![](../../.gitbook/assets/image%20%282%29.png)
+
