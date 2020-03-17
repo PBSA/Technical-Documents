@@ -59,7 +59,10 @@
   * [Incident Schema](data-proxies/how-data-proxies-work/incident-schema.md)
 * [Data Proxy Set Up](data-proxies/data-proxy-set-up.md)
 * [Creating Your Own Data Proxy](data-proxies/creating-your-own-data-proxy.md)
-* [Couch Potato](data-proxies/couch-potato.md)
+
+## Couch Potato
+
+* [Introduction](couch-potato/introduction.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
