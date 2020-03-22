@@ -2,7 +2,7 @@
 
 
 
-The create account screen is opened from the [Home Page]() and is the screen where every new account is created/registered.
+The create account screen is opened from the [Home Page](home-page.md) and is the screen where every new account is created/registered.
 
 ![](../../.gitbook/assets/image%20%2817%29.png)
 
@@ -60,8 +60,8 @@ The create account screen is opened from the [Home Page]() and is the screen whe
 
 | Caption | Type | Action |
 | :--- | :--- | :--- |
-| REGISTER | Button | Validate all fields and then return to the [Home Page]() |
-| X | Image | Close the screen without adding a new account and return to the [Home Page]() |
+| REGISTER | Button | Validate all fields and then return to the [Home Page](home-page.md) |
+| X | Image | Close the screen without adding a new account and return to the [Home Page](home-page.md) |
 
 **Validation**
 
