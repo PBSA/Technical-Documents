@@ -12,7 +12,7 @@ The account menu has two features.
 
 ### Change Password
 
-Click on the Change Password menu item to open the [Change Password]() screen
+Click on the Change Password menu item to open the [Change Password](../change-password.md) screen
 
 ### Log Out
 
