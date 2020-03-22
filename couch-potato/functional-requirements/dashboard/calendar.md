@@ -41,5 +41,5 @@ If a day has at least one game scheduled then a badge for the total number of ga
 | :--- | :--- | :--- |
 | &lt; | Text | Move month forward |
 | &gt; | Text | Move month backward |
-| \[Day Cell\] | Button | Open the [Game Selector]() screen |
+| \[Day Cell\] | Button | Open the [Game Selector](../game-selector.md) screen |
 
