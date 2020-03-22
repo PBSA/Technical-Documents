@@ -19,7 +19,7 @@ The dashboard header is shown at the top of the screen and is non-scrollable. Th
 
 | Caption | Type | Action |
 | :--- | :--- | :--- |
-|  👤 | Icon | Open the [account menu](). |
+|  👤 | Icon | Open the [account menu](account-menu.md). |
 | Replay | Button | Open the Replay screen. |
 
 ### Assets
