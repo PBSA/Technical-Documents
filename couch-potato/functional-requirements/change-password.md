@@ -52,7 +52,7 @@ The Change Password screen is opened by clicking on the `Change Password` menu i
 | Caption | Type | Action |
 | :--- | :--- | :--- |
 | CHANGE PASSWORD | Button | Validate all fields then update the password and return to the [Dashboard](dashboard/) |
-| X | Image | Close the screen without adding a new account and return to the [Dashboard]() |
+| X | Image | Close the screen without adding a new account and return to the [Dashboard](dashboard/) |
 
 **Validation**
 
