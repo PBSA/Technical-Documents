@@ -83,7 +83,7 @@ The duration of any sport is set in the `duration` column of the [`sport`]() tab
       <td style="text-align:left">Dynamic</td>
       <td style="text-align:left">
         <p>The time in minutes until start or end and the following text according
-          to the rules <a href>above</a>:</p>
+          to the rules above:</p>
         <p></p>
         <p><code>STARTS IN [x] MINUTES</code>
         </p>
