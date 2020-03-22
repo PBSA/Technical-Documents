@@ -136,6 +136,8 @@ To cancel a game click on the `Cancel` text next to the game.
 
 A confirmation message will be shown. 
 
+![](../../.gitbook/assets/image%20%2825%29.png)
+
 Click on `Yes` to cancel the game \(game status will then change to `Canceled)` or `No` to to return without canceling.
 
 A `canceled` incident will be sent to BOS.
@@ -151,6 +153,8 @@ A game can only be deleted if it hasn't been started \(has a status of `Not Star
 To delete a game click on the Delete text next to the game. 
 
 A confirmation message will be shown. 
+
+![](../../.gitbook/assets/image%20%2824%29.png)
 
 Click on `Yes` to delete the game \(game will be removed\) or `No` to to return without deleting.
 
