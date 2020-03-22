@@ -16,7 +16,7 @@ Click on the Change Password menu item to open the [Change Password](../change-p
 
 ### Log Out
 
-Click on the Log Out menu item to log out of the application and return to the [Home Page.]()
+Click on the Log Out menu item to log out of the application and return to the [Home Page.](../home-page.md)
 
 {% hint style="warning" %}
 **Note**: The Account Menu will automatically close after 10 seconds if it isn't used.
