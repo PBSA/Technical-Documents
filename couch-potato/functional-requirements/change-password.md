@@ -1,6 +1,6 @@
 # Change Password
 
-The Change Password screen is opened by clicking on the `Change Password` menu item in the the [account menu.]()
+The Change Password screen is opened by clicking on the `Change Password` menu item in the the [account menu.](dashboard/account-menu.md)
 
 ![](../../.gitbook/assets/image%20%2818%29.png)
 
@@ -51,7 +51,7 @@ The Change Password screen is opened by clicking on the `Change Password` menu i
 
 | Caption | Type | Action |
 | :--- | :--- | :--- |
-| CHANGE PASSWORD | Button | Validate all fields then update the password and return to the [Dashboard]() |
+| CHANGE PASSWORD | Button | Validate all fields then update the password and return to the [Dashboard](dashboard/) |
 | X | Image | Close the screen without adding a new account and return to the [Dashboard]() |
 
 **Validation**
