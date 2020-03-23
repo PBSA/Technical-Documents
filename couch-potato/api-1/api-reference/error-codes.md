@@ -110,7 +110,11 @@
 | :--- | :--- | :--- |
 | 447 | Failed to change password for \[username\] |  |
 
-\*\*\*\*
+### 448 - Failed to get user active state
+
+| **Sub Code** | Title | Message |
+| :--- | :--- | :--- |
+| 448 | Failed to get active state for user \[userid \] |  |
 
 ## **BOS Errors**
 
