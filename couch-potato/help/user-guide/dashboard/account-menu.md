@@ -10,13 +10,15 @@ The account menu has two features.
 
 ### Change Password
 
-Click on the Change Password menu item to open the [Change Password](../../../functional-requirements/change-password.md) screen
+Click on the Change Password menu item to open the Change Password screen
 
 ### Log Out
 
-Click on the Log Out menu item to log out of the application and return to the [Home Page.](../../../functional-requirements/home-page.md)
+Click on the Log Out menu item to log out of the application and return to the [Home Page.](../home-page.md)
 
 {% hint style="warning" %}
 **Note**: The Account Menu will automatically close after 10 seconds if it isn't used.
 {% endhint %}
+
+
 
