@@ -8,7 +8,7 @@ The home page is the first page you'll see and from where you can log in or crea
 
 ![](../../../.gitbook/assets/image%20%2816%29.png)
 
-If you already have an account then enter your User name and Password and then click on the `Login` button. Once your log in credentials are verified you'll be taken to the [Dashboard](dashboard.md).
+If you already have an account then enter your User name and Password and then click on the `Login` button. Once your log in credentials are verified you'll be taken to the [Dashboard](dashboard/).
 
 If you don't have an account then click on the `Create Account` link and you'll be taken to the [Create Account](creating-an-account.md) screen where you'll be able to create your new account.
 

@@ -2,9 +2,9 @@
 
 The dashboard is the main screen from where you can navigate around the features of the application in preparation for inputting data.
 
-The dashboard sis opened as soon as you log in from the  [Home Page](../../functional-requirements/home-page.md).
+The dashboard sis opened as soon as you log in from the  [Home Page](../../../functional-requirements/home-page.md).
 
-![](../../../.gitbook/assets/image%20%2815%29.png)
+![](../../../../.gitbook/assets/image%20%2815%29.png)
 
 The dashboard is best thought of as five feature sections:
 
@@ -18,15 +18,15 @@ The dashboard is best thought of as five feature sections:
 
 The dashboard header is shown at the top of the screen and is non-scrollable. That is to say that if you run  the application on a small display such that you have to scroll up and down, to see all of the dashboard, the header is always 'pinned' to the top of the screen.
 
-![](../../../.gitbook/assets/image%20%2810%29.png)
+![](../../../../.gitbook/assets/image%20%2810%29.png)
 
 The features of the header are:
 
 * Application version number.
 * Real time clock.
-* Data Replay button. See Replays.
+* Data Replay button. See [Replay](replay.md).
 * User name.
-* User icon for opening the account menu. See Account Menu.
+* User icon for opening the account menu. See [Account Menu](account-menu.md).
 
 ## Sports Tabs
 
@@ -45,7 +45,7 @@ When you select a sports tab the league will default to the first one in the lis
 
 The leagues tab runs vertically down the left side of the dashboard and displays one tab for each league that is configured for the selected sport. The tabs are dynamic and configured through a database table so that new leagues can be added or deleted at any time.
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](../../../../.gitbook/assets/image%20%281%29.png)
 
 There is no limit on the number of sports tabs that can be created. If the tabs reach the vertical limit of the application then they will stack in to multiple columns. 
 
@@ -55,7 +55,7 @@ If you click on any of the tabs the calendar will show only events for the selec
 
 The calendar component is the main 'engine' of the application. It's here that you'll navigate, enter and select new games.
 
-![](../../../.gitbook/assets/image.png)
+![](../../../../.gitbook/assets/image.png)
 
 The calendar dynamically creates a month plan for each month selected using the forward \(&gt;\) and backward \(&lt;\) selectors. There is no limit on the number of months/years that can scrolled through.
 
@@ -75,7 +75,7 @@ To enter new games click on any day cell and the game selector for that sport / 
 
 The notifications panel is displayed on the right side of the dashboard and is where all notifications \(reminders\) will be posted for any games about to start or finish.
 
-![](../../../.gitbook/assets/image%20%285%29.png)
+![](../../../../.gitbook/assets/image%20%285%29.png)
 
 Each notification takes the form of a 'note' which has the following attributes:
 
