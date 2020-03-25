@@ -14,7 +14,7 @@ Normally you won't need to use this feature very often as a create incident is a
 **Important**: The Replay feature can only be used for games that are not yet started. Once a game is started a new create incident would be ignored.
 {% endhint %}
 
-Sports and leagues can be selected individually using check-boxes, or all sports and leagues can be selected or de-selected using the Select All checkbox/toggle.
+You can select sports and leagues individually using check-boxes, or select / de-select all sports and leagues by using the Select All checkbox/toggle.
 
-The range of data to be replayed will be set from the Start and End fields.
+Set the range of data to be replayed by entering values in the Start and End fields.
 
