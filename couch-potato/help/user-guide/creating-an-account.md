@@ -1,7 +1,5 @@
 # Creating an Account
 
-
-
 Before using Couch Potato every user must create an account.
 
 To create an account by first clicking on the `Create Account` link on the [Home Page.](home-page.md)
