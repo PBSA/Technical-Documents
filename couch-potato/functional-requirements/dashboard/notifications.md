@@ -2,7 +2,7 @@
 
 The notifications panel is displayed on the right side of the dashboard and is where all notifications \(reminders\) will be posted for all games about to start or finish.
 
-![](../../../.gitbook/assets/image%20%2811%29.png)
+![](../../../.gitbook/assets/image%20%2812%29.png)
 
 The notifications will be refreshed at a configurable millisecond interval set in the `notifications->delay` property in `config-dataproxy.json`. The default will be 3,000 \(3 seconds\).
 
@@ -17,21 +17,21 @@ The colour of the notes is very important and must be visibly obvious. The colou
 * Any game that is in the range 30 - 15 minutes to it's scheduled start time.
 * Any game that is in the range 30 - 15 minutes from it's predicted end time.
 
-![](../../../.gitbook/assets/image%20%2822%29.png)
+![](../../../.gitbook/assets/image%20%2823%29.png)
 
 **Amber**
 
 * Any game that is in the range 1 - 14 minutes to it's scheduled start time.
 * Any game that is in the range 1 - 14 minutes from it's predicted end time.
 
-![](../../../.gitbook/assets/image%20%2810%29.png)
+![](../../../.gitbook/assets/image%20%2811%29.png)
 
 **Red**
 
 * Any game that should have started according to its scheduled start time.
 * Any game that is in the range 30 - 15 minutes to it's predicted end time.
 
-![](../../../.gitbook/assets/image%20%2812%29.png)
+![](../../../.gitbook/assets/image%20%2813%29.png)
 
 ### Start and End Times
 

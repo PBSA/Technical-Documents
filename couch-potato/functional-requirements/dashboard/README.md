@@ -2,7 +2,7 @@
 
 The dashboard is the main screen and is opened from the [Home Page](../home-page.md) as soon as the user is logged in.
 
-![](../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../.gitbook/assets/image%20%2815%29.png)
 
 The components of the dashboard are:
 

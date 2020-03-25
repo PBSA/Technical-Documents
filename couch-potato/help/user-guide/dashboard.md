@@ -4,7 +4,7 @@ The dashboard is the main screen from where you can navigate around the features
 
 The dashboard sis opened as soon as you log in from the  [Home Page](../../functional-requirements/home-page.md).
 
-![](../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../.gitbook/assets/image%20%2815%29.png)
 
 The dashboard is best thought of as five feature sections:
 
@@ -18,7 +18,7 @@ The dashboard is best thought of as five feature sections:
 
 The dashboard header is shown at the top of the screen and is non-scrollable. That is to say that if you run  the application on a small display such that you have to scroll up and down, to see all of the dashboard, the header is always 'pinned' to the top of the screen.
 
-![](../../../.gitbook/assets/image%20%289%29.png)
+![](../../../.gitbook/assets/image%20%2810%29.png)
 
 The features of the header are:
 
@@ -74,6 +74,8 @@ To enter new games click on any day cell and the game selector for that sport / 
 ## Notifications
 
 The notifications panel is displayed on the right side of the dashboard and is where all notifications \(reminders\) will be posted for any games about to start or finish.
+
+![](../../../.gitbook/assets/image%20%285%29.png)
 
 Each notification takes the form of a 'note' which has the following attributes:
 

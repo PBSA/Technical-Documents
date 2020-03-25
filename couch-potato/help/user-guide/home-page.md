@@ -6,7 +6,7 @@ The home page is the first page you'll see and from where you can log in or crea
 **Note**: If you've set up your own Couch Potato server then the url for the application will be at your discretion, but if you're using a hosted version then PBSA will supply you with a url.
 {% endhint %}
 
-![](../../../.gitbook/assets/image%20%2815%29.png)
+![](../../../.gitbook/assets/image%20%2816%29.png)
 
 If you already have an account then enter your User name and Password and then click on the `Login` button. Once your log in credentials are verified you'll be taken to the [Dashboard](dashboard.md).
 

@@ -136,7 +136,7 @@ To cancel a game click on the `Cancel` text next to the game.
 
 A confirmation message will be shown. 
 
-![](../../.gitbook/assets/image%20%2825%29.png)
+![](../../.gitbook/assets/image%20%2826%29.png)
 
 Click on `Yes` to cancel the game \(game status will then change to `Canceled)` or `No` to to return without canceling.
 
@@ -154,7 +154,7 @@ To delete a game click on the Delete text next to the game.
 
 A confirmation message will be shown. 
 
-![](../../.gitbook/assets/image%20%2824%29.png)
+![](../../.gitbook/assets/image%20%2825%29.png)
 
 Click on `Yes` to delete the game \(game will be removed\) or `No` to to return without deleting.
 
