@@ -1,2 +1,46 @@
 # Dashboard
 
+The dashboard is the main screen from where you can navigate around the features of the application in preparation for inputting data.
+
+The dashboard sis opened as soon as you log in from the  [Home Page](../../functional-requirements/home-page.md).
+
+![](../../../.gitbook/assets/image%20%2814%29.png)
+
+The dashboard is best thought of as five feature sections:
+
+1. Header
+2. Sport Tabs
+3. League \(event Group\) Tabs
+4. Calendar
+5. Notifications
+
+## Header
+
+The dashboard header is shown at the top of the screen and is non-scrollable. That is to say that if you run  the application on a small display such that you have to scroll up and down, to see all of the dashboard, the header is always 'pinned' to the top of the screen.
+
+![](../../../.gitbook/assets/image%20%289%29.png)
+
+The features of the header are:
+
+* Application version number.
+* Real time clock.
+* Data Replay button. See Replays.
+* User name.
+* User icon for opening the account menu. See Account Menu.
+
+### Sports Tabs
+
+
+
+
+
+
+
+## League Tabs
+
+
+
+
+
+
+
