@@ -2,7 +2,7 @@
 
 The Game Selector is opened by clicking on the day cell of any calendar. The Game Selector is the engine behind all of the game incidents that are created and the posted to BOS.
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](../../.gitbook/assets/screen-shot-2020-03-25-at-10.00.34-am.png)
 
 The Game Selector is both used for creating new games/matches and then moving each game through the following standard incident workflow of create -&gt; in\_progress -&gt; result -&gt; finished.
 
@@ -30,7 +30,7 @@ The game selector header displays the following information:
 
 To add new game use the input fields at the bottom of the screen and then click on the `ADD` button.
 
-![](../../.gitbook/assets/image%20%2823%29.png)
+![](../../.gitbook/assets/screen-shot-2020-03-25-at-10.08.27-am.png)
 
 **Captions**
 
