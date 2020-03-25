@@ -51,3 +51,15 @@ There is no limit on the number of sports tabs that can be created. If the tabs 
 
 If you click on any of the tabs the calendar will show only events for the selected sport and league.
 
+## Calendar
+
+
+
+
+
+
+
+
+
+## Notifications
+
