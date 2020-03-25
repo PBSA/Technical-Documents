@@ -108,3 +108,5 @@ The number of hours after which a notes should be removed is set in the `notific
 
 Each note is 'clickable', and when any note is clicked on it will automatically open the game selector for the selected date / league / sport combination. The game in the selector, that corresponds to the game on the selected note, will be highlighted for easy identification. For more information see:
 
+{% page-ref page="../game-selector.md" %}
+
