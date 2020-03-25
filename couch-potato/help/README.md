@@ -2,7 +2,7 @@
 
 {% page-ref page="user-guide/" %}
 
-{% page-ref page="faq.md" %}
+{% page-ref page="../faq.md" %}
 
 
 
