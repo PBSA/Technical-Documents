@@ -1,7 +1,5 @@
 # API Reference
 
-
-
 ## add\_game
 
 Adds a new game and sends a create incident message to BOS.
