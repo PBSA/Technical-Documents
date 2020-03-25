@@ -2,7 +2,7 @@
 
 
 
-The account menu is accessed by clicking on the user icon at the far left of the header.
+The account menu is accessed by clicking on the user icon at the far right of the header.
 
 ![](../../../.gitbook/assets/image%20%2814%29.png)
 
