@@ -28,7 +28,7 @@ The features of the header are:
 * User name.
 * User icon for opening the account menu. See Account Menu.
 
-### Sports Tabs
+## Sports Tabs
 
 The sports tab runs horizontally across the dashboard and displays one tab for each sport that is enabled. The tabs are dynamic and configured through a database table that can have new sports added or deleted at any time
 
@@ -39,13 +39,15 @@ By clicking on any tab you will:
 1. Update the Leagues Tabs to show only the leagues associated with the selected sport.
 2. Change the calendar display to show only events for the selected sport and league.
 
-By default, when a new sports tab is selected the league will default to the first one in the list.
+When you select a sports tab the league will default to the first one in the list.
 
 ## League Tabs
 
+The leagues tab runs vertically down the left side of the dashboard and displays one tab for each league that is configured for the selected sport. The tabs are dynamic and configured through a database table so that new leagues can be added or deleted at any time.
 
+![](../../../.gitbook/assets/image%20%281%29.png)
 
+There is no limit on the number of sports tabs that can be created. If the tabs reach the vertical limit of the application then they will stack in to multiple columns. 
 
-
-
+If you click on any of the tabs the calendar will show only events for the selected sport and league.
 
