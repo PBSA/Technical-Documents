@@ -4,7 +4,7 @@
 
 The create account screen is opened from the [Home Page](home-page.md) and is the screen where every new account is created/registered.
 
-![](../../.gitbook/assets/image%20%2817%29.png)
+![](../../.gitbook/assets/screen-shot-2020-03-25-at-2.57.58-pm.png)
 
 **Captions**
 
@@ -50,11 +50,6 @@ The create account screen is opened from the [Home Page](home-page.md) and is th
       </td>
       <td style="text-align:left">Confirm Password</td>
     </tr>
-    <tr>
-      <td style="text-align:left">Email Address</td>
-      <td style="text-align:left">Max Length: 60</td>
-      <td style="text-align:left">Email Address</td>
-    </tr>
   </tbody>
 </table>**Actions**
 
@@ -72,8 +67,6 @@ The create account screen is opened from the [Home Page](home-page.md) and is th
 | Password too short | Password must be at least 8 characters |
 | No confirm password | Confirm password not entered |
 | Password and confirm password not the same | Password and Confirm Password are different |
-| No email | Email not entered |
-| Invalid email, format must be xxx@xxx.xxx | Email is not valid |
 
 {% hint style="warning" %}
 **Note**: For the first release there will be no additional validation on the password format for strength or special characters etc. The only constraint is that the length must be &gt;=8 and &lt;= 40 characters.
