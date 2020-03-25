@@ -3,7 +3,7 @@
 The home page is the first page you'll see and from where you can log in or create an account.
 
 {% hint style="warning" %}
-**Note**: If you've set up your own Couch Potato server then the url to the application will be at your discretion. If you're using a hosted version then PBSA will supply you with a url.
+**Note**: If you've set up your own Couch Potato server then the url for the application will be at your discretion, but if you're using a hosted version then PBSA will supply you with a url.
 {% endhint %}
 
 ![](../../../.gitbook/assets/image%20%2815%29.png)
