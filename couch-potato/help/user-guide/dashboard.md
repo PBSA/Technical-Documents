@@ -30,11 +30,16 @@ The features of the header are:
 
 ### Sports Tabs
 
+The sports tab runs horizontally across the dashboard and displays one tab for each sport that is enabled. The tabs are dynamic and configured through a database table that can have new sports added or deleted at any time
 
+There is no limit on the number of sports tabs that can be created. If the tabs reach the horizontal limit of the application then they will stack in to multiple rows. 
 
+By clicking on any tab you will:
 
+1. Update the Leagues Tabs to show only the leagues associated with the selected sport.
+2. Change the calendar display to show only events for the selected sport and league.
 
-
+By default, when a new sports tab is selected the league will default to the first one in the list.
 
 ## League Tabs
 
