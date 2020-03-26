@@ -80,7 +80,7 @@ A `canceled` message will be sent to BOS.
 **Note**: A canceled game can also be interpreted as postponed but not as delayed. A delayed game is expected to restart. But once a game has been canceled it can't be restarted. If a game is canceled and then played the following day it would have to re-created with the new start time.
 {% endhint %}
 
-## Delete Game
+## Deleting a Game
 
 A game can only be deleted if it hasn't been started \(has a status of `Not Started`\).
 
