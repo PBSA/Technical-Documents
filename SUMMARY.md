@@ -87,7 +87,6 @@
       * [Account Menu](couch-potato/help/user-guide/dashboard/account-menu/README.md)
         * [Change Password](couch-potato/help/user-guide/dashboard/account-menu/change-password.md)
     * [Game Selector](couch-potato/help/user-guide/game-selector.md)
-  * [FAQ](couch-potato/help/faq.md)
 * [Database](couch-potato/database/README.md)
   * [Schema](couch-potato/database/schema.md)
   * [Objects](couch-potato/database/objects/README.md)
