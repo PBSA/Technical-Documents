@@ -20,5 +20,3 @@ Click on the Log Out menu item to log out of the application and return to the [
 **Note**: The Account Menu will automatically close after 10 seconds if it isn't used.
 {% endhint %}
 
-
-
