@@ -37,7 +37,7 @@ To start a game click on the `Start` button next to the game in the game list. T
 ![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.26.33-am.png)
 
 {% hint style="danger" %}
-**Important**: You must start a game as close as possible to the **ACTUAL** start time of the game; games seldom start at the scheduled time. This is the time that's recorded as the 'whistle start time' and the time that BOS will compare with other data proxies.
+**Important**: You must start a game as close as possible to the **ACTUAL** start time of the game; games seldom start at the scheduled time. This is the time that's recorded as the 'whistle start time' and the time that BOS will compare with start times reported by other data proxies.
 {% endhint %}
 
 Once a game has started you can't [delete](game-selector.md#delete-game) it, but you can still [cancel](game-selector.md#cancel-game) it.
@@ -50,25 +50,31 @@ To finish a game enter the score for both home and away teams and click on the `
 
 ![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.46.26-am.png)
 
+{% hint style="danger" %}
+**Important**: You must finish a game as close as possible to the **ACTUAL** time that the game finishes. This is the time that's recorded as the 'whistle end time' and the time that BOS will compare with finish times reported by other data proxies.
+{% endhint %}
+
 Once a game is finished it's no longer possible to cancel it.
 
 {% hint style="warning" %}
-**Note**: It's not possible to corrects scores and re-send them. For this reason the `finish` message is sent immediately after the `result` message as soon as you click on the `Finish` button.
+**Note**: It's important that scores are entered correctly the first time as it's not possible to correct scores and re-submit them. 
 {% endhint %}
 
 ## Canceling a Game
 
-Any game can be cancelled as long as it's either `Not Started` or `In Progress.`
+You can cancel a game as long as it's either in a `Not Started` or `In Progress.` status.
 
 To cancel a game click on the `Cancel` text next to the game. 
 
-A confirmation message will be shown. 
+![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.56.06-am.png)
+
+A confirmation message similar to the following will be shown. 
 
 ![](../../../.gitbook/assets/image%20%2826%29.png)
 
 Click on `Yes` to cancel the game \(game status will then change to `Canceled)` or `No` to to return without canceling.
 
-A `canceled` incident will be sent to BOS.
+A `canceled` message will be sent to BOS.
 
 {% hint style="info" %}
 **Tip**: for the purposes of BOS incidents 'canceled' can also be interpreted as postponed but not as delayed. A delayed game is expected to restart. But once a game has been canceled it can't be restarted. If a game is canceled and then played the following day it would have to re-created with the new start time.
