@@ -26,7 +26,7 @@ The features of the header are:
 * Real time clock.
 * Data Replay button. See [Replay](replay.md).
 * User name.
-* User icon for opening the account menu. See [Account Menu](account-menu.md).
+* User icon for opening the account menu. See [Account Menu](account-menu/).
 
 ## Sports Tabs
 
