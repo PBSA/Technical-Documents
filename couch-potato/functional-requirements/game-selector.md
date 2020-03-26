@@ -1,6 +1,6 @@
 # Game Selector
 
-The Game Selector is opened by clicking on the day cell of any calendar. The Game Selector is the engine behind all of the game incidents that are created and the posted to BOS.
+The Game Selector is opened by clicking on the day cell of any calendar. The Game Selector is the engine behind all of the game incidents that are created and then posted to BOS.
 
 ![](../../.gitbook/assets/screen-shot-2020-03-25-at-10.00.34-am.png)
 
