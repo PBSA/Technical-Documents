@@ -1,12 +1,14 @@
 # Game Selector
 
-The Game Selector is opened by clicking on the day cell of any calendar. The Game Selector is the engine behind all of the game incidents that are created and then posted to the Bookie Oracle System and on to BookiePro.
+The Game Selector is opened by clicking on the day cell of any calendar. The Game Selector is the engine behind all of the games that are created and then posted to the Bookie Oracle System and on to BookiePro.
+
+The Game Selector is opened when you click on any day cell on the [Calendar](dashboard/#calendar).
 
 ![](../../../.gitbook/assets/screen-shot-2020-03-25-at-10.00.34-am.png)
 
-The Game Selector is both used for creating new games/matches and then moving each game through the following standard incident workflow of create -&gt; in\_progress -&gt; result -&gt; finished.
+The Game Selector is used for creating new games/matches and then starting games, adding scores and finishing the games.
 
-The selector can also be used to Cancel or Delete games.
+You can also use the Game Selector to Cancel or Delete games.
 
 ## Header
 
