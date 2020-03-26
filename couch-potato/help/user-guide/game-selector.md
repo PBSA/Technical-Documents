@@ -21,14 +21,22 @@ The Away Team and Home Team dropdown lists will only display valid teams for the
 It is permitted to add a start time that's in the past as a game could start earlier than expected. However, if this is the case then the game needs to be [started](game-selector.md#start-game) as soon as possible.
 
 {% hint style="warning" %}
-Note: There is no check on whether the same match is added twice. The reason for this is that in some sports it's common to have a 'double-header', so two matches on the same day is perfectly acceptable.
+**Note**: There is no check on whether the same match is added twice. The reason for this is that in some sports it's common to have a 'double-header', so two matches on the same day is perfectly acceptable.
 {% endhint %}
 
- As soon as a the game is added you'll see it in the game list with any other games scheduled for the same day.
+{% hint style="warning" %}
+**Note**: The score input fields are disabled until a game is started.
+{% endhint %}
 
-## Start Game
+ 
 
-To start a game click on the `Start` button next to the game. The game status will then change to `In Progress`
+As soon as a the game is added you'll see it in the game list with any other games scheduled for the same day.
+
+## Starting a Game
+
+To start a game click on the `Start` button next to the game in the game list. The game status will change to `In Progress`
+
+![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.26.33-am.png)
 
 **Actions**
 
