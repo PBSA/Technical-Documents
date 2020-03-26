@@ -28,8 +28,6 @@ It is permitted to add a start time that's in the past as a game could start ear
 **Note**: The score input fields are disabled until a game is started.
 {% endhint %}
 
- 
-
 As soon as a the game is added you'll see it in the game list with any other games scheduled for the same day.
 
 ## Starting a Game
@@ -38,50 +36,17 @@ To start a game click on the `Start` button next to the game in the game list. T
 
 ![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.26.33-am.png)
 
-**Actions**
-
-| Caption | Type | Action |
-| :--- | :--- | :--- |
-| `Start`  | Button | Start the selected game. |
-
-An [`in_progress`]() incident will be pushed to the BOS instances with the `whistle_start_time` set to the time when the `Start` button was clicked.
+{% hint style="danger" %}
+**Important**: You must start a game as close as possible to the **ACTUAL** start time of the game; games seldom start at the scheduled time. This is the time that's recorded as the 'whistle start time' and the time that BOS will compare with other data proxies.
+{% endhint %}
 
 ## Finish Game
 
-To finish a game enter the score for both home and away teams and click on the `Finish` button next to the game. The game status will then change to `Finished`
+To finish a game enter the score for both home and away teams and click on the `Finish` button next to the game. The game status will  change to `Finished`
 
-**Inputs**
+![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.31.53-am.png)
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Name</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Constraints</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Home Score</td>
-      <td style="text-align:left">Text Box</td>
-      <td style="text-align:left">Numeric, max 999</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>Away</p>
-        <p>Score</p>
-      </td>
-      <td style="text-align:left">Text Box</td>
-      <td style="text-align:left">Numeric, max 999</td>
-    </tr>
-  </tbody>
-</table>**Actions**
-
-| Caption | Type | Action |
-| :--- | :--- | :--- |
-| `Finish`  | Button | Finish the selected game and record the score. |
-
-A [`result`]() incident followed by a [`finish`]() incident will be pushed to the BOS instances with the `whistle_end_time` set to the time when the Finish button was clicked, and the result to the home score and away score values.
+\*\*\*\*
 
 {% hint style="warning" %}
 Note: It's not possible to corrects scores and re-send them to BOS. For this reason the `finish` incident is sent immediately after the `result` incident as a result of just clicking on the `Finish` button.
