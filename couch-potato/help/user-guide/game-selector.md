@@ -66,7 +66,7 @@ You can cancel a game as long as it's either in a `Not Started` or `In Progress.
 
 To cancel a game click on the `Cancel` text next to the game. 
 
-![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.56.06-am.png)
+![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.56.06-am%20%281%29.png)
 
 A confirmation message similar to the following will be shown. 
 
@@ -76,8 +76,8 @@ Click on `Yes` to cancel the game \(game status will then change to `Canceled)` 
 
 A `canceled` message will be sent to BOS.
 
-{% hint style="info" %}
-**Tip**: for the purposes of BOS incidents 'canceled' can also be interpreted as postponed but not as delayed. A delayed game is expected to restart. But once a game has been canceled it can't be restarted. If a game is canceled and then played the following day it would have to re-created with the new start time.
+{% hint style="warning" %}
+**Note**: A canceled game can also be interpreted as postponed but not as delayed. A delayed game is expected to restart. But once a game has been canceled it can't be restarted. If a game is canceled and then played the following day it would have to re-created with the new start time.
 {% endhint %}
 
 ## Delete Game
@@ -86,15 +86,17 @@ A game can only be deleted if it hasn't been started \(has a status of `Not Star
 
 To delete a game click on the Delete text next to the game. 
 
-A confirmation message will be shown. 
+![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.56.06-am.png)
+
+A confirmation message similar to the following will be shown:
 
 ![](../../../.gitbook/assets/image%20%2825%29.png)
 
 Click on `Yes` to delete the game \(game will be removed\) or `No` to to return without deleting.
 
-If a game is deleted than a `canceled` incident must also be sent to BOS so that BOS can tag the game in the same way as a canceled game.
+If you delete a game then a `canceled` message will also be sent to BOS so that BOS can tag the game in the same way as a canceled game.
 
 {% hint style="warning" %}
-**Note**: The difference between a canceled game and a deleted game is that a deleted game is basically a game that was entered in error and once deleted is removed from the database so it can be re-entered correctly if needed. A canceled game is a proper game that for one reason or other doesn't take place after being created correctly.
+**Note**: The difference between a canceled game and a deleted game is that a deleted game is basically a game that was entered in error and once deleted is removed from the database so it can be re-entered correctly if needed. A canceled game is a game that for one reason or other doesn't take place after being created.
 {% endhint %}
 
