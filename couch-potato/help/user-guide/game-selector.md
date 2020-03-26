@@ -40,19 +40,23 @@ To start a game click on the `Start` button next to the game in the game list. T
 **Important**: You must start a game as close as possible to the **ACTUAL** start time of the game; games seldom start at the scheduled time. This is the time that's recorded as the 'whistle start time' and the time that BOS will compare with other data proxies.
 {% endhint %}
 
-## Finish Game
+Once a game has started you can't [delete](game-selector.md#delete-game) it, but you can still [cancel](game-selector.md#cancel-game) it.
+
+## Finishing a Game
 
 To finish a game enter the score for both home and away teams and click on the `Finish` button next to the game. The game status will  change to `Finished`
 
-![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.31.53-am.png)
+![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.31.53-am%20%281%29.png)
 
-\*\*\*\*
+![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.46.26-am.png)
+
+Once a game is finished it's no longer possible to cancel it.
 
 {% hint style="warning" %}
-Note: It's not possible to corrects scores and re-send them to BOS. For this reason the `finish` incident is sent immediately after the `result` incident as a result of just clicking on the `Finish` button.
+**Note**: It's not possible to corrects scores and re-send them. For this reason the `finish` message is sent immediately after the `result` message as soon as you click on the `Finish` button.
 {% endhint %}
 
-## Cancel Game
+## Canceling a Game
 
 Any game can be cancelled as long as it's either `Not Started` or `In Progress.`
 
