@@ -6,33 +6,27 @@ The Game Selector is opened when you click on any day cell on the [Calendar](das
 
 ![](../../../.gitbook/assets/screen-shot-2020-03-25-at-10.00.34-am.png)
 
-The Game Selector is used for creating new games/matches and then starting games, adding scores and finishing the games.
+The Game Selector is used for creating new games and then starting then, adding scores and finally finishing them.
 
 You can also use the Game Selector to Cancel or Delete games.
 
-## Header
-
-The game selector header displays the following information:
-
-**Captions**
-
-| Text/Image | Type | Comments |
-| :--- | :--- | :--- |
-| \[league logo\] | Dynamic | The logo of the selected league  |
-| \[league name\]  | Dynamic |  The name of the selected league |
-| \[date\] | Dynamic | The date of the games.  |
-
-**Actions**
-
-| Caption | Type | Action |
-| :--- | :--- | :--- |
-| X | Button | Close the game selector. |
-
-## Add Game
+## Adding a Game
 
 To add new game use the input fields at the bottom of the screen and then click on the `ADD` button.
 
 ![](../../../.gitbook/assets/screen-shot-2020-03-25-at-10.08.27-am.png)
+
+The Away Team and Home Team dropdown lists will only display valid teams for the selected sport / league combination.
+
+The start entered should always be in the future, if it's backdated BOS will ignore it.
+
+{% hint style="warning" %}
+Note: There is no check on whether the same match is added twice. The reason for this is that in some sports it's common to have a 'double-header', so two matches on the same day is perfectly acceptable.
+{% endhint %}
+
+ 
+
+
 
 **Captions**
 
