@@ -18,58 +18,13 @@ To add new game use the input fields at the bottom of the screen and then click 
 
 The Away Team and Home Team dropdown lists will only display valid teams for the selected sport / league combination.
 
-The start entered should always be in the future, if it's backdated BOS will ignore it.
+It is permitted to add a start time that's in the past as a game could start earlier than expected. However, if this is the case then the game needs to be [started](game-selector.md#start-game) as soon as possible.
 
 {% hint style="warning" %}
 Note: There is no check on whether the same match is added twice. The reason for this is that in some sports it's common to have a 'double-header', so two matches on the same day is perfectly acceptable.
 {% endhint %}
 
- 
-
-
-
-**Captions**
-
-| Text/Image | Type | Comments |
-| :--- | :--- | :--- |
-| Start | Static |   |
-| Home Team | Static |   |
-| Away Team | Static |   |
-
-**Inputs**
-
-| Name | Type | Constraints |
-| :--- | :--- | :--- |
-| Start | Date Selector |  Any valid date |
-| Home Team | Drop Down selector | Drop down list of all teams associated with the selected sport and league. |
-| Away Team | Drop Down selector | Drop down list of all teams associated with the selected sport and league. |
-
-**Actions**
-
-| Caption | Type | Action |
-| :--- | :--- | :--- |
-| ADD +  | Button | Add the game to the list of created games. |
-
-**Validation**
-
-| **Exception** | Error Message |
-| :--- | :--- |
-| No start time | Start time not entered |
-| Home Team | No home team selected |
-| Away Team | No away team selected |
-| Home Team and Away Team must be different | Teams must be different |
-
-{% hint style="warning" %}
-**Note**: There is no validation to stop the same game from being created twice. The reason for this is because it's common in certain sports to have 'double-headers' where two teams play each other more than once in a day.
-{% endhint %}
-
-{% hint style="warning" %}
-**Note**: There is no validation to stop a game start time from being in the passed. This is because game start times do change and it maybe necessary to start a game in the selector that has already started in real time.
-{% endhint %}
-
-Each new game will have its status set to `Not Started`
-
-A [`create`]() incident will be pushed to the BOS instances.
+ As soon as a the game is added you'll see it in the game list with any other games scheduled for the same day.
 
 ## Start Game
 
