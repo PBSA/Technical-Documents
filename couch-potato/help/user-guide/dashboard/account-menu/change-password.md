@@ -6,69 +6,11 @@ The Change Password screen is opened by clicking on the `Change Password` menu i
 
 ![](../../../../../.gitbook/assets/image%20%2819%29.png)
 
-**Captions**
+**First enter your current password and then enter a new password and confirm the new password. The same validation rules apply as when creating a new account.**
 
-| Text | Type | Comments |
-| :--- | :--- | :--- |
-| Change Password | Static |   |
-| Required fields\* | Static |   |
+**The New** Password must be between eight and 40 characters. 
 
-**Inputs**
+If all fields are valid you'll be returned to the [Dashboard](../)
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Name</th>
-      <th style="text-align:left">Constraints</th>
-      <th style="text-align:left">Placeholder Text</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Current Password</td>
-      <td style="text-align:left">
-        <p>Max Length: 40</p>
-        <p>Min Length: 8</p>
-      </td>
-      <td style="text-align:left">Current Password</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">New Password</td>
-      <td style="text-align:left">
-        <p>Max Length: 40</p>
-        <p>Min Length: 8</p>
-      </td>
-      <td style="text-align:left">New Password</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Confirm Password</td>
-      <td style="text-align:left">
-        <p>Max Length: 40</p>
-        <p>Min Length: 8</p>
-      </td>
-      <td style="text-align:left">Confirm Password</td>
-    </tr>
-  </tbody>
-</table>**Actions**
-
-| Caption | Type | Action |
-| :--- | :--- | :--- |
-| CHANGE PASSWORD | Button | Validate all fields then update the password and return to the [Dashboard](../../../../functional-requirements/dashboard/) |
-| X | Image | Close the screen without adding a new account and return to the [Dashboard](../../../../functional-requirements/dashboard/) |
-
-**Validation**
-
-| **Exception** | Error Message |
-| :--- | :--- |
-| No current password | Current password not entered |
-| Current password is wrong | Current password is incorrect. |
-| No new password | New password not entered |
-| New password too short | New password must be at least 8 characters |
-| No confirm new password | Confirm new password not entered. |
-| Confirm new password too short | Confirm new password must be at least 8 characters |
-| New and confirm new don't match | New password and confirm new password are different |
-
-{% hint style="warning" %}
-**Note**: For the first release there will be no additional validation on the password format for strength or special characters etc. The only constraint is that the length must be &gt;=8 and &lt;= 40 characters.
-{% endhint %}
+You can exit this screen at any time by clicking on the X at the top right of the screen.
 
