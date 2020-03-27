@@ -10,5 +10,9 @@ At it simplest the payment structure could be something like, for every successf
 
 BOS operates by receiving a series of incidents from all of the Data Proxies. These incidents are sometimes called triggers or messages, but basically they're just JSON sent to BOS though a RESTful web service. What's important to us are the number of incidents and what they represent, as follows:
 
+|  |  |
+| :--- | :--- |
+|  |  |
+
 
 
