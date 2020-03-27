@@ -57,10 +57,16 @@ We also need a payment strategy for canceled games. Unlike successfully finished
 
 ### Gamified Payments
 
-A very exciting option put forward is to hire, and pay, data proxy users in the same way as Witnesses, Advisors and Proxy voters.
+A very exciting option put forward is to recruit, and pay, data proxy users in the same way as Witnesses, Advisors and Proxy voters.
 
 A Data Proxy operator would be voted for in the same way as the other Peerplays operators. And could then be rewarded in the same way. Voting for a Data Proxy would also constitute a successful GPOS vote.
 
 This system would have the following benefits.
 
-* 
+* Another GPOS voting option for token holder.
+* Much better control over possible collusion amongst Data Proxies as they would have to be voted in rather then PBSA, or Witnesses, having to decide on trusted proxies.
+* Bad proxies would be voted out, again, through a democratic voting.
+* Payment for Data Proxies could be in PPY, the same way that Witnesses are paid but on a different pay scale.
+
+While this system wouldn't be available at first release, it is definitely worth serious consideration for later releases.
+
