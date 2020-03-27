@@ -10,9 +10,17 @@ At it simplest the payment structure could be something like, for every successf
 
 BOS operates by receiving a series of incidents from all of the Data Proxies. These incidents are sometimes called triggers or messages, but basically they're just JSON sent to BOS though a RESTful web service. What's important to us are the number of incidents and what they represent, as follows:
 
-|  |  |
+| Incident | Description |
 | :--- | :--- |
-|  |  |
+| create | Sent each time a game is created |
+| in\_progress | A game is started, `whistle_start_time` sent to BOS |
+| result | A game's result is added, `away_score` and `home_score` sent to BOS |
+| finish | A game finishes, is settled, `whistle_end_time` sent to BOS |
+| canceled | A game is canceled / postponed. |
+
+For more information see:
+
+{% page-ref page="api-1/bos-schema.md" %}
 
 
 
