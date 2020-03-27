@@ -98,6 +98,7 @@
     * [Objects](couch-potato/api-1/api-reference/objects.md)
     * [Error Codes](couch-potato/api-1/api-reference/error-codes.md)
   * [BOS Schema](couch-potato/api-1/bos-schema.md)
+* [Proxy Payment Considerations](couch-potato/proxy-payment-considerations.md)
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
