@@ -47,4 +47,20 @@ For this system to work we must be able to find data that corroborates that all 
 It should be possible to use the data stored in a BOS database to identify incidents by proxy, but we do need to overcome some challenges:
 
 1. It doesn't require ALL data proxies to submit correct incidents for consensus to be reached by BOS. For example, if only two data proxies are needed to submit the same start time for a game, BOS would approve it. What we don't want to do is penalize any data proxy that sent a correct start time, or any other incident, just because their incident wasn't needed for consensus.
-2. 
+2. The same could apply for the complete settlement of a game. The user could correctly submit all four incidents, but BOS consensus could be reached without the need for all incidents from the user. Again, we shouldn't penalize a user who sent a perfect set of incidents.
+
+As long as these challenges can be overcome, and we have accurate log of a user's incidents, then we should have our 'definition of success'.
+
+We also need a payment strategy for canceled games. Unlike successfully finished games, to cancel a game requires only the one incident to be sent. We shouldn't be rewarding any DP user for not canceling a game, but a successful cancelation is a much simpler process than sending four,  time sensitive, incidents for a settled game.
+
+**Proposal** - User's should be paid a smaller amount \(say 50%\) for submitting a successful cancelation.
+
+### Gamified Payments
+
+A very exciting option put forward is to hire, and pay, data proxy users in the same way as Witnesses, Advisors and Proxy voters.
+
+A Data Proxy operator would be voted for in the same way as the other Peerplays operators. And could then be rewarded in the same way. Voting for a Data Proxy would also constitute a successful GPOS vote.
+
+This system would have the following benefits.
+
+* 
