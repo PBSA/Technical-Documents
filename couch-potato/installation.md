@@ -22,9 +22,21 @@ There are several open source PHP stacks readily available that are by far the e
 
 These stacks, and installation instructions,  are readily available for download from many sources and won't be covered any further here.
 
-Step 2 - Install PHP Dependencies.
+### Step 2 - Update versions
 
-The Couch Potato API uses a couple of libraries that aren't part of the standard installation and need to be loaded separately.
+At the time of writing the PHP and SQL versions used are PHP
+
+### Step 3 - Install PHP Dependencies.
+
+The Couch Potato API additional libraries that either aren't part of the standard installation and need to be loaded, or are in PHP but haven't been enabled.
+
+#### mysqli
+
+This is the PHP-&gt;MySQL library used by the API. To install it run.
+
+
+
+
 
 
 
