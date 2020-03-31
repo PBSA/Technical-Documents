@@ -68,7 +68,17 @@ DB_NAME="couch_potato"
 
 Next update the `DB_HOST`, `DB_USER` and `DB_PASS` values to those of your database.
 
+### Step 6 - Installing the User Interface
 
+Installing the web components is very simple but does depend where you're planning on hosting the website.
+
+So assuming you have a suitable web server/directory already set up then copy all the files from the `www` folder to the web server / webapp folder, or copy the entire `www` folder.
+
+The `www` folder can be found here:
+
+TBD
+
+### Step 7 - Load User Interface Dependencies
 
 
 
