@@ -48,16 +48,16 @@ This is the PHP-&gt;MySQL library used by the API. For installation instructions
 A script will be provided to all new Couch Potato operators that will  create the database schema and pre-populate the database with all the starting data.
 
 {% hint style="danger" %}
-**Important**: After the script is run you should have a new database schema called couch\_potato. To avoid any issues or additional configuration changes don't change the database name.
+**Important**: After the script is run you should have a new database schema called `couch_potato`. To avoid any issues or additional configuration changes don't change the database name.
 {% endhint %}
 
 Run the script on the MySQL database instance created in the previous steps.
 
 ### Step 5 - Add Database Connection to API
 
-The PHP API must be updated with the correct database connection credentials that were used to create the database. To do this the .env variables need to be changed as follows:
+The PHP API must be updated with the correct database connection credentials that were used to create the database. To do this some environment variables need to be changed as follows:
 
-Open the .env file from the root location where the PHP API was loaded.
+Open the `.env` file from the root location where the PHP API was loaded.
 
 ```text
 DB_HOST=" "
@@ -66,7 +66,7 @@ DB_PASS=""
 DB_NAME="couch_potato"
 ```
 
-
+Next update the `DB_HOST`, `DB_USER` and `DB_PASS` values to those of your database.
 
 
 
