@@ -24,7 +24,14 @@ These stacks, and installation instructions,  are readily available for download
 
 ### Step 2 - Update versions
 
-At the time of writing the PHP and SQL versions used are PHP
+At the time of writing the PHP and SQL versions used are:
+
+* PHP 7.2
+* MySQL 5.7
+
+After installing PHP and MySQL if your versions aren't at least as new as these then they need to be updated.
+
+The process for updating varies according to the operating system, but if PHP and MySQL were installed as a stack in Step 1, such as LAMP, then as long as that was the most recent version there shouldn't be an issue with old versions of PHP or MySQL.
 
 ### Step 3 - Install PHP Dependencies.
 
