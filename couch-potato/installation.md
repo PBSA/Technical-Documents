@@ -32,7 +32,11 @@ The Couch Potato API additional libraries that either aren't part of the standar
 
 #### mysqli
 
-This is the PHP-&gt;MySQL library used by the API. To install it run.
+This is the PHP-&gt;MySQL library used by the API. For installation instructions see:
+
+{% embed url="https://www.php.net/manual/en/mysqli.installation.php" %}
+
+
 
 
 
