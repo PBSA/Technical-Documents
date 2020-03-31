@@ -14,7 +14,7 @@ Although the diagram above shows an Apache server, other servers compatible with
 
 ## Installing - The Long Way
 
-These short steps show how to install all the back-end components and dependencies.
+These short steps show how to install all components and dependencies.
 
 ### Step 1 - Install a PHP / MySQL Server
 
@@ -82,9 +82,11 @@ TBD
 
 There is one additional dependency that needs to be added to the web server to support the cryptography library that Couch Potato uses.
 
+From the console run:
 
-
-
+```text
+npm install crypto-js
+```
 
 ### Step 8 - Configure User Interface 
 
