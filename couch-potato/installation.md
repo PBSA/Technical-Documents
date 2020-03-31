@@ -80,7 +80,7 @@ TBD
 
 ### Step 7 - Load User Interface Dependencies
 
-
+There is one additional dependency that needs to be added to the web server to support the cryptography library that Couch Potato uses.
 
 
 
