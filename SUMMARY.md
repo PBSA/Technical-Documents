@@ -63,6 +63,7 @@
 ## Couch Potato
 
 * [Introduction](couch-potato/introduction.md)
+* [Installation](couch-potato/installation.md)
 * [Functional Requirements](couch-potato/functional-requirements/README.md)
   * [Flow Diagrams](couch-potato/functional-requirements/flow-diagrams.md)
   * [Home Page](couch-potato/functional-requirements/home-page.md)
