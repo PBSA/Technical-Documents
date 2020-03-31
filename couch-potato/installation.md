@@ -43,6 +43,22 @@ This is the PHP-&gt;MySQL library used by the API. For installation instructions
 
 {% embed url="https://www.php.net/manual/en/mysqli.installation.php" %}
 
+### Step 4 - Run MySQL Script
+
+A script will be provided to all new Couch Potato operators that will  create the database schema and pre-populate the database with all the starting data.
+
+Run the script on the MySQL database instance created in the previous steps.
+
+
+
+### Step 5 - Add Database Connection to API
+
+The PHP API must be updated with the correct database connection credentials that were used to create the database. To do this the .env variables need to be changed as follows:
+
+
+
+
+
 
 
 
