@@ -86,6 +86,45 @@ TBD
 
 
 
+### Step 8 - Configure User Interface 
+
+To configure the application to use the API and other options open the config.json file from the www/assets folder.
+
+```text
+{
+    "api_url": "https://localhost/couch-potato/",
+    "notifications": 
+            {
+                "delay": 2000,
+                "start": 36,
+                "end": 240
+            },
+    "version": "v1.0.0",
+    "title1": "Couch",
+    "title2": "Potato",
+    "logolarge": "/assets/imgs/couch-potato-main.png",
+    "logosmall": "/assets/imgs/couch-potato.png"
+}
+
+```
+
+In this file you can change the following attributes:
+
+| Name | Description |
+| :--- | :--- |
+| api\_url | The URL for the Couch Potato API, see above steps. |
+| notifications: delay | The time in milliseconds at which the game notifications are refreshed. See [Notifications](help/user-guide/dashboard/#notifications) |
+| notifications: start | The number of hours that the notifications report back. For example, 36 means that the notifications will report on any games that are up to three days old. |
+| notifications: end | The number of hours that the notifications report ahead. For example, 240 means that the notifications will report on any games that are up to 10 days away. |
+| title1 | For white-labelling purposes the title can be customized to any text |
+| title2 | See `title1` |
+| logolarge | For white-labelling purposes the large logo can be changed to any valid URL |
+| logosmall | Same as `logolarge` but for the smaller logo. |
+
+
+
+
+
 
 
 
