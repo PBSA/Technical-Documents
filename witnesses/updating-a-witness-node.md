@@ -1,6 +1,6 @@
 # Updating a Witness Node
 
-There will be many occasions when a node has to be updated with new code. These software updates can be categorized as "soft forks' or "hard forks". 
+There will be many occasions when a node has to be updated with new or modified features. These software updates can be categorized as "soft forks' or "hard forks". 
 
 #### Soft Fork
 
@@ -52,6 +52,12 @@ Run the following command:
 
 ```text
 ./programs/witness_node/witness_node --replay-blockchain
+```
+
+If there are any issues during this step then a data resync should be run instead to download blocks from the seed nodes.
+
+```text
+./programs/witness_node/witness_node --resync-blockchain
 ```
 
 ### STEP 5 - Swap Nodes
