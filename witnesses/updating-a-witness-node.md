@@ -6,7 +6,13 @@ There will be many occasions when a node has to be updated with new code. These
 
 A soft fork is a software update that is compatible with earlier versions, in other words it’s backward compatible. A soft fork contains no new operation or updates to existing operations on the blockchain.
 
-Generally a soft fork 
+Generally a soft fork provides an update to an existing feature that isn't relevant to core blockchain operations.
+
+#### Hard Fork
 
 A “hard fork” is a software update that isn’t backwards compatible, so any blocks coming after the activation of the software update will have to follow the new rules in order to be considered valid.
+
+A hard fork is required whenever there is need for introducing new operation\(s\) or updating existing operation\(s\) on the blockchain. Each hard fork is time bound to update nodes and all Witnesses will be expected to finish the update before this date/time.
+
+For example, if an update was released that required a hard fork and the hard fork date/time was set to be Jan 01, 2020 12:00EST, then every witness node must be updated before that date/time.
 
