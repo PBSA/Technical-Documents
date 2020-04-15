@@ -26,7 +26,17 @@ The current blockchain `witness_node` binary \(.exe\) should be backed up in suc
 
 STEP 2 - Get the Release
 
+Each new release will be published, and tagged, in the Peerplays public repository ready for download.
 
+For example, the following is the code for a test release:
+
+{% embed url="https://github.com/peerplays-network/peerplays/releases/tag/test-1.4.4" %}
+
+{% hint style="warning" %}
+**Note**: The above release is just an example, each release will have a different tag that will be provided.
+{% endhint %}
+
+Download the code from the provided tag / link.
 
 
 
