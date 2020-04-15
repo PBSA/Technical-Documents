@@ -1,6 +1,6 @@
 # Updating a Witness Node
 
-There will be many occasions when a node has to be updated with new code. These software updates can be broken down as "soft forks' or "hard forks". 
+There will be many occasions when a node has to be updated with new code. These software updates can be categorized as "soft forks' or "hard forks". 
 
 #### Soft Fork
 
@@ -24,11 +24,11 @@ To update a Witness node use the following steps:
 
 The current blockchain `witness_node` binary \(.exe\) should be backed up in such a way that if there is a serious problem with the update then the node can be rolled-back easily.
 
-STEP 2 - Get the Release
+### STEP 2 - Get the Release
 
 Each new release will be published, and tagged, in the Peerplays public repository ready for download.
 
-For example, the following is the code for a test release:
+For example, the following is the code for test release 1.4.4:
 
 {% embed url="https://github.com/peerplays-network/peerplays/releases/tag/test-1.4.4" %}
 
@@ -38,9 +38,7 @@ For example, the following is the code for a test release:
 
 Download the code from the provided tag / link.
 
-
-
-STEP 2 - Setting Up a Node
+### STEP 2 - Setting Up a Node
 
 Follow this guide to
 
