@@ -38,7 +38,23 @@ For example, the following is the code for test release 1.4.4:
 
 Download the code from the provided tag / link.
 
-### STEP 2 - Setting Up a Node
+### STEP 3 - Building the Witness Node
 
-Follow this guide to
+Follow this guide to build the release from [Step 2](updating-a-witness-node.md#step-2-get-the-release).
+
+{% page-ref page="setting-up-a-witness-node/" %}
+
+### STEP 4 - Start the Witness Node
+
+After the Witness node has been built / compiled it needs to be started and the data replayed.
+
+Run the following command:
+
+```text
+./programs/witness_node/witness_node --replay-blockchain
+```
+
+### STEP 5 - Swap Nodes
+
+Finally the active node needs to be swapped for the newly built node.
 
