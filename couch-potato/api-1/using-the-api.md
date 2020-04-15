@@ -6,7 +6,7 @@ A RESTful API -- also referred to as a RESTful web service or REST API -- is bas
 
 This documentation assumes prior knowledge of using \(consuming\) a REST API.
 
-Each API endpoint is carefully described in the [API Reference](), along with code examples written in Typescript. Successful response messages or messages are returned by all API calls and documented in the [Objects]() and [Error Codes]() sections of this document.
+Each API endpoint is carefully described in the [API Reference](api-reference/), along with code examples written in Typescript. Successful response messages or messages are returned by all API calls and documented in the [Objects](api-reference/objects.md) and [Error Codes](api-reference/error-codes.md) sections of this document.
 
 For easy reference, client side error codes \(400\) are given sub-codes as well.
 
