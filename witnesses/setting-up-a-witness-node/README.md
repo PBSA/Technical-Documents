@@ -23,7 +23,7 @@ The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS
 ```text
 sudo apt-get -y  install gcc g++ cmake make libbz2-dev\
     libdb++-dev libdb-dev libssl-dev openssl libreadline-dev\
-     autoconf libtool git
+     autoconf libtool git apt-get install libcurl4-openssl-dev
 ```
 
 ### Build Boost 1.67.0
