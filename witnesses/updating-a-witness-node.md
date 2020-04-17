@@ -1,6 +1,6 @@
 # Updating a Witness Node
 
-There will be many occasions when a node has to be updated with new or modified features. These software updates can be categorized as "soft forks' or "hard forks". 
+There will be many occasions when a node has to be updated with new or modified features. These software updates can be categorized as "soft forks" or "hard forks". 
 
 #### Soft Fork
 
