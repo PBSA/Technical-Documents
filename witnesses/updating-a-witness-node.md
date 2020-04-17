@@ -33,7 +33,7 @@ For example, the following is the code for test release 1.4.4:
 {% embed url="https://github.com/peerplays-network/peerplays/releases/tag/test-1.4.4" %}
 
 {% hint style="warning" %}
-**Note**: The above release is just an example, each release will have a different tag that will be provided.
+**Note**: The above release is just an example, each release will have it's own tag / link.
 {% endhint %}
 
 Download the code from the provided tag / link.
