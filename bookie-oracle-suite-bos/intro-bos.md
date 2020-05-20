@@ -20,7 +20,11 @@ However, if only two data proxies were reporting to BOS, and they gave different
 
 ## High Level Structure
 
-![](../.gitbook/assets/bos-flow.jpg)
+![General BOS flow](../.gitbook/assets/bos-flow.jpg)
+
+With [Couch Potato](../couch-potato/help/user-guide/introduction.md), the flow looks like this:
+
+![BOS flow with Couch Potato](../.gitbook/assets/bos-with-cpotato.png)
 
 An overview of some of the elements in this diagram:
 
