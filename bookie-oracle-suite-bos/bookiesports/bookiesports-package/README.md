@@ -40,7 +40,9 @@ import BookieSports x = BookieSports()
     </tr>
   </thead>
   <tbody></tbody>
-</table>{% hint style="warning" %}
+</table>
+
+{% hint style="warning" %}
 **Note**: It is possible to overload a custom sports\_folder by providing it to BookieSports as parameter.
 {% endhint %}
 

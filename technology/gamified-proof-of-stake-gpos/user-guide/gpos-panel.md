@@ -69,7 +69,9 @@ Voting performance is calculated based on the last time you voted for either Wit
       </td>
     </tr>
   </tbody>
-</table>### Get Started
+</table>
+
+### Get Started
 
 Clicking on the `GET STARTED` button will begin the GPOS vesting process.
 

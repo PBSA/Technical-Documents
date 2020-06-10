@@ -47,7 +47,9 @@ The Change Password screen is opened by clicking on the `Change Password` menu i
       <td style="text-align:left">Confirm Password</td>
     </tr>
   </tbody>
-</table>**Actions**
+</table>
+
+**Actions**
 
 | Caption | Type | Action |
 | :--- | :--- | :--- |

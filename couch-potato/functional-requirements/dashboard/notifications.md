@@ -96,7 +96,9 @@ The duration of any sport is set in the `duration` column of the [`sport`]() tab
       </td>
     </tr>
   </tbody>
-</table>### Removing Notes
+</table>
+
+### Removing Notes
 
 Each note is tied to a game and as such will be automatically removed from the notification panel as soon as the status of the game is updated. For example, if a note states that game x "SHOULD HAVE STARTED", then as soon as the game is started from the game selector, the note will be removed.
 

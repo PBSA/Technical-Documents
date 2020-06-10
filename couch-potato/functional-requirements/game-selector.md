@@ -116,7 +116,9 @@ To finish a game enter the score for both home and away teams and click on the `
       <td style="text-align:left">Numeric, max 999</td>
     </tr>
   </tbody>
-</table>**Actions**
+</table>
+
+**Actions**
 
 | Caption | Type | Action |
 | :--- | :--- | :--- |
@@ -229,4 +231,6 @@ The selector grid is made up as follows:
     </tr>
   </tbody>
 </table>
+
+
 

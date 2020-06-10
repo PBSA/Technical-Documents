@@ -34,6 +34,7 @@
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node/creating-a-backup-server.md)
   * [CLI Wallet Setup](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
 * [Updating a Witness Node](witnesses/updating-a-witness-node.md)
+* [Setting up a Witness Node with Docker](witnesses/setting-up-a-witness-node-with-docker.md)
 
 ## Bookie Oracle Suite \(BOS\)
 

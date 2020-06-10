@@ -45,7 +45,9 @@ By default, when a new sports tab is selected the league will default to the fir
       </td>
     </tr>
   </tbody>
-</table>{% hint style="warning" %}
+</table>
+
+{% hint style="warning" %}
 **Note**: There is no restriction on the icons/images to be used for each sport, but logically they should reflect the sport!
 {% endhint %}
 

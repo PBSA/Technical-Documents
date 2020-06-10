@@ -40,7 +40,9 @@ Clicking on any unselected tab will change the calendar display to show only eve
       </td>
     </tr>
   </tbody>
-</table>### **Actions**
+</table>
+
+### **Actions**
 
 | Caption | Type | Action |
 | :--- | :--- | :--- |

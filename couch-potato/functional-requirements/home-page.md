@@ -32,7 +32,9 @@ The home page will be the first page to load and from where the user will be abl
       <td style="text-align:left">Password</td>
     </tr>
   </tbody>
-</table>### **Actions**
+</table>
+
+### **Actions**
 
 | Caption | Type | Action |
 | :--- | :--- | :--- |
