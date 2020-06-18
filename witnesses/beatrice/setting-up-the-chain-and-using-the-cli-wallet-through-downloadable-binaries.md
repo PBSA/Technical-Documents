@@ -1,7 +1,5 @@
 # Setting up the chain and using the CLI wallet through downloadable binaries
 
-
-
 It is recommended to use Ubuntu 18.04 and 8GB ram to run this witness node.
 
 ## Downloading the Binaries
