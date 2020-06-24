@@ -21,7 +21,8 @@
     * [Power Up & Power Down](technology/gamified-proof-of-stake-gpos/faq/power-up-and-power-down.md)
     * [Voting](technology/gamified-proof-of-stake-gpos/faq/voting.md)
     * [Participation Rewards](technology/gamified-proof-of-stake-gpos/faq/participation-rewards.md)
-* [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons.md)
+* [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons/README.md)
+  * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 
 ## Peerplays Core Wallet
