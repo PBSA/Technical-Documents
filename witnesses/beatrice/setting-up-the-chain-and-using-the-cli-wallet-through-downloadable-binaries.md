@@ -40,7 +40,7 @@ By default, running the witness\_node binary downloaded from the Beatrice branch
 # checkpoint = 
 
 # Endpoint for websocket RPC to listen on
-# rpc-endpoint = 
+rpc-endpoint = 127.0.0.1:8090
 
 # Endpoint for TLS websocket RPC to listen on
 # rpc-tls-endpoint = 
