@@ -23,6 +23,7 @@
     * [Participation Rewards](technology/gamified-proof-of-stake-gpos/faq/participation-rewards.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons/README.md)
   * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker.md)
+  * [SON Configuration](technology/sidechain-operator-nodes-sons/son-configuration.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 
 ## Peerplays Core Wallet

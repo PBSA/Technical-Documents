@@ -20,6 +20,8 @@ Edit the `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located
 
 ### Setting up config.ini
 
+For a detailed overview: check out: [SON Configuration](son-configuration.md)
+
 Copy the `/peerplays-docker/data/witness_node_data_dir/config.ini.son.example` to `/peerplays-docker/data/witness_node_data_dir/config/config.ini`
 
 ```text
