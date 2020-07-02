@@ -22,7 +22,8 @@
     * [Voting](technology/gamified-proof-of-stake-gpos/faq/voting.md)
     * [Participation Rewards](technology/gamified-proof-of-stake-gpos/faq/participation-rewards.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons/README.md)
-  * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker.md)
+  * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker/README.md)
+    * [Bitcoin Transactions](technology/sidechain-operator-nodes-sons/running-son-with-docker/bitcoin-transactions.md)
   * [SON Configuration](technology/sidechain-operator-nodes-sons/son-configuration.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 

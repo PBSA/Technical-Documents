@@ -20,7 +20,7 @@ Edit the `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located
 
 ### Setting up config.ini
 
-For a detailed overview: check out: [SON Configuration](son-configuration.md)
+For a detailed overview: check out: [SON Configuration](../son-configuration.md)
 
 Copy the `/peerplays-docker/data/witness_node_data_dir/config.ini.son.example` to `/peerplays-docker/data/witness_node_data_dir/config/config.ini`
 
@@ -686,8 +686,6 @@ Scripts execution might last 10-20 minutes.
 # Eg https://gitlab.com/PBSA/peerplays/-/jobs/492479590
 # Job id is 492479590
 
-# Login to gladiator01
-ssh gladiator01
 
 # Go to scripts
 cd scripts/
@@ -768,7 +766,7 @@ export CMD="ls -al /var/opt/492479590"; ssh -t gladiator01 $CMD; ssh -t gladiato
 curl --silent --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}' http://127.0.0.1:8090/rpc | jq -r ".result.chain_id"
 
 cd /var/opt
-ln -s /home/gladiator/scripts/init-network.sh
+ln -s /home/machine_name/scripts/init-network.sh
 cd /var/opt/492479590
 ../init-network.sh CHAIN-ID
 
@@ -795,7 +793,7 @@ cd /var/opt/492479590
 # To avoid importing all keys to wallets on other 15 nodes, we simply copy
 # wallet file from gladiator1 to all other nodes
 
-cd /home/gladiator/scripts
+cd /home/machine_name/scripts
 ./upload-wallet-to-nodes.sh 492479590
 ```
 
@@ -813,4 +811,8 @@ export CMD="killall witness_node -9; sudo service witness stop; cd /var/opt/4924
 # Restart services
 export CMD="sudo systemctl daemon-reload; sudo service witness start;"; ssh -t gladiator01 $CMD; ssh -t gladiator02 $CMD; ssh -t gladiator03 $CMD; ssh -t gladiator04 $CMD; ssh -t gladiator05 $CMD; ssh -t gladiator06 $CMD; ssh -t gladiator07 $CMD; ssh -t gladiator08 $CMD; ssh -t gladiator09 $CMD; ssh -t gladiator10 $CMD; ssh -t gladiator11 $CMD; ssh -t gladiator12 $CMD; ssh -t gladiator13 $CMD; ssh -t gladiator14 $CMD; ssh -t gladiator15 $CMD; ssh -t gladiator16 $CMD;
 ```
+
+
+
+
 
