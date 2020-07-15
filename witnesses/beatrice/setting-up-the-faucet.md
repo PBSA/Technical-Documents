@@ -22,6 +22,8 @@ It is best practice to use python virtual environments. [https://docs.python.org
 {% endhint %}
 
 ```text
+sudo apt-get install python3-venv
+cd faucet
 python3 -m venv env
 source env/bin/activate
 ```
