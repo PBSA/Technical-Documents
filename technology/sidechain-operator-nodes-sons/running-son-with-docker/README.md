@@ -78,6 +78,7 @@ The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(
 After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available. In the terminal use `docker exec` to connect to the wallet.
 
 ```text
+# In the local terminal
 docker exec -it seed cli_wallet
 ```
 
@@ -86,20 +87,32 @@ If an exception is thrown and contains `Remote server gave us an unexpected chai
 Pass the chain ID to the CLI wallet:
 
 ```text
+# In the local terminal
 docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
 ```
 
 The first launch of the CLI wallet will require password initialization. Set the password:
 
 ```
+# In the CLI wallet
 set_password <PASSWORD>
 ```
 
 Unlock the CLI wallet by providing the password just set:
 
 ```text
+# In the CLI wallet
 unlock <PASSWORD>
 ```
 
 The CLI wallet is now ready to be used.
+
+## Cleaning up the environment
+
+To remove the containers and data from the environment run:
+
+```text
+# Starting in the project root
+./run.sh clean son
+```
 
