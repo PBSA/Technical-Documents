@@ -1,22 +1,39 @@
 # Running SON with Docker
 
-## Clone the peerplays-docker repository 
+## Cloning the peerplays docker repository 
 
 ```text
 git clone https://gitlab.com/data-security-node/peerplays-docker.git -b release
 ```
 
-## Edit the configuration
+## Editing the configuration
 
 ###  Setting up the environment
 
-Copy the `example.env` to `.env`  located in the root of the repository
+Copy the `example.env` to `.env`  located in the root of the repository:
 
 ```text
+# Starting in the project root
 cp example.env .env
 ```
 
-Edit the `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located. There is a `bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitcoin.conf`
+Edit the `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located. 
+
+{% hint style="info" %}
+There is a `bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitcoin.conf`
+{% endhint %}
+
+**Optional**: There is a script provided which will automate the replacement of the `BTC_REGTEST_CONF`:
+
+```text
+# Starting in the project root
+cd scripts
+./replace_btc_conf.sh
+```
+
+{% hint style="warning" %}
+To enable the blockchain API to be accessible outside of its docker container, make sure to specify `PORTS` in the `.env` file
+{% endhint %}
 
 ### Setting up config.ini
 
@@ -25,63 +42,64 @@ For a detailed overview: check out: [SON Configuration](../son-configuration.md)
 Copy the `/peerplays-docker/data/witness_node_data_dir/config.ini.son.example` to `/peerplays-docker/data/witness_node_data_dir/config/config.ini`
 
 ```text
+# Starting in the project root
 cd data/witness_node_data_dir
 cp config.ini.son.example config.ini
 ```
 
 Any custom changes to `SON_WALLET` or `BTC_REGTEST_KEY` should also be made in this file. `bitcoin-wallet` and `bitcoin-private-key`
 
-{% hint style="info" %}
-By default, the config specifies seed nodes to connect to. If a new network is required, change to`seed-nodes=[]`
+{% hint style="warning" %}
+By default, the config specifies a new local network \(seed nodes in the config are empty\). To connect to other nodes on a public SON network change `seed-nodes` to specify a seed from that network.
 {% endhint %}
 
-## Install the peerplays:son image
+## Installing the peerplays:son image
 
-Use `run.sh` to pull the SON image
+Use `run.sh` to pull the SON image:
 
 ```text
+# Starting in the project root
 ./run.sh install son
 ```
 
-## Start the environment
+## Starting the environment
 
-Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcond containers.
+Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcond containers:
 
 ```text
+# Starting in the project root
 ./run.sh start_son_regtest
 ```
 
 The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(bitcoind\) containers will be launched. 
 
+## Using the CLI wallet
 
-
-### CLI\_Wallet
-
-Now, run the below docker exec command on terminal:
+After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available. In the terminal use `docker exec` to connect to the wallet.
 
 ```text
 docker exec -it seed cli_wallet
 ```
 
-Copy the remote\_chain\_id and mapped it in the wallet with below command:
+If an exception is thrown and contains `Remote server gave us an unexpected chain_id`, then copy the `remote_chain_id` that is provided by it. 
+
+Pass the chain ID to the CLI wallet:
 
 ```text
-./cli_wallet --chain-id=<CHAIN_ID>
+docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
 ```
 
-Set the wallet password:
+The first launch of the CLI wallet will require password initialization. Set the password:
+
+```
+set_password <PASSWORD>
+```
+
+Unlock the CLI wallet by providing the password just set:
 
 ```text
-set_password <password>
+unlock <PASSWORD>
 ```
 
-Unlock the Cli\_wallet:
-
-```text
-unlock <password>
-```
-
-#### Now, you are under the cli\_wallet and you successfully unlock your wallet. And wallet is ready to run the cli\_commands and for transactions <a id="Installing-and-starting-witness-services"></a>
-
-
+The CLI wallet is now ready to be used.
 
