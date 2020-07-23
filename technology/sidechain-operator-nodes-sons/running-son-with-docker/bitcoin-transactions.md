@@ -1,16 +1,32 @@
 # Bitcoin Transactions
 
-### Deposit Bitcoin on an account
+### Creating a Peerplays Account
 
-#### Consider any peerplays user account.
+Use the [CLI Wallet](./#using-the-cli-wallet) to suggest a brain key:
+
+```text
+suggest_brain_key
+```
+
+{% hint style="warning" %}
+Make sure to backup the information that is outputted
+{% endhint %}
+
+Create an account using the brain key generated:
+
+```text
+create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan  nathan true
+```
+
+### Deposit Bitcoin on an account
 
 Now, mapped the Bitcoin deposit and boitcoin withdrawl address on it using the below steps:  
  - In BTC node, generate BTC addresses and public key using below command
 
 ```text
-bitcoin-core.cli  -rpcuser=1 -rpcpassword=1 -rpcwallet="" getnewaddress
+docker exec bitcoind-node bitcoin-cli  -rpcwallet="son-wallet" getnewaddress
 
-bitcoin-core.cli -rpcuser=1 -rpcpassword=1 -rpcwallet="" getaddressinfo <<Bitcoin_address>>
+docker exec bitcoind-node bitcoin-cli  -rpcwallet="son-wallet" getaddressinfo <<Bitcoin_address>>
 ```
 
  - Map generated btc addresses to peerplays account
@@ -24,7 +40,7 @@ add_sidechain_address <<account>> bitcoin <<deposit_public_key>> <<deposit_addre
 Send some bitcoins to any address that is registered as a sidechain address
 
 ```text
- bitcoin-core.cli -rpcuser=1 -rpcwallet="" -rpcpassword=1 sendtoaddress <<account_deposit_address>> <<amount>> "" "" false
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" sendtoaddress <<account_deposit_address>> <<amount>> "" "" false
 ```
 
 NOTE : Get the account's bitcoin deposit address using :
