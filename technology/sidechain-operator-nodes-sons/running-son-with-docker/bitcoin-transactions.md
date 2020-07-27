@@ -5,6 +5,7 @@
 Use the [CLI Wallet](./#using-the-cli-wallet) to suggest a brain key:
 
 ```text
+# In the CLI wallet
 suggest_brain_key
 ```
 
@@ -15,63 +16,64 @@ Make sure to backup the information that is outputted
 Create an account using the brain key generated:
 
 ```text
+# In the CLI wallet
 create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan  nathan true
 ```
 
-### Deposit Bitcoin on an account
+### Deposit Bitcoin to an account
 
-Now, mapped the Bitcoin deposit and boitcoin withdrawl address on it using the below steps:  
- - In BTC node, generate BTC addresses and public key using below command
-
-```text
-docker exec bitcoind-node bitcoin-cli  -rpcwallet="son-wallet" getnewaddress
-
-docker exec bitcoind-node bitcoin-cli  -rpcwallet="son-wallet" getaddressinfo <<Bitcoin_address>>
-```
-
- - Map generated btc addresses to peerplays account
+Create two bitcoin addresses and get their information:
 
 ```text
-add_sidechain_address <<account>> bitcoin <<deposit_public_key>> <<deposit_address>> <<withdraw_public_key>> <<withdraw_address>> true
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" getnewaddress
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" getaddressinfo <BITCOIN_ADDRESS>
 ```
 
-#### After mapping the bitcoin addresses , now make a transaction to transfer the bitcoin
+{% hint style="warning" %}
+Take note of the "pubkey" value when getting the address info
+{% endhint %}
 
-Send some bitcoins to any address that is registered as a sidechain address
+Map the generated Bitcoin addresses to a Peerplays account:
 
 ```text
-docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" sendtoaddress <<account_deposit_address>> <<amount>> "" "" false
+# In the CLI wallet
+add_sidechain_address <ACCOUNT> bitcoin <DEPOSIT_PUBLIC_KEY> <DEPOSIT_ADDRESS> <WITHDRAW_PUBLIC_KEY> <WITHDRAW_ADDRESS> true
 ```
 
-NOTE : Get the account's bitcoin deposit address using :
+Supply the mapped deposit address with Bitcoin:
 
 ```text
-get_sidechain_address_by_account_and_sidechain <<account>> bitcoin
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" sendtoaddress <DEPOSIT_ADDRESS> <AMOUNT> "" "" true
 ```
 
+{% hint style="info" %}
+To get the deposit address of an account use:
+
+```text
+# In the CLI wallet
+get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
+```
+{% endhint %}
+
+```text
 Generate a block containing the transactions
-
-```text
-bitcoin-core.cli -rpcuser=1 -rpcpassword=1 -rpcwallet="" generatetoaddress 1 <<account_deposit_address>>
 ```
 
-Here, we have successfully deposit bitcoins to any other account.
-
-
-
-### Withdrawl Bitcoin on an account
-
-
-
-Consider any peerplay account and mapped btc deposit and withdrawl address on it.
-
-To withdraw BTC, transfer pBTC from user account to son-account.
-
 ```text
-transfer <<account_name>> son-account <<withdraw_amount>> pBTC "" true
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <DEPOSIT_ADDRESS>
 ```
 
-Wait for 10 minutes for the bitcoin node to generate block to make your withdrawl successfull.
+### Withdraw Bitcoin to an account
+
+To withdraw BTC, transfer pBTC from an account to the `son-account`:
+
+```text
+transfer <ACCOUNT> son-account <WITHDRAW_AMOUNT> pBTC "" true
+```
+
+Wait for 10 minutes for the bitcoin node to generate block to make your withdrawal successful.
 
 
 
