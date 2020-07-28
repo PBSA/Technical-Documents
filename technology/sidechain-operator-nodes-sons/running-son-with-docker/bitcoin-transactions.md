@@ -57,7 +57,7 @@ get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
 ```
 {% endhint %}
 
-Generate a block to generate a block
+Generate a block so that the transaction goes through:
 
 ```text
 docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <DEPOSIT_ADDRESS>
