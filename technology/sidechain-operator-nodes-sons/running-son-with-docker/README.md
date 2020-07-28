@@ -59,7 +59,7 @@ Use `run.sh` to pull the SON image:
 
 ```text
 # Starting in the project root
-./run.sh install son
+./run.sh install son-dev
 ```
 
 ## Starting the environment
@@ -75,9 +75,18 @@ The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(
 
 ## Using the CLI wallet
 
-After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available. 
+After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available. e default bitcoin keys.
 
 If using a new network \(default\) run the setup script which will create a wallet file \(wallet.json\) locked with a given password within the container and fund the `nathan` and `init0 - init11` witness accounts. 
+
+{% hint style="danger" %}
+Before continuing with a new network and using the setup script, make sure to import the default bitcoin keys. There is a script provided with does this:
+
+```text
+# Starting in the project root
+./scripts/regtest/import_btc_keys.sh
+```
+{% endhint %}
 
 ```text
 # In the local terminal

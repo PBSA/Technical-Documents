@@ -10,19 +10,19 @@ suggest_brain_key
 ```
 
 {% hint style="warning" %}
-Make sure to backup the information that is outputted
+Make sure to backup the information that is output
 {% endhint %}
 
 Create an account using the brain key generated:
 
 ```text
 # In the CLI wallet
-create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan  nathan true
+create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
 ```
 
 ### Deposit Bitcoin to an account
 
-Create two bitcoin addresses and get their information:
+Create two bitcoin addresses and get their information \(run these commands twice\):
 
 ```text
 # In the local terminal
@@ -60,6 +60,7 @@ get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
 Generate a block so that the transaction goes through:
 
 ```text
+# In the local terminal
 docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <DEPOSIT_ADDRESS>
 ```
 
@@ -68,6 +69,7 @@ docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 
 To withdraw BTC, transfer pBTC from an account to the `son-account`:
 
 ```text
+# In the CLI wallet
 transfer <ACCOUNT> son-account <WITHDRAW_AMOUNT> pBTC "" true
 ```
 
