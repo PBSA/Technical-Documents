@@ -1,4 +1,4 @@
-# Bitcoin Transactions
+# Depositing and Withdrawing Bitcoin on Peerplays
 
 ## Creating a Peerplays account
 
