@@ -88,6 +88,8 @@ Before continuing with a new network and using the setup script, make sure to im
 ```
 {% endhint %}
 
+Run the following command with a password of choice. This will create a wallet locked and unlocked with it.
+
 ```text
 # In the local terminal
 docker exec seed /peerplays/setup_blockchain.sh <YOUR-WALLET-PASSWORD>
