@@ -52,7 +52,7 @@ Take note of the "pubkey" value when getting the address info
 add_sidechain_address <ACCOUNT> bitcoin <BITCOIN_DEPOSIT_PUBLIC_KEY> <BITCOIN_DEPOSIT_ADDRESS> <BITCOIN_WITHDRAW_PUBLIC_KEY> <BITCOIN_WITHDRAW_ADDRESS> true
 ```
 
-## Sending Bitcoin to a Peerplays account
+## Depositing Bitcoin to a Peerplays account
 
 {% hint style="warning" %}
 Blocks will first need to be mined on a new regtest network in order to have funds to send. Generate 101 blocks to a Bitcoin address to start:
@@ -86,7 +86,7 @@ docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" sendtoaddress <SID
 docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <BITCOIN_ADDRESS>
 ```
 
-Proposals will be created on the Peerplays chain after block generation. Wait for a minute for some blocks to be generated on the Peerplays chain and then generate another block in the regtest network. 
+Proposals will be created on the Peerplays chain after block generation. Wait for a minute for some blocks to be generated on the Peerplays chain and then generate another block in the regtest network: 
 
 ```text
 # In the local terminal
