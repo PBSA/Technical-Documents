@@ -124,6 +124,10 @@ Unlock the CLI wallet by providing the password set earlier:
 unlock <YOUR-WALLET-PASSWORD>
 ```
 
+{% hint style="info" %}
+The CLI wallet will show `unlocked >>>` when successfully unlocked
+{% endhint %}
+
 The CLI wallet is now ready to be used.
 
 For information on end-to-end BTC transactions with SON [proceed to the next steps](bitcoin-transactions.md). 
