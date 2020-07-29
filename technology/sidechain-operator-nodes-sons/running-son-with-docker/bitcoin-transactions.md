@@ -1,6 +1,6 @@
 # Bitcoin Transactions
 
-### Creating a Peerplays Account
+## Creating a Peerplays account
 
 Use the [CLI Wallet](./#using-the-cli-wallet) to suggest a brain key:
 
@@ -20,7 +20,7 @@ Create an account using the brain key generated:
 create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
 ```
 
-### Deposit Bitcoin to an account
+## Generating Bitcoin addresses
 
 Create two bitcoin addresses and get their information \(run these commands twice\):
 
@@ -34,46 +34,100 @@ docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" getaddressinfo <BI
 Take note of the "pubkey" value when getting the address info
 {% endhint %}
 
-Map the generated Bitcoin addresses to a Peerplays account:
+## Mapping the Bitcoin addresses to a Peerplays account
 
 ```text
 # In the CLI wallet
-add_sidechain_address <ACCOUNT> bitcoin <DEPOSIT_PUBLIC_KEY> <DEPOSIT_ADDRESS> <WITHDRAW_PUBLIC_KEY> <WITHDRAW_ADDRESS> true
+add_sidechain_address <ACCOUNT> bitcoin <BITCOIN_DEPOSIT_PUBLIC_KEY> <BITCOIN_DEPOSIT_ADDRESS> <BITCOIN_WITHDRAW_PUBLIC_KEY> <BITCOIN_WITHDRAW_ADDRESS> true
 ```
 
-Supply the mapped deposit address with Bitcoin:
-
-```text
-# In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" sendtoaddress <DEPOSIT_ADDRESS> <AMOUNT> "" "" true
-```
-
-{% hint style="info" %}
-To get the deposit address of an account use:
+## Getting the sidechain deposit address for BTC transactions
 
 ```text
 # In the CLI wallet
 get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
 ```
-{% endhint %}
 
-Generate a block so that the transaction goes through:
+## Sending Bitcoin to a Peerplays account
+
+{% hint style="warning" %}
+Blocks will first need to be mined on a new regtest network in order to have funds to send. Generate 101 blocks to a Bitcoin address to start:
 
 ```text
 # In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <DEPOSIT_ADDRESS>
+docker exec bitcoind-node bitcoin-cli  -rpcwallet="son-wallet" generatetoaddress 101 <BITCOIN_ADDRESS>
 ```
 
-### Withdraw Bitcoin to an account
+Generating more blocks will increase the amount of BTC that is available on the network.
+{% endhint %}
 
-To withdraw BTC, transfer pBTC from an account to the `son-account`:
+### Send some Bitcoin to the sidechain deposit address of a Peerplays account:
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" sendtoaddress <SIDECHAIN_DEPOSIT_ADDRESS> <AMOUNT> "" "" true
+```
+
+### Generate a block in the regtest network so that the transaction goes through:
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <BITCOIN_ADDRESS>
+```
+
+Proposals will be created on the Peerplays chain after block generation. Wait for a minute for some blocks to be generated on the Peerplays chain and then generate another block in the regtest network. 
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <BITCOIN_ADDRESS>
+```
+
+{% hint style="info" %}
+To check if the Bitcoin was successfully transferred to the Peerplays account list its account balance:
 
 ```text
 # In the CLI wallet
-transfer <ACCOUNT> son-account <WITHDRAW_AMOUNT> pBTC "" true
+list_account_balances <ACCOUNT>
 ```
 
-Wait for 10 minutes for the bitcoin node to generate block to make your withdrawal successful.
+The output will show some BTC.
+{% endhint %}
 
+## Withdrawing Bitcoin from a Peerplays account
 
+### Transfer BTC from a Peerplays account to the `son-account`:
+
+{% hint style="warning" %}
+In order to transfer funds, the Peerplays account sending them must have some core tokens to pay the transfer fee.  
+  
+Fund the account with some core tokens \(TEST in this case\):
+
+```text
+# In the CLI wallet
+transfer nathan <ACCOUNT> 100 TEST "" true
+```
+{% endhint %}
+
+```text
+# In the CLI wallet
+transfer <ACCOUNT> son-account <WITHDRAW_AMOUNT> BTC "" true
+```
+
+### Generate a block in the regtest network so that the transaction goes through:
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" generatetoaddress 1 <BITCOIN_ADDRESS>
+```
+
+{% hint style="info" %}
+To check if the Bitcoin was successfully sent to the withdrawal address that was mapped to the Peerplays account, check the received balance in the Bitcoin node:
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcwallet="son-wallet" getreceivedbyaddress <BITCOIN_WITHDRAW_ADDRESS>
+```
+
+The output will show some BTC.
+{% endhint %}
 

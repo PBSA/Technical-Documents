@@ -27,7 +27,7 @@ There is a `bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitc
 
 ```text
 # Starting in the project root
-cd scripts
+cd scripts/regtest
 ./replace_btc_conf.sh
 ```
 
@@ -75,12 +75,12 @@ The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(
 
 ## Using the CLI wallet
 
-After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available. e default bitcoin keys.
+After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available..
 
 If using a new network \(default\) run the setup script which will create a wallet file \(wallet.json\) locked with a given password within the container and fund the `nathan` and `init0 - init11` witness accounts. 
 
 {% hint style="danger" %}
-Before continuing with a new network and using the setup script, make sure to import the default bitcoin keys. There is a script provided with does this:
+Before continuing with a new network and using the setup script, make sure to import the default bitcoin keys. There is a script provided which does this:
 
 ```text
 # Starting in the project root
@@ -117,6 +117,8 @@ unlock <YOUR-WALLET-PASSWORD>
 ```
 
 The CLI wallet is now ready to be used.
+
+For information on end-to-end BTC transactions with SON [proceed to the next steps](bitcoin-transactions.md). 
 
 ## Cleaning up the environment
 
