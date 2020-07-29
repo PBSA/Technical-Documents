@@ -23,7 +23,7 @@ create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
 ## Generating Bitcoin addresses
 
 {% hint style="danger" %}
-Wait for 15 minutes after the setup script was run before proceeding to the next steps. This is the default review period it takes for the sonaccount's to be active sons. To check if they are active:
+Wait for 15 minutes after the setup script was run before proceeding to the next steps. This is the default review period it takes for the sonaccount's to become active sons. To check if they are active:
 
 ```text
 # In the CLI wallet
