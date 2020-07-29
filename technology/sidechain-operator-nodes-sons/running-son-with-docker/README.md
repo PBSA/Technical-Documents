@@ -95,6 +95,10 @@ Run the following command with a password of choice. This will create a wallet l
 docker exec seed /peerplays/setup_blockchain.sh <YOUR-WALLET-PASSWORD>
 ```
 
+{% hint style="info" %}
+The setup script will take a few seconds to complete
+{% endhint %}
+
 In the terminal use `docker exec` to connect to the wallet.
 
 ```text
@@ -102,7 +106,8 @@ In the terminal use `docker exec` to connect to the wallet.
 docker exec -it seed cli_wallet
 ```
 
-If an exception is thrown and contains `Remote server gave us an unexpected chain_id`, then copy the `remote_chain_id` that is provided by it. 
+{% hint style="warning" %}
+I**f an exception is thrown** and contains `Remote server gave us an unexpected chain_id`, then copy the `remote_chain_id` that is provided by it. 
 
 Pass the chain ID to the CLI wallet:
 
@@ -110,6 +115,7 @@ Pass the chain ID to the CLI wallet:
 # In the local terminal
 docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
 ```
+{% endhint %}
 
 Unlock the CLI wallet by providing the password set earlier:
 
