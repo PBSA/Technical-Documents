@@ -67,6 +67,10 @@ Generating more blocks will increase the amount of BTC that is available on the 
 
 ### Getting the sidechain deposit address for BTC transactions
 
+{% hint style="danger" %}
+The sidechain deposit addresses and Bitcoin deposit addresses are different.
+{% endhint %}
+
 ```text
 # In the CLI wallet
 get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
