@@ -52,13 +52,6 @@ Take note of the "pubkey" value when getting the address info
 add_sidechain_address <ACCOUNT> bitcoin <BITCOIN_DEPOSIT_PUBLIC_KEY> <BITCOIN_DEPOSIT_ADDRESS> <BITCOIN_WITHDRAW_PUBLIC_KEY> <BITCOIN_WITHDRAW_ADDRESS> true
 ```
 
-## Getting the sidechain deposit address for BTC transactions
-
-```text
-# In the CLI wallet
-get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
-```
-
 ## Sending Bitcoin to a Peerplays account
 
 {% hint style="warning" %}
@@ -71,6 +64,13 @@ docker exec bitcoind-node bitcoin-cli  -rpcwallet="son-wallet" generatetoaddress
 
 Generating more blocks will increase the amount of BTC that is available on the network.
 {% endhint %}
+
+### Getting the sidechain deposit address for BTC transactions
+
+```text
+# In the CLI wallet
+get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
+```
 
 ### Send some Bitcoin to the sidechain deposit address of a Peerplays account:
 
