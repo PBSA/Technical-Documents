@@ -1,6 +1,6 @@
 # Depositing and Withdrawing Bitcoin on Peerplays \(Using BTC Regtest\)
 
-{% hint style="warning" %}
+{% hint style="info" %}
 The following instructions are designed for use within a Bitcoin regtest network. Read more about it here: [https://developer.bitcoin.org/examples/testing.html](https://developer.bitcoin.org/examples/testing.html)
 {% endhint %}
 
