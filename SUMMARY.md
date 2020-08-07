@@ -22,6 +22,7 @@
     * [Voting](technology/gamified-proof-of-stake-gpos/faq/voting.md)
     * [Participation Rewards](technology/gamified-proof-of-stake-gpos/faq/participation-rewards.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons/README.md)
+  * [Quick joining GLADIATOR](technology/sidechain-operator-nodes-sons/quick-joining-gladiator.md)
   * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker/README.md)
     * [Depositing and Withdrawing Bitcoin on Peerplays \(Using BTC Regtest\)](technology/sidechain-operator-nodes-sons/running-son-with-docker/bitcoin-transactions.md)
   * [SON Configuration](technology/sidechain-operator-nodes-sons/son-configuration.md)
