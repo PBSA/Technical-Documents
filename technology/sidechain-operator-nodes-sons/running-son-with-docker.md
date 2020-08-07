@@ -37,7 +37,7 @@ To enable the blockchain API to be accessible outside of its docker container, m
 
 ### Setting up config.ini
 
-For a detailed overview: check out: [SON Configuration](../son-configuration.md)
+For a detailed overview: check out: [SON Configuration](son-configuration.md)
 
 Copy the `/peerplays-docker/data/witness_node_data_dir/config.ini.son.example` to `/peerplays-docker/data/witness_node_data_dir/config/config.ini`
 
