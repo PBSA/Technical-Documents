@@ -17,7 +17,7 @@ Copy the `example.env` to `.env`  located in the root of the repository:
 cp example.env .env
 ```
 
-Edit the `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located. 
+Edit the .env file & set_`BTC_REGTEST_CONF`_ to the full path where the `bitcoin.conf` is located. 
 
 {% hint style="info" %}
 There is a `bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitcoin.conf`
