@@ -115,6 +115,7 @@
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
+* [cli\_wallet & SON](peerplays-wallet/cli_wallet-and-son.md)
 
 ## Random Number Generator \(RNG\)
 
