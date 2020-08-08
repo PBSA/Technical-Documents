@@ -26,6 +26,7 @@
   * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker.md)
   * [Depositing and Withdrawing Bitcoin on Peerplays \(Using BTC Regtest\)](technology/sidechain-operator-nodes-sons/bitcoin-transactions.md)
   * [SON Configuration](technology/sidechain-operator-nodes-sons/son-configuration.md)
+* [FAQ](technology/faq.md)
 * [NFTs and Marketplace](technology/nfts-and-marketplace/README.md)
   * [NFT command referece](technology/nfts-and-marketplace/nft-command-referece.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
