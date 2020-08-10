@@ -1,4 +1,4 @@
-# NFT command referece
+# NFT command reference
 
 ### **Step: 1** Create Metadata
 
