@@ -51,7 +51,7 @@ unzip -j artifacts.zip build/programs/witness_node/witness_node -d ./
 Execute the `witness_node` binary which will create the necessary files and folders under `witness_node_data_dir`
 
 ```text
-./witness_node
+./witness_node 
 ```
 
 Stop the node \(`CTRL + c` \)  and edit `config.ini` to configure the node.
@@ -77,10 +77,14 @@ Move the `genesis.json` file to the root of the project directory alongside the 
 Inside `config.ini`, specify the `genesis.json` 
 
 ```text
-genesis-json = genesis.json
+genesis-json = SONs_genesis.json
 ```
 
 Start the `witness_node` and the blocks should start syncing.
+
+```text
+./witness_node --gensis-file SONs_genesis.json
+```
 
 {% hint style="warning" %}
 If blocks have already been seeded during the initial startup, it may be necessary to reset the `blockchain` and `p2p` directories. Removing them is fine for this case.
