@@ -340,7 +340,7 @@ docker exec bitcoind-node bitcoin-cli -rpcuser=1 -rpcpassword=1 -rpcwallet="son-
 #   ]
 # }
 
-# pubkey is what we will set as bitcoin-private-key in config file
+# pubkey is what we will set as bitcoin-public-key in config file
 
 # get private key for this address
 docker exec bitcoind-node bitcoin-cli -rpcuser=1 -rpcpassword=1 -rpcwallet="" dumpprivkey 2N8vYSFg9MAghj5nNC2ZURYcZTKcck8M1PU
