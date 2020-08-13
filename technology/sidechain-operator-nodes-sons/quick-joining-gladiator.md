@@ -6,7 +6,7 @@ description: Setup SONs and join GLADIATOR public TESTNET
 
 This is a quick document which assumes that the user has experience in setting up various Graphene blockchains before. The following link can be a good refresher: [https://www.peerplays.tech/witnesses/becoming-a-witness](https://www.peerplays.tech/witnesses/becoming-a-witness)
 
-In this document the exectables are downloaded for the Gitlab CI-CD pipeline
+In this document the executables are downloaded for the Gitlab CI-CD pipeline
 
 ### 1. Prepare the server
 
