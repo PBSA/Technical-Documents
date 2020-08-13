@@ -37,7 +37,7 @@ To enable the blockchain API to be accessible outside of its docker container, m
 
 ### Setting up config.ini
 
-For a detailed overview: check out: [SON Configuration](son-configuration.md)
+For a detailed overview check out: [SON Configuration](son-configuration.md)
 
 Copy the `peerplays-docker/data/witness_node_data_dir/config.ini.son.example` to `peerplays-docker/data/witness_node_data_dir/config/config.ini`
 
@@ -51,9 +51,15 @@ Any custom changes to `SON_WALLET` or `BTC_REGTEST_KEY` should also be made in t
 
 {% hint style="warning" %}
 By default, the config specifies a new local network \(seed nodes in the config are empty\). To connect to other nodes on a public SON network change `seed-nodes` to specify a seed from that network.
+
+To connect to PBSA's Gladiator set the seed nodes as so:
+
+```text
+seed-nodes=["96.46.49.1:9777", "96.46.49.2:9777", "96.46.49.3:9777", "96.46.49.4:9777", "96.46.49.5:9777", "96.46.49.6:9777", "96.46.49.7:9777", "96.46.49.8:9777", "96.46.49.9:9777", "96.46.49.10:9777", "96.46.49.11:9777", "96.46.49.12:9777", "96.46.49.13:9777", "96.46.49.14:9777", "96.46.49.15:9777", "96.46.49.16:9777"]
+```
 {% endhint %}
 
-## Installing the peerplays:son image
+## Installing the peerplays:son-dev image
 
 Use `run.sh` to pull the SON image:
 
@@ -77,10 +83,12 @@ The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(
 
 After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available..
 
-If using a new network \(default\) run the setup script which will create a wallet file \(wallet.json\) locked with a given password within the container and fund the `nathan` and `init0 - init11` witness accounts. 
+### Setting up the wallet and accounts \(new network\)
+
+If using a new network \(seed nodes are not defined in the config by default\) run the setup script which will create a wallet file \(wallet.json\) locked with a given password within the container and fund the `nathan` and `init0 - init11` witness accounts. 
 
 {% hint style="danger" %}
-Before continuing with a new network and using the setup script, make sure to import the default bitcoin keys. There is a script provided which does this:
+**Before continuing** with a new network and using the setup script, make sure to import the default bitcoin keys. There is a script provided which does this:
 
 ```text
 # Starting in the project root
@@ -98,6 +106,8 @@ docker exec seed /peerplays/setup_blockchain.sh <YOUR-WALLET-PASSWORD>
 {% hint style="info" %}
 The setup script will take a few seconds to complete
 {% endhint %}
+
+### Connecting to the blockchain with the CLI Wallet
 
 In the terminal use `docker exec` to connect to the wallet.
 
@@ -117,10 +127,18 @@ docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
 ```
 {% endhint %}
 
-Unlock the CLI wallet by providing the password set earlier:
+**If the setup script was run**, unlock the CLI wallet by providing the password set earlier:
 
 ```text
 # In the CLI wallet
+unlock <YOUR-WALLET-PASSWORD>
+```
+
+If connecting to an existing network, set a password for the wallet and then unlock it:
+
+```text
+# In the CLI wallet
+set_password <YOUR-WALLET-PASSWORD>
 unlock <YOUR-WALLET-PASSWORD>
 ```
 
