@@ -1,5 +1,20 @@
 # Running SON with Docker
 
+## Prerequisites
+
+{% hint style="danger" %}
+It is required to have Docker installed on the system that will be performing the steps in this document. Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
+{% endhint %}
+
+Optionally, Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
+
+```text
+# Starting in the project root
+./run.sh install_docker
+```
+
+The terminal will need to be reinitialized after installation.
+
 ## Cloning the peerplays docker repository 
 
 ```text
