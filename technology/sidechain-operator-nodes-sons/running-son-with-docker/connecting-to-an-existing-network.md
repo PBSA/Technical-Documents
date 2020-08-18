@@ -1,5 +1,11 @@
 # Connecting to an existing network
 
+{% hint style="danger" %}
+Please read the parent document on Running SON with Docker before proceeding.
+{% endhint %}
+
+{% page-ref page="./" %}
+
 ## Editing the configuration
 
 ### Setting up config.ini
@@ -78,7 +84,7 @@ set_password <YOUR-WALLET-PASSWORD>
 unlock <YOUR-WALLET-PASSWORD>
 ```
 
-{% hint style="info" %}
+{% hint style="success" %}
 The CLI wallet will show `unlocked >>>` when successfully unlocked
 {% endhint %}
 
