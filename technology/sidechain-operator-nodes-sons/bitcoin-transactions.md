@@ -6,7 +6,7 @@ The following instructions are designed for use within a Bitcoin regtest network
 
 ## Creating a Peerplays account
 
-Use the [CLI Wallet](running-son-with-docker.md#using-the-cli-wallet) to suggest a brain key:
+Use the [CLI Wallet](running-son-with-docker/#using-the-cli-wallet) to suggest a brain key:
 
 ```text
 # In the CLI wallet
@@ -27,7 +27,7 @@ create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
 ## Generating Bitcoin addresses
 
 {% hint style="danger" %}
-Wait for 15 minutes after the setup script was run before proceeding to the next steps. This is the default review period it takes for the sonaccount's to become active sons. To check if they are active:
+Wait for 15 minutes after the setup script was run \(new local networks\) before proceeding to the next steps. This is the default review period it takes for the sonaccount's to become active sons. To check if they are active:
 
 ```text
 # In the CLI wallet

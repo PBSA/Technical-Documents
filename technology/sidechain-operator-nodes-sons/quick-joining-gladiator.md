@@ -2,7 +2,7 @@
 description: Setup SONs and join GLADIATOR public TESTNET
 ---
 
-# Quick joining GLADIATOR
+# Quick Joining GLADIATOR
 
 This is a quick document which assumes that the user has experience in setting up various Graphene blockchains before. The following link can be a good refresher: [https://www.peerplays.tech/witnesses/becoming-a-witness](https://www.peerplays.tech/witnesses/becoming-a-witness)
 
