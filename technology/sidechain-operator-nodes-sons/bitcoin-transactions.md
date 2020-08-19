@@ -6,7 +6,7 @@ The following instructions are designed for use within a Bitcoin regtest network
 
 ## Creating a Peerplays account
 
-Use the [CLI Wallet](running-son-with-docker/#using-the-cli-wallet) to suggest a brain key:
+Use the [CLI Wallet](running-son-with-docker.md#using-the-cli-wallet) to suggest a brain key:
 
 ```text
 # In the CLI wallet
