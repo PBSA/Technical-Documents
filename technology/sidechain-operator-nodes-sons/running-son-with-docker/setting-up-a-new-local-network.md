@@ -1,10 +1,30 @@
 # Setting up a new local network
 
+## Installing the required dependencies
+
+```text
+sudo apt-get update
+sudo apt-get install git curl
+```
+
+## Cloning the peerplays docker repository 
+
+```text
+git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/peerplays-docker.git -b release
+```
+
 {% hint style="danger" %}
-Please read the parent document on Running SON with Docker before proceeding.
+It is required to have Docker installed on the system that will be performing the steps in this document. Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
 {% endhint %}
 
-{% page-ref page="./" %}
+**Optionally:** Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
+
+```text
+# Starting in the project root
+./run.sh install_docker
+```
+
+The terminal will need to be reinitialized after installation.
 
 ## Editing the configuration
 
@@ -26,7 +46,7 @@ cd data/witness_node_data_dir
 cp config.ini.son-new.example config.ini
 ```
 
-Any custom changes to `SON_WALLET` or `BTC_REGTEST_KEY` should also be made in config.ini to `bitcoin-wallet` and `bitcoin-private-key`.
+Any custom changes to `SON_WALLET` or `BTC_REGTEST_KEY` should also be made in config.ini to the variables `bitcoin-wallet` and `bitcoin-private-key`.
 
 {% hint style="warning" %}
 By default, the config specifies a new local network \(seed nodes in the config are empty\). 
