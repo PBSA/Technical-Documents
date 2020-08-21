@@ -131,11 +131,31 @@ Since the setup script was run, unlock the CLI wallet by providing the password 
 unlock <YOUR-WALLET-PASSWORD>
 ```
 
-{% hint style="info" %}
+{% hint style="success" %}
 The CLI wallet will show `unlocked >>>` when successfully unlocked
 {% endhint %}
 
-The CLI wallet is now ready to be used.
+### Creating a Peerplays account
+
+Use the CLI wallet to suggest a brain key:
+
+```text
+# In the CLI wallet
+suggest_brain_key
+```
+
+{% hint style="warning" %}
+Make sure to backup the information that is output
+{% endhint %}
+
+Create an account using the brain key generated:
+
+```text
+# In the CLI wallet
+create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
+```
+
+## Interacting with Bitcoin
 
 For information on end-to-end BTC transactions with SON [proceed to the next steps](../bitcoin-transactions.md). 
 

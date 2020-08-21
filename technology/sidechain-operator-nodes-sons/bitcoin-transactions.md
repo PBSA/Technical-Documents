@@ -4,26 +4,6 @@
 The following instructions are designed for use within a Bitcoin regtest network. Read more about it here: [https://developer.bitcoin.org/examples/testing.html](https://developer.bitcoin.org/examples/testing.html)
 {% endhint %}
 
-## Creating a Peerplays account
-
-Use the [CLI Wallet](running-son-with-docker/#using-the-cli-wallet) to suggest a brain key:
-
-```text
-# In the CLI wallet
-suggest_brain_key
-```
-
-{% hint style="warning" %}
-Make sure to backup the information that is output
-{% endhint %}
-
-Create an account using the brain key generated:
-
-```text
-# In the CLI wallet
-create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
-```
-
 ## Generating Bitcoin addresses
 
 {% hint style="danger" %}

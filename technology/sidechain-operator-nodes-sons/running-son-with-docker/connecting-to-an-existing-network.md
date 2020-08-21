@@ -91,7 +91,7 @@ To connect to other nodes on a public SON network change `seed-nodes` to specify
 To connect to PBSA's Gladiator set the seed nodes to their endpoints:
 
 ```text
-seed-nodes=["96.46.49.3:9777", "96.46.49.4:9777"]
+seed-nodes=["96.46.49.1:9777"]
 ```
 
 To see the full list of endpoints: [click here](../pbsas-gladiator-endpoints.md)
@@ -144,7 +144,27 @@ unlock <YOUR-WALLET-PASSWORD>
 The CLI wallet will show `unlocked >>>` when successfully unlocked
 {% endhint %}
 
-The CLI wallet is now ready to be used.
+### Creating a Peerplays account
+
+Use the CLI wallet to suggest a brain key:
+
+```text
+# In the CLI wallet
+suggest_brain_key
+```
+
+{% hint style="warning" %}
+Make sure to backup the information that is output
+{% endhint %}
+
+Create an account using the brain key generated:
+
+```text
+# In the CLI wallet
+create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
+```
+
+## Interacting with Bitcoin
 
 For information on end-to-end BTC transactions with SON [proceed to the next steps](../bitcoin-transactions.md). 
 
