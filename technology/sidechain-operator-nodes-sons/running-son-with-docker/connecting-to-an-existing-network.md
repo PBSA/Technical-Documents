@@ -67,7 +67,7 @@ Use `run.sh` to pull the SON image:
 
 ```text
 # Starting in the project root
-./run.sh install son-dev
+sudo ./run.sh install son-dev
 ```
 
 ## Editing the configuration
