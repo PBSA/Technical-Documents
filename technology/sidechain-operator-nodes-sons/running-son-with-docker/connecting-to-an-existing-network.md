@@ -1,5 +1,7 @@
 # Connecting to an existing network
 
+This document assumes that you are running Ubuntu 18.04. Other Debian based releases may also work with the provided script.
+
 ## Installing the required dependencies
 
 ```text
