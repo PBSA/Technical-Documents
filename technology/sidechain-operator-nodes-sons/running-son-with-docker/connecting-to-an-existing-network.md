@@ -15,11 +15,13 @@ sudo apt-get install git curl
 git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/peerplays-docker.git -b release
 ```
 
+The dirctory `peerplays-docker` will be the starting point for all the commands.
+
 {% hint style="danger" %}
-It is required to have Docker installed on the system that will be performing the steps in this document. Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
+It is required to have Docker installed on the system that will be performing the steps in this document. 
 {% endhint %}
 
-**Optionally:** Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
+Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
 
 ```text
 # Starting in the project root
@@ -27,6 +29,10 @@ It is required to have Docker installed on the system that will be performing th
 ```
 
 The terminal will need to be reinitialized after installation.
+
+{% hint style="info" %}
+Optionally, you can Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
+{% endhint %}
 
 ##  Setting up the environment
 
