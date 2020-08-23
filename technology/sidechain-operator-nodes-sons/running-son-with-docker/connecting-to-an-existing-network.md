@@ -49,7 +49,7 @@ Edit the .env file & set_`BTC_REGTEST_CONF`_ to the full path where the `bitcoin
 There is a `bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitcoin.conf`
 {% endhint %}
 
-**Optional**: There is a script provided which will automate the replacement of the `BTC_REGTEST_CONF`:
+**Use the script**  a script provided which will automate the replacement of the `BTC_REGTEST_CONF`
 
 ```text
 # Starting in the project root
