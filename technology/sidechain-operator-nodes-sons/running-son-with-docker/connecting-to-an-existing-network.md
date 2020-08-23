@@ -111,10 +111,28 @@ Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcon
 
 ```text
 # Starting in the project root
-./run.sh start_son_regtest
+sudo ./run.sh start_son_regtest
 ```
 
 The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(bitcoind\) containers will be launched. 
+
+To check the status, inspect the logs:
+
+```text
+# inspect the logs
+sudo ./run.sh logs
+```
+
+This will give an output similar to 
+
+![\(logs showing healthy connection to GLADIATOR\)](../../../.gitbook/assets/image%20%2828%29.png)
+
+Just in case the logs are not looking healthy, perform a replay.
+
+```text
+# replay the blockchain
+sudo ./run.sh replay
+```
 
 ## Using the CLI wallet
 
