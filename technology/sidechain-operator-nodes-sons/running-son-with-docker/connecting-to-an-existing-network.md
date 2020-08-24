@@ -15,7 +15,17 @@ sudo apt-get install git curl
 git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/peerplays-docker.git -b release
 ```
 
-The dirctory `peerplays-docker` will be the starting point for all the commands.
+## Navigating to the project directory and setting up the project root
+
+To easily follow this document, it is recommended to set an environment variable to the project root. Navigate to the root of the project, and assign the variable:
+
+```text
+# Starting in the directory where the repository was cloned
+cd peerplays-docker
+PROJECT_ROOT=$(pwd)
+```
+
+## Installing Docker
 
 {% hint style="danger" %}
 It is required to have Docker installed on the system that will be performing the steps in this document. 
@@ -24,38 +34,41 @@ It is required to have Docker installed on the system that will be performing th
 Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
 
 ```text
-# Starting in the project root
 ./run.sh install_docker
 ```
 
 The terminal will need to be reinitialized after installation.
 
 {% hint style="info" %}
-Optionally, you can Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
+**Optional**: you can Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
 {% endhint %}
 
-##  Setting up the environment
+{% hint style="danger" %}
+If you are having permission issues trying to run Docker use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
+{% endhint %}
+
+## Setting up the environment
 
 Copy the `example.env` to `.env`  located in the root of the repository:
 
 ```text
-# Starting in the project root
+cd $PROJECT_ROOT
 cp example.env .env
 ```
 
-Edit the .env file & set_`BTC_REGTEST_CONF`_ to the full path where the `bitcoin.conf` is located. 
-
-{% hint style="info" %}
-There is a `bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitcoin.conf`
-{% endhint %}
-
-**Use the script**  a script provided which will automate the replacement of the `BTC_REGTEST_CONF`
+Use the script ****provided which will automate the replacement of the `BTC_REGTEST_CONF`in `bitcoin.conf`.
 
 ```text
-# Starting in the project root
+cd $PROJECT_ROOT
 cd scripts/regtest
 ./replace_btc_conf.sh
 ```
+
+{% hint style="info" %}
+The script uses the`bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitcoin.conf`
+{% endhint %}
+
+**Optional:** If you want to use your own config, edit the .env file & set`BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located. 
 
 {% hint style="warning" %}
 To enable the blockchain API to be accessible outside of its docker container, make sure to specify `PORTS` in the `.env` file
@@ -66,7 +79,7 @@ To enable the blockchain API to be accessible outside of its docker container, m
 Use `run.sh` to pull the SON image:
 
 ```text
-# Starting in the project root
+cd $PROJECT_ROOT
 sudo ./run.sh install son-dev
 ```
 
@@ -82,11 +95,10 @@ There are many example configuration files, make sure to copy the right one. In 
  config.ini.**son-exists**.example
 {% endhint %}
 
-Copy the `peerplays-docker/data/witness_node_data_dir/config.ini.son-exists.example` to   
-`peerplays-docker/data/witness_node_data_dir/config/config.ini`:
+Copy the correct example configuration:
 
 ```text
-# Starting in the project root
+cd $PROJECT_ROOT
 cd data/witness_node_data_dir
 cp config.ini.son-exists.example config.ini
 ```
@@ -110,8 +122,8 @@ To see the full list of endpoints: [click here](../pbsas-gladiator-endpoints.md)
 Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcond containers:
 
 ```text
-# Starting in the project root
-sudo ./run.sh start_son_regtest
+cd $PROJECT_ROOT
+./run.sh start_son_regtest
 ```
 
 The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(bitcoind\) containers will be launched. 
@@ -119,8 +131,7 @@ The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(
 To check the status, inspect the logs:
 
 ```text
-# inspect the logs
-sudo ./run.sh logs
+./run.sh logs
 ```
 
 This will give an output similar to 
@@ -131,7 +142,7 @@ Just in case the logs are not looking healthy, perform a replay.
 
 ```text
 # replay the blockchain
-sudo ./run.sh replay
+./run.sh replay
 ```
 
 ## Using the CLI wallet
@@ -140,7 +151,7 @@ After starting the environment, the CLI wallet for the seed \(peerplaysd\) will 
 
 ### Connecting to the blockchain with the CLI Wallet
 
-In the terminal use `docker exec` to connect to the wallet.
+Open another terminal and use `docker exec` to connect to the wallet.
 
 ```text
 # In the local terminal
@@ -217,17 +228,6 @@ docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcu
 
 ### Generating Bitcoin addresses
 
-{% hint style="danger" %}
-Wait for 15 minutes after the setup script was run \(new local networks\) before proceeding to the next steps. This is the default review period it takes for the sonaccount's to become active sons. To check if they are active:
-
-```text
-# In the CLI wallet
-list_active_sons
-```
-
-The output should **not** be an empty array.
-{% endhint %}
-
 Create two bitcoin addresses and get their information \(run these commands twice\):
 
 ```text
@@ -237,7 +237,7 @@ docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcu
 ```
 
 {% hint style="warning" %}
-Take note of the "pubkey" value when getting the address info
+Take note of the "pubkey" value output when using `getaddressinfo`
 {% endhint %}
 
 ### Mapping the Bitcoin addresses to a Peerplays account
@@ -268,6 +268,7 @@ This is a shared faucet. Please only send small amounts \(less than 0.1 BTC\) an
 
 ```text
 # In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 loadwallet faucet
 docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet="faucet" sendtoaddress <SIDECHAIN_DEPOSIT_ADDRESS> <AMOUNT> "" "" true
 ```
 
@@ -339,7 +340,7 @@ The output will show some BTC.
 To remove the containers and data from the environment run:
 
 ```text
-# Starting in the project root
+cd $PROJECT_ROOT
 ./run.sh clean son
 ```
 
