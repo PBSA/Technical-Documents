@@ -208,7 +208,7 @@ The following instructions are designed for use within a Bitcoin regtest network
 To create a bitcoin wallet on the existing network:
 
 ```text
-ocker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 createwallet <WALLET-NAME>
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 createwallet <WALLET-NAME>
 ```
 
 {% hint style="info" %}
