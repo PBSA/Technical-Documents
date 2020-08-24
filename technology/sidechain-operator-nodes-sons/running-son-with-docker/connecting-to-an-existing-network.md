@@ -172,6 +172,13 @@ The CLI wallet will show `unlocked >>>` when successfully unlocked
 
 ### Creating a Peerplays account
 
+For an existing network, a lifetime account must be imported to create an account. Import the `faucet` account:
+
+```text
+# In the CLI wallet
+import_key faucet 5KQHVEoqLX4fguLz8xYRLwwDjMk7sE6s5cTBC9jzBHCs5sk6cCr
+```
+
 Use the CLI wallet to suggest a brain key:
 
 ```text
@@ -187,12 +194,145 @@ Create an account using the brain key generated:
 
 ```text
 # In the CLI wallet
-create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
+create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> faucet faucet true
 ```
 
-## Interacting with Bitcoin
+## Interacting with Bitcoin \(Regtest\)
 
-For information on end-to-end BTC transactions with SON [proceed to the next steps](../bitcoin-transactions.md). 
+{% hint style="info" %}
+The following instructions are designed for use within a Bitcoin regtest network. Read more about it here: [https://developer.bitcoin.org/examples/testing.html](https://developer.bitcoin.org/examples/testing.html)
+{% endhint %}
+
+### Creating a Bitcoin Wallet
+
+To create a bitcoin wallet on the existing network:
+
+```text
+ocker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 createwallet <WALLET-NAME>
+```
+
+{% hint style="info" %}
+**Tip:** Wallet Names must be unique. Name the wallet after your account
+{% endhint %}
+
+### Generating Bitcoin addresses
+
+{% hint style="danger" %}
+Wait for 15 minutes after the setup script was run \(new local networks\) before proceeding to the next steps. This is the default review period it takes for the sonaccount's to become active sons. To check if they are active:
+
+```text
+# In the CLI wallet
+list_active_sons
+```
+
+The output should **not** be an empty array.
+{% endhint %}
+
+Create two bitcoin addresses and get their information \(run these commands twice\):
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> getnewaddress
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> getaddressinfo <BITCOIN_ADDRESS>
+```
+
+{% hint style="warning" %}
+Take note of the "pubkey" value when getting the address info
+{% endhint %}
+
+### Mapping the Bitcoin addresses to a Peerplays account
+
+```text
+# In the CLI wallet
+add_sidechain_address <ACCOUNT> bitcoin <BITCOIN_DEPOSIT_PUBLIC_KEY> <BITCOIN_WITHDRAW_PUBLIC_KEY> <BITCOIN_WITHDRAW_ADDRESS> true
+```
+
+### Depositing Bitcoin to a Peerplays account.
+
+#### Getting the sidechain deposit address for BTC transactions
+
+{% hint style="danger" %}
+The Sidechain deposit addresses and Bitcoin deposit addresses are different.
+{% endhint %}
+
+```text
+# In the CLI wallet
+get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
+```
+
+#### Send some Bitcoin to the Sidechain deposit address of a Peerplays account using the faucet wallet:
+
+{% hint style="warning" %}
+This is a shared faucet. Please only send small amounts \(less than 0.1 BTC\) and send it back to the faucet when finished. 
+{% endhint %}
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet="faucet" sendtoaddress <SIDECHAIN_DEPOSIT_ADDRESS> <AMOUNT> "" "" true
+```
+
+#### Generate a block in the regtest network so that the transaction goes through:
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> generatetoaddress 1 <BITCOIN_ADDRESS>
+```
+
+Proposals will be created on the Peerplays chain after block generation. Wait for a minute for some blocks to be generated on the Peerplays chain and then generate another block in the regtest network: 
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> generatetoaddress 1 <BITCOIN_ADDRESS>
+```
+
+{% hint style="info" %}
+To check if the Bitcoin was successfully transferred to the Peerplays account list its account balance:
+
+```text
+# In the CLI wallet
+list_account_balances <ACCOUNT>
+```
+
+The output will show some BTC.
+{% endhint %}
+
+### Withdrawing Bitcoin from a Peerplays account
+
+#### Transfer BTC from a Peerplays account to the `son-account`:
+
+{% hint style="warning" %}
+In order to transfer funds, the Peerplays account sending them must have some core tokens to pay the transfer fee.  
+  
+Fund the account with some core tokens \(TEST in this case\):
+
+```text
+# In the CLI wallet
+transfer faucet <ACCOUNT> 100 TEST "" true
+```
+{% endhint %}
+
+```text
+# In the CLI wallet
+transfer <ACCOUNT> son-account <WITHDRAW_AMOUNT> BTC "" true
+```
+
+#### Generate a block in the regtest network so that the transaction goes through:
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> generatetoaddress 1 <BITCOIN_ADDRESS>
+```
+
+{% hint style="info" %}
+To check if the Bitcoin was successfully sent to the withdrawal address that was mapped to the Peerplays account, check the received balance in the Bitcoin node:
+
+```text
+# In the local terminal
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> getreceivedbyaddress <BITCOIN_WITHDRAW_ADDRESS>
+```
+
+The output will show some BTC.
+{% endhint %}
 
 ## Cleaning up the environment
 

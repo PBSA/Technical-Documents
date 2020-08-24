@@ -28,7 +28,6 @@
   * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker/README.md)
     * [Setting up a new local network](technology/sidechain-operator-nodes-sons/running-son-with-docker/setting-up-a-new-local-network.md)
     * [Connecting to an existing network](technology/sidechain-operator-nodes-sons/running-son-with-docker/connecting-to-an-existing-network.md)
-  * [Depositing and Withdrawing Bitcoin on Peerplays \(Using BTC Regtest\)](technology/sidechain-operator-nodes-sons/bitcoin-transactions.md)
   * [SON Configuration](technology/sidechain-operator-nodes-sons/son-configuration.md)
 * [NFTs and Marketplace](technology/nfts-and-marketplace/README.md)
   * [NFT command reference](technology/nfts-and-marketplace/nft-command-referece.md)
