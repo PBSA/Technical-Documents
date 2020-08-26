@@ -262,15 +262,22 @@ get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
 
 #### Send some Bitcoin to the Sidechain deposit address of a Peerplays account using the faucet wallet:
 
-{% hint style="warning" %}
+{% hint style="info" %}
 This is a shared faucet. Please only send small amounts \(less than 0.1 BTC\) and send it back to the faucet when finished. 
 {% endhint %}
 
 ```text
 # In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 loadwallet faucet
 docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet="faucet" sendtoaddress <SIDECHAIN_DEPOSIT_ADDRESS> <AMOUNT> "" "" true
 ```
+
+{% hint style="warning" %}
+If the above command is giving an error regarding the wallet you may need to load it first:
+
+```text
+docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 loadwallet faucet
+```
+{% endhint %}
 
 #### Generate a block in the regtest network so that the transaction goes through:
 
