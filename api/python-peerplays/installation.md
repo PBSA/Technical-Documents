@@ -2,15 +2,20 @@
 
 The python-peerplays library has following dependencies
 
-`python3-dev build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev`
+\`\`
 
 Make sure that the above dependencies are installed, if not install with:
 
-> `$ sudo apt-get install <dependency name>`
+```text
+sudo apt-get install python3-dev build-essential libssl-dev\
+ libffi-dev libxml2-dev libxslt1-dev zlib1g-dev
+```
 
-Now install python-peerplays with
+Now install python-peerplays as follows:
 
-`$ pip3 install peerplays`
+```text
+ pip3 install peerplays
+```
 
 \`\`
 
