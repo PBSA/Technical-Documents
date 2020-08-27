@@ -1,2 +1,2 @@
-# Creating the Peerplays wallet
+# Creating the wallet
 

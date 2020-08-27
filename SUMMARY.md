@@ -158,5 +158,7 @@
 * [Sweeps API](api/sweeps-api.md)
 * [Python Peerplays](api/python-peerplays/README.md)
   * [Installation](api/python-peerplays/installation.md)
+  * [Creating the wallet](api/python-peerplays/creating-the-peerplays-wallet.md)
+  * [Creating an Account](api/python-peerplays/creating-an-account.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
 
