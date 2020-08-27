@@ -156,7 +156,8 @@
   * [Listeners](api/bookie-api/listeners.md)
 * [Market Maker API](api/market-maker-api.md)
 * [Sweeps API](api/sweeps-api.md)
-* [Python Peerplays](api/python-peerplays.md)
-* [Installation](api/installation.md)
+* [Python Peerplays](api/python-peerplays/README.md)
+  * [Creating the Peerplays wallet](api/python-peerplays/creating-the-peerplays-wallet.md)
+  * [Installation](api/python-peerplays/installation.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
 
