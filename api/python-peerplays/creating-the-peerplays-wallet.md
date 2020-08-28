@@ -4,7 +4,9 @@ All these experiments and examples are expected to be tried out in ipython comma
 
 Node is the chain with which you wish to interact.
 
-`node = "wss://irona.peerplays.download/api"`
+```text
+"wss://elizabeth.peerplays.download/api"
+```
 
 `password = "password"`
 
@@ -28,6 +30,10 @@ To create a new wallet
 Unlock the wallet
 
 `p.unlock(password)`
+
+`Add private key / keys`
+
+p.wallet.addPrivateKey\("5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"\)
 
 \`\`
 
