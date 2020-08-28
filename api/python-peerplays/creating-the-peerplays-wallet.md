@@ -31,9 +31,13 @@ Unlock the wallet
 
 `p.unlock(password)`
 
-`Add private key / keys`
+Add private key / keys
 
 p.wallet.addPrivateKey\("5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"\)
 
-\`\`
+
+
+`p.wallet.getAccounts()`
+
+Lists all the accounts associated with the private key.
 
