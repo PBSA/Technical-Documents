@@ -6,6 +6,8 @@ Node is the chain with which you wish to interact.
 
 `node = "wss://irona.peerplays.download/api"`
 
+`password = "password"`
+
 `from peerplays import PeerPlays`
 
 ```
@@ -19,5 +21,13 @@ p = PeerPlays(node,
 
 The commented out lines are optional.
 
+To create a new wallet
 
+`p.newWallet(password)`
+
+Unlock the wallet
+
+`p.unlock(password)`
+
+\`\`
 
