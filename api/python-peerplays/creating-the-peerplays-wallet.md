@@ -2,5 +2,22 @@
 
 All these experiments and examples are expected to be tried out in ipython command shell. Start the command shell with `ipython`
 
-\`\`
+Node is the chain with which you wish to interact.
+
+`node = "wss://irona.peerplays.download/api"`
+
+`from peerplays import PeerPlays`
+
+```
+p = PeerPlays(node, 
+        # proposer="init0",
+        # proposal_expiration=300,
+        # nobroadcast=False,
+        # bundle=False
+    )
+```
+
+The commented out lines are optional.
+
+
 
