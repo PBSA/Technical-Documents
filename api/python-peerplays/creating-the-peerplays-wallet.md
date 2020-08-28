@@ -1,2 +1,4 @@
 # Creating the wallet
 
+node = 
+

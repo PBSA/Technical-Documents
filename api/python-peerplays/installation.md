@@ -29,5 +29,11 @@ python with python3
 
 ipython with ipython3
 
+Ipython shell can be started with
+
+`ipython`
+
+
+
 
 
