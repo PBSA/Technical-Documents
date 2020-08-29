@@ -38,7 +38,7 @@ Ipython shell can be started with
 `Additions required`
 
 1. `Add a note of fee for different operations`
-2. \`\`
+2. How to install from git 
 
 
 
