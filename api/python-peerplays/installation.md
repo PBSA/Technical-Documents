@@ -33,6 +33,13 @@ Ipython shell can be started with
 
 `ipython`
 
+\`\`
+
+`Additions required`
+
+1. `Add a note of fee for different operations`
+2. \`\`
+
 
 
 
