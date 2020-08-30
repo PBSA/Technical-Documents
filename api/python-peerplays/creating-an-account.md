@@ -50,7 +50,32 @@ p.create\_account\("jemshid", "init0", "init0", 0, 'TEST6MRyAjQq8ud7hVNYcfnVPJqc
 
 
 
+
+
+Faucet Method
+
+
+
+```text
+jTemplate = {'account': {
+    'name': 'qa3',
+    'owner_key': 'TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV',
+    'active_key': 'TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV',
+    'memo_key': 'TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV',
+    'refcode': '',
+    'referrer': ''}}
+    
+```
+
+requests.post\(url, json=jTest\)
+
+url = [https://elizabeth-faucet.peerplays.download/api/v1/accounts](https://elizabeth-faucet.peerplays.download/api/v1/accounts)
+
+
+
 ```text
 def transfer(self, to, amount, asset, memo="", account=None, **kwargs):
 ```
+
+
 
