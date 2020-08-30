@@ -1,10 +1,6 @@
 # Installation
 
-The python-peerplays library has following dependencies
-
-\`\`
-
-Make sure that the above dependencies are installed, if not install with:
+The python-peerplays library has following dependencies. Make sure that the above dependencies are installed, if not install with:
 
 ```text
 sudo apt-get install python3-dev build-essential libssl-dev\
@@ -19,9 +15,9 @@ Now install python-peerplays as follows:
 
 Ipython is a rich interactive python command shell. It's recommended for trying out python-peerplays library. It can be installed with
 
-pip install ipython 
+`pip install ipython` 
 
-In case Python 2.7 is the default Python for your machine, replce
+In case Python 2.7 is the default Python for your machine, repalce
 
 pip with pip3
 
@@ -29,7 +25,7 @@ python with python3
 
 ipython with ipython3
 
-Ipython shell can be started with
+Ipython shell can be started with the command
 
 `ipython`
 
