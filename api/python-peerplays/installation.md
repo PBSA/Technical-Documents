@@ -45,8 +45,7 @@ To work with the latest development version of python-peerplays
 
 ## `To Do`
 
-1. Add a note of fee for different operations
-2. How to install system level from git for develop branch
+1. How to install system level from git for develop branch
 
 
 
