@@ -161,5 +161,6 @@
   * [Creating the wallet](api/python-peerplays/creating-the-peerplays-wallet.md)
   * [Creating an Account](api/python-peerplays/creating-an-account.md)
   * [NFT](api/python-peerplays/nft.md)
+  * [Market Place](api/python-peerplays/market-place.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
 
