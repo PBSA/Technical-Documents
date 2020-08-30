@@ -5,7 +5,7 @@ All these experiments and examples are expected to be tried out in ipython comma
 Node is the chain with which you wish to interact.
 
 ```text
-"wss://elizabeth.peerplays.download/api"
+node = "wss://elizabeth.peerplays.download/api"
 ```
 
 `password = "password"`
@@ -13,12 +13,7 @@ Node is the chain with which you wish to interact.
 `from peerplays import PeerPlays`
 
 ```
-p = PeerPlays(node, 
-        # proposer="init0",
-        # proposal_expiration=300,
-        # nobroadcast=False,
-        # bundle=False
-    )
+p = PeerPlays(node)
 ```
 
 The commented out lines are optional.
