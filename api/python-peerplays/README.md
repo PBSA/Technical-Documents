@@ -28,6 +28,8 @@ def transfer(self, to, amount, asset, memo="", account=None, **kwargs):
 
 `p.rpc.get_global_properties`
 
+private-key = \["TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"\]
+
 \`\`
 
 
