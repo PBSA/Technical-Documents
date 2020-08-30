@@ -31,6 +31,18 @@ Ipython shell can be started with the command
 
 \`\`
 
+{% hint style="info" %}
+To work with the latest development version of python-peerplays
+
+`git clone git@gitlab.com:PBSA/PeerplaysIO/tools-libs/python-peerplays.git`
+
+`cd python-peerplays`
+
+`git checkout develop`
+
+\`\`
+{% endhint %}
+
 `Additions required`
 
 1. `Add a note of fee for different operations`
