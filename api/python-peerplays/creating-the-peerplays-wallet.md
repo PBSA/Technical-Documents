@@ -16,8 +16,6 @@ node = "wss://elizabeth.peerplays.download/api"
 p = PeerPlays(node)
 ```
 
-The commented out lines are optional.
-
 To create a new wallet
 
 `p.newWallet(password)`
@@ -28,11 +26,13 @@ Unlock the wallet
 
 Add private key / keys
 
-p.wallet.addPrivateKey\("5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"\)
+`p.wallet.addPrivateKey("5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3")`
 
+\`\`
 
+## Additional Methods
 
-`p.wallet.getAccounts()`
+`p.wallet.unlocked() #returns True if wallet is unlocked. Wallet needs to be unlocked to perform operations on the blockchain.`
 
-Lists all the accounts associated with the private key.
+`p.wallet.getAccounts() #Lists all the accounts associated with the private key.`
 
