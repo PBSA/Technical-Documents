@@ -4,137 +4,113 @@ description: Non Fungible Tokens
 
 # NFT
 
-
+#### Create NFT Meta
 
 ```text
-def nft_metadata_create(
-    self,
-    owner_account_id_or_name,
-    name,
-    symbol,
-    base_uri,
-    revenue_partner=None,
-    revenue_split=200,
+p.nft_metadata_create(
+    owner_account_id_or_name,        # owner of nft meta
+    name,                            # nft meta name
+    symbol,                          # nft symbol
+    base_uri,                        # nft uri
     is_transferable=True,
     is_sellable=True,
-    **kwargs
-    ):
+    )
 ```
 
 
 
-
+#### Update NFT Meta
 
 ```text
-def nft_metadata_update(
-    self,
+p.nft_metadata_update(
     owner_account_id_or_name,
     nft_metadata_id,
     name,
     symbol,
     base_uri,
-    revenue_partner=None,
-    revenue_split=200,
     is_transferable=True,
     is_sellable=True,
-    **kwargs
-    ):
+    )
 ```
 
 
 
-
+#### Mint NFT
 
 ```text
-def nft_mint(
-    self,
+p.nft_mint(
     metadata_owner_account_id_or_name,
-    metadata_id,
+    metadata_id, 
     owner_account_id_or_name,
     approved_account_id_or_name,
-    approved_operators,
+    approved_operators,                     # list of operators
     token_uri,
-    **kwargs
-    ):
+    )
 ```
 
 
 
-
+#### Transfer NFT
 
 ```text
-def nft_safe_transfer_from(
-    self,
-    operator_,
+p.nft_safe_transfer_from(
+    operator_,                # operator account name or id
     from_,
     to_,
     token_id,
-    data,
-    **kwargs
-    ):
+    data,                     # notes as string
+    )
 ```
 
 
 
-
+#### Approve Control over NFT
 
 ```text
 def nft_approve(
-    self,
     operator_,
-    approved,
+    approved,         # approved account id or name
     token_id,
-    **kwargs
-    ):
+    )
 ```
 
 
 
-
+#### Approve for all the tokens owned
 
 ```text
 def nft_set_approval_for_all(
-    self,
     owner,
     operator_,
     approved,
-    **kwargs
-    ):
+    )
 ```
 
 
 
-nft\_get\_balance
+#### Info calls
 
-uint64\_t database\_api::nft\_get\_balance\(const account\_id\_type owner\) const
+`p.rpc.nft_get_balance(owner)` 
 
-optional database\_api::nft\_owner\_of\(const nft\_id\_type token\_id\) const
+`p.rpc.nft_owner_of(token_id)`
 
+`p.rpc.nft_get_approved(token_id)`
 
+`p.rpc.nft_is_approved_for_all(owner, operator)`
 
-optional database\_api::nft\_get\_approved\(const nft\_id\_type token\_id\) const
+`p.rpc.nft_get_name(nft_metadata_id)`
 
-bool database_api::nft\_is\_approved\_for\_all\(const account\_id\_type owner, const account\_id\_type operator_\) const
+`p.rpc.nft_get_symbol(nft_metadata_id)`
 
-string database\_api::nft\_get\_name\(const nft\_metadata\_id\_type nft\_metadata\_id\) const
+`p.rpc.nft_get_token_uri(token_id)`
 
-string database\_api::nft\_get\_symbol\(const nft\_metadata\_id\_type nft\_metadata\_id\) const
+`p.rpc.nft_get_total_supply(nft_metadata_id)`
 
-string database\_api::nft\_get\_token\_uri\(const nft\_id\_type token\_id\) const
+`p.rpc.nft_token_by_index(nft_metadata_id, token_idx)`
 
-uint64\_t database\_api::nft\_get\_total\_supply\(const nft\_metadata\_id\_type nft\_metadata\_id\) const
+`p.rpc.nft_token_of_owner_by_index(nft_metadata_id, owner, token_idx)`
 
-nft\_object database\_api::nft\_token\_by\_index\(const nft\_metadata\_id\_type nft\_metadata\_id, const uint64\_t token\_idx\) const
+`p.rpc.nft_get_all_tokens()`
 
-nft\_object database\_api\_impl::nft\_token\_of\_owner\_by\_index\(const nft\_metadata\_id\_type nft\_metadata\_id, const account\_id\_type owner, const uint64\_t token\_idx\) const
-
-vector database\_api::nft\_get\_all\_tokens\(\) const
-
-vector database\_api::nft\_get\_tokens\_by\_owner\(const account\_id\_type owner\) const
-
-
-
-
-
-
+`p.rpc.nft_get_tokens_by_owner(owner)`
 
