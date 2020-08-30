@@ -30,6 +30,10 @@ p.rpc.get\_account\_balances\("jemshid", \[\]\)
 
 
 
+get\_global\_properties
+
+
+
 
 
 
