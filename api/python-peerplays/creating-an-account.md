@@ -21,7 +21,7 @@ def upgrade_account(self, account=None, **kwargs):
 
 
 
-
+p.create\_account\(account\_name="jemshid1", registrar="jemshid", owner\_key='TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV', active\_key='TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV', m ...: emo\_key='TEST6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV'\)
 
 
 
