@@ -10,3 +10,11 @@ The code is maintained at [https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python
 
 
 
+1.2.x : accounts
+
+1.3.x : assets
+
+
+
+
+
