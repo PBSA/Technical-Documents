@@ -10,29 +10,25 @@ The code is maintained at [https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python
 
 
 
-1.2.x : accounts
+### Ids
 
-1.3.x : assets
+`1.2.x : accounts`
 
+`1.3.x : assets`
 
+\`\`
 
-Fund Transfer
+#### Notes
 
-p.transfer\("jemshid", 100, "TEST"\)
-
-
-
-```text
+```
 def transfer(self, to, amount, asset, memo="", account=None, **kwargs):
 ```
 
-p.rpc.get\_account\_balances\("jemshid", \[\]\)
+`p.rpc.get_account_balances("jemshid", [])`
 
+`p.rpc.get_global_properties`
 
-
-get\_global\_properties
-
-
+\`\`
 
 
 
