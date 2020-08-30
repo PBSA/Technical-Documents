@@ -1,63 +1,55 @@
 # Market Place
 
-
-
-
+#### Create Offer
 
 ```text
-def create_offer(
-    self,
-    item_ids, #list of items
+p.create_offer(
+    item_ids,                  # list of items
     issuer_id_or_name,
-    minimum_price, #asset type
-    maximum_price, #asset type
-    buying_item, #bool
-    offer_expiration_date, # "2020-09-18T11:05:39"
-    memo=None, #optional
-    **kwargs
-    ):
+    minimum_price,             # asset type
+    maximum_price,             # asset type
+    buying_item,               # bool
+    offer_expiration_date,     # "2020-09-18T11:05:39"
+    memo=None,                 # optional
+    )
 ```
 
 
 
-
+#### Bid
 
 ```text
-def create_bid(
-    self,
+p.create_bid(
     bidder_account_id_or_name,
-    bid_price, # asset
-    offer_id, # offer_id type, 1.29.x
-    **kwargs
-    ):
+    bid_price,                     # asset
+    offer_id,                      # offer_id type, 1.29.x
+    )
 ```
 
 
 
-
+#### Cancel Offer
 
 ```text
-def cancel_offer(
-    self,
+p.cancel_offer(
     issuer_account_id_or_name,
-    offer_id, # offer_id type, 1.29.x
-    **kwargs
-    ):
+    offer_id,                     # offer_id type, 1.29.x
+    )
 ```
 
 
 
-
+#### Call for info
 
 ```text
-  vector<offer_object> list_offers(const offer_id_type lower_id, uint32_t limit) const;
-  vector<offer_object> list_sell_offers(const offer_id_type lower_id, uint32_t limit) const;
-  vector<offer_object> list_buy_offers(const offer_id_type lower_id, uint32_t limit) const;
-  vector<offer_history_object> list_offer_history(const offer_history_id_type lower_id, uint32_t limit) const;
-  vector<offer_object> get_offers_by_issuer(const offer_id_type lower_id, const account_id_type issuer_account_id, uint32_t limit) const;
-  vector<offer_object> get_offers_by_item(const offer_id_type lower_id, const nft_id_type item, uint32_t limit) const;
-  vector<offer_history_object> get_offer_history_by_issuer(const offer_history_id_type lower_id, const account_id_type issuer_account_id, uint32_t limit) const;
-  vector<offer_history_object> get_offer_history_by_item(const offer_history_id_type lower_id, const nft_id_type item, uint32_t limit) const;
-  vector<offer_history_object> get_offer_history_by_bidder(const offer_history_id_type lower_id, const account_id_type bidder_account_id, uint32_t limit) const;
+p.rpc.list_offers(lower_id, limit)   # limt is number of entries requested as integer
+p.rpc.list_sell_offers(lower_id, limit)
+p.rpc.list_buy_offers(lower_id, limit)
+p.rpc.list_offer_history(lower_id, limit)
+p.rpc.get_offers_by_issuer(lower_id, issuer_account_id, limit)
+p.rpc.get_offers_by_item(lower_id, nft_id_type_item, limit)
+p.rpc.get_offer_history_by_issuer(lower_id, issuer_account_id, limit)
+p.rpc.get_offer_history_by_item(lower_id, item, limit)
+p.rpc.get_offer_history_by_bidder(lower_id, bidder_account_id, limit)
 ```
 
