@@ -16,5 +16,21 @@ The code is maintained at [https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python
 
 
 
+Fund Transfer
+
+p.transfer\("jemshid", 100, "TEST"\)
+
+
+
+```text
+def transfer(self, to, amount, asset, memo="", account=None, **kwargs):
+```
+
+p.rpc.get\_account\_balances\("jemshid", \[\]\)
+
+
+
+
+
 
 
