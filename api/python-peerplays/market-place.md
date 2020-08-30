@@ -53,3 +53,9 @@ p.rpc.get_offer_history_by_item(lower_id, item, limit)
 p.rpc.get_offer_history_by_bidder(lower_id, bidder_account_id, limit)
 ```
 
+
+
+#### Additional Info
+
+For examples, refer to  `tests/test_market_place.py`  
+
