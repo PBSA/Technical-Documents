@@ -43,10 +43,10 @@ To work with the latest development version of python-peerplays
 \`\`
 {% endhint %}
 
-`Additions required`
+## `To Do`
 
-1. `Add a note of fee for different operations`
-2. How to install from git 
+1. Add a note of fee for different operations
+2. How to install system level from git for develop branch
 
 
 
