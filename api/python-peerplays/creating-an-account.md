@@ -7,6 +7,18 @@ There are two ways to create  an account.
 
 Method 1: With own funded account.
 
+Account should be funded to get that done
+
+
+
+Upgrade own account
+
+
+
+```text
+def upgrade_account(self, account=None, **kwargs):
+```
+
 
 
 
