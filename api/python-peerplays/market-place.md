@@ -1,5 +1,9 @@
 # Market Place
 
+### Operations
+
+
+
 #### Create Offer
 
 ```text
@@ -14,6 +18,12 @@ p.create_offer(
     )
 ```
 
+For example
+
+```text
+p.create_offer(["1.31.5"], "1.2.9", {"amount":5,"asset_id":"1.3.0"}, {"amount":15,"asset_id":"1.3.0"}, False, "2030-09-18T11:05:39", "") 
+```
+
 
 
 #### Bid
@@ -24,6 +34,12 @@ p.create_bid(
     bid_price,                     # asset
     offer_id,                      # offer_id type, 1.29.x
     )
+```
+
+For example
+
+```text
+p.create_bid("1.2.10", {"amount":8,"asset_id":"1.3.0"}, offer["id"]) 
 ```
 
 
@@ -37,9 +53,15 @@ p.cancel_offer(
     )
 ```
 
+For example
 
+```text
+p.cancel_offer("1.2.9", offer["id"]) 
+```
 
-#### Call for info
+#### 
+
+#### Calls for info
 
 ```text
 p.rpc.list_offers(lower_id, limit)   # limt is number of entries requested as integer
