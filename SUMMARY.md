@@ -162,5 +162,6 @@
   * [Creating an Account](api/python-peerplays/creating-an-account.md)
   * [NFT](api/python-peerplays/nft.md)
   * [Market Place](api/python-peerplays/market-place.md)
+  * [HRP / RBAC](api/python-peerplays/hrp-rbac.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
 
