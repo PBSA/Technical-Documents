@@ -4,6 +4,10 @@ description: Non Fungible Tokens
 
 # NFT
 
+### Operations
+
+
+
 #### Create NFT Meta
 
 ```text
@@ -15,6 +19,12 @@ p.nft_metadata_create(
     is_transferable=True,
     is_sellable=True,
     )
+```
+
+For example
+
+```text
+p.nft_metadata_create("1.2.7", self.nameMetadata, self.nameMetadata, self.nameMetadata, revenue_partner="1.2.8", revenue_split=300, is_sellable=False, is_transferable=False)
 ```
 
 
@@ -33,6 +43,12 @@ p.nft_metadata_update(
     )
 ```
 
+For example
+
+```text
+p.nft_metadata_update("1.2.7", "1.30.11", self.nameMetadata + "m", self.nameMetadata + "m", self.nameMetadata + "m", "1.2.9", 400, True, True)
+```
+
 
 
 #### Mint NFT
@@ -46,6 +62,12 @@ p.nft_mint(
     approved_operators,                     # list of operators
     token_uri,
     )
+```
+
+For example 
+
+```text
+p.nft_mint("1.2.7", "1.30.11", "1.2.7", "1.2.7", "1.2.7", self.nameNft)
 ```
 
 
@@ -62,6 +84,12 @@ p.nft_safe_transfer_from(
     )
 ```
 
+For example
+
+```text
+p.nft_safe_transfer_from("1.2.7", "1.2.7", "1.2.9", "1.31.5", "whatever")
+```
+
 
 
 #### Approve Control over NFT
@@ -74,6 +102,12 @@ def nft_approve(
     )
 ```
 
+For example 
+
+```text
+p.nft_approve("1.2.9", "1.2.8", "1.31.5")
+```
+
 
 
 #### Approve for all the tokens owned
@@ -84,6 +118,12 @@ def nft_set_approval_for_all(
     operator_,
     approved,
     )
+```
+
+For example
+
+```text
+p.nft_set_approval_for_all("1.2.7", "1.2.10", True)
 ```
 
 
