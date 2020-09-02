@@ -1,8 +1,10 @@
 # Setting up the faucet
 
-It is recommended to use Ubuntu 18.04 to run the faucet.
+The faucet is the application used to create new accounts on the blockchain
 
 ## Installation
+
+It is recommended to use Ubuntu 18.04 to run the faucet.
 
 ### Clone the Repository
 
