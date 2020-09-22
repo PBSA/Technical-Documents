@@ -117,6 +117,7 @@
 
 ## CLI Wallet <a id="peerplays-wallet"></a>
 
+* [User Issued Assets \(UIAs\)](peerplays-wallet/user-issued-assets-uias.md)
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
 * [cli\_wallet & SON](peerplays-wallet/cli_wallet-and-son.md)
 
