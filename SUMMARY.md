@@ -40,6 +40,7 @@
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
 * [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
+  * [Beatrice](witnesses/setting-up-a-witness-node/beatrice.md)
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node/creating-a-backup-server.md)
   * [CLI Wallet Setup](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
 * [Updating a Witness Node](witnesses/updating-a-witness-node.md)
