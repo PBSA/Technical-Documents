@@ -7,22 +7,25 @@ Currently the Beatrice testnet has functionality for SON while the mainnet does 
 The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS:
 
 ```text
+sudo apt-get update
 sudo apt-get -y  install autoconf bash build-essential ca-certificates cmake \
       dnsutils doxygen git graphviz libbz2-dev libcurl4-openssl-dev \
       libncurses-dev libreadline-dev libssl-dev libtool libzmq3-dev \
-      locales ntp pkg-config wget
+      locales ntp pkg-config wget autotools-dev libicu-dev python-dev
 ```
 
 ### Build Boost 1.67.0 <a id="build-boost-1-67-0"></a>
 
 ```text
 mkdir $HOME/src
-cd $HOME/srcexport BOOST_ROOT=$HOME/src/boost_1_67_0
+cd $HOME/src
+export BOOST_ROOT=$HOME/src/boost_1_67_0
 sudo apt-get update
-sudo apt-get install -y autotools-dev build-essential  libbz2-dev libicu-dev python-dev
-wget -c 'http://sourceforge.net/projects/boost/files/boost/1.67.0/boost_1_67_0.tar.bz2/download'\     
--O boost_1_67_0.tar.bz2
-tar xjf boost_1_67_0.tar.bz2cd boost_1_67_0/
+sudo apt-get install -y autotools-dev libicu-dev python-dev
+wget -c 'http://sourceforge.net/projects/boost/files/boost/1.67.0/boost_1_67_0.tar.bz2/download' \
+     -O boost_1_67_0.tar.bz2
+tar xjf boost_1_67_0.tar.bz2
+cd boost_1_67_0/
 ./bootstrap.sh "--prefix=$BOOST_ROOT"
 ./b2 install
 ```
