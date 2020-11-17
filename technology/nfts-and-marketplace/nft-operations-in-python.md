@@ -97,5 +97,5 @@ OK
 
 ```
 
-Cheers, all unit tests are passed and you successfully verify the NFT\_python.
+Cheers, all unit tests are passed and you successfully verify the NFT\_python
 
