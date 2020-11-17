@@ -12,37 +12,33 @@ Describing here the steps to verify the NFT\_python on local or server machine.
 
 **Clone binaries on Machine :** `git https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git`
 
-\`\`
+\*\*\*\*
 
-####  **Step: 2** Install virtual env on machine
+#### **Step: 2** Install virtual env on machine
 
 **Go to project** : `cd python-peerplays`
 
 **Run** `virtualenv -p python3 env`
 
-\`\`
+\*\*\*\*
 
-####  **Step: 3** Install python requirements
+#### **Step: 3** Install python requirements
 
 **Run** `source env/bin/activate`
 
-And then `pip3 install -r requirements.txt`
+**And then** `pip3 install -r requirements.txt`
 
-**then** pip3 install -r requirements-test.txt
+**then** `pip3 install -r requirements-test.txt`
 
+\*\*\*\*
 
+#### **Step: 4** Run unit tests
 
+**Run** `python3 -m unittest tests/test_nft.py`
 
+\*\*\*\*
 
-
-
-**Step: 4** Run unit tests
-
-Run python3 -m unittest tests/test\_nft.py
-
-
-
- **Expected result should be as below:**
+**Expected result should be as below:**
 
 ```text
 (env) ubuntu@ip-172-31-13-101:~/python-peerplays$ python3 -m unittest tests/test_nft.py
@@ -66,5 +62,8 @@ Ran 1 test in 3.449s
 OK
 (env) ubuntu@ip-172-31-13-101:~/python-peerplays$
 
+
 ```
+
+Cheers, all unit tests are passed and you successfully verify the NFT\_python.
 
