@@ -30,6 +30,8 @@
     * [Connecting to an existing network](technology/sidechain-operator-nodes-sons/running-son-with-docker/connecting-to-an-existing-network.md)
   * [SON Configuration](technology/sidechain-operator-nodes-sons/son-configuration.md)
 * [NFTs and Marketplace](technology/nfts-and-marketplace/README.md)
+  * [NFT marketplace in Python](technology/nfts-and-marketplace/nft-marketplace-in-python.md)
+  * [NFT Operations in Python](technology/nfts-and-marketplace/nft-operations-in-python.md)
   * [NFT Marketplace HRP RBAC related Commands/Usecases](technology/nfts-and-marketplace/nft-marketplace-hrp-rbac-related-commands-usecases.md)
   * [NFT command reference](technology/nfts-and-marketplace/nft-command-referece.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
