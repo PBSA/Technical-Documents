@@ -19,7 +19,7 @@ https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays/-/tree/nft
 #### Clone binaries on Machine:
 
 ```text
-git https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
+git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
 ```
 
 \*\*\*\*
@@ -54,7 +54,21 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
+**then:**
 
+```text
+pip3 install -r requirements-test.txt
+```
+
+
+
+ **Step: 4 Run unit tests**
+
+**Run:**
+
+```text
+python -m unittest tests/test_market_place.py
+```
 
 
 
