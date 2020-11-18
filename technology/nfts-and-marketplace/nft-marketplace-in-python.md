@@ -42,5 +42,21 @@ virtualenv -p python3 env
 
 #### **Step: 3** Install python requirements
 
+**Run:**
+
+```text
+source env/bin/activate
+```
+
+**And then:**
+
+```text
+pip3 install -r requirements.txt
+```
+
+
+
+
+
 \*\*\*\*
 
