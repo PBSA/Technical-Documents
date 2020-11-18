@@ -19,7 +19,7 @@ https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays/-/tree/nft
 #### **Clone binaries on Machine :** 
 
 ```text
-git https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
+git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
 ```
 
 
