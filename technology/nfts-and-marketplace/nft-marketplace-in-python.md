@@ -16,11 +16,31 @@ Describing here the steps to verify the Marketplace\_python on local or server m
 https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays/-/tree/nft
 ```
 
-Clone binaries on Machine:
+#### Clone binaries on Machine:
 
 ```text
 git https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
 ```
+
+\*\*\*\*
+
+####  **Step: 2** Install virtual env on machine
+
+#### Go to project**:**
+
+```text
+cd python-peerplays
+```
+
+#### Run**:**
+
+```text
+virtualenv -p python3 env
+```
+
+ 
+
+#### **Step: 3** Install python requirements
 
 \*\*\*\*
 
