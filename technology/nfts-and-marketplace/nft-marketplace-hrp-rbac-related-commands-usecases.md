@@ -614,3 +614,175 @@ This command effectively limits any NFT to be sold or transferred between only t
 
 For attaching NFT metadata to an account role, please refer to the above NFT sections.
 
+
+
+#### Get Account Roles <a id="Get-Account-Roles"></a>
+
+```text
+get_account_roles_by_owner(string owner_account_id_or_name)
+```
+
+Example command,
+
+```text
+get_account_roles_by_owner account01
+```
+
+
+
+#### Update Account Role <a id="Update-Account-Role"></a>
+
+
+
+As a resource owner, one can update the operations and whitelisted accounts present in an account role.
+
+This helps in blacklisting any users from selling or transferring NFTs or any resources.
+
+```text
+update_account_role(string owner_account_id_or_name, account_role_id_type role_id, optional<string> name, optional<string> metadata, flat_set<int> operations_to_add, flat_set<int> operations_to_remove, flat_set<account_id_type> accounts_to_add, flat_set<account_id_type> accounts_to_remove, optional<time_point_sec> valid_to, bool broadcast)
+```
+
+`operations_to_add` new operations to add to the account role
+
+`operations_to_remove` existing operations to remove from the account role
+
+`accounts_to_add` new accounts to add to the whitelist
+
+`accounts_to_remove` existing accounts to remove from the whitelist
+
+
+
+Example command,
+
+```text
+update_account_role account01 1.32.0 null null [88] [95] [1.2.42] [1.2.40] "2020-09-04T13:52:38" true
+```
+
+`88` `offer_operation`**`(88)`** is added
+
+`95` `nft_safe_transfer_from_operation` is removed
+
+`1.2.42` account to the whitelist
+
+`1.2.40` account removed from the whitelist
+
+
+
+
+
+#### Delete Account Role <a id="Delete-Account-Role"></a>
+
+Once account role is deleted, restrictions on resource access no longer work.
+
+```text
+delete_account_role(string owner_account_id_or_name, account_role_id_type role_id, bool broadcast)
+```
+
+Example command,
+
+```text
+delete_account_role account01 1.32.0 true
+```
+
+
+
+### Fee Considerations <a id="Fee-Considerations"></a>
+
+
+
+**PPY** is the core token of peerplays blockchain. Blockchain users can issue their own tokens with a conversion rate to core token.
+
+In peerplays blockchain, every operation executed has a fee associated with it.
+
+Majority of this fee goes as payment to witnesses that run the blockchain.
+
+This fee is called transaction fee. Transaction fee is collected in core tokens only.
+
+There is also a fee for storing any data on the blockchain like the metadata or names.
+
+Currently for all the operations related to **NFT, Marketplace, HRP, Account roles,** the fee is equivalent to **1 PPY \(Transaction\) + 1 PPY per Kbyte \(Storage\)** of data stored on blockchain.
+
+But these values are subject to change by committee members.
+
+
+
+### NFT Notes <a id="NFT-Notes"></a>
+
+
+
+* In order to create an NFT, a metadata has to be created first.
+* Only the owner of the metadata can mint NFTs
+* These NFTs can be assigned to any user of metadata owner’s choice.
+* **NFT Metadata owner** is the owner of the metadata that mints the NFTs, **NFT owner** is the one who is assigned an NFT by metadata owner after minting.
+* User who is not the metadata owner cannot mint NFTs to himself
+* `is_transferable` and `is_sellable` flags configured on metadata control the transfer and selling properties of all the NFTs minted from the metadata.
+* If `is_transferable` is false and `is_sellable` is true, then the NFT owner can only list it in marketplace and sell it. He can’t transfer to another user.
+* If `is_transferable` is true and `is_sellable` is false, then the NFT owner cannot list it in marketplace and he can freely transfer it to other users.
+* If `is_transferable` is false and `is_sellable` is false, then the NFT owner can neither be transfer nor sell the NFT. It remains with him forever.
+
+
+
+### Marketplace Notes <a id="Marketplace-Notes"></a>
+
+
+
+* Peerplays blockchain operates the marketplace through `offer_operation`, `bid_operation`, `cancel_offer_operation`, `finalize_offer_operation` operations/smart contracts.
+* Offers operate as an auction where max bid before the expiry time owns the NFT
+* If max\_price is equal to min\_price in offer\_operation it acts as normal listing. Whoever bids the max\_price gets the NFT instantly.
+* For a successful bid, `revenue_partner` gets the `revenue_split` percent of the bid. This is configured during NFT metadata creation. So for all the NFT sales that are based on the metadata, `revenue_partner` gets the cut.
+* Currently peerplays stakeholders don’t get the cut, this will be implemented in the future.
+* Currently there is only one marketplace i.e. Peerplays blockchain is providing a marketplace where any owner can sell his NFT based on the configuration of the parent metadata.
+* Metadata owner can customise this marketplace in the UI to show only the NFTs minted from his own metadata to his DAPP users.
+* So there are no multiple marketplaces on peerplays blockchain at the moment, only UI customisations are possible.
+* Price can be set in terms of custom assets \(tokens\) in market place. In this case both offers and bids should be in the same asset \(token\). Eg. Offer price is in XCOIN token, then bid price should also be in XCOIN token.
+
+
+
+
+
+### Usecases <a id="Usecases"></a>
+
+#### Movie Tickets \(For Blockchain Savvy Users\) <a id="Movie-Tickets-(For-Blockchain-Savvy-Users)"></a>
+
+
+
+* I’m the owner of a movie theatre where there is a premiere show for a movie Interstellar.
+* I create NFT metadata for Interstellar movie that has basic info about the genre, running time, movie posters etc
+* To maximise my profit and take a cut from the black market ticket sales, I created the metadata of the movie `is_transferable` to false and `is_sellable` to true
+* I accept payment on the blockchain in multiple currencies namely PPY, XCOIN and BTC \(or some off chain mechanism in FIAT currencies like USD\)
+* I mint the tickets as NFTs to the users who sent me the amount in the above currencies. Users can gain entry to the movie only with these NFT tickets.
+* Users cannot transfer the tickets among themselves, they can only list them on marketplace.
+* As the demand for tickets increase, listing price increase, so I get more cut for every ticket sold.
+
+
+
+#### NFT Lottery with Geolocation restrictions \(Account Roles/ Resource Permission use case\) <a id="NFT-Lottery-with-Geolocation-restrictions-(Account-Roles/-Resource-Permission-use-case)"></a>
+
+
+
+* I’m the issuer of the lottery which has geo restrictions saying the lottery can only be sold to residents of the state New South Wales\(NSW\) in Australia.
+* I do the KYC check off chain and list down all the users on the blockchain that are residents of the state.
+* While creating NFT metadata I attach the account roles with the whitelist of users along with `is_transferable` to true and `is_sellable` to false.
+* I create a smart contract for minting NFTs from the metadata created.
+* This smart contract accesses the account role associated with the metadata.
+* If any user is not whitelisted he can’t purchase the NFT lottery ticket from the smart contract.
+* If the user is whitelisted and minted a lottery ticket, he can’t transfer it to non-whitelisting users who are not residents of NSW.
+* I create a draw and declare the owner of NFT as winner.
+
+
+
+
+
+#### University Degrees <a id="University-Degrees"></a>
+
+
+
+* I’m the university issuing degrees to students that complete masters degree in two streams science and arts.
+* I create two NFT metadata one each for both Science and Arts.
+* I make both `is_transferable` to false and `is_sellable` to false.
+* I mint NFT accordingly based on the stream to each student.
+* Each NFT \(degree\) has the info about the student grades, courses etc.
+* These NFTs \(degrees\) stays with the students \(users\) forever, they can’t be transferred or sold.
+
+
+
