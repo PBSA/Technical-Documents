@@ -462,25 +462,155 @@ get_custom_permissions account01
 
 #### Update Custom Permissions <a id="Update-Custom-Permissions"></a>
 
+```text
+update_custom_permission(string owner, custom_permission_id_type permission_id, fc::optional<authority> new_auth, bool broadcast)
+```
+
+Example Command,
+
+```text
+update_custom_permission account01 1.27.0 { "weight_threshold": 1,  "account_auths": [["1.2.53",1]], "key_auths": [], "address_auths": [] } true
+```
+
+Here we removed the `key_auths` and added `1.2.53` with weight 1, which is equal to `weight_threshold` , so `1.2.53` can alone sign the transaction successfully.
+
+
+
+#### Create Custom Account Authority <a id="Create-Custom-Account-Authority"></a>
+
+> Creating custom authority maps the created custom permissions with the actual operations present on the blockchain.
+>
+> It also has expiry time by when this custom permission is no more valid on any given account and operation combination.
+
+```text
+create_custom_account_authority(string owner, custom_permission_id_type permission_id, int operation_type, fc::time_point_sec valid_from, fc::time_point_sec valid_to, bool broadcast)
+```
+
+Example Command,
+
+```text
+create_custom_account_authority account01 1.27.0 0 "2020-11-02T17:53:25" "2020-12-03T17:53:25" true
+```
+
+`account01` is the owner of the account and the one who created a permission `1.27.0`
+
+`1.27.0` is the custom permission created
+
+`0` is the operation number, refer to operations at [operations](https://peerplays.atlassian.net/wiki/spaces/PROJECTS/pages/329351829/Peerplays+Alice+Chain+API+Endpoints+in+Development), here `0` is `transfer_operation`
+
+`"2020-11-02T17:53:25"` valid from timestamp
+
+`"2020-12-03T17:53:25"` valid to timestamp
+
+`true` broadcast
+
+Basically this represents a full HRP where transfer operation on `account01` can be done by authorities present in `1.27.0` instead of account owner `account01`
+
+
+
+#### Update Custom Account Authority <a id="Update-Custom-Account-Authority"></a>
+
+Can be used to update existing `valid_from` and `valid_to` times,
+
+```text
+update_custom_account_authority(string owner, custom_account_authority_id_type auth_id, fc::optional<fc::time_point_sec> new_valid_from, fc::optional<fc::time_point_sec> new_valid_to, bool broadcast)
+```
+
+Example command,
+
+```text
+update_custom_account_authority account01 1.28.0 "2020-06-02T17:52:25" "2020-06-03T17:52:25" true
+```
 
 
 
 
 
+#### Delete Custom Permission <a id="Delete-Custom-Permission"></a>
+
+Used to delete the existing custom permission, this will delete all the custom account authorities linked to this permission as well.\( cascading delete \)
+
+```text
+delete_custom_permission(string owner, custom_permission_id_type permission_id, bool broadcast)
+```
+
+Example command,
+
+```text
+delete_custom_permission account01 1.27.0 true
+```
 
 
 
 
 
+#### Delete Custom Account Authority <a id="Delete-Custom-Account-Authority"></a>
+
+Used to delete an account authority attached to a permission.
+
+```text
+delete_custom_account_authority(string owner, custom_account_authority_id_type auth_id, bool broadcast)
+```
+
+Example command,
+
+```text
+delete_custom_account_authority account01 1.28.0 true
+```
 
 
 
 
 
+### Resource Permissions \( Account Roles \) <a id="Resource-Permissions-(-Account-Roles-)"></a>
+
+As opposed to HRP mentioned above, resource permissions are controlled by an owner of a resource \(eg. NFT metadata is a resource\)
+
+These are similar to IAM permissions in AWS Cloud environment.
 
 
 
+#### Create Account Role <a id="Create-Account-Role"></a>
+
+Used to create an account role.
+
+```text
+create_account_role(string owner_account_id_or_name, string name, string metadata, flat_set<int> allowed_operations, flat_set<account_id_type> whitelisted_accounts, time_point_sec valid_to, bool broadcast)
+```
+
+`owner_account_id_or_name` resource owner Eg. account creating an NFT Metadata resource
+
+`name` name of the account role Eg. Movie Interstellar Permissions
+
+`metadata` metadata for additional info Eg. Some JSON struct or an external URL with info
+
+`allowed_operations` allowed operations that `whitelisted_accounts` can perform on this resource.
+
+`whitelisted_accounts` All the accounts that can perform any `allowed_operations` on a resource
+
+`valid_to` exports time of the account role, valid from is the time of creation of the account role
+
+`broadcast` broadcast mentioned above
+
+Currently valid `allowed_operations` are
+
+`offer_operation`**\(88\),** Checks if the user who is listing an NFT for sale is in `whitelisted_accounts` , if not the user can’t list the NFTs in marketplace.
+
+`bid_operation`**\(89\),** Checks if the user who is bidding for an NFT on sale is in `whitelisted_accounts` , if not the user can’t bid / buy the NFT from marketplace.
+
+ `nft_safe_transfer_from_operation` **\(95\),** Checks if the user who transferring i.e. owner is in `whitelisted_accounts`, if yes it checks the to-account is also in the `whitelisted_accounts`. If any of the two checks fail, the transfer fails.
 
 
 
+More operations like NFT Lottery, RNG are to be attached to account roles.
+
+Example Command,
+
+```text
+create_account_role account01 ar1 ar1 [89,95] [1.2.40, 1.2.41, 1.2.43] "2020-09-04T13:43:39" true
+```
+
+This command effectively limits any NFT to be sold or transferred between only three accounts, `1.2.40, 1.2.41, 1.2.43`
+
+For attaching NFT metadata to an account role, please refer to the above NFT sections.
 
