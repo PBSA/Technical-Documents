@@ -786,3 +786,22 @@ But these values are subject to change by committee members.
 
 
 
+#### Minting NFTs \(For not so Blockchain Savvy Users\) <a id="Minting-NFTs-(For-not-so-Blockchain-Savvy-Users)"></a>
+
+
+
+* I’m the owner of an NFT Metadata and my DAPP users are not blockchain savvy.
+* I mint the NFTs to my account itself.
+* I modify the URI of NFTs accordingly off chain to denote the ownership.
+
+  
+
+
+### Example NFT creation <a id="Example-NFT-creation"></a>
+
+Core coin : PPY for fee
+
+Purchase/Sell/Transaction token for NFTs : ava-token
+
+PPY:ava-token = 1:10000
+
