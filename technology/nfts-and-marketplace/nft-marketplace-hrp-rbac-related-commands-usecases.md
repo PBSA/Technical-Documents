@@ -203,3 +203,284 @@ list_offers 100 null
 
 Returns all the sell listing offer objects in the marketplace.
 
+```text
+list_sell_offers(uint32_t limit, optional<offer_id_type> lower_id)
+```
+
+Example command,
+
+```text
+list_sell_offers 10 1.29.6
+```
+
+* `10` Number of items per fetch \(pagination\)
+* `1.29.6` Index to start the search for. \(pagination\)
+
+Example command without pagination,
+
+```text
+list_sell_offers 10 null
+```
+
+
+
+
+
+#### **List Buy Offers** <a id="List-Buy-Offers"></a>
+
+Returns all the buy listing offer objects in the marketplace. \(Reverse Auction offer objects\).
+
+```text
+list_buy_offers(uint32_t limit, optional<offer_id_type> lower_id)
+```
+
+Example command,
+
+```text
+list_buy_offers 10 1.29.6
+```
+
+* `10` Number of items per fetch \(pagination\)
+* `1.29.6` Index to start the search for. \(pagination\)
+
+Example command without pagination,
+
+```text
+list_buy_offers 10 null
+```
+
+
+
+
+
+#### **List Offer History** <a id="List-Offer-History"></a>
+
+Returns all the closed auction and reverse auction listings. \(offers\)
+
+```text
+list_offer_history(uint32_t limit, optional<offer_history_id_type> lower_id)
+```
+
+Example command,
+
+```text
+list_offer_history 10 2.24.2
+```
+
+* `10`Number of items per fetch \(pagination\)
+* `2.24.2`Index to start the search for. \(pagination\)
+
+Example command without pagination,
+
+```text
+list_offer_history 10 null
+```
+
+
+
+#### Get Offers by Issuer <a id="Get-Offers-by-Issuer"></a>
+
+Returns all the offers listed by an account.
+
+```text
+get_offers_by_issuer(string issuer_account_id_or_name, uint32_t limit, optional<offer_id_type> lower_id)
+```
+
+Example command,
+
+```text
+get_offers_by_issuer account02 10 1.29.0
+```
+
+* `account02` issuer
+* `10` Number of items per fetch \(Pagination\)
+* `1.29.0` Index to start the search for. \(pagination\)
+
+Example command without pagination,
+
+```text
+get_offers_by_issuer account02 10 null
+```
+
+
+
+#### Get Offers by NFT Item <a id="Get-Offers-by-NFT-Item"></a>
+
+```text
+get_offers_by_item(const nft_id_type item, uint32_t limit, optional<offer_id_type> lower_id)
+```
+
+Example command,
+
+```text
+get_offers_by_item 1.31.0 10 1.29.1
+```
+
+* `1.31.0` NFT Id
+* `10` Number of items per fetch \(Pagination\)
+* `1.29.1` Index to start the search for. \(pagination\)
+
+Example command without pagination,
+
+```text
+get_offers_by_item 1.31.0 10 null
+```
+
+
+
+#### Get Offer History by Issuer <a id="Get-Offer-History-by-Issuer"></a>
+
+```text
+get_offer_history_by_issuer(string issuer_account_id_or_name, uint32_t limit, optional<offer_history_id_type> lower_id)
+```
+
+Example command,
+
+```text
+get_offer_history_by_issuer account06 10 2.24.1
+```
+
+* account06 Issuer
+* 10 Number of items per fetch \(Pagination\)
+* 2.24.1 Index to start the search for. \(pagination\)
+
+Example command without pagination,
+
+```text
+get_offer_history_by_issuer account06 10 null
+```
+
+
+
+
+
+#### Get Offer History by NFT Item <a id="Get-Offer-History-by-NFT-Item"></a>
+
+```text
+get_offer_history_by_item(const nft_id_type item, uint32_t limit, optional<offer_history_id_type> lower_id)
+```
+
+Example Command,
+
+```text
+get_offer_history_by_item 1.31.0 10 2.24.1
+```
+
+* `1.31.0` NFT Id
+* `10` Number of items per fetch \(Pagination\)
+* `2.24.1` Index to start the search for. \(pagination\)
+
+Example command without pagination,
+
+```text
+get_offer_history_by_item 1.31.0 10 null
+```
+
+
+
+
+
+#### Get Offer History by Bidder <a id="Get-Offer-History-by-Bidder"></a>
+
+```text
+get_offer_history_by_bidder(string bidder_account_id_or_name, uint32_t limit, optional<offer_history_id_type> lower_id)
+```
+
+Example Command,
+
+```text
+get_offer_history_by_bidder account07 10 2.24.1
+```
+
+* account07 Bidder
+* 10 Number of items per fetch \(Pagination\)
+* 2.24.1 Index to start the search for. \(pagination\) ****
+
+Example command without pagination,
+
+```text
+get_offer_history_by_bidder account07 10 null
+```
+
+
+
+
+
+## HRP User Authorities
+
+> Hierarchical role based permissions is a feature of Peerplays blockchain which helps in increasing the security of user accounts.
+>
+> Users don’t have to use their active and owner keys for everything they do on the chain.
+>
+> They can create role based custom permissions and map them to different keys other than active and owner keys.
+>
+> They can then use these custom keys to sign transactions.
+
+
+
+#### Create Custom Permissions <a id="Create-Custom-Permissions"></a>
+
+```text
+ create_custom_permission(string owner, string permission_name, authority auth, bool broadcast)
+```
+
+* owner Owner of the account who is creating the custom permission
+* permission\_name Permission name eg. nftcreatepermission
+* auth authority is account authority, more info at [permissions](https://peerplays.atlassian.net/wiki/spaces/EP/pages/197466275/Reverse+Engineering+-+Peerplaysjs-lib), [public/private keys](https://peerplays.atlassian.net/wiki/spaces/EKB/pages/197460303), [multi authority](https://peerplays.atlassian.net/wiki/spaces/PROJECTS/pages/66519041/Compare+of+Master5050+and+Hardfork+Code)
+
+Example Command,
+
+```text
+create_custom_permission account01 perm1 { "weight_threshold": 1,  "account_auths": [["1.2.52",1]], "key_auths": [["TEST71ADtL4fzjGKErk9nQJrABmCPUR8QCjkCUNfdmgY5yDzQGhwto",1]], "address_auths": [] } true
+```
+
+`{ "weight_threshold": 1, "account_auths": [["1.2.52",1]], "key_auths": [["TEST71ADtL4fzjGKErk9nQJrABmCPUR8QCjkCUNfdmgY5yDzQGhwto",1]], "address_auths": [] }`
+
+> This represents an authority structure, `account_auths` represent the amount of weight each accounts have on our account, in this example 1.2.52 has weight 1
+>
+> `key_auths` represent the amount of weight each public key has on this account, in this example `TEST71ADtL4fzjGKErk9nQJrABmCPUR8QCjkCUNfdmgY5yDzQGhwto` has weight 1
+>
+> `Weight_threshold` represent the required weight for a transaction to be signed successfully.
+>
+> In this example either `1.2.52` can sign with his active key or `TEST71ADtL4fzjGKErk9nQJrABmCPUR8QCjkCUNfdmgY5yDzQGhwto` can be used to sign a transaction successfully.
+
+
+
+#### Get Custom Permissions <a id="Get-Custom-Permissions"></a>
+
+```text
+get_custom_permissions(string owner)
+```
+
+Example Command,
+
+```text
+get_custom_permissions account01
+```
+
+####  <a id="Update-Custom-Permissions"></a>
+
+#### Update Custom Permissions <a id="Update-Custom-Permissions"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
