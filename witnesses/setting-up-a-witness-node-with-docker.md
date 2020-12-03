@@ -6,7 +6,7 @@ The following table lists what should be considered the recommended system requi
 
 | CPU | Memory | Storage | Bandwidth | OS |
 | :--- | :--- | :--- | :--- | :--- |
-| 8 Cores | 64GB | 300GB SSD | 1Gbps | Ubuntu 18.04 |
+| 4 Cores | 8GB | 300GB SSD | 1Gbps | Ubuntu 18.04 |
 
 The following table lists what should be considered the recommended system requirements for running a **witness node on SON:**
 
