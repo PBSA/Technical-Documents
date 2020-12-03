@@ -16,7 +16,7 @@ The following table lists what should be considered the recommended system requi
 
 ## Building with Docker
 
-Clone the Peerplays Docker repository: [https://gitlab.com/data-security-node/peerplays-docker](https://gitlab.com/data-security-node/peerplays-docker):
+Clone the Peerplays Docker repository: 
 
 ```text
 git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/peerplays-docker
