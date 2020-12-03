@@ -53,3 +53,5 @@ Start the witness node:
 ./run.sh start
 ```
 
+
+The logs can be seen with `run.sh logs` command
