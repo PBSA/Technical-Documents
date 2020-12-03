@@ -19,7 +19,7 @@ The following table lists what should be considered the recommended system requi
 Clone the Peerplays Docker repository: [https://gitlab.com/data-security-node/peerplays-docker](https://gitlab.com/data-security-node/peerplays-docker):
 
 ```text
-git clone https://gitlab.com/data-security-node/peerplays-docker
+git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/peerplays-docker
 ```
 
 Use the install script to download/update the docker image for Peerplays:
