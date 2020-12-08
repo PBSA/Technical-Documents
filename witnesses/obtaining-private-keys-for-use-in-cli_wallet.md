@@ -1,10 +1,6 @@
 # Obtaining private keys for cli\_wallet
 
-
-
-#### 
-
-#### 3. Using password generated in GUI wallet in _cli\_wallet_
+### Using password generated in GUI wallet in _cli\_wallet_
 
 In the Graphene based blockchains like Peerplays the hierarchical permissions like fund transfer, sending memo etc are separated using different roles and Public-Private key-pairs for each role. We have 3 types of roles OWNER, ACTIVE and MEMO. These keys are generated using a brain key.
 
