@@ -44,7 +44,7 @@
 * [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
   * [Beatrice](witnesses/setting-up-a-witness-node/beatrice.md)
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node/creating-a-backup-server.md)
-  * [CLI Wallet Setup](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
+  * [Creating a witness account](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
 * [Updating a Witness Node](witnesses/updating-a-witness-node.md)
 * [Setting up a Witness Node with Docker](witnesses/setting-up-a-witness-node-with-docker.md)
 * [Setting up the faucet](witnesses/setting-up-the-faucet.md)

@@ -1,26 +1,8 @@
 # Obtaining private keys for cli\_wallet
 
-For given network, say MAINNET or TESTNET we need to first create a user account using a faucet. 
 
-{% hint style="info" %}
-**Faucet ?!**
 
-In the blockchain world, account creation services are nicknamed as faucents. They create unique Network Address Identifiers.
-{% endhint %}
-
-To create a Peerplays MAINNET account, the easiest way is to use the GUI wallet available to download from [Github](https://github.com/peerplays-network/peerplays-core-gui/releases).
-
-Creating user in Peerplays GUI wallet is self explanatory.
-
-#### 2. Upgrading the Peerplays account to a witness account
-
-We can do this from the `cli_wallet` & this includes multiple steps.
-
-1. Buy some PPY \(or ask your friendly whale!\) from an exchange
-2. Upgrade your new account to a Life Time Member \(LTM\)
-3. register and update the witness to the network
-
-For the first step, we need to access the newly created Peerplays account from the cli\_wallet. Instructions are given in the next section.
+#### 
 
 #### 3. Using password generated in GUI wallet in _cli\_wallet_
 
