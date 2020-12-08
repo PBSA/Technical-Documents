@@ -2,7 +2,7 @@
 
 The notifications panel is displayed on the right side of the dashboard and is where all notifications \(reminders\) will be posted for all games about to start or finish.
 
-![](../../../.gitbook/assets/image%20%2812%29.png)
+![](../../../.gitbook/assets/image%20%285%29%20%281%29.png)
 
 The notifications will be refreshed at a configurable millisecond interval set in the `notifications->delay` property in `config-dataproxy.json`. The default will be 3,000 \(3 seconds\).
 

@@ -4,7 +4,7 @@
 
 The create account screen is opened from the [Home Page](home-page.md) and is the screen where every new account is created/registered.
 
-![](../../.gitbook/assets/screen-shot-2020-03-25-at-2.57.58-pm.png)
+![](../../.gitbook/assets/screen-shot-2020-03-25-at-2.57.58-pm%20%281%29.png)
 
 **Captions**
 

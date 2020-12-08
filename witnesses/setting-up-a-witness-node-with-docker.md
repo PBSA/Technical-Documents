@@ -16,7 +16,7 @@ The following table lists what should be considered the recommended system requi
 
 ## Building with Docker
 
-Clone the Peerplays Docker repository: 
+Clone the Peerplays Docker repository:
 
 ```text
 git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/peerplays-docker
@@ -53,5 +53,5 @@ Start the witness node:
 ./run.sh start
 ```
 
-
 The logs can be seen with `run.sh logs` command.
+

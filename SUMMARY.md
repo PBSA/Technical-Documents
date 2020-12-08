@@ -36,12 +36,11 @@
   * [NFT command reference](technology/nfts-and-marketplace/nft-command-referece.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 
-## Peerplays Core Wallet
-
 ## Witnesses
 
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
+* [Creating a witness account](witnesses/creating-a-witness-account.md)
 * [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
   * [Beatrice](witnesses/setting-up-a-witness-node/beatrice.md)
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node/creating-a-backup-server.md)
