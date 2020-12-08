@@ -22,7 +22,7 @@ We can do this from the `cli_wallet` & this includes multiple steps.
 
 For the first step, we need to access the newly created Peerplays account from the cli\_wallet. Instructions are given below:.
 
-{% page-ref page="../creating-a-witness-account.md" %}
+{% page-ref page="../obtaining-private-keys-for-use-in-cli\_wallet.md" %}
 
 
 
