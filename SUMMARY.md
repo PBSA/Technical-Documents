@@ -40,7 +40,7 @@
 
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
-* [Creating a witness account](witnesses/creating-a-witness-account.md)
+* [Obtaining private keys for cli\_wallet](witnesses/creating-a-witness-account.md)
 * [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
   * [Beatrice](witnesses/setting-up-a-witness-node/beatrice.md)
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node/creating-a-backup-server.md)

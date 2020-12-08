@@ -1,4 +1,4 @@
-# Creating a witness account
+# Obtaining private keys for cli\_wallet
 
 For given network, say MAINNET or TESTNET we need to first create a user account using a faucet. 
 
