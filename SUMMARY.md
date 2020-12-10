@@ -4,8 +4,8 @@
 
 ## Technology
 
-* [Peerplays DEX](technology/peerplays-dex.md)
-* [LP](technology/lp.md)
+* [Peerplays DEX](technology/peerplays-dex/README.md)
+  * [LP](technology/peerplays-dex/lp.md)
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
