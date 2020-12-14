@@ -21,9 +21,11 @@ These requirements are as of the time of writing, so consider deploying a server
 The following dependencies are necessary for a clean install of Ubuntu 18.04 LTS:
 
 ```text
-sudo apt-get -y  install gcc g++ cmake make libbz2-dev\
-    libdb++-dev libdb-dev libssl-dev openssl libreadline-dev\
-     autoconf libtool git libcurl4-openssl-dev
+sudo apt-get update
+sudo apt-get -y  install autoconf bash build-essential ca-certificates cmake \
+      dnsutils doxygen git graphviz libbz2-dev libcurl4-openssl-dev \
+      libncurses-dev libreadline-dev libssl-dev libtool libzmq3-dev \
+      locales ntp pkg-config wget autotools-dev libicu-dev python-dev
 ```
 
 ### Build Boost 1.67.0
@@ -49,7 +51,7 @@ cd $HOME/src
 export BOOST_ROOT=$HOME/src/boost_1_67_0
 git clone https://github.com/peerplays-network/peerplays.git
 cd peerplays
-git checkout #master# --> replace with most recent tag
+git checkout master # --> replace with most recent tag
 git submodule update --init --recursive
 git submodule sync --recursive
 cmake -DBOOST_ROOT="$BOOST_ROOT" -DCMAKE_BUILD_TYPE=Release
