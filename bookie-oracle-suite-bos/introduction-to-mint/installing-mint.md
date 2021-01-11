@@ -73,14 +73,14 @@ BOS MINT is supposed to run in the virtual environment. Either activate it befor
 For production installation, upgrade to the latest version - including all dependencies run:
 
 ```bash
-pip3 install --upgrade --upgrade-strategy eager bos-mint
+pip3 install --upgrade bos-mint
 ```
 
 For debug installation, pull latest master branch and upgrade dependencies manually:
 
 ```bash
 git pull
-pip3 install -r requirements.txt --upgrade --upgrade-strategy eager
+pip3 install -r requirements.txt --upgrade 
 ```
 
 ## Modify Configuration
