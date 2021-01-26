@@ -171,3 +171,7 @@
   * [HRP / RBAC](api/python-peerplays/hrp-rbac.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
 
+---
+
+* [Connecting Elasticsearch to a blockchain node](connecting-elasticsearch-to-a-blockchain-node.md)
+

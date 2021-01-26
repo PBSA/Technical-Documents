@@ -15,25 +15,25 @@ pip3 install virtualenv
 Note: `virtualenv` is a best practice for python, but installation can also be on a `user/global` level.
 {% endhint %}
 
-## Install Databases 
+## Install Databases
 
 {% hint style="warning" %}
 **Note**: Databases must be installed as `root/sudo`
 {% endhint %}
 
-MINT uses a local SQLite database which requires MySQL setup \(running a MySQL server instance is not required\). Assuming a Ubuntu 16.04. or later operating system,  install:
+MINT uses a local SQLite database which requires MySQL setup \(running a MySQL server instance is not required\). Assuming a Ubuntu 16.04. or later operating system, install:
 
 ```text
 apt-get install libmysqlclient-dev
 ```
 
-## Install bos-mint 
+## Install bos-mint
 
 {% hint style="warning" %}
 **Note**: bos-mint should be installed as `user`
 {% endhint %}
 
-You can either install bos-mint via pypi / pip3 \(production installation\) or via git clone \(debug installation\). For production use install bos-auto via pip3 is recommended, but the Git master branch is always the latest release as well, making both installations equivalent. 
+You can either install bos-mint via pypi / pip3 \(production installation\) or via git clone \(debug installation\). For production use install bos-auto via pip3 is recommended, but the Git master branch is always the latest release as well, making both installations equivalent.
 
 ```bash
 cd ~
@@ -80,7 +80,7 @@ For debug installation, pull latest master branch and upgrade dependencies manua
 
 ```bash
 git pull
-pip3 install -r requirements.txt --upgrade 
+pip3 install -r requirements.txt --upgrade
 ```
 
 ## Modify Configuration
@@ -217,13 +217,13 @@ The output that you see should contain:
 
 The above setup is basic and for development use. Going forward, a Witness may want to deploy UWSGI with parallel workers for the endpoint.
 
-MINT is purposely run on `localhost` to restrict outside access. Securing a Python flask application from malicious break in attempts is tedious and would be an ongoing effort. 
+MINT is purposely run on `localhost` to restrict outside access. Securing a Python flask application from malicious break in attempts is tedious and would be an ongoing effort.
 
 {% hint style="danger" %}
 **Important**: Recommendation is to access it via a SSH tunnel or through VPN.
 {% endhint %}
 
-Example for SSH tunnel: 
+Example for SSH tunnel:
 
 Assume bos-mint is running on a remote server accessible via 1.2.3.4 and you have login credentials via SSH \(password or private key access\). On the local machine that you'll be using to access MINT via a web browser open the tunnel:
 
@@ -231,15 +231,15 @@ Assume bos-mint is running on a remote server accessible via 1.2.3.4 and you hav
 ssh -f -N -L 8080:127.0.0.1:8001 yourusername@1.2.3.4
 ```
 
--f : Send process to background 
+-f : Send process to background
 
 -N : Do not send commands \(if you need open ssh connections only for tunnelling\)
 
- -L : Port mapping \(8080 port on your machine, 127.0.0.1:8001 - proxy to where MINT runs\)
+-L : Port mapping \(8080 port on your machine, 127.0.0.1:8001 - proxy to where MINT runs\)
 
 Now you can open mint in your browser using [http://localhost:8080](http://localhost:8080/) address.
 
-After starting MINT use your favourite desktop browser to access it and you'll be asked to enter your Witness key that will be stored encrypted in the local Peerplays wallet. 
+After starting MINT use your favourite desktop browser to access it and you'll be asked to enter your Witness key that will be stored encrypted in the local Peerplays wallet.
 
 {% hint style="warning" %}
 **Note**: MINT is not optimized for mobile use yet.
@@ -249,7 +249,7 @@ After starting MINT use your favourite desktop browser to access it and you'll b
 
 For MINT development use checkout the latest repository from:
 
-{% embed url="https://github.com/peerplays-network/bos-mint" %}
+{% embed url="https://github.com/peerplays-network/bos-mint" caption="" %}
 
 and then run:
 

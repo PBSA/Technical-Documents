@@ -28,7 +28,7 @@ Use the install script to download/update the docker image for Peerplays:
 ./run.sh install
 ```
 
-Edit the configuration for the witness or seed in  in `./data/witness_node_data_dir/`
+Edit the configuration for the witness or seed in in `./data/witness_node_data_dir/`
 
 The final configuration file must be:
 
