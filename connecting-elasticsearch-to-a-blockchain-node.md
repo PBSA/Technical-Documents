@@ -26,7 +26,7 @@ Make sure to keep the trailing slash at the end of the URL.
 
 ```text
 # Elasticsearch node url(http://localhost:9200/) 
-es-objects-elasticsearch-url = <AWS-ENDPOINT>
+es-objects-elasticsearch-url = <ES-ENDPOINT>
 ```
 
 ### Start the witness node <a id="4.-Start-the-witness-node"></a>
@@ -47,7 +47,7 @@ Start the witness node to being pushing indexes to Elasticsearch. The beginning 
 You can check the indexes created after the witness start with the next call:
 
 ```text
-$ curl -X GET '<AWS-ENDPOINT>/_cat/indices'
+$ curl -X GET '<ES-ENDPOINT>/_cat/indices'
 yellow open ppobjects-asset   vnF2F0BMSKKNxQfu013OCQ 1 1  2 0 12.4kb 12.4kb
 yellow open ppobjects-balance 3psSvHIeRC-fKHyqP2Legg 1 1  1 0  5.9kb  5.9kb
 yellow open ppobjects-account zQ7uv01ESEeqCED3WHmmxg 1 1 21 0 42.4kb 42.4kb
@@ -58,6 +58,6 @@ yellow open ppobjects-account zQ7uv01ESEeqCED3WHmmxg 1 1 21 0 42.4kb 42.4kb
 You can also get index search data with:
 
 ```text
-curl -X GET '<AWS-ENDPOINT>/peerplays-*/data/_search?pretty=true' -H 'Content-Type: application/json' 
+curl -X GET '<ES-ENDPOINT>/peerplays-*/data/_search?pretty=true' -H 'Content-Type: application/json' 
 ```
 
