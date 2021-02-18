@@ -2,7 +2,7 @@
 
 #### 1. What is the transaction finality time for withdrawals and deposits of BTC ?
 
-Six transaction confirmations are the recomended value for transaction finality on the Bitcoin blockchain and thus its recomended to set the value at 6 confirmations for Bitcoin SONs.
+Six transaction confirmations are the recommended value for transaction finality on the Bitcoin blockchain and thus its recommended to set the value at 6 confirmations for Bitcoin SONs. \(reference: [https://web.archive.org/web/20210218094358/http://bitcoins.net/guides/bitcoin-confirmations](https://web.archive.org/web/20210218094358/http://bitcoins.net/guides/bitcoin-confirmations)\)
 
 #### What is the daily reward pool set at right now for sons nodes?
 
