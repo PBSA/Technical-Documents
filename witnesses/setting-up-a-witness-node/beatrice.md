@@ -89,3 +89,21 @@ Restart=always
 WantedBy=mult-user.target
 ```
 
+### Replaying the witness node
+
+{% hint style="info" %}
+The witness node will create saving points every 10000 blocks
+{% endhint %}
+
+To replay a node from the last saving point, run the witness node binary without the replay flag:
+
+```text
+./witness_node
+```
+
+To replay a node from block 0, run the witness node binary with the `replay-blockchain` flag:
+
+```text
+./witness_node --replay-blockchain
+```
+
