@@ -5,6 +5,7 @@
 ## Technology
 
 * [Peerplays DEX](technology/peerplays-dex/README.md)
+  * [User Guide](technology/peerplays-dex/user-guide.md)
   * [LP](technology/peerplays-dex/lp.md)
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Graphene](technology/page-1.md)
