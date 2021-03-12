@@ -41,7 +41,7 @@ By default, these sections include `Dashboard`, `Exchange`, `My Assets`, `Settin
 
 ## Search
 
-Click the magnifying glass at the top right of the navbar reveals search options. 
+Click the magnifying glass at the top right of the navbar to reveal search options. 
 
 ![Initial index page](../../.gitbook/assets/image%20%2855%29.png)
 
@@ -53,7 +53,7 @@ Search can be done for `Users`, `Blocks`, and `Tokens`. Partial search is implem
 
 ### Quick Sell / Buy
 
-This section enables users to quickly create market orders to buy assets. Enter the amount of paying asset in the first field, and then the amount of the desired asset in the second field. The fee for the filled out information will be shown, and clicking the `buy` button will create a market listing for the amount. 
+This section enables users to quickly create market orders to buy assets. Enter the amount of paying asset in the first field, and then the amount of the desired asset in the second field. The fee for the filled out information will be shown and clicking the `buy` button will create a market listing for the amount. 
 
 ![Creating a listing for buying 1 BTC for 1 TEST](../../.gitbook/assets/image%20%2844%29.png)
 
@@ -62,7 +62,7 @@ This section enables users to quickly create market orders to buy assets. Enter 
 This section enables users to send assets to other users on the Peerplays blockchain. 
 
 1. Enter a quantity of the asset to send.
-2. Enter the account-name of the desired recipient.
+2. Enter the account name of the desired recipient.
 3. Select the desired asset.
 4. Optionally, add a memo message to send.
 5. Click `send`.
@@ -87,7 +87,7 @@ Assets owned can be viewed under this list. This includes the asset name, amount
 
 ### Selecting an Asset Pair
 
-To select an asset pair, click the on the `asset/asset` button located at the top of the dashboard. and select the desired pair.
+To select an asset pair, click on the `asset/asset` button located at the top of the dashboard. and select the desired pair.
 
 ![Asset pair button](../../.gitbook/assets/image%20%2832%29.png)
 
@@ -99,7 +99,7 @@ The `order book` is a quick way to fill out the buy and sell column with a defin
 
 ![Orderbook](../../.gitbook/assets/image%20%2847%29.png)
 
-To buy or sell an asset, enter the price of the desired asset in terms of the paying asset and the quantity of the desired asset and click the `buy asset` or `sell asset` button. The total price before the fee will display in the `total` field before the fee. The fees and current wallet balance will be shown before the order is placed. 
+To buy or sell an asset, enter the price of the desired asset in terms of the paying asset and the quantity of the desired asset and click the `buy asset` or `sell asset` button. The total price before the fee will be displayed in the `total` field before the fee. The fees and current wallet balance will be shown before the order is placed. 
 
 ![Buy/sell asset pairs](../../.gitbook/assets/image%20%2851%29.png)
 
@@ -139,7 +139,7 @@ User activity can be viewed under this list. These activities include account cr
 
 ### Permissions
 
-Account owner and active public keys can be viewed and added in this section. The account memo key can also be viewed here. 
+The account owner and active public keys can be viewed and added in this section. The account memo key can also be viewed here. 
 
 ![](../../.gitbook/assets/image%20%2853%29.png)
 
