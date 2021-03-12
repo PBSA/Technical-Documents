@@ -45,9 +45,9 @@ Click the magnifying glass at the top right of the navbar reveals search options
 
 ![Initial index page](../../.gitbook/assets/image%20%2855%29.png)
 
-Search can be done for `Users`, `Blocks`, and `Tokens`. Partial search is implimented and data relevant to the characters typed will be displayed. 
+Search can be done for `Users`, `Blocks`, and `Tokens`. Partial search is implemented and data relevant to the characters typed will be displayed. 
 
-![](../../.gitbook/assets/image%20%2854%29.png)
+![Search options](../../.gitbook/assets/image%20%2854%29.png)
 
 ## Dashboard
 
