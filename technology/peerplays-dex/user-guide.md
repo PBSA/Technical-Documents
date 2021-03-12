@@ -73,9 +73,9 @@ The fee will be listed once the quantity and asset are selected.
 
 ### My Activity
 
-Blockchain activity can be viewed under this list. These activities include account creation, and creating and receiving orders.
+User activity can be viewed under this list. These activities include account creation, and creating and receiving orders.
 
-![List of activity on the blockchain](../../.gitbook/assets/image%20%2840%29.png)
+![List of user activities](../../.gitbook/assets/image%20%2840%29.png)
 
 ### My Assets
 
@@ -133,7 +133,7 @@ Open orders for the account can be viewed under this section. This includes the 
 
 ### Activity
 
-Blockchain activity can be viewed under this list. These activities include account creation, and creating and receiving orders.
+User activity can be viewed under this list. These activities include account creation, and creating and receiving orders.
 
 ![](../../.gitbook/assets/image%20%2849%29.png)
 
