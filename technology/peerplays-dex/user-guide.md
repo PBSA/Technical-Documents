@@ -23,13 +23,31 @@ After creating an account, you will automatically be logged in.
 
 If not already logged in, click the `Log In` button in the navbar. 
 
-![Initial index page](../../.gitbook/assets/image%20%2838%29.png)
+![Initial index page](../../.gitbook/assets/image%20%2859%29.png)
 
 Enter the account details and log in.
 
 ![](../../.gitbook/assets/image%20%2837%29.png)
 
+## Navigating the Menus
 
+Clicking the menu button located at the top left of the navbar will reveal buttons to navigate to different sections of the DEX.
+
+![Initial index page](../../.gitbook/assets/image%20%2858%29.png)
+
+By default, these sections include `Dashboard`, `Exchange`, `My Assets`, `Settings`, `Contacts`,  and `Help`.
+
+![Menu extended](../../.gitbook/assets/image%20%2856%29.png)
+
+## Search
+
+Click the magnifying glass at the top right of the navbar reveals search options. 
+
+![Initial index page](../../.gitbook/assets/image%20%2855%29.png)
+
+Search can be done for `Users`, `Blocks`, and `Tokens`. Partial search is implimented and data relevant to the characters typed will be displayed. 
+
+![](../../.gitbook/assets/image%20%2854%29.png)
 
 ## Dashboard
 
@@ -81,7 +99,7 @@ The `order book` is a quick way to fill out the buy and sell column with a defin
 
 ![Orderbook](../../.gitbook/assets/image%20%2847%29.png)
 
-To buy or sell an asset, enter the price of the desired asset in terms of the paying asset and the quantitiy of the desired asset and click the `buy asset` or `sell asset` button. The total price before the fee will display in the `total` field before the fee. The fees and current wallet balance will be shown before the order is placed. 
+To buy or sell an asset, enter the price of the desired asset in terms of the paying asset and the quantity of the desired asset and click the `buy asset` or `sell asset` button. The total price before the fee will display in the `total` field before the fee. The fees and current wallet balance will be shown before the order is placed. 
 
 ![Buy/sell asset pairs](../../.gitbook/assets/image%20%2851%29.png)
 
@@ -121,7 +139,7 @@ Blockchain activity can be viewed under this list. These activities include acco
 
 ### Permissions
 
-Account owner and active public keys can be viewed and added in this section. The eaccount memo key can also be viewed here. 
+Account owner and active public keys can be viewed and added in this section. The account memo key can also be viewed here. 
 
 ![](../../.gitbook/assets/image%20%2853%29.png)
 
