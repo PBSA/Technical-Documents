@@ -89,9 +89,9 @@ This will create a listing under the `open orders` section of the exchange.
 
 ![Open orders](../../.gitbook/assets/image%20%2831%29.png)
 
-### Cancelling open orders
+### Cancelling Open Orders
 
-To cancel an open order, hover over the `kill` column on the desired open order to reveal a red trash icon which can be pressed to bring up a prompt to cancel that order.
+To cancel an open order, hover over the `kill` column on the desired open order to reveal a red trash icon. This icon can be pressed to bring up a prompt to cancel that order.
 
 ![Trash icon revealed to delete an open order](../../.gitbook/assets/image%20%2830%29.png)
 
