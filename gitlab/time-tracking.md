@@ -51,7 +51,12 @@ Once the spent time is provided, the issue will update to reflect the submitted 
 
 When you have a lot of issues, it can be hard to get an overview. By adding weight to each issue, you can get a better idea of how much time, value or complexity a given issue has or costs.
 
-Weight points can be associated for each estimated hour. So a task with an estimate of 8 hours can be associated 8 points of weight. 
+Weight points can be associated for the following task sizes:
+
+* Small - 1
+* Medium - 2
+* Large - 3
+* Extra Large - 5 
 
 To add weight to an issue in GitLab, quick actions can be utilized. Inside the comment section of an issue type the following command:  `/weight 0, 1, 2...`.
 
