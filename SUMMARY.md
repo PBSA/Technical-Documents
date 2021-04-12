@@ -178,5 +178,6 @@
 
 ## GitLab
 
+* [Labels](gitlab/labels.md)
 * [Time Tracking](gitlab/time-tracking.md)
 
