@@ -53,10 +53,11 @@ When you have a lot of issues, it can be hard to get an overview. By adding weig
 
 Weight points can be associated for the following task sizes:
 
-* Small - 1
-* Medium - 2
-* Large - 3
-* Extra Large - 5 
+* Extra Small - 1
+* Small - 2
+* Medium - 3
+* Large - 5
+* Extra Large - 8 
 
 To add weight to an issue in GitLab, quick actions can be utilized. Inside the comment section of an issue type the following command:  `/weight 0, 1, 2...`.
 
