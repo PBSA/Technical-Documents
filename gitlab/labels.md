@@ -1,5 +1,7 @@
 # Labels
 
+[https://gitlab.com/groups/PBSA/-/labels](https://gitlab.com/groups/PBSA/-/labels)
+
 ## Scoped Labels
 
 The scoped labels \(ending with ::\) are mutually exclusive. Only one of these labels can be assigned at a time to an issue.
