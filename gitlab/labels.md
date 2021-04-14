@@ -11,6 +11,7 @@ The scoped labels \(ending with ::\) are mutually exclusive. Only one of these l
 * low 
 * medium priority
 * high priority
+* critical priority
 
 ### State::
 
@@ -46,7 +47,7 @@ All issues should have a `state` and `type` scoped label attached to them. The f
 2. Accepted - Issues that are newly created and have been accepted after review.
 3. In Progress - Issues that are currently being worked on.
 4. In Review - Issues that require a proposed solution to be reviewed.
-5. In Testing - Issues that require a proposed solution to be reviewed. 
+5. In Testing - Issues that require a proposed solution to be tested. 
 6. Completed - Issues that are closed with a working solution.
 
 This will cover a standard lifecycle of an issue. There are other `state` labels for issues that are not being worked on:
@@ -79,6 +80,11 @@ This will cover a standard lifecycle of an issue. There are other `state` labels
     <tr>
       <td style="text-align:left">priority::high</td>
       <td style="text-align:left">(optional) Issues that are marked as high priority.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">priority::critical</td>
+      <td style="text-align:left">(optional) Issues that are marked as critical priority. Should be taken
+        care of ASAP.</td>
     </tr>
     <tr>
       <td style="text-align:left">state::pending</td>
