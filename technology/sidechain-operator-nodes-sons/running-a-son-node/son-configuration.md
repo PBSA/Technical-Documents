@@ -363,6 +363,6 @@ bitcoin-private-key = ["02a6d0cd88e927afc34da3fb364a681d42889547af70b1589069364f
 
 ## Configuring a Witness Node
 
-For more realistic test scenario, witnesses also needs to be configured with their own IDs, public and private keys.
+For more realistic test scenario, witnesses also need to be configured with their own IDs, public and private keys.
 
-[https://github.com/bitshares/bitshares-core/wiki/How-To-become-an-active-witness-in-BitShares-2.0\#becoming-a-witness](https://github.com/bitshares/bitshares-core/wiki/How-To-become-an-active-witness-in-BitShares-2.0#becoming-a-witness)
+[Becoming a Witness](../../../witnesses/becoming-a-witness.md)
