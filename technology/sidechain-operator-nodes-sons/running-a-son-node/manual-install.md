@@ -147,7 +147,7 @@ in the VIM text editor we'll set the following:
 
 ```text
 # This config should be placed in following path:
-# ~/.bitcoin/bitcoin.conf
+# /home/ubuntu/.bitcoin/bitcoin.conf
 
 # [core]
 # Only download and relay blocks - ignore unconfirmed transaction
@@ -157,13 +157,13 @@ daemon=1
 # Set database cache size in megabytes; machines sync faster with a larger cache. Recommend setting as high as possible based upon machine's available RAM.
 dbcache=1024
 # Reduce storage requirements by only storing most recent N MiB of block. This mode is incompatible with -txindex and -rescan. WARNING: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, greater than 550 = automatically prune blocks to stay under target size in MiB).
-prune=1000
+prune=10000
 
 # [network]
 # Bind to given address and always listen on it. (default: 0.0.0.0). Use [host]:port notation for IPv6. Append =onion to tag any incoming connections to that address and port as incoming Tor connections
 bind=0.0.0.0
 # Listen for incoming connections on non-default port.
-port=18444
+port=8333
 
 # [rpc]
 # Accept command line and JSON-RPC commands.

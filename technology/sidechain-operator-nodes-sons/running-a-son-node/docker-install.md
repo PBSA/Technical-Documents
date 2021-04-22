@@ -5,6 +5,16 @@ description: Setup SONs using a pre-configured Docker container
 
 This document assumes that you are running Ubuntu 18.04. Other Debian based releases may also work with the provided script.
 
+## Hardware Requirements
+
+Please see the general SON [hardware requirements](requirements.md).
+
+For the docker install, we'll be using a self-hosted Bitcoin node. The requirements that we'll need for this guide would be as follows:
+
+| Full Node? | SON Node? | Bitcoin node type            | CPU     | Memory | Storage   | Bandwidth | OS           |
+| :--------- | :-------- | :--------------------------- | :------ | :----- | :-------- | :-------- | :----------- |
+| Yes        | Yes       | Self-Hosted, Reduced Storage | 8 Cores | 64GB   | 350GB SSD | 1Gbps     | Ubuntu 18.04 |
+
 ## Installing the required dependencies
 
 ```text
@@ -142,6 +152,80 @@ BUILD_ARGS=()
 > **IMPORTANT:** You will need a Bitcoin Private Key of a wallet that you own on the Bitcoin mainnet. In the .env file above, you must replace **BTC_REGTEST_KEY="XXXXXXXXXXXXX"** with your own private key. So it may look something like **BTC_REGTEST_KEY="cSKyTeXidmj93dgbMFqgzD7yvxzA7QAYr5j9qDnY9seyhyv7gH2m"** for example.
 
 > **Optional:** If you want to use your own config, edit the .env file & set `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located.
+
+Since we'll be setting some custom config in our bitcoin.conf, we'll need to create and edit it now.
+
+```text
+touch /home/ubuntu/.bitcoin/bitcoin.conf
+vim /home/ubuntu/.bitcoin/bitcoin.conf
+```
+
+The bitcoin.conf should look like this:
+
+```text
+# This config should be placed in following path:
+# /home/ubuntu/.bitcoin/bitcoin.conf
+
+# [core]
+# Only download and relay blocks - ignore unconfirmed transaction
+blocksonly=1
+# Run in the background as a daemon and accept commands.
+daemon=1
+# Set database cache size in megabytes; machines sync faster with a larger cache. Recommend setting as high as possible based upon machine's available RAM.
+dbcache=1024
+# Reduce storage requirements by only storing most recent N MiB of block. This mode is incompatible with -txindex and -rescan. WARNING: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, greater than 550 = automatically prune blocks to stay under target size in MiB).
+prune=10000
+
+# [network]
+# Bind to given address and always listen on it. (default: 0.0.0.0). Use [host]:port notation for IPv6. Append =onion to tag any incoming connections to that address and port as incoming Tor connections
+bind=0.0.0.0
+# Listen for incoming connections on non-default port.
+port=8333
+
+# [rpc]
+# Accept command line and JSON-RPC commands.
+server=1
+# Accept public REST requests.
+rest=1
+# Bind to given address to listen for JSON-RPC connections. This option is ignored unless -rpcallowip is also passed. Port is optional and overrides -rpcport. Use [host]:port notation for IPv6. This option can be specified multiple times. (default: 127.0.0.1 and ::1 i.e., localhost, or if -rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)
+rpcbind=0.0.0.0
+# Listen for JSON-RPC connections on this port
+rpcport=8332
+# Allow JSON-RPC connections from specified source. Valid for <ip> are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times.
+rpcallowip=0.0.0.0/32
+rpcuser=1
+rpcpassword=1
+
+# [zeromq]
+# Enable publishing of block hashes to <address>.
+zmqpubhashblock=tcp://0.0.0.0:11111
+# Enable publishing of transaction hashes to <address>.
+zmqpubhashtx=tcp://0.0.0.0:11111
+# Enable publishing of raw block hex to <address>.
+zmqpubrawblock=tcp://0.0.0.0:11111
+# Enable publishing of raw transaction hex to <address>.
+zmqpubrawtx=tcp://0.0.0.0:11111
+
+
+# [Sections]
+# Most options automatically apply to mainnet, testnet, and regtest networks.
+# If you want to confine an option to just one network, you should add it in the relevant section.
+# EXCEPTIONS: The options addnode, connect, port, bind, rpcport, rpcbind and wallet
+# only apply to mainnet unless they appear in the appropriate section below.
+
+# Options only for mainnet
+[main]
+
+# Options only for testnet
+[test]
+
+# Options only for regtest
+[regtest]
+```
+
+Save and quit the VIM editor.
+
+> **Note:** The settings in the config file above are set to reduce the requirements of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see <https://bitcoin.org/en/full-node#reduce-storage>.
 
 ## Installing the peerplays:son image
 
