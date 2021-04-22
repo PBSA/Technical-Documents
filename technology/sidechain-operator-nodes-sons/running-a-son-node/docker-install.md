@@ -1,5 +1,5 @@
 ---
-description: Setup SONs using a preconfigured Docker containter
+description: Setup SONs using a pre-configured Docker container
 ---
 # Docker Install
 
@@ -15,7 +15,7 @@ sudo apt-get install git curl
 ## Cloning the peerplays docker repository
 
 ```text
-git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/peerplays-docker.git -b release
+git clone https://gitlab.com/PBSA/tools-libs/peerplays-docker.git -b release
 ```
 
 ## Navigating to the project directory and setting up the project root
@@ -30,9 +30,7 @@ PROJECT_ROOT=$(pwd)
 
 ## Installing Docker
 
-{% hint style="danger" %}
-It is required to have Docker installed on the system that will be performing the steps in this document.
-{% endhint %}
+> **Note:** It is required to have Docker installed on the system that will be performing the steps in this document.
 
 Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
 
@@ -42,13 +40,9 @@ Docker can be installed using the `run.sh` script inside the Peerplays Docker re
 
 The terminal will need to be reinitialized after installation.
 
-{% hint style="info" %}
-**Optional**: you can Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
-{% endhint %}
+> **Optional:** you can Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
 
-{% hint style="danger" %}
-If you are having permission issues trying to run Docker use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
-{% endhint %}
+> **Note:** If you are having permission issues trying to run Docker, use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
 
 ## Setting up the environment
 
@@ -59,44 +53,111 @@ cd $PROJECT_ROOT
 cp example.env .env
 ```
 
-Use the script ****provided which will automate the replacement of the `BTC_REGTEST_CONF`in `bitcoin.conf`.
+We're going to have to make some changes to the .env file so we'll open that now.
 
 ```text
-cd $PROJECT_ROOT
-cd scripts/regtest
-./replace_btc_conf.sh
+vim .env
 ```
 
-{% hint style="info" %}
-The script uses the`bitcoin.conf` file located in `peerplays-docker/bitcoin/regtest/bitcoin.conf`
-{% endhint %}
+Here's what your .env file should look like when we're done:
 
-**Optional:** If you want to use your own config, edit the .env file & set`BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located.
+```text
+# In the .env file...
 
-{% hint style="warning" %}
-To enable the blockchain API to be accessible outside of its docker container, make sure to specify `PORTS` in the `.env` file
-{% endhint %}
+# Unique name to label the container created by this peerplays-docker installation
+DOCKER_NAME="seed"
 
-## Installing the peerplays:son-dev image
+# Default docker image to run using ./run.sh start / restart / replay
+# Also used when tagging remote image downloaded from ./run.sh install
+DOCKER_IMAGE="peerplays"
+
+# Default network for SON used with ./run.sh start_son_regtest
+DOCKER_NETWORK="son"
+
+# Default SON wallet used inside bitcoind-node with ./run.sh start_son_regtest
+SON_WALLET="son-wallet"
+
+# Default bitcoin key used inside bitcoind-node with ./run.sh start_son_regtest
+# Update this with your own Bitcoin Private Key!
+BTC_REGTEST_KEY="XXXXXXXXXXXXX"
+
+# Comma separated port numbers to expose to the internet (binds to 0.0.0.0)
+# PORTS=9777
+# Advanced Usage Example: 
+#
+#   Expose 9777 to the internet, but only expose RPC ports 8090 and 8091 onto 127.0.0.1 (localhost)
+#   allowing the host machine access to the container's RPC ports via 127.0.0.1:8090 and 127.0.0.1:8091
+#
+PORTS=9777,127.0.0.1:8090:8090,127.0.0.1:8091:8091
+
+# Amount of time in seconds to allow the docker container to stop before killing it.
+# Default: 600 seconds (10 minutes)
+STOP_TIME=600
+
+# Websocket RPC node to use by default for ./run.sh remote_wallet
+REMOTE_WS=""
+
+# Remote docker tags to pull when running ./run.sh install OR ./run.sh install_full with no arguments, respectively
+DK_TAG="datasecuritynode/peerplays:latest"
+DK_TAG_FULL="datasecuritynode/peerplays:latest-full"
+
+# Git repository to use when building Peerplays - containing peerplaysd code
+PEERPLAYS_SOURCE="https://github.com/peerplays-network/peerplays.git"
+
+# LOCAL folder containing Dockerfile for ./run.sh build
+DOCKER_DIR="$DIR/dkr"
+# LOCAL folder to hold witness_node_data_dir
+DATADIR="$DIR/data"
+# LOCAL folder to store shared_memory.bin (or rocksdb files for MIRA)
+SHM_DIR="/dev/shm"
+
+# blockchain folder, used by dlblocks
+BC_FOLDER="$DATADIR/witness_node_data_dir/blockchain"
+
+# Example RocksDB configuration file, will automatically be copied to MIRA_FILE on first run.sh execution
+# if MIRA_FILE doesn't exist
+EXAMPLE_MIRA="$DATADIR/witness_node_data_dir/database.cfg.example"
+MIRA_FILE="$DATADIR/witness_node_data_dir/database.cfg"
+
+# Example Peerplays node configuration file, will automatically be copied to CONF_FILE on first run.sh execution
+# if CONF_FILE doesn't exist
+EXAMPLE_CONF="$DATADIR/witness_node_data_dir/config.ini.example"
+CONF_FILE="$DATADIR/witness_node_data_dir/config.ini"
+
+# Example Bitcoin Regtest configuration, full path must be specified
+BTC_REGTEST_CONF="/home/ubuntu/.bitcoin/bitcoin.conf"
+
+# Array of additional arguments to be passed to Docker during builds
+# Generally populated using arguments passed to build/build_full
+# But you can specify custom additional build parameters by setting BUILD_ARGS
+# as an array in .env
+# e.g.
+#
+#    BUILD_ARGS=('--rm' '-q' '--compress')
+#
+BUILD_ARGS=()
+
+```
+
+> **IMPORTANT:** You will need a Bitcoin Private Key of a wallet that you own on the Bitcoin mainnet. In the .env file above, you must replace **BTC_REGTEST_KEY="XXXXXXXXXXXXX"** with your own private key. So it may look something like **BTC_REGTEST_KEY="cSKyTeXidmj93dgbMFqgzD7yvxzA7QAYr5j9qDnY9seyhyv7gH2m"** for example.
+
+> **Optional:** If you want to use your own config, edit the .env file & set `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located.
+
+## Installing the peerplays:son image
 
 Use `run.sh` to pull the SON image:
 
 ```text
 cd $PROJECT_ROOT
-sudo ./run.sh install son-dev
+sudo ./run.sh install son
 ```
 
 ## Editing the configuration
 
 ### Setting up config.ini
 
-For a detailed overview check out: [SON Configuration](son-configuration.md)
-
-{% hint style="warning" %}
-There are many example configuration files, make sure to copy the right one. In this case it is:
-
- config.ini.**son-exists**.example
-{% endhint %}
+> There are many example configuration files, make sure to copy the right one. In this case it is:
+config.ini.**son-exists**.example
 
 Copy the correct example configuration:
 
@@ -106,27 +167,117 @@ cd data/witness_node_data_dir
 cp config.ini.son-exists.example config.ini
 ```
 
-Any custom changes to `SON_WALLET` or `BTC_REGTEST_KEY` should also be made in this file to the variables `bitcoin-wallet` and `bitcoin-private-key`.
-
-{% hint style="warning" %}
-To connect to other nodes on a public SON network change `seed-nodes` to specify a seed from that network.
-
-To connect to PBSA's Gladiator set the seed nodes to their endpoints:
+We'll need to make an edit to the config.ini file as well.
 
 ```text
-seed-nodes=["96.46.49.1:9777"]
+vim config.ini
 ```
 
-To see the full list of Gladiator endpoints: [click here](#gladiator-endpoints)
-{% endhint %}
+The important parts of the config.ini file (for now!) should look like the following. But don't forget to add your own Bitcoin public and private keys!
+
+```text
+
+# Endpoint for P2P node to listen on
+# p2p-endpoint =
+
+# P2P nodes to connect to on startup (may specify multiple times)
+# seed-node =
+
+# JSON array of P2P nodes to connect to on startup
+
+## Empty seed nodes means new network
+# seed-nodes = []
+
+## Connect to other SON nodes
+# seed-nodes =
+
+# Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
+# checkpoint = 
+
+# Endpoint for websocket RPC to listen on
+rpc-endpoint = 0.0.0.0:8090
+
+# Endpoint for TLS websocket RPC to listen on
+# rpc-tls-endpoint = 
+
+# The TLS certificate file for this server
+# server-pem = 
+
+# Password for this certificate
+# server-pem-password = 
+
+# File to read Genesis State from
+genesis-json = /peerplays/son-genesis.json
+
+# Block signing key to use for init witnesses, overrides genesis file
+# dbg-init-key = 
+
+# JSON file specifying API permissions
+# api-access = 
+
+# Space-separated list of plugins to activate
+plugins = witness account_history market_history accounts_list affiliate_stats bookie peerplays_sidechain
+
+# ==============================================================================
+# peerplays_sidechain plugin options
+# ==============================================================================
+
+# ID of SON controlled by this node (e.g. "1.27.5", quotes are required)
+# son-id = ""
+
+# IDs of multiple SONs controlled by this node (e.g. ["1.27.5", "1.27.6"], quotes are required)
+# son-ids = [""]
+
+# Tuple of [PublicKey, WIF private key] (may specify multiple times)
+# peerplays-private-key = ["", ""]
+
+# IP address of Bitcoin node
+bitcoin-node-ip = 172.0.0.1
+
+# ZMQ port of Bitcoin node
+bitcoin-node-zmq-port = 11111
+
+# RPC port of Bitcoin node
+bitcoin-node-rpc-port = 8332
+
+# Bitcoin RPC user
+bitcoin-node-rpc-user = 1
+
+# Bitcoin RPC password
+bitcoin-node-rpc-password = 1
+
+# Bitcoin wallet
+bitcoin-wallet = son-wallet
+
+# Bitcoin wallet password
+bitcoin-wallet-password = ""
+
+# Tuple of [Bitcoin public key, Bitcoin private key] (may specify multiple times)
+# This should be the public and private keys of the Bitcoin wallet you'll use. You already entered the private key in the .env file above.
+bitcoin-private-key = ["", ""]
+```
+
+Save the file and quit.
 
 ## Starting the environment
 
-Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcond containers:
+Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcoind containers:
 
 ```text
 cd $PROJECT_ROOT
+
+# You'll also want to set the shared memory size (use sudo if not logged in as root). 
+# Adjust 64G to whatever size is needed for your type of server and make sure to leave growth room.
+# Please be aware that the shared memory size changes constantly. Ask in a witness chatroom if you're unsure.
+./run.sh shm_size 64G
+
+# It's recommended to set vm.swappiness to 1, which tells the system to avoid using swap 
+# unless absolutely necessary. To persist on reboot, place in /etc/sysctl.conf
+sysctl -w vm.swappiness=1
+
+# Start the SON environment
 ./run.sh start_son_regtest
+
 ```
 
 The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(bitcoind\) containers will be launched.
@@ -145,12 +296,12 @@ Just in case the logs are not looking healthy, perform a replay.
 
 ```text
 # replay the blockchain
-./run.sh replay
+./run.sh replay_son
 ```
 
 ## Using the CLI wallet
 
-After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available..
+After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available.
 
 ### Connecting to the blockchain with the CLI Wallet
 
@@ -161,17 +312,13 @@ Open another terminal and use `docker exec` to connect to the wallet.
 docker exec -it seed cli_wallet
 ```
 
-{% hint style="warning" %}
-I**f an exception is thrown** and contains `Remote server gave us an unexpected chain_id`, then copy the `remote_chain_id` that is provided by it.
-
-Pass the chain ID to the CLI wallet:
-
-```text
-# In the local terminal
-docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
-```
-
-{% endhint %}
+> **NOTE:** If an exception is thrown and contains `Remote server gave us an unexpected chain_id`, then copy the `remote_chain_id` that is provided by it.
+> Pass the chain ID to the CLI wallet:
+>
+> ```text
+> # In the local terminal
+> docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
+> ```
 
 Set a password for the wallet and then unlock it:
 
@@ -181,218 +328,158 @@ set_password <YOUR-WALLET-PASSWORD>
 unlock <YOUR-WALLET-PASSWORD>
 ```
 
-{% hint style="success" %}
 The CLI wallet will show `unlocked >>>` when successfully unlocked
-{% endhint %}
 
-### Creating a Peerplays account
+> **Note:** A list of CLI wallet commands is available here: <https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls>
 
-For an existing network, a lifetime account must be imported to create an account. Import the `faucet` account:
-
-```text
-# In the CLI wallet
-import_key faucet 5KQHVEoqLX4fguLz8xYRLwwDjMk7sE6s5cTBC9jzBHCs5sk6cCr
-```
-
-Use the CLI wallet to suggest a brain key:
+Assuming we're starting without any account, it's easiest to create an account with the Peerplays GUI Wallet. The latest release is located here <https://github.com/peerplays-network/peerplays-core-gui/releases/latest>. When you create an account with the GUI wallet, you should have a username and password. We'll need those for the next steps. First we'll get the private key for the new account.
 
 ```text
-# In the CLI wallet
-suggest_brain_key
+# In the cli_wallet...
+
+get_private_key_from_password <put your username here> active <put your password here>
+
+# For example:
+# get_private_key_from_password mynew-son active LExu4QtSapqzdEaly2RwMugul3GhedTf234IiF2zzzfU4nuKXow8
+
+# The program will return a tuple of the public and private keys for your account. 
+# That will look something like this:
+# [
+#   "PPY...random.numbers.and.letters...",
+#   "5...random.numbers.and.letters..."
+# ]
 ```
 
-{% hint style="warning" %}
-Make sure to backup the information that is output
-{% endhint %}
-
-Create an account using the brain key generated:
+The key beginning with "PPY" is the public key. The key beginning with "5" is the private key. We'll need to import this private key into the cli_wallet.
 
 ```text
-# In the CLI wallet
-create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> faucet faucet true
+# In the cli_wallet...
+
+import_key "mynew-son" 5...random.numbers.and.letters...
+
+# If this is successful, the return is simply
+# true
 ```
 
-## Interacting with Bitcoin \(Regtest\)
+Next we'll upgrade the account to a lifetime membership.
 
-{% hint style="info" %}
-The following instructions are designed for use within a Bitcoin regtest network. Read more about it here: [https://developer.bitcoin.org/examples/testing.html](https://developer.bitcoin.org/examples/testing.html)
-{% endhint %}
-
-### Creating a Bitcoin Wallet
-
-To create a bitcoin wallet on the existing network:
+> **Note:** At the time of writing this guide, this costs 5 PPY to perform this operation. You'll need that in your account first!
 
 ```text
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 createwallet <WALLET-NAME>
+# In the cli_wallet...
+
+upgrade_account mynew-son true
 ```
 
-{% hint style="info" %}
-**Tip:** Wallet Names must be unique. Name the wallet after your account
-{% endhint %}
-
-### Generating Bitcoin addresses
-
-Create two bitcoin addresses and get their information \(run these commands twice\):
+Next we'll create the vesting balances.
 
 ```text
-# In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> getnewaddress
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> getaddressinfo <BITCOIN_ADDRESS>
+# In the cli_wallet...
+
+create_vesting_balance mynew-son 50 PPY son true
+create_vesting_balance mynew-son 50 PPY normal true
+get_vesting_balances mynew-son
+
+# The return here will show us the IDs of the vesting balances.
+# For example:
+# [{
+#     "id": "1.13.79",
+#     "owner": "1.2.58",
+# ...
+#   },{
+#     "id": "1.13.80",
+#     "owner": "1.2.58",
+# ...
+#   }
+# ]
 ```
 
-{% hint style="warning" %}
-Take note of the "pubkey" value output when using `getaddressinfo`
-{% endhint %}
-
-### Mapping the Bitcoin addresses to a Peerplays account
+Now we have all the info we need to create a SON account.
 
 ```text
-# In the CLI wallet
-add_sidechain_address <ACCOUNT> bitcoin <BITCOIN_DEPOSIT_PUBLIC_KEY> <BITCOIN_WITHDRAW_PUBLIC_KEY> <BITCOIN_WITHDRAW_ADDRESS> true
+# In the cli_wallet...
+
+create_son mynew-son "https://www.mynew-son.com" 1.13.79 1.13.80 [[bitcoin, 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9]] true
+
+# The above command is structured like this:
+# create_son <username> "<SON proposal url>" <son vesting balance ID> <normal vesting balance ID> [[bitcoin, <bitcoin public key>]] true
 ```
 
-### Depositing Bitcoin to a Peerplays account
-
-#### Getting the sidechain deposit address for BTC transactions
-
-{% hint style="danger" %}
-The Sidechain deposit addresses and Bitcoin deposit addresses are different.
-{% endhint %}
+To get the SON ID:
 
 ```text
-# In the CLI wallet
-get_sidechain_address_by_account_and_sidechain <ACCOUNT> bitcoin
+# In the cli_wallet...
+
+get_son mynew-son
+
+# Which returns:
+# {
+#   "id": "1.27.16",
+#   ...
+# }
 ```
 
-#### Send some Bitcoin to the Sidechain deposit address of a Peerplays account using the faucet wallet
-
-{% hint style="info" %}
-This is a shared faucet. Please only send small amounts \(less than 0.1 BTC\) and send it back to the faucet when finished.
-{% endhint %}
+We'll set the signing key using the active key from the owning account:
 
 ```text
-# In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet="faucet" sendtoaddress <SIDECHAIN_DEPOSIT_ADDRESS> <AMOUNT> "" "" true
+# In the cli_wallet...
+
+# First we'll get the active key of the owning account.
+get_account mynew-son
+
+# In the return, we're looking for the 
+# "active": 
+# ...
+# { ... "key_auths": 
+# [[ "PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB",
+# ...
+
+# Using the active public key we just found:
+get_private_key PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB
+
+# This will return the private key.
+# "5JKvPJkerMNVEubsbKN8Xd8wGaU1ifhv7xAwy9gFJP6yMEoTkSd"
+
+# Then we update the signing key using the public key.
+update_son mynew-son "" "PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB" [[bitcoin, 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9]] true
 ```
 
-{% hint style="warning" %}
-If the above command is giving an error regarding the wallet you may need to load it first:
+Now we have our SON account ID and the public and private keys for the SON account. We'll need this for the config.ini file.
 
-```text
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 loadwallet faucet
-```
+## Update config.ini with SON Account Info
 
-{% endhint %}
-
-#### Generate a block in the regtest network so that the transaction goes through
-
-```text
-# In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> generatetoaddress 1 <BITCOIN_ADDRESS>
-```
-
-Proposals will be created on the Peerplays chain after block generation. Wait for a minute for some blocks to be generated on the Peerplays chain and then generate another block in the regtest network:
-
-```text
-# In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> generatetoaddress 1 <BITCOIN_ADDRESS>
-```
-
-{% hint style="info" %}
-To check if the Bitcoin was successfully transferred to the Peerplays account list its account balance:
-
-```text
-# In the CLI wallet
-list_account_balances <ACCOUNT>
-```
-
-The output will show some BTC.
-{% endhint %}
-
-### Withdrawing Bitcoin from a Peerplays account
-
-#### Transfer BTC from a Peerplays account to the `son-account`
-
-{% hint style="warning" %}
-In order to transfer funds, the Peerplays account sending them must have some core tokens to pay the transfer fee.  
-  
-Fund the account with some core tokens \(TEST in this case\):
-
-```text
-# In the CLI wallet
-transfer faucet <ACCOUNT> 100 TEST "" true
-```
-
-{% endhint %}
-
-```text
-# In the CLI wallet
-transfer <ACCOUNT> son-account <WITHDRAW_AMOUNT> BTC "" true
-```
-
-#### Generate a block in the regtest network so that the transaction goes through
-
-```text
-# In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> generatetoaddress 1 <BITCOIN_ADDRESS>
-```
-
-{% hint style="info" %}
-To check if the Bitcoin was successfully sent to the withdrawal address that was mapped to the Peerplays account, check the received balance in the Bitcoin node:
-
-```text
-# In the local terminal
-docker exec bitcoind-node bitcoin-cli -rpcconnect=96.46.49.1 -rpcport=8332 -rpcuser=1 -rpcpassword=1 -rpcwallet=<WALLET-NAME> getreceivedbyaddress <BITCOIN_WITHDRAW_ADDRESS>
-```
-
-The output will show some BTC.
-{% endhint %}
-
-## Cleaning up the environment
-
-To remove the containers and data from the environment run:
+Lets stop the node for now so we can finish up the config.ini.
 
 ```text
 cd $PROJECT_ROOT
-./run.sh clean son
+./run.sh stop
 ```
 
-## List of Gladiator Endpoints {#gladiator-endpoints}
+Ensure the following config settings are in the config.ini file under the peerplays_sidechain plugin options.
 
-| Gladiator Endpoints |
-| :---: |
-| 96.46.49.1:9777 |
-| 96.46.49.2:9777 |
-| 96.46.49.3:9777 |
-| 96.46.49.4:9777 |
-| 96.46.49.5:9777 |
-| 96.46.49.6:9777 |
-| 96.46.49.7:9777 |
-| 96.46.49.8:9777 |
-| 96.46.49.9:9777 |
-| 96.46.49.10:9777 |
-| 96.46.49.11:9777 |
-| 96.46.49.12:9777 |
-| 96.46.49.13:9777 |
-| 96.46.49.14:9777 |
-| 96.46.49.15:9777 |
-| 96.46.49.16:9777 |
+```text
+cd data/witness_node_data_dir
+vim config.ini
+```
 
-## Glossary
+```text
+# In the config.ini file...
 
-Bitcoin Regtest
-: Bitcoin Core’s regression test mode. Regtest mode lets you instantly create a brand-new private block chain with the same basic rules as testnet—but one major difference: you choose when to create new blocks, so you have complete control over the environment.
+# ID of SON controlled by this node (e.g. "1.27.5", quotes are required)
+son-id = "1.27.16"
 
-Mainnet
-: The live Peerplays environment, named Alice, is the publicly running blockchain on which all transactions take place.
+# Tuple of [PublicKey, WIF private key] (may specify multiple times)
+peerplays-private-key = ["PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB", "5JKvPJkerMNVEubsbKN8Xd8wGaU1ifhv7xAwy9gFJP6yMEoTkSd"]
+```
 
-Testnet
-: One of any development environments for the Peerplays blockchain. The official public testnet, named Beatrice, is operated by the PBSA. More testnets exist for development purposes like Gladiator[^gladiator] for the testing of SONs.
+Then it's just a matter of starting the node back up!
+
+```text
+# replay the blockchain
+./run.sh replay_son
+```
 
 ## Related Documents
 
 * [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 * [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
-* [https://developer.bitcoin.org/examples/testing.html](https://developer.bitcoin.org/examples/testing.html)
-
-[^gladiator]: [PBSA's Gladiator Network](../testnet-information/pbsas-gladiator-network.md)

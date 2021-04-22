@@ -58,11 +58,11 @@ Plus [other considerations](#considerations).
 
 ### Download and Upload Limits
 
-In addition to the above, if you plan to operate a self-hosted Bitcoin node, you should look into getting an unmetered connection, a connection with high upload limits, or a connection you regularly monitor to ensure it doesn’t exceed its upload limits. It’s common for full Bitcoin nodes on high-speed connections to use 200 gigabytes upload or more per month. Download usage is around 20 gigabytes per month, plus around an additional 350 gigabytes the first time you start your node.
+In addition to the above, if you plan to operate a self-hosted Bitcoin node, you should look into getting an un-metered connection, a connection with high upload limits, or a connection you regularly monitor to ensure it doesn’t exceed its upload limits. It’s common for full Bitcoin nodes on high-speed connections to use 200 gigabytes upload or more per month. Download usage is around 20 gigabytes per month, plus around an additional 350 gigabytes the first time you start your node.
 
 ### Installing vs Operating
 
-When installing nodes (Peerplays or otherwise) you may find it handy to provision a server with higher resources during the installation. Once your nodes are installed and synced with their networks you can then power the server down and reprovision it with lower resources to operate with. This is possible with cloud providers like Amazon AWS or Google Cloud. This can help speed up the installation process but cost less to run overall.
+When installing nodes (Peerplays or otherwise) you may find it handy to provision a server with higher resources during the installation. Once your nodes are installed and synced with their networks you can then power the server down and provision it with lower resources to operate with. This is possible with cloud providers like Amazon AWS or Google Cloud. This can help speed up the installation process but cost less to run overall.
 
 ---
 

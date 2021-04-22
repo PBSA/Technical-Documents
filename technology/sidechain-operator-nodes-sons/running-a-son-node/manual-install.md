@@ -282,11 +282,11 @@ Bitcoin Address for the SON Account = bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
 The public key = 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9
 the private key = KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD
 
-And we'll convert this info into a touple ["Bitcoin public key", "Bitcoin private key"]
+And we'll convert this info into a tuple ["Bitcoin public key", "Bitcoin private key"]
 ["023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9","KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD"]
 ```
 
-Keep this touple handy. We'll need it in the Peerplays config file.
+Keep this tuple handy. We'll need it in the Peerplays config file.
 
 ---
 
@@ -368,20 +368,20 @@ get_private_key_from_password <put your username here> active <put your password
 # For example:
 # get_private_key_from_password mynew-son active LExu4QtSapqzdEaly2RwMugul3GhedTf234IiF2zzzfU4nuKXow8
 
-# The program will return a touple of the public and private keys for your account. 
+# The program will return a tuple of the public and private keys for your account. 
 # That will look something like this:
 # [
 #   "PPY...random.numbers.and.letters...",
-#   "5K...random.numbers.and.letters..."
+#   "5...random.numbers.and.letters..."
 # ]
 ```
 
-The key beginning with "PPY" is the public key. The key beginning with "5K" is the private key. We'll need to import this private key into the cli_wallet.
+The key beginning with "PPY" is the public key. The key beginning with "5" is the private key. We'll need to import this private key into the cli_wallet.
 
 ```text
 # In the cli_wallet...
 
-import_key "mynew-son" 5K...random.numbers.and.letters...
+import_key "mynew-son" 5...random.numbers.and.letters...
 
 # If this is successful, the return is simply
 # true
@@ -660,7 +660,7 @@ See
 [Requirements](requirements.md)
 
 [^node-types]: ***Node Types:***
-There are many types of nodes in the Peerplays ecosystem. (Witness, SON, Seed, and API)
+There are many types of nodes in the Peerplays ecosystem. (Witness, SON, Seed, API, Full, BOS...) All Peerplays nodes, no matter which type, are running the witness_node program. The difference is mostly in how the program is configured. Different configuration settings will allow the node to offer different services. For example, Witness nodes produce blocks, SONs facilitate sidechain transfers, Full nodes store the entire transaction history of the chain, etc.
 
 [^vim]: ***VIM Editor:***
 VIM is a text editing program available in Ubuntu 18.04.
