@@ -1,4 +1,4 @@
-# System Requirements
+# Hardware Requirements
 
 Depending on the configuration, network, and other installed components on your server, the system requirements will vary. Here are the system requirements of the most common configurations of SON nodes.
 
