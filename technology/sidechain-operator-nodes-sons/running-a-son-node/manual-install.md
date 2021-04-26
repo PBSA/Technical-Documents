@@ -36,10 +36,10 @@ The following dependencies are necessary for a clean install on Ubuntu 18.04 LTS
 
 ```text
 sudo apt-get update
-sudo apt-get -y  install autoconf bash build-essential ca-certificates cmake \
+sudo apt-get -y  install vim autoconf bash build-essential ca-certificates cmake \
       dnsutils doxygen git graphviz libbz2-dev libcurl4-openssl-dev \
       libncurses-dev libreadline-dev libssl-dev libtool libzmq3-dev \
-      locales ntp pkg-config wget autotools-dev libicu-dev python-dev vim
+      locales ntp pkg-config wget autotools-dev libicu-dev python-dev
 ```
 
 #### 2.1.1. Build Boost 1.67.0
