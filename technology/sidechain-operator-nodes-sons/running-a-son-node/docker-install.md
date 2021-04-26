@@ -47,7 +47,7 @@ git clone https://gitlab.com/PBSA/tools-libs/peerplays-docker.git -b release
 Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
 
 ```text
-./run.sh install_docker
+sudo ./run.sh install_docker
 ```
 
 Since the script has added the currently logged in user to the Docker group, you'll need to re-login (or close and reconnect SSH) for Docker to function correctly.
