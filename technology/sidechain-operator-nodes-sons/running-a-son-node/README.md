@@ -10,7 +10,7 @@ Compile and run the source code without a Docker container.
 
 ## [Install SON with Docker](docker-install.md)
 
-Use a preconfigured Docker container to run a SON Node.
+Use a pre-configured Docker container to run a SON Node.
 
 ## [SON Configuration](son-configuration.md)
 

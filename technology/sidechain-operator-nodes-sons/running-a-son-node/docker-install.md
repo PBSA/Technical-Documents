@@ -1,11 +1,23 @@
 ---
 description: Setup SONs using a pre-configured Docker container
 ---
-# Docker Install
+# Docker Install <!-- omit in toc -->
 
 This document assumes that you are running Ubuntu 18.04. Other Debian based releases may also work with the provided script.
 
-## Hardware Requirements
+The following steps outline the Docker installation of a SON Node:
+
+1. Preparing the Environment
+2. Installing Docker
+3. The Bitcoin node
+4. Installing the peerplays:son image
+5. Starting the environment
+6. Using the CLI wallet
+7. Update config.ini with SON Account Info
+
+## 1. Preparing the Environment
+
+### 1.1. Hardware requirements
 
 Please see the general SON [hardware requirements](requirements.md).
 
@@ -15,30 +27,20 @@ For the docker install, we'll be using a self-hosted Bitcoin node. The requireme
 | :--------- | :-------- | :--------------------------- | :------ | :----- | :-------- | :-------- | :----------- |
 | Yes        | Yes       | Self-Hosted, Reduced Storage | 8 Cores | 64GB   | 350GB SSD | 1Gbps     | Ubuntu 18.04 |
 
-## Installing the required dependencies
+### 1.2. Installing the required dependencies
 
 ```text
 sudo apt-get update
-sudo apt-get install git curl
+sudo apt-get install vim git curl
 ```
 
-## Cloning the peerplays docker repository
+Then we'll clone the Peerplays Docker repository.
 
 ```text
 git clone https://gitlab.com/PBSA/tools-libs/peerplays-docker.git -b release
 ```
 
-## Navigating to the project directory and setting up the project root
-
-To easily follow this document, it is recommended to set an environment variable to the project root. Navigate to the root of the project, and assign the variable:
-
-```text
-# Starting in the directory where the repository was cloned
-cd peerplays-docker
-PROJECT_ROOT=$(pwd)
-```
-
-## Installing Docker
+## 2. Installing Docker
 
 > **Note:** It is required to have Docker installed on the system that will be performing the steps in this document.
 
@@ -48,43 +50,32 @@ Docker can be installed using the `run.sh` script inside the Peerplays Docker re
 ./run.sh install_docker
 ```
 
-The terminal will need to be reinitialized after installation.
+Since the script has added the currently logged in user to the Docker group, you'll need to re-login (or close and reconnect SSH) for Docker to function correctly.
 
-> **Optional:** you can Look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
+> **Note:** You can look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker.
+> Or if you are having permission issues trying to run Docker, use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
 
-> **Note:** If you are having permission issues trying to run Docker, use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
-
-## Setting up the environment
+### 2.1. Setting up the .env file
 
 Copy the `example.env` to `.env`  located in the root of the repository:
 
 ```text
-cd $PROJECT_ROOT
+cd ~/peerplays-docker
 cp example.env .env
 ```
 
-We're going to have to make some changes to the .env file so we'll open that now.
+We're going to have to make some changes to the `.env` file so we'll open that now using the Vim editor[^vim].
 
 ```text
 vim .env
 ```
 
-Here's what your .env file should look like when we're done:
+Here are the important parts of the `.env` file. These will be the parts that need to be edited or optionally edited. The rest of the file should be unchanged.
 
 ```text
-# In the .env file...
-
-# Unique name to label the container created by this peerplays-docker installation
-DOCKER_NAME="seed"
-
-# Default docker image to run using ./run.sh start / restart / replay
-# Also used when tagging remote image downloaded from ./run.sh install
-DOCKER_IMAGE="peerplays"
-
-# Default network for SON used with ./run.sh start_son_regtest
-DOCKER_NETWORK="son"
-
 # Default SON wallet used inside bitcoind-node with ./run.sh start_son_regtest
+# ***NOTE:*** You can change this if you like, but you'll also need to change the "bitcoin-wallet"
+# setting in the Peerplays config.ini file to the same value!
 SON_WALLET="son-wallet"
 
 # Default bitcoin key used inside bitcoind-node with ./run.sh start_son_regtest
@@ -92,75 +83,35 @@ SON_WALLET="son-wallet"
 BTC_REGTEST_KEY="XXXXXXXXXXXXX"
 
 # Comma separated port numbers to expose to the internet (binds to 0.0.0.0)
-# PORTS=9777
-# Advanced Usage Example: 
-#
-#   Expose 9777 to the internet, but only expose RPC ports 8090 and 8091 onto 127.0.0.1 (localhost)
-#   allowing the host machine access to the container's RPC ports via 127.0.0.1:8090 and 127.0.0.1:8091
-#
+# Expose 9777 to the internet, but only expose RPC ports 8090 and 8091 onto 127.0.0.1 (localhost)
+# allowing the host machine access to the container's RPC ports via 127.0.0.1:8090 and 127.0.0.1:8091
+# We'll need ports 8090 and 8091 open to our localhost to interact with the Peerplays CLI Wallet.
 PORTS=9777,127.0.0.1:8090:8090,127.0.0.1:8091:8091
-
-# Amount of time in seconds to allow the docker container to stop before killing it.
-# Default: 600 seconds (10 minutes)
-STOP_TIME=600
 
 # Websocket RPC node to use by default for ./run.sh remote_wallet
 REMOTE_WS=""
 
-# Remote docker tags to pull when running ./run.sh install OR ./run.sh install_full with no arguments, respectively
-DK_TAG="datasecuritynode/peerplays:latest"
-DK_TAG_FULL="datasecuritynode/peerplays:latest-full"
-
-# Git repository to use when building Peerplays - containing peerplaysd code
-PEERPLAYS_SOURCE="https://github.com/peerplays-network/peerplays.git"
-
-# LOCAL folder containing Dockerfile for ./run.sh build
-DOCKER_DIR="$DIR/dkr"
-# LOCAL folder to hold witness_node_data_dir
-DATADIR="$DIR/data"
-# LOCAL folder to store shared_memory.bin (or rocksdb files for MIRA)
-SHM_DIR="/dev/shm"
-
-# blockchain folder, used by dlblocks
-BC_FOLDER="$DATADIR/witness_node_data_dir/blockchain"
-
-# Example RocksDB configuration file, will automatically be copied to MIRA_FILE on first run.sh execution
-# if MIRA_FILE doesn't exist
-EXAMPLE_MIRA="$DATADIR/witness_node_data_dir/database.cfg.example"
-MIRA_FILE="$DATADIR/witness_node_data_dir/database.cfg"
-
-# Example Peerplays node configuration file, will automatically be copied to CONF_FILE on first run.sh execution
-# if CONF_FILE doesn't exist
-EXAMPLE_CONF="$DATADIR/witness_node_data_dir/config.ini.example"
-CONF_FILE="$DATADIR/witness_node_data_dir/config.ini"
-
-# Example Bitcoin Regtest configuration, full path must be specified
+# This is the path to our Bitcoin node configuration file.
 BTC_REGTEST_CONF="/home/ubuntu/.bitcoin/bitcoin.conf"
-
-# Array of additional arguments to be passed to Docker during builds
-# Generally populated using arguments passed to build/build_full
-# But you can specify custom additional build parameters by setting BUILD_ARGS
-# as an array in .env
-# e.g.
-#
-#    BUILD_ARGS=('--rm' '-q' '--compress')
-#
-BUILD_ARGS=()
 
 ```
 
 > **IMPORTANT:** You will need a Bitcoin Private Key of a wallet that you own on the Bitcoin mainnet. In the .env file above, you must replace **BTC_REGTEST_KEY="XXXXXXXXXXXXX"** with your own private key. So it may look something like **BTC_REGTEST_KEY="cSKyTeXidmj93dgbMFqgzD7yvxzA7QAYr5j9qDnY9seyhyv7gH2m"** for example.
 
-> **Optional:** If you want to use your own config, edit the .env file & set `BTC_REGTEST_CONF` to the full path where the `bitcoin.conf` is located.
+## 3. The Bitcoin node
 
-Since we'll be setting some custom config in our bitcoin.conf, we'll need to create and edit it now.
+The Peerplays Docker package includes a Bitcoin node Docker container. The Bitcoin node will start up when we start the Peerplays Docker. We need to configure the Bitcoin node to run with reduced storage and network resources. As a Peerplays SON, we won't need to run a full Bitcoin node as we're only interested in the latest blocks.
+
+### 3.1. Setting up the bitcoin.conf file
+
+Since we'll be setting some custom config in our `bitcoin.conf`, we'll need to create and edit it now.
 
 ```text
 touch /home/ubuntu/.bitcoin/bitcoin.conf
 vim /home/ubuntu/.bitcoin/bitcoin.conf
 ```
 
-The bitcoin.conf should look like this:
+The `bitcoin.conf` should look like this:
 
 ```text
 # This config should be placed in following path:
@@ -223,22 +174,20 @@ zmqpubrawtx=tcp://0.0.0.0:11111
 [regtest]
 ```
 
-Save and quit the VIM editor.
+Save and quit the Vim editor.
 
-> **Note:** The settings in the config file above are set to reduce the requirements of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see <https://bitcoin.org/en/full-node#reduce-storage>.
+> **Note:** The settings in the config file above are set to *reduce the requirements* of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see <https://bitcoin.org/en/full-node#reduce-storage>.
 
-## Installing the peerplays:son image
+## 4. Installing the peerplays:son image
 
 Use `run.sh` to pull the SON image:
 
 ```text
-cd $PROJECT_ROOT
+cd ~/peerplays-docker
 sudo ./run.sh install son
 ```
 
-## Editing the configuration
-
-### Setting up config.ini
+### 4.1. Setting up config.ini file
 
 > There are many example configuration files, make sure to copy the right one. In this case it is:
 config.ini.**son-exists**.example
@@ -246,12 +195,12 @@ config.ini.**son-exists**.example
 Copy the correct example configuration:
 
 ```text
-cd $PROJECT_ROOT
+cd ~/peerplays-docker
 cd data/witness_node_data_dir
 cp config.ini.son-exists.example config.ini
 ```
 
-We'll need to make an edit to the config.ini file as well.
+We'll need to make an edit to the `config.ini` file as well.
 
 ```text
 vim config.ini
@@ -343,12 +292,12 @@ bitcoin-private-key = ["", ""]
 
 Save the file and quit.
 
-## Starting the environment
+## 5. Starting the environment
 
 Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcoind containers:
 
 ```text
-cd $PROJECT_ROOT
+cd ~/peerplays-docker
 
 # You'll also want to set the shared memory size (use sudo if not logged in as root). 
 # Adjust 64G to whatever size is needed for your type of server and make sure to leave growth room.
@@ -364,30 +313,28 @@ sysctl -w vm.swappiness=1
 
 ```
 
-The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(bitcoind\) containers will be launched.
-
-To check the status, inspect the logs:
+The SON network will be created and the seed (peerplaysd) and bitcoind-node (bitcoind) containers will be launched. To check the status, inspect the logs:
 
 ```text
 ./run.sh logs
 ```
 
-This will give an output similar to
+This will give an output similar to:
 
 ![\(logs showing healthy connection to GLADIATOR\)](../../../.gitbook/assets/image%20%2828%29.png)
 
-Just in case the logs are not looking healthy, perform a replay.
+If the logs are not looking healthy, perform a replay.
 
 ```text
 # replay the blockchain
 ./run.sh replay_son
 ```
 
-## Using the CLI wallet
+## 6. Using the CLI wallet
 
-After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available.
+After starting the environment, the CLI wallet for the seed (peerplaysd) will be available.
 
-### Connecting to the blockchain with the CLI Wallet
+### 6.1. Connecting to the blockchain with the CLI Wallet
 
 Open another terminal and use `docker exec` to connect to the wallet.
 
@@ -528,14 +475,14 @@ get_private_key PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB
 update_son mynew-son "" "PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB" [[bitcoin, 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9]] true
 ```
 
-Now we have our SON account ID and the public and private keys for the SON account. We'll need this for the config.ini file.
+Now we have our SON account ID and the public and private keys for the SON account. We'll need this for the `config.ini` file.
 
-## Update config.ini with SON Account Info
+## 7. Update config.ini with SON Account Info
 
-Lets stop the node for now so we can finish up the config.ini.
+Lets stop the node for now so we can finish up the `config.ini`.
 
 ```text
-cd $PROJECT_ROOT
+cd ~/peerplays-docker
 ./run.sh stop
 ```
 
@@ -563,7 +510,12 @@ Then it's just a matter of starting the node back up!
 ./run.sh replay_son
 ```
 
-## Related Documents
+## 8. Related Documents
 
 * [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 * [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
+
+[^vim]: ***Vim Editor:***
+Vim is a text editing program available for Ubuntu 18.04.
+See
+[vim.org](https://www.vim.org/)
