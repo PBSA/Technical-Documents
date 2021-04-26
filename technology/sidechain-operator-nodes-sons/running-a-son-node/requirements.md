@@ -1,12 +1,12 @@
-# System Requirements
+# Hardware Requirements
 
-Depending on the configuration, network, and other installed components on your server, the system requirements will vary. Here are the system requirements of the most common configurations of SON nodes.
+Depending on the configuration, network, and other installed components on your server, the hardware requirements will vary. Here are the requirements of the most common configurations of SON nodes.
 
 ---
 
 ## Peerplays Mainnet
 
-The following table lists what should be considered the minimum system requirements for running a son node on **`Mainnet`**[^mainnet]:
+The following table lists what should be considered the minimum requirements for running a son node on **`Mainnet`**[^mainnet]:
 
 | Full Node? | SON Node? | Bitcoin node type            | CPU     | Memory | Storage   | Bandwidth | OS           |
 | :--------- | :-------- | :--------------------------- | :------ | :----- | :-------- | :-------- | :----------- |
@@ -32,7 +32,7 @@ Plus [other considerations](#considerations).
 
 ## Peerplays Testnet
 
-The following table lists what should be considered the minimum system requirements for running a son node on **`Testnet`**[^testnet]:
+The following table lists what should be considered the minimum requirements for running a son node on **`Testnet`**[^testnet]:
 
 | Full Node? | SON Node? | Bitcoin node type            | CPU     | Memory | Storage   | Bandwidth | OS           |
 | :--------- | :-------- | :--------------------------- | :------ | :----- | :-------- | :-------- | :----------- |
@@ -74,7 +74,7 @@ Nodes with an open RPC port. They provide complete transaction histories of all 
 
 [^bitcoin-node-type]: ***Bitcoin node types:***
 Just like Peerplays nodes, Bitcoin nodes can provide different levels of service.
-*Self-Hosted* Bitcoin nodes are running on your own server and will therefore have a bigger impact on system requirements.
+*Self-Hosted* Bitcoin nodes are running on your own server and will therefore have a bigger impact on hardware requirements.
 *Reduced storage* means the node doesn't save the entire Bitcoin chain.
 *Full storage* means the node stores the whole Bitcoin chain (almost 400GB and growing daily).
 *External* Bitcoin nodes are running on someone elses server. You may be able to connect to public or private Bitcoin nodes to run your SON node.
