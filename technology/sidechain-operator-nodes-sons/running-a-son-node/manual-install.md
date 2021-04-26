@@ -7,7 +7,7 @@ description: Setup SONs by building the source code
 
 ## 1. Overview
 
-The process of manually installing a SON Node[^son-node] is similar to installing a Witness Node[^witness-node].
+The process of manually installing a SON Node[^son-node] is similar to installing a Witness Node [^witness-node].
 
 This is an introduction for new SONs to get up to speed on the Peerplays blockchain. It is intended for SONs planning to join a live, already deployed, blockchain.
 
