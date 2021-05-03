@@ -111,7 +111,7 @@ touch /home/ubuntu/.bitcoin/bitcoin.conf
 vim /home/ubuntu/.bitcoin/bitcoin.conf
 ```
 
-The `bitcoin.conf` should look like this:
+The `bitcoin.conf` should look exactly like this **(You can copy/paste the text in this code block into your editor)**:
 
 ```text
 # This config should be placed in following path:
