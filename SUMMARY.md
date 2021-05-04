@@ -26,12 +26,14 @@
     * [Participation Rewards](technology/gamified-proof-of-stake-gpos/faq/participation-rewards.md)
 * [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons/README.md)
   * [FAQ](technology/sidechain-operator-nodes-sons/faq.md)
-  * [SON Configuration](technology/sidechain-operator-nodes-sons/son-configuration.md)
-  * [Running SON with Docker](technology/sidechain-operator-nodes-sons/running-son-with-docker/README.md)
-    * [Setting up a new local network](technology/sidechain-operator-nodes-sons/running-son-with-docker/setting-up-a-new-local-network.md)
-    * [Connecting to an existing network](technology/sidechain-operator-nodes-sons/running-son-with-docker/connecting-to-an-existing-network.md)
-  * [PBSA's GLADIATOR Endpoints](technology/sidechain-operator-nodes-sons/pbsas-gladiator-endpoints.md)
-  * [Quick Joining GLADIATOR](technology/sidechain-operator-nodes-sons/quick-joining-gladiator.md)
+  * [Running a SON Node](technology/sidechain-operator-nodes-sons/running-a-son-node/README.md)
+    * [Requirements](technology/sidechain-operator-nodes-sons/running-a-son-node/requirements.md)
+    * [Manual Install](technology/sidechain-operator-nodes-sons/running-a-son-node/manual-install.md)
+    * [Docker Install](technology/sidechain-operator-nodes-sons/running-a-son-node/docker-install.md)
+    * [SON Configuration](technology/sidechain-operator-nodes-sons/running-a-son-node/son-configuration.md)
+  * [Testnet Information](technology/sidechain-operator-nodes-sons/testnet-information/README.md)
+    * [PBSA's GLADIATOR network](technology/sidechain-operator-nodes-sons/testnet-information/pbsas-gladiator-network.md)
+    * [Setting Up Your Own Local Network](technology/sidechain-operator-nodes-sons/testnet-information/setting-up-your-own-local-network.md)
 * [NFTs and Marketplace](technology/nfts-and-marketplace/README.md)
   * [NFT marketplace in Python](technology/nfts-and-marketplace/nft-marketplace-in-python.md)
   * [NFT Operations in Python](technology/nfts-and-marketplace/nft-operations-in-python.md)
@@ -121,7 +123,7 @@
   * [BOS Schema](couch-potato/api-1/bos-schema.md)
 * [Proxy Payment Considerations](couch-potato/proxy-payment-considerations.md)
 
-## CLI Wallet <a id="peerplays-wallet"></a>
+## CLI Wallet
 
 * [User Issued Assets \(UIAs\)](peerplays-wallet/user-issued-assets-uias.md)
 * [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
@@ -180,4 +182,3 @@
 
 * [Labels](gitlab/labels.md)
 * [Time Tracking](gitlab/time-tracking.md)
-
