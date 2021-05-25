@@ -366,3 +366,4 @@ bitcoin-private-key = ["02a6d0cd88e927afc34da3fb364a681d42889547af70b1589069364f
 For more realistic test scenario, witnesses also need to be configured with their own IDs, public and private keys.
 
 [Becoming a Witness](../../../witnesses/becoming-a-witness.md)
+

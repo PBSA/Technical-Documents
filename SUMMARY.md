@@ -125,9 +125,9 @@
 
 ## CLI Wallet
 
-* [User Issued Assets \(UIAs\)](peerplays-wallet/user-issued-assets-uias.md)
-* [CLI Wallet Commands](peerplays-wallet/cli-wallet-commands.md)
-* [cli\_wallet & SON](peerplays-wallet/cli_wallet-and-son.md)
+* [User Issued Assets \(UIAs\)](cli-wallet/user-issued-assets-uias.md)
+* [CLI Wallet Commands](cli-wallet/cli-wallet-commands.md)
+* [cli\_wallet & SON](cli-wallet/cli_wallet-and-son.md)
 
 ## Random Number Generator \(RNG\)
 
@@ -182,3 +182,4 @@
 
 * [Labels](gitlab/labels.md)
 * [Time Tracking](gitlab/time-tracking.md)
+

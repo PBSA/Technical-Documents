@@ -15,3 +15,4 @@ Use a pre-configured Docker container to run a SON Node.
 ## [SON Configuration](son-configuration.md)
 
 Example config.ini settings and their explanations for SON Node operation.
+

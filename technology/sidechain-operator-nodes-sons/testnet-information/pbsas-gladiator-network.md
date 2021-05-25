@@ -2,7 +2,7 @@
 description: Setup SONs and join GLADIATOR public TESTNET
 ---
 
-# Quick Joining PBSA's GLADIATOR Test Network
+# PBSA's GLADIATOR network
 
 This is a quick document which assumes that the user has experience in setting up various Graphene blockchains before. The following link can be a good refresher: [https://www.peerplays.tech/witnesses/becoming-a-witness](https://www.peerplays.tech/witnesses/becoming-a-witness)
 
@@ -29,9 +29,9 @@ Go to [https://gitlab.com/PBSA/peerplays/-/jobs](https://gitlab.com/PBSA/peerpla
 
 Example of such a job has ID 467332251:
 
-{% embed url="https://gitlab.com/PBSA/peerplays/-/jobs/467332251" %}
+{% embed url="https://gitlab.com/PBSA/peerplays/-/jobs/467332251" caption="" %}
 
-To download executables, click Download button on the right side of the Job page, or execute the following command:  
+To download executables, click Download button on the right side of the Job page, or execute the following command:
 
 ```text
 wget --content-disposition --show-progress\
@@ -48,10 +48,10 @@ unzip -j artifacts.zip build/programs/witness_node/witness_node -d ./
 Execute the `witness_node` binary which will create the necessary files and folders under `witness_node_data_dir`
 
 ```text
-./witness_node 
+./witness_node
 ```
 
-Stop the node \(`CTRL + c` \)  and edit `config.ini` to configure the node.
+Stop the node \(`CTRL + c` \) and edit `config.ini` to configure the node.
 
 ## Connecting to PBSA's Gladiator Testnet
 
@@ -90,7 +90,6 @@ If blocks have already been seeded during the initial startup, it may be necessa
 rm -rf witness_node_data_dir/blockchain
 rm -rf witness_node_data_dir/p2p
 ```
-
 {% endhint %}
 
 At this point you will be able download a copy of the blockchain. Additional steps are required to run the cli\_wallet and also become a SON.
@@ -129,7 +128,6 @@ Options:
                                         Tuple of [Bitcoin public key, Bitcoin 
                                         private key] (may specify multiple 
                                         times)
-  
 ```
 
 These parameters are available from both command line and config file:
@@ -173,7 +171,6 @@ bitcoin-wallet-password = 9da115c9fa6fe7fd09390841ac91aee4
 
 # Tuple of [Bitcoin public key, Bitcoin private key] (may specify multiple times)
 bitcoin-private-key = ["02d0f137e717fb3aab7aff99904001d49a0a636c5e1342f8927a4ba2eaee8e9772","cVN31uC9sTEr392DLVUEjrtMgLA8Yb3fpYmTRj7bomTm6nn2ANPr"]
-
 ```
 
 #### Edit the config file and add the RPC port
@@ -470,7 +467,6 @@ Pass the chain ID to the CLI wallet:
 # In the local terminal
 ./cli_wallet --chain-id=<CHAIN-ID>
 ```
-
 {% endhint %}
 
 {% hint style="info" %}
@@ -479,7 +475,6 @@ There is optionally a flag that can be passed in to connect to a remote rpc endp
 ```text
 ./cli_wallet --server-rpc-endpoint ws://96.46.49.3:8090 -u '' -p ''
 ```
-
 {% endhint %}
 
 Enter a password for the CLI wallet:
@@ -521,3 +516,4 @@ Create an account using the brain key generated:
 # In the CLI wallet
 create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
 ```
+
