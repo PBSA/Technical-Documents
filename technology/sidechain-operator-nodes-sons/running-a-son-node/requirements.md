@@ -26,7 +26,7 @@ On top of this baseline, if you self-host a Bitcoin node with reduced storage, a
 
 Plus [other considerations](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#other-considerations).
 
-\(See notes about Full Nodes, SON Nodes, and Bitcoin node types\)
+\(See [notes](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#glossary) about Full Nodes, SON Nodes, and Bitcoin node types\)
 
 > **Note:** These requirements are as of the time of writing, so consider deploying a server with specs slightly higher than the ones listed above in order to "future proof" your server in case the minimum requirements grow in the future.
 
@@ -50,7 +50,7 @@ On top of this baseline, if you self-host a Bitcoin node with reduced storage, a
 
 Plus [other considerations](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#other-considerations).
 
-\(See notes about Full Nodes, SON Nodes, and Bitcoin node types\)
+\(See [notes](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#glossary) about Full Nodes, SON Nodes, and Bitcoin node types\)
 
 ## Other Considerations
 
@@ -68,7 +68,7 @@ When installing nodes \(Peerplays or otherwise\) you may find it handy to provis
 
 **Full Node:** Nodes with an open RPC port. They provide complete transaction histories of all accounts accessible through API calls.
 
-**Bitcoin node storage:** Just like Peerplays nodes, Bitcoin nodes can provide different levels of service:
+**Bitcoin node types:** Just like Peerplays nodes, Bitcoin nodes can provide different levels of service:
 
 * _Self-Hosted_ Bitcoin nodes are running on your own server and will therefore have a bigger impact on hardware requirements.
   * _Reduced storage_ means the node doesn't save the entire Bitcoin chain.
