@@ -24,9 +24,9 @@ A Full node on Mainnet requires a baseline of: 8 CPU Cores, 64GB RAM, and 300GB 
 
 On top of this baseline, if you self-host a Bitcoin node with reduced storage, an additional 50GB storage is required. If you self-host a Bitcoin node with full storage, an additional 700GB storage is required.
 
-Plus [other considerations](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#other-considerations).
+Plus [other considerations](requirements.md#other-considerations).
 
-\(See [notes](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#glossary) about Full Nodes, SON Nodes, and Bitcoin node types\)
+\(See [notes](requirements.md#glossary) about Full Nodes, SON Nodes, and Bitcoin node types\)
 
 > **Note:** These requirements are as of the time of writing, so consider deploying a server with specs slightly higher than the ones listed above in order to "future proof" your server in case the minimum requirements grow in the future.
 
@@ -48,9 +48,9 @@ A Full node on Testnet requires a baseline of: 4 CPU cores, 8GB RAM, and 300GB s
 
 On top of this baseline, if you self-host a Bitcoin node with reduced storage, an additional 50GB storage is required. If you self-host a Bitcoin node with full storage, an additional 700GB storage is required.
 
-Plus [other considerations](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#other-considerations).
+Plus [other considerations](requirements.md#other-considerations).
 
-\(See [notes](https://app.gitbook.com/@peerplays/s/documents/technology/sidechain-operator-nodes-sons/running-a-son-node/requirements#glossary) about Full Nodes, SON Nodes, and Bitcoin node types\)
+\(See [notes](requirements.md#glossary) about Full Nodes, SON Nodes, and Bitcoin node types\)
 
 ## Other Considerations
 
