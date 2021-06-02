@@ -46,6 +46,7 @@
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
 * [Obtaining private keys for cli\_wallet](witnesses/obtaining-private-keys-for-use-in-cli_wallet.md)
+* [Witness Node Hardware Requirements](witnesses/witness-node-hardware-requirements.md)
 * [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
   * [Creating a witness account](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
   * [Beatrice](witnesses/setting-up-a-witness-node/beatrice.md)
