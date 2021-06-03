@@ -12,11 +12,15 @@ The following table lists what should be considered the minimum requirements for
 
 | Node Type? | CPU | Memory | Storage | Bandwidth | OS |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Full | 8 Cores | 64GB | 100GB SSD | 1Gbps | Ubuntu 18.04 |
-| API | 8 Cores | 64GB | 100GB SSD | 1Gbps | Ubuntu 18.04 |
-| Witness | 8 Cores | 64GB | 100GB SSD | 1Gbps | Ubuntu 18.04 |
+| Full | 8 Cores | 64GB\* | 100GB SSD | 1Gbps | Ubuntu 18.04 |
+| API | 8 Cores | 64GB\* | 100GB SSD | 1Gbps | Ubuntu 18.04 |
+| Witness | 8 Cores | 64GB\* | 100GB SSD | 1Gbps | Ubuntu 18.04 |
 | Seed | 2 Cores | 16GB | 100GB SSD | 1Gbps | Ubuntu 18.04 |
 | Son \(see note\) | 2 Cores | 16GB | 100GB SSD | 1Gbps | Ubuntu 18.04 |
+
+{% hint style="info" %}
+For Docker installs, and when using GitLab binaries, only 16GB of memory is required.
+{% endhint %}
 
 A Full node on Mainnet requires a baseline of: 8 CPU Cores, 64GB RAM, and 100GB storage. If you don't intend on running a Full node, but only a SON or Seed node, the baseline drops a little to: 2 CPU cores, 16GB RAM, and 100GB storage.
 
