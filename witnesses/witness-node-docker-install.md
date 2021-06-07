@@ -60,7 +60,7 @@ Since the script has added the currently logged in user to the Docker group, you
 With at least 8GB of disk space available in your home folder, we'll run the docker container.
 
 ```text
-sudo docker run -p 9777:9777 -p 8090:8090 -v /dev/shm:/shm -v ~/peerplays-docker/data:/peerplays -d --name alice-seed -t datasecuritynode/peerplays/:alice-0.1 witness_node --data-dir=/peerplays/witness_node_data_dir
+sudo docker run -p 2001:2001 -p 9777:9777 -p 127.0.0.1:8090:8090 -v /dev/shm:/shm -v ~/peerplays-docker/data:/peerplays -d --name alice-seed -t datasecuritynode/peerplays:alice-0.1 witness_node --data-dir=/peerplays/witness_node_data_dir
 ```
 
 Then we'll check the status of the container to see if all is well.
@@ -83,7 +83,7 @@ We need to set the endpoint and seed-node addresses so we can access the cli\_wa
 nano ~/peerplays-docker/data/witness_node_data_dir/config.ini
 
 p2p-endpoint = 0.0.0.0:9777
-rpc-endpoint = 127.0.0.1:8090
+rpc-endpoint = 0.0.0.0:8090
 seed-node = 213.184.255.234:59500
 ```
 
