@@ -48,6 +48,7 @@
 * [Obtaining private keys for cli\_wallet](witnesses/obtaining-private-keys-for-use-in-cli_wallet.md)
 * [Witness Node Hardware Requirements](witnesses/witness-node-hardware-requirements.md)
 * [Witness Node Docker Install](witnesses/witness-node-docker-install.md)
+* [Witness Node GitLab Artifact Install](witnesses/witness-node-gitlab-artifact-install.md)
 * [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
   * [Creating a witness account](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
   * [Beatrice](witnesses/setting-up-a-witness-node/beatrice.md)
