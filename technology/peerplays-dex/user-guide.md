@@ -129,7 +129,7 @@ Assets owned can be viewed under this section. This includes the asset name, amo
 
 Open orders for the account can be viewed under this section. This includes the trade asset, order ID, description, price, market price and value.
 
-![](../../.gitbook/assets/image%20%2829%29.png)
+![](../../.gitbook/assets/image%20%2829%29%20%281%29.png)
 
 ### Activity
 
