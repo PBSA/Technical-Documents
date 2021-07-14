@@ -186,3 +186,10 @@
 * [Labels](gitlab/labels.md)
 * [Time Tracking](gitlab/time-tracking.md)
 
+## Other Documentation
+
+---
+
+* [Infrastructure Docs](https://infra.peerplays.tech)
+* [Developer Docs](https://devs.peerplays.tech)
+
