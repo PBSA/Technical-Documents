@@ -190,6 +190,7 @@
 
 ---
 
+* [Docs Home](https://peerplays.tech)
 * [Infrastructure Docs](https://infra.peerplays.tech)
 * [Developer Docs](https://devs.peerplays.tech)
 
