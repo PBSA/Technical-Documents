@@ -23,7 +23,7 @@ The Peerplays blockchain is a game-changer for bettors around the world:
 
 ## Who is Behind Peerplays?
 
-A number of different groups and individuals share jurisdiction over the Peerplays blockchain, which ensures no single entity can gain control over the database. These groups and individuals include Witnesses, Advisors, and PPY token holders. For more information on the governance of the Peerplays blockchain, please visit the [Governance section](https://www.peerplays.com/governance/) of the website.
+A number of different groups and individuals share jurisdiction over the Peerplays blockchain, which ensures no single entity can gain control over the database. These groups and individuals include Witnesses, Advisors, and PPY token holders. For more information on the governance of the Peerplays blockchain, please visit the Governance section of this website.
 
 The Peerplays blockchain software has been developed by the Peerplays Blockchain Standards Association \(PBSA\), a non-profit organization based in Canada. For more information on PBSA, please visit [pbsa.info](http://www.pbsa.info/).
 
