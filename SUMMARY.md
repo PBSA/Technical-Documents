@@ -39,7 +39,6 @@
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 * [Peerplays DEX](technology/peerplays-dex/README.md)
   * [User Guide](technology/peerplays-dex/user-guide.md)
-  * [LP](technology/peerplays-dex/lp.md)
 
 ## Witnesses
 
