@@ -4,9 +4,6 @@
 
 ## Technology
 
-* [Peerplays DEX](technology/peerplays-dex/README.md)
-  * [User Guide](technology/peerplays-dex/user-guide.md)
-  * [LP](technology/peerplays-dex/lp.md)
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
@@ -40,6 +37,9 @@
   * [NFT Marketplace HRP RBAC related Commands/Usecases](technology/nfts-and-marketplace/nft-marketplace-hrp-rbac-related-commands-usecases.md)
   * [NFT command reference](technology/nfts-and-marketplace/nft-command-referece.md)
 * [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
+* [Peerplays DEX](technology/peerplays-dex/README.md)
+  * [User Guide](technology/peerplays-dex/user-guide.md)
+  * [LP](technology/peerplays-dex/lp.md)
 
 ## Witnesses
 
