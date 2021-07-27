@@ -22,7 +22,7 @@ There are two binaries of interest: **witness\_node** and **cli\_wallet.** These
 Consider creating a service to run this binary.
 {% endhint %}
 
-By default, running the witness\_node binary downloaded from the Beatrice branch build will configure the `witness_node_data_dir` and start synching with the Testnet. If configuration changes need to be made \(e.g, setting up your own network, specifying custom RPC ports to listen on, etc...\), the `witness_node_data_dir/config.ini` should be modified.
+By default, running the witness\_node binary downloaded from the Beatrice branch build will configure the `witness_node_data_dir` and start syncing with the Testnet. If configuration changes need to be made \(e.g, setting up your own network, specifying custom RPC ports to listen on, etc...\), the `witness_node_data_dir/config.ini` should be modified.
 
 ```text
 ### Default config.ini for Beatrice
