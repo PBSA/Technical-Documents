@@ -30,13 +30,11 @@
     * [SON Configuration](technology/sidechain-operator-nodes-sons/running-a-son-node/son-configuration.md)
   * [Testnet Information](technology/sidechain-operator-nodes-sons/testnet-information/README.md)
     * [PBSA's GLADIATOR network](technology/sidechain-operator-nodes-sons/testnet-information/pbsas-gladiator-network.md)
-    * [Setting Up Your Own Local Network](technology/sidechain-operator-nodes-sons/testnet-information/setting-up-your-own-local-network.md)
 * [NFTs and Marketplace](technology/nfts-and-marketplace/README.md)
   * [NFT marketplace in Python](technology/nfts-and-marketplace/nft-marketplace-in-python.md)
   * [NFT Operations in Python](technology/nfts-and-marketplace/nft-operations-in-python.md)
   * [NFT Marketplace HRP RBAC related Commands/Usecases](technology/nfts-and-marketplace/nft-marketplace-hrp-rbac-related-commands-usecases.md)
   * [NFT command reference](technology/nfts-and-marketplace/nft-command-referece.md)
-* [Peerplays Improvement Proposals \(PIPs\)](technology/peerplays-improvement-proposals-pips.md)
 * [Peerplays DEX](technology/peerplays-dex/README.md)
   * [User Guide](technology/peerplays-dex/user-guide.md)
 

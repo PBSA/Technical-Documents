@@ -1,2 +1,0 @@
-# Peerplays Improvement Proposals \(PIPs\)
-
