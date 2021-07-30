@@ -63,3 +63,7 @@ PPY is the main store of value in Peerplays and is used to pay for transaction f
 
 BTFUN \(BitFun\) is the token created for BookiePro. BTFUN is used to place bets with a valueless token. It's used just for fun!
 
+### 3.3. Peerplays NFTs
+
+NFTs can be created on the Peerplays network for a wide variety of uses. DApp developers can issue NFTs to represent digital items, certificates, shares of ownership, and much more.
+
