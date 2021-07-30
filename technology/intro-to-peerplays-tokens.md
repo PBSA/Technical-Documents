@@ -27,9 +27,9 @@ Many different types of tokens exist in the world of crypto. Peerplays uses the 
 Tokens are sometimes called "assets". The terms are pretty much interchangeable, at least for the purposes of this document.
 {% endhint %}
 
-### 2.1. Core Tokens
+### 2.1. Native Assets
 
-The core tokens within Peerplays are the tokens which provide voting power when staked. The core token of the Peerplays network itself is the PPY token. Communities within the Peerplays network may also have their own core token. In this case, when the community core token is staked, you would gain voting power for the governance of that community.
+The native assets within Peerplays are the coins which provide voting power when staked. The native asset of the Peerplays network itself is PPY. Communities within the Peerplays network may also have their own native asset. In this case, when the community native asset is staked, you would gain voting power for the governance of that community.
 
 ### 2.2. NFTs
 
@@ -55,7 +55,7 @@ This means that tokens like BTC can be exchanged using the Peerplays Dex, staked
 
 ### 3.1. PPY
 
-PPY \(Peerplays token\) is the core token of the Peerplays network. Staking this token provides voting power for voting on witnesses, SONs, advisors, and more. In addition, all exchanges that take place in the Peerplays Dex are based on exchanging tokens with PPY. Currently a portion of all transaction fees within Peerplays is redistributed back to PPY holders as rewards, based on their amount of staked PPY.
+PPY \(Peerplays coin\) is the native asset of the Peerplays network. Staking this asset provides voting power for voting on witnesses, SONs, advisors, and more. In addition, all exchanges that take place in the Peerplays Dex are based on exchanging assets with PPY. Currently a portion of all transaction fees within Peerplays is redistributed back to PPY holders as rewards, based on their amount of staked PPY.
 
 PPY is the main store of value in Peerplays and is used to pay for transaction fees on the network.
 
