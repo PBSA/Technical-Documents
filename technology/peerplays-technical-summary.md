@@ -2,25 +2,25 @@
 
 ## Introducing Peerplays
 
-Peerplays is a decentralized, provably fair global gaming platform, built on the most advanced blockchain technology available today. Peerplays brings a new paradigm of fairness, speed, transparency, and security to the global gaming industry.
+Peerplays is a decentralized, global crypto platform, built on the most advanced blockchain technology available today. Peerplays brings a new paradigm of fairness, speed, transparency, and security to the global economy.
 
-Peerplays’ decentralization is based on the Delegated Proof of Stake \(DPoS\) consensus model, meaning that blocks are produced by a group of ‘Witness’ nodes which are elected by stake-weighted token holder voting. 
+Peerplays’ decentralization is based on the Delegated Proof of Stake \(DPoS\) consensus model, meaning that blocks are produced by a group of "Witness" nodes which are elected by stake-weighted token holder voting. 
 
 In addition to the Witnesses are the Advisors, a group of blockchain accounts, likewise elected by token holder voting, which vote to specify configurable blockchain parameters, and vote to include or reject proposed new features and other modifications to the consensus protocol.
 
-Peerplays is a smart contracting platform specifically targeted at gaming contracts. 
+Peerplays is a smart contracting platform specifically targeted at humanizing crypto economies. 
 
 {% hint style="warning" %}
-Note: Peerplays is not a _Turing complete_ smart contracting platform, meaning that Peerplays does not support arbitrary, user-defined smart contracts; rather, it provides a well-defined set of officially maintained, built-in contracts. This is in contrast to _Turing complete_ smart contracting platforms like EOS or Ethereum, which provide few to no official contracts, but allow users to define and share contracts without any formally defined quality or correctness verification.
+Peerplays is not a _Turing complete_ smart contracting platform, meaning that Peerplays does not support arbitrary, user-defined smart contracts; rather, it provides a well-defined set of officially maintained, built-in contracts. This is in contrast to _Turing complete_ smart contracting platforms like EOS or Ethereum, which provide few to no official contracts, but allow users to define and share contracts without any formally defined quality or correctness verification.
 {% endhint %}
 
-This document is intended to give new Peerplays developers an introduction to the Peerplays architecture and software. Readers are expected to be familiar with C++ software development in general, but not with Peerplays specifically. 
+This document is intended to give new Peerplays developers an introduction to the Peerplays architecture and software. Readers are expected to be familiar with C++ software development in general, but not with Peerplays specifically.
 
 This document will walk readers through the code repository structure and how to build the software; describe the individual libraries and executables and their purposes; and examine how the smart contracts work and discuss how to create or modify Peerplays smart contracts.
 
 ## Graphene
 
-Graphene is the underlying technology behind the Peerplays blockchain.vIt's an open-source blockchain technology, mainly written in C++. The Graphene source is available in numerous variations, as it has been forked and adapted many times.
+Graphene is the underlying technology behind the Peerplays blockchain. It's an open-source blockchain technology, mainly written in C++. The Graphene source is available in numerous variations, as it has been forked and adapted many times.
 
 There is no other known blockchain like Graphene that can even try to compete in the processing such a high number of transactions this blockchain already can. 
 
@@ -29,7 +29,7 @@ Graphene-based coins can do something Bitcoin was never capable of, and will nev
 A few of the advantages of Graphene are:
 
 * Can push over 10,000 transactions per second \(TPS\), versus Bitcoin, currently at around 7 transactions per second - this could mean Bitcoin payments hanging for 3-4 days!
-* Best in class block productional and transaction finality at three seconds compared to Bitcoin at 10 minutes.
+* Best-in-class block production and transaction finality at three seconds compared to Bitcoin at 10 minutes.
 * Supports payments with zero commission. Users can transfer coins from one account to another absolutely free of charge.
 * Uses the Delegated Proof of Stake \(DPOS\) algorithm instead of Proof of work \(POW\).
 * The possibility of working with several tokens in one system at once.
@@ -55,7 +55,7 @@ Apart from Witnesses, the token holders also elect Advisors who have the privile
 
 Under DPOS the administrative authority rests in the hands of the users, just like a democracy. But unlike Witnesses, the Advisors are not compensated for retaining their positions.
 
-Building on the success of the DPOS consensus mechanism, Peerplays introduces a unique enhancement called **Gamified Proof of Stake \(GPOS\)**. 
+Building on the success of the DPOS consensus mechanism, Peerplays introduces a unique enhancement called **Gamified Proof of Stake \(GPOS\)**.
 
 The original intent of Peerplays was to operate as a Decentralized Autonomous Cooperative \(DAC\) where DPOS enables the voting collective of core token holders to determine who would act as Advisors, Witness, and Proposals within Peerplays. However, the challenges of voter turnout continue to plague Peerplays like other DPOS based blockchains. 
 
