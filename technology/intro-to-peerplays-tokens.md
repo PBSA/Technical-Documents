@@ -27,7 +27,7 @@ Many different types of tokens exist in the world of crypto. Peerplays uses the 
 Tokens are sometimes called "assets". The terms are pretty much interchangeable, at least for the purposes of this document.
 {% endhint %}
 
-### 2.1. Native Assets
+### 2.1. Native Assets \(coins\)
 
 The native assets within Peerplays are the coins which provide voting power when staked. The native asset of the Peerplays network itself is PPY. Communities within the Peerplays network may also have their own native asset. In this case, when the community native asset is staked, you would gain voting power for the governance of that community.
 
