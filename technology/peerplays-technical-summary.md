@@ -6,7 +6,7 @@ Peerplays is a decentralized, global crypto platform, built on the most advanced
 
 Peerplays’ decentralization is based on the Delegated Proof of Stake \(DPoS\) consensus model, meaning that blocks are produced by a group of "Witness" nodes which are elected by stake-weighted token holder voting. 
 
-In addition to the Witnesses are the Advisors, a group of blockchain accounts, likewise elected by token holder voting, which vote to specify configurable blockchain parameters, and vote to include or reject proposed new features and other modifications to the consensus protocol.
+In addition to the Witnesses and the Advisors, a group of blockchain accounts, likewise elected by token holder voting, which vote to specify configurable blockchain parameters, and vote to include or reject proposed new features and other modifications to the consensus protocol.
 
 Peerplays is a smart contracting platform specifically targeted at humanizing crypto economies. 
 
