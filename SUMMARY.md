@@ -6,6 +6,7 @@
 
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Intro to Peerplays Tokens](technology/intro-to-peerplays-tokens.md)
+* [Staking Assets in Peerplays Liquidity Pools](technology/staking-assets-in-peerplays-liquidity-pools.md)
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
 * [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos/README.md)
