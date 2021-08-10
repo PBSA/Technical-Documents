@@ -77,3 +77,19 @@ The table below contrasts the trading methods of swapping and order book trading
 
 Peerplays asset swapping is one of the fastest ways to exchange one asset for another. Once you visit the Peerplays DEX and sign in, you have the ability to deposit assets to your Peerplays account. Then on the swap tab, you'll be able to select the assets you'd like to exchange.
 
+## 4. Liquidity Pools Flow Diagram
+
+The diagram below shows the essence of Liquidity Pools. A more detailed liquidity pool diagram with use case examples can be [found here](../staking-in-peerplays.md).
+
+![](../../.gitbook/assets/lps-basic-diagram.png)
+
+### 4.1. Downloads
+
+The Diagram in PDF form to easily view and share:
+
+{% file src="../../.gitbook/assets/lps-basic-diagram.pdf" caption="Liquidity Pools Diagram \(PDF\)" %}
+
+The Diagram in Draw.io's XML format. You can edit the diagram using this file in Draw.io:
+
+{% file src="../../.gitbook/assets/lps-basic-diagram.xml" caption="Liquidity Pools Diagram \(Draw.io XML\)" %}
+
