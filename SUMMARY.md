@@ -6,7 +6,8 @@
 
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
 * [Intro to Peerplays Tokens](technology/intro-to-peerplays-tokens.md)
-* [Intro to Peerplays Liquidity Pools](technology/intro-to-peerplays-liquidity-pools.md)
+* [Intro to Peerplays Liquidity Pools](technology/intro-to-peerplays-liquidity-pools/README.md)
+  * [Service Infrastructure Pools](technology/intro-to-peerplays-liquidity-pools/service-infrastructure-pools.md)
 * [Staking \(PowerUp\) in Peerplays](technology/staking-in-peerplays.md)
 * [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
