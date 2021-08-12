@@ -9,7 +9,6 @@
 * [Intro to Peerplays Liquidity Pools](technology/intro-to-peerplays-liquidity-pools/README.md)
   * [Service Infrastructure Pools](technology/intro-to-peerplays-liquidity-pools/service-infrastructure-pools.md)
 * [Staking \(PowerUp\) in Peerplays](technology/staking-in-peerplays.md)
-* [Graphene](technology/page-1.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
 * [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos/README.md)
   * [Wallet User Guide](technology/gamified-proof-of-stake-gpos/user-guide/README.md)
@@ -126,12 +125,6 @@
     * [Error Codes](couch-potato/api-1/api-reference/error-codes.md)
   * [BOS Schema](couch-potato/api-1/bos-schema.md)
 * [Proxy Payment Considerations](couch-potato/proxy-payment-considerations.md)
-
-## CLI Wallet
-
-* [User Issued Assets \(UIAs\)](cli-wallet/user-issued-assets-uias.md)
-* [CLI Wallet Commands](cli-wallet/cli-wallet-commands.md)
-* [cli\_wallet & SON](cli-wallet/cli_wallet-and-son.md)
 
 ## Random Number Generator \(RNG\)
 
