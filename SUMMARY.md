@@ -9,6 +9,7 @@
 * [Intro to Peerplays Liquidity Pools](technology/intro-to-peerplays-liquidity-pools/README.md)
   * [Service Infrastructure Pools](technology/intro-to-peerplays-liquidity-pools/service-infrastructure-pools.md)
 * [Staking \(PowerUp\) in Peerplays](technology/staking-in-peerplays.md)
+* [Gamified User Namespaces and Subject Matter Expert Committees](technology/gamified-user-namespaces-and-subject-matter-expert-committees.md)
 * [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
 * [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos/README.md)
   * [Wallet User Guide](technology/gamified-proof-of-stake-gpos/user-guide/README.md)
