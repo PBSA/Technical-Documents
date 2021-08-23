@@ -61,7 +61,7 @@ It is only when all aspects of an organization are delegated that an organizatio
 
 ## Appendix A
 
-Ecological systems theory was developed by Urie Bronfenbrenner. The five systems \(and the individual\) described in his theory, and outlined in Figure 1 \(above\) are as follows:
+Ecological systems theory was developed by Urie Bronfenbrenner. The six systems described in his theory, and outlined in Figure 1 \(above\) are as follows:
 
 **Individual** \(or Organization\): ****This can represent a member of the organization or the organization itself, depending on the context.
 
