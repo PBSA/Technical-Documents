@@ -2,6 +2,10 @@
 
 * [Introduction to Peerplays](README.md)
 
+## Concepts
+
+* [Decentralization](concepts/decentralization.md)
+
 ## Technology
 
 * [Peerplays Technical Summary](technology/peerplays-technical-summary.md)
