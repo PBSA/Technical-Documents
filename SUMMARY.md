@@ -5,6 +5,7 @@
 ## Concepts
 
 * [Decentralization](concepts/decentralization.md)
+* [Consensus Mechanisms Compared](concepts/consensus-mechanisms-compared.md)
 
 ## Technology
 
