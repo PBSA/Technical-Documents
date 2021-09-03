@@ -183,6 +183,7 @@
 
 ## GitLab
 
+* [GitLab Ticket Templates](gitlab/gitlab-ticket-templates.md)
 * [Labels](gitlab/labels.md)
 * [Time Tracking](gitlab/time-tracking.md)
 
