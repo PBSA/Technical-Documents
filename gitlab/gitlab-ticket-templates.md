@@ -38,7 +38,7 @@ Key Elements of a Bug ticket:
 7. Due Date: Can be left blank. It's useful if the issue is blocking something with a deadline.
 8. Milestone: If known, select the best related milestone.
 9. Labels \(Required\): The following _three label types_ must be provided, but others can be added if necessary. See [Labels &gt; Scoped Labels](https://community.peerplays.tech/gitlab/labels#scoped-labels) for more info.
-   1. Priority: \(low, medium, high, or critical\) see the chart in Appendix A for help deciding the priority level.
+   1. Priority: \(low, medium, high, or critical\) see the chart in [Appendix A](gitlab-ticket-templates.md#appendix-a-determining-ticket-priority) for help deciding the priority level.
    2. Type: bug \(in the case of this template!\)
    3. State: pending \(for new tickets\)
 
@@ -62,7 +62,7 @@ Key Elements of a User Story:
 7. Due Date: Can be left blank. It's useful if the issue is blocking something with a deadline.
 8. Milestone: If known, select the best related milestone.
 9. Labels \(Required\): The following _three label types_ must be provided, but others can be added if necessary. See [Labels &gt; Scoped Labels](https://community.peerplays.tech/gitlab/labels#scoped-labels) for more info.
-   1. Priority: \(low, medium, high, or critical\) see the chart in Appendix A for help deciding the priority level.
+   1. Priority: \(low, medium, high, or critical\) see the chart in [Appendix A](gitlab-ticket-templates.md#appendix-a-determining-ticket-priority) for help deciding the priority level.
    2. Type: feature \(in the case of this template!\)
    3. State: pending \(for new tickets\)
 
