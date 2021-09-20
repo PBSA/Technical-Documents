@@ -133,25 +133,33 @@ Or just the section headers if you prefer...
 ## Description
 
 
+
 ## Preconditions
+
 
 
 ## Affected Version(s)
 
 
+
 ## Scenario
+
 
 
 ## Current Bugged Behavior
 
 
+
 ## Expected Correct Behavior
+
 
 
 ## Attempted Fixes
 
 
+
 ## Possible Fixes
+
 
 
 ```
@@ -186,10 +194,13 @@ Or just the section headers if you prefer...
 ## Description
 
 
+
 ## Affected Version(s)
 
 
+
 ## Acceptance Criteria
+
 
 
 ```
