@@ -74,3 +74,123 @@ The priority of a ticket depends on a mix of aspects. Applying a priority is sub
 
 {% file src="../.gitbook/assets/ticket-priority-matrix.xml" caption="Ticket Priority Matrix \(Draw.io XML\)" %}
 
+## Appendix B - Copy / Paste Description Templates
+
+### Bugs
+
+Here is a template that you can quickly copy and paste into the Description field in the new GitLab bug ticket. This one has information to help guide you when entering information into the ticket.
+
+```text
+## Description
+
+(Required) Describe the bug here.
+
+## Preconditions
+
+(If necessary) In order to run the Scenario steps properly, list any preconditions.
+
+- Precondition A
+- Precondition B
+
+## Affected Version(s)
+
+(If known) List the build(s) where the issue has been observed.
+
+- Build A
+- Build B
+
+## Scenario
+
+(Required) The steps to reproduce the issue. Should be clear, direct, and have enough details to be reproducible.
+
+1. Step 1...
+2. Step 2...
+3. Step 3...
+
+## Current Bugged Behavior
+
+(Required) The observed issue as it actually happens.
+
+## Expected Correct Behavior
+
+(Required) The requirements that describe a successful outcome. Simply, what should happen.
+
+## Attempted Fixes
+
+(Required, even if nothing) What has already been done to try to solve the issue, and the results of the attempts.
+
+## Possible Fixes
+
+(If possible) Link to the line of code that might be responsible for the problem. Or list other insights into the problem.
+
+**Note**: Don't forget to attach any relevant files, and to use quick actions to link related issues or add time estimates. Then delete this note!
+
+```
+
+Or just the section headers if you prefer...
+
+```text
+## Description
+
+
+## Preconditions
+
+
+## Affected Version(s)
+
+
+## Scenario
+
+
+## Current Bugged Behavior
+
+
+## Expected Correct Behavior
+
+
+## Attempted Fixes
+
+
+## Possible Fixes
+
+
+```
+
+### User Stories
+
+Here is a template that you can quickly copy and paste into the Description field in the new GitLab user story ticket. This one has information to help guide you when entering information into the ticket.
+
+```text
+## Description
+
+(Required) Describe the user story.
+
+## Affected Version(s)
+
+(If necessary) List the build(s) where the issue applies.
+
+- Build A
+- Build B
+
+## Acceptance Criteria
+
+(Required) The clear definition of the final solution. What does the goal look like?
+
+**Note**: Don't forget to attach any relevant files, and to use quick actions to link related issues or add time estimates. Then delete this note!
+
+```
+
+Or just the section headers if you prefer...
+
+```text
+## Description
+
+
+## Affected Version(s)
+
+
+## Acceptance Criteria
+
+
+```
+
