@@ -195,3 +195,7 @@
 * [Infrastructure Docs](https://infra.peerplays.tech)
 * [Developer Docs](https://devs.peerplays.tech)
 
+## Known Issues
+
+* [Sept 2021 Mainnet Outage - Postmortem Report](known-issues/sept-2021-mainnet-outage-postmortem-report.md)
+
