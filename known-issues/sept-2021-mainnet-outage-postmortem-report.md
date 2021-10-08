@@ -108,7 +108,7 @@ The known impacts of the mainnet outage are as follows:
 * External third-party programs and websites using the Peerplays API could not access chain data.
 * Witnesses were not producing blocks and so were not given block production pay during the outage.
 
-Although the impacts were far reaching in scope, the damage was minimal because of the low utilization of the network as evidenced by the low level of transactions over the preceding months. Brining the mainnet back online restored functionality and has mitigated the impacts listed above.
+Although the impacts were far reaching in scope, the damage was minimal because of the low utilization of the network as evidenced by the low level of transactions over the preceding months. Bringing the mainnet back online restored functionality and has mitigated the impacts listed above.
 
 ## 5. Incident Resolution
 
@@ -126,7 +126,13 @@ The solution, step-by-step:
 
 ## 6. Lessons Learned
 
-Ultimately, the higher the risk that a mainnet outage would cause also means the system will be more resistant to such issues. A high level of network utilization means a more engaged community. Bringing more value to the network by providing dApps and onboarding more third-party solutions will do more for protecting the network than trying to fool-proof the system in its early stages.
+Ultimately, the higher the risk that a mainnet outage would cause also means the system will be more resistant to such issues. A high level of network utilization means a more engaged community. Bringing more value to the network by providing dApps and on-boarding more third-party solutions will do more for protecting the network than trying to fool-proof the system in its early stages.
 
 The most good that can be done for preventing further incidents such as this will be in planning for system recovery. Until the network is highly utilized, having protocols in place to shorten the downtime would be the best use of our time.
+
+## 7. Action Items
+
+1. The need for a disaster recovery \(DR\) plan has been identified due to this incident. The DR plan must include ways of mitigating the specific risks causing the September mainnet outage and a protocol for recovering the network should an outage happen again. The DR plan should include similar plans for systems other than the Peerplays mainnet.
+2. The need for a disaster communications \(DC\) plan has also been identified due to this incident. The DC plan should cover communications protocols during and after outage events.
+3. A simple network monitoring tool should be developed to warn about potential adverse events and to give a simple health check when required.
 
