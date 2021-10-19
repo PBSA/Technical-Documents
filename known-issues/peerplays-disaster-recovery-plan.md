@@ -1,10 +1,6 @@
----
-title: Peerplays Chain Disaster Recovery Plan
----
-
 # Peerplays Disaster Recovery Plan
 
-The objective of this disaster recovery \(DR\) plan is to ensure that anyone can respond to a disaster or other emergency that affects the Peerplays Blockchain and minimize the effect on the operation of the blockchain. This document should be stored in a safe, accessible location off site.
+The objective of this disaster recovery (DR) plan is to ensure that anyone can respond to a disaster or other emergency that affects the Peerplays Blockchain and minimize the effect on the operation of the blockchain. This document should be stored in a safe, accessible location off site.
 
 ## 1. Goals
 
@@ -34,9 +30,9 @@ The Peerplays chain and all its plugins is stored in GitLab and GitHub. Build ar
 
 #### Witness Nodes
 
-The witness\_node program is distributed across many private \(node operator\) servers. Each node operator is responsible for maintaining their own copy of the Peerplays source code and builds. This is most often done on GitHub though individuals may store local copies and follow their own procedures.
+The witness\_node program is distributed across many private (node operator) servers. Each node operator is responsible for maintaining their own copy of the Peerplays source code and builds. This is most often done on GitHub though individuals may store local copies and follow their own procedures.
 
-The Peerplays database is synchronized among all running \(active and inactive\) witness nodes. This decentralized and distributed approach makes the database integrity and security extremely robust. Even if the mainnet has an outage, the database remains intact and duplicated across potentially dozens of individual servers globally.
+The Peerplays database is synchronized among all running (active and inactive) witness nodes. This decentralized and distributed approach makes the database integrity and security extremely robust. Even if the mainnet has an outage, the database remains intact and duplicated across potentially dozens of individual servers globally.
 
 ### 3.2. Documentation
 
@@ -46,37 +42,27 @@ Documentation that is currently being worked on is sometimes stored on personal 
 
 #### GitBook.com Resources
 
-* [https://docs.gitbook.com/resources/faq\#where-and-how-is-my-data-stored](https://docs.gitbook.com/resources/faq#where-and-how-is-my-data-stored)
-* Gitbook Support is available in the gitbook app. Once logged in, go to Spaces &gt; "?" menu \(lower left\) &gt; Contact Support
+* [https://docs.gitbook.com/resources/faq#where-and-how-is-my-data-stored](https://docs.gitbook.com/resources/faq#where-and-how-is-my-data-stored)
+* Gitbook Support is available in the gitbook app. Once logged in, go to Spaces > "?" menu (lower left) > Contact Support
 
 ### 3.3. Source Code
 
-Peerplays source code is stored and hosted on GitLab.com \(a SaaS solution\). The source code is then mirrored to GitHub.com \(another SaaS solution\). Since both GitLab and GitHub are third-party providers, for the purposes of this DR plan, it is assumed that these providers have sufficient recovery capabilities on their own and that recovery of our source code is covered under their DR plans and protocols.
+Peerplays source code is stored and hosted on GitLab.com (a SaaS solution). The source code is then mirrored to GitHub.com (another SaaS solution). Since both GitLab and GitHub are third-party providers, for the purposes of this DR plan, it is assumed that these providers have sufficient recovery capabilities on their own and that recovery of our source code is covered under their DR plans and protocols.
 
 #### GitLab.com Resources
 
 * [https://about.gitlab.com/handbook/engineering/infrastructure/production/architecture/](https://about.gitlab.com/handbook/engineering/infrastructure/production/architecture/)
 * [https://about.gitlab.com/handbook/engineering/infrastructure/faq/](https://about.gitlab.com/handbook/engineering/infrastructure/faq/)
-* [https://status.gitlab.com/](https://status.gitlab.com/)
-* [https://about.gitlab.com/support/\#contact-support](https://about.gitlab.com/support/#contact-support)
+* [https://status.gitlab.com/](https://status.gitlab.com)
+* [https://about.gitlab.com/support/#contact-support](https://about.gitlab.com/support/#contact-support)
 
 #### GitHub.com Resources
 
 * [https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository](https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository)
-* [https://www.githubstatus.com/](https://www.githubstatus.com/)
+* [https://www.githubstatus.com/](https://www.githubstatus.com)
 * [https://support.github.com/request](https://support.github.com/request)
 
-### 3.4. Peerplays.com
-
-#### Source Code
-
-The website Peerplays.com has its source code stored in GitHub. The website is static and requires no database or dynamic data. No data backup is required.
-
-#### Hosting
-
-Peerplays.com is hosted on a PBSA VM.
-
-### 3.5. Peerplays.tech
+### 3.4. Peerplays.tech
 
 #### Source Code
 
@@ -96,20 +82,20 @@ Peerplays.tech is hosted on a PBSA VM. The following software is used to serve t
 
 The following is a list of all the communication channels, where they are hosted, and what they are primarily used for.
 
-| Communication Channel | Hosting | Uses |
-| :--- | :---: | :--- |
-| Email | Third-Party | Daily internal communications |
-| Telegram | Third-Party | Community discussions, Group discussions \(witnesses\) |
-| Rocket Chat | On-Prem | Internal and Community discussions, Group discussions, Meetings |
-| Jitsi | On-Prem | Meetings |
-| Twitter | Third-Party | Social Media |
-| Facebook | Third-Party | Social Media |
-| Instagram | Third-Party | Social Media |
+| Communication Channel |   Hosting   | Uses                                                            |
+| --------------------- | :---------: | --------------------------------------------------------------- |
+| Email                 | Third-Party | Daily internal communications                                   |
+| Telegram              | Third-Party | Community discussions, Group discussions (witnesses)            |
+| Rocket Chat           |   On-Prem   | Internal and Community discussions, Group discussions, Meetings |
+| Jitsi                 |   On-Prem   | Meetings                                                        |
+| Twitter               | Third-Party | Social Media                                                    |
+| Facebook              | Third-Party | Social Media                                                    |
+| Instagram             | Third-Party | Social Media                                                    |
 
 #### Telegram Resources
 
 * [https://telegram.org/faq](https://telegram.org/faq)
-* [https://telegram.org/faq\#telegram-support](https://telegram.org/faq#telegram-support)
+* [https://telegram.org/faq#telegram-support](https://telegram.org/faq#telegram-support)
 
 ## 4. Hardware Profiles
 
@@ -149,12 +135,12 @@ All source code stored in GitLab is backed up by being mirrored to GitHub. Addit
 
 If a scenario occurs which halts the chain, such as low node operator network participation, temporary witnesses must be used until the network regains stability. In cases like this, the Super-Node solution has been proven to work. Here are the steps required to recover the network:
 
-1. A suitable \(not corrupted or unintentionally forked\) copy of the Peerplays database should be collected.
-2. Provision a Super-Node \(SN\) server using a cloud provider VM.
+1. A suitable (not corrupted or unintentionally forked) copy of the Peerplays database should be collected.
+2. Provision a Super-Node (SN) server using a cloud provider VM.
    1. The SN should be firewalled such that no incoming nodes can sync with the SN.
    2. The database copy should be loaded to the SN.
    3. The latest Peerplays chain code should be installed on the SN.
-   4. The SN should be configured with as many witness nodes as required to recover the network. \(Init accounts and/or collaborating witness accounts\)
+   4. The SN should be configured with as many witness nodes as required to recover the network. (Init accounts and/or collaborating witness accounts)
    5. The SN should be replayed using the database.
    6. The SN should be producing blocks for most or all witnesses at this point.
 3. Seed nodes should be created on the SN machine and synced with the block producing SN node.
@@ -174,17 +160,191 @@ The Telegram channel used for this backup communication is available here: [http
 
 On-Prem servers can then be restored using their initial hardware and software specifications. When the on-prem communication channels have been restored, all personnel should be notified via email and Telegram.
 
-## 7. Testing the Disaster Recovery Plan
+## 7. Procedure for Truncating the Block Index
+
+The blockchain database is located in the `witness_node_data_dir` folder in the following path: `./witness_node_data_dir/blockchain/database/block_num_to_block`
+
+There should be two files here, `blocks` which contains the block data, and `index` which is the index used by the witness node program. To set the database back to a specific block number, a `truncate` operation must be done on the index file.
+
+{% hint style="danger" %}
+You cannot undo a `truncate` on a file. It's best to **always make a backup** of the file and to put the backup in a safe place **before performing a `truncate`**. Otherwise you could potentially corrupt your only copy of the database.
+{% endhint %}
+
+For each block in the database, the index file will contain the index information for the block which requires 32 bytes worth of space. First we'll find the current size of the index file and then divide that number by 32 to see how many blocks are currently stored in the database. Here are the steps (with an example, to illustrate):
+
+1. Use the `ls -l` command in the folder with the database files to find the size (in bytes) of the `index` file.
+2. Take the size of the `index` and divide by 32. The result is the number of currently indexed blocks.
+3. Decide which block you should set the index back to (keeping in mind that each block represents about 3 seconds worth of time if you need to calculate the block number at a certain point in time.)
+4. Take the new block number that you determined in step 3 and multiply that by 32. This will give you the new size that the `index` file must be. You're now ready to truncate.
+5. Use the `truncate` command on the `index` file specifying the new file size that you calculated in step 4. The `truncate` command will return `0` if successful.
+
+An Example:
+
+```bash
+cd ./witness_node_data_dir/blockchain/database/block_num_to_block
+
+# Step 1
+ls -l
+
+drwxr-xr-x 2 bunker bunker       4096 Sep 13 04:01 ./
+drwxr-xr-x 3 bunker bunker       4096 Sep 13 04:01 ../
+-rw-r--r-- 1 bunker bunker 6982339677 Sep 13 10:54 blocks
+-rw-r--r-- 1 bunker bunker 1386818464 Sep 13 10:54 index
+
+# Step 2
+# 1386818464 / 32 = 43,338,077 (last block # indexed)
+
+# Step 3
+# we should go back 10,000 blocks, so 43,338,077 - 10,000 = 43,328,077
+
+# Step 4
+# 43,328,077 * 32 = 1386498464
+
+# Step 5
+truncate --size=1386498464 ./index
+```
+
+## 8. Testing the Disaster Recovery Plan
 
 A local testnet can be set up for testing using the standard procedure for [standing up a local testnet](https://infra.peerplays.tech/advanced-topics/private-testnets/private-testnets-manual-install). Once the testnet is running, it's possible to run various DR scenarios in a safe and controlled manner.
 
-### 7.1 Testing Network Recovery Procedures
+### 8.1 Testing Network Recovery Procedures
 
 Testing a mainnet outage can be achieved by setting up a local testnet with two sets of witnesses and some voting accounts. To cause a chain halt:
 
 1. The local testnet contains the entire network.
-2. Vote for mis-configured witness accounts until they become active and eventually halt the chain.
+2. Vote for misconfigured witness accounts until they become active and eventually halt the chain.
 3. Another testnet can be configured at this point to act as the Super-Node in this test.
 4. The database can be recovered from the first testnet, processed to be suitable for a restart, and used in the second testnet.
 5. The protocol in section 6.1. above can be used at this point to test the outage recovery scenario.
 
+## 9. Example Config.ini File
+
+Here is an example `config.ini` file which demonstrates the use of checkpoints:
+
+```
+# Endpoint for P2P node to listen on
+p2p-endpoint = 0.0.0.0:9777
+
+# P2P nodes to connect to on startup (may specify multiple times)
+seed-node = 96.46.48.98:19777
+seed-node = 96.46.48.98:29777
+seed-node = 96.46.48.98:39777
+seed-node = 96.46.48.98:49777
+seed-node = 96.46.48.98:59777
+
+# JSON array of P2P nodes to connect to on startup
+seed-nodes = []
+
+# Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
+#"2021-09-09T21:59:33"
+checkpoint = ["43328076","0295224c22b145b43c6ed6d4d56390b7fddb4758"]
+#"2021-09-14T20:41:27"
+checkpoint = ["43328077","0295224df70e863823bc29bb171e8380cd0d5f14"]
+#"2021-09-14T20:41:45"
+checkpoint = ["43328078","0295224e77097787cb53a4a573ac253f27912df9"]
+#"2021-09-14T20:41:54"
+checkpoint = ["43328079","0295224f0cbce57e982f68420a99de051f930636"]
+#"2021-09-15T01:23:03"
+checkpoint = ["43333079","029535d7245f2185541980db609f83afcafba04c"]
+#"2021-09-15T05:55:06"
+checkpoint = ["43338079","0295495fbf60a36d3070c25df0a82ed2e37155c5"]
+#"2021-09-15T10:28:15"
+checkpoint = ["43343079","02955ce706c015b9fcba279e0d7d45954461f586"]
+#"2021-09-15T14:59:30"
+checkpoint = ["43348079","0295706f11aa31f3f99579b232e184ec3a920cd3"]
+#"2021-09-15T19:32:24"
+checkpoint = ["43353079","029583f7af8a0784a391cdba382016b4c01f4bce"]
+#"2021-09-16T00:03:42"
+checkpoint = ["43358079","0295977f1764106629878a0d6e032d22f4ebaed3"]
+#"2021-09-16T02:56:24"
+checkpoint = ["43361260","0295a3ece12430f3f29def8c1fe16eaca07c9e9c"]
+
+# Endpoint for websocket RPC to listen on
+rpc-endpoint = 0.0.0.0:8090
+
+# Endpoint for TLS websocket RPC to listen on
+# rpc-tls-endpoint =
+
+# The TLS certificate file for this server
+# server-pem =
+
+# Password for this certificate
+# server-pem-password =
+
+# File to read Genesis State from
+# genesis-json =
+
+# Block signing key to use for init witnesses, overrides genesis file
+# dbg-init-key =
+
+# JSON file specifying API permissions
+# api-access =
+
+# Whether to enable tracking of votes of standby witnesses and committee members. Set it to true to provide accurate data to API clients, set to false for slightly better performance.
+# enable-standby-votes-tracking =
+
+# Space-separated list of plugins to activate
+plugins = witness account_history market_history accounts_list affiliate_stats bookie peerplays_sidechain
+
+
+# ==============================================================================
+# witness plugin options
+# ==============================================================================
+
+# Enable block production, even if the chain is stale.
+enable-stale-production = false
+
+# Percent of witnesses (0-99) that must be participating in order to produce blocks
+required-participation = false
+
+# ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
+witness-id = "1.6.###"
+
+# IDs of multiple witnesses controlled by this node (e.g. ["1.6.5", "1.6.6"], quotes are required)
+# witness-ids =
+
+# Tuple of [PublicKey, WIF private key] (may specify multiple times)
+private-key = ["PPY...","5K..."]
+
+
+# ==============================================================================
+# peerplays_sidechain plugin options
+# ==============================================================================
+
+# ID of SON controlled by this node (e.g. "1.33.5", quotes are required)
+# son-id =
+
+# IDs of multiple SONs controlled by this node (e.g. ["1.33.5", "1.33.6"], quotes are required)
+# son-ids =
+
+# Tuple of [PublicKey, WIF private key] (may specify multiple times)
+peerplays-private-key = ["PPY...","5K..."]
+
+# IP address of Bitcoin node
+bitcoin-node-ip = 127.0.0.1
+
+# ZMQ port of Bitcoin node
+bitcoin-node-zmq-port = 11111
+
+# RPC port of Bitcoin node
+bitcoin-node-rpc-port = 8332
+
+# Bitcoin RPC user
+bitcoin-node-rpc-user = 1
+
+# Bitcoin RPC password
+bitcoin-node-rpc-password = 1
+
+# Bitcoin wallet
+bitcoin-wallet = son-wallet
+
+# Bitcoin wallet password
+# bitcoin-wallet-password =
+
+# Tuple of [Bitcoin public key, Bitcoin private key] (may specify multiple times)
+bitcoin-private-key = ["02...","..."]
+
+# Sidechain retry throttling threshold
+sidechain-retry-threshold = 150
+```
