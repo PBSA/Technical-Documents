@@ -80,7 +80,7 @@ map<string, witness_id_type> graphene::wallet::wallet_api::list_witnesses(
 {% tabs %}
 {% tab title="Parameters" %}
 * `lowerbound`: the name of the first Witness to return. If the named Witness does not exist, the list will start at the witness that comes after `lowerbound`
-* `limit`: the maximum number of Witness's to return \(max: 1000\)
+* `limit`: the maximum number of Witness's to return (max: 1000)
 {% endtab %}
 
 {% tab title="Return" %}
@@ -103,7 +103,7 @@ map<string, committee_member_id_type> graphene::wallet::wallet_api::list_committ
 {% tabs %}
 {% tab title="Parameters" %}
 * **`lowerbound`**: the name of the first committee\_member to return. If the named committee\_member does not exist, the list will start at the committee\_member that comes after `lowerbound`
-* **`limit`**: the maximum number of committee\_members to return \(max: 1000\)
+* **`limit`**: the maximum number of committee\_members to return (max: 1000)
 {% endtab %}
 
 {% tab title="Return" %}
@@ -181,10 +181,10 @@ signed_transaction graphene::wallet::wallet_api::create_worker(
 * **`owner_account`**: The account which owns the worker and will be paid
 * **`work_begin_date`**: When the work begins
 * **`work_end_date`**: When the work ends
-* **`daily_pay`**: Amount of pay per day \(NOT per maint interval\)
+* **`daily_pay`**: Amount of pay per day (NOT per maint interval)
 * **`name`**: Any text
 * **`url`**: Any text
-* **`worker_settings`**: {“type” : “burn”\|”refund”\|”vesting”, “pay\_vesting\_period\_days” : x}
+* **`worker_settings`**: {“type” : “burn”|”refund”|”vesting”, “pay\_vesting\_period\_days” : x}
 * **`broadcast`**: true if you wish to broadcast the transaction.
 {% endtab %}
 
@@ -207,7 +207,7 @@ signed_transaction graphene::wallet::wallet_api::update_worker_votes(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`account`**: The account which will pay the fee and update votes.
-* **`delta`**: {“vote\_for” : \[…\], “vote\_against” : \[…\], “vote\_abstain” : \[…\]}
+* **`delta`**: {“vote\_for” : \[…], “vote\_against” : \[…], “vote\_abstain” : \[…]}
 * **`broadcast`**: true if you wish to broadcast the transaction.
 {% endtab %}
 
@@ -223,7 +223,7 @@ Vote for a given committee\_member.
 An account can publish a list of all committee\_members they approve of. This command allows you to add or remove committee\_members from this list. Each account’s vote is weighted according to the number of shares of the core asset owned by that account at the time the votes are tallied.
 
 {% hint style="warning" %}
-**Note:** You can't vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.
+**Note: **You can't vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.
 {% endhint %}
 
 ```cpp
@@ -311,9 +311,9 @@ The signed transaction changing your vote proxy settings
 
 Set your vote for the number of witnesses and committee\_members in the system.
 
-Each account can voice their opinion on how many committee\_members and how many witnesses there should be in the active committee\_member/active witness list. These are independent of each other. You must vote your approval of at least as many committee\_members or witnesses as you claim there should be \(you can’t say that there should be 20 committee\_members but only vote for 10\).
+Each account can voice their opinion on how many committee\_members and how many witnesses there should be in the active committee\_member/active witness list. These are independent of each other. You must vote your approval of at least as many committee\_members or witnesses as you claim there should be (you can’t say that there should be 20 committee\_members but only vote for 10).
 
-There are maximum values for each set in the blockchain parameters \(currently defaulting to 1001\).
+There are maximum values for each set in the blockchain parameters (currently defaulting to 1001).
 
 This setting can be changed at any time. If your account has a voting proxy set, your preferences will be ignored.
 
@@ -389,4 +389,3 @@ signed_transaction graphene::wallet::wallet_api::propose_fee_change(
 The signed version of the transaction
 {% endtab %}
 {% endtabs %}
-

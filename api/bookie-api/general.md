@@ -1,6 +1,6 @@
 # General
 
-This page documents the BookiePro data abstraction layer with the Peerplays blockchain. 
+This page documents the BookiePro data abstraction layer with the Peerplays blockchain.&#x20;
 
 BookiePro communicates with the blockchain using web-socket API calls.
 
@@ -83,7 +83,7 @@ ChainStore.prototype.getEventGroupsList = function getEventGroupsList(sportId) {
 
 ### list\_betting\_market\_groups
 
-Get a list of all betting market groups for an event, for example, Moneyline and OVER/UNDER for soccer\)
+Get a list of all betting market groups for an event, for example, Moneyline and OVER/UNDER for soccer)
 
 ```javascript
 Apis.instance().db_api().exec( "list_betting_market_groups", [eventId] )
@@ -132,7 +132,7 @@ ChainStore.prototype.getBettingMarketGroupsList = function getBettingMarketGroup
 
 ### list\_betting\_markets
 
-Get a list of all betting markets for a betting market group \(BMG\).
+Get a list of all betting markets for a betting market group (BMG).
 
 ```javascript
 Apis.instance().db_api().exec( "list_betting_markets", [bettingMarketGroupId] )
@@ -140,7 +140,7 @@ Apis.instance().db_api().exec( "list_betting_markets", [bettingMarketGroupId] )
 
 {% tabs %}
 {% tab title="Parameters" %}
-`bettingMarketGroupId:` The id of the betting market group that the betting markets are to be listed for.
+`bettingMarketGroupId: `The id of the betting market group that the betting markets are to be listed for.
 {% endtab %}
 
 {% tab title="Return" %}
@@ -217,8 +217,8 @@ Apis.instance().bookie_api().exec( "get_binned_order_book", [ betting_market_id,
 
 {% tabs %}
 {% tab title="Parameters" %}
-* `betting_market_id:` The id of the betting market for the order book.
-* `precision:` Precision
+* `betting_market_id: `The id of the betting market for the order book.
+* `precision: `Precision
 {% endtab %}
 
 {% tab title="Return" %}
@@ -244,7 +244,7 @@ ChainStore.getBinnedOrderBook = function getBinnedOrderBook(betting_market_id, p
 
 ### get\_total\_matched\_bet\_amount\_for\_betting\_market\_group
 
-Get the total matched bets for a betting market group \(BMG\).
+Get the total matched bets for a betting market group (BMG).
 
 ```javascript
 Apis.instance().bookie_api().exec( "get_total_matched_bet_amount_for_betting_market_group", [ group_id ] )
@@ -286,7 +286,7 @@ Apis.instance().bookie_api().exec( "get_events_containing_sub_string", [ sub_str
 
 {% tabs %}
 {% tab title="Parameters" %}
-* `sub_string:` The \(sub\) string of text to search for
+* `sub_string:` The (sub) string of text to search for
 * `language`: Language id.
 {% endtab %}
 
@@ -485,4 +485,3 @@ ChainStore.getAllMatchedBetsForBettor = function getAllMatchedBetsForBettor(bett
 ```
 {% endtab %}
 {% endtabs %}
-

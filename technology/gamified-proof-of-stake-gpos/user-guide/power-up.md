@@ -4,7 +4,7 @@ After clicking on the `Power Up` button on the [GPOS landing page](gpos-landing-
 
 ![](../../../.gitbook/assets/screen-shot-2020-02-13-at-2.27.10-pm.png)
 
-The functionality of this screen is very straightforward. Simply select an amount of PPY to vest by either entering it in the Deposit field, or scroll the amount up and down using the `+` and `-` buttons.
+The functionality of this screen is very straightforward. Simply select an amount of PPY to vest by either entering it in the Deposit field, or scroll the amount up and down using the `+` and `- `buttons.
 
 {% hint style="danger" %}
 **Important**: You might think you can vest 100% of your PPY balance to get the maximum participation rewards. However, each time you create a vested balance there is a 1PPY transaction fee. This means that you must leave at least this amount in your balance in order to perform the Power Up.
@@ -17,4 +17,3 @@ Click on the `CANCEL` button to leave this screen without saving any changes. Or
 {% hint style="warning" %}
 **Note**: Creating a GPOS balance doesn't yet qualify you to receive participation rewards, you must still [vote](vote.md).
 {% endhint %}
-

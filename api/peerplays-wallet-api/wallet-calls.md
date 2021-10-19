@@ -20,9 +20,9 @@ _True_ if the wallet is new.
 
 ### is\_locked
 
-Checks whether the wallet is locked \(is unable to use its private keys\).
+Checks whether the wallet is locked (is unable to use its private keys).
 
-This state can be changed by calling [`lock()`](wallet-calls.md#lock) or [`unlock()`](wallet-calls.md#unlock)\`\`
+This state can be changed by calling [`lock()`](wallet-calls.md#lock) or [`unlock()`](wallet-calls.md#unlock)``
 
 ```cpp
 bool graphene::wallet::wallet_api::is_locked()const
@@ -57,7 +57,7 @@ void graphene::wallet::wallet_api::unlock(
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`password`**: the password previously set with [`set_password()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a2a5d174ec4fde8633b8e962fabc00804)
+* **`password`**: the password previously set with [`set_password()`](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1a2a5d174ec4fde8633b8e962fabc00804)
 {% endtab %}
 {% endtabs %}
 
@@ -84,7 +84,7 @@ void graphene::wallet::wallet_api::set_password(
 
 Dumps all private keys owned by the wallet.
 
-The keys are printed in WIF format. You can import these keys into another wallet using [`import_key()`](wallet-calls.md#import_key)\`\`
+The keys are printed in WIF format. You can import these keys into another wallet using [`import_key()`](wallet-calls.md#import\_key)``
 
 ```cpp
 map<public_key_type, string> graphene::wallet::wallet_api::dump_private_keys()
@@ -92,7 +92,7 @@ map<public_key_type, string> graphene::wallet::wallet_api::dump_private_keys()
 
 {% tabs %}
 {% tab title="Return" %}
-A ****map containing the private keys, indexed by their public key
+A** **map containing the private keys, indexed by their public key
 {% endtab %}
 {% endtabs %}
 
@@ -102,7 +102,7 @@ Imports the private key for an existing account.
 
 The private key must match either an owner key or an active key for the named account.
 
-See also ****[`dump_private_keys()`](wallet-calls.md#dump_private_keys)\`\`
+See also** **[`dump_private_keys()`](wallet-calls.md#dump\_private\_keys)``
 
 ```cpp
 bool graphene::wallet::wallet_api::import_key(
@@ -169,7 +169,7 @@ Whether the import has succeeded
 
 ### import\_balance
 
-This call will construct transaction\(s\) that will claim all balances controlled by wif\_keys and deposit them into the given account.
+This call will construct transaction(s) that will claim all balances controlled by wif\_keys and deposit them into the given account.
 
 ```cpp
 vector<signed_transaction> graphene::wallet::wallet_api::import_balance(
@@ -188,9 +188,9 @@ vector<signed_transaction> graphene::wallet::wallet_api::import_balance(
 
 ### suggest\_brain\_key
 
-Suggests a safe brain key to use for creating your account. [`create_account_with_brain_key()`](account-calls.md#create_account_with_brain_key) requires you to specify a ‘brain key’, a long passphrase that provides enough entropy to generate cryptographic keys. 
+Suggests a safe brain key to use for creating your account. [`create_account_with_brain_key()`](account-calls.md#create\_account\_with\_brain\_key) requires you to specify a ‘brain key’, a long passphrase that provides enough entropy to generate cryptographic keys.&#x20;
 
-This function will suggest a suitably random string that should be easy to write down \(and, with effort, memorize\).
+This function will suggest a suitably random string that should be easy to write down (and, with effort, memorize).
 
 ```cpp
 brain_key_info graphene::wallet::wallet_api::suggest_brain_key()const
@@ -217,7 +217,7 @@ transaction_id_type graphene::wallet::wallet_api::get_transaction_id(
 {% endtab %}
 
 {% tab title="Return" %}
-The ID \(hash\) of the transaction.
+The ID (hash) of the transaction.
 {% endtab %}
 {% endtabs %}
 
@@ -247,7 +247,7 @@ Loads a specified Graphene wallet.
 The current wallet is closed before the new wallet is loaded.
 
 {% hint style="danger" %}
-**Important:** This does not change the filename that will be used for future wallet writes, so this may cause you to overwrite your original wallet unless you also call `set_wallet_filename()`
+**Important: **This does not change the filename that will be used for future wallet writes, so this may cause you to overwrite your original wallet unless you also call `set_wallet_filename()`
 {% endhint %}
 
 ```cpp
@@ -291,7 +291,7 @@ The brain key in its normalized form.
 Saves the current wallet to the given filename.
 
 {% hint style="danger" %}
-**Important:** This does not change the wallet filename that will be used for future writes, so think of this function as ‘Save a Copy As…’ instead of ‘Save As…’. Use `set_wallet_filename()` to make the filename persist.
+**Important: **This does not change the wallet filename that will be used for future writes, so think of this function as ‘Save a Copy As…’ instead of ‘Save As…’. Use `set_wallet_filename()` to make the filename persist.
 {% endhint %}
 
 ```cpp
@@ -304,4 +304,3 @@ void graphene::wallet::wallet_api::save_wallet_file(
 * **`wallet_filename`**: the filename of the new wallet JSON file to create or overwrite. If `wallet_filename` is empty, save to the current filename.
 {% endtab %}
 {% endtabs %}
-

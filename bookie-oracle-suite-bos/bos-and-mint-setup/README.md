@@ -10,7 +10,7 @@ In this first step, we'll install everything we'll need going forward.
 **Note**: Dependencies must be installed as `root/sudo`
 {% endhint %}
 
-```text
+```
 apt-get install libffi-dev libssl-dev python-dev python3-dev python3-pip libsecp256k1-dev
 pip3 install virtualenv
 ```
@@ -23,7 +23,9 @@ pip3 install virtualenv
 
 MongoDB is used for persistent storage within BOS.
 
-{% page-ref page="installing-mongodb.md" %}
+{% content-ref url="installing-mongodb.md" %}
+[installing-mongodb.md](installing-mongodb.md)
+{% endcontent-ref %}
 
 For  additional information on how to use MongoDB refer to tutorials on your distribution.
 
@@ -35,7 +37,9 @@ For  additional information on how to use MongoDB refer to tutorials on your dis
 
 Redis is used as an asynchronous queue for the python processes in BOS.
 
-{% page-ref page="installing-redis.md" %}
+{% content-ref url="installing-redis.md" %}
+[installing-redis.md](installing-redis.md)
+{% endcontent-ref %}
 
 For additional information on how to install Redisdb refer to  your Linux distribution.
 
@@ -47,32 +51,32 @@ For additional information on how to install Redisdb refer to  your Linux distri
 
 It is highly recommended that both daemons are started on start-up.
 
-```text
+```
 systemctl enable mongod
 systemctl enable redis
 ```
 
 To start the deamons, execute
 
-```text
+```
 systemctl start mongod
 systemctl start redis
 ```
 
 {% hint style="danger" %}
-**Important: Common Issues:** 
+**Important: Common Issues: **
 
 **Exception**: _Can’t save in background: fork or MISCONF Redis is configured to save RDB snapshots._
 
-This indicates that either your queue is very full and the RAM is insufficient, or that your disk is full and the snapshot can’t be persisted. 
+This indicates that either your queue is very full and the RAM is insufficient, or that your disk is full and the snapshot can’t be persisted.&#x20;
 
-Create your own Redis configuration file \([https://redis.io/topics/config](https://redis.io/topics/config)\) and use it to deactivate caching and activate overcommit memory:
+Create your own Redis configuration file ([https://redis.io/topics/config](https://redis.io/topics/config)) and use it to deactivate caching and activate overcommit memory:
 
-[https://redis.io/topics/faq\#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram](https://redis.io/topics/faq#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram) or [https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193\#49839193](https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193#49839193)
+[https://redis.io/topics/faq#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram](https://redis.io/topics/faq#background-saving-fails-with-a-fork-error-under-linux-even-if-i-have-a-lot-of-free-ram) or [https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193#49839193](https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots/49839193#49839193)
 
 [https://gist.github.com/kapkaev/4619127](https://gist.github.com/kapkaev/4619127)
 
-**Exception**: _IncidentStorageLostException: localhost:27017: \[Errno 111\] Connection refused or similar._ 
+**Exception**: _IncidentStorageLostException: localhost:27017: \[Errno 111] Connection refused or similar._&#x20;
 
 This indicates that your MondoDB is not running properly. Check your MongoDB installation.
 {% endhint %}
@@ -83,11 +87,11 @@ This indicates that your MondoDB is not running properly. Check your MongoDB ins
 **Note**: bos-auto must be installed as `user`
 {% endhint %}
 
-You can either install bos-auto via `pypi / pip3` \(production installation\) or via git clone \(debug installation\). 
+You can either install bos-auto via `pypi / pip3` (production installation) or via git clone (debug installation).&#x20;
 
 For production using install bos-auto via pip3 is recommended, but the git master branch is always the latest release as well, making both installations equivalent. Recommended is a separate user.
 
-```text
+```
 cd ~
 mkdir bos-auto
 cd bos-auto
@@ -99,11 +103,11 @@ source env/bin/activate
 pip3 install bos-auto
 ```
 
-For debug use, checkout from Github \(master branch\) and install dependencies manually.
+For debug use, checkout from Github (master branch) and install dependencies manually.
 
 {% embed url="https://github.com/peerplays-network/bos-auto" %}
 
-```text
+```
 cd ~
 # checkout from github
 git clone https://github.com/peerplays-network/bos-auto
@@ -122,19 +126,19 @@ BOS auto is supposed to run in the virtual environment. Either activate it befor
 **Important**: If bos-auto is installed as `root` and not `user` then you'll likely get errors similar to the following:
 {% endhint %}
 
-![](../../.gitbook/assets/photo_2019-12-10-13.31.47.jpeg)
+![](../../.gitbook/assets/photo\_2019-12-10-13.31.47.jpeg)
 
 ### Upgrading bos-auto
 
 For production installation, upgrade to the latest version - including all dependencies using:
 
-```text
+```
 pip3 install --upgrade --upgrade-strategy eager bos-auto
 ```
 
 For debug installation, pull latest master branch and upgrade dependencies manually
 
-```text
+```
 git pull
 pip3 install -r requirements.txt --upgrade --upgrade-strategy eager
 ```
@@ -143,29 +147,35 @@ pip3 install -r requirements.txt --upgrade --upgrade-strategy eager
 
 Next we need to go through the  steps required to setup bos-auto properly.
 
-{% page-ref page="configuration-of-bos-auto.md" %}
+{% content-ref url="configuration-of-bos-auto.md" %}
+[configuration-of-bos-auto.md](configuration-of-bos-auto.md)
+{% endcontent-ref %}
 
 ## Spinning Up bos-auto
 
-After bos-auto configuration we need to spin-up bos-auto to see if it works properly. 
+After bos-auto configuration we need to spin-up bos-auto to see if it works properly.&#x20;
 
-{% page-ref page="spinning-up-bos-auto.md" %}
+{% content-ref url="spinning-up-bos-auto.md" %}
+[spinning-up-bos-auto.md](spinning-up-bos-auto.md)
+{% endcontent-ref %}
 
-## **Manual Intervention \(MINT\)**
+## **Manual Intervention (MINT)**
 
-Bos-mint is a web-based manual intervention module that allows you to work with all sorts of manual interactions with the blockchain. 
+Bos-mint is a web-based manual intervention module that allows you to work with all sorts of manual interactions with the blockchain.&#x20;
 
 For more information see:
 
-{% page-ref page="../introduction-to-mint/" %}
+{% content-ref url="../introduction-to-mint/" %}
+[introduction-to-mint](../introduction-to-mint/)
+{% endcontent-ref %}
 
 ## Monitoring bos-auto
 
-The isalive call should be used for monitoring. The scheduler must be running, and the default queue a low count \(&lt; 10\).
+The isalive call should be used for monitoring. The scheduler must be running, and the default queue a low count (< 10).
 
 Here is an example of a positive `isalive` check:
 
-```text
+```
  {
    "background": {
       "scheduler": True
@@ -184,9 +194,9 @@ Here is an example of a positive `isalive` check:
 
 ## Configuration
 
-The default configuration looks like the following and is \(by default\) stored in `config.yaml`:
+The default configuration looks like the following and is (by default) stored in `config.yaml`:
 
-```text
+```
 # Please see bos_auto/config-defaults.yaml for description
 
 node: ws://localhost:8090
@@ -202,17 +212,21 @@ BOOKIE_PROPOSER: <your witness account name>
 BOOKIE_APPROVER: <your witness account name>
 ```
 
-Both, the API and the worker make use of the same configuration file. 
+Both, the API and the worker make use of the same configuration file.&#x20;
 
 We need to provide the wallet pass phrase in order for the worker to be able to propose changes to the blockchain objects according to the messages received from the data feed.
 
 ## Command Line Tool
 
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
+{% endcontent-ref %}
+
 ## Schema
 
 The messages sent to the API need to follow a particular message schema which is defined in `endpointschema.py`
 
-```text
+```
 #: Default incident schema as sent from the data proxy
 schema = {
     "$schema": "http://json-schema.org/draft-06/schema#",
@@ -284,6 +298,4 @@ schema = {
 }
 
 ```
-
-
 

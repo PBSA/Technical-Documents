@@ -1,10 +1,10 @@
 # League Tabs
 
-The leagues tab runs vertically down the left side of the dashboard and displays one tab for each league that is configured for the selected sport. The tabs are dynamic and configured through the MySql database [`Leagues`]() table. 
+The leagues tab runs vertically down the left side of the dashboard and displays one tab for each league that is configured for the selected sport. The tabs are dynamic and configured through the MySql database [`Leagues`](broken-reference) table.&#x20;
 
-![](../../../.gitbook/assets/image%20%281%29.png)
+![](<../../../.gitbook/assets/image (1).png>)
 
-The order the leagues tabs are displayed in is defined by their `id` value in the [`Leagues`]() table.
+The order the leagues tabs are displayed in is defined by their `id` value in the [`Leagues`](broken-reference) table.
 
 There is no limit on the number of sports tabs that can be created. If the tabs reach the vertical limit of the application then they will stack in to multiple columns. Realistically there should never be so many leagues enabled at any one time to cause the tabs to be stacked.
 
@@ -16,35 +16,13 @@ Clicking on any unselected tab will change the calendar display to show only eve
 
 ### **Captions**
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Text</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Comments</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">[league name]</td>
-      <td style="text-align:left">Dynamic</td>
-      <td style="text-align:left">Value set in <a href><code>Leagues</code></a> table.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">[icon]</td>
-      <td style="text-align:left">Dynamic</td>
-      <td style="text-align:left">
-        <p>Path and name defined in the <code>icon</code> column of the <a href><code>Leagues</code></a> table.</p>
-        <p>The icon itself must exist in the corresponding <code>asset/imgs/leagues</code> folder
-          in the application.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Text           | Type    | Comments                                                                                                                                                                                                                                         |
+| -------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| \[league name] | Dynamic | Value set in [`Leagues`](broken-reference) table.                                                                                                                                                                                                |
+| \[icon]        | Dynamic | <p> Path and name defined in the <code>icon</code> column of the <a href="broken-reference"><code>Leagues</code></a> table.</p><p>The icon itself must exist in the corresponding <code>asset/imgs/leagues</code> folder in the application.</p> |
 
 ### **Actions**
 
-| Caption | Type | Action |
-| :--- | :--- | :--- |
-| \[League\] | Text | Change calendar to the selected league of the selected sport. |
-
+| Caption   | Type | Action                                                        |
+| --------- | ---- | ------------------------------------------------------------- |
+| \[League] | Text | Change calendar to the selected league of the selected sport. |

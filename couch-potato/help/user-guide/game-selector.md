@@ -46,7 +46,7 @@ Once a game has started you can't [delete](game-selector.md#delete-game) it, but
 
 To finish a game enter the score for both home and away teams and click on the `Finish` button next to the game. The game status will  change to `Finished`
 
-![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.31.53-am%20%281%29.png)
+![](<../../../.gitbook/assets/screen-shot-2020-03-26-at-11.31.53-am (1).png>)
 
 ![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.46.26-am.png)
 
@@ -57,22 +57,22 @@ To finish a game enter the score for both home and away teams and click on the `
 Once a game is finished it's no longer possible to cancel it.
 
 {% hint style="warning" %}
-**Note**: It's important that scores are entered correctly the first time as it's not possible to correct scores and re-submit them. 
+**Note**: It's important that scores are entered correctly the first time as it's not possible to correct scores and re-submit them.&#x20;
 {% endhint %}
 
 ## Canceling a Game
 
-You can cancel a game as long as it's either in a `Not Started` or `In Progress.` status.
+You can cancel a game as long as it's either in a `Not Started` or`  In Progress.  `status.
 
-To cancel a game click on the `Cancel` text next to the game. 
+To cancel a game click on the `Cancel` text next to the game.&#x20;
 
-![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.56.06-am%20%281%29.png)
+![](<../../../.gitbook/assets/screen-shot-2020-03-26-at-11.56.06-am (1).png>)
 
-A confirmation message similar to the following will be shown. 
+A confirmation message similar to the following will be shown.&#x20;
 
-![](../../../.gitbook/assets/image%20%2826%29.png)
+![](<../../../.gitbook/assets/image (26).png>)
 
-Click on `Yes` to cancel the game \(game status will then change to `Canceled)` or `No` to to return without canceling.
+Click on `Yes` to cancel the game (game status will then change to `Canceled)` or `No` to to return without canceling.
 
 A `canceled` message will be sent to BOS.
 
@@ -82,21 +82,20 @@ A `canceled` message will be sent to BOS.
 
 ## Deleting a Game
 
-A game can only be deleted if it hasn't been started \(has a status of `Not Started`\).
+A game can only be deleted if it hasn't been started (has a status of `Not Started`).
 
-To delete a game click on the Delete text next to the game. 
+To delete a game click on the Delete text next to the game.&#x20;
 
 ![](../../../.gitbook/assets/screen-shot-2020-03-26-at-11.56.06-am.png)
 
 A confirmation message similar to the following will be shown:
 
-![](../../../.gitbook/assets/image%20%2825%29.png)
+![](<../../../.gitbook/assets/image (25).png>)
 
-Click on `Yes` to delete the game \(game will be removed\) or `No` to to return without deleting.
+Click on `Yes` to delete the game (game will be removed) or `No` to to return without deleting.
 
 If you delete a game then a `canceled` message will also be sent to BOS so that BOS can tag the game in the same way as a canceled game.
 
 {% hint style="warning" %}
 **Note**: The difference between a canceled game and a deleted game is that a deleted game is basically a game that was entered in error and once deleted is removed from the database so it can be re-entered correctly if needed. A canceled game is a game that for one reason or other doesn't take place after being created.
 {% endhint %}
-

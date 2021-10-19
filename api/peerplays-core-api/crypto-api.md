@@ -8,10 +8,10 @@ The crypto API is available from the full node via websockets.
 
 Get signed blocks.
 
-Generates a Pedersen Commitment: \*commit = blind \* G + value \* G2. The commitment is 33 bytes, the blinding factor is 32 bytes. 
+Generates a Pedersen Commitment: \*commit = blind \* G + value \* G2. The commitment is 33 bytes, the blinding factor is 32 bytes.&#x20;
 
 {% hint style="info" %}
-**Tip**: For more information about Pedersen Commitment see: [Commitment Scheme](https://en.wikipedia.org/wiki/Commitment_scheme)
+**Tip**: For more information about Pedersen Commitment see: [Commitment Scheme](https://en.wikipedia.org/wiki/Commitment\_scheme)
 {% endhint %}
 
 ```cpp
@@ -27,7 +27,7 @@ commitment_type graphene::app::crypto_api::blind(
 {% endtab %}
 
 {% tab title="Return" %}
-A 33-byte Pedersen Commitment: _commit = blind_  G + value \* G2
+A 33-byte Pedersen Commitment: _commit = blind _ G + value \* G2
 {% endtab %}
 {% endtabs %}
 
@@ -56,12 +56,12 @@ A blind factor type.
 
 ### range\_get\_info
 
-Gets “range proof” information. 
+Gets “range proof” information.&#x20;
 
-The cli\_wallet includes functionality for sending blind transfers in which the values of the input and output amounts are “blinded.” 
+The cli\_wallet includes functionality for sending blind transfers in which the values of the input and output amounts are “blinded.”&#x20;
 
 {% hint style="warning" %}
-**Note**: In the case where a transaction produces two or more outputs, \(e.g. an amount to the intended recipient plus “charge” back to the sender\), a “range proof” must be supplied to prove that none of the outputs commit to a negative value.
+**Note**: In the case where a transaction produces two or more outputs, (e.g. an amount to the intended recipient plus “charge” back to the sender), a “range proof” must be supplied to prove that none of the outputs commit to a negative value.
 {% endhint %}
 
 ```cpp
@@ -100,8 +100,8 @@ std::vector<char> graphene::app::crypto_api::range_proof_sign(
 * **`commit`**: 33-byte pedersen commitment
 * **`commit_blind`**: Sha-256 blind factor type for the correct digits
 * **`nonce`**: Sha-256 blind factor type for our non-forged signatures
-* **`base10_exp`**: Exponents base 10 in range \[-1 ; 18\] inclusively
-* **`min_bits`**: 8-bit positive integer, must be in range \[0 ; 64\] inclusively
+* **`base10_exp`**: Exponents base 10 in range \[-1 ; 18] inclusively
+* **`min_bits`**: 8-bit positive integer, must be in range \[0 ; 64] inclusively
 * **`actual_value`**: 64-bit positive integer, must be greater or equal min\_value
 {% endtab %}
 
@@ -131,7 +131,7 @@ bool graphene::app::crypto_api::verify_sum(
 {% endtab %}
 
 {% tab title="Return" %}
-\(Boolean\) True in event of `commits` + `neg_commits` + `excess` == 0, otherwise false
+(Boolean) True in event of `commits` + `neg_commits` + `excess` == 0, otherwise false
 {% endtab %}
 {% endtabs %}
 
@@ -178,4 +178,3 @@ verify_range_proof_rewind_result graphene::app::crypto_api::verify_range_proof_r
 A structure with success, min, max, value\_out, blind\_out and message\_out values.
 {% endtab %}
 {% endtabs %}
-

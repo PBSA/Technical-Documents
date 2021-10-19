@@ -6,7 +6,7 @@
 
 Returns a list of all commands supported by the wallet API.
 
-This lists each command, along with its arguments and return types. For more detailed help on a single command, use [`gethelp()`](general-calls.md#gethelp)\`\`
+This lists each command, along with its arguments and return types. For more detailed help on a single command, use [`gethelp()`](general-calls.md#gethelp)``
 
 ```cpp
 string graphene::wallet::wallet_api::help()const
@@ -78,7 +78,8 @@ void graphene::wallet::wallet_api::network_add_nodes(
 
 {% tabs %}
 {% tab title="Parameters" %}
-**`nodes`**: Nodes to be added.  
+**`nodes`**: Nodes to be added.\
+
 {% endtab %}
 {% endtabs %}
 
@@ -93,4 +94,3 @@ vector<variant> graphene::wallet::wallet_api::network_get_connected_peers()
 List of connected peers.
 {% endtab %}
 {% endtabs %}
-

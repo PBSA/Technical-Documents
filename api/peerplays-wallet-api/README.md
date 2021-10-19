@@ -1,23 +1,35 @@
 # Wallet API
 
-The wallet \(`cli_wallet`\) requires a running full node to connect to because it does not offer P2P or blockchain capabilities directly.
+The wallet (`cli_wallet`) requires a running full node to connect to because it does not offer P2P or blockchain capabilities directly.
 
 If you have not set up your wallet yet, you can find more information here: [CLI Wallet Setup](../../witnesses/setting-up-a-witness-node/#cli-wallet-setup).
 
-{% page-ref page="account-calls.md" %}
+{% content-ref url="account-calls.md" %}
+[account-calls.md](account-calls.md)
+{% endcontent-ref %}
 
-{% page-ref page="asset-calls.md" %}
+{% content-ref url="asset-calls.md" %}
+[asset-calls.md](asset-calls.md)
+{% endcontent-ref %}
 
-{% page-ref page="blockchain-inspection.md" %}
+{% content-ref url="blockchain-inspection.md" %}
+[blockchain-inspection.md](blockchain-inspection.md)
+{% endcontent-ref %}
 
-{% page-ref page="general-calls.md" %}
+{% content-ref url="general-calls.md" %}
+[general-calls.md](general-calls.md)
+{% endcontent-ref %}
 
-{% page-ref page="governance.md" %}
+{% content-ref url="governance.md" %}
+[governance.md](governance.md)
+{% endcontent-ref %}
 
-{% page-ref page="privacy-mode.md" %}
+{% content-ref url="privacy-mode.md" %}
+[privacy-mode.md](privacy-mode.md)
+{% endcontent-ref %}
 
-{% page-ref page="trading-calls.md" %}
+{% content-ref url="trading-calls.md" %}
+[trading-calls.md](trading-calls.md)
+{% endcontent-ref %}
 
-  
-
-
+\

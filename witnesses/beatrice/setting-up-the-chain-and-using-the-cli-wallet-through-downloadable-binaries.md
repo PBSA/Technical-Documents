@@ -4,27 +4,27 @@ It is recommended to use Ubuntu 18.04 and 8GB ram to run this witness node.
 
 ## Downloading the Binaries
 
-The quickest way to get started with the binaries is to look at the [GitLab CI/CD pipelines for Beatrice](https://gitlab.com/PBSA/peerplays/-/pipelines?page=1&scope=all&ref=beatrice) and download the artifacts for the [latest build](https://gitlab.com/PBSA/peerplays/-/jobs/599439620).
+The quickest way to get started with the binaries is to look at the [GitLab CI/CD pipelines for Beatrice](https://gitlab.com/PBSA/peerplays/-/pipelines?page=1\&scope=all\&ref=beatrice) and download the artifacts for the [latest build](https://gitlab.com/PBSA/peerplays/-/jobs/599439620).
 
-![](../../.gitbook/assets/image%20%2827%29.png)
+![](<../../.gitbook/assets/image (27).png>)
 
 ## Running the Binaries
 
-There are two binaries of interest: **witness\_node** and **cli\_wallet.** These are found in `./artifacts/programs/witness_node` and `./artifacts/programs/cli_wallet` respectively.
+There are two binaries of interest: **witness\_node** and **cli\_wallet. **These are found in `./artifacts/programs/witness_node` and `./artifacts/programs/cli_wallet` respectively.
 
 ### Witness Node
 
 1. Extract the witness\_node binary to some location with write permissions.
 2. Run the witness node binary: `./witness_node`
-3. The blockchain will now start to sync with the public TESTNET \(Beatrice\).
+3. The blockchain will now start to sync with the public TESTNET (Beatrice).
 
 {% hint style="warning" %}
 Consider creating a service to run this binary.
 {% endhint %}
 
-By default, running the witness\_node binary downloaded from the Beatrice branch build will configure the `witness_node_data_dir` and start syncing with the Testnet. If configuration changes need to be made \(e.g, setting up your own network, specifying custom RPC ports to listen on, etc...\), the `witness_node_data_dir/config.ini` should be modified.
+By default, running the witness\_node binary downloaded from the Beatrice branch build will configure the `witness_node_data_dir` and start syncing with the Testnet. If configuration changes need to be made (e.g, setting up your own network, specifying custom RPC ports to listen on, etc...), the `witness_node_data_dir/config.ini` should be modified.
 
-```text
+```
 ### Default config.ini for Beatrice
 
 # Endpoint for P2P node to listen on
@@ -185,7 +185,7 @@ history-per-size = 1000
 
 ### CLI Wallet
 
-Once your local chain instance is in sync with the network, you can start using the CLI wallet on it. 
+Once your local chain instance is in sync with the network, you can start using the CLI wallet on it.&#x20;
 
 {% hint style="info" %}
 If you want to get started with the CLI Wallet right away, you can specify the `server-rpc-endpoint` to be that of an active witness node. A great place to find active endpoints is to check out: [https://beta.eifos.org/status](https://beta.eifos.org/status) under `Testnet.`
@@ -193,25 +193,24 @@ If you want to get started with the CLI Wallet right away, you can specify the `
 
 1. Extract the cli\_wallet binary to some location with write permissions.
 2. Run the cli\_wallet binary: `./cli_wallet --wallet-file my-wallet.json --chain-id b3f7fe1e5ad0d2deca40a626a4404524f78e65c3a48137551c33ea4e7c365672 --server-rpc-endpoint ws://127.0.0.1:8090 -u '' -p ''`
-3. You will then be asked to initialize your wallet. Set a password by using: `set_password mypassword` 
-4. Unlock the wallet: `unlock mypassword` 
+3. You will then be asked to initialize your wallet. Set a password by using: `set_password mypassword`&#x20;
+4. Unlock the wallet: `unlock mypassword`&#x20;
 5. You can now execute the various functions of the wallet. Use `help` to see a list of commands with parameters.
 
 Some Useful commands to start with:
 
 * Get information about the entire chain: `get_global_properties`
-* Get information about the core asset \(TEST\): `get_asset 1.3.0`
+* Get information about the core asset (TEST): `get_asset 1.3.0`
 * List the asset balance of an account: `list_account_balances faucet`
-* Importing an account into the CLI Wallet that was created with the GUI wallet or faucet with a password: 
+* Importing an account into the CLI Wallet that was created with the GUI wallet or faucet with a password:&#x20;
   * `get_private_key_from_password(string account, string role, string password)` There are three roles: `active, owner, and memo`
   * `import_key(string account_name_or_id, string wif_key)` for each WIF from the different roles obtained from `get_private_key_from_password`
 
 {% hint style="info" %}
 The chain-ID for Beatrice is: b3f7fe1e5ad0d2deca40a626a4404524f78e65c3a48137551c33ea4e7c365672
 
-To find the chain-ID for your local instance \(it will be different if you've set up your own network\) run: 
-
-| `sudo curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}'` `http://127.0.0.1:8090/rpc && echo` |
-| :--- |
+To find the chain-ID for your local instance (it will be different if you've set up your own network) run:&#x20;
 {% endhint %}
 
+| `sudo curl --data '{"jsonrpc": "2.0", "method": "get_chain_properties", "params": [], "id": 1}'` `http://127.0.0.1:8090/rpc && echo` |
+| ------------------------------------------------------------------------------------------------------------------------------------ |

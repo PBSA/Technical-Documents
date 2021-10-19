@@ -4,11 +4,11 @@
 
 The following objects are used to pass data to, or objects from response messages, the five API endpoints:
 
-* \`\`[`add_game`]()\`\`
-* \`\`[`start_game`]()\`\`
-* \`\`[`add_Score`]()\`\`
-* \`\`[`finish_Game`]()\`\`
-* \`\`[`cancel_Game`]()\`\`
+* ``[`add_game`](broken-reference)``
+* ``[`start_game`](broken-reference)``
+* ``[`add_Score`](broken-reference)``
+* ``[`finish_Game`](broken-reference)``
+* ``[`cancel_Game`](broken-reference)``
 
 ### create
 
@@ -16,14 +16,14 @@ Parameters for new BOS incident message to create a game and add to Couch Potato
 
 {% tabs %}
 {% tab title="Object" %}
-| Parameter | Description | Type | Required |
-| :--- | :--- | :--- | :--- |
-| `sport` | Sport name | String | Yes |
-| `league` | League \(Event Group\) of sport | String | Yes |
-| `home` | Home team name | String | Yes |
-| `away` | Away team name | String | Yes |
-| `start_time` | Start date/time of game | Date | Yes |
-| `user` | Current user id | Number | Yes |
+| Parameter    | Description                   | Type   | Required |
+| ------------ | ----------------------------- | ------ | -------- |
+| `sport`      | Sport name                    | String | Yes      |
+| `league`     | League (Event Group) of sport | String | Yes      |
+| `home`       | Home team name                | String | Yes      |
+| `away`       | Away team name                | String | Yes      |
+| `start_time` | Start date/time of game       | Date   | Yes      |
+| `user`       | Current user id               | Number | Yes      |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -47,15 +47,15 @@ Parameters for new BOS incident message to start a game and add to Couch Potato 
 
 {% tabs %}
 {% tab title="Object" %}
-| Parameter | Description | Type | Required |
-| :--- | :--- | :--- | :--- |
-| `sport` | Sport name | String | Yes |
-| `league` | League \(Event Group\) of sport | String | Yes |
-| `home` | Home team name | String | Yes |
-| `away` | Away team name | String | Yes |
-| `start_time` | Start date/time of game | Date | Yes |
-| `whistle_start_time` | Actual time the game started | Date | Yes |
-| `match_id` | Unique match identifier | Number | Yes |
+| Parameter            | Description                   | Type   | Required |
+| -------------------- | ----------------------------- | ------ | -------- |
+| `sport`              | Sport name                    | String | Yes      |
+| `league`             | League (Event Group) of sport | String | Yes      |
+| `home`               | Home team name                | String | Yes      |
+| `away`               | Away team name                | String | Yes      |
+| `start_time`         | Start date/time of game       | Date   | Yes      |
+| `whistle_start_time` | Actual time the game started  | Date   | Yes      |
+| `match_id`           | Unique match identifier       | Number | Yes      |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -73,22 +73,22 @@ Parameters for new BOS incident message to start a game and add to Couch Potato 
 {% endtab %}
 {% endtabs %}
 
-### result 
+### result&#x20;
 
 Parameters for new BOS incident message to set the score of a game and add to Couch Potato database.
 
 {% tabs %}
 {% tab title="Object" %}
-| Parameter | Description | Type | Required |
-| :--- | :--- | :--- | :--- |
-| `sport` | Sport name | String | Yes |
-| `league` | League \(Event Group\) of sport | String | Yes |
-| `home` | Home team name | String | Yes |
-| `away` | Away team name | String | Yes |
-| `start_time` | Start date/time of game | Date | Yes |
-| `home_score` | The score for the home team | Number | Yes |
-| `away_score` | The score for the away team | Number | Yes |
-| `match_id` | Unique match identifier | Number | Yes |
+| Parameter    | Description                   | Type   | Required |
+| ------------ | ----------------------------- | ------ | -------- |
+| `sport`      | Sport name                    | String | Yes      |
+| `league`     | League (Event Group) of sport | String | Yes      |
+| `home`       | Home team name                | String | Yes      |
+| `away`       | Away team name                | String | Yes      |
+| `start_time` | Start date/time of game       | Date   | Yes      |
+| `home_score` | The score for the home team   | Number | Yes      |
+| `away_score` | The score for the away team   | Number | Yes      |
+| `match_id`   | Unique match identifier       | Number | Yes      |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -107,22 +107,22 @@ Parameters for new BOS incident message to set the score of a game and add to Co
 {% endtab %}
 {% endtabs %}
 
-### finish 
+### finish&#x20;
 
 Parameters for new BOS incident message to finish/complete a game and add to Couch Potato database.
 
 {% tabs %}
 {% tab title="Object" %}
-| Parameter | Description | Type | Required |
-| :--- | :--- | :--- | :--- |
-| `sport` | Sport name | String | Yes |
-| `league` | League \(Event Group\) of sport | String | Yes |
-| `home` | Home team name | String | Yes |
-| `away` | Away team name | String | Yes |
-| `start_time` | Start date/time of game | Date | Yes |
-| `whistle_end_time` | The time the game ended | Date | Yes |
-| `away_score` | The score for the away team | Number | Yes |
-| `match_id` | Unique match identifier | Number | Yes |
+| Parameter          | Description                   | Type   | Required |
+| ------------------ | ----------------------------- | ------ | -------- |
+| `sport`            | Sport name                    | String | Yes      |
+| `league`           | League (Event Group) of sport | String | Yes      |
+| `home`             | Home team name                | String | Yes      |
+| `away`             | Away team name                | String | Yes      |
+| `start_time`       | Start date/time of game       | Date   | Yes      |
+| `whistle_end_time` | The time the game ended       | Date   | Yes      |
+| `away_score`       | The score for the away team   | Number | Yes      |
+| `match_id`         | Unique match identifier       | Number | Yes      |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -146,14 +146,14 @@ Parameters for new BOS incident message to cancel a game and add to Couch Potato
 
 {% tabs %}
 {% tab title="Object" %}
-| Parameter | Description | Type | Required |
-| :--- | :--- | :--- | :--- |
-| `sport` | Sport name | String | Yes |
-| `league` | League \(Event Group\) of sport | String | Yes |
-| `home` | Home team name | String | Yes |
-| `away` | Away team name | String | Yes |
-| `start_time` | Start date/time of game | Date | Yes |
-| `match_id` | Unique match identifier | Number | Yes |
+| Parameter    | Description                   | Type   | Required |
+| ------------ | ----------------------------- | ------ | -------- |
+| `sport`      | Sport name                    | String | Yes      |
+| `league`     | League (Event Group) of sport | String | Yes      |
+| `home`       | Home team name                | String | Yes      |
+| `away`       | Away team name                | String | Yes      |
+| `start_time` | Start date/time of game       | Date   | Yes      |
+| `match_id`   | Unique match identifier       | Number | Yes      |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -172,17 +172,17 @@ Parameters for new BOS incident message to cancel a game and add to Couch Potato
 
 ## Success Response Objects
 
-### Add Game Success Response 
+### Add Game Success Response&#x20;
 
-Object attributes for a 200 response from an [add\_game]() call.
+Object attributes for a 200 response from an [add\_game](broken-reference) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
-| Name | Text |
-| :--- | :--- |
-| status | Always 200 |
-| title | Game added |
-| message | \[home \] v \[away \] - \[start\_time\] |
+| Name    | Text                                 |
+| ------- | ------------------------------------ |
+| status  | Always 200                           |
+| title   | Game added                           |
+| message | \[home ] v \[away ] - \[start\_time] |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -196,17 +196,17 @@ Object attributes for a 200 response from an [add\_game]() call.
 {% endtab %}
 {% endtabs %}
 
-### Start Game Success Response 
+### Start Game Success Response&#x20;
 
-Object attributes for a 200 response from an [start\_game]() call.
+Object attributes for a 200 response from an [start\_game](broken-reference) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
-| Name | Text |
-| :--- | :--- |
-| status | Always 200 |
-| title | Game started |
-| message | \[home \] v \[away \] - \[whistle\_start\_time\] |
+| Name    | Text                                          |
+| ------- | --------------------------------------------- |
+| status  | Always 200                                    |
+| title   | Game started                                  |
+| message | \[home ] v \[away ] - \[whistle\_start\_time] |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -220,17 +220,17 @@ Object attributes for a 200 response from an [start\_game]() call.
 {% endtab %}
 {% endtabs %}
 
-### Add Score Success Response 
+### Add Score Success Response&#x20;
 
-Object attributes for a 200 response from an [add\_score]() call.
+Object attributes for a 200 response from an [add\_score](broken-reference) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
-| Name | Text |
-| :--- | :--- |
-| status | Always 200 |
-| title | Scores added |
-| message | \[home \] \[home\_score\]v \[away \]\[away\_score\]  |
+| Name    | Text                                             |
+| ------- | ------------------------------------------------ |
+| status  | Always 200                                       |
+| title   | Scores added                                     |
+| message | \[home ] \[home\_score]v \[away ]\[away\_score]  |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -244,17 +244,17 @@ Object attributes for a 200 response from an [add\_score]() call.
 {% endtab %}
 {% endtabs %}
 
-### Finish Game Success Response 
+### Finish Game Success Response&#x20;
 
-Object attributes for a 200 response from an [finish\_game]() call.
+Object attributes for a 200 response from an [finish\_game](broken-reference) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
-| Name | Text |
-| :--- | :--- |
-| status | Always 200 |
-| title | Game finished |
-| message | \[home \] v \[away \] - \[whistle\_end\_time\] |
+| Name    | Text                                        |
+| ------- | ------------------------------------------- |
+| status  | Always 200                                  |
+| title   | Game finished                               |
+| message | \[home ] v \[away ] - \[whistle\_end\_time] |
 {% endtab %}
 
 {% tab title="Example" %}
@@ -268,17 +268,16 @@ Object attributes for a 200 response from an [finish\_game]() call.
 {% endtab %}
 {% endtabs %}
 
-### Cancel Game Success Response 
+### Cancel Game Success Response&#x20;
 
-Object attributes for a 200 response from an [cancel\_game]() call.
+Object attributes for a 200 response from an [cancel\_game](broken-reference) call.
 
 {% tabs %}
 {% tab title="Attributes" %}
-| Name | Text |
-| :--- | :--- |
-| status | Always 200 |
-| title | Game canceled |
-| message | \[home \] v \[away \] |
+| Name    | Text                |
+| ------- | ------------------- |
+| status  | Always 200          |
+| title   | Game canceled       |
+| message | \[home ] v \[away ] |
 {% endtab %}
 {% endtabs %}
-

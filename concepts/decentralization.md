@@ -4,7 +4,7 @@
 
 You've been hearing the word **decentralized** being thrown around. What does it mean?
 
-Decentralization refers to the transfer of control of an activity or organization to several local offices or authorities rather than one single entity. This can be ambiguous because "several" can refer to anything from as few as three to as many as there are members of an organization \(like multiple boards of directors vs. every single member of the organization.\) In many organizations, this can create a smoke screen where the perception of freedom is created to hide the real aim of the organization; control for the few. The more decentralized the organization, the greater capacity there is for its members having control. In order to assess the level of control we will have when joining an organization that claims to be decentralized, we must assess the organization’s methods of decentralization.
+Decentralization refers to the transfer of control of an activity or organization to several local offices or authorities rather than one single entity. This can be ambiguous because "several" can refer to anything from as few as three to as many as there are members of an organization (like multiple boards of directors vs. every single member of the organization.) In many organizations, this can create a smoke screen where the perception of freedom is created to hide the real aim of the organization; control for the few. The more decentralized the organization, the greater capacity there is for its members having control. In order to assess the level of control we will have when joining an organization that claims to be decentralized, we must assess the organization’s methods of decentralization.
 
 ## 2. Quantifying Decentralization
 
@@ -24,12 +24,12 @@ The narrative of an organization is the union of several pieces of human generat
 
 * First, it is made of organizational data.
 * Second, it is made of the value system, mission statement, and goals of the organization as a whole.
-* Third, it is made of the values and goals of each individual member of an organization, including those that are never voiced \(For example: plans for furthering education, competition among members, personal problems, etc.\)
+* Third, it is made of the values and goals of each individual member of an organization, including those that are never voiced (For example: plans for furthering education, competition among members, personal problems, etc.)
 * Fourth, it is made of communication.
 
-To truly understand narrative and its impact on an organization, it can be helpful to think of Ecological systems theory developed by Urie Bronfenbrenner \(see Figure 1 & [Appendix A](decentralization.md#appendix-a)\). While Bronfenbrenner’s theory relates to the development of people, an organization will be treated as an individual within public consciousness. Its development must be treated as any other individual, with the understanding that it too is made of individuals.
+To truly understand narrative and its impact on an organization, it can be helpful to think of Ecological systems theory developed by Urie Bronfenbrenner (see Figure 1 & [Appendix A](decentralization.md#appendix-a)). While Bronfenbrenner’s theory relates to the development of people, an organization will be treated as an individual within public consciousness. Its development must be treated as any other individual, with the understanding that it too is made of individuals.
 
-![Figure 1: Bronfenbrenner&apos;s Ecological systems theory. See Appendix A for details.](../.gitbook/assets/ecological-systems-theory.jpg)
+![Figure 1: Bronfenbrenner's Ecological systems theory. See Appendix A for details.](../.gitbook/assets/ecological-systems-theory.jpg)
 
 Both the narrative of each member and the narrative of the organization as a cohesive whole acting as an individual in the public sphere must be taken into account when control is considered. Errors in representation are always made when a group is unable to speak for themselves. The perception of individuals within a group and the group as a whole will come from how those outside the organization receive the narrative. The narrative of the organization as a whole will also create the perception of its members. To control the narrative is to control how you are seen. A negative perception at any level helps no one, and is often a source of much anger, resentment, and embarrassment among those who do not feel accurately represented. Representation matters.
 
@@ -61,9 +61,9 @@ It is only when all aspects of an organization are delegated that an organizatio
 
 ## Appendix A
 
-Ecological systems theory was developed by Urie Bronfenbrenner. The six systems described in his theory, and outlined in Figure 1 \(above\) are as follows:
+Ecological systems theory was developed by Urie Bronfenbrenner. The six systems described in his theory, and outlined in Figure 1 (above) are as follows:
 
-**Individual** \(or Organization\): ****This can represent a member of the organization or the organization itself, depending on the context.
+**Individual** (or Organization):** **This can represent a member of the organization or the organization itself, depending on the context.
 
 **Microsystem**: Institutions and groups that most immediately and directly impact the individual's development.
 
@@ -73,7 +73,5 @@ Ecological systems theory was developed by Urie Bronfenbrenner. The six systems 
 
 **Macrosystem**: Describes the overarching culture that influences the developing individual, as well as the microsystems and mesosystems embedded in those cultures. Cultural contexts can differ based on geographic location, socioeconomic status, poverty, and ethnicity. Members of a cultural group often share a common identity, heritage, and values. Macrosystems evolve across time and from generation to generation.
 
-**Chronosystem** \(not pictured\): Consists of the pattern of environmental events and transitions over the life course of the individual, as well as changing socio-historical circumstances.
-
-
+**Chronosystem** (not pictured): Consists of the pattern of environmental events and transitions over the life course of the individual, as well as changing socio-historical circumstances.
 

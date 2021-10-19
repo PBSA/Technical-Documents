@@ -37,11 +37,11 @@ The number of registered accounts
 
 ### get\_global\_properties
 
-Returns the block chain’s slowly-changing settings. 
+Returns the block chain’s slowly-changing settings.&#x20;
 
-This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval \(daily\) such as the current list of witnesses, committee\_members, block interval, etc.
+This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval (daily) such as the current list of witnesses, committee\_members, block interval, etc.
 
-**See** [`get_dynamic_global_properties()`](blockchain-inspection.md#get_dynamic_global_properties) for frequently changing properties.
+**See **[`get_dynamic_global_properties()`](blockchain-inspection.md#get\_dynamic\_global\_properties) for frequently changing properties.
 
 ```cpp
 global_property_object graphene::wallet::wallet_api::get_global_properties()const
@@ -57,7 +57,7 @@ The global properties.
 
 Returns the block chain’s rapidly-changing properties. The returned object contains information that changes every block interval such as the head block number, the next witness, etc.**See**
 
-\`\`[`get_global_properties()`](blockchain-inspection.md#get_global_properties) for less-frequently changing properties
+``[`get_global_properties()`](blockchain-inspection.md#get\_global\_properties) for less-frequently changing properties
 
 ```cpp
 dynamic_global_property_object graphene::wallet::wallet_api::get_dynamic_global_properties()const
@@ -73,7 +73,7 @@ The dynamic global properties.
 
 Returns the blockchain object corresponding to the given id.
 
-This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](asset-calls.md#get_asset), accounts have [`get_account()`](account-calls.md#get_account), but this function will work for any object.
+This generic function can be used to retrieve any object from the blockchain that is assigned an ID. Certain types of objects have specialized convenience functions to return their objects e.g., assets have [`get_asset()`](asset-calls.md#get\_asset), accounts have [`get_account()`](account-calls.md#get\_account), but this function will work for any object.
 
 ```cpp
 variant graphene::wallet::wallet_api::get_object(
@@ -89,4 +89,3 @@ variant graphene::wallet::wallet_api::get_object(
 The requested object.
 {% endtab %}
 {% endtabs %}
-

@@ -6,9 +6,9 @@ After clicking on the `Power Down` button you'll be taken to the Power Down scre
 
 Unsurprisingly the Power Down screen follows a very similar format to [Power Up](power-up.md); you just use it to withdraw from your GPOS balance, instead of adding to it.
 
-![](../../../.gitbook/assets/screen-shot-2020-02-13-at-2.28.19-pm%20%281%29.png)
+![](<../../../.gitbook/assets/screen-shot-2020-02-13-at-2.28.19-pm (1).png>)
 
-And just like the [Power Up](power-up.md) screen you can select an amount by scrolling up and down using the `+` and `-` buttons. The amount you select will be shown in the Withdraw field and reflected in your New GPOS Balance.
+And just like the [Power Up](power-up.md) screen you can select an amount by scrolling up and down using the `+` and `- `buttons. The amount you select will be shown in the Withdraw field and reflected in your New GPOS Balance.
 
 You can withdraw up to the total amount of your Opening GPOS Balance.
 
@@ -29,4 +29,3 @@ The main reasons for having a holding period are:
 * There are fees associated with creating a balance and withdrawing from it. A holding period protects you from 'experimenting' with vesting and incurring unexpected fees.
 
 Click on the `CANCEL` button to leave this screen without saving any changes. Or click on `SUBMIT` to save changes and return to the [GPOS Landing Page.](gpos-landing-page.md)
-

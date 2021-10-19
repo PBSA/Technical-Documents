@@ -4,13 +4,13 @@ The dashboard is the main screen from where you can navigate around the features
 
 The dashboard sis opened as soon as you log in from the  [Home Page](../../../functional-requirements/home-page.md).
 
-![](../../../../.gitbook/assets/image%20%2815%29.png)
+![](<../../../../.gitbook/assets/image (15).png>)
 
 The dashboard is best thought of as five feature sections:
 
 1. Header
 2. Sport Tabs
-3. League \(event Group\) Tabs
+3. League (event Group) Tabs
 4. Calendar
 5. Notifications
 
@@ -18,7 +18,7 @@ The dashboard is best thought of as five feature sections:
 
 The dashboard header is shown at the top of the screen and is non-scrollable. That is to say that if you run  the application on a small display such that you have to scroll up and down, to see all of the dashboard, the header is always 'pinned' to the top of the screen.
 
-![](../../../../.gitbook/assets/image%20%2810%29.png)
+![](<../../../../.gitbook/assets/image (10).png>)
 
 The features of the header are:
 
@@ -32,7 +32,7 @@ The features of the header are:
 
 The sports tab runs horizontally across the dashboard and displays one tab for each sport that is enabled. The tabs are dynamic and configured through a database table that can have new sports added or deleted at any time
 
-There is no limit on the number of sports tabs that can be created. If the tabs reach the horizontal limit of the application then they will stack in to multiple rows. 
+There is no limit on the number of sports tabs that can be created. If the tabs reach the horizontal limit of the application then they will stack in to multiple rows.&#x20;
 
 By clicking on any tab you will:
 
@@ -45,9 +45,9 @@ When you select a sports tab the league will default to the first one in the lis
 
 The leagues tab runs vertically down the left side of the dashboard and displays one tab for each league that is configured for the selected sport. The tabs are dynamic and configured through a database table so that new leagues can be added or deleted at any time.
 
-![](../../../../.gitbook/assets/image%20%281%29.png)
+![](<../../../../.gitbook/assets/image (1).png>)
 
-There is no limit on the number of sports tabs that can be created. If the tabs reach the vertical limit of the application then they will stack in to multiple columns. 
+There is no limit on the number of sports tabs that can be created. If the tabs reach the vertical limit of the application then they will stack in to multiple columns.&#x20;
 
 If you click on any of the tabs the calendar will show only events for the selected sport and league.
 
@@ -57,7 +57,7 @@ The calendar component is the main 'engine' of the application. It's here that y
 
 ![](../../../../.gitbook/assets/image.png)
 
-The calendar dynamically creates a month plan for each month selected using the forward \(&gt;\) and backward \(&lt;\) selectors. There is no limit on the number of months/years that can scrolled through.
+The calendar dynamically creates a month plan for each month selected using the forward (>) and backward (<) selectors. There is no limit on the number of months/years that can scrolled through.
 
 As you move the cursor over any cell it'll be highlighted , and the current day is displayed as a solid number.
 
@@ -73,9 +73,9 @@ To enter new games click on any day cell and the game selector for that sport / 
 
 ## Notifications
 
-The notifications panel is displayed on the right side of the dashboard and is where all notifications \(reminders\) will be posted for any games about to start or finish.
+The notifications panel is displayed on the right side of the dashboard and is where all notifications (reminders) will be posted for any games about to start or finish.
 
-![](../../../../.gitbook/assets/image%20%285%29.png)
+![](<../../../../.gitbook/assets/image (5).png>)
 
 Each notification takes the form of a 'note' which has the following attributes:
 
@@ -110,11 +110,10 @@ However, a game of football, even thought it's four quarters of 15 minutes, has 
 
 Each note is tied to a game and as such will be automatically removed from the notification panel as soon as the status of the game is updated. For example, if a note states that game x "SHOULD HAVE STARTED", then as soon as the game is started, using the game selector, the note will be removed.
 
-To keep things tidy notes can be set to be be automatically removed after a set interval \(in hours\). This means that if games haven't been started, instead of the warning note appearing even after \[x\] days when there would be no point updating the status of the game, it will be removed.
+To keep things tidy notes can be set to be be automatically removed after a set interval (in hours). This means that if games haven't been started, instead of the warning note appearing even after \[x] days when there would be no point updating the status of the game, it will be removed.
 
-You can set the number of hours after which a notes should be removed is set in the `notifications->end` property in `config-dataproxy.json.` The default value is 240 \(10 days\).
+You can set the number of hours after which a notes should be removed is set in the `notifications->end` property in `config-dataproxy.json. `The default value is 240 (10 days).
 
 ### Hyperlinking
 
 Each note is 'clickable', so if you click on it you will automatically open the game selector for the selected date / league / sport combination. The game in the selector, that corresponds to the game on the selected note, will be highlighted for easy identification. For more information see:
-

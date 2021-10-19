@@ -10,23 +10,23 @@ POST /add_game/:create_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`create_message`**: Object of type [create]()
+* **`create_message`**: Object of type [create](broken-reference)
 {% endtab %}
 
 {% tab title="Response" %}
-* Success 
-  * \`\`[Add Game Success Response]()
+* Success&#x20;
+  * ``[Add Game Success Response](broken-reference)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of ``**`Error Objects`**
+  * `title`: One of` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
 
-* [BOS Errors]()
-* [Incident Errors]()
-* [Add Game Errors]()
+* [BOS Errors](broken-reference)
+* [Incident Errors](broken-reference)
+* [Add Game Errors](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -55,23 +55,23 @@ POST /start_game/:in_progress_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`in_progress_message`**: Object of type [in\_progress]()
+* **`in_progress_message`**: Object of type [in\_progress](broken-reference)
 {% endtab %}
 
 {% tab title="Response" %}
-* Success 
-  *  [Start Game Success Response]()
+* Success&#x20;
+  * &#x20;[Start Game Success Response](broken-reference)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of ``**`Error Objects`**
+  * `title`: One of` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
 
-* [BOS Errors]()
-* [General Errors]()
-* [Start Game Errors]()
+* [BOS Errors](broken-reference)
+* [General Errors](broken-reference)
+* [Start Game Errors](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -102,23 +102,23 @@ POST /add_score/:result_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`result_message`**: Object of type [result]()
+* **`result_message`**: Object of type [result](broken-reference)
 {% endtab %}
 
 {% tab title="Response" %}
-* Success 
-  *  [Add Score Success Response]()
+* Success&#x20;
+  * &#x20;[Add Score Success Response](broken-reference)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of ``**`Error Objects`**
+  * `title`: One of` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
 
-* [BOS Errors]()
-* [General Errors]()
-* [Add Score Errors]()
+* [BOS Errors](broken-reference)
+* [General Errors](broken-reference)
+* [Add Score Errors](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -150,23 +150,23 @@ POST /finish_game/:finish_game_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`finish_game_message`**: Object of type [finish]()
+* **`finish_game_message`**: Object of type [finish](broken-reference)
 {% endtab %}
 
 {% tab title="Response" %}
-* Success 
-  *  [Finish game success response]()
+* Success&#x20;
+  * &#x20;[Finish game success response](broken-reference)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of ``**`Error Objects`**
+  * `title`: One of` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
 
-* [BOS Errors]()
-* [General Errors]()
-* [Finish Game Errors]()
+* [BOS Errors](broken-reference)
+* [General Errors](broken-reference)
+* [Finish Game Errors](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -197,23 +197,23 @@ POST /add_score/:cancel_game_message
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`cancel_game_message`**: Object of type [canceled]()
+* **`cancel_game_message`**: Object of type [canceled](broken-reference)
 {% endtab %}
 
 {% tab title="Response" %}
-* Success 
-  * [Cancel game success response]()
+* Success&#x20;
+  * [Cancel game success response](broken-reference)
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of ``**`Error Objects`**
+  * `title`: One of` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
 
-* [BOS Errors]()
-* [General Errors]()
-* [Cancel Game Errors]()
+* [BOS Errors](broken-reference)
+* [General Errors](broken-reference)
+* [Cancel Game Errors](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -243,16 +243,16 @@ DELETE /delete_event/:date/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`date`**: The date of the event. Format is YYYY-MM-DD \(UTC\)
+* **`date`**: The date of the event. Format is YYYY-MM-DD (UTC)
 * **`league`**: The name of the league
 {% endtab %}
 
 {% tab title="Response" %}
 * Success  - 200
-  * `title:` League Deleted
-  * `message:`\[league\]
+  * `title: `League Deleted
+  * `message:`\[league]
 * Failure - 400
-  * [Error 430]()
+  * [Error 430](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -281,10 +281,10 @@ DELETE /delete_game/:game_id
 
 {% tab title="Response" %}
 * Success  - 200
-  * `title:` League Deleted
-  * `message:`\[league\]
+  * `title: `League Deleted
+  * `message:`\[league]
 * Failure - 400
-  * [Error 431]()
+  * [Error 431](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -316,7 +316,7 @@ GET /get_all_data_by_date_range/:start_date/:end_date
 * Success - 200
   * List of all games between `start_date` and `end_date`
 * Failure - 400
-  * \`\`[Error 432]()
+  * ``[Error 432](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -341,7 +341,7 @@ GET /get_all_games/
 * Success - 200
   * List of all games
 * Failure - 400
-  * [Error 433]()
+  * [Error 433](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -361,10 +361,10 @@ GET /get_all_sports/
 
 {% tabs %}
 {% tab title="Response" %}
-* Success - 200 
+* Success - 200&#x20;
   * List of all sports
 * Failure - 400
-  * [Error 434]()
+  * [Error 434](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -384,7 +384,7 @@ GET /get_games_by_league_and_date/:league/:start_date/:end_date
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`league:`** `The sport league (event group).`
+* **`league: `**`The sport league (event group).`
 * **`start`**: The start of the date range. Format is YYYY-MM-DDTHH:MM:SS.000Z.
 * **`end`**: The end of the date range. Format is YYYY-MM-DDTHH:MM:SS.
 {% endtab %}
@@ -393,7 +393,7 @@ GET /get_games_by_league_and_date/:league/:start_date/:end_date
 * Success - 200
   * List of all games for `league` between `start` and `end`
 * Failure - 400
-  * [Error 435]()
+  * [Error 435](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -416,14 +416,14 @@ GET /get_games_by_league/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`league:`** `The league (event group).`
+* **`league: `**`The league (event group).`
 {% endtab %}
 
 {% tab title="Response" %}
 * Success - 200
   * List of all games for `league`
 * Failure - 400
-  * [Error 436]()
+  * [Error 436](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -444,14 +444,14 @@ GET /get_leagues_by_sport/:sport
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`sport:`** The id of the sport.
+* **`sport: `**The id of the sport.
 {% endtab %}
 
 {% tab title="Response" %}
 * Success - 200
   * List of all leagues for `sport`
 * Failure - 400
-  * [Error 437]()
+  * [Error 437](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -475,7 +475,7 @@ GET /get_sports_and_leagues/
 * Success - 200
   * List of all sports
 * Failure
-  * [Error 438]()
+  * [Error 438](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -495,14 +495,14 @@ GET /get_teams_by_league/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`league:`** The id of the league.
+* **`league: `**The id of the league.
 {% endtab %}
 
 {% tab title="Response" %}
 * Success - 200
   * List of all teams for the `league`
 * Failure - 400
-  * [Error 439]()
+  * [Error 439](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -523,14 +523,14 @@ GET /get_league_data_by_name/:leaguename
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`leaguename:`** The name of the league.
+* **`leaguename: `**The name of the league.
 {% endtab %}
 
 {% tab title="Response" %}
 * Success - 200
   * All fields for the selected league
 * Failure - 400
-  * [Error 446]()
+  * [Error 446](broken-reference)
 {% endtab %}
 {% endtabs %}
 
@@ -544,15 +544,15 @@ GET /last_event_id_by_date_and_league/:date/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`date:`** Event date in the format YYYY-MM\_DD
-* **`league:`** The name of the league.
+* **`date: `**Event date in the format YYYY-MM\_DD
+* **`league: `**The name of the league.
 {% endtab %}
 
 {% tab title="Response" %}
 * Success - 200
   * The last event id for `league` on `date`
 * Failure - 400
-  * [Error 440]()
+  * [Error 440](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -578,7 +578,7 @@ GET /last_event_id/
 * Success - 200
   * The last `event_id` for all leagues
 * Failure - 400
-  * [Error 441]()
+  * [Error 441](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -598,15 +598,15 @@ GET /last_game_id_by_date_and_league/:date/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`date:`** Game date in the format YYYY-MM\_DD
-* **`league:`** The name of the league.
+* **`date: `**Game date in the format YYYY-MM\_DD
+* **`league: `**The name of the league.
 {% endtab %}
 
 {% tab title="Response" %}
 * Success - 200
   * The last game id for `league` on `date`
 * Failure - 400
-  * [Error 442]()
+  * [Error 442](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -632,7 +632,7 @@ GET /last_game_id
 * Success - 200
   * The last game id for all sports.
 * Failure - 400
-  * [Error 443]()
+  * [Error 443](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -644,7 +644,7 @@ http.get(url + "last_game_id.php").map();
 
 ## last\_game
 
-Get the game details of all games sorted descending so the most recent \(last\) game is the first record
+Get the game details of all games sorted descending so the most recent (last) game is the first record
 
 ```http
 GET /last_game
@@ -655,7 +655,7 @@ GET /last_game
 * Success - 200
   * All game records sorted descending.
 * Failure - 400
-  * [Error 444]()
+  * [Error 444](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -667,7 +667,7 @@ http.get(url + "last_game").map();
 
 ## run\_replay
 
-Run a data replay for the selected sport and league\(s\)
+Run a data replay for the selected sport and league(s)
 
 ```http
 GET /run_replay/:sport/:leagues/:start/:end
@@ -675,8 +675,8 @@ GET /run_replay/:sport/:leagues/:start/:end
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`sport:`** The name of the sport
-* **`leagues:`** The name of the leagues. Pipe separated list, e.g "EPL\|La Liga\|Serie A
+* **`sport: `**The name of the sport
+* **`leagues: `**The name of the leagues. Pipe separated list, e.g "EPL|La Liga|Serie A
 * **`start`**: Start date in the format YYYY-MM\_DD
 * **`end`**: End date in the format YYYY-MM\_DD
 {% endtab %}
@@ -684,9 +684,9 @@ GET /run_replay/:sport/:leagues/:start/:end
 {% tab title="Response" %}
 * Success - 200
   * `title`: Replay completed
-  * `message`: \[sport\]: { \[league\]: total, \[league\]: total, ... }
+  * `message`: \[sport]: { \[league]: total, \[league]: total, ... }
 * Failure - 400
-  * [Error 445]()
+  * [Error 445](broken-reference)
 {% endtab %}
 
 {% tab title="Example" %}
@@ -703,4 +703,3 @@ http.get(url + "run_replay.php", {params:{
 {% hint style="warning" %}
 **Note**: Replays can only be run for one sport at a time.
 {% endhint %}
-

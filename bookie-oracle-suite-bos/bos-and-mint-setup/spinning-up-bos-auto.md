@@ -20,19 +20,19 @@ The commands shown are for production installation, for debug installation repla
 This is a basic setup and uses the flask built-in development server, see Production Deployment below.
 
 {% hint style="danger" %}
-**Important**: Before executing the next command make sure that your node is set to the correct environment. For example, if the installation is for Testnet \(Beatrice\) run:
+**Important**: Before executing the next command make sure that your node is set to the correct environment. For example, if the installation is for Testnet (Beatrice) run:
 
-`peerplays set node <Beatrice Node>` where &lt;Beatrice node&gt; is any Beatrice API node.
+`peerplays set node <Beatrice Node>` where \<Beatrice node> is any Beatrice API node.
 {% endhint %}
 
-```text
+```
 cd bos-auto
 bos-auto api --host 0.0.0.0 --port 8010       [--help for more information]
 ```
 
 After this, if it's set up correctly you'll see the following messages:
 
-> INFO \| Opening Redis connection \(redis://localhost/6379\) \* Running on http://0.0.0.0:8010/ \(Press CTRL+C to quit\)
+> INFO | Opening Redis connection (redis://localhost/6379) \* Running on http://0.0.0.0:8010/ (Press CTRL+C to quit)
 
 This means that you can now send incidents to http://0.0.0.0:8010/.
 
@@ -40,13 +40,13 @@ This means that you can now send incidents to http://0.0.0.0:8010/.
 
 You can test that the endpoint is properly running with the following command:
 
-```text
+```
 curl http://localhost:8010
 ```
 
 If the endpoint is running, the API daemon will print the following line:
 
-```text
+```
 127.0.0.1 - - [26/Apr/2018 14:19:45] "GET / HTTP/1.1" 404 -
 ```
 
@@ -58,19 +58,21 @@ Data proxies are interested in this particular endpoint as they will push incide
 
 For more information on Data Proxies see:
 
-{% page-ref page="../../data-proxies/data-proxies-page-1.md" %}
+{% content-ref url="../../data-proxies/data-proxies-page-1.md" %}
+[data-proxies-page-1.md](../../data-proxies/data-proxies-page-1.md)
+{% endcontent-ref %}
 
 ### **Monitoring**
 
 The endpoint has an `isalive` call that should be used for monitoring:
 
-```text
+```
 curl http://localhost:8010/isalive
 ```
 
 which produces an output like:
 
-```text
+```
 {
    "background": {
       "scheduler": True
@@ -95,7 +97,7 @@ which produces an output like:
 }
 ```
 
-Of interest here are the  listed versions and `queue.status.default.count`. 
+Of interest here are the  listed versions and `queue.status.default.count`.&#x20;
 
 The count should be zero most of the time, it reflects how many unhandled incidents are currently in the cache.
 
@@ -106,19 +108,19 @@ Going into production mode, a Witness may want to deploy the endpoint via UWSGI,
 ### Start worker
 
 {% hint style="danger" %}
-**Important**: At this point it's crucial to set the default Witness node to your own server \(ideally running in `localhost`\) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
+**Important**: At this point it's crucial to set the default Witness node to your own server (ideally running in `localhost`) using `peerplays set node ws://ip:port`. If this step is missed, the setup will not work or, at best, will work with very high latency.
 {% endhint %}
 
 Start the worker with the following commands:
 
-```text
+```
 cd bos-auto
 bos-auto worker      [--help for more information]
 ```
 
 It will already try to use the provided password to unlock the wallet and, if successful, return the following test:
 
-```text
+```
 INFO     | Opening Redis connection (redis://localhost/6379)
 unlocking wallet ...
 14:21:53 RQ worker 'rq:worker:YOURHOSTNAME.554' started, version 0.9.2
@@ -141,14 +143,14 @@ For testing, we need to throw a properly formatted incident at the endpoint. The
 **Note**: Because the incident data changes all the time and is quickly out of date, the actual contents of this file are unlikely to work. At the time of testing reach out to PBSA for some up to date incident data.
 {% endhint %}
 
-```text
+```
 {'provider_info': {'pushed': '2018-03-10T00:06:23Z', 'name': '5e2cdc120c9404f2609936aa3a8d49e4'}, 'call': 'create', 'timestamp': '2018-04-25T10:54:10.495868Z', 'arguments': {'unsure': True, 'season': '2018'}, 'unique_string': '2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true', 'id': {'away': 'New York Islanders', 'event_group_name': 'NHL Regular Season', 'start_time': '2018-03-16T23:00:00Z', 'home': 'Washington Capitals', 'sport': 'Ice Hockey'}}
 {'provider_info': {'pushed': '2018-03-10T00:06:23Z', 'name': '5e2cdc1safasf4f2609936aa3a8d49e4'}, 'call': 'create', 'timestamp': '2018-04-25T10:54:10.495868Z', 'arguments': {'unsure': True, 'season': '2018'}, 'unique_string': '2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true', 'id': {'away': 'New York Islanders', 'event_group_name': 'NHL Regular Season', 'start_time': '2018-03-16T23:00:00Z', 'home': 'Washington Capitals', 'sport': 'Ice Hockey'}}
 ```
 
 Store them in a file called `replay.txt` and run the following call:
 
-```text
+```
 bos-auto replay --url http://localhost:8010/trigger replay.txt
 ```
 
@@ -160,14 +162,14 @@ This will show you the incident and a load indicator at 100% once the incident h
 
 Your endpoint should return the following:
 
-```text
+```
 INFO     | Forwarded incident create to worker via redis
 127.0.0.1 - - [26/Apr/2018 14:25:43] "POST /trigger HTTP/1.1" 200 -
 ```
 
-And your worker to return something along the lines of \(once for each incident above\):
+And your worker to return something along the lines of (once for each incident above):
 
-```text
+```
 14:23:38 default: bookied.work.process({'provider_info': {'pushed': '2018-03-10T00:06:23Z', 'name': '5e2cdc120c9404f2609936aa3a8d49e4'}, 'call': 'create', 'timestamp': '2018-04-25T10:54:10.495868Z', 'arguments': {'unsure': True, 'season': '2018'}, 'unique_string': '2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true', 'id': {'away': 'New York Islanders', 'event_group_name': 'NHL Regular Season', 'start_time': '2018-03-16T23:00:00Z', 'home': 'Washington Capitals', 'sport': 'Ice Hockey'}, 'approver': 'init0', 'proposer': 'init0'}, approver=None, proposer=None) (a2f4eaaf-e750-4934-8c73-5481fe32df94)
   INFO     | processing create call with args {'unsure': True, 'season': '2018'}
   INFO     | Creating a new event ...
@@ -198,7 +200,7 @@ And your worker to return something along the lines of \(once for each incident 
 ```
 
 {% hint style="info" %}
-**Tip**: Each incident results in **two** work items, namely a `bookied.work.process()` as well as a `bookied.work.approve()` call. 
+**Tip**: Each incident results in **two** work items, namely a `bookied.work.process()` as well as a `bookied.work.approve()` call.&#x20;
 
 The former does the heavy lifting and may produce a proposal, while the latter approves proposals that we have created on our own.
 {% endhint %}
@@ -207,15 +209,15 @@ The former does the heavy lifting and may produce a proposal, while the latter a
 
 With the command line tool, we can connect to the MongoDB and inspect the incidents that we inserted above:
 
-```text
+```
 bos-auto incidents list [Begin Date] [End Date]
 ```
 
-Where \[Begin Date\] and \[End Date\] specify the date range to pull incident data from.
+Where \[Begin Date] and \[End Date] specify the date range to pull incident data from.
 
 The output should look like:
 
-```text
+```
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | identifier                   | Incidents                                                                                                                                                             |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -232,21 +234,20 @@ It tells you that **two** incidents for that particular match came in that both 
 
 We can now read the actual incidents with:
 
-```text
+```
 bos-auto incidents show 2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true 5e2cdc117c9404f2609936aa3a8d49e4
 ```
 
 And replay any of the two incidents by using:
 
-```text
+```
 bos-auto incidents resend 2018-03-16t230000z-ice-hockey-nhl-regular-season-washington-capitals-new-york-islanders-create-2018-true 5e2cdc117c9404f2609936aa3a8d49e4
 ```
 
 {% hint style="info" %}
 Tip: For more information on BOS supported commands run:
 
-`bos-auto --help` or `bos-incidents --help`
+`bos-auto --help `or `bos-incidents --help`
 {% endhint %}
 
 Your worker should now be started.
-

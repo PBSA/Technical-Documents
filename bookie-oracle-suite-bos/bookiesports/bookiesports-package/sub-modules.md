@@ -4,17 +4,17 @@
 
 ## bookiesports.datestring module
 
-`bookiesports.datestring.date_to_string`\(_date\_object=None_\)
+`bookiesports.datestring.date_to_string`(_date\_object=None_)
 
 rfc3339 conform string representation of a date can also be given as str YYYY-mm-dd HH:MM:SS
 
-`bookiesports.datestring.string_to_date`\(_date\_string=None_\)
+`bookiesports.datestring.string_to_date`(_date\_string=None_)
 
 assumes rfc3339 conform string and creates date object
 
 ## bookiesports.exceptions module
 
-_exception_ `bookiesports.exceptions.SportsNotFoundError`
+_exception _`bookiesports.exceptions.SportsNotFoundError`
 
 Bases: `Exception`
 
@@ -24,43 +24,42 @@ Bases: `Exception`
 
 ## bookiesports.normalize module
 
-_exception_ **`bookiesports.normalize.EventGroupNotNormalizableException`**
+_exception _**`bookiesports.normalize.EventGroupNotNormalizableException`**
 
 Bases: **`bookiesports.normalize.NotNormalizableException`**
 
-_class_ **`bookiesports.normalize.IncidentsNormalizer`**\(_chain=None_\)
+_class _**`bookiesports.normalize.IncidentsNormalizer`**(_chain=None_)
 
 Bases: **`object`**
 
 This class serves as the normalization entry point for incidents. All events / event group and participant names are replaced with the counterpart stored in the BookieSports package.
 
-**`DEFAULT_CHAIN`** _= 'beatrice'_
+**`DEFAULT_CHAIN`**_ = 'beatrice'_
 
-        default chosen chain for BookieSports
+&#x20;       default chosen chain for BookieSports
 
-**`NOT_FOUND`** _= {}_
+**`NOT_FOUND`**_ = {}_
 
-        As class variable to have one stream for missing normalization entries
+&#x20;       As class variable to have one stream for missing normalization entries
 
-**`NOT_FOUND_FILE`** _= None_
+**`NOT_FOUND_FILE`**_ = None_
 
-       If normalization errors should be written to file, set file here
+&#x20;      If normalization errors should be written to file, set file here
 
-**`normalize`**\(_incident_, _errorIfNotFound=False_\)
+**`normalize`**(_incident_, _errorIfNotFound=False_)
 
-        _static_ **`not_found`**\(_key_\)
+_        static _**`not_found`**(_key_)
 
-        _static_ **`use_chain`**\(_chain_, _not\_found\_file=None_\)
+_        static _**`use_chain`**(_chain_, _not\_found\_file=None_)
 
-_exception_ **`bookiesports.normalize.NotNormalizableException`**
+_exception _**`bookiesports.normalize.NotNormalizableException`**
 
-        Bases: **`Exception`**
+&#x20;       Bases: **`Exception`**
 
-_exception_ **`bookiesports.normalize.ParicipantNotNormalizableException`**
+_exception _**`bookiesports.normalize.ParicipantNotNormalizableException`**
 
-        Bases: **`bookiesports.normalize.NotNormalizableException`**
+&#x20;       Bases: **`bookiesports.normalize.NotNormalizableException`**
 
-_exception_ **`bookiesports.normalize.SportNotNormalizableException`**
+_exception _**`bookiesports.normalize.SportNotNormalizableException`**
 
-        Bases: **`bookiesports.normalize.NotNormalizableException`**
-
+&#x20;       Bases: **`bookiesports.normalize.NotNormalizableException`**

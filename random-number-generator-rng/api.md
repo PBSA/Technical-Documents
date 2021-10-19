@@ -8,7 +8,7 @@ Function uint64_t database::get_random_bits(uint64_t bound)
 
 {% tabs %}
 {% tab title="Parameters" %}
-**`bound`**`:` The upper limit for the random number.
+**`bound`**`: `The upper limit for the random number.
 {% endtab %}
 
 {% tab title="Returns" %}
@@ -88,4 +88,3 @@ peerplays/libraries/fc/include/fc/crypto/hash_ctr_rng.hpp
          }
       }
 ```
-

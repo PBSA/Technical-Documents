@@ -19,7 +19,7 @@ fc::variants graphene::app::database_api::get_objects(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`ids`**: IDs of the objects to retrieve
-* **`subscribe`**: _true_ to subscribe to the queried objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+* **`subscribe`**: _true_ to subscribe to the queried objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting (see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a7ef2faf3e3e402ea9572067554c2dd2c))
 {% endtab %}
 
 {% tab title="Return" %}
@@ -34,7 +34,7 @@ The objects retrieved, in the order they are mentioned in ids.
 Register a callback handle which then can be used to subscribe to object database changes.
 
 {% hint style="warning" %}
-**Note**: auto-subscription is enabled by default and can be disabled with [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c) 
+**Note**: auto-subscription is enabled by default and can be disabled with [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a7ef2faf3e3e402ea9572067554c2dd2c)&#x20;
 {% endhint %}
 
 ```cpp
@@ -146,7 +146,7 @@ processed_transaction graphene::app::database_api::get_transaction(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`block_num`**: height of the block to fetch
-* **`trx_in_block`**: the index \(sequence number\) of the transaction in the block, starts from 0
+* **`trx_in_block`**: the index (sequence number) of the transaction in the block, starts from 0
 {% endtab %}
 
 {% tab title="Return" %}
@@ -177,7 +177,7 @@ If the transaction has not expired, this method will return the transaction for 
 
 ### get\_chain\_properties
 
-Retrieve the [graphene::chain::chain\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene_1_1chain_1_1chain__property__object) associated with the chain.
+Retrieve the [graphene::chain::chain\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene\_1\_1chain\_1\_1chain\_\_property\_\_object) associated with the chain.
 
 ```cpp
 chain_property_object graphene::app::database_api::get_chain_properties()const
@@ -185,7 +185,7 @@ chain_property_object graphene::app::database_api::get_chain_properties()const
 
 ### get\_global\_properties
 
-Retrieve the current [graphene::chain::global\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene_1_1chain_1_1global__property__object).
+Retrieve the current [graphene::chain::global\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene\_1\_1chain\_1\_1global\_\_property\_\_object).
 
 ```cpp
 global_property_object graphene::app::database_api::get_global_properties()const
@@ -209,7 +209,7 @@ chain_id_type graphene::app::database_api::get_chain_id()cons
 
 ### get\_dynamic\_global\_properties
 
-Retrieve the current [graphene::chain::dynamic\_global\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene_1_1chain_1_1dynamic__global__property__object).
+Retrieve the current [graphene::chain::dynamic\_global\_property\_object](https://dev.bitshares.works/en/master/api/namespaces/chain.html#classgraphene\_1\_1chain\_1\_1dynamic\_\_global\_\_property\_\_object).
 
 ```cpp
 dynamic_global_property_object graphene::app::database_api::get_dynamic_global_properties()const
@@ -242,7 +242,7 @@ ID of all accounts that refer to the specified keys.
 
 Get a list of accounts by names or IDs.
 
-This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a1f20e51d290fc3ac2409c49c058585b3)\*\*\*\*
+This function has semantics identical to[get\_objects](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a1f20e51d290fc3ac2409c49c058585b3)****
 
 ```cpp
 vector<optional<account_object>> graphene::app::database_api::get_accounts(
@@ -253,7 +253,7 @@ vector<optional<account_object>> graphene::app::database_api::get_accounts(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`account_names_or_ids`**: names or IDs of the accounts to retrieve
-* **`subscribe`**: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+* **`subscribe`**: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting (see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a7ef2faf3e3e402ea9572067554c2dd2c))
 {% endtab %}
 
 {% tab title="Return" %}
@@ -276,7 +276,7 @@ std::map<string, full_account> graphene::app::database_api::get_full_accounts(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`names_or_ids`**: Each item must be the name or ID of an account to retrieve
-* **`subscribe`**: _true_ to subscribe to the queried full account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+* **`subscribe`**: _true_ to subscribe to the queried full account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting (see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a7ef2faf3e3e402ea9572067554c2dd2c))
 {% endtab %}
 
 {% tab title="Return" %}
@@ -326,7 +326,7 @@ All accounts that refer to the specified account in their owner or active author
 
 Get a list of accounts by name.
 
-This function has semantics identical to [get\_objects](database-api.md#get_objects), but doesn’t subscribe
+This function has semantics identical to [get\_objects](database-api.md#get\_objects), but doesn’t subscribe
 
 ```cpp
 vector<optional<account_object>> graphene::app::database_api::lookup_account_names(
@@ -362,7 +362,7 @@ map<string, account_id_type> graphene::app::database_api::lookup_accounts(
 {% tab title="Parameters" %}
 * **`lower_bound_name`**: Lower bound of the first name to return
 * **`limit`**: Maximum number of results to return must not exceed 1000
-* **`subscribe`**: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\).
+* **`subscribe`**: _true_ to subscribe to the queried account objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting (see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a7ef2faf3e3e402ea9572067554c2dd2c)).
 {% endtab %}
 
 {% tab title="Return" %}
@@ -403,7 +403,7 @@ Balances of the account.
 
 ### get\_named\_account\_balances
 
-Semantically equivalent to [get\_account\_balances](database-api.md#get_account_balances).
+Semantically equivalent to [get\_account\_balances](database-api.md#get\_account\_balances).
 
 ```cpp
 vector<asset> graphene::app::database_api::get_named_account_balances(
@@ -483,7 +483,7 @@ All vesting balance objects owned by the account.
 
 Get a list of assets by symbol names or IDs.
 
-Semantically equivalent to [get\_objects](database-api.md#get_objects).
+Semantically equivalent to [get\_objects](database-api.md#get\_objects).
 
 ```cpp
 vector<optional<extended_asset_object>> graphene::app::database_api::get_assets(
@@ -494,7 +494,7 @@ vector<optional<extended_asset_object>> graphene::app::database_api::get_assets(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`asset_symbols_or_ids`**: symbol names or IDs of the assets to retrieve
-* **`subscribe`**: _true_ to subscribe to the queried asset objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting \(see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a7ef2faf3e3e402ea9572067554c2dd2c)\)
+* **`subscribe`**: _true_ to subscribe to the queried asset objects; _false_ to not subscribe; _null_ to subscribe or not subscribe according to current auto-subscription setting (see [set\_auto\_subscription](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a7ef2faf3e3e402ea9572067554c2dd2c))
 {% endtab %}
 
 {% tab title="Return" %}
@@ -515,7 +515,7 @@ vector<extended_asset_object> graphene::app::database_api::list_assets(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`lower_bound_symbol`**: Lower bound of symbol names to retrieve
-* **`limit`**: Maximum number of assets to fetch \(must not exceed 101\)
+* **`limit`**: Maximum number of assets to fetch (must not exceed 101)
 {% endtab %}
 
 {% tab title="Return" %}
@@ -527,7 +527,7 @@ The assets found.
 
 Get a list of assets by symbol names or IDs.
 
-Semantically equivalent to [get\_objects](database-api.md#get_objects), but doesn’t subscribe.
+Semantically equivalent to [get\_objects](database-api.md#get\_objects), but doesn’t subscribe.
 
 ```cpp
 vector<optional<extended_asset_object>> graphene::app::database_api::lookup_asset_symbols(
@@ -594,7 +594,7 @@ The limit orders, ordered from least price to greatest.
 
 ### get\_call\_orders
 
-Get call orders \(aka margin positions\) for a given asset.
+Get call orders (aka margin positions) for a given asset.
 
 ```cpp
 vector<call_order_object> graphene::app::database_api::get_call_orders(
@@ -638,7 +638,7 @@ The settle orders, ordered from earliest settlement date to latest.
 
 Get all open margin positions of a given account.
 
-Similar to [get\_call\_orders\_by\_account](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a78eb082a3a0cfb33ccd00adeb8cfac1d), but without pagination.
+Similar to [get\_call\_orders\_by\_account](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a78eb082a3a0cfb33ccd00adeb8cfac1d), but without pagination.
 
 ```cpp
 vector<call_order_object> graphene::app::database_api::get_margin_positions(
@@ -659,7 +659,7 @@ All open margin positions of the account.
 
 Request notification when the active orders in the market between two assets changes.
 
-Callback will be passed a variant containing a vector&lt;pair&lt;operation, operation\_result&gt;&gt;. 
+Callback will be passed a variant containing a vector\<pair\<operation, operation\_result>>.&#x20;
 
 The vector will contain, in order, the operations which changed the market, and their results
 
@@ -739,13 +739,13 @@ The market volume over the past 24 hours.
 
 ### get\_trade\_history
 
-Returns recent trades for the market base:quote, ordered by time, most recent first. 
+Returns recent trades for the market base:quote, ordered by time, most recent first.&#x20;
 
 {% hint style="warning" %}
 **Note**: Currently, timezone offsets are not supported. The time must be UTC.
 {% endhint %}
 
-The range is \[stop, start\). In case  there are more than 100 trades occurring in the same second, this API only returns the first 100 records; use [get\_trade\_history\_by\_sequence](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a19c22f540701825c9292e4a790a4b0d3) to query for the rest.
+The range is \[stop, start). In case  there are more than 100 trades occurring in the same second, this API only returns the first 100 records; use [get\_trade\_history\_by\_sequence](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a19c22f540701825c9292e4a790a4b0d3) to query for the rest.
 
 ```cpp
 vector<market_trade> graphene::app::database_api::get_trade_history(
@@ -776,7 +776,7 @@ Recent transactions in the market
 
 Get a list of witnesses by ID.
 
-Semantically equivalent to [get\_objects](database-api.md#get_objects), but doesn’t subscribe.
+Semantically equivalent to [get\_objects](database-api.md#get\_objects), but doesn’t subscribe.
 
 ```cpp
 vector<optional<witness_object>> graphene::app::database_api::get_witnesses(
@@ -846,7 +846,7 @@ uint64_t graphene::app::database_api::get_witness_count()const
 
 Get a list of committee\_members by ID.
 
-Semantically equivalent to [get\_objects](database-api.md#get_objects), but doesn’t subscribe.
+Semantically equivalent to [get\_objects](database-api.md#get\_objects), but doesn’t subscribe.
 
 ```cpp
 vector<optional<committee_member_object>> graphene::app::database_api::get_committee_members(
@@ -993,7 +993,7 @@ A subset of `available_keys` that could sign for the given transaction.
 
 ### get\_potential\_signatures
 
-This method will return the set of all public keys that could possibly sign for a given transaction. This call can be used by wallets to filter their set of public keys to just the relevant subset prior to calling [get\_required\_signatures](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene_1_1app_1_1database__api_1a9ae2eb6a83c27a7b4eec2b00ee8ba371) to get the minimum subset.
+This method will return the set of all public keys that could possibly sign for a given transaction. This call can be used by wallets to filter their set of public keys to just the relevant subset prior to calling [get\_required\_signatures](https://dev.bitshares.works/en/master/api/namespaces/app.html#classgraphene\_1\_1app\_1\_1database\_\_api\_1a9ae2eb6a83c27a7b4eec2b00ee8ba371) to get the minimum subset.
 
 ```cpp
 set<public_key_type> graphene::app::database_api::get_potential_signatures(
@@ -1105,7 +1105,7 @@ vector<fc::variant> graphene::app::database_api::get_required_fees(
 {% endtab %}
 
 {% tab title="Return" %}
-A ****list of objects which indicates required fees of each operation
+A** **list of objects which indicates required fees of each operation
 {% endtab %}
 {% endtabs %}
 
@@ -1113,7 +1113,7 @@ A ****list of objects which indicates required fees of each operation
 
 ### get\_proposed\_transactions
 
-Gets a set of proposed transactions \(proposals\) that the specified account can add approval to or remove approval from.
+Gets a set of proposed transactions (proposals) that the specified account can add approval to or remove approval from.
 
 ```cpp
 vector<proposal_object> graphene::app::database_api::get_proposed_transactions(
@@ -1150,4 +1150,3 @@ vector<blinded_balance_object> graphene::app::database_api::get_blinded_balances
 The set of blinded balance objects by commitment ID.
 {% endtab %}
 {% endtabs %}
-

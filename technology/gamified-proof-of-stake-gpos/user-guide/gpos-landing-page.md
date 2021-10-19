@@ -6,13 +6,13 @@ The landing page is the entry point to use the different GPOS features.
 
 ## Power Up
 
-Clicking on `Power Up` will take you to the deposit screen where you can vest PPY towards GPOS and in turn, add to your participation rewards. 
+Clicking on `Power Up` will take you to the deposit screen where you can vest PPY towards GPOS and in turn, add to your participation rewards.&#x20;
 
 You can click `Power Up` at any time since you are free to come back and vest more PPY at your discretion.
 
 ## Power Down
 
-Clicking on `Power Down` is very similar to `Power Up` except this time you'll be taken to the withdraw screen.
+Clicking on `Power Down` is very similar to `Power Up `except this time you'll be taken to the withdraw screen.
 
 You can withdraw form your GPOS balance at any time up to the value of your balance.
 
@@ -27,4 +27,3 @@ For anybody familiar with earlier versions of the Peerplays wallet, the voting s
 {% hint style="danger" %}
 **Important**: If you have a GPOS balance of zero the `Vote` button will be disabled
 {% endhint %}
-

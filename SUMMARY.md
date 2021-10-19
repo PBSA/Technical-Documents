@@ -13,10 +13,11 @@
 * [Intro to Peerplays Tokens](technology/intro-to-peerplays-tokens.md)
 * [Intro to Peerplays Liquidity Pools](technology/intro-to-peerplays-liquidity-pools/README.md)
   * [Service Infrastructure Pools](technology/intro-to-peerplays-liquidity-pools/service-infrastructure-pools.md)
-* [Staking \(PowerUp\) in Peerplays](technology/staking-in-peerplays.md)
+* [Staking (PowerUp) in Peerplays](technology/staking-in-peerplays.md)
 * [Gamified User Namespaces and Subject Matter Expert Committees](technology/gamified-user-namespaces-and-subject-matter-expert-committees.md)
-* [Delegated Proof of Stake \(DPOS\)](technology/delegated-proof-of-stake-dpos.md)
-* [Gamified Proof of Stake \(GPOS\)](technology/gamified-proof-of-stake-gpos/README.md)
+* [Peer-to-Peer Autonomous Organizations: Flow Diagram](technology/peer-to-peer-autonomous-organizations-flow-diagram.md)
+* [Delegated Proof of Stake (DPOS)](technology/delegated-proof-of-stake-dpos.md)
+* [Gamified Proof of Stake (GPOS)](technology/gamified-proof-of-stake-gpos/README.md)
   * [Wallet User Guide](technology/gamified-proof-of-stake-gpos/user-guide/README.md)
     * [GPOS Panel](technology/gamified-proof-of-stake-gpos/user-guide/gpos-panel.md)
     * [GPOS Landing Page](technology/gamified-proof-of-stake-gpos/user-guide/gpos-landing-page.md)
@@ -30,7 +31,7 @@
     * [Power Up & Power Down](technology/gamified-proof-of-stake-gpos/faq/power-up-and-power-down.md)
     * [Voting](technology/gamified-proof-of-stake-gpos/faq/voting.md)
     * [Participation Rewards](technology/gamified-proof-of-stake-gpos/faq/participation-rewards.md)
-* [Sidechain Operator Nodes \(SONs\)](technology/sidechain-operator-nodes-sons/README.md)
+* [Sidechain Operator Nodes (SONs)](technology/sidechain-operator-nodes-sons/README.md)
   * [FAQ](technology/sidechain-operator-nodes-sons/faq.md)
   * [Running a SON Node](technology/sidechain-operator-nodes-sons/running-a-son-node/README.md)
     * [Requirements](technology/sidechain-operator-nodes-sons/running-a-son-node/requirements.md)
@@ -51,7 +52,7 @@
 
 * [What is a Peerplays Witness?](witnesses/what-is-a-peerplays-witness.md)
 * [Becoming a Peerplays Witness](witnesses/becoming-a-witness.md)
-* [Obtaining private keys for cli\_wallet](witnesses/obtaining-private-keys-for-use-in-cli_wallet.md)
+* [Obtaining private keys for cli\_wallet](witnesses/obtaining-private-keys-for-use-in-cli\_wallet.md)
 * [Witness Node Hardware Requirements](witnesses/witness-node-hardware-requirements.md)
 * [Witness Node Docker Install](witnesses/witness-node-docker-install.md)
 * [Witness Node GitLab Artifact Install](witnesses/witness-node-gitlab-artifact-install.md)
@@ -65,7 +66,7 @@
 * [Beatrice](witnesses/beatrice/README.md)
   * [Setting up the chain and using the CLI wallet through downloadable binaries](witnesses/beatrice/setting-up-the-chain-and-using-the-cli-wallet-through-downloadable-binaries.md)
 
-## Bookie Oracle Suite \(BOS\)
+## Bookie Oracle Suite (BOS)
 
 * [Introduction to BOS](bookie-oracle-suite-bos/intro-bos.md)
 * [BOS Installation](bookie-oracle-suite-bos/bos-and-mint-setup/README.md)
@@ -80,7 +81,7 @@
     * [Sub Modules](bookie-oracle-suite-bos/bookiesports/bookiesports-package/sub-modules.md)
   * [Schema](bookie-oracle-suite-bos/bookiesports/schema.md)
   * [Naming Scheme](bookie-oracle-suite-bos/bookiesports/naming-schema.md)
-* [Manual Intervention Tool \(MINT\)](bookie-oracle-suite-bos/introduction-to-mint/README.md)
+* [Manual Intervention Tool (MINT)](bookie-oracle-suite-bos/introduction-to-mint/README.md)
   * [Installing MINT](bookie-oracle-suite-bos/introduction-to-mint/installing-mint.md)
 
 ## Data Proxies
@@ -132,7 +133,7 @@
   * [BOS Schema](couch-potato/api-1/bos-schema.md)
 * [Proxy Payment Considerations](couch-potato/proxy-payment-considerations.md)
 
-## Random Number Generator \(RNG\)
+## Random Number Generator (RNG)
 
 * [RNG Technical Summary](random-number-generator-rng/rng-technical-summary.md)
 * [RNG API](random-number-generator-rng/api.md)
@@ -177,7 +178,7 @@
   * [HRP / RBAC](api/python-peerplays/hrp-rbac.md)
 * [peerplayjs-lib](api/peerplayjs-lib.md)
 
----
+***
 
 * [Connecting Elasticsearch to a blockchain node](connecting-elasticsearch-to-a-blockchain-node.md)
 
@@ -189,7 +190,7 @@
 
 ## Other Documentation
 
----
+***
 
 * [Docs Home](https://peerplays.tech)
 * [Infrastructure Docs](https://infra.peerplays.tech)
@@ -199,4 +200,3 @@
 
 * [Peerplays Disaster Recovery Plan](known-issues/peerplays-disaster-recovery-plan.md)
 * [Sept 2021 Mainnet Outage - Postmortem Report](known-issues/sept-2021-mainnet-outage-postmortem-report.md)
-

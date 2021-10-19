@@ -17,7 +17,7 @@ vector<extended_asset_object> graphene::wallet::wallet_api::list_assets(
 {% tabs %}
 {% tab title="Parameters" %}
 * **`lowerbound`**: the symbol of the first asset to include in the list.
-* **`limit`**: the maximum number of assets to return \(max: 100\)
+* **`limit`**: the maximum number of assets to return (max: 100)
 {% endtab %}
 
 {% tab title="Return" %}
@@ -29,7 +29,7 @@ The list of asset objects, ordered by symbol.
 
 Creates a new user-issued or market-issued asset.
 
-Many options can be changed later using [`update_asset()`](asset-calls.md#update_asset)\`\`
+Many options can be changed later using [`update_asset()`](asset-calls.md#update\_asset)``
 
 {% hint style="warning" %}
 **Note**: Right now this function is difficult to use because you must provide raw JSON data structures for the options objects, and those include prices and asset ids.
@@ -62,7 +62,7 @@ The signed transaction creating a new asset.
 
 ### update\_asset
 
-Update the core options on an asset. There are a number of options which all assets in the network use. These options are enumerated in the `asset_object::asset_options` struct. 
+Update the core options on an asset. There are a number of options which all assets in the network use. These options are enumerated in the `asset_object::asset_options` struct.&#x20;
 
 This command is used to update these options for an existing asset.
 
@@ -93,7 +93,7 @@ Update the options specific to a BitAsset.
 
 BitAssets have some options which are not relevant to other asset types. This operation is used to update those options an an existing BitAsset.
 
-**See** [update\_asset\(\)](asset-calls.md#update_asset)
+**See **[update\_asset()](asset-calls.md#update\_asset)
 
 ```cpp
 signed_transaction graphene::wallet::wallet_api::update_bitasset(
@@ -145,16 +145,16 @@ Publishes a price feed for the named asset.
 
 Price feed providers use this command to publish their price feeds for market-issued assets. A price feed is used to tune the market for a particular market-issued asset. For each value in the feed, the median across all committee\_member feeds for that asset is calculated and the market for the asset is configured with the median of that value.
 
-The feed object in this command contains three prices: 
+The feed object in this command contains three prices:&#x20;
 
 * A call price limit
 * A short price limit,
 * A settlement price
 
-The call limit price is structured as \(collateral asset\) / \(debt asset\) and the short limit price is structured as \(asset for sale\) / \(collateral asset\). 
+The call limit price is structured as (collateral asset) / (debt asset) and the short limit price is structured as (asset for sale) / (collateral asset).&#x20;
 
 {% hint style="warning" %}
-**Note**:  The asset IDs are opposite to each other, so if we’re publishing a feed for USD, the call limit price will be CORE/USD and the short limit price will be USD/CORE. 
+**Note**:  The asset IDs are opposite to each other, so if we’re publishing a feed for USD, the call limit price will be CORE/USD and the short limit price will be USD/CORE.&#x20;
 {% endhint %}
 
 The settlement price may be flipped either direction, as long as it is a ratio between the market-issued asset and its collateral.
@@ -228,7 +228,7 @@ The information about the asset stored in the block chain.
 
 ### **get\_bitasset\_data**
 
-Returns the BitAsset-specific data for a given asset. Market-issued assets’s behaviour are determined both by their “BitAsset Data” and their basic asset data, as returned by [`get_asset()`](asset-calls.md#get_asset)\`\`
+Returns the BitAsset-specific data for a given asset. Market-issued assets’s behaviour are determined both by their “BitAsset Data” and their basic asset data, as returned by [`get_asset()`](asset-calls.md#get\_asset)``
 
 ```cpp
 asset_bitasset_data_object graphene::wallet::wallet_api::get_bitasset_data(
@@ -249,7 +249,7 @@ The BitAsset-specific data for this asset
 
 Pay into the fee pool for the given asset.
 
-User-issued assets can optionally have a pool of the core asset which is automatically used to pay transaction fees for any transaction using that asset \(using the asset’s core exchange rate\).
+User-issued assets can optionally have a pool of the core asset which is automatically used to pay transaction fees for any transaction using that asset (using the asset’s core exchange rate).
 
 This command allows anyone to deposit the core asset into this fee pool.
 
@@ -308,11 +308,11 @@ The signed transaction burning the asset
 
 ### global\_settle\_asset
 
-Forces a global settling of the given asset \(black swan or prediction markets\).
+Forces a global settling of the given asset (black swan or prediction markets).
 
 In order to use this operation, `asset_to_settle` must have the `global_settle` flag set
 
-When this operation is executed all open margin positions are called at the settle price. A pool will be formed containing the collateral got from the margin positions. Users owning an amount of the asset may use [`settle_asset()`](https://dev.bitshares.works/en/master/api/wallet_api.html?highlight=set_voting_proxy#classgraphene_1_1wallet_1_1wallet__api_1a95a3baa4b0c83c1fce14827acbbddd62) to claim collateral instantly at the settle price from the pool. 
+When this operation is executed all open margin positions are called at the settle price. A pool will be formed containing the collateral got from the margin positions. Users owning an amount of the asset may use [`settle_asset()`](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1a95a3baa4b0c83c1fce14827acbbddd62) to claim collateral instantly at the settle price from the pool.&#x20;
 
 If this asset is used as backing for other BitAssets, those BitAssets will not be affected.
 
@@ -340,4 +340,3 @@ wallet_api
 The signed transaction settling the named asset
 {% endtab %}
 {% endtabs %}
-

@@ -1,24 +1,24 @@
 # NFT Operations in Python
 
-Describing here the steps to verify the NFT\_python on local or server machine.  
+Describing here the steps to verify the NFT\_python on local or server machine.\
 
 
-**Machine configuration** : Local or server machine.  
+**Machine configuration** : Local or server machine.\
 
 
-#### \*\*\*\*
+#### ****
 
 #### **Step 1:** Clone NFT\_python binaries on machine
 
 #### **Project Url :**
 
-```text
+```
 https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays/-/tree/nft
 ```
 
-#### **Clone binaries on Machine :** 
+#### **Clone binaries on Machine : **
 
-```text
+```
 git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
 ```
 
@@ -28,15 +28,15 @@ git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
 
 #### **Step: 2** Install virtual env on machine
 
-**Go to project :** 
+**Go to project : **
 
-```text
+```
 cd python-peerplays
 ```
 
 **Run:**
 
-```text
+```
 virtualenv -p python3 env
 ```
 
@@ -46,37 +46,37 @@ virtualenv -p python3 env
 
 **Run:**
 
-```text
+```
 source env/bin/activate
 ```
 
-**then,** 
+**then, **
 
-```text
+```
 pip3 install -r requirements.txt
 ```
 
-**And then,** 
+**And then, **
 
-```text
+```
 pip3 install -r requirements-test.txt
 ```
 
-\*\*\*\*
+****
 
 #### **Step: 4** Run unit tests
 
 **Run:**
 
-```text
+```
 python3 -m unittest tests/test_nft.py
 ```
 
- 
+&#x20;
 
 **Expected result should be as below:**
 
-```text
+```
 (env) ubuntu@ip-172-31-13-101:~/python-peerplays$ python3 -m unittest tests/test_nft.py
 Not broadcasting anything!
 nft_metadata_create Success!
@@ -102,4 +102,3 @@ OK
 ```
 
 Cheers, all unit tests are passed and you successfully verify the NFT\_python
-

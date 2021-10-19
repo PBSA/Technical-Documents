@@ -5,9 +5,9 @@ After successful update of BOS, Witnesses should perform the following actions t
 Synchronization should be done as follows:
 
 1. Open MINT.
-2. Go to the MINT /proposals page \(see below\).
+2. Go to the MINT /proposals page (see below).
 3. Click on the thumbs-up-and-down icon on the MINT top bar.
-4. Approve the sync proposal by clicking the green 'approve' button. 
+4. Approve the sync proposal by clicking the green 'approve' button.&#x20;
 5. Enter your password if prompted.
 
 {% hint style="warning" %}
@@ -15,7 +15,7 @@ Synchronization should be done as follows:
 {% endhint %}
 
 {% hint style="warning" %}
-**Note:** Advanced features needs to be enabled within the .YAML configuration file for MINT in order to use this feature.
+**Note: **Advanced features needs to be enabled within the .YAML configuration file for MINT in order to use this feature.
 {% endhint %}
 
 Example .YAML File:
@@ -41,7 +41,7 @@ allowed_assets:    - BTF    - PPY
 
 For more information on MINT see:
 
-{% page-ref page="../introduction-to-mint/" %}
-
-
+{% content-ref url="../introduction-to-mint/" %}
+[introduction-to-mint](../introduction-to-mint/)
+{% endcontent-ref %}
 
