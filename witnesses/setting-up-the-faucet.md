@@ -8,13 +8,13 @@ It is recommended to use Ubuntu 18.04 to run the faucet.
 
 ### Clone the Repository
 
-```text
+```
 git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/faucet.git -b develop
 ```
 
 ### Install the dependencies
 
-```text
+```
 sudo apt update
 sudo apt-get install libffi-dev libssl-dev python-dev python3-pip redis-server 
 ```
@@ -23,26 +23,27 @@ sudo apt-get install libffi-dev libssl-dev python-dev python3-pip redis-server
 It is best practice to use python virtual environments. [https://docs.python.org/3/tutorial/venv.html](https://docs.python.org/3/tutorial/venv.html)
 {% endhint %}
 
-```text
+```
 sudo apt-get install python3-venv
 cd faucet
 python3 -m venv env
 source env/bin/activate
 ```
 
-```text
+```
+python3 -m pip install --upgrade pip # upgrades pip to the latest version
 pip3 install -r requirements.txt
 ```
 
 ### Edit the configuration
 
-```text
+```
 cp config-example.yml config.yml
 ```
 
 Change the `config.yml` for Beatrice and your node:
 
-```text
+```
 secret_key: "RANDOM-STRING"  # Random keys
 nobroadcast: True            # Safety mode
 
@@ -69,13 +70,13 @@ core_asset: "TEST"
 
 ### Apply the changes
 
-```text
+```
 python3 manage.py install
 ```
 
 ## Usage
 
-```text
+```
 python work.py # for starting the worker
 
 python manage.py run # for normal mode
@@ -89,7 +90,7 @@ The faucet will then be available at `http://localhost:5000`
 
 Once the faucet is running, tests can be run.
 
-```text
+```
 python3 test_faucet.py
 ```
 
@@ -99,13 +100,13 @@ python3 test_faucet.py
 
 Run uwsgi
 
-```text
+```
 uwsgi --ini wsgi.ini
 ```
 
 and use a configuration similar to this:
 
-```text
+```
 user peerplays;
 worker_processes  4;
 
@@ -170,4 +171,3 @@ http {
     }
 }
 ```
-
