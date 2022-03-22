@@ -62,9 +62,9 @@ Be very active on social media, especially target Peerplays and Peerplays Witnes
 
 Some useful links:
 
-Peerplays official Telegram channel:
+Peerplays official Rocket Chat and Telegram channels for Witnesses:
 
-{% embed url="https://t.me/Peerplays" %}
+{% embed url="https://chat.peerplays.live/channel/witness-info" %}
 
 {% embed url="https://t.me/PeerplaysWitness" %}
 
@@ -76,7 +76,7 @@ We've already talked about the personal qualities a Witness needs to have, and t
 
 All nodes keep updating an internal database by applying the transactions as they arrive in incoming blocks. The difference between the node types lies in the amount of history they keep track of, and in the functionality they provide.
 
-A **Witness node, **as the name implies, is a node run by a Witness. Each Witness node validates all blocks and transactions it receives. The nodes of elected Witnesses take turns in bundling new transactions into blocks and broadcasting them to the network.
+A **Witness node,** as the name implies, is a node run by a Witness. Each Witness node validates all blocks and transactions it receives. The nodes of elected Witnesses take turns in bundling new transactions into blocks and broadcasting them to the network.
 
 **API nodes** (nodes with an open RPC port) provide network services to client applications. They usually have account transaction histories accessible through API calls, but can vary in the amount of available history.&#x20;
 
@@ -84,7 +84,7 @@ A **Witness node, **as the name implies, is a node run by a Witness. Each Witnes
 
 **Seed nodes** are nodes that accept incoming P2P connections. They are the first nodes contacted by a freshly started node; the entry point into the network. Once a node has entered the network it will receive additional node addresses from its peers, so all nodes can connect to each other. A seed node can also be an API node. Seed nodes are not mandatory, but highly recommended.
 
-**BOS nodes **are required to operate the Bookie Oracle System and ensure the accuracy and decentralization of the data fed into the BookiePro application. The BOS node must be run on a separate server to the Witness node.
+**BOS nodes** are required to operate the Bookie Oracle System and ensure the accuracy and decentralization of the data fed into the BookiePro application. The BOS node must be run on a separate server to the Witness node.
 
 Every Witness is required to run nodes on both Public Mainnet and Public Testnet environments.
 
