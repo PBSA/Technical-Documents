@@ -1,5 +1,9 @@
 # Becoming a Peerplays Witness
 
+{% hint style="info" %}
+Note: You can find the installation instructions here [https://infra.peerplays.tech/witnesses/installation-guides](https://infra.peerplays.tech/witnesses/installation-guides)
+{% endhint %}
+
 Congratulations! You’ve taken the first step towards becoming a Peerplays Witness.
 
 ### **Can Anyone be a Peerplays Witness?**
