@@ -6,16 +6,6 @@ The following repository should be used in support of this document:
 
 {% embed url="https://github.com/peerplays-network/peerplays" %}
 
-## System Requirements
-
-The following table lists what should be considered the minimum system requirements for running a witness node:
-
-| CPU     | Memory | Storage   | Bandwidth | OS           |
-| ------- | ------ | --------- | --------- | ------------ |
-| 8 Cores | 64GB   | 300GB SSD | 1Gbps     | Ubuntu 18.04 |
-
-These requirements are as of the time of writing, so consider deploying a server with specs slightly higher than the ones listed above in order to "future proof" your server in case the minimum requirements grow in the future.
-
 ## Building on Ubuntu 18.04 LTS and Installation Instructions
 
 [https://infra.peerplays.tech/witnesses/installation-guides/manual-install](https://infra.peerplays.tech/witnesses/installation-guides/manual-install)
