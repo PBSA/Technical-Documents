@@ -4,15 +4,15 @@ description: Setup SONs and join GLADIATOR public TESTNET
 
 # PBSA's GLADIATOR network
 
-This is a quick document which assumes that the user has experience in setting up various Graphene blockchains before. The following link can be a good refresher: [https://www.peerplays.tech/witnesses/becoming-a-witness](https://www.peerplays.tech/witnesses/becoming-a-witness)
+This is a quick document which assumes that the user has experience in setting up various Graphene blockchains before. The following link can be a good refresher: [https://community.peerplays.tech/witnesses/becoming-a-witness](https://community.peerplays.tech/witnesses/becoming-a-witness)
 
-In this document the executables are downloaded for the Gitlab CI-CD pipeline
+In this document, the executables are downloaded from the Gitlab CI-CD pipeline.
 
 ## 1. Prepare the server
 
 The following dependencies are necessary for a clean Ubuntu 18.04 LTS
 
-```text
+```
 sudo apt-get install autoconf bash build-essential ca-certificates cmake \
      doxygen git graphviz libbz2-dev libcurl4-openssl-dev libncurses-dev \
      libreadline-dev libssl-dev libtool libzmq3-dev locales ntp pkg-config \
@@ -29,42 +29,42 @@ Go to [https://gitlab.com/PBSA/peerplays/-/jobs](https://gitlab.com/PBSA/peerpla
 
 Example of such a job has ID 467332251:
 
-{% embed url="https://gitlab.com/PBSA/peerplays/-/jobs/467332251" caption="" %}
+{% embed url="https://gitlab.com/PBSA/peerplays/-/jobs/467332251" %}
 
 To download executables, click Download button on the right side of the Job page, or execute the following command:
 
-```text
+```
 wget --content-disposition --show-progress\
  https://gitlab.com/PBSA/peerplays/-/jobs/538784707/artifacts/download
 ```
 
 To unpack executables in current folder:
 
-```text
+```
 unzip -j artifacts.zip build/programs/cli_wallet/cli_wallet -d ./
 unzip -j artifacts.zip build/programs/witness_node/witness_node -d ./
 ```
 
 Execute the `witness_node` binary which will create the necessary files and folders under `witness_node_data_dir`
 
-```text
+```
 ./witness_node
 ```
 
-Stop the node \(`CTRL + c` \) and edit `config.ini` to configure the node.
+Stop the node (`CTRL + c` ) and edit `config.ini` to configure the node.
 
 ## Connecting to PBSA's Gladiator Testnet
 
 Inside `config.ini`, set the `seed-nodes` to:
 
-```text
+```
 seed-nodes=["96.46.49.1:9777", "96.46.49.2:9777", "96.46.49.3:9777", "96.46.49.4:9777", "96.46.49.5:9777", "96.46.49.6:9777", "96.46.49.7:9777", "96.46.49.8:9777", "96.46.49.9:9777", "96.46.49.10:9777", "96.46.49.11:9777", "96.46.49.12:9777", "96.46.49.13:9777", "96.46.49.14:9777", "96.46.49.15:9777", "96.46.49.16:9777"]
 ```
 
 {% hint style="danger" %}
 In order to sync with PBSA's Gladiator Testnet, the genesis file must be exactly the same as used by the witness nodes. This file can be downloaded here: [https://drive.google.com/file/d/1YmDbwUB-5D5vGzc9vYEva8yLkTkwva8r/view?usp=sharing](https://drive.google.com/file/d/1YmDbwUB-5D5vGzc9vYEva8yLkTkwva8r/view?usp=sharing)
 
-```text
+```
 wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1YmDbwUB-5D5vGzc9vYEva8yLkTkwva8r' -O SONs_genesis.json
 ```
 
@@ -73,20 +73,20 @@ Move the `genesis.json` file to the root of the project directory alongside the 
 
 Inside `config.ini`, specify the `genesis.json`
 
-```text
+```
 genesis-json = SONs_genesis.json
 ```
 
 Start the `witness_node` and the blocks should start syncing.
 
-```text
+```
 ./witness_node --gensis-file SONs_genesis.json
 ```
 
 {% hint style="warning" %}
 If blocks have already been seeded during the initial startup, it may be necessary to reset the `blockchain` and `p2p` directories. Removing them is fine for this case.
 
-```text
+```
 rm -rf witness_node_data_dir/blockchain
 rm -rf witness_node_data_dir/p2p
 ```
@@ -100,13 +100,13 @@ At this point you will be able download a copy of the blockchain. Additional ste
 
 * Your node is up and running and synced with the network.
 * You have access to a bitcoin node, with RPC and ZMQ notifications enabled
-* You have access to shared wallet used by all SONs \(prerelease requirement only\)
+* You have access to shared wallet used by all SONs (prerelease requirement only)
 
 #### Configuration files
 
 SON plugin is controlled by following parameters
 
-```text
+```
 peerplays_sidechain plugin. <no description>
 Options:
   --son-id arg                          ID of SON controlled by this node (e.g.
@@ -134,7 +134,7 @@ These parameters are available from both command line and config file:
 
 Edit add the following to your config.ini file
 
-```text
+```
 # ==============================================================================
 # peerplays_sidechain plugin options
 # ==============================================================================
@@ -175,7 +175,7 @@ bitcoin-private-key = ["02d0f137e717fb3aab7aff99904001d49a0a636c5e1342f8927a4ba2
 
 #### Edit the config file and add the RPC port
 
-```text
+```
 # Endpoint for websocket RPC to listen on
 rpc-endpoint = 127.0.0.1:8090
 ```
@@ -185,16 +185,16 @@ rpc-endpoint = 127.0.0.1:8090
 Becoming a SON is very similar to becoming a witness. You will need:
 
 * Active user account, upgraded to lifetime member, which will be the owner of SON account
-* Create two vesting balances \(types son and normal\) of 50 core assets, and get its IDs
+* Create two vesting balances (types son and normal) of 50 core assets, and get its IDs
 * Create Bitcoin address for SON account in shared SON wallet
 * Create SON account, and get its ID
-* Set the signing key for a son account \(usually, its a signing key of owner account\)
+* Set the signing key for a son account (usually, its a signing key of owner account)
 * Set the bitcoin address as a sidechain address for a SON account
 * Update your config file with values obtained in previous steps, and restart the witness with peerplays\_sidechain plugin enabled
 
 Example:
 
-```text
+```
 # ================================================================================
 # Active user account, upgraded to lifetime member, which will be the owner of SON account
 unlocked >>> get_account account07
@@ -443,7 +443,7 @@ bitcoin-private-key = ["03eac07563aa5280a6c1db50724ffc51edca1458d3ed9a61c7455fb1
 
 ### Starting the node
 
-```text
+```
 witness_node 
 # If you need the logs, the following can be helpful
 # witness_node 2>&1 peerplays.log
@@ -453,7 +453,7 @@ witness_node
 
 In the terminal execute the CLI wallet:
 
-```text
+```
 # In the local terminal
 ./cli_wallet
 ```
@@ -463,7 +463,7 @@ In the terminal execute the CLI wallet:
 
 Pass the chain ID to the CLI wallet:
 
-```text
+```
 # In the local terminal
 ./cli_wallet --chain-id=<CHAIN-ID>
 ```
@@ -472,21 +472,21 @@ Pass the chain ID to the CLI wallet:
 {% hint style="info" %}
 There is optionally a flag that can be passed in to connect to a remote rpc endpoint.
 
-```text
+```
 ./cli_wallet --server-rpc-endpoint ws://96.46.49.3:8090 -u '' -p ''
 ```
 {% endhint %}
 
 Enter a password for the CLI wallet:
 
-```text
+```
 # In the CLI wallet
 set_password <YOUR-WALLET-PASSWORD>
 ```
 
 Unlock the CLI wallet by providing the password set earlier:
 
-```text
+```
 # In the CLI wallet
 unlock <YOUR-WALLET-PASSWORD>
 ```
@@ -501,7 +501,7 @@ The CLI wallet is now ready to be used.
 
 Use the CLI wallet to suggest a brain key:
 
-```text
+```
 # In the CLI wallet
 suggest_brain_key
 ```
@@ -512,8 +512,7 @@ Make sure to backup the information that is output
 
 Create an account using the brain key generated:
 
-```text
+```
 # In the CLI wallet
 create_account_with_brain_key <BRAIN-KEY> <YOUR-ACCOUNT-NAME> nathan nathan true
 ```
-
