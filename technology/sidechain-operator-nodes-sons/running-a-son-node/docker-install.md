@@ -24,20 +24,20 @@ Please see the general SON [hardware requirements](requirements.md).
 
 For the docker install, we'll be using a self-hosted Bitcoin node. The requirements that we'll need for this guide would be as follows:
 
-| Full Node? | SON Node? | Bitcoin node type | CPU | Memory | Storage | Bandwidth | OS |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Yes | Yes | Self-Hosted, Reduced Storage | 8 Cores | 64GB | 350GB SSD | 1Gbps | Ubuntu 18.04 |
+| Full Node? | SON Node? | Bitcoin node type            | CPU     | Memory | Storage   | Bandwidth | OS           |
+| ---------- | --------- | ---------------------------- | ------- | ------ | --------- | --------- | ------------ |
+| Yes        | Yes       | Self-Hosted, Reduced Storage | 8 Cores | 64GB   | 350GB SSD | 1Gbps     | Ubuntu 18.04 |
 
 ### 1.2. Installing the required dependencies
 
-```text
+```
 sudo apt-get update
 sudo apt-get install vim git curl
 ```
 
 Then we'll clone the Peerplays Docker repository.
 
-```text
+```
 git clone https://gitlab.com/PBSA/tools-libs/peerplays-docker.git -b release
 ```
 
@@ -47,11 +47,11 @@ git clone https://gitlab.com/PBSA/tools-libs/peerplays-docker.git -b release
 
 Docker can be installed using the `run.sh` script inside the Peerplays Docker repository:
 
-```text
+```
 sudo ./run.sh install_docker
 ```
 
-Since the script has added the currently logged in user to the Docker group, you'll need to re-login \(or close and reconnect SSH\) for Docker to function correctly.
+Since the script has added the currently logged in user to the Docker group, you'll need to re-login (or close and reconnect SSH) for Docker to function correctly.
 
 > **Note:** You can look at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to learn more on how to install Docker. Or if you are having permission issues trying to run Docker, use `sudo` or look at [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
 
@@ -59,20 +59,20 @@ Since the script has added the currently logged in user to the Docker group, you
 
 Copy the `example.env` to `.env` located in the root of the repository:
 
-```text
+```
 cd ~/peerplays-docker
 cp example.env .env
 ```
 
 We're going to have to make some changes to the `.env` file so we'll open that now using the Vim editor.
 
-```text
+```
 vim .env
 ```
 
 Here are the important parts of the `.env` file. These will be the parts that need to be edited or optionally edited. The rest of the file should be unchanged.
 
-```text
+```
 # Default SON wallet used inside bitcoind-node with ./run.sh start_son_regtest
 # ***NOTE:*** You can change this if you like, but you'll also need to change the "bitcoin-wallet"
 # setting in the Peerplays config.ini file to the same value!
@@ -105,14 +105,14 @@ The Peerplays Docker package includes a Bitcoin node Docker container. The Bitco
 
 Since we'll be setting some custom config in our `bitcoin.conf`, we'll need to create and edit it now.
 
-```text
+```
 touch /home/ubuntu/.bitcoin/bitcoin.conf
 vim /home/ubuntu/.bitcoin/bitcoin.conf
 ```
 
-The `bitcoin.conf` should look exactly like this **\(You can copy/paste the text in this code block into your editor\)**:
+The `bitcoin.conf` should look exactly like this **(You can copy/paste the text in this code block into your editor)**:
 
-```text
+```
 # This config should be placed in following path:
 # /home/ubuntu/.bitcoin/bitcoin.conf
 
@@ -175,13 +175,13 @@ zmqpubrawtx=tcp://0.0.0.0:11111
 
 Save and quit the Vim editor.
 
-> **Note:** The settings in the config file above are set to _reduce the requirements_ of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node\#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
+> **Note:** The settings in the config file above are set to _reduce the requirements_ of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
 
 ## 4. Installing the peerplays:son image
 
 Use `run.sh` to pull the SON image:
 
-```text
+```
 cd ~/peerplays-docker
 sudo ./run.sh install son
 ```
@@ -192,7 +192,7 @@ sudo ./run.sh install son
 
 Copy the correct example configuration:
 
-```text
+```
 cd ~/peerplays-docker
 cd data/witness_node_data_dir
 cp config.ini.son-exists.example config.ini
@@ -200,13 +200,13 @@ cp config.ini.son-exists.example config.ini
 
 We'll need to make an edit to the `config.ini` file as well.
 
-```text
+```
 vim config.ini
 ```
 
-The important parts of the config.ini file \(for now!\) should look like the following. But don't forget to add your own Bitcoin public and private keys!
+The important parts of the config.ini file (for now!) should look like the following. But don't forget to add your own Bitcoin public and private keys!
 
-```text
+```
 # Endpoint for P2P node to listen on
 # p2p-endpoint =
 
@@ -293,7 +293,7 @@ Save the file and quit.
 
 Once the configuration is setup, use `run.sh` to start the peerplaysd and bitcoind containers:
 
-```text
+```
 cd ~/peerplays-docker
 
 # You'll also want to set the shared memory size (use sudo if not logged in as root). 
@@ -309,46 +309,46 @@ sysctl -w vm.swappiness=1
 ./run.sh start_son_regtest
 ```
 
-The SON network will be created and the seed \(peerplaysd\) and bitcoind-node \(bitcoind\) containers will be launched. To check the status, inspect the logs:
+The SON network will be created and the seed (peerplaysd) and bitcoind-node (bitcoind) containers will be launched. To check the status, inspect the logs:
 
-```text
+```
 ./run.sh logs
 ```
 
 This will give an output similar to:
 
-![\(logs showing healthy connection to GLADIATOR\)](../../../.gitbook/assets/image%20%2828%29.png)
+![(logs showing healthy connection to GLADIATOR)](<../../../.gitbook/assets/image (28).png>)
 
 If the logs are not looking healthy, perform a replay.
 
-```text
+```
 # replay the blockchain
 ./run.sh replay_son
 ```
 
 ## 6. Using the CLI wallet
 
-After starting the environment, the CLI wallet for the seed \(peerplaysd\) will be available.
+After starting the environment, the CLI wallet for the seed (peerplaysd) will be available.
 
 ### 6.1. Connecting to the blockchain with the CLI Wallet
 
 Open another terminal and use `docker exec` to connect to the wallet.
 
-```text
+```
 # In the local terminal
 docker exec -it seed cli_wallet
 ```
 
 > **NOTE:** If an exception is thrown and contains `Remote server gave us an unexpected chain_id`, then copy the `remote_chain_id` that is provided by it. Pass the chain ID to the CLI wallet:
 >
-> ```text
+> ```
 > # In the local terminal
 > docker exec -it seed cli_wallet --chain-id=<CHAIN-ID>
 > ```
 
 Set a password for the wallet and then unlock it:
 
-```text
+```
 # In the CLI wallet
 set_password <YOUR-WALLET-PASSWORD>
 unlock <YOUR-WALLET-PASSWORD>
@@ -356,11 +356,11 @@ unlock <YOUR-WALLET-PASSWORD>
 
 The CLI wallet will show `unlocked >>>` when successfully unlocked
 
-> **Note:** A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
+> **Note:** A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
 
 Assuming we're starting without any account, it's easiest to create an account with the Peerplays GUI Wallet. The latest release is located here [https://github.com/peerplays-network/peerplays-core-gui/releases/latest](https://github.com/peerplays-network/peerplays-core-gui/releases/latest). When you create an account with the GUI wallet, you should have a username and password. We'll need those for the next steps. First we'll get the private key for the new account.
 
-```text
+```
 # In the cli_wallet...
 
 get_private_key_from_password <put your username here> active <put your password here>
@@ -378,7 +378,7 @@ get_private_key_from_password <put your username here> active <put your password
 
 The key beginning with "PPY" is the public key. The key beginning with "5" is the private key. We'll need to import this private key into the cli\_wallet.
 
-```text
+```
 # In the cli_wallet...
 
 import_key "mynew-son" 5...random.numbers.and.letters...
@@ -391,7 +391,7 @@ Next we'll upgrade the account to a lifetime membership.
 
 > **Note:** At the time of writing this guide, this costs 5 PPY to perform this operation. You'll need that in your account first!
 
-```text
+```
 # In the cli_wallet...
 
 upgrade_account mynew-son true
@@ -399,7 +399,7 @@ upgrade_account mynew-son true
 
 Next we'll create the vesting balances.
 
-```text
+```
 # In the cli_wallet...
 
 create_vesting_balance mynew-son 50 PPY son true
@@ -422,7 +422,7 @@ get_vesting_balances mynew-son
 
 Now we have all the info we need to create a SON account.
 
-```text
+```
 # In the cli_wallet...
 
 create_son mynew-son "https://www.mynew-son.com" 1.13.79 1.13.80 [[bitcoin, 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9]] true
@@ -433,7 +433,7 @@ create_son mynew-son "https://www.mynew-son.com" 1.13.79 1.13.80 [[bitcoin, 023b
 
 To get the SON ID:
 
-```text
+```
 # In the cli_wallet...
 
 get_son mynew-son
@@ -447,7 +447,7 @@ get_son mynew-son
 
 We'll set the signing key using the active key from the owning account:
 
-```text
+```
 # In the cli_wallet...
 
 # First we'll get the active key of the owning account.
@@ -476,19 +476,19 @@ Now we have our SON account ID and the public and private keys for the SON accou
 
 Lets stop the node for now so we can finish up the `config.ini`.
 
-```text
+```
 cd ~/peerplays-docker
 ./run.sh stop
 ```
 
 Ensure the following config settings are in the config.ini file under the peerplays\_sidechain plugin options.
 
-```text
+```
 cd data/witness_node_data_dir
 vim config.ini
 ```
 
-```text
+```
 # In the config.ini file...
 
 # ID of SON controlled by this node (e.g. "1.27.5", quotes are required)
@@ -500,7 +500,7 @@ peerplays-private-key = ["PPY7SUmjftH3jL5L1YCTdMo1hk5qpZrhbo4MW6N2wWyQpjXkT7ByB"
 
 Then it's just a matter of starting the node back up!
 
-```text
+```
 # replay the blockchain
 ./run.sh replay_son
 ```
@@ -511,4 +511,3 @@ Then it's just a matter of starting the node back up!
 * [https://docs.docker.com/engine/install/linux-postinstall/](https://docs.docker.com/engine/install/linux-postinstall/)
 
 Vim is a text editing program available for Ubuntu 18.04. See [vim.org](https://www.vim.org/)
-

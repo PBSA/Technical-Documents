@@ -23,7 +23,7 @@ The following steps outline the manual installation of a SON Node.
 3. Create a SON Account
 4. Configure the SON Node
 5. Start the SON Node
-6. (Optional) Automatically Start the Node as a Service
+6. \(Optional\) Automatically Start the Node as a Service
 
 ## 2. Build Peerplays from Source Code
 
@@ -31,7 +31,7 @@ The following steps outline the manual installation of a SON Node.
 
 The following dependencies are necessary for a clean install on Ubuntu 18.04 LTS:
 
-```
+```text
 sudo apt-get update
 sudo apt-get -y  install vim autoconf bash build-essential ca-certificates cmake \
       dnsutils doxygen git graphviz libbz2-dev libcurl4-openssl-dev \
@@ -43,7 +43,7 @@ sudo apt-get -y  install vim autoconf bash build-essential ca-certificates cmake
 
 Boost is a C++ library that handles common program functions like generating config files and basic file system i/o. Peerplays uses Boost to handle such functions. Since Boost is a dependency, we must build it here.
 
-```
+```text
 mkdir $HOME/src
 cd $HOME/src
 export BOOST_ROOT=$HOME/src/boost_1_67_0
@@ -61,7 +61,7 @@ cd boost_1_67_0/
 
 Now we build Peerplays with the official source code from GitHub.
 
-```
+```text
 cd $HOME/src
 export BOOST_ROOT=$HOME/src/boost_1_67_0
 git clone https://github.com/peerplays-network/peerplays.git
@@ -86,7 +86,7 @@ If we have installed the blockchain following the above steps, the node can be s
 
 > **Note:** We start the SON Node with the `witness_node` command although we are only intending to set up this node as a SON. This is because the same program is used to operate different types of nodes depending on how we configure the program.
 
-```
+```text
 ./programs/witness_node/witness_node 
 
 # If you need the logs, the following can be helpful
@@ -104,12 +104,12 @@ There are two options available to connect to the Bitcoin network.
 
 For the purposes of this guide, I'll discuss how to run a node yourself as that will be a more reliable connection for now. Either way you go, you'll need to collect the following information to use in the config.ini file:
 
-* The IP address of a Bitcoin node you can connect to (127.0.0.1 if self-hosting)
-* ZMQ port of the Bitcoin node (default is 1111)
-* RPC port of the Bitcoin node (default is 8332)
-* Bitcoin RPC connection username (default is 1)
-* Bitcoin RPC connection password (default is 1)
-* Bitcoin wallet label (default is son-wallet)
+* The IP address of a Bitcoin node you can connect to \(127.0.0.1 if self-hosting\)
+* ZMQ port of the Bitcoin node \(default is 1111\)
+* RPC port of the Bitcoin node \(default is 8332\)
+* Bitcoin RPC connection username \(default is 1\)
+* Bitcoin RPC connection password \(default is 1\)
+* Bitcoin wallet label \(default is son-wallet\)
 * Bitcoin wallet password
 * A new Bitcoin address
 * The Public key of the Bitcoin address
@@ -119,7 +119,7 @@ For the purposes of this guide, I'll discuss how to run a node yourself as that 
 
 First we'll download and install one of the official Bitcoin Core binaries:
 
-```
+```text
 cd ~/src
 wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/bitcoin-0.21.0-x86_64-linux-gnu.tar.gz
 # Or if you're using ARM architecture...
@@ -131,7 +131,7 @@ sudo install -m 0755 -o root -g root -t /usr/local/bin bitcoin-0.21.0/bin/*
 
 Then we make a config file to manage the settings of our new Bitcoin node.
 
-```
+```text
 cd ~
 mkdir .bitcoin
 cd .bitcoin
@@ -140,7 +140,7 @@ vim bitcoin.conf
 
 in the Vim text editor we'll set the following:
 
-```
+```text
 # This config should be placed in following path:
 # /home/ubuntu/.bitcoin/bitcoin.conf
 
@@ -203,24 +203,24 @@ zmqpubrawtx=tcp://0.0.0.0:11111
 
 Save and quit the Vim editor.
 
-> **Note:** The settings in the config file above are set to reduce the requirements of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
+> **Note:** The settings in the config file above are set to reduce the requirements of the server. Block pruning and setting the node to Blocks Only save network and storage resources. For more information, see [https://bitcoin.org/en/full-node\#reduce-storage](https://bitcoin.org/en/full-node#reduce-storage).
 
 Lastly we'll set a Cron job to ensure the Bitcoin node starts up every time the server starts.
 
-```
+```text
 cd ~
 crontab -e
 ```
 
 At the bottom of the crontab file, add the following:
 
-```
+```text
 @reboot bitcoind -daemon
 ```
 
 Save and quit the crontab file. Now we're ready to fire up the Bitcoin node!
 
-```
+```text
 bitcoind -daemon
 ```
 
@@ -232,7 +232,7 @@ Your Bitcoin node should now be downloading the Bitcoin blockchain data from oth
 
 We'll need a wallet to store the new Bitcoin address.
 
-```
+```text
 bitcoin-cli createwallet "son-wallet"
 
 # To create a wallet with a password, you'd do it like this:
@@ -243,7 +243,7 @@ bitcoin-cli createwallet "son-wallet"
 
 Now we will create a Bitcoin address.
 
-```
+```text
 bitcoin-cli -rpcwallet="son-wallet" getnewaddress
 
 # This will return something like:
@@ -252,7 +252,7 @@ bitcoin-cli -rpcwallet="son-wallet" getnewaddress
 
 Then we'll use this address to get its keys.
 
-```
+```text
 bitcoin-cli -rpcwallet="son-wallet" getaddressinfo bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
 
 # This returns a lot of info but what we're looking for is the "pubkey".
@@ -261,7 +261,7 @@ bitcoin-cli -rpcwallet="son-wallet" getaddressinfo bc1qsx7as3r9d92tjvxrgwue7z66f
 
 Now we get the private key.
 
-```
+```text
 bitcoin-cli -rpcwallet="son-wallet" dumpprivkey bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
 
 # This returns the private key like this:
@@ -272,7 +272,7 @@ bitcoin-cli -rpcwallet="son-wallet" dumpprivkey bc1qsx7as3r9d92tjvxrgwue7z66f2r3
 
 That was a lot to go over. Let's collect our data.
 
-```
+```text
 Bitcoin Address for the SON Account = bc1qsx7as3r9d92tjvxrgwue7z66f2r3pw04j67lht
 The public key = 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9
 the private key = KzD2WHeG49aYhYVcxBwfknm58YqDc7WEg7aWWU8P8BJ8gp1g3AuD
@@ -290,24 +290,24 @@ Keep this tuple handy. We'll need it in the Peerplays config file.
 Becoming a SON is very similar to becoming a witness. You will need:
 
 * An active user account, upgraded to lifetime member, which will be the owner of the SON account
-* Create two vesting balances (types "son" and "normal") of 50 PPY, and get their IDs
+* Create two vesting balances \(types "son" and "normal"\) of 50 PPY, and get their IDs
 * The Bitcoin address created for the SON account
 * Create the SON account, and get its ID
-* Set the signing key for the SON account (usually, its a signing key of the owner account)
+* Set the signing key for the SON account \(usually, its a signing key of the owner account\)
 * Set the Bitcoin address as a sidechain address for the SON account
 
 ### 4.2. Running the cli\_wallet program
 
 We can run the Peerplays cli wallet connecting to the Peerplays node we have set up so far. Before we can do that we'll need to make a quick edit to the config.ini file.
 
-```
+```text
 cd /home/ubuntu/src/peerplays/witness_node_data_dir
 vim config.ini
 ```
 
 in the first section of the config.ini file is the rpc-endpoint setting. We have to open our rpc-endpoint so we can use the Peerplays cli wallet. We'll enter the following:
 
-```
+```text
 # Endpoint for websocket RPC to listen on
 rpc-endpoint = 127.0.0.1:8090
 ```
@@ -316,7 +316,7 @@ Save the file and quit.
 
 Our Peerplays node will have to be completely in sync with the blockchain before we can use the cli wallet so we'll start the node and wait for it to download all the data.
 
-```
+```text
 cd ~/src/peerplays
 ./programs/witness_node/witness_node
 
@@ -328,7 +328,7 @@ cd ~/src/peerplays
 
 If you just can't wait for your node to sync, you can run the cli\_wallet program on someone elses node. Simply pass the IP address of the other node like so.
 
-```
+```text
 ./programs/cli_wallet/cli_wallet --server-rpc-endpoint=wss://api.eifos.org
 ```
 
@@ -338,22 +338,22 @@ If you just can't wait for your node to sync, you can run the cli\_wallet progra
 
 Now that we have the cli\_wallet running, you'll notice a new prompt.
 
-```
+```text
 new >>>
 ```
 
 This means we're in a cli\_wallet session. First we'll make a new wallet and unlock it.
 
-```
+```text
 set_password password
 unlock password
 ```
 
-> **Note:** A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
+> **Note:** A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
 
 Assuming we're starting without any account, it's easiest to create an account with the Peerplays GUI Wallet. The latest release is located here [https://github.com/peerplays-network/peerplays-core-gui/releases/latest](https://github.com/peerplays-network/peerplays-core-gui/releases/latest). When you create an account with the GUI wallet, you should have a username and password. We'll need those for the next steps. First we'll get the private key for the new account.
 
-```
+```text
 # In the cli_wallet...
 
 get_private_key_from_password <put your username here> active <put your password here>
@@ -371,7 +371,7 @@ get_private_key_from_password <put your username here> active <put your password
 
 The key beginning with "PPY" is the public key. The key beginning with "5" is the private key. We'll need to import this private key into the cli\_wallet.
 
-```
+```text
 # In the cli_wallet...
 
 import_key "mynew-son" 5...random.numbers.and.letters...
@@ -384,7 +384,7 @@ Next we'll upgrade the account to a lifetime membership.
 
 > **Note:** At the time of writing this guide, this costs 5 PPY to perform this operation. You'll need that in your account first!
 
-```
+```text
 # In the cli_wallet...
 
 upgrade_account mynew-son true
@@ -392,7 +392,7 @@ upgrade_account mynew-son true
 
 Next we'll create the vesting balances.
 
-```
+```text
 # In the cli_wallet...
 
 create_vesting_balance mynew-son 50 PPY son true
@@ -415,7 +415,7 @@ get_vesting_balances mynew-son
 
 Now we have all the info we need to create a SON account.
 
-```
+```text
 # In the cli_wallet...
 
 create_son mynew-son "https://www.mynew-son.com" 1.13.79 1.13.80 [[bitcoin, 023b907586045625367ecd62c5d889591586c87e57fa49be21614209489f00f1b9]] true
@@ -426,7 +426,7 @@ create_son mynew-son "https://www.mynew-son.com" 1.13.79 1.13.80 [[bitcoin, 023b
 
 To get the SON ID:
 
-```
+```text
 # In the cli_wallet...
 
 get_son mynew-son
@@ -440,7 +440,7 @@ get_son mynew-son
 
 We'll set the signing key using the active key from the owning account:
 
-```
+```text
 # In the cli_wallet...
 
 # First we'll get the active key of the owning account.
@@ -469,14 +469,14 @@ Now we have our SON account ID and the public and private keys for the SON accou
 
 The generated config.ini file will be located at `/home/ubuntu/src/peerplays/witness_node_data_dir/config.ini`. We'll begin by editing this config file.
 
-```
+```text
 cd /home/ubuntu/src/peerplays/witness_node_data_dir
 vim config.ini
 ```
 
 This file will be rather large so let's focus on the important part for configuring a SON node:
 
-```
+```text
 # ==============================================================================
 # peerplays_sidechain plugin options
 # ==============================================================================
@@ -484,7 +484,7 @@ This file will be rather large so let's focus on the important part for configur
 
 This section contains all the SON related configuration. Ensure the following config settings are in the config.ini file under the peerplays\_sidechain plugin options.
 
-```
+```text
 # ID of SON controlled by this node (e.g. "1.27.5", quotes are required)
 son-id = "1.27.16"
 
@@ -521,7 +521,7 @@ bitcoin-private-key = ["023b907586045625367ecd62c5d889591586c87e57fa49be21614209
 
 We're almost done, we also have to make sure the peerplays\_sidechain plugin is listed in the plugins. Find the `plugins` setting in the first section of the config.ini file. If it's not already there, add the `peerplays_sidechain` plugin to the list. Like so:
 
-```
+```text
 # Space-separated list of plugins to activate
 plugins = witness account_history market_history accounts_list affiliate_stats bookie peerplays_sidechain
 ```
@@ -532,7 +532,7 @@ Save the file and quit. Configuration of the Peerplays SON node is complete!
 
 After setting up the config.ini file for SON operation, we'll start the node back up.
 
-```
+```text
 ./programs/witness_node/witness_node
 ```
 
@@ -556,20 +556,20 @@ First we'll create a simple shell script and set the file permissions to allow t
 
 First make a log file to store our outputs.
 
-```
+```text
 sudo touch /var/log/peerplays.log
 ```
 
 From our `/home/ubuntu/src/peerplays` directory, create a file named `start.sh`. For example:
 
-```
+```text
 cd /home/ubuntu/src/peerplays
 vim start.sh
 ```
 
-Use the Vim editor (or your text editor of choice) to create the `start.sh` file as follows.
+Use the Vim editor \(or your text editor of choice\) to create the `start.sh` file as follows.
 
-```
+```text
 #!/bin/bash
 
 cd /home/ubuntu/src/peerplays
@@ -578,7 +578,7 @@ cd /home/ubuntu/src/peerplays
 
 Save and exit the file. Now we'll set the file permissions.
 
-```
+```text
 chmod 744 /home/ubuntu/src/peerplays/start.sh
 ```
 
@@ -586,14 +586,14 @@ chmod 744 /home/ubuntu/src/peerplays/start.sh
 
 Now that we have the shell file good to go we'll create a service file. Navigate to `/etc/systemd/system` and create a file named `peerplays.service` as below.
 
-```
+```text
 cd /etc/systemd/system
 vim peerplays.service
 ```
 
 Inside the `peerplays.service` file we'll enter:
 
-```
+```text
 [Unit]
 Description=Peerplays Node
 After=network.target
@@ -611,36 +611,37 @@ Save the file and quit.
 
 ### 7.3. Enable the service
 
-```
+```text
 sudo systemctl enable peerplays.service
 ```
 
 > **Important:** Make sure you don't get any errors.
 
-```
+```text
 sudo systemctl status peerplays.service
 ```
 
 If your node is running, stop it with `ctrl + c`, then start it back up with the service.
 
-```
+```text
 sudo systemctl start peerplays.service
 ```
 
 Lastly, check the log file to ensure the node is running properly.
 
-```
+```text
 tail -f /var/log/peerplays.log
 ```
 
-Sidechain Operator Node - An independent server operator which facilitates the transfer of off-chain assets (like Bitcoin or Ethereum tokens) between the Peerplays chain and the asset's native chain.
+Sidechain Operator Node - An independent server operator which facilitates the transfer of off-chain assets \(like Bitcoin or Ethereum tokens\) between the Peerplays chain and the asset's native chain.
 
-An independent server operator which produces blocks for the blockchain. These blocks contain the operations and transactions that happen on the chain. See [Becoming a Witness](../../../witnesses/becoming-a-witness.md) for more information on installing Witness Nodes. [What is a Peerplays Witness](https://community.peerplays.tech/witnesses/what-is-a-peerplays-witness) for more information on Peerplays Witnessing.
+An independent server operator which produces blocks for the blockchain. These blocks contain the operations and transactions that happen on the chain. See [Becoming a Witness](../../../witnesses/becoming-a-witness.md) for more information on installing Witness Nodes. [What is a Peerplays Witness](https://github.com/PBSA/Technical-Documents/tree/adcf323da52ddf6b23a1ff855f2c75b2ea993ccc/witnesses/wat-is-a-witness.md) for more information on Peerplays Witnessing.
 
 See [Requirements](requirements.md)
 
-There are many types of nodes in the Peerplays ecosystem. (Witness, SON, Seed, API, Full, BOS...) All Peerplays nodes, no matter which type, are running the witness\_node program. The difference is mostly in how the program is configured. Different configuration settings will allow the node to offer different services. For example, Witness nodes produce blocks, SONs facilitate sidechain transfers, Full nodes store the entire transaction history of the chain, etc.
+There are many types of nodes in the Peerplays ecosystem. \(Witness, SON, Seed, API, Full, BOS...\) All Peerplays nodes, no matter which type, are running the witness\_node program. The difference is mostly in how the program is configured. Different configuration settings will allow the node to offer different services. For example, Witness nodes produce blocks, SONs facilitate sidechain transfers, Full nodes store the entire transaction history of the chain, etc.
 
 Vim is a text editing program available for Ubuntu 18.04. See [vim.org](https://www.vim.org/)
 
 Service files are used in Ubuntu to start programs in the background upon startup.
+
