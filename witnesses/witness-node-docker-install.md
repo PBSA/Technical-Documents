@@ -17,6 +17,12 @@ The following steps outline the Docker installation of a Witness Node:
 7. Update config.ini with Witness Account Info
 8. Start the Container and Vote for Yourself
 
+{% hint style="info" %}
+Before we begin, to set up a Witness node requires about 15 PPY. This is to pay for an upgraded account (5 PPY) and to create a new witness (8 PPY). The remaining funds are to pay for various transaction fees while setting up the node (like voting for yourself!).
+
+Note that these fees will likely change over time as recommended by the Committee of Advisors.
+{% endhint %}
+
 ## 1. Preparing the Environment
 
 ### 1.1. Hardware requirements
