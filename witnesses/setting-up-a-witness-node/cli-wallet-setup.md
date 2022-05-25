@@ -36,7 +36,7 @@ In it's own terminal window, start the command-line wallet `cli_wallet`:
 ./programs/cli_wallet/cli_wallet
 ```
 
-To set your initial password to` password` use:
+To set your initial password to `password` use:
 
 ```
 >>> set_password password
@@ -44,7 +44,7 @@ To set your initial password to` password` use:
 ```
 
 {% hint style="info" %}
-**Tip**: A list of CLI wallet commands is available here:[ ](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api\_documentation.hpp)[CLI Wallet commands](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api\_documentation.hpp)
+**Tip**: A list of CLI wallet commands is available here:[ ](https://github.com/PBSA/peerplays/blob/master/libraries/wallet/include/graphene/wallet/api\_documentation.hpp)[CLI Wallet commands](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
 {% endhint %}
 
 ### Get Owner and Active Keys
