@@ -119,7 +119,7 @@ unlock your-password-here
 
 The CLI wallet will show `unlocked >>>` when successfully unlocked.
 
-> **Note:** A list of CLI wallet commands is available here: [https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls](https://www.peerplays.tech/api/peerplays-wallet-api/wallet-calls)
+> **Note:** A list of CLI wallet commands is available here: [https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls](https://devs.peerplays.tech/api-reference/wallet-api/wallet-calls)
 
 ### 5.3. Generate OWNER private keys for the cli\_wallet and import them
 
