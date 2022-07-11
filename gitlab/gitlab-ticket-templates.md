@@ -18,9 +18,9 @@ A **bug** is a defect in something that already exists. When found, bugs need to
 
 Key Elements of a Bug ticket:
 
-1. **Title **(Required): Short title that clearly states the Bug.
-2. **Type **(Required): `Issue` (for general work) or `Incident` (For investigating IT service disruptions or outages).
-3. **Description **(Required): Detailed enough so that QA does not need to ask questions in order to test the ticket. This should include the following sections:
+1. **Title** (Required): Short title that clearly states the Bug.
+2. **Type** (Required): `Issue` (for general work) or `Incident` (For investigating IT service disruptions or outages).
+3. **Description** (Required): Detailed enough so that QA does not need to ask questions in order to test the ticket. This should include the following sections:
    1. Description: Describe the bug.
    2. Preconditions: If necessary in order to run the Scenario steps properly.
    3. Affected Version(s): If known, list the build(s) where the issue has been observed.
@@ -36,7 +36,7 @@ Key Elements of a Bug ticket:
 6. **Epic**: If known, select the best related epic.
 7. **Due Date**: Can be left blank. It's useful if the issue is blocking something with a deadline.
 8. **Milestone**: If known, select the best related milestone.
-9. **Labels **(Required): The following _three label types_ must be provided, but others can be added if necessary. See [Labels > Scoped Labels](https://community.peerplays.tech/gitlab/labels#scoped-labels) for more info.
+9. **Labels** (Required): The following _three label types_ must be provided, but others can be added if necessary. See [Labels > Scoped Labels](https://community.peerplays.tech/gitlab/labels#scoped-labels) for more info.
    1. Priority: (low, medium, high, or critical) see the chart in [Appendix A](gitlab-ticket-templates.md#appendix-a-determining-ticket-priority) for help deciding the priority level.
    2. Type: bug (in the case of this template!)
    3. State: pending (for new tickets)
@@ -47,9 +47,9 @@ A **user story** is a simple way to describe features that need to be implemente
 
 Key Elements of a User Story:
 
-1. **Title **(Required): Short title that clearly states the User Story.
-2. **Type **(Required): `Issue` (for general work) or `Incident` (For investigating IT service disruptions or outages).
-3. **Description **(Required): A clear explanation of the required story's content so that QA does not need to ask questions in order to test and close the story ticket. Additional notes are welcome. This should include the following sections:
+1. **Title** (Required): Short title that clearly states the User Story.
+2. **Type** (Required): `Issue` (for general work) or `Incident` (For investigating IT service disruptions or outages).
+3. **Description** (Required): A clear explanation of the required story's content so that QA does not need to ask questions in order to test and close the story ticket. Additional notes are welcome. This should include the following sections:
    1. Description: Describe the user story.
    2. Affected Version(s): If necessary, list the build(s) where the issue applies.
    3. Acceptance Criteria: The clear definition of the final solution. What does the goal look like?
@@ -60,7 +60,7 @@ Key Elements of a User Story:
 6. **Epic**: If known, select the best related epic.
 7. **Due Date**: Can be left blank. It's useful if the issue is blocking something with a deadline.
 8. **Milestone**: If known, select the best related milestone.
-9. **Labels **(Required): The following _three label types_ must be provided, but others can be added if necessary. See [Labels > Scoped Labels](https://community.peerplays.tech/gitlab/labels#scoped-labels) for more info.
+9. **Labels** (Required): The following _three label types_ must be provided, but others can be added if necessary. See [Labels > Scoped Labels](https://community.peerplays.tech/gitlab/labels#scoped-labels) for more info.
    1. Priority: (low, medium, high, or critical) see the chart in [Appendix A](gitlab-ticket-templates.md#appendix-a-determining-ticket-priority) for help deciding the priority level.
    2. Type: feature (in the case of this template!)
    3. State: pending (for new tickets)

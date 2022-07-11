@@ -63,8 +63,6 @@
 * [Updating a Witness Node](witnesses/updating-a-witness-node.md)
 * [Setting up a Witness Node with Docker](witnesses/setting-up-a-witness-node-with-docker.md)
 * [Setting up the faucet](witnesses/setting-up-the-faucet.md)
-* [Beatrice](witnesses/beatrice/README.md)
-  * [Setting up the chain and using the CLI wallet through downloadable binaries](witnesses/beatrice/setting-up-the-chain-and-using-the-cli-wallet-through-downloadable-binaries.md)
 
 ## Bookie Oracle Suite (BOS)
 

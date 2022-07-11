@@ -19,7 +19,7 @@ POST /add_game/:create_message
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of` `**`Error Objects`**
+  * `title`: One of ``` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
@@ -64,7 +64,7 @@ POST /start_game/:in_progress_message
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of` `**`Error Objects`**
+  * `title`: One of ``` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
@@ -111,7 +111,7 @@ POST /add_score/:result_message
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of` `**`Error Objects`**
+  * `title`: One of ``` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
@@ -159,7 +159,7 @@ POST /finish_game/:finish_game_message
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of` `**`Error Objects`**
+  * `title`: One of ``` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
@@ -206,7 +206,7 @@ POST /add_score/:cancel_game_message
 * Failure
   * `status`: 400: Bad Request
   * `subcode`:  One of **`Error Objects`**
-  * `title`: One of` `**`Error Objects`**
+  * `title`: One of ``` `**`Error Objects`**
   * `message`: One of **`Error Objects`**
 
 **`Error Objects`**
@@ -249,7 +249,7 @@ DELETE /delete_event/:date/:league
 
 {% tab title="Response" %}
 * Success  - 200
-  * `title: `League Deleted
+  * `title:` League Deleted
   * `message:`\[league]
 * Failure - 400
   * [Error 430](broken-reference)
@@ -281,7 +281,7 @@ DELETE /delete_game/:game_id
 
 {% tab title="Response" %}
 * Success  - 200
-  * `title: `League Deleted
+  * `title:` League Deleted
   * `message:`\[league]
 * Failure - 400
   * [Error 431](broken-reference)
@@ -384,7 +384,7 @@ GET /get_games_by_league_and_date/:league/:start_date/:end_date
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`league: `**`The sport league (event group).`
+* **`league:`**` ``The sport league (event group).`
 * **`start`**: The start of the date range. Format is YYYY-MM-DDTHH:MM:SS.000Z.
 * **`end`**: The end of the date range. Format is YYYY-MM-DDTHH:MM:SS.
 {% endtab %}
@@ -416,7 +416,7 @@ GET /get_games_by_league/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`league: `**`The league (event group).`
+* **`league:`**` ``The league (event group).`
 {% endtab %}
 
 {% tab title="Response" %}
@@ -444,7 +444,7 @@ GET /get_leagues_by_sport/:sport
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`sport: `**The id of the sport.
+* **`sport:`** The id of the sport.
 {% endtab %}
 
 {% tab title="Response" %}
@@ -495,7 +495,7 @@ GET /get_teams_by_league/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`league: `**The id of the league.
+* **`league:`** The id of the league.
 {% endtab %}
 
 {% tab title="Response" %}
@@ -523,7 +523,7 @@ GET /get_league_data_by_name/:leaguename
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`leaguename: `**The name of the league.
+* **`leaguename:`** The name of the league.
 {% endtab %}
 
 {% tab title="Response" %}
@@ -544,8 +544,8 @@ GET /last_event_id_by_date_and_league/:date/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`date: `**Event date in the format YYYY-MM\_DD
-* **`league: `**The name of the league.
+* **`date:`** Event date in the format YYYY-MM\_DD
+* **`league:`** The name of the league.
 {% endtab %}
 
 {% tab title="Response" %}
@@ -598,8 +598,8 @@ GET /last_game_id_by_date_and_league/:date/:league
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`date: `**Game date in the format YYYY-MM\_DD
-* **`league: `**The name of the league.
+* **`date:`** Game date in the format YYYY-MM\_DD
+* **`league:`** The name of the league.
 {% endtab %}
 
 {% tab title="Response" %}
@@ -675,8 +675,8 @@ GET /run_replay/:sport/:leagues/:start/:end
 
 {% tabs %}
 {% tab title="Parameters" %}
-* **`sport: `**The name of the sport
-* **`leagues: `**The name of the leagues. Pipe separated list, e.g "EPL|La Liga|Serie A
+* **`sport:`** The name of the sport
+* **`leagues:`** The name of the leagues. Pipe separated list, e.g "EPL|La Liga|Serie A
 * **`start`**: Start date in the format YYYY-MM\_DD
 * **`end`**: End date in the format YYYY-MM\_DD
 {% endtab %}

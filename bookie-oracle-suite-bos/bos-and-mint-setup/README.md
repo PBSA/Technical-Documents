@@ -64,7 +64,7 @@ systemctl start redis
 ```
 
 {% hint style="danger" %}
-**Important: Common Issues: **
+**Important: Common Issues:**&#x20;
 
 **Exception**: _Can’t save in background: fork or MISCONF Redis is configured to save RDB snapshots._
 

@@ -53,13 +53,13 @@ Peerplays source code is stored and hosted on GitLab.com (a SaaS solution). The 
 
 * [https://about.gitlab.com/handbook/engineering/infrastructure/production/architecture/](https://about.gitlab.com/handbook/engineering/infrastructure/production/architecture/)
 * [https://about.gitlab.com/handbook/engineering/infrastructure/faq/](https://about.gitlab.com/handbook/engineering/infrastructure/faq/)
-* [https://status.gitlab.com/](https://status.gitlab.com)
+* [https://status.gitlab.com/](https://status.gitlab.com/)
 * [https://about.gitlab.com/support/#contact-support](https://about.gitlab.com/support/#contact-support)
 
 #### GitHub.com Resources
 
 * [https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository](https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository)
-* [https://www.githubstatus.com/](https://www.githubstatus.com)
+* [https://www.githubstatus.com/](https://www.githubstatus.com/)
 * [https://support.github.com/request](https://support.github.com/request)
 
 ### 3.4. Peerplays.tech

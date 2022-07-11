@@ -41,7 +41,7 @@ Returns the block chain’s slowly-changing settings.&#x20;
 
 This object contains all of the properties of the blockchain that are fixed or that change only once per maintenance interval (daily) such as the current list of witnesses, committee\_members, block interval, etc.
 
-**See **[`get_dynamic_global_properties()`](blockchain-inspection.md#get\_dynamic\_global\_properties) for frequently changing properties.
+**See** [`get_dynamic_global_properties()`](blockchain-inspection.md#get\_dynamic\_global\_properties) for frequently changing properties.
 
 ```cpp
 global_property_object graphene::wallet::wallet_api::get_global_properties()const

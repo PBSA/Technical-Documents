@@ -27,7 +27,7 @@ commitment_type graphene::app::crypto_api::blind(
 {% endtab %}
 
 {% tab title="Return" %}
-A 33-byte Pedersen Commitment: _commit = blind _ G + value \* G2
+A 33-byte Pedersen Commitment: _commit = blind_ G + value \* G2
 {% endtab %}
 {% endtabs %}
 

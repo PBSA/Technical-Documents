@@ -14,7 +14,7 @@ For example:
 
 A soccer game takes place between two teams and there are three data proxies interfaced to BOS.
 
-Each data proxy sends the result of the game to BOS, two send the result as 2 - 1, but one sends the result as 2 - 2. In this instance BOS will process the result as 2-1 because **at least two **data proxies agree that this is the correct score.
+Each data proxy sends the result of the game to BOS, two send the result as 2 - 1, but one sends the result as 2 - 2. In this instance BOS will process the result as 2-1 because **at least two** data proxies agree that this is the correct score.
 
 However, if only two data proxies were reporting to BOS, and they gave different scores, that game would not get automatic approval and instead would require a manual proposal by the Witnesses using the manual intervention tool (MINT).&#x20;
 

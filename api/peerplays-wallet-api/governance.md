@@ -223,7 +223,7 @@ Vote for a given committee\_member.
 An account can publish a list of all committee\_members they approve of. This command allows you to add or remove committee\_members from this list. Each account’s vote is weighted according to the number of shares of the core asset owned by that account at the time the votes are tallied.
 
 {% hint style="warning" %}
-**Note: **You can't vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.
+**Note:** You can't vote against a committee\_member, you can only vote for the committee\_member or not vote for the committee\_member.
 {% endhint %}
 
 ```cpp

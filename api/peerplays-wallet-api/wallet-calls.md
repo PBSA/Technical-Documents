@@ -92,7 +92,7 @@ map<public_key_type, string> graphene::wallet::wallet_api::dump_private_keys()
 
 {% tabs %}
 {% tab title="Return" %}
-A** **map containing the private keys, indexed by their public key
+A **** map containing the private keys, indexed by their public key
 {% endtab %}
 {% endtabs %}
 
@@ -102,7 +102,7 @@ Imports the private key for an existing account.
 
 The private key must match either an owner key or an active key for the named account.
 
-See also** **[`dump_private_keys()`](wallet-calls.md#dump\_private\_keys)``
+See also **** [`dump_private_keys()`](wallet-calls.md#dump\_private\_keys)``
 
 ```cpp
 bool graphene::wallet::wallet_api::import_key(
@@ -247,7 +247,7 @@ Loads a specified Graphene wallet.
 The current wallet is closed before the new wallet is loaded.
 
 {% hint style="danger" %}
-**Important: **This does not change the filename that will be used for future wallet writes, so this may cause you to overwrite your original wallet unless you also call `set_wallet_filename()`
+**Important:** This does not change the filename that will be used for future wallet writes, so this may cause you to overwrite your original wallet unless you also call `set_wallet_filename()`
 {% endhint %}
 
 ```cpp
@@ -291,7 +291,7 @@ The brain key in its normalized form.
 Saves the current wallet to the given filename.
 
 {% hint style="danger" %}
-**Important: **This does not change the wallet filename that will be used for future writes, so think of this function as ‘Save a Copy As…’ instead of ‘Save As…’. Use `set_wallet_filename()` to make the filename persist.
+**Important:** This does not change the wallet filename that will be used for future writes, so think of this function as ‘Save a Copy As…’ instead of ‘Save As…’. Use `set_wallet_filename()` to make the filename persist.
 {% endhint %}
 
 ```cpp

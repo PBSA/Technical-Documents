@@ -15,7 +15,7 @@ Synchronization should be done as follows:
 {% endhint %}
 
 {% hint style="warning" %}
-**Note: **Advanced features needs to be enabled within the .YAML configuration file for MINT in order to use this feature.
+**Note:** Advanced features needs to be enabled within the .YAML configuration file for MINT in order to use this feature.
 {% endhint %}
 
 Example .YAML File:

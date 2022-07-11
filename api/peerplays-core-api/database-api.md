@@ -1105,7 +1105,7 @@ vector<fc::variant> graphene::app::database_api::get_required_fees(
 {% endtab %}
 
 {% tab title="Return" %}
-A** **list of objects which indicates required fees of each operation
+A **** list of objects which indicates required fees of each operation
 {% endtab %}
 {% endtabs %}
 

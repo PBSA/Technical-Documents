@@ -16,7 +16,7 @@ Describing here the steps to verify the NFT\_python on local or server machine.
 https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays/-/tree/nft
 ```
 
-#### **Clone binaries on Machine : **
+#### **Clone binaries on Machine :**&#x20;
 
 ```
 git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
@@ -28,7 +28,7 @@ git clone https://gitlab.com/PBSA/PeerplaysIO/tools-libs/python-peerplays.git
 
 #### **Step: 2** Install virtual env on machine
 
-**Go to project : **
+**Go to project :**&#x20;
 
 ```
 cd python-peerplays
@@ -50,13 +50,13 @@ virtualenv -p python3 env
 source env/bin/activate
 ```
 
-**then, **
+**then,**&#x20;
 
 ```
 pip3 install -r requirements.txt
 ```
 
-**And then, **
+**And then,**&#x20;
 
 ```
 pip3 install -r requirements-test.txt

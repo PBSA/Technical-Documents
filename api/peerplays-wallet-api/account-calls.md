@@ -64,7 +64,7 @@ Registers a third party’s account on the blockchain.
 
 This function is used to register an account for which you do not own the private keys. When acting as a registrar, an end user will generate their own private keys and send you the public keys. The registrar will use this function to register the account on behalf of the end user.
 
-**See also **[create\_account\_with\_brain\_key()](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1ac27928f7ca6db74e0ec4aee3ff0c545e)****
+**See also** [create\_account\_with\_brain\_key()](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1ac27928f7ca6db74e0ec4aee3ff0c545e)****
 
 ```cpp
 signed_transaction graphene::wallet::wallet_api::register_account(
@@ -118,7 +118,7 @@ The signed transaction upgrading the account
 
 Creates a new account and registers it on the blockchain.
 
-**See also **[suggest\_brain\_key()](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1ab936e7a26d41b35cbfaf44d369d60e1d),  [register\_account()](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1aba1c5e3025f44273fb19e264c2b3ec2f)****
+**See also** [suggest\_brain\_key()](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1ab936e7a26d41b35cbfaf44d369d60e1d),  [register\_account()](https://dev.bitshares.works/en/master/api/wallet\_api.html?highlight=set\_voting\_proxy#classgraphene\_1\_1wallet\_1\_1wallet\_\_api\_1aba1c5e3025f44273fb19e264c2b3ec2f)****
 
 ```cpp
 signed_transaction graphene::wallet::wallet_api::create_account_with_brain_key(

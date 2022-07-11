@@ -248,9 +248,9 @@
 
 ### **480 - Start game parameter error(s)**
 
-| **Sub Code** | Title                                     | Message                                                                                     |
-| ------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
-| 480          |  Missing parameters \[list of parameters] | Parameters are: sport, league, home, away, start\_time, whistle\_start\_time,** **match\_id |
+| **Sub Code** | Title                                     | Message                                                                                      |
+| ------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+| 480          |  Missing parameters \[list of parameters] | Parameters are: sport, league, home, away, start\_time, whistle\_start\_time, **** match\_id |
 
 ### **481 - Whistle start time is before start time**
 

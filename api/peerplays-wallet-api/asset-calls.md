@@ -93,7 +93,7 @@ Update the options specific to a BitAsset.
 
 BitAssets have some options which are not relevant to other asset types. This operation is used to update those options an an existing BitAsset.
 
-**See **[update\_asset()](asset-calls.md#update\_asset)
+**See** [update\_asset()](asset-calls.md#update\_asset)
 
 ```cpp
 signed_transaction graphene::wallet::wallet_api::update_bitasset(

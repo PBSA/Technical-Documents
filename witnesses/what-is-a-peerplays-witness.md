@@ -1,5 +1,9 @@
 # What is a Peerplays Witness?
 
+{% hint style="info" %}
+For installation instructions, refer [https://infra.peerplays.tech/witnesses/installation-guides](https://infra.peerplays.tech/witnesses/installation-guides)
+{% endhint %}
+
 ### **So What is a Peerplays Witness?**
 
 The short answer is, Witnesses run the Peerplays blockchain. The long answer is … well read on.
@@ -8,7 +12,7 @@ Chances are, even if you know very little about blockchain technology, you’ll 
 
 ### **The Bitcoin Way**
 
-Bitcoin based blockchains use a consensus mechanism called Proof of Work \(POW\). 
+Bitcoin based blockchains use a consensus mechanism called Proof of Work (POW).&#x20;
 
 At its simplest this means that if you want to create new blocks in the Bitcoin blockchain, colloquially become a ‘miner’, then you need to ‘work’. The harder you work the greater your chance of being paid.
 
@@ -18,7 +22,7 @@ But realistically, the greater the computing power at your disposal the greater 
 
 ### **The Peerplays Way**
 
-So enter a consensus mechanism called Delegated Proof of Stake \(DPOS\).
+So enter a consensus mechanism called Delegated Proof of Stake (DPOS).
 
 Think of Delegated Proof of Stake as technological democracy; the opportunity for any PPY token holder to vote on who creates new blocks in the Peerplays blockchain; we call these block producers Witnesses, and they keep the blockchain alive.
 
@@ -28,9 +32,11 @@ Unlike Bitcoin miners, Peerplays Witnesses have to be voted in, and once elected
 
 To earn the right to be a Witness every prospect must accumulate votes by demonstrating why they would be a good Witness. It’s not enough for a prospective Witness to say they have a high spec computer in their basement and are tech savvy. A Witness should demonstrate qualities such as being active in the Peerplays community, blockchain competency, and past experience.
 
-Peerplays has a unique enhancement to Delegated Proof of Stake called Gamified Proof of Stake \(GPOS\). In the context of Witness voting this is important as it incentivizes PPY token holders to vote. More information about GPOS can be found here:
+Peerplays has a unique enhancement to Delegated Proof of Stake called Gamified Proof of Stake (GPOS). In the context of Witness voting this is important as it incentivizes PPY token holders to vote. More information about GPOS can be found here:
 
-{% page-ref page="../technology/gamified-proof-of-stake-gpos/" %}
+{% content-ref url="../technology/gamified-proof-of-stake-gpos/" %}
+[gamified-proof-of-stake-gpos](../technology/gamified-proof-of-stake-gpos/)
+{% endcontent-ref %}
 
 Vote strength is determined by how many PPY tokens somebody holds. This means that people who have more tokens will influence the network more than people who have very few tokens. Vote power is determined by ‘stake’.
 
@@ -48,7 +54,7 @@ Choosing the right Witness to vote for doesn’t need to be difficult. Witnesses
 
 BookiePro is a decentralized sports betting exchange, the first of its kind in the world and has been built for the Peerplays blockchain.
 
-For the Peerplays witnesses this represents a unique opportunity to play a very important role in ensuring that BookiePro is provably fair. Operations in the blockchain have to be approved and this approval requires consensus from 50% + 1 of the Witnesses. 
+For the Peerplays witnesses this represents a unique opportunity to play a very important role in ensuring that BookiePro is provably fair. Operations in the blockchain have to be approved and this approval requires consensus from 50% + 1 of the Witnesses.&#x20;
 
 What this means for BookiePro is that everything from the creation of a game to the final result, and settling the bet, has to be approved by more than one Witness.
 
@@ -58,13 +64,13 @@ For the BookiePro users this means a truly fair and decentralized application; n
 
 Let’s put the Peerplays Witnesses head-to-head against the Bitcoin miners.
 
-| **Bitcoin Miners** | **Peerplays Witnesses** |
-| :--- | :--- |
-| No selection process, anybody can be a miner. | Every Witness has to be voted in by the PPY token holders. |
-| Successful miner’s require a huge amount of computer processing power. | Witnesses require computer processing power that is readily available and affordable. |
-| The block producing process is heavily biased towards mining pools. | Every Witness has the same opportunity to create blocks. |
-| Block producing isn’t truly decentralized as over time the mining pools will control almost all the block production. | Truly decentralized because of the equal weight given to each witness for block production. |
-| Miner’s create one new block approximately every 10 minutes. | Witnesses create one new block approximately every three seconds. |
+| **Bitcoin Miners**                                                                                                                          | **Peerplays Witnesses**                                                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| No selection process, anybody can be a miner.                                                                                               | Every Witness has to be voted in by the PPY token holders.                                                                                                                                       |
+| Successful miner’s require a huge amount of computer processing power.                                                                      | Witnesses require computer processing power that is readily available and affordable.                                                                                                            |
+| The block producing process is heavily biased towards mining pools.                                                                         | Every Witness has the same opportunity to create blocks.                                                                                                                                         |
+| Block producing isn’t truly decentralized as over time the mining pools will control almost all the block production.                       | Truly decentralized because of the equal weight given to each witness for block production.                                                                                                      |
+| Miner’s create one new block approximately every 10 minutes.                                                                                | Witnesses create one new block approximately every three seconds.                                                                                                                                |
 | Miners are very well paid for each block they produce. But the probability of producing a block makes it cost prohibitive for many of them. | Witnesses receive much lower payment for each block, but all witnesses can create blocks equally, have a guaranteed income and the potential to create 1200 blocks or more an hour between them. |
 
 ### **Would you like to be a Witness?**
@@ -73,7 +79,7 @@ Your curiosity got you this far, but have you thought about taking the next step
 
 Well if you have, there’s lots more resources available to you; we recommend starting here:
 
-{% page-ref page="becoming-a-witness.md" %}
-
-
+{% content-ref url="becoming-a-witness.md" %}
+[becoming-a-witness.md](becoming-a-witness.md)
+{% endcontent-ref %}
 

@@ -14,7 +14,7 @@ All the functionality of the Couch Potato web application can be reproduced pure
 
 API calls that change data or create and post BOS incidents (triggers) also update the Couch Potato MySQL database so that the changes are reflected on the web application if it's being used.
 
-This allows for a kind of hybrid development and implementation of Couch Potato. For example, you could use your own interface combined with the` `[`add_game`](broken-reference) API to create all new games and send the trigger to BOS, but then use the Couch Potato web application to start games and add scores.
+This allows for a kind of hybrid development and implementation of Couch Potato. For example, you could use your own interface combined with the `` [`add_game`](broken-reference) API to create all new games and send the trigger to BOS, but then use the Couch Potato web application to start games and add scores.
 
 The most important API calls to become familiar with are the five core functions that create BOS messages and send them as triggers to BOS. These five calls are:
 
@@ -22,4 +22,4 @@ The most important API calls to become familiar with are the five core functions
 2. ``[`start_game`](broken-reference) - starts a game and sends an `in_progress` trigger to BOS.
 3. ``[`add_score`](broken-reference) - adds scores and send a `result` trigger to BOS.
 4. ``[`finish_game`](broken-reference) - finishes a game and sends a `finish` trigger to BOS.
-5. ``[`cancel_game `](broken-reference)- cancels a game that is either not started or in progress and sends a `canceled` trigger to BOS.
+5. ``[`cancel_game` ](broken-reference)- cancels a game that is either not started or in progress and sends a `canceled` trigger to BOS.
