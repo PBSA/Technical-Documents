@@ -58,7 +58,6 @@
 * [Witness Node GitLab Artifact Install](witnesses/witness-node-gitlab-artifact-install.md)
 * [Setting up a Witness Node](witnesses/setting-up-a-witness-node/README.md)
   * [Creating a witness account](witnesses/setting-up-a-witness-node/cli-wallet-setup.md)
-  * [Beatrice](witnesses/setting-up-a-witness-node/beatrice.md)
   * [Creating a Backup Server](witnesses/setting-up-a-witness-node/creating-a-backup-server.md)
 * [Updating a Witness Node](witnesses/updating-a-witness-node.md)
 * [Setting up a Witness Node with Docker](witnesses/setting-up-a-witness-node-with-docker.md)
