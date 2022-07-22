@@ -1,6 +1,6 @@
 # NFT Operations in Python
 
-Describing here the steps to verify the NFT\_python on local or server machine.\
+Describing the steps to verify the NFT\_python on local or server machine below.\
 
 
 **Machine configuration** : Local or server machine.\

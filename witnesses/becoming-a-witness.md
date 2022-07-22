@@ -60,7 +60,7 @@ To sell yourself to the Witness voting community you'll need a web site and blog
 
 A good place to start would be by checking out the web pages for existing witnesses, you can find that information here:
 
-{% embed url="https://peerplaysblockchain.info/explorer/witnesses/" %}
+{% embed url="https://market.peerplays.com/blockchain/witnesses" %}
 
 Be very active on social media, especially target Peerplays and Peerplays Witness channels on Telegram and Discord. Qualities that voters are going to be looking for include, experience, knowledge, commitment, responsibility and community participation.
 
@@ -114,9 +114,9 @@ Once you've procured your servers then it's time to set them up.
 
 You're now ready to take the next step, setting up your own Witness node.
 
-{% content-ref url="setting-up-a-witness-node/" %}
-[setting-up-a-witness-node](setting-up-a-witness-node/)
-{% endcontent-ref %}
 
 
+{% embed url="https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/~/changes/5oQ1TtSdEb6uAHn5BQZp/witnesses/installation-guides/setting-up-a-witness-node" %}
+Setting up a Witness Node
+{% endembed %}
 
