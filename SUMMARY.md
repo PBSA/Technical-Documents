@@ -134,9 +134,9 @@
 
 ***
 
-* [Docs Home](https://peerplays.tech)
-* [Infrastructure Docs](https://infra.peerplays.tech)
-* [Developer Docs](https://devs.peerplays.tech)
+* [Peerplays Home](https://peerplays.com)
+* [Infrastructure Docs](https://infra.peerplays.com)
+* [Developer Docs](https://devs.peerplays.com)
 
 ## Known Issues
 
