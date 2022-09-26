@@ -1,6 +1,6 @@
 # Decentralization
 
-## 1. What is Decentralization?
+## 1. What is Decentralization? <a href="#decentralization" id="decentralization"></a>
 
 You've been hearing the word **decentralized** being thrown around. What does it mean?
 

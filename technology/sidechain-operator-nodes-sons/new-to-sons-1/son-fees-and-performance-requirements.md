@@ -4,4 +4,4 @@ SONs get paid out from a daily reward pool for signing transactions and the weig
 
 When a SON changes, their private key on the bitcoin address gets replaced with the private keys of the new incoming SON.
 
-The performance of SONs is also tracked. Their errors, uptime, missed blocks, and similar errors provide historical performance data for voters. Witnesses have the power to freeze a SON or blacklist them if necessary.
+The performance of SONs is also tracked. Their errors, uptime, missed blocks, and similar errors provide historical performance data for voters. If required, Witnesses have the power to freeze a SON or blacklist them.

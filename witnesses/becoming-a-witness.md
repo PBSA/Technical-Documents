@@ -114,9 +114,4 @@ Once you've procured your servers then it's time to set them up.
 
 You're now ready to take the next step, setting up your own Witness node.
 
-
-
-{% embed url="https://app.gitbook.com/o/-Lpj4bCPw8iNnqCwrLCQ/s/-McxuwdOwK1wrj2xdejn/~/changes/5oQ1TtSdEb6uAHn5BQZp/witnesses/installation-guides/setting-up-a-witness-node" %}
-Setting up a Witness Node
-{% endembed %}
-
+{% embed url="https://infra.peerplays.com/witnesses/installation-guides" %}

@@ -2,7 +2,7 @@
 
 The wallet (`cli_wallet`) requires a running full node to connect to because it does not offer P2P or blockchain capabilities directly.
 
-If you have not set up your wallet yet, you can find more information here: [CLI Wallet Setup](broken-reference).
+If you have not set up your wallet yet, you can find more information here: [CLI Wallet Setup](https://infra.peerplays.com/the-basics/using-the-cli-wallet).
 
 {% content-ref url="account-calls.md" %}
 [account-calls.md](account-calls.md)
