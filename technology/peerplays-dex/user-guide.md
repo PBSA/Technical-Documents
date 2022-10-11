@@ -303,19 +303,103 @@ This section provide an option to upgrade the subscription, the percentage of al
 
 ## 7. Bitcoin Transactions
 
-This section provides the steps in Bitcoins address generation using the User existing information. The user should have the following details to generate the address,
+This section provides the steps in Bitcoins address generation using the User existing information. The user should have the following details to generate the address:
 
 1. Deposit Public key
 2. Withdraw Public key
 3. Withdraw address
 
-After entering the correct details, click on **`Generate`** to generate the bitcoin address.
+Your deposit address is the address to which you’ll be depositing your Bitcoin. This Deposit address will be the address you’ll be sharing with others if you wish to receive Bitcoin.
 
-{% hint style="info" %}
-Only this bitcoin address is used to send BTC to Peerplays account. If the user request for BTC withdraw, then it will be send to the withdraw address provided during the bitcoin generation procedure.
-{% endhint %}
+Your withdraw address is the address to which you’ll be using to withdraw your deposit Bitcoin later on (when you decide to withdraw).
 
-![Bitcoin Transaction](../../.gitbook/assets/bitcoin-transaction.JPG)
+To generate a Bitcoin Address on Peerplays Wallet, simply head over to the top left of your screen and click on the 3 parallel lines.
+
+<figure><img src="../../.gitbook/assets/step1.webp" alt=""><figcaption></figcaption></figure>
+
+Then, choose ‘Bitcoin Transactions.’
+
+<figure><img src="../../.gitbook/assets/step2.webp" alt=""><figcaption></figcaption></figure>
+
+You’ll see this page.
+
+<figure><img src="../../.gitbook/assets/step3.webp" alt=""><figcaption></figcaption></figure>
+
+You must enter the Public Key of your Deposit Address, the Withdraw Public Key, and the Withdraw Address.
+
+Depending on the wallet that you’re using, you may have to use a tool like [bitaddress.org](https://www.bitaddress.org/) in order to find your Public Key if it’s not already displayed in your wallet.
+
+Wasabi Wallet, for example, displays your Public key.&#x20;
+
+But wallets like [Trust Wallet](https://growfollowing.com/trust-wallet-private-key/) and Exodus require you to use external tools like [bitaddress.org](https://www.bitaddress.org/) to find your Public Key.
+
+In this example, we’ll be using Wasabi Wallet as the Deposit address and Exodus as the Withdraw address.
+
+As you can see in the image below, the Deposit Address (Wasabi Wallet) is bc1qhlu97p4ehnvt2274na5xqra5n8a8cnumavatn3
+
+The Deposit Public Key is 02d5a014ec94974a01b5b81550bbcf6a629715140d38e7da5f1c2c71ccdcd8b61c
+
+<figure><img src="../../.gitbook/assets/step4.webp" alt=""><figcaption></figcaption></figure>
+
+The Withdraw Address (Exodus Wallet) is bc1qrk768lztvrjduama2ruuut9eweamtz5ru4vmhl
+
+But we must find the Withdraw Private Key.. Here’s how:
+
+<figure><img src="../../.gitbook/assets/step5.webp" alt=""><figcaption></figcaption></figure>
+
+Open your wallet. As seen in the image above, click on the three dotted lines and click “View Private Keys.” Then Click ”Yes, I’m sure.”
+
+<figure><img src="../../.gitbook/assets/step6.webp" alt=""><figcaption></figcaption></figure>
+
+Next, type your account password.
+
+<figure><img src="../../.gitbook/assets/step7.webp" alt=""><figcaption></figcaption></figure>
+
+And now you’ll see your Bitcoin deposit Address as well as your Private Key. Copy the address that starts with bc1 and it’s Private key.
+
+<figure><img src="../../.gitbook/assets/step8.webp" alt=""><figcaption></figcaption></figure>
+
+The Withdraw Private Key is L5896NkkABQ9PCcWHQiM1tAyFWoPtaEf1uLRQ5eG7nTvzXeXY29g
+
+We will now use the Private Key to find out our Public Key. Simply head over to [bitaddress.org](https://www.bitaddress.org/). Then, click “Wallet Details”.
+
+<figure><img src="../../.gitbook/assets/step9.webp" alt=""><figcaption></figcaption></figure>
+
+Paste your Private Key and click “View Details.”
+
+<figure><img src="../../.gitbook/assets/step10.webp" alt=""><figcaption></figcaption></figure>
+
+You will find your Public Key over here. Make sure you copy and paste the compressed, 66 characters \[0-9A-F] and **NOT** the 130 Characters key.
+
+<figure><img src="../../.gitbook/assets/step11.webp" alt=""><figcaption></figcaption></figure>
+
+We now have the Deposit Public Key, the Withdraw Public Key, and the Withdraw Address.&#x20;
+
+**Deposit Public Key (Wasabi Wallet – already displayed):** 02d5a014ec94974a01b5b81550bbcf6a629715140d38e7da5f1c2c71ccdcd8b61c
+
+**Withdraw Public Key (Exodus Wallet – found through bitaddress.org): 038F14B6B61EF0AE7EF8317E757807CA8322257C96D54635979C1FBBB899621AF2**
+
+**Withdraw Address (Exodus Wallet):** bc1qrk768lztvrjduama2ruuut9eweamtz5ru4vmhl
+
+<figure><img src="../../.gitbook/assets/step12.webp" alt=""><figcaption></figcaption></figure>
+
+Paste the Public Keys and Withdraw Address and click “Generate.”
+
+<figure><img src="../../.gitbook/assets/step13.webp" alt=""><figcaption></figcaption></figure>
+
+Type your account password and click “Unlock.”
+
+<figure><img src="../../.gitbook/assets/step14.webp" alt=""><figcaption></figcaption></figure>
+
+Congratulations, you have successfully generated a Bitcoin Sidechain deposit address! That wasn’t so hard, was it? <img src="https://s.w.org/images/core/emoji/14.0.0/svg/1f600.svg" alt="😀" data-size="line">
+
+<figure><img src="../../.gitbook/assets/step15.webp" alt=""><figcaption></figcaption></figure>
+
+You can withdraw your BTC whenever you want to as well. Additionally, you can change your withdrawal address and update it to a new one too – all you have to do is paste the new Withdraw Public Key and the Withdraw Address and click on ‘UPDATE’.&#x20;
+
+**IMPORTANT!**: Always send your funds to the Deposit Address!
+
+You’ll always be able to withdraw your funds to the Withdraw Address displayed on this page. To withdraw Bitcoin, ensure that you have access to your Bitcoin Withdrawal Address and choose the amount you want to withdraw and click “Withdraw.”
 
 ## 8. Withdraw HIVE/HBD
 
