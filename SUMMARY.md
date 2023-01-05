@@ -47,6 +47,17 @@
   * [NFT command reference](technology/nfts-and-marketplace/nft-command-referece.md)
 * [Peerplays DEX](technology/peerplays-dex/README.md)
   * [User Guide](technology/peerplays-dex/user-guide.md)
+* [Peerplays NEX](technology/peerplays-nex/README.md)
+  * [User Guide](technology/peerplays-nex/user-guide/README.md)
+    * [Account Creation](technology/peerplays-nex/user-guide/account-creation.md)
+    * [Dashboard](technology/peerplays-nex/user-guide/dashboard.md)
+    * [Market Activity](technology/peerplays-nex/user-guide/market-activity.md)
+    * [Peerplays Blocks](technology/peerplays-nex/user-guide/peerplays-blocks.md)
+    * [Settings](technology/peerplays-nex/user-guide/settings.md)
+    * [Wallet](technology/peerplays-nex/user-guide/wallet.md)
+    * [Profile](technology/peerplays-nex/user-guide/profile.md)
+    * [GPOS - Voting](technology/peerplays-nex/user-guide/gpos-voting.md)
+    * [Logout](technology/peerplays-nex/user-guide/logout.md)
 
 ## Witnesses
 
