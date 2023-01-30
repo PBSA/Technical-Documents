@@ -150,3 +150,8 @@
 ## Kickstart Guide
 
 * [Peerplays Developer](kickstart-guide/peerplays-developer.md)
+
+## Operation Cost Estimation
+
+* [Project Operations](operation-cost-estimation/project-operations.md)
+* [Cost Estimation](operation-cost-estimation/cost-estimation.md)
