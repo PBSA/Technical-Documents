@@ -6,11 +6,11 @@ description: List of operation for various categories
 
 ## Introduction
 
-In Peerplays, there are many applications that supports various operations viz., create, update, withdraw, delete, issue, etc., Each operation has a small cost involved to cover the network and data storage on the blockchain. The cost is calculated as PPY assets. Its advisable to plan ahead, as the fees will be accumulated based on several hundred's of operations performed.
+In Peerplays, there are many applications that support various operations including create, update, withdraw, delete, issue, etc. Each operation has a small cost involved to cover the network and data storage on the blockchain. The cost is calculated as PPY assets. It's advisable to plan ahead, as the fees will be accumulated based on several hundreds of operations performed.
 
 ### Operation categories
 
-In the DEX user login page, there is a separate tab in the blocks option to feature the Fees allocated for each operation. Navigating through each category provide the list of operations falls under specific category. There are six different categories under fees section,
+In the DEX user login page, there is a separate tab in the blocks option to feature the Fees allocated for each operation. Navigating through each category provide the list of operations falls under specific category. There are six different categories under fees section:
 
 1. General
 2. Asset specific
@@ -29,7 +29,7 @@ The link is live and requires user credentials to login. If there is any changes
 
 ## 1. General
 
-As the name says General, the list of operation are common to any user and following is the list of operations under general category,
+As the name says General, the list of operation are common to any user and following is the list of operations under general category:
 
 ```
 Transfer
@@ -51,7 +51,7 @@ Add sidechain address
 
 ### 2. Asset Specific
 
-This category is specific to asset related operation. The operations are listed below,
+This category is specific to asset related operation. The operations are listed below:
 
 ```
 Create asset
@@ -79,7 +79,7 @@ Finalize offer
 
 ### 3. Account Specific
 
-The type of operations under the account specific category are,
+The type of operations under the account specific category are:
 
 ```
 Create account
@@ -103,7 +103,7 @@ Create deposit SON wallet
 
 ### 4. Market specific&#x20;
 
-The type of operations under the market specific category are,
+The type of operations under the market specific category are:
 
 ```
 Place order
@@ -113,7 +113,7 @@ Update margin
 
 ### 5. Business Administration
 
-The type of operations under business administration are,
+The type of operations under business administration are:
 
 ```
 Create witness
@@ -139,7 +139,7 @@ Update SON
 
 ### 6. Game Specific
 
-The Game specific operations are,
+The Game specific operations are:
 
 ```
 Create tournament
